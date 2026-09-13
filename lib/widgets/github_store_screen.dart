@@ -164,6 +164,7 @@ class _GitHubStoreScreenState extends State<GitHubStoreScreen> {
     setState(() {
       _repo = parsed;
       _currentPath = parsed.path;
+      _searchCtrl.clear();
       _items = const <RepoItem>[];
       _error = null;
       _lastStoreError = null;
@@ -242,6 +243,7 @@ class _GitHubStoreScreenState extends State<GitHubStoreScreen> {
     final next = currentParts.sublist(0, currentParts.length - 1).join('/');
     setState(() {
       _currentPath = next;
+      _searchCtrl.clear();
     });
     await _loadDirectory();
   }
@@ -250,6 +252,7 @@ class _GitHubStoreScreenState extends State<GitHubStoreScreen> {
     if (item.type == RepoItemType.dir) {
       setState(() {
         _currentPath = item.path;
+        _searchCtrl.clear();
       });
       await _loadDirectory();
       return;
@@ -358,6 +361,7 @@ class _GitHubStoreScreenState extends State<GitHubStoreScreen> {
     setState(() {
       _repo = chosen;
       _currentPath = chosen.path;
+      _searchCtrl.clear();
       _urlCtrl.text = chosen.originalUrl;
       _items = const <RepoItem>[];
       _error = null;

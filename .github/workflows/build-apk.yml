@@ -1,0 +1,39 @@
+name: build-apk
+
+# Upstream ships only a no-op release workflow, so this fork builds its own
+# sideloadable APK. Debug signing is deliberate: it needs no secrets, and the
+# artifact is for the maintainer of this fork rather than for distribution.
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - fix/github-store-stale-search
+
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - run: flutter --version
+      - run: flutter pub get
+      - run: flutter analyze --no-fatal-infos
+        continue-on-error: true
+      - run: flutter build apk --debug
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ir-blaster-debug-apk
+          path: build/app/outputs/flutter-apk/app-debug.apk
+          if-no-files-found: error
