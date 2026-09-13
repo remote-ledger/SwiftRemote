@@ -21,8 +21,13 @@ jobs:
           distribution: temurin
           java-version: '17'
 
+      # 3.38.6 is the revision upstream's release.yml pins, and what
+      # pubspec.lock resolves against (flutter >=3.38.4, dart >=3.11.0).
+      # Current stable makes IconData a final class, which the pinned
+      # font_awesome_flutter 10.12.0 still extends, so the build breaks there.
       - uses: subosito/flutter-action@v2
         with:
+          flutter-version: '3.38.6'
           channel: stable
           cache: true
 
