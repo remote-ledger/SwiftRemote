@@ -46,7 +46,7 @@
         android:maxSdkVersion="29" />
 
     <application
-        android:label="IR Blaster Remote"
+        android:label="UniMote"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:enableOnBackInvokedCallback="true">

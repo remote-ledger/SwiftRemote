@@ -44,7 +44,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "org.nslabs.ir_blaster"
+        applicationId "com.github.shanjian.unimote"
         minSdkVersion flutter.minSdkVersion
         targetSdkVersion 36
         versionCode flutterVersionCode.toInteger()

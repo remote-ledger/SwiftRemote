@@ -1,8 +1,10 @@
 name: build-apk
 
 # Upstream ships only a no-op release workflow, so this fork builds its own
-# sideloadable APK. Debug signing is deliberate: it needs no secrets, and the
-# artifact is for the maintainer of this fork rather than for distribution.
+# signed APK. The signing key lives in repository secrets rather than the
+# auto-generated Android debug key, which a fresh runner regenerates on every
+# run -- that would give each build a different signature and stop Android
+# from installing one over the last.
 
 on:
   workflow_dispatch:
@@ -33,18 +35,40 @@ jobs:
 
       - run: flutter --version
       - run: flutter pub get
-      - run: flutter analyze --no-fatal-infos
-        continue-on-error: true
+
+      - name: Restore the signing key
+        env:
+          KEYSTORE_BASE64: ${{ secrets.UNIMOTE_KEYSTORE_BASE64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.UNIMOTE_KEYSTORE_PASSWORD }}
+        run: |
+          set -euo pipefail
+          if [ -z "${KEYSTORE_BASE64:-}" ] || [ -z "${KEYSTORE_PASSWORD:-}" ]; then
+            echo "::error::Signing secrets are missing; a release build would be unsigned."
+            exit 1
+          fi
+          printf '%s' "$KEYSTORE_BASE64" | base64 -d > android/app/unimote.jks
+          # build.gradle reads this file and resolves storeFile relative to android/app.
+          {
+            echo "storeFile=unimote.jks"
+            echo "keyAlias=unimote"
+            echo "storePassword=$KEYSTORE_PASSWORD"
+            echo "keyPassword=$KEYSTORE_PASSWORD"
+          } > android/app/key.properties
+
       # assets/db/irblaster.sqlite is declared in pubspec.yaml but gitignored;
       # it is generated from the committed SQL dump. Without this, asset
       # bundling fails with "Error detected in pubspec.yaml".
       - name: Generate the bundled IR database
         run: python3 tools/build_ir_db.py
 
-      - run: flutter build apk --debug
+      - run: flutter build apk --release
+
+      - name: Drop the key material
+        if: always()
+        run: rm -f android/app/unimote.jks android/app/key.properties
 
       - uses: actions/upload-artifact@v4
         with:
-          name: ir-blaster-debug-apk
-          path: build/app/outputs/flutter-apk/app-debug.apk
+          name: unimote-release-apk
+          path: build/app/outputs/flutter-apk/app-release.apk
           if-no-files-found: error
