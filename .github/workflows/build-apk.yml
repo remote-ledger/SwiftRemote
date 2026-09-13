@@ -35,6 +35,12 @@ jobs:
       - run: flutter pub get
       - run: flutter analyze --no-fatal-infos
         continue-on-error: true
+      # assets/db/irblaster.sqlite is declared in pubspec.yaml but gitignored;
+      # it is generated from the committed SQL dump. Without this, asset
+      # bundling fails with "Error detected in pubspec.yaml".
+      - name: Generate the bundled IR database
+        run: python3 tools/build_ir_db.py
+
       - run: flutter build apk --debug
 
       - uses: actions/upload-artifact@v4
