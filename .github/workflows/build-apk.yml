@@ -61,7 +61,10 @@ jobs:
       - name: Generate the bundled IR database
         run: python3 tools/build_ir_db.py
 
-      - run: flutter build apk --release
+      # The app builds IconData dynamically (macro editor, remote studio,
+      # remote view), and release builds tree-shake icons, which requires
+      # every IconData to be const. Ship the full icon font instead.
+      - run: flutter build apk --release --no-tree-shake-icons
 
       - name: Drop the key material
         if: always()
