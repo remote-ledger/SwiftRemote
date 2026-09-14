@@ -17,6 +17,7 @@ import 'package:irblaster_controller/state/remotes_state.dart';
 import 'package:irblaster_controller/state/macros_state.dart';
 import 'package:irblaster_controller/utils/ir.dart';
 import 'package:flutter/services.dart';
+import 'package:irblaster_controller/app_update/app_update_screen.dart';
 import 'package:irblaster_controller/l10n/app_localizations.dart';
 import 'package:irblaster_controller/l10n/l10n.dart';
 import 'package:irblaster_controller/utils/remote.dart';
@@ -358,7 +359,7 @@ class _BootstrapScreenState extends State<_BootstrapScreen> {
             onRetry: () => setState(() => _future = _bootstrap()),
           );
         }
-        return const HomeShell();
+        return const UpdateWatcher(child: HomeShell());
       },
     );
   }

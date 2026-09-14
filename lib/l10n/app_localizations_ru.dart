@@ -4912,4 +4912,82 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get irFinderBruteforceMaskTip =>
       'Совет: замените каждую неизвестную цифру на X. Известные цифры в любой позиции значительно сокращают поиск.';
+
+  @override
+  String get updatesTitle => 'Updates';
+
+  @override
+  String get updatesSubtitle => 'Install new versions from GitHub';
+
+  @override
+  String get updatesCheckNow => 'Check for updates';
+
+  @override
+  String get updatesChecking => 'Checking for updates…';
+
+  @override
+  String get updatesUpToDate => 'You have the latest version';
+
+  @override
+  String get updatesAvailable => 'Update available';
+
+  @override
+  String get updatesView => 'View';
+
+  @override
+  String get updatesInstalledVersion => 'Installed';
+
+  @override
+  String get updatesNewVersion => 'New version';
+
+  @override
+  String get updatesReleaseNotes => 'Release notes';
+
+  @override
+  String get updatesDownloadInstall => 'Download and install';
+
+  @override
+  String get updatesDownloading => 'Downloading…';
+
+  @override
+  String get updatesReadyToInstall => 'Ready to install';
+
+  @override
+  String get updatesInstall => 'Install';
+
+  @override
+  String get updatesCancel => 'Cancel';
+
+  @override
+  String get updatesOpenSettings => 'Open settings';
+
+  @override
+  String get updatesAutoCheck => 'Check on startup';
+
+  @override
+  String get updatesAutoCheckSubtitle => 'Look for a new version each time the app opens';
+
+  @override
+  String get updatesSourceNote => 'Updates come from the project’s own GitHub releases and are signed with the same key as this build.';
+
+  @override
+  String get updatesPermissionTitle => 'Allow installing apps';
+
+  @override
+  String get updatesPermissionBody => 'Android needs permission before this app can install an update. Turn on "Allow from this source", then come back and install.';
+
+  @override
+  String get updatesCheckFailed => 'Could not check for updates';
+
+  @override
+  String get updatesRateLimited => 'GitHub is rate limiting this device, try again later';
+
+  @override
+  String get updatesNoRelease => 'No published release was found';
+
+  @override
+  String get updatesNoAsset => 'That release has no APK attached';
+
+  @override
+  String get updatesInstallFailed => 'The installer could not be opened';
 }

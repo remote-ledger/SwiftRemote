@@ -18,6 +18,7 @@ import 'package:irblaster_controller/utils/ir_transmitter_platform.dart';
 import 'package:irblaster_controller/utils/macros_io.dart';
 import 'package:irblaster_controller/utils/remote.dart';
 import 'package:irblaster_controller/utils/remotes_io.dart';
+import 'package:irblaster_controller/app_update/app_update_screen.dart';
 import 'package:irblaster_controller/widgets/about_screen.dart';
 import 'package:irblaster_controller/widgets/settings/widgets/donation_sheet.dart';
 import 'package:irblaster_controller/widgets/settings/widgets/section_card.dart';
@@ -1336,6 +1337,20 @@ class SettingsScreen extends StatelessWidget {
                       ),
                     );
                   },
+                );
+              },
+            ),
+            const Divider(height: 1),
+            ListTile(
+              leading: const Icon(Icons.system_update),
+              title: Text(context.l10n.updatesTitle),
+              subtitle: Text(context.l10n.updatesSubtitle),
+              trailing: const Icon(Icons.chevron_right),
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute<void>(
+                    builder: (context) => const AppUpdateScreen(),
+                  ),
                 );
               },
             ),

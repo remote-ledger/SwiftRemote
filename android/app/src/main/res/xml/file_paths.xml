@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Shared with the system installer so it can read the APK we downloaded.
+     Only the cache directory is exposed, which is where updates land. -->
+<paths>
+    <cache-path name="update_cache" path="." />
+</paths>

@@ -430,6 +430,7 @@ class MainActivity : FlutterActivity() {
         private const val QUICK_TILE_CHANNEL = "org.nslabs/irtransmitter_quick_tile"
         private const val HOME_WIDGET_CHANNEL = "org.nslabs/irtransmitter_home_widget"
         private const val SHORTCUTS_CHANNEL = "org.nslabs/app_shortcuts"
+        private const val UPDATE_CHANNEL = "org.nslabs/app_update"
         private const val EXTRA_SHORTCUT_ACTION = "org.nslabs.irblaster.SHORTCUT_ACTION"
         private const val DEFAULT_HEX_FREQUENCY = 38000
         private const val MIN_IR_HZ = 15000
@@ -529,6 +530,32 @@ class MainActivity : FlutterActivity() {
             pendingQuickTileChooserKey = null
             dispatchQuickTileChooser(key)
         }
+
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, UPDATE_CHANNEL)
+            .setMethodCallHandler { call, result ->
+                try {
+                    when (call.method) {
+                        "canRequestInstall" ->
+                            result.success(ApkInstaller.canRequestInstall(this))
+                        "openInstallSettings" -> {
+                            ApkInstaller.openInstallSettings(this)
+                            result.success(null)
+                        }
+                        "installApk" -> {
+                            val path = call.argument<String>("path")
+                            if (path.isNullOrEmpty()) {
+                                result.error("BAD_ARGS", "path is required", null)
+                            } else {
+                                ApkInstaller.install(this, path)
+                                result.success(null)
+                            }
+                        }
+                        else -> result.notImplemented()
+                    }
+                } catch (e: Exception) {
+                    result.error("INSTALL_FAILED", e.message, null)
+                }
+            }
 
         homeWidgetChannel = MethodChannel(flutterEngine.dartExecutor.binaryMessenger, HOME_WIDGET_CHANNEL)
         homeWidgetChannel?.setMethodCallHandler { call, result ->

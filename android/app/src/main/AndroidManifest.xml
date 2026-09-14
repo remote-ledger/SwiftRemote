@@ -36,6 +36,11 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
+    <!-- Lets the in-app updater hand a downloaded APK to the system
+         installer. The user still confirms every install, and must grant
+         this app "install unknown apps" first. -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
     <!-- Legacy storage permissions for Android 10 and below.
          Android 11+ uses scoped storage / the system document picker. -->
     <uses-permission
@@ -154,6 +159,18 @@
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
         </service>
+
+        <!-- Exposes the downloaded APK in our cache to the system
+             installer; see res/xml/file_paths.xml. -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
 
         <meta-data
             android:name="flutterEmbedding"

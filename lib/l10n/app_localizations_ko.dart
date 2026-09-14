@@ -4797,4 +4797,82 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String get irFinderBruteforceMaskTip =>
       '팁: 모르는 자리를 모두 X로 바꾸세요. 코드 어디서든 알려진 자리를 고정하면 검색 범위를 크게 줄일 수 있습니다.';
+
+  @override
+  String get updatesTitle => 'Updates';
+
+  @override
+  String get updatesSubtitle => 'Install new versions from GitHub';
+
+  @override
+  String get updatesCheckNow => 'Check for updates';
+
+  @override
+  String get updatesChecking => 'Checking for updates…';
+
+  @override
+  String get updatesUpToDate => 'You have the latest version';
+
+  @override
+  String get updatesAvailable => 'Update available';
+
+  @override
+  String get updatesView => 'View';
+
+  @override
+  String get updatesInstalledVersion => 'Installed';
+
+  @override
+  String get updatesNewVersion => 'New version';
+
+  @override
+  String get updatesReleaseNotes => 'Release notes';
+
+  @override
+  String get updatesDownloadInstall => 'Download and install';
+
+  @override
+  String get updatesDownloading => 'Downloading…';
+
+  @override
+  String get updatesReadyToInstall => 'Ready to install';
+
+  @override
+  String get updatesInstall => 'Install';
+
+  @override
+  String get updatesCancel => 'Cancel';
+
+  @override
+  String get updatesOpenSettings => 'Open settings';
+
+  @override
+  String get updatesAutoCheck => 'Check on startup';
+
+  @override
+  String get updatesAutoCheckSubtitle => 'Look for a new version each time the app opens';
+
+  @override
+  String get updatesSourceNote => 'Updates come from the project’s own GitHub releases and are signed with the same key as this build.';
+
+  @override
+  String get updatesPermissionTitle => 'Allow installing apps';
+
+  @override
+  String get updatesPermissionBody => 'Android needs permission before this app can install an update. Turn on "Allow from this source", then come back and install.';
+
+  @override
+  String get updatesCheckFailed => 'Could not check for updates';
+
+  @override
+  String get updatesRateLimited => 'GitHub is rate limiting this device, try again later';
+
+  @override
+  String get updatesNoRelease => 'No published release was found';
+
+  @override
+  String get updatesNoAsset => 'That release has no APK attached';
+
+  @override
+  String get updatesInstallFailed => 'The installer could not be opened';
 }
