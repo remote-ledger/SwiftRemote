@@ -22,7 +22,6 @@ on:
   push:
     branches:
       - master
-      - fix/github-store-stale-search
 
 jobs:
   apk:
