@@ -15,7 +15,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.0.47+47
+version: 1.0.48+48
 
 environment:
   sdk: '>=3.2.3 <4.0.0'
@@ -69,14 +69,18 @@ dev_dependencies:
   build_runner: ^2.4.11
   flutter_launcher_icons: ^0.14.4
 
-# flutter_launcher_icons configuration
+# flutter_launcher_icons configuration.
+# tools/icon/build_icons.sh generates these source images from the vector master and
+# writes every launcher resource itself, so running this package is optional. It ships
+# the adaptive background as res/drawable/ic_launcher_background.xml; re-running this
+# package replaces that vector with equivalent per-density PNGs from the image below.
 flutter_launcher_icons:
   android: true
   ios: false
   min_sdk_android: 21
   image_path_android: assets/images/logo.png
-  adaptive_icon_background: "#FFFFFF"
-  adaptive_icon_foreground: assets/images/logo.png
+  adaptive_icon_background: assets/images/icon_background.png
+  adaptive_icon_foreground: assets/images/icon_foreground.png
   adaptive_icon_monochrome: assets/images/icon_mono.png
 
 # For information on the generic Dart part of this file, see the
