@@ -50,6 +50,29 @@ jobs:
       - run: flutter --version
       - run: flutter pub get
 
+      # The analyzer has never run here, so nothing has been stopping a lint or
+      # a stale import from reaching master. It goes before the Gradle build
+      # because it answers in seconds rather than minutes, and before the
+      # signing key is restored so a lint failure never leaves key material
+      # sitting on the runner.
+      - name: Analyze the Dart sources
+        run: flutter analyze
+
+      # assets/db/swiftremote.sqlite is declared in pubspec.yaml but gitignored;
+      # it is generated from the committed SQL dump. Without this, asset
+      # bundling fails with "Error detected in pubspec.yaml". flutter test
+      # bundles the declared assets as well, so this has to be in place before
+      # the tests run and not merely before the build.
+      - name: Generate the bundled IR database
+        run: python3 tools/build_ir_db.py
+
+      # These tests pin the IR encoders to their expected timings, and a
+      # regression there stays invisible until a remote stops working in
+      # someone's living room. release.yml calls this workflow, so a red test
+      # stops the release rather than turning up after the APK is attached.
+      - name: Run the unit tests
+        run: flutter test
+
       - name: Read the app version
         id: name
         run: |
@@ -80,12 +103,6 @@ jobs:
             echo "storePassword=$KEYSTORE_PASSWORD"
             echo "keyPassword=$KEYSTORE_PASSWORD"
           } > android/app/key.properties
-
-      # assets/db/swiftremote.sqlite is declared in pubspec.yaml but gitignored;
-      # it is generated from the committed SQL dump. Without this, asset
-      # bundling fails with "Error detected in pubspec.yaml".
-      - name: Generate the bundled IR database
-        run: python3 tools/build_ir_db.py
 
       # The app builds IconData dynamically (macro editor, remote studio,
       # remote view), and release builds tree-shake icons, which requires
