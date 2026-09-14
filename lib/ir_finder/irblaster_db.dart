@@ -20,6 +20,24 @@ class IrBlasterDb {
   /// delete it rather than leave tens of megabytes behind.
   static const String _legacyDbFileName = 'irblaster.sqlite';
 
+  /// Bump this by hand whenever assets/db/swiftremote.sqlite is regenerated.
+  /// The copy in the databases directory is only refreshed when the marker
+  /// beside it disagrees with this number, so a corrected database actually
+  /// reaches installs that already ran the app instead of being ignored for
+  /// the life of the install. Comparing the two by content would mean
+  /// unpacking and hashing fifty megabytes of asset every time the finder is
+  /// opened, which is far too slow for a file that changes once or twice a
+  /// year, and the app already invalidates its GitHub directory cache with
+  /// the same kind of hand-bumped constant.
+  static const int _assetDbVersion = 1;
+
+  /// Records the [_assetDbVersion] that produced the database sitting next to
+  /// it. The marker lives in the databases directory rather than in the
+  /// shared preferences so that it is created, backed up, restored and wiped
+  /// together with the file it describes; a marker kept anywhere else could
+  /// outlive that file and vouch for a database that is no longer there.
+  static const String _dbVersionFileName = 'swiftremote.sqlite.version';
+
   Database? _db;
   Future<void>? _initFuture;
   bool _perfTuned = false;
@@ -38,19 +56,22 @@ class IrBlasterDb {
 
     final String dbDir = await getDatabasesPath();
     final String dbPath = p.join(dbDir, _dbFileName);
+    final String versionPath = p.join(dbDir, _dbVersionFileName);
 
     await _deleteLegacyDb(dbDir);
 
-    final bool exists = await databaseExists(dbPath);
-    if (!exists) {
-      await _copyAssetTo(dbPath);
-    } else {
-      final File f = File(dbPath);
-      if (await f.exists()) {
-        final int len = await f.length();
-        if (len <= 0) {
-          await _copyAssetTo(dbPath);
-        }
+    if (!await _hasUsableDb(dbPath)) {
+      // There is no database to fall back on, so a failure here has to reach
+      // the caller rather than be swallowed into an empty finder.
+      await _installAssetDb(dbPath, versionPath);
+    } else if (await _readInstalledDbVersion(versionPath) != _assetDbVersion) {
+      try {
+        await _installAssetDb(dbPath, versionPath);
+      } catch (_) {
+        // The database on disk is readable, merely older than the one we
+        // ship. Serving slightly stale codes beats refusing to open the
+        // finder at all, and the refresh is attempted again next time
+        // because the marker is only written by a copy that completed.
       }
     }
 
@@ -65,23 +86,95 @@ class IrBlasterDb {
   }
 
   Future<void> _deleteLegacyDb(String dbDir) async {
+    await _deleteQuietly(File(p.join(dbDir, _legacyDbFileName)));
+  }
+
+  /// Whether the databases directory already holds something worth opening.
+  /// The length test is what catches an install that was interrupted while
+  /// the asset was being unpacked: such a file still answers databaseExists
+  /// but has no header for SQLite to read.
+  Future<bool> _hasUsableDb(String dbPath) async {
+    if (!await databaseExists(dbPath)) return false;
+    final File f = File(dbPath);
+    if (!await f.exists()) return false;
+    return await f.length() > 0;
+  }
+
+  /// The asset version that produced the database on disk, or 0 when that
+  /// cannot be established. An install made before this marker existed is
+  /// therefore refreshed once: we have no way of telling which build of the
+  /// asset it copied, and a single extra copy is a small price for knowing
+  /// exactly what it holds from then on.
+  Future<int> _readInstalledDbVersion(String versionPath) async {
     try {
-      final File legacy = File(p.join(dbDir, _legacyDbFileName));
-      if (await legacy.exists()) {
-        await legacy.delete();
-      }
+      final File marker = File(versionPath);
+      if (!await marker.exists()) return 0;
+      return int.tryParse((await marker.readAsString()).trim()) ?? 0;
     } catch (_) {
-      // Housekeeping only: a database that cannot be removed must not stop
-      // the finder from opening the one we actually use.
+      // A marker we cannot read is treated as missing, so the database is
+      // rebuilt from the asset instead of being trusted on its word.
+      return 0;
     }
   }
 
-  Future<void> _copyAssetTo(String targetPath) async {
+  /// Unpacks the bundled database over [targetPath] and records the asset
+  /// version it came from.
+  Future<void> _installAssetDb(String targetPath, String versionPath) async {
     final ByteData data = await rootBundle.load(_assetDbPath);
-    final bytes = data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
-    final File outFile = File(targetPath);
-    await outFile.parent.create(recursive: true);
-    await outFile.writeAsBytes(bytes, flush: true);
+    final bytes =
+        data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
+
+    final File target = File(targetPath);
+    await target.parent.create(recursive: true);
+
+    // Write the fifty megabytes to a staging file and only then move it into
+    // place. Writing straight over the database would, if the process were
+    // killed or the disk filled up half way through, leave a truncated file
+    // that still looks present and non-empty and would be opened as though
+    // it were a real database.
+    final File staging = File('$targetPath.new');
+    try {
+      await staging.writeAsBytes(bytes, flush: true);
+
+      // Drop the marker before disturbing the database. Everything from here
+      // on is a fast metadata operation, and an interruption in the middle of
+      // them leaves either no database or a complete one, both of which the
+      // next open rebuilds because no marker vouches for them.
+      await _deleteQuietly(File(versionPath));
+      await _deleteQuietly(target);
+
+      // SQLite keeps its rollback journal beside the database. One left over
+      // from the previous copy describes pages of a file that no longer
+      // exists, so letting SQLite replay it onto the new one would corrupt
+      // the very database we just installed.
+      for (final String suffix in const <String>['-journal', '-wal', '-shm']) {
+        await _deleteQuietly(File('$targetPath$suffix'));
+      }
+
+      await staging.rename(targetPath);
+    } catch (_) {
+      await _deleteQuietly(staging);
+      rethrow;
+    }
+
+    try {
+      await File(versionPath).writeAsString('$_assetDbVersion', flush: true);
+    } catch (_) {
+      // The database itself is in place; a marker that cannot be written
+      // only costs a redundant copy next time, which is not worth failing
+      // the open over.
+    }
+  }
+
+  Future<void> _deleteQuietly(File file) async {
+    try {
+      if (await file.exists()) {
+        await file.delete();
+      }
+    } catch (_) {
+      // Housekeeping only: a file that cannot be removed must not stop the
+      // finder from opening the database we actually use.
+    }
   }
 
   Database _requireDb() {
