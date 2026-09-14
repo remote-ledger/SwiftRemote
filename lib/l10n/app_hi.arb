@@ -357,13 +357,6 @@
   "addRemote": "जोड़ें रिमोट",
   "more": "More",
   "reorderMode": "पुन:क्रमित करें मोड",
-  "remoteButtonCount": "{count} बटन{plural}",
-  "@remoteButtonCount": {
-    "placeholders": {
-      "count": {},
-      "plural": {}
-    }
-  },
   "noRemotesYet": "नहीं रिमोट yet",
   "noRemotesDescription": "बनाएं a रिमोट तक प्रारंभ sending IR कोड.",
   "noRemotesNextStep": "What अगला: टैप जोड़ें रिमोट, फिर जोड़ें आपकी पहले बटन.",
@@ -384,13 +377,6 @@
   "macroExampleText": "i-cybie उन्नत मोड:\n1. \"मोड\" कमांड भेजें\n2. 1000ms प्रतीक्षा करें (खिलौना प्रक्रिया करता है)\n3. \"Action 1\" भेजें\n4. 1000ms प्रतीक्षा करें\n5. \"Action 2\" भेजें\n…और इसी तरह स्वतः!",
   "createFirstMacro": "बनाएं आपकी पहले मैक्रो",
   "noRemote": "नहीं रिमोट",
-  "macroStepCount": "{count} चरण{plural}",
-  "@macroStepCount": {
-    "placeholders": {
-      "count": {},
-      "plural": {}
-    }
-  },
   "aboutTimedMacros": "परिचय समयबद्ध मैक्रो",
   "aboutTimedMacrosDescription": "समयबद्ध मैक्रो आपको हर चरण के बीच सटीक विलंब के साथ IR कमांड क्रम स्वचालित करने देते हैं।",
   "sendCommand": "भेजें कमांड",

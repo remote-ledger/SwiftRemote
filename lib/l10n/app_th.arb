@@ -357,13 +357,6 @@
   "addRemote": "เพิ่มรีโมต",
   "more": "More",
   "reorderMode": "โหมดจัดลำดับ",
-  "remoteButtonCount": "{count} ปุ่ม{plural}",
-  "@remoteButtonCount": {
-    "placeholders": {
-      "count": {},
-      "plural": {}
-    }
-  },
   "noRemotesYet": "ยังไม่มีรีโมต",
   "noRemotesDescription": "สร้าง a remote to start sending IR codes.",
   "noRemotesNextStep": "What ถัดไป: tap เพิ่มรีโมต, then add your ก่อน ปุ่มs.",
@@ -384,13 +377,6 @@
   "macroExampleText": "i-cybie Advanced Mode:\n1. Send \"Mode\" command\n2. Wait 1000ms (toy processes)\n3. Send \"Action 1\"\n4. Wait 1000ms\n5. Send \"Action 2\"\n…and so on automatically!",
   "createFirstMacro": "สร้างแมโครแรกของคุณ",
   "noRemote": "ไม่มีรีโมต",
-  "macroStepCount": "{count} ขั้นตอน{plural}",
-  "@macroStepCount": {
-    "placeholders": {
-      "count": {},
-      "plural": {}
-    }
-  },
   "aboutTimedMacros": "เกี่ยวกับแมโครตั้งเวลา",
   "aboutTimedMacrosDescription": "แมโครตั้งเวลาช่วยให้คุณทำลำดับคำสั่ง IR อัตโนมัติด้วยการหน่วงเวลาที่แม่นยำในแต่ละขั้น",
   "sendCommand": "ส่งคำสั่ง",

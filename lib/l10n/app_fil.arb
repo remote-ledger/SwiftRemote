@@ -357,13 +357,6 @@
   "addRemote": "Add remote",
   "more": "More",
   "reorderMode": "Reorder mode",
-  "remoteButtonCount": "{count} button{plural}",
-  "@remoteButtonCount": {
-    "placeholders": {
-      "count": {},
-      "plural": {}
-    }
-  },
   "noRemotesYet": "Walang mga remote yet",
   "noRemotesDescription": "Create a remote to start sending IR codes.",
   "noRemotesNextStep": "Susunod: tapikin ang Add remote, saka idagdag ang una mong mga button.",
@@ -384,13 +377,6 @@
   "macroExampleText": "i-cybie Advanced Mode:\n1. Ipadala ang utos na \"Mode\"\n2. Maghintay ng 1000ms, pinoproseso ng laruan\n3. Ipadala ang \"Action 1\"\n4. Maghintay ng 1000ms\n5. Ipadala ang \"Action 2\"\n…at tuloy-tuloy nang awtomatiko!",
   "createFirstMacro": "Create Ang iyong First Macro",
   "noRemote": "Walang remote",
-  "macroStepCount": "{count} hakbang{plural}",
-  "@macroStepCount": {
-    "placeholders": {
-      "count": {},
-      "plural": {}
-    }
-  },
   "aboutTimedMacros": "About Timed Macros",
   "aboutTimedMacrosDescription": "Hinahayaan ka ng Timed Macros na i-automate ang sunod-sunod na IR command na may eksaktong delay sa bawat hakbang.",
   "sendCommand": "Send Command",

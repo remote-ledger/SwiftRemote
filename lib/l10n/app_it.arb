@@ -357,13 +357,6 @@
   "addRemote": "Aggiungi telecomando",
   "more": "Altro",
   "reorderMode": "Modalità riordino",
-  "remoteButtonCount": "{count} pulsante{plural}",
-  "@remoteButtonCount": {
-    "placeholders": {
-      "count": {},
-      "plural": {}
-    }
-  },
   "noRemotesYet": "Nessun telecomando ancora",
   "noRemotesDescription": "Crea un telecomando per iniziare a inviare codici IR.",
   "noRemotesNextStep": "Prossimo passo. Tocca Aggiungi telecomando, poi aggiungi i primi pulsanti.",
@@ -384,13 +377,6 @@
   "macroExampleText": "Modalità avanzata i-cybie:\n1. Invia il comando \"Modalità\"\n2. Attendi 1000 ms il giocattolo elabora\n3. Invia \"Azione 1\"\n4. Attendi 1000 ms\n5. Invia \"Azione 2\"\n…e così via automaticamente!",
   "createFirstMacro": "Crea la tua prima macro",
   "noRemote": "Nessun telecomando",
-  "macroStepCount": "{count} passaggio{plural}",
-  "@macroStepCount": {
-    "placeholders": {
-      "count": {},
-      "plural": {}
-    }
-  },
   "aboutTimedMacros": "Informazioni sulle macro temporizzate",
   "aboutTimedMacrosDescription": "Le macro temporizzate ti permettono di automatizzare sequenze di comandi IR con ritardi precisi tra ogni passaggio.",
   "sendCommand": "Invia comando",

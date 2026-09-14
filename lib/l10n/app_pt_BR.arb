@@ -357,13 +357,6 @@
   "addRemote": "Adicionar controle",
   "more": "Mais",
   "reorderMode": "Modo reordenar",
-  "remoteButtonCount": "{count} botão{plural}",
-  "@remoteButtonCount": {
-    "placeholders": {
-      "count": {},
-      "plural": {}
-    }
-  },
   "noRemotesYet": "Ainda não há controles",
   "noRemotesDescription": "Crie um controle para começar a enviar códigos IR.",
   "noRemotesNextStep": "Próximo passo: toque em Adicionar controle e depois adicione os seus primeiros botões.",
@@ -384,13 +377,6 @@
   "macroExampleText": "Modo avançado do i-cybie:\n1. Enviar comando \"Mode\"\n2. Aguardar 1000 ms (o brinquedo processa)\n3. Enviar \"Action 1\"\n4. Aguardar 1000 ms\n5. Enviar \"Action 2\"\n...e assim por diante automaticamente.",
   "createFirstMacro": "Crie sua primeira macro",
   "noRemote": "Sem controle",
-  "macroStepCount": "{count} passo{plural}",
-  "@macroStepCount": {
-    "placeholders": {
-      "count": {},
-      "plural": {}
-    }
-  },
   "aboutTimedMacros": "Sobre as macros temporizadas",
   "aboutTimedMacrosDescription": "As macros temporizadas permitem automatizar sequências de comandos IR com atrasos precisos entre cada passo.",
   "sendCommand": "Enviar controle",

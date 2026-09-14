@@ -357,13 +357,6 @@
   "addRemote": "Додати пульт",
   "more": "більше",
   "reorderMode": "Режим зміни порядку",
-  "remoteButtonCount": "{count} кнопк{plural}",
-  "@remoteButtonCount": {
-    "placeholders": {
-      "count": {},
-      "plural": {}
-    }
-  },
   "noRemotesYet": "Пультів ще немає",
   "noRemotesDescription": "Створіть пульт, щоб розпочати надсилання ІЧ-кодів.",
   "noRemotesNextStep": "Що далі: торкніться «Додати пульт», а потім додайте перші кнопки.",
@@ -384,13 +377,6 @@
   "macroExampleText": "Розширений режим i-cybie:\n1. Надіслати команду «Режим».\n2. Зачекайте 1000 мс (іграшкові процеси)\n3. Надіслати \"Дію 1\"\n4. Зачекайте 1000 мс\n5. Надіслати «Дію 2»\n…і так далі автоматично!",
   "createFirstMacro": "Створіть свій перший макрос",
   "noRemote": "Без пульта",
-  "macroStepCount": "{count} крок{plural}",
-  "@macroStepCount": {
-    "placeholders": {
-      "count": {},
-      "plural": {}
-    }
-  },
   "aboutTimedMacros": "Про тимчасові макроси",
   "aboutTimedMacrosDescription": "Тимчасові макроси дозволяють автоматизувати послідовності ІЧ-команд із точними затримками між кожним кроком.",
   "sendCommand": "Надіслати команду",

@@ -362,13 +362,6 @@
   "addRemote": "Ajouter une télécommande",
   "more": "Plus",
   "reorderMode": "Mode réorganisation",
-  "remoteButtonCount": "{count} bouton{plural}",
-  "@remoteButtonCount": {
-    "placeholders": {
-      "count": {},
-      "plural": {}
-    }
-  },
   "noRemotesYet": "Aucune télécommande",
   "noRemotesDescription": "Créez une télécommande pour commencer à envoyer des codes IR.",
   "noRemotesNextStep": "Et ensuite : touchez Ajouter une télécommande, puis ajoutez vos premiers boutons.",
@@ -389,13 +382,6 @@
   "macroExampleText": "Mode avancé i-cybie :\n1. Envoyer la commande \"Mode\"\n2. Attendre 1000 ms (traitement)\n3. Envoyer \"Action 1\"\n4. Attendre 1000 ms\n5. Envoyer \"Action 2\"\n…et ainsi de suite automatiquement !",
   "createFirstMacro": "Créer votre première macro",
   "noRemote": "Aucune télécommande",
-  "macroStepCount": "{count} étape{plural}",
-  "@macroStepCount": {
-    "placeholders": {
-      "count": {},
-      "plural": {}
-    }
-  },
   "aboutTimedMacros": "À propos des macros temporisées",
   "aboutTimedMacrosDescription": "Les macros temporisées vous permettent d'automatiser des séquences de commandes IR avec des délais précis entre chaque étape.",
   "sendCommand": "Envoyer commande",

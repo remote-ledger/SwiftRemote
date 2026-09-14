@@ -357,13 +357,6 @@
   "addRemote": "إضافة جهاز تحكم",
   "more": "المزيد",
   "reorderMode": "Reorder mode",
-  "remoteButtonCount": "{count} زر{plural}",
-  "@remoteButtonCount": {
-    "placeholders": {
-      "count": {},
-      "plural": {}
-    }
-  },
   "noRemotesYet": "No remotes yet",
   "noRemotesDescription": "أنشئ جهاز تحكم لبدء إرسال أكواد IR.",
   "noRemotesNextStep": "ماذا بعد: اضغط إضافة جهاز تحكم، ثم أضف أول أزرارك.",
@@ -384,13 +377,6 @@
   "macroExampleText": "وضع i-cybie المتقدم:\n1. أرسل أمر الوضع\n2. انتظر 1000ms، اللعبة تعالج\n3. أرسل الإجراء 1\n4. انتظر 1000ms\n5. أرسل الإجراء 2\n…وهكذا تلقائياً",
   "createFirstMacro": "أنشئ أول ماكرو",
   "noRemote": "لا يوجد جهاز تحكم",
-  "macroStepCount": "{count} خطوة{plural}",
-  "@macroStepCount": {
-    "placeholders": {
-      "count": {},
-      "plural": {}
-    }
-  },
   "aboutTimedMacros": "حول الماكرو المؤقت",
   "aboutTimedMacrosDescription": "تتيح لك وحدات الماكرو المؤقتة أتمتة تسلسلات أوامر IR مع تأخيرات دقيقة بين كل خطوة.",
   "sendCommand": "إرسال Command",

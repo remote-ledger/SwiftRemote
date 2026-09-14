@@ -357,13 +357,6 @@
   "addRemote": "Добавить пульт",
   "more": "Ещё",
   "reorderMode": "Режим сортировки",
-  "remoteButtonCount": "{count} кнопк{plural}",
-  "@remoteButtonCount": {
-    "placeholders": {
-      "count": {},
-      "plural": {}
-    }
-  },
   "noRemotesYet": "Пультов пока нет",
   "noRemotesDescription": "Создайте пульт, чтобы начать отправлять ИК-коды.",
   "noRemotesNextStep": "Что дальше: нажмите Добавить пульт, затем добавьте первые кнопки.",
@@ -384,13 +377,6 @@
   "macroExampleText": "Режим i-cybie Advanced:\n1. Отправить команду \"Mode\"\n2. Ждать 1000 мс, игрушка обрабатывает\n3. Отправить \"Action 1\"\n4. Ждать 1000 мс\n5. Отправить \"Action 2\"\n…и так далее автоматически!",
   "createFirstMacro": "Создать первый макрос",
   "noRemote": "Нет пульта",
-  "macroStepCount": "{count} шаг{plural}",
-  "@macroStepCount": {
-    "placeholders": {
-      "count": {},
-      "plural": {}
-    }
-  },
   "aboutTimedMacros": "О макросах с таймингом",
   "aboutTimedMacrosDescription": "Макросы с таймингом позволяют автоматизировать последовательности ИК-команд с точными задержками между шагами.",
   "sendCommand": "Отправить команду",

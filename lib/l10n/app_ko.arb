@@ -357,13 +357,6 @@
   "addRemote": "추가 리모컨",
   "more": "더보기",
   "reorderMode": "순서 변경 모드",
-  "remoteButtonCount": "버튼 {count}개{plural}",
-  "@remoteButtonCount": {
-    "placeholders": {
-      "count": {},
-      "plural": {}
-    }
-  },
   "noRemotesYet": "아직 리모컨이 없습니다",
   "noRemotesDescription": "생성 리모컨 시작 IR 송신 코드.",
   "noRemotesNextStep": "다음 단계: 리모컨 추가를 탭한 뒤 첫 버튼을 추가하세요.",
@@ -384,13 +377,6 @@
   "macroExampleText": "i-cybie 고급 모드:\n1. \"Mode\" 명령 보내기\n2. 1000ms 대기(장난감 처리)\n3. \"Action 1\" 보내기\n4. 1000ms 대기\n5. \"Action 2\" 보내기\n…이후 자동 계속!",
   "createFirstMacro": "첫 매크로 만들기",
   "noRemote": "없음 리모컨",
-  "macroStepCount": "{count}단계{plural}",
-  "@macroStepCount": {
-    "placeholders": {
-      "count": {},
-      "plural": {}
-    }
-  },
   "aboutTimedMacros": "시간 지정 매크로 정보",
   "aboutTimedMacrosDescription": "시간 지정 매크로를 사용하면 각 단계 사이에 정확한 지연을 두고 IR 명령 시퀀스를 자동화할 수 있습니다.",
   "sendCommand": "명령 전송",

@@ -357,13 +357,6 @@
   "addRemote": "Tambah remote",
   "more": "Lainnya",
   "reorderMode": "Mode urut ulang",
-  "remoteButtonCount": "{count} tombol{plural}",
-  "@remoteButtonCount": {
-    "placeholders": {
-      "count": {},
-      "plural": {}
-    }
-  },
   "noRemotesYet": "Belum ada remote",
   "noRemotesDescription": "Buat remote untuk mulai mengirim kode IR.",
   "noRemotesNextStep": "Berikutnya: ketuk Tambah remote, lalu tambahkan tombol pertama.",
@@ -384,13 +377,6 @@
   "macroExampleText": "Mode Lanjut i-cybie:\n1. Kirim perintah \"Mode\"\n2. Tunggu 1000ms (mainan memproses)\n3. Kirim \"Aksi 1\"\n4. Tunggu 1000ms\n5. Kirim \"Aksi 2\"\n…dan seterusnya otomatis!",
   "createFirstMacro": "Buat Makro Pertama",
   "noRemote": "Tidak ada remote",
-  "macroStepCount": "{count} langkah{plural}",
-  "@macroStepCount": {
-    "placeholders": {
-      "count": {},
-      "plural": {}
-    }
-  },
   "aboutTimedMacros": "Tentang Makro Terjadwal",
   "aboutTimedMacrosDescription": "Makro Terjadwal memungkinkan Anda mengotomatiskan urutan perintah IR dengan jeda presisi di setiap langkah.",
   "sendCommand": "Kirim Perintah",

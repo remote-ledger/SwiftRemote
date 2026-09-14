@@ -357,13 +357,6 @@
   "addRemote": "Thêm điều khiển",
   "more": "Thêm",
   "reorderMode": "Chế độ sắp xếp lại",
-  "remoteButtonCount": "{count} nút{plural}",
-  "@remoteButtonCount": {
-    "placeholders": {
-      "count": {},
-      "plural": {}
-    }
-  },
   "noRemotesYet": "Chưa có điều khiển nào",
   "noRemotesDescription": "Tạo một điều khiển để bắt đầu gửi mã IR.",
   "noRemotesNextStep": "Tiếp theo: chạm Thêm điều khiển, rồi thêm các nút đầu tiên.",
@@ -384,13 +377,6 @@
   "macroExampleText": "Chế độ nâng cao i-cybie:\n1. Gửi lệnh \"Mode\"\n2. Chờ 1000ms (đồ chơi xử lý)\n3. Gửi \"Action 1\"\n4. Chờ 1000ms\n5. Gửi \"Action 2\"\n…và cứ thế tự động!",
   "createFirstMacro": "Tạo macro đầu tiên",
   "noRemote": "Không có điều khiển",
-  "macroStepCount": "{count} bước{plural}",
-  "@macroStepCount": {
-    "placeholders": {
-      "count": {},
-      "plural": {}
-    }
-  },
   "aboutTimedMacros": "Về macro hẹn giờ",
   "aboutTimedMacrosDescription": "Macro hẹn giờ cho phép bạn tự động hóa chuỗi lệnh IR với độ trễ chính xác giữa từng bước.",
   "sendCommand": "Gửi lệnh",

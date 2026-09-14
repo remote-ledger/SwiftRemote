@@ -357,13 +357,6 @@
   "addRemote": "Ekle kumanda",
   "more": "Daha",
   "reorderMode": "Reorder mod",
-  "remoteButtonCount": "{count} düğme{plural}",
-  "@remoteButtonCount": {
-    "placeholders": {
-      "count": {},
-      "plural": {}
-    }
-  },
   "noRemotesYet": "No remotes yet",
   "noRemotesDescription": "Create a kumanda to başlat sending IR codes.",
   "noRemotesNextStep": "Sonraki adım: Kumanda Ekle'ye dokunun, sonra ilk düğmelerinizi ekleyin.",
@@ -384,13 +377,6 @@
   "macroExampleText": "i-cybie Gelişmiş Mod\n1. \"Mode\" komutunu gönder\n2. 1000 ms bekle (oyuncak işler)\n3. \"Action 1\" gönder\n4. 1000 ms bekle\n5. \"Action 2\" gönder\n… ve bu şekilde otomatik devam eder!",
   "createFirstMacro": "İlk Makronu Oluştur",
   "noRemote": "No kumanda",
-  "macroStepCount": "{count} adım{plural}",
-  "@macroStepCount": {
-    "placeholders": {
-      "count": {},
-      "plural": {}
-    }
-  },
   "aboutTimedMacros": "About Timed Makrolar",
   "aboutTimedMacrosDescription": "Zamanlı Makrolar, her adım arasında hassas gecikmelerle IR komut dizilerini otomatikleştirmenizi sağlar.",
   "sendCommand": "Komut Gönder",

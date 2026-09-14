@@ -357,13 +357,6 @@
   "addRemote": "添加 遥控器",
   "more": "更多",
   "reorderMode": "排序模式",
-  "remoteButtonCount": "{count} 个按钮{plural}",
-  "@remoteButtonCount": {
-    "placeholders": {
-      "count": {},
-      "plural": {}
-    }
-  },
   "noRemotesYet": "还没有遥控器",
   "noRemotesDescription": "创建遥控器即可开始发送红外代码。",
   "noRemotesNextStep": "下一步 点击添加遥控器，然后添加第一个按钮。",
@@ -384,13 +377,6 @@
   "macroExampleText": "i-cybie 高级模式\n1. 发送 “Mode” 命令\n2. 等待 1000ms 玩具处理\n3. 发送 “Action 1”\n4. 等待 1000ms\n5. 发送 “Action 2”\n…随后自动继续。",
   "createFirstMacro": "创建你的第一个宏",
   "noRemote": "没有遥控器",
-  "macroStepCount": "{count} 个步骤{plural}",
-  "@macroStepCount": {
-    "placeholders": {
-      "count": {},
-      "plural": {}
-    }
-  },
   "aboutTimedMacros": "关于定时宏",
   "aboutTimedMacrosDescription": "定时宏可让你以精确延迟自动执行一系列红外命令。",
   "sendCommand": "发送命令",
