@@ -37,7 +37,15 @@ jobs:
             echo "::error::Tag ${GITHUB_REF_NAME} does not match pubspec version ${pubspec_version}."
             exit 1
           fi
-          echo "Releasing ${GITHUB_REF_NAME} (pubspec ${pubspec_version})."
+          build_number=$(sed -n 's/^version: *[0-9][^+ ]*+\([0-9]*\).*/\1/p' pubspec.yaml)
+          if [ "${pubspec_version##*.}" != "$build_number" ]; then
+            # This project numbers releases so the last component of the
+            # version is the Android versionCode: 1.0.47+47, then 1.0.48+48.
+            # Letting them drift apart loses the only thing the scheme buys.
+            echo "::error::Version ${pubspec_version} does not end in its build number ${build_number}."
+            exit 1
+          fi
+          echo "Releasing ${GITHUB_REF_NAME} (pubspec ${pubspec_version}, versionCode ${build_number})."
 
   build:
     needs: guard
