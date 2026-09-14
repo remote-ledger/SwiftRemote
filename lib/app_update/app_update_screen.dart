@@ -136,13 +136,16 @@ class _AppUpdateScreenState extends State<AppUpdateScreen> {
     final file = _downloaded;
     if (file == null) return;
 
-    if (!await _service.canInstall()) {
-      if (!mounted) return;
-      final granted = await _promptForInstallPermission();
-      if (!granted) return;
-    }
-
+    // The permission prompt sits inside the same try as the install because
+    // opening the settings page can fail too, and this method is reached
+    // straight from a button as well as from [_runDownload]; an error thrown
+    // past here would have nowhere to land.
     try {
+      if (!await _service.canInstall()) {
+        if (!mounted) return;
+        final granted = await _promptForInstallPermission();
+        if (!granted) return;
+      }
       await _service.install(file);
     } on UpdateException catch (e) {
       if (!mounted) return;
@@ -382,6 +385,13 @@ class _UpdateWatcherState extends State<UpdateWatcher> {
 
   Future<void> _maybeCheck() async {
     if (!await AppUpdateService.autoCheckEnabled()) return;
+    if (!await AppUpdateService.autoCheckDue()) return;
+    // The stamp goes down before the request rather than after a successful
+    // one. A reply that came back rate limited has already cost a request,
+    // and trying again on the next cold start is precisely what exhausts the
+    // allowance; waiting costs nothing, since the update screen still checks
+    // on demand whenever the user asks it to.
+    await AppUpdateService.markAutoChecked();
     UpdateCheck result;
     try {
       result = await AppUpdateService().check();

@@ -20,6 +20,19 @@ const String kUpdateRepoName = 'SwiftRemote';
 /// Preference key for the startup check.
 const String kUpdateAutoCheckPref = 'update_check_on_startup';
 
+/// Preference key for when the startup check last went out to GitHub, held
+/// as milliseconds since the epoch.
+const String kUpdateLastAutoCheckPref = 'update_last_auto_check';
+
+/// How long a startup check stands before another one is allowed.
+///
+/// Unauthenticated GitHub allows 60 requests an hour per IP address, and a
+/// carrier-grade NAT puts a great many devices behind a single address, so a
+/// request nobody asked for is worth making rarely. A day is far longer than
+/// releases arrive, and the check is only ever a courtesy: the button on the
+/// update screen is what a user reaches for when they actually want to know.
+const Duration kUpdateAutoCheckInterval = Duration(hours: 24);
+
 /// Why an update check or download could not finish.
 enum UpdateErrorKind { network, rateLimited, noRelease, noAsset, install }
 
@@ -224,7 +237,16 @@ class AppUpdateService {
     final request = http.Request('GET', Uri.parse(release.apkUrl));
     final http.StreamedResponse response;
     try {
-      response = await _client.send(request);
+      // The APK runs to tens of megabytes and a slow but healthy connection
+      // can legitimately spend minutes on it, so the transfer as a whole is
+      // deliberately left without a deadline. What is bounded is the wait
+      // for the response, which is the part that hangs when the connection
+      // is dead rather than merely slow, and 20 seconds for a set of headers
+      // is the same allowance [check] makes.
+      response =
+          await _client.send(request).timeout(const Duration(seconds: 20));
+    } on TimeoutException {
+      throw const UpdateException(UpdateErrorKind.network, 'timed out');
     } catch (e) {
       throw UpdateException(UpdateErrorKind.network, e.toString());
     }
@@ -240,7 +262,15 @@ class AppUpdateService {
     var received = 0;
     final sink = file.openWrite();
     try {
-      await for (final chunk in response.stream) {
+      // Headers arriving is no promise that the body will. A connection that
+      // dies mid-transfer often leaves the socket open, and without this the
+      // screen sits on "Downloading..." until the user gives up. The gap
+      // measured is the one between chunks, not the length of the download,
+      // so every byte that arrives resets the clock and a transfer that is
+      // only slow is never cut off. A minute is generous on purpose: a phone
+      // moving between cells can go quiet for a while and still recover.
+      final stream = response.stream.timeout(const Duration(seconds: 60));
+      await for (final chunk in stream) {
         if (cancel != null && cancel.isCancelled) {
           await sink.close();
           if (await file.exists()) await file.delete();
@@ -260,6 +290,9 @@ class AppUpdateService {
         await file.delete();
       }
       if (e is UpdateException) rethrow;
+      if (e is TimeoutException) {
+        throw const UpdateException(UpdateErrorKind.network, 'stalled');
+      }
       throw UpdateException(UpdateErrorKind.network, e.toString());
     }
 
@@ -276,8 +309,18 @@ class AppUpdateService {
   }
 
   /// Opens the system page where "install unknown apps" is granted.
+  ///
+  /// Reaching that page is not a certainty: some OEM builds ship without the
+  /// activity the intent names, and the native side reports the resulting
+  /// failure as a platform error. Converting it the way [install] does lets
+  /// the screen say something went wrong, rather than leaving the user
+  /// tapping a button that appears to do nothing at all.
   Future<void> openInstallSettings() async {
-    await _channel.invokeMethod<void>('openInstallSettings');
+    try {
+      await _channel.invokeMethod<void>('openInstallSettings');
+    } on PlatformException catch (e) {
+      throw UpdateException(UpdateErrorKind.install, e.message);
+    }
   }
 
   /// Hands [apk] to the system installer. The user confirms from there.
@@ -297,6 +340,31 @@ class AppUpdateService {
   static Future<void> setAutoCheckEnabled(bool value) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool(kUpdateAutoCheckPref, value);
+  }
+
+  /// Whether the startup check is due again, per [kUpdateAutoCheckInterval].
+  ///
+  /// Only the unattended check consults this. A check the user asked for is
+  /// answering a question they just put to the app, so it always goes out.
+  static Future<bool> autoCheckDue() async {
+    final prefs = await SharedPreferences.getInstance();
+    final last = prefs.getInt(kUpdateLastAutoCheckPref);
+    if (last == null) return true;
+    final elapsed = DateTime.now().millisecondsSinceEpoch - last;
+    // A stamp in the future means the clock has moved backwards, which is
+    // ordinary on a device that only learns the real time once it is online.
+    // Treating that as due avoids parking the check until the clock catches
+    // up with a stamp that was never meant to be that far ahead.
+    return elapsed < 0 || elapsed >= kUpdateAutoCheckInterval.inMilliseconds;
+  }
+
+  /// Records that the startup check has just gone out to GitHub.
+  static Future<void> markAutoChecked() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setInt(
+      kUpdateLastAutoCheckPref,
+      DateTime.now().millisecondsSinceEpoch,
+    );
   }
 }
 
