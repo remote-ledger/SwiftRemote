@@ -9,7 +9,7 @@ class AppLocalizationsMs extends AppLocalizations {
   AppLocalizationsMs([String locale = 'ms']) : super(locale);
 
   @override
-  String get appTitle => 'IR Blaster';
+  String get appTitle => 'SwiftRemote';
 
   @override
   String get loading => 'Memuat…';

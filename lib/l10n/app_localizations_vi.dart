@@ -9,7 +9,7 @@ class AppLocalizationsVi extends AppLocalizations {
   AppLocalizationsVi([String locale = 'vi']) : super(locale);
 
   @override
-  String get appTitle => 'IR Blaster';
+  String get appTitle => 'SwiftRemote';
 
   @override
   String get loading => 'Đang tải…';

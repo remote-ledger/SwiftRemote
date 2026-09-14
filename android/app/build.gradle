@@ -44,7 +44,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.github.shanjian.unimote"
+        applicationId "com.github.shanjian.swiftremote"
         minSdkVersion flutter.minSdkVersion
         targetSdkVersion 36
         versionCode flutterVersionCode.toInteger()

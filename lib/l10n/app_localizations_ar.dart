@@ -9,7 +9,7 @@ class AppLocalizationsAr extends AppLocalizations {
   AppLocalizationsAr([String locale = 'ar']) : super(locale);
 
   @override
-  String get appTitle => 'IR Blaster';
+  String get appTitle => 'SwiftRemote';
 
   @override
   String get loading => 'جار التحميل…';
@@ -4885,7 +4885,7 @@ class AppLocalizationsArEg extends AppLocalizationsAr {
   AppLocalizationsArEg() : super('ar_EG');
 
   @override
-  String get appTitle => 'IR Blaster';
+  String get appTitle => 'SwiftRemote';
 
   @override
   String get loading => 'جار التحميل…';

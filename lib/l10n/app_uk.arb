@@ -1,6 +1,6 @@
 {
   "@@locale": "uk",
-  "appTitle": "IR Blaster",
+  "appTitle": "SwiftRemote",
   "loading": "Завантаження…",
   "unknownError": "Невідома помилка",
   "failedToStart": "Не вдалося запустити",

@@ -1,6 +1,6 @@
 {
   "@@locale": "vi",
-  "appTitle": "IR Blaster",
+  "appTitle": "SwiftRemote",
   "loading": "Đang tải…",
   "unknownError": "Lỗi không rõ",
   "failedToStart": "Không khởi động được",

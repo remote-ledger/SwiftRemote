@@ -1,6 +1,6 @@
 {
   "@@locale": "de",
-  "appTitle": "IR Blaster",
+  "appTitle": "SwiftRemote",
   "loading": "Wird geladen…",
   "unknownError": "Unbekannter Fehler",
   "failedToStart": "Start fehlgeschlagen",

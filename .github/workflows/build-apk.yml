@@ -38,19 +38,19 @@ jobs:
 
       - name: Restore the signing key
         env:
-          KEYSTORE_BASE64: ${{ secrets.UNIMOTE_KEYSTORE_BASE64 }}
-          KEYSTORE_PASSWORD: ${{ secrets.UNIMOTE_KEYSTORE_PASSWORD }}
+          KEYSTORE_BASE64: ${{ secrets.SWIFTREMOTE_KEYSTORE_BASE64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.SWIFTREMOTE_KEYSTORE_PASSWORD }}
         run: |
           set -euo pipefail
           if [ -z "${KEYSTORE_BASE64:-}" ] || [ -z "${KEYSTORE_PASSWORD:-}" ]; then
             echo "::error::Signing secrets are missing; a release build would be unsigned."
             exit 1
           fi
-          printf '%s' "$KEYSTORE_BASE64" | base64 -d > android/app/unimote.jks
+          printf '%s' "$KEYSTORE_BASE64" | base64 -d > android/app/swiftremote.jks
           # build.gradle reads this file and resolves storeFile relative to android/app.
           {
-            echo "storeFile=unimote.jks"
-            echo "keyAlias=unimote"
+            echo "storeFile=swiftremote.jks"
+            echo "keyAlias=swiftremote"
             echo "storePassword=$KEYSTORE_PASSWORD"
             echo "keyPassword=$KEYSTORE_PASSWORD"
           } > android/app/key.properties
@@ -68,10 +68,10 @@ jobs:
 
       - name: Drop the key material
         if: always()
-        run: rm -f android/app/unimote.jks android/app/key.properties
+        run: rm -f android/app/swiftremote.jks android/app/key.properties
 
       - uses: actions/upload-artifact@v4
         with:
-          name: unimote-release-apk
+          name: swiftremote-release-apk
           path: build/app/outputs/flutter-apk/app-release.apk
           if-no-files-found: error
