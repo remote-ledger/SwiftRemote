@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
-import 'package:irblaster_controller/config/build_flags.dart';
-import 'package:irblaster_controller/state/haptics.dart';
+import 'package:swiftremote/config/build_flags.dart';
+import 'package:swiftremote/state/haptics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -113,7 +113,7 @@ class _AboutScreenState extends State<AboutScreen> {
   }
 
   String _packageName() => _info?.packageName ?? '—';
-  String _appName() => (_info?.appName.trim().isNotEmpty ?? false) ? _info!.appName : 'IR Blaster';
+  String _appName() => (_info?.appName.trim().isNotEmpty ?? false) ? _info!.appName : 'SwiftRemote';
 
   List<_OtherApp> _otherApps() {
     return const <_OtherApp>[
@@ -168,7 +168,7 @@ class _AboutScreenState extends State<AboutScreen> {
                 ),
                 const SizedBox(height: 6),
                 Text(
-                  'KaijinLab Inc.',
+                  'A fork of IR Blaster by KaijinLab Inc.',
                   style: theme.textTheme.bodyMedium?.copyWith(
                     color: cs.onSurface.withOpacity(0.8),
                     fontWeight: FontWeight.w800,
@@ -232,7 +232,7 @@ class _AboutScreenState extends State<AboutScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'IR Blaster helps build and use custom IR remotes on Android: transmit with internal emitters, compatible USB IR dongles, or audio-to-IR LED adapters, and import signals from Flipper Zero .ir files. No accounts, no tracking, no ads.',
+                    'SwiftRemote helps build and use custom IR remotes on Android: transmit with internal emitters, compatible USB IR dongles, or audio-to-IR LED adapters, and import signals from Flipper Zero .ir files. No accounts, no tracking, no ads.',
                     style: theme.textTheme.bodyMedium?.copyWith(
                       color: cs.onSurface.withOpacity(0.85),
                       height: 1.35,
@@ -342,7 +342,7 @@ class _AboutScreenState extends State<AboutScreen> {
           const SizedBox(height: 14),
           Center(
             child: Text(
-              '© $year KaijinLab • Open-source software',
+              '© $year KaijinLab • GPL-3.0 open-source software',
               style: theme.textTheme.bodySmall?.copyWith(
                 color: cs.onSurface.withOpacity(0.55),
                 fontWeight: FontWeight.w700,

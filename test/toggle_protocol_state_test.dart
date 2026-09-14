@@ -1,10 +1,10 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:irblaster_controller/ir/ir_protocol_types.dart';
-import 'package:irblaster_controller/ir/protocols/rc5.dart';
-import 'package:irblaster_controller/ir/protocols/rc6.dart';
-import 'package:irblaster_controller/ir/protocols/recs80.dart';
-import 'package:irblaster_controller/ir/protocols/recs80_l.dart';
-import 'package:irblaster_controller/ir/protocols/thomson7.dart';
+import 'package:swiftremote/ir/ir_protocol_types.dart';
+import 'package:swiftremote/ir/protocols/rc5.dart';
+import 'package:swiftremote/ir/protocols/rc6.dart';
+import 'package:swiftremote/ir/protocols/recs80.dart';
+import 'package:swiftremote/ir/protocols/recs80_l.dart';
+import 'package:swiftremote/ir/protocols/thomson7.dart';
 
 void main() {
   test('RC5 preview does not consume the next command toggle', () {

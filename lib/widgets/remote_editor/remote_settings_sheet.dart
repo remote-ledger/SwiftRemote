@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:irblaster_controller/l10n/l10n.dart';
-import 'package:irblaster_controller/widgets/remote_editor/remote_editor_draft.dart';
+import 'package:swiftremote/l10n/l10n.dart';
+import 'package:swiftremote/widgets/remote_editor/remote_editor_draft.dart';
 
 class RemoteSettingsResult {
   const RemoteSettingsResult({

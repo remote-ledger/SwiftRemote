@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:irblaster_controller/ir/protocols/nrc17.dart';
+import 'package:swiftremote/ir/protocols/nrc17.dart';
 
 void main() {
   test('NRC17 wraps the command in synchronization and termination frames', () {

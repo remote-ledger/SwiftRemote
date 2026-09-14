@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
-import 'package:irblaster_controller/ir/ir_protocol_registry.dart';
-import 'package:irblaster_controller/universal_power/power_code.dart';
-import 'package:irblaster_controller/universal_power/power_params.dart';
-import 'package:irblaster_controller/utils/ir.dart';
+import 'package:swiftremote/ir/ir_protocol_registry.dart';
+import 'package:swiftremote/universal_power/power_code.dart';
+import 'package:swiftremote/universal_power/power_params.dart';
+import 'package:swiftremote/utils/ir.dart';
 
 class UniversalPowerController extends ChangeNotifier {
   List<PowerCode> _queue = <PowerCode>[];

@@ -152,14 +152,14 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get homeHardwareRequiredBody =>
-      'IR Blaster có thể tạo và quản lý điều khiển từ xa trên bất kỳ điện thoại nào. Nhưng để thực sự gửi lệnh hồng ngoại, thiết bị của bạn cần một trong các tùy chọn phần cứng bên dưới.';
+      'SwiftRemote có thể tạo và quản lý điều khiển từ xa trên bất kỳ điện thoại nào. Nhưng để thực sự gửi lệnh hồng ngoại, thiết bị của bạn cần một trong các tùy chọn phần cứng bên dưới.';
 
   @override
   String get homeCanStillUseWithoutHardware =>
       'Bạn vẫn có thể tạo, nhập và sắp xếp điều khiển từ xa ngay bây giờ.';
 
   @override
-  String get homeWaysToUseIrBlaster => 'Các cách dùng IR Blaster';
+  String get homeWaysToUseIrBlaster => 'Các cách dùng SwiftRemote';
 
   @override
   String get homeBuiltInIrOptionTitle => 'Điện thoại có IR tích hợp';
@@ -906,7 +906,7 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String aboutAppNameWithCreator(Object creator) {
-    return 'IR Blaster - $creator';
+    return 'SwiftRemote - $creator';
   }
 
   @override
@@ -1150,7 +1150,7 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get openOnUsbAttachEnabledMessage =>
-      'Sẽ gợi ý mở IR Blaster khi có USB dongle được hỗ trợ được gắn vào.';
+      'Sẽ gợi ý mở SwiftRemote khi có USB dongle được hỗ trợ được gắn vào.';
 
   @override
   String get openOnUsbAttachDisabledMessage => 'Sẽ không gợi ý mở khi gắn USB.';

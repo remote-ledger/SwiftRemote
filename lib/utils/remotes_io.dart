@@ -5,10 +5,10 @@ import 'dart:typed_data';
 
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:irblaster_controller/l10n/l10n.dart';
-import 'package:irblaster_controller/models/timed_macro.dart';
-import 'package:irblaster_controller/utils/macros_io.dart';
-import 'package:irblaster_controller/utils/remote.dart';
+import 'package:swiftremote/l10n/l10n.dart';
+import 'package:swiftremote/models/timed_macro.dart';
+import 'package:swiftremote/utils/macros_io.dart';
+import 'package:swiftremote/utils/remote.dart';
 import 'package:media_store_plus/media_store_plus.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -161,7 +161,7 @@ ImportPreviewResult analyzeImportedText(
       return ImportPreviewResult(
         formatLabel: 'JSON backup',
         isSupported: true,
-        supportReason: 'Compatible IR Blaster JSON backup.',
+        supportReason: 'Compatible SwiftRemote JSON backup.',
         issues: const <String>[],
         remotes: remotes,
       );
@@ -229,9 +229,9 @@ ImportPreviewResult analyzeImportedText(
 
     return unsupported(
       'Unknown',
-      'Unsupported file type for IR Blaster import.',
+      'Unsupported file type for SwiftRemote import.',
       issues: const <String>[
-        'Supported formats: IR Blaster JSON backup, Flipper .ir, IRPlus XML, and LIRC config.',
+        'Supported formats: SwiftRemote JSON backup, Flipper .ir, IRPlus XML, and LIRC config.',
       ],
     );
   } catch (e) {

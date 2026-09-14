@@ -1,20 +1,20 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:irblaster_controller/l10n/l10n.dart';
-import 'package:irblaster_controller/state/app_locale.dart';
-import 'package:irblaster_controller/state/app_shortcuts.dart';
-import 'package:irblaster_controller/state/continue_context_prefs.dart';
-import 'package:irblaster_controller/state/haptics.dart';
-import 'package:irblaster_controller/state/remotes_state.dart';
-import 'package:irblaster_controller/state/startup_prefs.dart';
-import 'package:irblaster_controller/utils/ir_transmitter_platform.dart';
-import 'package:irblaster_controller/utils/remote.dart';
-import 'package:irblaster_controller/widgets/ir_finder_screen.dart';
-import 'package:irblaster_controller/widgets/macros_tab.dart';
-import 'package:irblaster_controller/widgets/remote_list.dart';
-import 'package:irblaster_controller/widgets/remote_view.dart';
-import 'package:irblaster_controller/widgets/settings_screen.dart';
+import 'package:swiftremote/l10n/l10n.dart';
+import 'package:swiftremote/state/app_locale.dart';
+import 'package:swiftremote/state/app_shortcuts.dart';
+import 'package:swiftremote/state/continue_context_prefs.dart';
+import 'package:swiftremote/state/haptics.dart';
+import 'package:swiftremote/state/remotes_state.dart';
+import 'package:swiftremote/state/startup_prefs.dart';
+import 'package:swiftremote/utils/ir_transmitter_platform.dart';
+import 'package:swiftremote/utils/remote.dart';
+import 'package:swiftremote/widgets/ir_finder_screen.dart';
+import 'package:swiftremote/widgets/macros_tab.dart';
+import 'package:swiftremote/widgets/remote_list.dart';
+import 'package:swiftremote/widgets/remote_view.dart';
+import 'package:swiftremote/widgets/settings_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeShell extends StatefulWidget {

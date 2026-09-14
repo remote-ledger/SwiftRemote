@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:irblaster_controller/l10n/icon_picker_names.dart';
-import 'package:irblaster_controller/l10n/l10n.dart';
-import 'package:irblaster_controller/state/last_action_strip.dart';
-import 'package:irblaster_controller/state/quick_settings_prefs.dart';
-import 'package:irblaster_controller/state/remotes_state.dart';
-import 'package:irblaster_controller/utils/button_label.dart';
-import 'package:irblaster_controller/utils/ir.dart';
-import 'package:irblaster_controller/utils/remote.dart';
+import 'package:swiftremote/l10n/icon_picker_names.dart';
+import 'package:swiftremote/l10n/l10n.dart';
+import 'package:swiftremote/state/last_action_strip.dart';
+import 'package:swiftremote/state/quick_settings_prefs.dart';
+import 'package:swiftremote/state/remotes_state.dart';
+import 'package:swiftremote/utils/button_label.dart';
+import 'package:swiftremote/utils/ir.dart';
+import 'package:swiftremote/utils/remote.dart';
 
 Future<QuickTilePick?> pickButtonForTile(
   BuildContext context, {

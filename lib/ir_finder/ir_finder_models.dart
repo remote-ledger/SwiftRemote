@@ -1,8 +1,8 @@
 import 'dart:math';
 
-import 'package:irblaster_controller/ir/ir_protocol_registry.dart';
-import 'package:irblaster_controller/ir/ir_protocol_types.dart';
-import 'package:irblaster_controller/ir_finder/ir_finder_search.dart';
+import 'package:swiftremote/ir/ir_protocol_registry.dart';
+import 'package:swiftremote/ir/ir_protocol_types.dart';
+import 'package:swiftremote/ir_finder/ir_finder_search.dart';
 
 enum IrFinderMode { bruteforce, database }
 

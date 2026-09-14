@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
-import 'package:irblaster_controller/utils/remote.dart';
+import 'package:swiftremote/utils/remote.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 final ValueNotifier<int> remoteHighlightsRevision = ValueNotifier<int>(0);

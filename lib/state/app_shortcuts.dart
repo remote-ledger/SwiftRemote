@@ -2,26 +2,26 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:irblaster_controller/l10n/app_localizations.dart';
-import 'package:irblaster_controller/models/timed_macro.dart';
-import 'package:irblaster_controller/state/continue_context_prefs.dart';
-import 'package:irblaster_controller/state/macros_state.dart';
-import 'package:irblaster_controller/state/remotes_state.dart';
-import 'package:irblaster_controller/state/startup_prefs.dart';
-import 'package:irblaster_controller/utils/macros_io.dart';
-import 'package:irblaster_controller/utils/remote.dart';
-import 'package:irblaster_controller/widgets/ir_finder_screen.dart';
-import 'package:irblaster_controller/widgets/learning_mode_screen.dart';
-import 'package:irblaster_controller/widgets/macro_run_screen.dart';
-import 'package:irblaster_controller/widgets/remote_view.dart';
-import 'package:irblaster_controller/widgets/universal_power_screen.dart';
+import 'package:swiftremote/l10n/app_localizations.dart';
+import 'package:swiftremote/models/timed_macro.dart';
+import 'package:swiftremote/state/continue_context_prefs.dart';
+import 'package:swiftremote/state/macros_state.dart';
+import 'package:swiftremote/state/remotes_state.dart';
+import 'package:swiftremote/state/startup_prefs.dart';
+import 'package:swiftremote/utils/macros_io.dart';
+import 'package:swiftremote/utils/remote.dart';
+import 'package:swiftremote/widgets/ir_finder_screen.dart';
+import 'package:swiftremote/widgets/learning_mode_screen.dart';
+import 'package:swiftremote/widgets/macro_run_screen.dart';
+import 'package:swiftremote/widgets/remote_view.dart';
+import 'package:swiftremote/widgets/universal_power_screen.dart';
 
 class AppShortcutController {
   AppShortcutController._();
 
   static final AppShortcutController instance = AppShortcutController._();
   static const MethodChannel _channel =
-      MethodChannel('org.nslabs/app_shortcuts');
+      MethodChannel('com.github.shanjian.swiftremote/app_shortcuts');
 
   GlobalKey<NavigatorState>? _navigatorKey;
   String? _pendingAction;

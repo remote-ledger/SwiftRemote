@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:irblaster_controller/ir/protocols/sharp.dart';
+import 'package:swiftremote/ir/protocols/sharp.dart';
 
 void main() {
   test('Sharp emits the required normal, inverted, normal frame sequence', () {

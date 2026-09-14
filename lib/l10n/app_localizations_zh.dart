@@ -141,13 +141,13 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get homeHardwareRequiredBody =>
-      'IR Blaster 可以在任何手机上创建和管理遥控器。但若要真正发送红外命令，设备需要具备下列其中一种硬件方式。';
+      'SwiftRemote 可以在任何手机上创建和管理遥控器。但若要真正发送红外命令，设备需要具备下列其中一种硬件方式。';
 
   @override
   String get homeCanStillUseWithoutHardware => '你现在仍然可以创建、导入和整理遥控器。';
 
   @override
-  String get homeWaysToUseIrBlaster => '使用 IR Blaster 的方式';
+  String get homeWaysToUseIrBlaster => '使用 SwiftRemote 的方式';
 
   @override
   String get homeBuiltInIrOptionTitle => '带内置红外的手机';
@@ -854,7 +854,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String aboutAppNameWithCreator(Object creator) {
-    return 'IR Blaster - $creator';
+    return 'SwiftRemote - $creator';
   }
 
   @override
@@ -1078,7 +1078,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get openOnUsbAttachEnabledMessage =>
-      '连接受支持的 USB dongle 时，将建议打开 IR Blaster。';
+      '连接受支持的 USB dongle 时，将建议打开 SwiftRemote。';
 
   @override
   String get openOnUsbAttachDisabledMessage => '连接 USB 时不会建议打开。';

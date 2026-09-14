@@ -154,14 +154,14 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get homeHardwareRequiredBody =>
-      'IR Blaster может создавать и управлять пультами на любом телефоне. Но для отправки инфракрасных команд устройству нужен один из вариантов оборудования ниже.';
+      'SwiftRemote может создавать и управлять пультами на любом телефоне. Но для отправки инфракрасных команд устройству нужен один из вариантов оборудования ниже.';
 
   @override
   String get homeCanStillUseWithoutHardware =>
       'Вы уже можете создавать, импортировать и упорядочивать пульты прямо сейчас.';
 
   @override
-  String get homeWaysToUseIrBlaster => 'Как использовать IR Blaster';
+  String get homeWaysToUseIrBlaster => 'Как использовать SwiftRemote';
 
   @override
   String get homeBuiltInIrOptionTitle => 'Телефон со встроенным ИК';
@@ -914,7 +914,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String aboutAppNameWithCreator(Object creator) {
-    return 'IR Blaster - $creator';
+    return 'SwiftRemote - $creator';
   }
 
   @override
@@ -1160,7 +1160,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get openOnUsbAttachEnabledMessage =>
-      'При подключении поддерживаемого USB-адаптера будет предлагаться открыть IR Blaster.';
+      'При подключении поддерживаемого USB-адаптера будет предлагаться открыть SwiftRemote.';
 
   @override
   String get openOnUsbAttachDisabledMessage =>

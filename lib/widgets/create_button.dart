@@ -3,18 +3,18 @@ import 'dart:async';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:irblaster_controller/ir/ir_protocol_registry.dart';
-import 'package:irblaster_controller/ir/ir_protocol_types.dart';
-import 'package:irblaster_controller/ir_finder/irblaster_db.dart';
-import 'package:irblaster_controller/ir_finder/ir_finder_models.dart';
-import 'package:irblaster_controller/l10n/l10n.dart';
-import 'package:irblaster_controller/state/last_action_strip.dart';
-import 'package:irblaster_controller/utils/button_color_accessibility.dart';
-import 'package:irblaster_controller/utils/ir.dart';
-import 'package:irblaster_controller/utils/remote.dart';
-import 'package:irblaster_controller/widgets/code_test.dart';
-import 'package:irblaster_controller/widgets/icon_picker.dart';
-import 'package:irblaster_controller/widgets/ir_waveform_view.dart';
+import 'package:swiftremote/ir/ir_protocol_registry.dart';
+import 'package:swiftremote/ir/ir_protocol_types.dart';
+import 'package:swiftremote/ir_finder/irblaster_db.dart';
+import 'package:swiftremote/ir_finder/ir_finder_models.dart';
+import 'package:swiftremote/l10n/l10n.dart';
+import 'package:swiftremote/state/last_action_strip.dart';
+import 'package:swiftremote/utils/button_color_accessibility.dart';
+import 'package:swiftremote/utils/ir.dart';
+import 'package:swiftremote/utils/remote.dart';
+import 'package:swiftremote/widgets/code_test.dart';
+import 'package:swiftremote/widgets/icon_picker.dart';
+import 'package:swiftremote/widgets/ir_waveform_view.dart';
 import 'package:uuid/uuid.dart';
 
 enum _LabelType { image, text, icon }
@@ -59,7 +59,7 @@ String _necBitOrderLabel(_NecBitOrder value) {
 enum _DbPreset { power, volume, channel, navigation, all }
 
 const MethodChannel _platformChannel =
-    MethodChannel('org.nslabs/irtransmitter');
+    MethodChannel('com.github.shanjian.swiftremote/irtransmitter');
 
 class CreateButton extends StatefulWidget {
   final IRButton? button;

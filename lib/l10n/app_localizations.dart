@@ -387,7 +387,7 @@ abstract class AppLocalizations {
   /// No description provided for @homeHardwareRequiredBody.
   ///
   /// In en, this message translates to:
-  /// **'IR Blaster can create and manage remotes on any phone. To actually send infrared commands, your device needs one of the hardware options below.'**
+  /// **'SwiftRemote can create and manage remotes on any phone. To actually send infrared commands, your device needs one of the hardware options below.'**
   String get homeHardwareRequiredBody;
 
   /// No description provided for @homeCanStillUseWithoutHardware.
@@ -399,7 +399,7 @@ abstract class AppLocalizations {
   /// No description provided for @homeWaysToUseIrBlaster.
   ///
   /// In en, this message translates to:
-  /// **'Ways to use IR Blaster'**
+  /// **'Ways to use SwiftRemote'**
   String get homeWaysToUseIrBlaster;
 
   /// No description provided for @homeBuiltInIrOptionTitle.
@@ -1725,7 +1725,7 @@ abstract class AppLocalizations {
   /// No description provided for @aboutAppNameWithCreator.
   ///
   /// In en, this message translates to:
-  /// **'IR Blaster - {creator}'**
+  /// **'SwiftRemote - {creator}'**
   String aboutAppNameWithCreator(Object creator);
 
   /// No description provided for @versionLabel.
@@ -2145,7 +2145,7 @@ abstract class AppLocalizations {
   /// No description provided for @openOnUsbAttachEnabledMessage.
   ///
   /// In en, this message translates to:
-  /// **'Will suggest opening IR Blaster when a supported USB dongle is attached.'**
+  /// **'Will suggest opening SwiftRemote when a supported USB dongle is attached.'**
   String get openOnUsbAttachEnabledMessage;
 
   /// No description provided for @openOnUsbAttachDisabledMessage.

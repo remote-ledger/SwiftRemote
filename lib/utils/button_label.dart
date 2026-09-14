@@ -1,5 +1,5 @@
-import 'package:irblaster_controller/utils/remote.dart';
-import 'package:irblaster_controller/widgets/icon_picker.dart';
+import 'package:swiftremote/utils/remote.dart';
+import 'package:swiftremote/widgets/icon_picker.dart';
 
 String displayButtonLabel(
   IRButton button, {

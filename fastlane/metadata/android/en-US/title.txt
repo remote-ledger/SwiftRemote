@@ -1,1 +1,1 @@
-IR Blaster Remote
+SwiftRemote

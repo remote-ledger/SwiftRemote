@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:irblaster_controller/ir/ir_protocol_registry.dart';
-import 'package:irblaster_controller/ir_finder/ir_finder_models.dart';
+import 'package:swiftremote/ir/ir_protocol_registry.dart';
+import 'package:swiftremote/ir_finder/ir_finder_models.dart';
 
 void main() {
   test('F12 editor limits input to its 12-bit payload', () {

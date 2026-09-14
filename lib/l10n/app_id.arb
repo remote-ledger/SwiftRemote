@@ -41,9 +41,9 @@
   "requestUsbPermission": "Minta izin USB",
   "homeHardwareTip": "Tip: Anda masih bisa membuat dan mengatur remote sekarang. Perangkat keras hanya diperlukan saat mengirim.",
   "homeNoIrTransmitterTitle": "Tidak ada pemancar IR",
-  "homeHardwareRequiredBody": "IR Blaster dapat membuat dan mengelola remote di ponsel apa pun. Namun untuk benar-benar mengirim perintah inframerah, perangkat Anda memerlukan salah satu opsi perangkat keras di bawah ini.",
+  "homeHardwareRequiredBody": "SwiftRemote dapat membuat dan mengelola remote di ponsel apa pun. Namun untuk benar-benar mengirim perintah inframerah, perangkat Anda memerlukan salah satu opsi perangkat keras di bawah ini.",
   "homeCanStillUseWithoutHardware": "Anda tetap bisa membuat, mengimpor, dan menata remote sekarang juga.",
-  "homeWaysToUseIrBlaster": "Cara menggunakan IR Blaster",
+  "homeWaysToUseIrBlaster": "Cara menggunakan SwiftRemote",
   "homeBuiltInIrOptionTitle": "Ponsel dengan IR bawaan",
   "homeBuiltInIrOptionSubtitle": "Berfungsi pada ponsel yang didukung dengan pemancar IR bawaan. Ponsel ini tidak memilikinya.",
   "homeBuiltInIrUnavailable": "Tidak tersedia di ponsel ini",
@@ -220,7 +220,7 @@
   "backupTip": "Tip: ekspor cadangan sebelum pengubahan besar. Impor mendukung cadangan penuh, cadangan JSON remote saja versi lama, dan file Flipper Zero .ir.",
   "aboutTitle": "Tentang",
   "aboutSubtitle": "Info aplikasi dan detail sumber terbuka",
-  "aboutAppNameWithCreator": "IR Blaster - {creator}",
+  "aboutAppNameWithCreator": "SwiftRemote - {creator}",
   "@aboutAppNameWithCreator": {
     "placeholders": {
       "creator": {}
@@ -311,7 +311,7 @@
   "unavailableOnThisDevice": "Tidak tersedia di perangkat ini",
   "openOnUsbAttachTitle": "Buka saat USB terpasang",
   "openOnUsbAttachSubtitle": "Android dapat menyarankan membuka aplikasi saat dongle IR USB yang didukung tersambung.",
-  "openOnUsbAttachEnabledMessage": "Akan menyarankan membuka IR Blaster saat dongle USB yang didukung terpasang.",
+  "openOnUsbAttachEnabledMessage": "Akan menyarankan membuka SwiftRemote saat dongle USB yang didukung terpasang.",
   "openOnUsbAttachDisabledMessage": "Tidak akan menyarankan buka saat USB terpasang.",
   "failedToUpdateSetting": "Gagal memperbarui setelan.",
   "unnamedButton": "Tombol tanpa nama",

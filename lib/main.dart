@@ -4,28 +4,28 @@ import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:irblaster_controller/state/app_locale.dart';
-import 'package:irblaster_controller/state/app_shortcuts.dart';
-import 'package:irblaster_controller/state/app_theme.dart';
-import 'package:irblaster_controller/state/dynamic_color.dart';
-import 'package:irblaster_controller/state/haptics.dart';
-import 'package:irblaster_controller/state/orientation_pref.dart';
-import 'package:irblaster_controller/state/remote_display_prefs.dart';
-import 'package:irblaster_controller/state/startup_prefs.dart';
-import 'package:irblaster_controller/state/transmitter_prefs.dart';
-import 'package:irblaster_controller/state/remotes_state.dart';
-import 'package:irblaster_controller/state/macros_state.dart';
-import 'package:irblaster_controller/utils/ir.dart';
+import 'package:swiftremote/state/app_locale.dart';
+import 'package:swiftremote/state/app_shortcuts.dart';
+import 'package:swiftremote/state/app_theme.dart';
+import 'package:swiftremote/state/dynamic_color.dart';
+import 'package:swiftremote/state/haptics.dart';
+import 'package:swiftremote/state/orientation_pref.dart';
+import 'package:swiftremote/state/remote_display_prefs.dart';
+import 'package:swiftremote/state/startup_prefs.dart';
+import 'package:swiftremote/state/transmitter_prefs.dart';
+import 'package:swiftremote/state/remotes_state.dart';
+import 'package:swiftremote/state/macros_state.dart';
+import 'package:swiftremote/utils/ir.dart';
 import 'package:flutter/services.dart';
-import 'package:irblaster_controller/app_update/app_update_screen.dart';
-import 'package:irblaster_controller/l10n/app_localizations.dart';
-import 'package:irblaster_controller/l10n/l10n.dart';
-import 'package:irblaster_controller/utils/remote.dart';
-import 'package:irblaster_controller/utils/macros_io.dart';
-import 'package:irblaster_controller/widgets/home_shell.dart';
-import 'package:irblaster_controller/widgets/quick_tile_chooser.dart';
-import 'package:irblaster_controller/state/quick_settings_prefs.dart';
-import 'package:irblaster_controller/state/home_button_widget_prefs.dart';
+import 'package:swiftremote/app_update/app_update_screen.dart';
+import 'package:swiftremote/l10n/app_localizations.dart';
+import 'package:swiftremote/l10n/l10n.dart';
+import 'package:swiftremote/utils/remote.dart';
+import 'package:swiftremote/utils/macros_io.dart';
+import 'package:swiftremote/widgets/home_shell.dart';
+import 'package:swiftremote/widgets/quick_tile_chooser.dart';
+import 'package:swiftremote/state/quick_settings_prefs.dart';
+import 'package:swiftremote/state/home_button_widget_prefs.dart';
 import 'package:media_store_plus/media_store_plus.dart';
 
 Future<void> main() async {
@@ -66,11 +66,11 @@ Future<void> main() async {
 final GlobalKey<NavigatorState> _navKey = GlobalKey<NavigatorState>();
 
 const MethodChannel _controlChannel =
-    MethodChannel('org.nslabs/irtransmitter_controls');
+    MethodChannel('com.github.shanjian.swiftremote/irtransmitter_controls');
 const MethodChannel _quickTileChannel =
-    MethodChannel('org.nslabs/irtransmitter_quick_tile');
+    MethodChannel('com.github.shanjian.swiftremote/irtransmitter_quick_tile');
 const MethodChannel _homeWidgetChannel =
-    MethodChannel('org.nslabs/irtransmitter_home_widget');
+    MethodChannel('com.github.shanjian.swiftremote/irtransmitter_home_widget');
 String? _pendingQuickTileKey;
 int? _pendingHomeWidgetId;
 

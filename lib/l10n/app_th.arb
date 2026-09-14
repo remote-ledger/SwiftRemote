@@ -41,9 +41,9 @@
   "requestUsbPermission": "ขอสิทธิ์ USB",
   "homeHardwareTip": "เคล็ดลับ คุณยังสร้างและจัดรีโมตได้ตอนนี้ ฮาร์ดแวร์จำเป็นเฉพาะตอนส่งเท่านั้น",
   "homeNoIrTransmitterTitle": "ไม่มีตัวส่ง IR",
-  "homeHardwareRequiredBody": "IR Blaster สามารถสร้างและจัดการรีโมตได้บนโทรศัพท์ทุกรุ่น แต่หากต้องการส่งคำสั่งอินฟราเรดจริง อุปกรณ์ของคุณต้องมีฮาร์ดแวร์อย่างใดอย่างหนึ่งด้านล่างนี้",
+  "homeHardwareRequiredBody": "SwiftRemote สามารถสร้างและจัดการรีโมตได้บนโทรศัพท์ทุกรุ่น แต่หากต้องการส่งคำสั่งอินฟราเรดจริง อุปกรณ์ของคุณต้องมีฮาร์ดแวร์อย่างใดอย่างหนึ่งด้านล่างนี้",
   "homeCanStillUseWithoutHardware": "ตอนนี้คุณยังสร้าง นำเข้า และจัดระเบียบรีโมตได้อยู่",
-  "homeWaysToUseIrBlaster": "วิธีใช้งาน IR Blaster",
+  "homeWaysToUseIrBlaster": "วิธีใช้งาน SwiftRemote",
   "homeBuiltInIrOptionTitle": "โทรศัพท์ที่มี IR ในตัว",
   "homeBuiltInIrOptionSubtitle": "ใช้งานได้กับโทรศัพท์ที่รองรับและมีตัวส่ง IR ในตัว โทรศัพท์เครื่องนี้ไม่มี",
   "homeBuiltInIrUnavailable": "ไม่พร้อมใช้งานบนโทรศัพท์เครื่องนี้",
@@ -220,7 +220,7 @@
   "backupTip": "Tip: export a backup before large edits. นำเข้า supports full backups, legacy รีโมต-เท่านั้น JSON backups, and Flipper Zero.ir ไฟล์s.",
   "aboutTitle": "เกี่ยวกับ",
   "aboutSubtitle": "ข้อมูลแอปและรายละเอียดโอเพนซอร์ส",
-  "aboutAppNameWithCreator": "IR Bล่าสุดer - {creator}",
+  "aboutAppNameWithCreator": "SwiftRemote - {creator}",
   "@aboutAppNameWithCreator": {
     "placeholders": {
       "creator": {}
@@ -311,7 +311,7 @@
   "unavailableOnThisDevice": "Unพร้อมใช้ on this อุปกรณ์",
   "openOnUsbAttachTitle": "เปิดเมื่อเสียบ USB",
   "openOnUsbAttachSubtitle": "Android may suggest opening the app when a ที่รองรับ ดองเกิล IR USB is connected.",
-  "openOnUsbAttachEnabledMessage": "จะแนะนำให้เปิด IR Bล่าสุดer เมื่อเสียบดองเกิล USB ที่รองรับ",
+  "openOnUsbAttachEnabledMessage": "จะแนะนำให้เปิด SwiftRemote เมื่อเสียบดองเกิล USB ที่รองรับ",
   "openOnUsbAttachDisabledMessage": "จะไม่แนะนำให้เปิดเมื่อเสียบ USB",
   "failedToUpdateSetting": "ไม่สำเร็จในการupdate setting.",
   "unnamedButton": "ปุ่มไม่มีชื่อ",

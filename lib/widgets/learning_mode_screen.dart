@@ -3,16 +3,16 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:irblaster_controller/ir/ir_protocol_registry.dart';
-import 'package:irblaster_controller/l10n/l10n.dart';
-import 'package:irblaster_controller/state/haptics.dart';
-import 'package:irblaster_controller/state/orientation_pref.dart';
-import 'package:irblaster_controller/state/remotes_state.dart';
-import 'package:irblaster_controller/utils/ir.dart';
-import 'package:irblaster_controller/utils/ir_transmitter_platform.dart';
-import 'package:irblaster_controller/utils/remote.dart';
-import 'package:irblaster_controller/widgets/ir_waveform_view.dart';
-import 'package:irblaster_controller/widgets/remote_view.dart';
+import 'package:swiftremote/ir/ir_protocol_registry.dart';
+import 'package:swiftremote/l10n/l10n.dart';
+import 'package:swiftremote/state/haptics.dart';
+import 'package:swiftremote/state/orientation_pref.dart';
+import 'package:swiftremote/state/remotes_state.dart';
+import 'package:swiftremote/utils/ir.dart';
+import 'package:swiftremote/utils/ir_transmitter_platform.dart';
+import 'package:swiftremote/utils/remote.dart';
+import 'package:swiftremote/widgets/ir_waveform_view.dart';
+import 'package:swiftremote/widgets/remote_view.dart';
 
 class LearningModeScreen extends StatefulWidget {
   const LearningModeScreen({super.key});

@@ -3,7 +3,7 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:irblaster_controller/ir_finder/ir_finder_models.dart';
+import 'package:swiftremote/ir_finder/ir_finder_models.dart';
 import 'package:path/path.dart' as p;
 import 'package:sqflite/sqflite.dart';
 
@@ -11,8 +11,14 @@ class IrBlasterDb {
   IrBlasterDb._();
   static final IrBlasterDb instance = IrBlasterDb._();
 
-  static const String _assetDbPath = 'assets/db/irblaster.sqlite';
-  static const String _dbFileName = 'irblaster.sqlite';
+  static const String _assetDbPath = 'assets/db/swiftremote.sqlite';
+  static const String _dbFileName = 'swiftremote.sqlite';
+
+  /// The name this database had before the app was renamed to SwiftRemote.
+  /// An install that upgrades from one of those builds still has the old
+  /// copy sitting in the databases directory; it is never read again, so
+  /// delete it rather than leave tens of megabytes behind.
+  static const String _legacyDbFileName = 'irblaster.sqlite';
 
   Database? _db;
   Future<void>? _initFuture;
@@ -32,6 +38,8 @@ class IrBlasterDb {
 
     final String dbDir = await getDatabasesPath();
     final String dbPath = p.join(dbDir, _dbFileName);
+
+    await _deleteLegacyDb(dbDir);
 
     final bool exists = await databaseExists(dbPath);
     if (!exists) {
@@ -54,6 +62,18 @@ class IrBlasterDb {
     );
 
     await _ensurePerformanceTuning();
+  }
+
+  Future<void> _deleteLegacyDb(String dbDir) async {
+    try {
+      final File legacy = File(p.join(dbDir, _legacyDbFileName));
+      if (await legacy.exists()) {
+        await legacy.delete();
+      }
+    } catch (_) {
+      // Housekeeping only: a database that cannot be removed must not stop
+      // the finder from opening the one we actually use.
+    }
   }
 
   Future<void> _copyAssetTo(String targetPath) async {

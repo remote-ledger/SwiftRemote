@@ -2,11 +2,11 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:irblaster_controller/ir_finder/ir_finder_models.dart';
-import 'package:irblaster_controller/ir_finder/irblaster_db.dart';
-import 'package:irblaster_controller/l10n/l10n.dart';
-import 'package:irblaster_controller/utils/db_button_import.dart';
-import 'package:irblaster_controller/utils/remote.dart';
+import 'package:swiftremote/ir_finder/ir_finder_models.dart';
+import 'package:swiftremote/ir_finder/irblaster_db.dart';
+import 'package:swiftremote/l10n/l10n.dart';
+import 'package:swiftremote/utils/db_button_import.dart';
+import 'package:swiftremote/utils/remote.dart';
 
 enum _DbPreset { all, power, volume, channel, navigation }
 

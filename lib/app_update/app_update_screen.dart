@@ -2,8 +2,8 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:irblaster_controller/app_update/app_update_service.dart';
-import 'package:irblaster_controller/l10n/l10n.dart';
+import 'package:swiftremote/app_update/app_update_service.dart';
+import 'package:swiftremote/l10n/l10n.dart';
 
 /// What the screen is doing right now.
 enum _Phase { idle, checking, upToDate, available, downloading, ready, failed }

@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
-import 'package:irblaster_controller/ir_finder/ir_finder_models.dart';
-import 'package:irblaster_controller/models/timed_macro.dart';
-import 'package:irblaster_controller/utils/remote.dart';
+import 'package:swiftremote/ir_finder/ir_finder_models.dart';
+import 'package:swiftremote/models/timed_macro.dart';
+import 'package:swiftremote/utils/remote.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 final ValueNotifier<int> continueContextsRevision = ValueNotifier<int>(0);

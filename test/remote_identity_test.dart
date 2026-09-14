@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:irblaster_controller/state/remote_highlights_prefs.dart';
-import 'package:irblaster_controller/utils/remote.dart';
+import 'package:swiftremote/state/remote_highlights_prefs.dart';
+import 'package:swiftremote/utils/remote.dart';
 
 void main() {
   test('remote highlight refs prefer stable ids over duplicate names', () {

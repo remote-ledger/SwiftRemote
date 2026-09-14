@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:irblaster_controller/utils/remote.dart';
+import 'package:swiftremote/utils/remote.dart';
 
 /// Shared in-memory remotes list.
 /// Keeps existing storage format and logic intact.

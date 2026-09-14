@@ -2,11 +2,11 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:irblaster_controller/l10n/icon_picker_names.dart';
-import 'package:irblaster_controller/l10n/l10n.dart';
-import 'package:irblaster_controller/state/remotes_state.dart';
-import 'package:irblaster_controller/utils/button_label.dart';
-import 'package:irblaster_controller/utils/remote.dart';
+import 'package:swiftremote/l10n/icon_picker_names.dart';
+import 'package:swiftremote/l10n/l10n.dart';
+import 'package:swiftremote/state/remotes_state.dart';
+import 'package:swiftremote/utils/button_label.dart';
+import 'package:swiftremote/utils/remote.dart';
 import 'package:uuid/uuid.dart';
 
 class ExistingRemoteButtonImportSheet extends StatefulWidget {

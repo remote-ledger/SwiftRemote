@@ -155,14 +155,14 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get homeHardwareRequiredBody =>
-      'IR Blaster kan op elke telefoon afstandsbedieningen maken en beheren. Om daadwerkelijk infraroodcommando\'s te verzenden, heeft je apparaat een van de onderstaande hardwareopties nodig.';
+      'SwiftRemote kan op elke telefoon afstandsbedieningen maken en beheren. Om daadwerkelijk infraroodcommando\'s te verzenden, heeft je apparaat een van de onderstaande hardwareopties nodig.';
 
   @override
   String get homeCanStillUseWithoutHardware =>
       'Je kunt nu nog steeds afstandsbedieningen maken, importeren en organiseren.';
 
   @override
-  String get homeWaysToUseIrBlaster => 'Manieren om IR Blaster te gebruiken';
+  String get homeWaysToUseIrBlaster => 'Manieren om SwiftRemote te gebruiken';
 
   @override
   String get homeBuiltInIrOptionTitle => 'Telefoon met ingebouwde IR';
@@ -933,7 +933,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String aboutAppNameWithCreator(Object creator) {
-    return 'IR Blaster - $creator';
+    return 'SwiftRemote - $creator';
   }
 
   @override
@@ -1182,7 +1182,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get openOnUsbAttachEnabledMessage =>
-      'Zal voorstellen IR Blaster te openen wanneer een ondersteunde USB-dongle wordt aangesloten.';
+      'Zal voorstellen SwiftRemote te openen wanneer een ondersteunde USB-dongle wordt aangesloten.';
 
   @override
   String get openOnUsbAttachDisabledMessage =>

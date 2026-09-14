@@ -41,9 +41,9 @@
   "requestUsbPermission": "Запросить доступ USB",
   "homeHardwareTip": "Подсказка: вы уже можете создавать и упорядочивать пульты. Оборудование нужно только для передачи.",
   "homeNoIrTransmitterTitle": "Нет ИК-передатчика",
-  "homeHardwareRequiredBody": "IR Blaster может создавать и управлять пультами на любом телефоне. Но для отправки инфракрасных команд устройству нужен один из вариантов оборудования ниже.",
+  "homeHardwareRequiredBody": "SwiftRemote может создавать и управлять пультами на любом телефоне. Но для отправки инфракрасных команд устройству нужен один из вариантов оборудования ниже.",
   "homeCanStillUseWithoutHardware": "Вы уже можете создавать, импортировать и упорядочивать пульты прямо сейчас.",
-  "homeWaysToUseIrBlaster": "Как использовать IR Blaster",
+  "homeWaysToUseIrBlaster": "Как использовать SwiftRemote",
   "homeBuiltInIrOptionTitle": "Телефон со встроенным ИК",
   "homeBuiltInIrOptionSubtitle": "Работает на поддерживаемых телефонах со встроенным ИК-передатчиком. В этом телефоне его нет.",
   "homeBuiltInIrUnavailable": "Недоступно на этом телефоне",
@@ -220,7 +220,7 @@
   "backupTip": "Подсказка: экспортируйте копию перед большими изменениями. Импорт поддерживает полные копии, старые JSON-копии только с пультами и файлы Flipper Zero .ir.",
   "aboutTitle": "О приложении",
   "aboutSubtitle": "Информация о приложении и деталях open source",
-  "aboutAppNameWithCreator": "IR Blaster - {creator}",
+  "aboutAppNameWithCreator": "SwiftRemote - {creator}",
   "@aboutAppNameWithCreator": {
     "placeholders": {
       "creator": {}
@@ -311,7 +311,7 @@
   "unavailableOnThisDevice": "Недоступно на этом устройстве",
   "openOnUsbAttachTitle": "Открывать при подключении USB",
   "openOnUsbAttachSubtitle": "Android может предложить открыть приложение при подключении поддерживаемого USB ИК-адаптера.",
-  "openOnUsbAttachEnabledMessage": "При подключении поддерживаемого USB-адаптера будет предлагаться открыть IR Blaster.",
+  "openOnUsbAttachEnabledMessage": "При подключении поддерживаемого USB-адаптера будет предлагаться открыть SwiftRemote.",
   "openOnUsbAttachDisabledMessage": "Предложение открыть приложение при подключении USB отключено.",
   "failedToUpdateSetting": "Не удалось обновить настройку.",
   "unnamedButton": "Безымянная кнопка",

@@ -1,5 +1,5 @@
-import 'package:irblaster_controller/ir/ir_protocol_registry.dart';
-import 'package:irblaster_controller/ir/ir_protocol_types.dart';
+import 'package:swiftremote/ir/ir_protocol_registry.dart';
+import 'package:swiftremote/ir/ir_protocol_types.dart';
 
 const Map<String, String> _protocolExampleHex = <String, String>{
   'denon': '0000',

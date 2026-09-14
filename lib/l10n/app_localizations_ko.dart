@@ -147,14 +147,14 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get homeHardwareRequiredBody =>
-      'IR Blaster는 어떤 휴대폰에서도 리모컨을 만들고 관리할 수 있습니다. 하지만 실제로 적외선 명령을 보내려면 아래 하드웨어 옵션 중 하나가 필요합니다.';
+      'SwiftRemote는 어떤 휴대폰에서도 리모컨을 만들고 관리할 수 있습니다. 하지만 실제로 적외선 명령을 보내려면 아래 하드웨어 옵션 중 하나가 필요합니다.';
 
   @override
   String get homeCanStillUseWithoutHardware =>
       '지금도 리모컨을 만들고, 가져오고, 정리할 수 있습니다.';
 
   @override
-  String get homeWaysToUseIrBlaster => 'IR Blaster 사용 방법';
+  String get homeWaysToUseIrBlaster => 'SwiftRemote 사용 방법';
 
   @override
   String get homeBuiltInIrOptionTitle => 'IR 내장 휴대폰';
@@ -883,7 +883,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String aboutAppNameWithCreator(Object creator) {
-    return 'IR Blaster - $creator';
+    return 'SwiftRemote - $creator';
   }
 
   @override
@@ -1116,7 +1116,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get openOnUsbAttachEnabledMessage =>
-      '지원되는 USB 동글이 연결되면 IR Blaster 열기를 제안합니다.';
+      '지원되는 USB 동글이 연결되면 SwiftRemote 열기를 제안합니다.';
 
   @override
   String get openOnUsbAttachDisabledMessage => 'USB 연결 시 열기를 제안하지 않습니다.';

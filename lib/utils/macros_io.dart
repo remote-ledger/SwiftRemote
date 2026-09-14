@@ -4,10 +4,10 @@ import 'dart:typed_data';
 
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:irblaster_controller/l10n/l10n.dart';
-import 'package:irblaster_controller/models/macro_step.dart';
-import 'package:irblaster_controller/models/timed_macro.dart';
-import 'package:irblaster_controller/utils/remote.dart';
+import 'package:swiftremote/l10n/l10n.dart';
+import 'package:swiftremote/models/macro_step.dart';
+import 'package:swiftremote/models/timed_macro.dart';
+import 'package:swiftremote/utils/remote.dart';
 import 'package:media_store_plus/media_store_plus.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:uuid/uuid.dart';

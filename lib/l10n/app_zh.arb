@@ -41,9 +41,9 @@
   "requestUsbPermission": "申请 USB 权限",
   "homeHardwareTip": "提示 你现在仍可创建和整理遥控器。只有发送时才需要硬件。",
   "homeNoIrTransmitterTitle": "没有可用的红外发射器",
-  "homeHardwareRequiredBody": "IR Blaster 可以在任何手机上创建和管理遥控器。但若要真正发送红外命令，设备需要具备下列其中一种硬件方式。",
+  "homeHardwareRequiredBody": "SwiftRemote 可以在任何手机上创建和管理遥控器。但若要真正发送红外命令，设备需要具备下列其中一种硬件方式。",
   "homeCanStillUseWithoutHardware": "你现在仍然可以创建、导入和整理遥控器。",
-  "homeWaysToUseIrBlaster": "使用 IR Blaster 的方式",
+  "homeWaysToUseIrBlaster": "使用 SwiftRemote 的方式",
   "homeBuiltInIrOptionTitle": "带内置红外的手机",
   "homeBuiltInIrOptionSubtitle": "可在带有内置红外发射器的受支持手机上使用。这部手机不具备该功能。",
   "homeBuiltInIrUnavailable": "此手机不可用",
@@ -220,7 +220,7 @@
   "backupTip": "提示 大改前请先导出备份。导入支持完整备份、旧版仅遥控器 JSON 备份和 Flipper Zero .ir 文件。",
   "aboutTitle": "关于",
   "aboutSubtitle": "应用信息与开源详情",
-  "aboutAppNameWithCreator": "IR Blaster - {creator}",
+  "aboutAppNameWithCreator": "SwiftRemote - {creator}",
   "@aboutAppNameWithCreator": {
     "placeholders": {
       "creator": {}
@@ -311,7 +311,7 @@
   "unavailableOnThisDevice": "此设备不可用",
   "openOnUsbAttachTitle": "连接 USB 时打开",
   "openOnUsbAttachSubtitle": "连接受支持的 USB 红外 dongle 时，Android 可能会建议打开此应用。",
-  "openOnUsbAttachEnabledMessage": "连接受支持的 USB dongle 时，将建议打开 IR Blaster。",
+  "openOnUsbAttachEnabledMessage": "连接受支持的 USB dongle 时，将建议打开 SwiftRemote。",
   "openOnUsbAttachDisabledMessage": "连接 USB 时不会建议打开。",
   "failedToUpdateSetting": "更新设置失败。",
   "unnamedButton": "未命名按钮",

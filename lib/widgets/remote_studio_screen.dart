@@ -2,17 +2,17 @@ import 'dart:io';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:irblaster_controller/ir/ir_protocol_registry.dart';
-import 'package:irblaster_controller/l10n/icon_picker_names.dart';
-import 'package:irblaster_controller/l10n/l10n.dart';
-import 'package:irblaster_controller/utils/button_color_accessibility.dart';
-import 'package:irblaster_controller/utils/button_label.dart';
-import 'package:irblaster_controller/utils/ir.dart';
-import 'package:irblaster_controller/utils/remote.dart';
-import 'package:irblaster_controller/widgets/remote_editor/add_button_sheet.dart';
-import 'package:irblaster_controller/widgets/remote_editor/remote_editor_actions.dart';
-import 'package:irblaster_controller/widgets/remote_editor/remote_editor_draft.dart';
-import 'package:irblaster_controller/widgets/remote_editor/remote_settings_sheet.dart';
+import 'package:swiftremote/ir/ir_protocol_registry.dart';
+import 'package:swiftremote/l10n/icon_picker_names.dart';
+import 'package:swiftremote/l10n/l10n.dart';
+import 'package:swiftremote/utils/button_color_accessibility.dart';
+import 'package:swiftremote/utils/button_label.dart';
+import 'package:swiftremote/utils/ir.dart';
+import 'package:swiftremote/utils/remote.dart';
+import 'package:swiftremote/widgets/remote_editor/add_button_sheet.dart';
+import 'package:swiftremote/widgets/remote_editor/remote_editor_actions.dart';
+import 'package:swiftremote/widgets/remote_editor/remote_editor_draft.dart';
+import 'package:swiftremote/widgets/remote_editor/remote_settings_sheet.dart';
 
 class RemoteStudioScreen extends StatefulWidget {
   const RemoteStudioScreen({

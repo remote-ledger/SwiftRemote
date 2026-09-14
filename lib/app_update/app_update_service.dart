@@ -113,7 +113,8 @@ class AppUpdateService {
 
   final http.Client _client;
 
-  static const MethodChannel _channel = MethodChannel('org.nslabs/app_update');
+  static const MethodChannel _channel =
+      MethodChannel('com.github.shanjian.swiftremote/app_update');
 
   /// Asks GitHub for the newest published release.
   ///

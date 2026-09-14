@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:irblaster_controller/ir/protocols/rca_38.dart';
+import 'package:swiftremote/ir/protocols/rca_38.dart';
 
 void main() {
   test('RCA-38 matches the canonical 24-bit frame', () {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:irblaster_controller/l10n/icon_picker_names.dart';
-import 'package:irblaster_controller/l10n/l10n.dart';
+import 'package:swiftremote/l10n/icon_picker_names.dart';
+import 'package:swiftremote/l10n/l10n.dart';
 
 class IconPickerData {
   final IconData iconData;

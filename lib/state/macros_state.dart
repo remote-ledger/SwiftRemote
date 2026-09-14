@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:irblaster_controller/models/timed_macro.dart';
+import 'package:swiftremote/models/timed_macro.dart';
 
 List<TimedMacro> macros = <TimedMacro>[];
 final ValueNotifier<int> macrosRevision = ValueNotifier<int>(0);

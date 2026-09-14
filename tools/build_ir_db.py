@@ -5,8 +5,8 @@ import sqlite3
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SQL_DUMP = ROOT / "assets" / "db_src" / "irblaster.sql"
-OUT_DB = ROOT / "assets" / "db" / "irblaster.sqlite"
+SQL_DUMP = ROOT / "assets" / "db_src" / "swiftremote.sql"
+OUT_DB = ROOT / "assets" / "db" / "swiftremote.sqlite"
 
 def main() -> None:
     if not SQL_DUMP.exists():

@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:irblaster_controller/utils/ir.dart';
-import 'package:irblaster_controller/utils/remote.dart';
-import 'package:irblaster_controller/utils/remotes_io.dart';
+import 'package:swiftremote/utils/ir.dart';
+import 'package:swiftremote/utils/remote.dart';
+import 'package:swiftremote/utils/remotes_io.dart';
 
 void main() {
   const fallbackRemoteName = 'ImportedRemote';

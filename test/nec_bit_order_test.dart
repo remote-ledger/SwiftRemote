@@ -1,7 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:irblaster_controller/utils/ir.dart';
-import 'package:irblaster_controller/utils/remote.dart';
+import 'package:swiftremote/utils/ir.dart';
+import 'package:swiftremote/utils/remote.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -38,7 +38,7 @@ void main() {
     final expected = <int>[0x00, 0xFF, 0x01, 0xFE];
     expect(_decodeAsStandardNec(previewIRButton(button).pattern), expected);
 
-    const channel = MethodChannel('org.nslabs/irtransmitter');
+    const channel = MethodChannel('com.github.shanjian.swiftremote/irtransmitter');
     MethodCall? transmitted;
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
         .setMockMethodCallHandler(channel, (call) async {

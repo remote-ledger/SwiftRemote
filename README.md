@@ -1,45 +1,37 @@
 
-# Android IR Blaster
+# SwiftRemote
 
-<a href="https://play.google.com/store/apps/details?id=org.nslabs.ir_blaster">
-<img src="fastlane/metadata/android/en-US/images/icon.png" width="160" alt="Android Infrared Blaster icon" align="left" style="border: solid 1px #ddd;"/>
+<a href="https://github.com/shanjian/SwiftRemote/releases/latest">
+<img src="fastlane/metadata/android/en-US/images/icon.png" width="160" alt="SwiftRemote icon" align="left" style="border: solid 1px #ddd;"/>
 </a>
 <div>
-<h3 style="font-size: 2.2rem; letter-spacing: 1px;">IR Blaster Remote</h3>
+<h3 style="font-size: 2.2rem; letter-spacing: 1px;">SwiftRemote</h3>
 <p style="font-size: 1.15rem; font-weight: 500;">
     <strong>Universal IR Remote for Android</strong><br>
-    <strong>IR Blaster</strong> is an Android application for creating, managing, and transmitting infrared (IR) signals through multiple output methods, including a device’s built-in IR emitter, supported USB IR dongles, and audio-to-IR LED adapters.
+    <strong>SwiftRemote</strong> is an Android application for creating, managing, and transmitting infrared (IR) signals through multiple output methods, including a device’s built-in IR emitter, supported USB IR dongles, and audio-to-IR LED adapters.
 
 The app enables users to build fully custom remotes, discover unknown IR codes through guided brute-force tools, and seamlessly manage IR configurations. It also supports importing IR signals from Flipper Zero `.ir` files, **IRPLUS `.irplus` / XML files**, and **LIRC `.conf` / `.cfg` / `.lirc` files**, making it easy to reuse and adapt existing IR libraries across devices.
 
 It also includes a GitHub Store for browsing compatible IR files directly from GitHub repositories and importing them into the app without manually downloading and moving files first. For supported USB learning dongles, Learning Mode can capture a signal from a physical remote, preview it, and save it into a new or existing remote.
 
-IR Blaster is designed to be flexible, hardware-agnostic, and user-friendly, while remaining powerful enough for advanced users who need precise control over IR protocols and signal timing.
+SwiftRemote is designed to be flexible, hardware-agnostic, and user-friendly, while remaining powerful enough for advanced users who need precise control over IR protocols and signal timing.
 
   </p>
 
 <div align="center">
 
-  [![GitHub License](https://img.shields.io/github/license/iodn/android-ir-blaster)](LICENSE)
-  [![Issues](https://img.shields.io/github/issues/iodn/android-ir-blaster.svg)](https://github.com/iodn/android-ir-blaster/issues)
-  [![Pull Requests](https://img.shields.io/github/issues-pr/iodn/android-ir-blaster.svg)](https://github.com/iodn/android-ir-blaster/pulls)
+  [![GitHub License](https://img.shields.io/github/license/shanjian/SwiftRemote)](LICENSE)
+  [![Build APK](https://github.com/shanjian/SwiftRemote/actions/workflows/build-apk.yml/badge.svg)](https://github.com/shanjian/SwiftRemote/actions/workflows/build-apk.yml)
+  [![Issues](https://img.shields.io/github/issues/shanjian/SwiftRemote.svg)](https://github.com/shanjian/SwiftRemote/issues)
+  [![Latest release](https://img.shields.io/github/v/release/shanjian/SwiftRemote)](https://github.com/shanjian/SwiftRemote/releases/latest)
   [![Android Version](https://img.shields.io/badge/Android-11.0%2B-green.svg)](https://www.android.com)
-  
-<div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
-  <a href="https://f-droid.org/en/packages/org.nslabs.ir_blaster/" style="display:inline-flex; align-items:center;">
-    <img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
-         alt="Get it on F-Droid"
-         style="display:block; height:90px; width:auto;">
-  </a>
-
-  <a href="https://play.google.com/store/apps/details?id=org.nslabs.ir_blaster" style="display:inline-flex; align-items:center;">
-    <img src="https://raw.githubusercontent.com/pioug/google-play-badges/06ccd9252af1501613da2ca28eaffe31307a4e6d/svg/English.svg"
-         alt="Get it on Google Play"
-         style="display:block; height:70px; width:auto;">
-  </a>
-</div>
 
 </div>
+
+SwiftRemote is a fork of [IR Blaster](https://github.com/iodn/android-ir-blaster)
+by KaijinLab Inc. It is not published on Google Play or F-Droid — releases are
+the signed APKs attached to this repository, and installed builds update
+themselves from there.
 
 
 ## Overview
@@ -86,8 +78,8 @@ Tip: At least one transmit path must be available (Internal, USB, or Audio). A b
   - USB: Discovery, permission, endpoint selection, and framed/bulk protocol with RLE payloads
   - Audio: AudioTrack at 48 kHz with mono or stereo anti‑phase synthesis
 - Platform channels:
-  - Method channel: `org.nslabs/irtransmitter`
-  - Event channel: `org.nslabs/irtransmitter_events`
+  - Method channel: `com.github.shanjian.swiftremote/irtransmitter`
+  - Event channel: `com.github.shanjian.swiftremote/irtransmitter_events`
   - Methods: `transmit`, `transmitRaw`, `hasIrEmitter`, `getTransmitterCapabilities`, `setTransmitterType`, `getTransmitterType`,
     `getPreferredTransmitterType`, `setPreferredTransmitterType`, `getAutoSwitchEnabled`, `setAutoSwitchEnabled`,
     `usbScanAndRequest`, `usbDescribe`, `getSupportedFrequencies`
@@ -204,7 +196,7 @@ Notes:
 ## Developer Notes
 
 ### Platform channels
-- Method Channel: `org.nslabs/irtransmitter`
+- Method Channel: `com.github.shanjian.swiftremote/irtransmitter`
   - `transmit`: Send encoder‑generated patterns at the encoder’s frequency.
   - `transmitRaw`: Send a raw microsecond pattern at a specified frequency.
   - `hasIrEmitter`: True if any path is available (internal, USB present, or audio available).
@@ -215,7 +207,7 @@ Notes:
   - `usbScanAndRequest`
   - `getSupportedFrequencies`
   - `usbDescribe`
-- Event Channel: `org.nslabs/irtransmitter_events`
+- Event Channel: `com.github.shanjian.swiftremote/irtransmitter_events`
   - Emits capability snapshots on attach/detach, permission responses, and type changes.
 
 ### Audio path
@@ -225,7 +217,7 @@ Notes:
 - `UsbDiscoveryManager` filters, opens, and claims interfaces; `UsbProtocolFormatter` handles handshake, RLE body, fragmentation, and tail adjustments; `UsbIrTransmitter` performs bulk I/O and runs a short‑lived background reader.
 
 ### Persistence
-- `tx_type`, `ui_tx_type`, `auto_switch` in `SharedPreferences` persist user choices and auto behavior.
+- `tx_type`, `ui_tx_type`, `auto_switch` in the `swiftremote_prefs` `SharedPreferences` file persist user choices and auto behavior.
 
 ## Requirements
 
@@ -237,24 +229,20 @@ Notes:
 
 ## Installation
 
-1. Download the APK:
-
-[<img src="https://raw.githubusercontent.com/pioug/google-play-badges/06ccd9252af1501613da2ca28eaffe31307a4e6d/svg/English.svg"
-     alt="Get it on Google Play"
-     height="80">](https://play.google.com/store/apps/details?id=org.nslabs.ir_blaster)
-
-[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
-     alt="Get it on F-Droid"
-     height="113">](https://f-droid.org/en/packages/org.nslabs.ir_blaster/)
-     
-Or download the latest APK from the Releases Section.
+1. Download the APK attached to the
+   [latest release](https://github.com/shanjian/SwiftRemote/releases/latest).
 
 2. Install the Application:
    - Enable installation from unknown sources if needed.
    - Follow the on‑screen instructions.
 
-3. Launch and Configure:
-   - Open IR Blaster.
+3. Later updates install themselves: **Settings > About > Updates** checks this
+   repository, downloads the APK, and hands it to the system installer. Every
+   release is signed with the same key, so an update installs over the build
+   you already have.
+
+4. Launch and Configure:
+   - Open SwiftRemote.
    - Choose your transmitter (Settings > IR Transmitter).
    - Create remotes or import a Flipper Zero `.ir` file.
 
@@ -301,7 +289,7 @@ Or download the latest APK from the Releases Section.
 
 ## Contributing
 
-Contributions are welcome! If you'd like to help improve IR Blaster:
+Contributions are welcome! If you'd like to help improve SwiftRemote:
 Please do not submit pull requests that only modify translation or localization files in `lib/l10n/*.arb`. Translation contributions are not being accepted through PRs.
 1. Fork the repository.
 2. Create a new branch for your feature or bug fix.
@@ -317,9 +305,9 @@ If you encounter any issues or have questions, please open an issue on the GitHu
 
 ## Acknowledgments
 
-IR Blaster is originally a fork of [osram-remote](https://github.com/TalkingPanda0/osram-remote). Special thanks to [TalkingPanda0](https://github.com/TalkingPanda0) for his foundational work.
+SwiftRemote is a fork of [IR Blaster](https://github.com/iodn/android-ir-blaster) by [KaijinLab Inc.](https://neroswarm.com), which is itself a fork of [osram-remote](https://github.com/TalkingPanda0/osram-remote). Special thanks to KaijinLab and to [TalkingPanda0](https://github.com/TalkingPanda0) for the foundational work.
 
-## More Apps by KaijinLab!
+## More apps by KaijinLab, the upstream author
 
 | App                                                               | What it does                                                                   |
 | ----------------------------------------------------------------- | ------------------------------------------------------------------------------ |

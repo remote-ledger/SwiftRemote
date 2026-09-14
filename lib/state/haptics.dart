@@ -115,7 +115,8 @@ class HapticsController extends ChangeNotifier {
 
 /// Convenience wrapper that respects the global haptics setting and intensity.
 class Haptics {
-  static const MethodChannel _channel = MethodChannel('org.nslabs/irtransmitter');
+  static const MethodChannel _channel =
+      MethodChannel('com.github.shanjian.swiftremote/irtransmitter');
   static MethodChannel get channel => _channel;
   static bool get _on => HapticsController.instance.enabled;
   static int get _level => HapticsController.instance.intensity; // 0..3

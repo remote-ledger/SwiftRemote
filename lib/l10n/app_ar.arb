@@ -41,9 +41,9 @@
   "requestUsbPermission": "طلب إذن USB",
   "homeHardwareTip": "ملاحظة: ما زال بإمكانك إنشاء أجهزة التحكم وتنظيمها الآن. يلزم العتاد فقط عند الإرسال.",
   "homeNoIrTransmitterTitle": "لا يوجد مرسل IR متاح",
-  "homeHardwareRequiredBody": "يمكن لتطبيق IR Blaster إنشاء وإدارة أجهزة التحكم على أي هاتف. لكن لإرسال أوامر الأشعة تحت الحمراء فعليًا، يحتاج جهازك إلى أحد خيارات العتاد أدناه.",
+  "homeHardwareRequiredBody": "يمكن لتطبيق SwiftRemote إنشاء وإدارة أجهزة التحكم على أي هاتف. لكن لإرسال أوامر الأشعة تحت الحمراء فعليًا، يحتاج جهازك إلى أحد خيارات العتاد أدناه.",
   "homeCanStillUseWithoutHardware": "ما زال بإمكانك إنشاء أجهزة التحكم واستيرادها وتنظيمها الآن.",
-  "homeWaysToUseIrBlaster": "طرق استخدام IR Blaster",
+  "homeWaysToUseIrBlaster": "طرق استخدام SwiftRemote",
   "homeBuiltInIrOptionTitle": "هاتف مزود بـ IR مدمج",
   "homeBuiltInIrOptionSubtitle": "يعمل على الهواتف المدعومة التي تحتوي على مرسل IR مدمج. هذا الهاتف لا يحتوي على واحد.",
   "homeBuiltInIrUnavailable": "غير متاح على هذا الهاتف",
@@ -220,7 +220,7 @@
   "backupTip": "ملاحظة: صدّر نسخة احتياطية قبل التعديلات الكبيرة. يدعم الاستيراد النسخ الكاملة ونسخ JSON القديمة الخاصة بالأجهزة فقط وملفات Flipper Zero بصيغة .ir.",
   "aboutTitle": "حول",
   "aboutSubtitle": "معلومات التطبيق وتفاصيل المصدر المفتوح",
-  "aboutAppNameWithCreator": "IR Blaster - {creator}",
+  "aboutAppNameWithCreator": "SwiftRemote - {creator}",
   "@aboutAppNameWithCreator": {
     "placeholders": {
       "creator": {}
@@ -311,7 +311,7 @@
   "unavailableOnThisDevice": "غير متاح على هذا الجهاز",
   "openOnUsbAttachTitle": "الفتح عند توصيل USB",
   "openOnUsbAttachSubtitle": "قد يقترح أندرويد فتح التطبيق عند توصيل دونجل IR عبر USB مدعوم.",
-  "openOnUsbAttachEnabledMessage": "سيُقترح فتح IR Blaster عند توصيل دونجل USB مدعوم.",
+  "openOnUsbAttachEnabledMessage": "سيُقترح فتح SwiftRemote عند توصيل دونجل USB مدعوم.",
   "openOnUsbAttachDisabledMessage": "لن يُقترح الفتح عند توصيل USB.",
   "failedToUpdateSetting": "فشل إلى update setting.",
   "unnamedButton": "زر بدون اسم",

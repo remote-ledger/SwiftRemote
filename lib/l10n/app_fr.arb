@@ -41,9 +41,9 @@
   "requestUsbPermission": "Demander l'autorisation USB",
   "homeHardwareTip": "Astuce : vous pouvez déjà créer et organiser vos télécommandes. Le matériel n'est requis qu'à l'envoi.",
   "homeNoIrTransmitterTitle": "Aucun émetteur IR dispo",
-  "homeHardwareRequiredBody": "IR Blaster permet de créer et de gérer des télécommandes sur n'importe quel téléphone. Pour envoyer réellement des commandes infrarouges, votre appareil a besoin de l'une des options matérielles ci-dessous.",
+  "homeHardwareRequiredBody": "SwiftRemote permet de créer et de gérer des télécommandes sur n'importe quel téléphone. Pour envoyer réellement des commandes infrarouges, votre appareil a besoin de l'une des options matérielles ci-dessous.",
   "homeCanStillUseWithoutHardware": "Vous pouvez déjà créer, importer et organiser des télécommandes dès maintenant.",
-  "homeWaysToUseIrBlaster": "Façons d'utiliser IR Blaster",
+  "homeWaysToUseIrBlaster": "Façons d'utiliser SwiftRemote",
   "homeBuiltInIrOptionTitle": "Téléphone avec IR intégré",
   "homeBuiltInIrOptionSubtitle": "Fonctionne sur les téléphones compatibles dotés d'un émetteur IR intégré. Ce téléphone n'en possède pas.",
   "homeBuiltInIrUnavailable": "Non disponible sur ce téléphone",
@@ -225,7 +225,7 @@
   "backupTip": "Astuce : exportez une sauvegarde avant de gros changements. L'import prend en charge les sauvegardes complètes, les anciennes sauvegardes JSON de télécommandes seules et les fichiers .ir Flipper Zero.",
   "aboutTitle": "À propos",
   "aboutSubtitle": "Infos de l'appli et détails open source",
-  "aboutAppNameWithCreator": "IR Blaster - {creator}",
+  "aboutAppNameWithCreator": "SwiftRemote - {creator}",
   "@aboutAppNameWithCreator": {
     "placeholders": {
       "creator": {}
@@ -316,7 +316,7 @@
   "unavailableOnThisDevice": "Indisponible sur cet appareil",
   "openOnUsbAttachTitle": "Ouvrir à la connexion USB",
   "openOnUsbAttachSubtitle": "Android peut proposer d'ouvrir l'appli quand un dongle IR USB compatible est connecté.",
-  "openOnUsbAttachEnabledMessage": "Proposera d'ouvrir IR Blaster quand un dongle USB compatible est branché.",
+  "openOnUsbAttachEnabledMessage": "Proposera d'ouvrir SwiftRemote quand un dongle USB compatible est branché.",
   "openOnUsbAttachDisabledMessage": "Ne proposera pas l'ouverture à la connexion USB.",
   "failedToUpdateSetting": "Échec de la mise à jour du réglage.",
   "unnamedButton": "Bouton sans nom",

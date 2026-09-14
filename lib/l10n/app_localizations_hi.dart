@@ -152,14 +152,14 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get homeHardwareRequiredBody =>
-      'IR Blaster किसी भी फ़ोन पर रिमोट बना और प्रबंधित कर सकता है। लेकिन वास्तव में इन्फ्रारेड कमांड भेजने के लिए आपके डिवाइस में नीचे दिए गए हार्डवेयर विकल्पों में से एक होना ज़रूरी है।';
+      'SwiftRemote किसी भी फ़ोन पर रिमोट बना और प्रबंधित कर सकता है। लेकिन वास्तव में इन्फ्रारेड कमांड भेजने के लिए आपके डिवाइस में नीचे दिए गए हार्डवेयर विकल्पों में से एक होना ज़रूरी है।';
 
   @override
   String get homeCanStillUseWithoutHardware =>
       'आप अभी भी रिमोट बना, आयात कर और व्यवस्थित कर सकते हैं।';
 
   @override
-  String get homeWaysToUseIrBlaster => 'IR Blaster इस्तेमाल करने के तरीके';
+  String get homeWaysToUseIrBlaster => 'SwiftRemote इस्तेमाल करने के तरीके';
 
   @override
   String get homeBuiltInIrOptionTitle => 'बिल्ट-इन IR वाला फ़ोन';
@@ -911,7 +911,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String aboutAppNameWithCreator(Object creator) {
-    return 'IR Blaster - $creator';
+    return 'SwiftRemote - $creator';
   }
 
   @override
@@ -1157,7 +1157,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get openOnUsbAttachEnabledMessage =>
-      'खोलने का सुझाव देगा IR Blaster जब a समर्थित USB डोंगल है जुड़ा हुआ.';
+      'खोलने का सुझाव देगा SwiftRemote जब a समर्थित USB डोंगल है जुड़ा हुआ.';
 
   @override
   String get openOnUsbAttachDisabledMessage =>

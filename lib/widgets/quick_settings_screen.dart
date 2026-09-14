@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:irblaster_controller/l10n/l10n.dart';
-import 'package:irblaster_controller/state/quick_settings_prefs.dart';
-import 'package:irblaster_controller/utils/remote.dart';
-import 'package:irblaster_controller/widgets/quick_tile_chooser.dart';
+import 'package:swiftremote/l10n/l10n.dart';
+import 'package:swiftremote/state/quick_settings_prefs.dart';
+import 'package:swiftremote/utils/remote.dart';
+import 'package:swiftremote/widgets/quick_tile_chooser.dart';
 
 class QuickSettingsScreen extends StatefulWidget {
   const QuickSettingsScreen({super.key});

@@ -41,9 +41,9 @@
   "requestUsbPermission": "Humiling ng pahintulot sa USB",
   "homeHardwareTip": "Tip. Maaari ka nang gumawa at mag-ayos ng mga remote ngayon. Kailangan lang ang hardware kapag magpapadala na.",
   "homeNoIrTransmitterTitle": "Walang available na IR transmitter",
-  "homeHardwareRequiredBody": "Kayang gumawa at mamahala ng IR Blaster ng mga remote sa anumang telepono. Pero para aktuwal na makapagpadala ng infrared command, kailangan ng iyong device ang isa sa mga hardware option sa ibaba.",
+  "homeHardwareRequiredBody": "Kayang gumawa at mamahala ng SwiftRemote ng mga remote sa anumang telepono. Pero para aktuwal na makapagpadala ng infrared command, kailangan ng iyong device ang isa sa mga hardware option sa ibaba.",
   "homeCanStillUseWithoutHardware": "Maaari ka pa ring gumawa, mag-import, at mag-ayos ng mga remote ngayon din.",
-  "homeWaysToUseIrBlaster": "Mga paraan para gamitin ang IR Blaster",
+  "homeWaysToUseIrBlaster": "Mga paraan para gamitin ang SwiftRemote",
   "homeBuiltInIrOptionTitle": "Teleponong may built-in IR",
   "homeBuiltInIrOptionSubtitle": "Gumagana sa mga suportadong teleponong may built-in IR blaster. Wala nito ang teleponong ito.",
   "homeBuiltInIrUnavailable": "Hindi available sa teleponong ito",
@@ -220,7 +220,7 @@
   "backupTip": "Tip. Mag-export ng backup bago ang malalaking edit. Sinusuportahan ng import ang full backup, legacy mga remote lamang JSON backup, at Flipper Zero .ir files.",
   "aboutTitle": "Tungkol",
   "aboutSubtitle": "App information at open-source details",
-  "aboutAppNameWithCreator": "IR Blaster - {creator}",
+  "aboutAppNameWithCreator": "SwiftRemote - {creator}",
   "@aboutAppNameWithCreator": {
     "placeholders": {
       "creator": {}
@@ -311,7 +311,7 @@
   "unavailableOnThisDevice": "Hindi available sa device na ito",
   "openOnUsbAttachTitle": "Open on USB attach",
   "openOnUsbAttachSubtitle": "Android may suggest opening the app when a supported USB IR dongle is connected.",
-  "openOnUsbAttachEnabledMessage": "Will suggest opening IR Blaster when a supported USB dongle is attached.",
+  "openOnUsbAttachEnabledMessage": "Will suggest opening SwiftRemote when a supported USB dongle is attached.",
   "openOnUsbAttachDisabledMessage": "Won't suggest opening on USB attach.",
   "failedToUpdateSetting": "Nabigong i-update ang setting.",
   "unnamedButton": "Button na walang pangalan",

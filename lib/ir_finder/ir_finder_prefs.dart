@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:irblaster_controller/ir_finder/ir_finder_models.dart';
-import 'package:irblaster_controller/ir_finder/ir_finder_search.dart';
+import 'package:swiftremote/ir_finder/ir_finder_models.dart';
+import 'package:swiftremote/ir_finder/ir_finder_search.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class IrFinderPrefs {

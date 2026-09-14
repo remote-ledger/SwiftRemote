@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:irblaster_controller/ir/protocols/sony12.dart';
-import 'package:irblaster_controller/ir/protocols/sony15.dart';
-import 'package:irblaster_controller/ir/protocols/sony20.dart';
+import 'package:swiftremote/ir/protocols/sony12.dart';
+import 'package:swiftremote/ir/protocols/sony15.dart';
+import 'package:swiftremote/ir/protocols/sony20.dart';
 
 void main() {
   test('Sony12 packs a 7-bit command and 5-bit address into 12 LSB-first bits',

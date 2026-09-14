@@ -154,14 +154,14 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get homeHardwareRequiredBody =>
-      'IR Blaster може створювати та керувати пультами на будь-якому телефоні. Щоб фактично надсилати команди через ІЧ-порт, вашому пристрою потрібен один із наведених нижче параметрів обладнання.';
+      'SwiftRemote може створювати та керувати пультами на будь-якому телефоні. Щоб фактично надсилати команди через ІЧ-порт, вашому пристрою потрібен один із наведених нижче параметрів обладнання.';
 
   @override
   String get homeCanStillUseWithoutHardware =>
       'Ви все ще можете створювати, імпортувати та впорядковувати пульти прямо зараз.';
 
   @override
-  String get homeWaysToUseIrBlaster => 'Способи використання IR Blaster';
+  String get homeWaysToUseIrBlaster => 'Способи використання SwiftRemote';
 
   @override
   String get homeBuiltInIrOptionTitle => 'Телефон із вбудованим ІЧ-передавачем';
@@ -917,7 +917,7 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String aboutAppNameWithCreator(Object creator) {
-    return 'ІЧ-бластер - $creator';
+    return 'SwiftRemote - $creator';
   }
 
   @override
@@ -1167,7 +1167,7 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get openOnUsbAttachEnabledMessage =>
-      'Буде запропоновано відкрити IR Blaster, коли під’єднано підтримуваний USB-адаптер.';
+      'Буде запропоновано відкрити SwiftRemote, коли під’єднано підтримуваний USB-адаптер.';
 
   @override
   String get openOnUsbAttachDisabledMessage =>

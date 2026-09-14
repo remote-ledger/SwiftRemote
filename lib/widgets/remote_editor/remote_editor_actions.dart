@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:irblaster_controller/l10n/l10n.dart';
-import 'package:irblaster_controller/utils/remote.dart';
-import 'package:irblaster_controller/widgets/create_button.dart';
-import 'package:irblaster_controller/widgets/db_bulk_import_sheet.dart';
-import 'package:irblaster_controller/widgets/existing_remote_button_import_sheet.dart';
-import 'package:irblaster_controller/widgets/github_store_screen.dart';
+import 'package:swiftremote/l10n/l10n.dart';
+import 'package:swiftremote/utils/remote.dart';
+import 'package:swiftremote/widgets/create_button.dart';
+import 'package:swiftremote/widgets/db_bulk_import_sheet.dart';
+import 'package:swiftremote/widgets/existing_remote_button_import_sheet.dart';
+import 'package:swiftremote/widgets/github_store_screen.dart';
 import 'package:uuid/uuid.dart';
 
 class RemoteEditorActions {

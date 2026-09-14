@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:irblaster_controller/ir/protocols/proton.dart';
+import 'package:swiftremote/ir/protocols/proton.dart';
 
 void main() {
   test('Proton uses the canonical 4 ms separator between data bytes', () {

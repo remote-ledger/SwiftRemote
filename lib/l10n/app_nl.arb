@@ -41,9 +41,9 @@
   "requestUsbPermission": "USB-toestemming aanvragen",
   "homeHardwareTip": "Tip: je kunt nu al afstandsbedieningen maken en ordenen. Hardware is alleen nodig bij verzenden.",
   "homeNoIrTransmitterTitle": "Geen IR-zender beschikbaar",
-  "homeHardwareRequiredBody": "IR Blaster kan op elke telefoon afstandsbedieningen maken en beheren. Om daadwerkelijk infraroodcommando's te verzenden, heeft je apparaat een van de onderstaande hardwareopties nodig.",
+  "homeHardwareRequiredBody": "SwiftRemote kan op elke telefoon afstandsbedieningen maken en beheren. Om daadwerkelijk infraroodcommando's te verzenden, heeft je apparaat een van de onderstaande hardwareopties nodig.",
   "homeCanStillUseWithoutHardware": "Je kunt nu nog steeds afstandsbedieningen maken, importeren en organiseren.",
-  "homeWaysToUseIrBlaster": "Manieren om IR Blaster te gebruiken",
+  "homeWaysToUseIrBlaster": "Manieren om SwiftRemote te gebruiken",
   "homeBuiltInIrOptionTitle": "Telefoon met ingebouwde IR",
   "homeBuiltInIrOptionSubtitle": "Werkt op ondersteunde telefoons met een ingebouwde IR-zender. Deze telefoon heeft er geen.",
   "homeBuiltInIrUnavailable": "Niet beschikbaar op deze telefoon",
@@ -220,7 +220,7 @@
   "backupTip": "Tip: exporteer een back-up vóór grote bewerkingen. Import ondersteunt volledige back-ups, oudere JSON-back-ups alleen voor afstandsbedieningen en Flipper Zero .ir-bestanden.",
   "aboutTitle": "Over",
   "aboutSubtitle": "App-info en open-sourcegegevens",
-  "aboutAppNameWithCreator": "IR Blaster - {creator}",
+  "aboutAppNameWithCreator": "SwiftRemote - {creator}",
   "@aboutAppNameWithCreator": {
     "placeholders": {
       "creator": {}
@@ -311,7 +311,7 @@
   "unavailableOnThisDevice": "Niet beschikbaar op dit apparaat",
   "openOnUsbAttachTitle": "Openen bij USB-aansluiting",
   "openOnUsbAttachSubtitle": "Android kan voorstellen de app te openen wanneer een ondersteunde USB-IR-dongle wordt aangesloten.",
-  "openOnUsbAttachEnabledMessage": "Zal voorstellen IR Blaster te openen wanneer een ondersteunde USB-dongle wordt aangesloten.",
+  "openOnUsbAttachEnabledMessage": "Zal voorstellen SwiftRemote te openen wanneer een ondersteunde USB-dongle wordt aangesloten.",
   "openOnUsbAttachDisabledMessage": "Niet voorstellen te openen bij USB-aansluiting.",
   "failedToUpdateSetting": "Instelling bijwerken mislukt.",
   "unnamedButton": "Naamloze knop",

@@ -1,4 +1,4 @@
-import 'package:irblaster_controller/l10n/app_localizations.dart';
+import 'package:swiftremote/l10n/app_localizations.dart';
 
 String localizedIconPickerName(AppLocalizations l10n, String name) {
   switch (name) {

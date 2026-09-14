@@ -41,9 +41,9 @@
   "requestUsbPermission": "Request USB permission",
   "homeHardwareTip": "Tip: You can still build and organize remotes now. Hardware is only required when transmitting.",
   "homeNoIrTransmitterTitle": "No IR transmitter available",
-  "homeHardwareRequiredBody": "IR Blaster can create and manage remotes on any phone. To actually send infrared commands, your device needs one of the hardware options below.",
+  "homeHardwareRequiredBody": "SwiftRemote can create and manage remotes on any phone. To actually send infrared commands, your device needs one of the hardware options below.",
   "homeCanStillUseWithoutHardware": "You can still create, import, and organize remotes right now.",
-  "homeWaysToUseIrBlaster": "Ways to use IR Blaster",
+  "homeWaysToUseIrBlaster": "Ways to use SwiftRemote",
   "homeBuiltInIrOptionTitle": "Phone with built-in IR",
   "homeBuiltInIrOptionSubtitle": "Works on supported phones with a built-in IR blaster. This phone does not include one.",
   "homeBuiltInIrUnavailable": "Not available on this phone",
@@ -331,7 +331,7 @@
   "backupTip": "Tip: export a backup before large edits. Import supports full backups, legacy remotes-only JSON backups, and Flipper Zero .ir files.",
   "aboutTitle": "About",
   "aboutSubtitle": "App information and open-source details",
-  "aboutAppNameWithCreator": "IR Blaster - {creator}",
+  "aboutAppNameWithCreator": "SwiftRemote - {creator}",
   "@aboutAppNameWithCreator": {
     "placeholders": {
       "creator": {}
@@ -422,7 +422,7 @@
   "unavailableOnThisDevice": "Unavailable on this device",
   "openOnUsbAttachTitle": "Open on USB attach",
   "openOnUsbAttachSubtitle": "Android may suggest opening the app when a supported USB IR dongle is connected.",
-  "openOnUsbAttachEnabledMessage": "Will suggest opening IR Blaster when a supported USB dongle is attached.",
+  "openOnUsbAttachEnabledMessage": "Will suggest opening SwiftRemote when a supported USB dongle is attached.",
   "openOnUsbAttachDisabledMessage": "Won't suggest opening on USB attach.",
   "failedToUpdateSetting": "Failed to update setting.",
   "unnamedButton": "Unnamed button",

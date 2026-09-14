@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:irblaster_controller/ir/protocols/denon.dart';
+import 'package:swiftremote/ir/protocols/denon.dart';
 
 void main() {
   test('Denon emits the required normal, inverted, normal frame sequence', () {

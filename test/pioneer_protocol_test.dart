@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:irblaster_controller/ir/protocols/pioneer.dart';
-import 'package:irblaster_controller/ir_finder/ir_finder_models.dart';
-import 'package:irblaster_controller/utils/db_button_import.dart';
+import 'package:swiftremote/ir/protocols/pioneer.dart';
+import 'package:swiftremote/ir_finder/ir_finder_models.dart';
+import 'package:swiftremote/utils/db_button_import.dart';
 
 void main() {
   test('Pioneer database import preserves both parts of a mixed command', () {

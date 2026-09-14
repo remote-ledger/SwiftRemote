@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:irblaster_controller/l10n/icon_picker_names.dart';
-import 'package:irblaster_controller/l10n/l10n.dart';
-import 'package:irblaster_controller/state/continue_context_prefs.dart';
-import 'package:irblaster_controller/state/haptics.dart';
-import 'package:irblaster_controller/state/quick_settings_prefs.dart';
-import 'package:irblaster_controller/state/remote_highlights_prefs.dart';
-import 'package:irblaster_controller/state/remotes_state.dart';
-import 'package:irblaster_controller/utils/button_label.dart';
-import 'package:irblaster_controller/utils/ir.dart';
-import 'package:irblaster_controller/utils/remote.dart';
-import 'package:irblaster_controller/widgets/global_search_delegate.dart';
-import 'package:irblaster_controller/widgets/remote_view.dart';
-import 'package:irblaster_controller/widgets/remote_editor/remote_editor_draft.dart';
-import 'package:irblaster_controller/widgets/remote_setup_screen.dart';
-import 'package:irblaster_controller/widgets/remote_studio_screen.dart';
+import 'package:swiftremote/l10n/icon_picker_names.dart';
+import 'package:swiftremote/l10n/l10n.dart';
+import 'package:swiftremote/state/continue_context_prefs.dart';
+import 'package:swiftremote/state/haptics.dart';
+import 'package:swiftremote/state/quick_settings_prefs.dart';
+import 'package:swiftremote/state/remote_highlights_prefs.dart';
+import 'package:swiftremote/state/remotes_state.dart';
+import 'package:swiftremote/utils/button_label.dart';
+import 'package:swiftremote/utils/ir.dart';
+import 'package:swiftremote/utils/remote.dart';
+import 'package:swiftremote/widgets/global_search_delegate.dart';
+import 'package:swiftremote/widgets/remote_view.dart';
+import 'package:swiftremote/widgets/remote_editor/remote_editor_draft.dart';
+import 'package:swiftremote/widgets/remote_setup_screen.dart';
+import 'package:swiftremote/widgets/remote_studio_screen.dart';
 import 'package:reorderable_grid_view/reorderable_grid_view.dart';
 
 class RemoteList extends StatefulWidget {

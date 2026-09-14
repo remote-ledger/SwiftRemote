@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:irblaster_controller/ir/protocols/rc5.dart';
-import 'package:irblaster_controller/ir_finder/ir_finder_models.dart';
-import 'package:irblaster_controller/utils/db_button_import.dart';
+import 'package:swiftremote/ir/protocols/rc5.dart';
+import 'package:swiftremote/ir_finder/ir_finder_models.dart';
+import 'package:swiftremote/utils/db_button_import.dart';
 
 void main() {
   test('RC5 supports the field bit used by 7-bit commands', () {

@@ -212,8 +212,10 @@ class AudioLearningDiagnostics {
 class IrTransmitterPlatform {
   IrTransmitterPlatform._();
 
-  static const MethodChannel _ch = MethodChannel('org.nslabs/irtransmitter');
-  static const EventChannel _ev = EventChannel('org.nslabs/irtransmitter_events');
+  static const MethodChannel _ch =
+      MethodChannel('com.github.shanjian.swiftremote/irtransmitter');
+  static const EventChannel _ev =
+      EventChannel('com.github.shanjian.swiftremote/irtransmitter_events');
 
   static Stream<IrTransmitterCapabilities>? _capsEvents;
 

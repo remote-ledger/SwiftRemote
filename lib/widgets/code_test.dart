@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:irblaster_controller/l10n/l10n.dart';
-import 'package:irblaster_controller/utils/ir.dart';
+import 'package:swiftremote/l10n/l10n.dart';
+import 'package:swiftremote/utils/ir.dart';
 
 String deviceCodeString = "00 ff";
 String commandString = "00 ff";

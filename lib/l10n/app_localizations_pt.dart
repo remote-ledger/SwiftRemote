@@ -154,14 +154,14 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get homeHardwareRequiredBody =>
-      'O IR Blaster pode criar e gerir comandos em qualquer telemóvel. Para enviar efetivamente comandos por infravermelhos, o seu dispositivo precisa de uma das opções de hardware abaixo.';
+      'O SwiftRemote pode criar e gerir comandos em qualquer telemóvel. Para enviar efetivamente comandos por infravermelhos, o seu dispositivo precisa de uma das opções de hardware abaixo.';
 
   @override
   String get homeCanStillUseWithoutHardware =>
       'Ainda pode criar, importar e organizar comandos neste momento.';
 
   @override
-  String get homeWaysToUseIrBlaster => 'Formas de usar o IR Blaster';
+  String get homeWaysToUseIrBlaster => 'Formas de usar o SwiftRemote';
 
   @override
   String get homeBuiltInIrOptionTitle => 'Telemóvel com IV integrado';
@@ -921,7 +921,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String aboutAppNameWithCreator(Object creator) {
-    return 'IR Blaster - $creator';
+    return 'SwiftRemote - $creator';
   }
 
   @override
@@ -1170,7 +1170,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get openOnUsbAttachEnabledMessage =>
-      'Vai sugerir abrir o IR Blaster quando um dongle USB compatível for ligado.';
+      'Vai sugerir abrir o SwiftRemote quando um dongle USB compatível for ligado.';
 
   @override
   String get openOnUsbAttachDisabledMessage =>
@@ -5173,14 +5173,14 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get homeHardwareRequiredBody =>
-      'O IR Blaster pode criar e gerenciar controles remotos em qualquer telefone. Para realmente enviar comandos por infravermelho, seu dispositivo precisa de uma das opções de hardware abaixo.';
+      'O SwiftRemote pode criar e gerenciar controles remotos em qualquer telefone. Para realmente enviar comandos por infravermelho, seu dispositivo precisa de uma das opções de hardware abaixo.';
 
   @override
   String get homeCanStillUseWithoutHardware =>
       'Você ainda pode criar, importar e organizar controles remotos agora mesmo.';
 
   @override
-  String get homeWaysToUseIrBlaster => 'Formas de usar o IR Blaster';
+  String get homeWaysToUseIrBlaster => 'Formas de usar o SwiftRemote';
 
   @override
   String get homeBuiltInIrOptionTitle => 'Telefone com IR embutido';
@@ -5941,7 +5941,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String aboutAppNameWithCreator(Object creator) {
-    return 'IR Blaster - $creator';
+    return 'SwiftRemote - $creator';
   }
 
   @override
@@ -6190,7 +6190,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get openOnUsbAttachEnabledMessage =>
-      'Vai sugerir abrir o IR Blaster quando um dongle USB compatível for conectado.';
+      'Vai sugerir abrir o SwiftRemote quando um dongle USB compatível for conectado.';
 
   @override
   String get openOnUsbAttachDisabledMessage =>

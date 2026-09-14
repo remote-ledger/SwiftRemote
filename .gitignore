@@ -13,7 +13,7 @@ android/app/debug-info/
 android/.gradle/
 android/app/build/
 android/build/
-assets/db/irblaster.sqlite
+assets/db/*.sqlite
 
 # Local release helper
 /build_release_apks.sh

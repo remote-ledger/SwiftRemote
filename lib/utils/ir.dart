@@ -1,10 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:irblaster_controller/ir/ir_protocol_registry.dart';
-import 'package:irblaster_controller/utils/ir_transmitter_platform.dart';
+import 'package:swiftremote/ir/ir_protocol_registry.dart';
+import 'package:swiftremote/utils/ir_transmitter_platform.dart';
 import 'remote.dart';
 
-const platform = MethodChannel('org.nslabs/irtransmitter');
+const platform = MethodChannel('com.github.shanjian.swiftremote/irtransmitter');
 
 const int kDefaultNecFrequencyHz = 38000;
 const int kMinIrFrequencyHz = 15000;
@@ -192,7 +192,7 @@ void _reportFlutterError(String where, Object error, StackTrace stack) {
     FlutterErrorDetails(
       exception: error,
       stack: stack,
-      library: 'IR Blaster',
+      library: 'SwiftRemote',
       context: ErrorDescription(where),
       informationCollector: () sync* {
         yield DiagnosticsProperty<String>('channel', platform.name);

@@ -41,9 +41,9 @@
   "requestUsbPermission": "요청 USB 권한",
   "homeHardwareTip": "팁: 지금도 리모컨을 만들고 정리할 수 있습니다. 하드웨어는 IR 송신 시에만 필요합니다.",
   "homeNoIrTransmitterTitle": "사용 가능한 IR 송신기가 없습니다",
-  "homeHardwareRequiredBody": "IR Blaster는 어떤 휴대폰에서도 리모컨을 만들고 관리할 수 있습니다. 하지만 실제로 적외선 명령을 보내려면 아래 하드웨어 옵션 중 하나가 필요합니다.",
+  "homeHardwareRequiredBody": "SwiftRemote는 어떤 휴대폰에서도 리모컨을 만들고 관리할 수 있습니다. 하지만 실제로 적외선 명령을 보내려면 아래 하드웨어 옵션 중 하나가 필요합니다.",
   "homeCanStillUseWithoutHardware": "지금도 리모컨을 만들고, 가져오고, 정리할 수 있습니다.",
-  "homeWaysToUseIrBlaster": "IR Blaster 사용 방법",
+  "homeWaysToUseIrBlaster": "SwiftRemote 사용 방법",
   "homeBuiltInIrOptionTitle": "IR 내장 휴대폰",
   "homeBuiltInIrOptionSubtitle": "내장 IR 블래스터가 있는 지원 휴대폰에서 작동합니다. 이 휴대폰에는 해당 기능이 없습니다.",
   "homeBuiltInIrUnavailable": "이 휴대폰에서는 사용할 수 없음",
@@ -220,7 +220,7 @@
   "backupTip": "팁: 큰 편집 전에 백업을 내보내세요. 가져오기는 전체 백업, 리모컨만 있는 레거시 JSON 백업, Flipper Zero .ir 파일을 지원합니다.",
   "aboutTitle": "정보",
   "aboutSubtitle": "앱 정보와 오픈 소스 세부정보",
-  "aboutAppNameWithCreator": "IR Blaster - {creator}",
+  "aboutAppNameWithCreator": "SwiftRemote - {creator}",
   "@aboutAppNameWithCreator": {
     "placeholders": {
       "creator": {}
@@ -311,7 +311,7 @@
   "unavailableOnThisDevice": "이 기기에서는 사용할 수 없음",
   "openOnUsbAttachTitle": "USB 연결 시 열기",
   "openOnUsbAttachSubtitle": "지원되는 USB IR 동글이 연결되면 Android가 앱 열기를 제안할 수 있습니다.",
-  "openOnUsbAttachEnabledMessage": "지원되는 USB 동글이 연결되면 IR Blaster 열기를 제안합니다.",
+  "openOnUsbAttachEnabledMessage": "지원되는 USB 동글이 연결되면 SwiftRemote 열기를 제안합니다.",
   "openOnUsbAttachDisabledMessage": "USB 연결 시 열기를 제안하지 않습니다.",
   "failedToUpdateSetting": "설정을 업데이트하지 못했습니다.",
   "unnamedButton": "이름 없는 버튼",

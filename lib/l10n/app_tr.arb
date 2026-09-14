@@ -41,9 +41,9 @@
   "requestUsbPermission": "USB izni iste",
   "homeHardwareTip": "İpucu: Kumandaları şimdi de oluşturup düzenleyebilirsiniz. Donanım yalnızca gönderimde gerekir.",
   "homeNoIrTransmitterTitle": "IR verici yok",
-  "homeHardwareRequiredBody": "IR Blaster herhangi bir telefonda kumandalar oluşturup yönetebilir. Ancak gerçekten kızılötesi komut göndermek için cihazınızın aşağıdaki donanım seçeneklerinden birine sahip olması gerekir.",
+  "homeHardwareRequiredBody": "SwiftRemote herhangi bir telefonda kumandalar oluşturup yönetebilir. Ancak gerçekten kızılötesi komut göndermek için cihazınızın aşağıdaki donanım seçeneklerinden birine sahip olması gerekir.",
   "homeCanStillUseWithoutHardware": "Şu anda yine de kumandalar oluşturabilir, içe aktarabilir ve düzenleyebilirsiniz.",
-  "homeWaysToUseIrBlaster": "IR Blaster kullanma yolları",
+  "homeWaysToUseIrBlaster": "SwiftRemote kullanma yolları",
   "homeBuiltInIrOptionTitle": "Dahili IR bulunan telefon",
   "homeBuiltInIrOptionSubtitle": "Dahili IR vericisi olan desteklenen telefonlarda çalışır. Bu telefonda yok.",
   "homeBuiltInIrUnavailable": "Bu telefonda mevcut değil",
@@ -220,7 +220,7 @@
   "backupTip": "İpucu: Büyük düzenlemelerden önce bir yedek dışa aktarın. İçe aktarma; tam yedekleri, eski yalnızca-kumanda JSON yedeklerini ve Flipper Zero .ir dosyalarını destekler.",
   "aboutTitle": "About",
   "aboutSubtitle": "Uygulama bilgileri ve açık kaynak ayrıntıları",
-  "aboutAppNameWithCreator": "IR Blaster - {creator}",
+  "aboutAppNameWithCreator": "SwiftRemote - {creator}",
   "@aboutAppNameWithCreator": {
     "placeholders": {
       "creator": {}
@@ -311,7 +311,7 @@
   "unavailableOnThisDevice": "Bu cihazda kullanılamaz",
   "openOnUsbAttachTitle": "Aç on USB attach",
   "openOnUsbAttachSubtitle": "Desteklenen bir USB IR dongle bağlandığında Android uygulamayı açmayı önerebilir.",
-  "openOnUsbAttachEnabledMessage": "Desteklenen bir USB dongle takıldığında IR Blaster'ı açmayı önerecek.",
+  "openOnUsbAttachEnabledMessage": "Desteklenen bir USB dongle takıldığında SwiftRemote'ı açmayı önerecek.",
   "openOnUsbAttachDisabledMessage": "USB bağlanınca açmayı önermeyecek.",
   "failedToUpdateSetting": "Başarısız to update setting.",
   "unnamedButton": "Unnamed düğme",

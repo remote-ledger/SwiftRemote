@@ -150,14 +150,14 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get homeHardwareRequiredBody =>
-      'IR Blaster boleh mencipta dan mengurus alat kawalan jauh pada mana-mana telefon. Tetapi untuk benar-benar menghantar arahan inframerah, peranti anda memerlukan salah satu pilihan perkakasan di bawah.';
+      'SwiftRemote boleh mencipta dan mengurus alat kawalan jauh pada mana-mana telefon. Tetapi untuk benar-benar menghantar arahan inframerah, peranti anda memerlukan salah satu pilihan perkakasan di bawah.';
 
   @override
   String get homeCanStillUseWithoutHardware =>
       'Anda masih boleh mencipta, mengimport dan menyusun alat kawalan jauh sekarang.';
 
   @override
-  String get homeWaysToUseIrBlaster => 'Cara menggunakan IR Blaster';
+  String get homeWaysToUseIrBlaster => 'Cara menggunakan SwiftRemote';
 
   @override
   String get homeBuiltInIrOptionTitle => 'Telefon dengan IR terbina dalam';
@@ -908,7 +908,7 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String aboutAppNameWithCreator(Object creator) {
-    return 'IR Blaster - $creator';
+    return 'SwiftRemote - $creator';
   }
 
   @override
@@ -1154,7 +1154,7 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get openOnUsbAttachEnabledMessage =>
-      'Akan mencadangkan membuka IR Blaster apabila dongel USB yang disokong dipasang.';
+      'Akan mencadangkan membuka SwiftRemote apabila dongel USB yang disokong dipasang.';
 
   @override
   String get openOnUsbAttachDisabledMessage =>

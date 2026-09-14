@@ -1,5 +1,5 @@
-name: irblaster_controller
-description: Create custom remote using hex codes or raw signals.
+name: swiftremote
+description: SwiftRemote — build, import, and transmit custom infrared remotes on Android.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -15,7 +15,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 3.4.2+45
+version: 3.4.3+46
 
 environment:
   sdk: '>=3.2.3 <4.0.0'
@@ -93,7 +93,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/db/irblaster.sqlite
+    - assets/db/swiftremote.sqlite
     - assets/images/logo.png
     - assets/ON.png
     - assets/OFF.png

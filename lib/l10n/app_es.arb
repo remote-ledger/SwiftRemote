@@ -41,9 +41,9 @@
   "requestUsbPermission": "Pedir permiso USB",
   "homeHardwareTip": "Consejo: aún puedes crear y ordenar mandos. El hardware solo se necesita al transmitir.",
   "homeNoIrTransmitterTitle": "No hay emisor IR disponible",
-  "homeHardwareRequiredBody": "IR Blaster puede crear y gestionar mandos en cualquier teléfono. Para enviar comandos por infrarrojos, tu dispositivo necesita una de las opciones de hardware de abajo.",
+  "homeHardwareRequiredBody": "SwiftRemote puede crear y gestionar mandos en cualquier teléfono. Para enviar comandos por infrarrojos, tu dispositivo necesita una de las opciones de hardware de abajo.",
   "homeCanStillUseWithoutHardware": "Aún puedes crear, importar y organizar mandos ahora mismo.",
-  "homeWaysToUseIrBlaster": "Formas de usar IR Blaster",
+  "homeWaysToUseIrBlaster": "Formas de usar SwiftRemote",
   "homeBuiltInIrOptionTitle": "Teléfono con IR integrado",
   "homeBuiltInIrOptionSubtitle": "Funciona en teléfonos compatibles con emisor IR integrado. Este teléfono no incluye uno.",
   "homeBuiltInIrUnavailable": "No disponible en este teléfono",
@@ -225,7 +225,7 @@
   "backupTip": "Consejo: exporta una copia antes de grandes cambios. La importación admite copias completas, copias JSON antiguas de mandos y archivos .ir de Flipper Zero.",
   "aboutTitle": "Acerca de",
   "aboutSubtitle": "Información de la app y detalles de código abierto",
-  "aboutAppNameWithCreator": "IR Blaster - {creator}",
+  "aboutAppNameWithCreator": "SwiftRemote - {creator}",
   "@aboutAppNameWithCreator": {
     "placeholders": {
       "creator": {}
@@ -316,7 +316,7 @@
   "unavailableOnThisDevice": "No disponible en este dispositivo",
   "openOnUsbAttachTitle": "Abrir al conectar USB",
   "openOnUsbAttachSubtitle": "Android puede sugerir abrir la app cuando se conecta un dongle IR USB compatible.",
-  "openOnUsbAttachEnabledMessage": "Sugerirá abrir IR Blaster al conectar un dongle USB compatible.",
+  "openOnUsbAttachEnabledMessage": "Sugerirá abrir SwiftRemote al conectar un dongle USB compatible.",
   "openOnUsbAttachDisabledMessage": "No sugerirá abrir al conectar USB.",
   "failedToUpdateSetting": "No se pudo actualizar el ajuste.",
   "unnamedButton": "Botón sin nombre",

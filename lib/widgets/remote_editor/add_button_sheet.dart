@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:irblaster_controller/l10n/l10n.dart';
+import 'package:swiftremote/l10n/l10n.dart';
 
 enum AddButtonSheetAction {
   addButton,

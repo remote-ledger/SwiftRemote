@@ -1,7 +1,7 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
-import 'package:irblaster_controller/l10n/l10n.dart';
+import 'package:swiftremote/l10n/l10n.dart';
 
 class IrWaveformPanel extends StatelessWidget {
   final List<int> pattern;

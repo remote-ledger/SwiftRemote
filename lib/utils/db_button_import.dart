@@ -1,7 +1,7 @@
-import 'package:irblaster_controller/ir/ir_protocol_registry.dart';
-import 'package:irblaster_controller/ir/ir_protocol_types.dart';
-import 'package:irblaster_controller/ir_finder/ir_finder_models.dart';
-import 'package:irblaster_controller/utils/remote.dart';
+import 'package:swiftremote/ir/ir_protocol_registry.dart';
+import 'package:swiftremote/ir/ir_protocol_types.dart';
+import 'package:swiftremote/ir_finder/ir_finder_models.dart';
+import 'package:swiftremote/utils/remote.dart';
 import 'package:uuid/uuid.dart';
 
 IRButton? buildButtonFromDbRow(IrDbKeyCandidate row, {String unnamedLabel = ''}) {

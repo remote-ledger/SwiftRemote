@@ -41,9 +41,9 @@
   "requestUsbPermission": "Запросити дозвіл USB",
   "homeHardwareTip": "Порада. Зараз ви все ще можете створювати й організовувати пульти. Апаратне забезпечення потрібне лише під час передачі.",
   "homeNoIrTransmitterTitle": "ІЧ-передавач недоступний",
-  "homeHardwareRequiredBody": "IR Blaster може створювати та керувати пультами на будь-якому телефоні. Щоб фактично надсилати команди через ІЧ-порт, вашому пристрою потрібен один із наведених нижче параметрів обладнання.",
+  "homeHardwareRequiredBody": "SwiftRemote може створювати та керувати пультами на будь-якому телефоні. Щоб фактично надсилати команди через ІЧ-порт, вашому пристрою потрібен один із наведених нижче параметрів обладнання.",
   "homeCanStillUseWithoutHardware": "Ви все ще можете створювати, імпортувати та впорядковувати пульти прямо зараз.",
-  "homeWaysToUseIrBlaster": "Способи використання IR Blaster",
+  "homeWaysToUseIrBlaster": "Способи використання SwiftRemote",
   "homeBuiltInIrOptionTitle": "Телефон із вбудованим ІЧ-передавачем",
   "homeBuiltInIrOptionSubtitle": "Працює на підтримуваних телефонах із вбудованим ІЧ-передавачем. У цьому телефоні його немає.",
   "homeBuiltInIrUnavailable": "Недоступно на цьому телефоні",
@@ -220,7 +220,7 @@
   "backupTip": "Порада: експортуйте резервну копію перед значними змінами. Імпорт підтримує повні резервні копії, застарілі резервні копії JSON лише з пультами, а також файли Flipper Zero .ir.",
   "aboutTitle": "про",
   "aboutSubtitle": "Інформація про програму та деталі з відкритого коду",
-  "aboutAppNameWithCreator": "ІЧ-бластер - {creator}",
+  "aboutAppNameWithCreator": "SwiftRemote - {creator}",
   "@aboutAppNameWithCreator": {
     "placeholders": {
       "creator": {}
@@ -311,7 +311,7 @@
   "unavailableOnThisDevice": "Недоступно на цьому пристрої",
   "openOnUsbAttachTitle": "Відкрити на USB-приєднанні",
   "openOnUsbAttachSubtitle": "Android може запропонувати відкрити програму, коли під’єднано підтримуваний USB ІЧ-адаптер.",
-  "openOnUsbAttachEnabledMessage": "Буде запропоновано відкрити IR Blaster, коли під’єднано підтримуваний USB-адаптер.",
+  "openOnUsbAttachEnabledMessage": "Буде запропоновано відкрити SwiftRemote, коли під’єднано підтримуваний USB-адаптер.",
   "openOnUsbAttachDisabledMessage": "Не пропонуватиму відкривати через USB-під’єднання.",
   "failedToUpdateSetting": "Не вдалося оновити налаштування.",
   "unnamedButton": "Кнопка без назви",

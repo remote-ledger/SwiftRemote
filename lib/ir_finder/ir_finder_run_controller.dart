@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
-import 'package:irblaster_controller/ir_finder/ir_finder_models.dart';
-import 'package:irblaster_controller/ir_finder/ir_finder_prefs.dart';
-import 'package:irblaster_controller/ir_finder/ir_finder_search.dart';
+import 'package:swiftremote/ir_finder/ir_finder_models.dart';
+import 'package:swiftremote/ir_finder/ir_finder_prefs.dart';
+import 'package:swiftremote/ir_finder/ir_finder_search.dart';
 
 typedef IrFinderCandidateFetcher = Future<IrFinderCandidate?> Function(
     IrFinderRunController controller);

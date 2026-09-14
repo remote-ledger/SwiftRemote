@@ -1,4 +1,4 @@
-IR Blaster turns your Android device into a universal infrared remote.
+SwiftRemote turns your Android device into a universal infrared remote.
 Create, import, test, and send IR signals using hex codes, raw timings, or Flipper Zero .ir files.
 
 • Send IR in multiple ways

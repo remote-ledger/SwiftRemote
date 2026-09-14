@@ -41,9 +41,9 @@
   "requestUsbPermission": "Pedir permissão USB",
   "homeHardwareTip": "Dica: ainda pode criar e ordenar comandos. O hardware só é necessário ao transmitir.",
   "homeNoIrTransmitterTitle": "Nenhum emissor IR disponível",
-  "homeHardwareRequiredBody": "O IR Blaster pode criar e gerir comandos em qualquer telemóvel. Para enviar efetivamente comandos por infravermelhos, o seu dispositivo precisa de uma das opções de hardware abaixo.",
+  "homeHardwareRequiredBody": "O SwiftRemote pode criar e gerir comandos em qualquer telemóvel. Para enviar efetivamente comandos por infravermelhos, o seu dispositivo precisa de uma das opções de hardware abaixo.",
   "homeCanStillUseWithoutHardware": "Ainda pode criar, importar e organizar comandos neste momento.",
-  "homeWaysToUseIrBlaster": "Formas de usar o IR Blaster",
+  "homeWaysToUseIrBlaster": "Formas de usar o SwiftRemote",
   "homeBuiltInIrOptionTitle": "Telemóvel com IV integrado",
   "homeBuiltInIrOptionSubtitle": "Funciona em telemóveis compatíveis com emissor IV integrado. Este telemóvel não inclui um.",
   "homeBuiltInIrUnavailable": "Não disponível neste telemóvel",
@@ -220,7 +220,7 @@
   "backupTip": "Dica: exporte uma cópia antes de grandes alterações. A importação aceita cópias completas, cópias JSON antigas de comandos e ficheiros .ir do Flipper Zero.",
   "aboutTitle": "Acerca de",
   "aboutSubtitle": "Informação da app e detalhes de código aberto",
-  "aboutAppNameWithCreator": "IR Blaster - {creator}",
+  "aboutAppNameWithCreator": "SwiftRemote - {creator}",
   "@aboutAppNameWithCreator": {
     "placeholders": {
       "creator": {}
@@ -311,7 +311,7 @@
   "unavailableOnThisDevice": "Não disponível neste dispositivo",
   "openOnUsbAttachTitle": "Abrir ao ligar USB",
   "openOnUsbAttachSubtitle": "O Android pode sugerir abrir a app quando um dongle IR USB compatível é ligado.",
-  "openOnUsbAttachEnabledMessage": "Vai sugerir abrir o IR Blaster quando um dongle USB compatível for ligado.",
+  "openOnUsbAttachEnabledMessage": "Vai sugerir abrir o SwiftRemote quando um dongle USB compatível for ligado.",
   "openOnUsbAttachDisabledMessage": "Não vai sugerir abrir ao ligar USB.",
   "failedToUpdateSetting": "Falha ao atualizar a definição.",
   "unnamedButton": "Botão sem nome",

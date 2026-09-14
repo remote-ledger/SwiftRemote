@@ -155,14 +155,14 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get homeHardwareRequiredBody =>
-      'IR Blaster can create and manage remotes on any phone. To actually send infrared commands, your device needs one of the hardware options below.';
+      'SwiftRemote can create and manage remotes on any phone. To actually send infrared commands, your device needs one of the hardware options below.';
 
   @override
   String get homeCanStillUseWithoutHardware =>
       'You can still create, import, and organize remotes right now.';
 
   @override
-  String get homeWaysToUseIrBlaster => 'Ways to use IR Blaster';
+  String get homeWaysToUseIrBlaster => 'Ways to use SwiftRemote';
 
   @override
   String get homeBuiltInIrOptionTitle => 'Phone with built-in IR';
@@ -911,7 +911,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String aboutAppNameWithCreator(Object creator) {
-    return 'IR Blaster - $creator';
+    return 'SwiftRemote - $creator';
   }
 
   @override
@@ -1156,7 +1156,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get openOnUsbAttachEnabledMessage =>
-      'Will suggest opening IR Blaster when a supported USB dongle is attached.';
+      'Will suggest opening SwiftRemote when a supported USB dongle is attached.';
 
   @override
   String get openOnUsbAttachDisabledMessage =>

@@ -151,14 +151,14 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get homeHardwareRequiredBody =>
-      'IR Blaster herhangi bir telefonda kumandalar oluşturup yönetebilir. Ancak gerçekten kızılötesi komut göndermek için cihazınızın aşağıdaki donanım seçeneklerinden birine sahip olması gerekir.';
+      'SwiftRemote herhangi bir telefonda kumandalar oluşturup yönetebilir. Ancak gerçekten kızılötesi komut göndermek için cihazınızın aşağıdaki donanım seçeneklerinden birine sahip olması gerekir.';
 
   @override
   String get homeCanStillUseWithoutHardware =>
       'Şu anda yine de kumandalar oluşturabilir, içe aktarabilir ve düzenleyebilirsiniz.';
 
   @override
-  String get homeWaysToUseIrBlaster => 'IR Blaster kullanma yolları';
+  String get homeWaysToUseIrBlaster => 'SwiftRemote kullanma yolları';
 
   @override
   String get homeBuiltInIrOptionTitle => 'Dahili IR bulunan telefon';
@@ -911,7 +911,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String aboutAppNameWithCreator(Object creator) {
-    return 'IR Blaster - $creator';
+    return 'SwiftRemote - $creator';
   }
 
   @override
@@ -1156,7 +1156,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get openOnUsbAttachEnabledMessage =>
-      'Desteklenen bir USB dongle takıldığında IR Blaster\'ı açmayı önerecek.';
+      'Desteklenen bir USB dongle takıldığında SwiftRemote\'ı açmayı önerecek.';
 
   @override
   String get openOnUsbAttachDisabledMessage =>

@@ -1,44 +1,49 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:irblaster_controller/config/build_flags.dart';
-import 'package:irblaster_controller/l10n/app_localizations.dart';
-import 'package:irblaster_controller/l10n/l10n.dart';
-import 'package:irblaster_controller/state/app_locale.dart';
-import 'package:irblaster_controller/state/orientation_pref.dart';
+import 'package:swiftremote/config/build_flags.dart';
+import 'package:swiftremote/l10n/app_localizations.dart';
+import 'package:swiftremote/l10n/l10n.dart';
+import 'package:swiftremote/state/app_locale.dart';
+import 'package:swiftremote/state/orientation_pref.dart';
 import 'package:flutter/services.dart';
-import 'package:irblaster_controller/state/haptics.dart';
-import 'package:irblaster_controller/state/home_surface_prefs.dart';
-import 'package:irblaster_controller/state/app_theme.dart';
-import 'package:irblaster_controller/state/dynamic_color.dart';
-import 'package:irblaster_controller/state/macros_state.dart';
-import 'package:irblaster_controller/state/remote_display_prefs.dart';
-import 'package:irblaster_controller/state/remotes_state.dart';
-import 'package:irblaster_controller/state/startup_prefs.dart';
-import 'package:irblaster_controller/utils/ir_transmitter_platform.dart';
-import 'package:irblaster_controller/utils/macros_io.dart';
-import 'package:irblaster_controller/utils/remote.dart';
-import 'package:irblaster_controller/utils/remotes_io.dart';
-import 'package:irblaster_controller/app_update/app_update_screen.dart';
-import 'package:irblaster_controller/widgets/about_screen.dart';
-import 'package:irblaster_controller/widgets/settings/widgets/donation_sheet.dart';
-import 'package:irblaster_controller/widgets/settings/widgets/section_card.dart';
-import 'package:irblaster_controller/widgets/settings/widgets/support_pill.dart';
-import 'package:irblaster_controller/widgets/universal_power_screen.dart';
-import 'package:irblaster_controller/widgets/device_controls_screen.dart';
-import 'package:irblaster_controller/widgets/github_store_screen.dart';
-import 'package:irblaster_controller/widgets/learning_mode_screen.dart';
-import 'package:irblaster_controller/widgets/quick_settings_screen.dart';
+import 'package:swiftremote/state/haptics.dart';
+import 'package:swiftremote/state/home_surface_prefs.dart';
+import 'package:swiftremote/state/app_theme.dart';
+import 'package:swiftremote/state/dynamic_color.dart';
+import 'package:swiftremote/state/macros_state.dart';
+import 'package:swiftremote/state/remote_display_prefs.dart';
+import 'package:swiftremote/state/remotes_state.dart';
+import 'package:swiftremote/state/startup_prefs.dart';
+import 'package:swiftremote/utils/ir_transmitter_platform.dart';
+import 'package:swiftremote/utils/macros_io.dart';
+import 'package:swiftremote/utils/remote.dart';
+import 'package:swiftremote/utils/remotes_io.dart';
+import 'package:swiftremote/app_update/app_update_screen.dart';
+import 'package:swiftremote/widgets/about_screen.dart';
+import 'package:swiftremote/widgets/settings/widgets/donation_sheet.dart';
+import 'package:swiftremote/widgets/settings/widgets/section_card.dart';
+import 'package:swiftremote/widgets/settings/widgets/support_pill.dart';
+import 'package:swiftremote/widgets/universal_power_screen.dart';
+import 'package:swiftremote/widgets/device_controls_screen.dart';
+import 'package:swiftremote/widgets/github_store_screen.dart';
+import 'package:swiftremote/widgets/learning_mode_screen.dart';
+import 'package:swiftremote/widgets/quick_settings_screen.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
 
-  static const String _repoUrl = 'https://github.com/iodn/android-ir-blaster';
+  static const String _repoUrl = 'https://github.com/shanjian/SwiftRemote';
   static const String _issuesUrl =
-      'https://github.com/iodn/android-ir-blaster/issues';
+      'https://github.com/shanjian/SwiftRemote/issues';
   static const String _licenseUrl =
-      'https://github.com/iodn/android-ir-blaster/blob/master/LICENSE';
+      'https://github.com/shanjian/SwiftRemote/blob/master/LICENSE';
+
+  /// SwiftRemote is a fork; donations still go to the original author, so
+  /// the donation sheet points at their repository rather than this one.
+  static const String _upstreamRepoUrl =
+      'https://github.com/iodn/android-ir-blaster';
   static const String _companyUrl = 'https://neroswarm.com';
   static const String _creatorName = 'KaijinLab Inc.';
   static const String _liberapayUrl = 'https://liberapay.com/KaijinLab/donate';
@@ -270,7 +275,7 @@ class SettingsScreen extends StatelessWidget {
         return FractionallySizedBox(
           heightFactor: 0.92,
           child: DonationSheet(
-            repoUrl: _repoUrl,
+            repoUrl: _upstreamRepoUrl,
             btcAddress: _btcAddress,
             ethAddress: _ethAddress,
             liberapayUrl: _liberapayUrl,

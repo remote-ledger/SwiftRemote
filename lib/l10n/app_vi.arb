@@ -41,9 +41,9 @@
   "requestUsbPermission": "Yêu cầu quyền USB",
   "homeHardwareTip": "Mẹo: Bạn vẫn có thể tạo và sắp xếp điều khiển ngay bây giờ. Chỉ cần phần cứng khi truyền tín hiệu.",
   "homeNoIrTransmitterTitle": "Không có bộ phát IR khả dụng",
-  "homeHardwareRequiredBody": "IR Blaster có thể tạo và quản lý điều khiển từ xa trên bất kỳ điện thoại nào. Nhưng để thực sự gửi lệnh hồng ngoại, thiết bị của bạn cần một trong các tùy chọn phần cứng bên dưới.",
+  "homeHardwareRequiredBody": "SwiftRemote có thể tạo và quản lý điều khiển từ xa trên bất kỳ điện thoại nào. Nhưng để thực sự gửi lệnh hồng ngoại, thiết bị của bạn cần một trong các tùy chọn phần cứng bên dưới.",
   "homeCanStillUseWithoutHardware": "Bạn vẫn có thể tạo, nhập và sắp xếp điều khiển từ xa ngay bây giờ.",
-  "homeWaysToUseIrBlaster": "Các cách dùng IR Blaster",
+  "homeWaysToUseIrBlaster": "Các cách dùng SwiftRemote",
   "homeBuiltInIrOptionTitle": "Điện thoại có IR tích hợp",
   "homeBuiltInIrOptionSubtitle": "Hoạt động trên các điện thoại được hỗ trợ có bộ phát IR tích hợp. Điện thoại này không có.",
   "homeBuiltInIrUnavailable": "Không có trên điện thoại này",
@@ -220,7 +220,7 @@
   "backupTip": "Tip: export a backup before large edits. Nhập hỗ trợ bản sao lưu đầy đủ, bản sao lưu JSON điều khiển cũ và tệp .ir của Flipper Zero.",
   "aboutTitle": "Giới thiệu",
   "aboutSubtitle": "Thông tin ứng dụng và chi tiết mã nguồn mở",
-  "aboutAppNameWithCreator": "IR Blaster - {creator}",
+  "aboutAppNameWithCreator": "SwiftRemote - {creator}",
   "@aboutAppNameWithCreator": {
     "placeholders": {
       "creator": {}
@@ -311,7 +311,7 @@
   "unavailableOnThisDevice": "Không khả dụng trên thiết bị này",
   "openOnUsbAttachTitle": "Mở khi gắn USB",
   "openOnUsbAttachSubtitle": "Android có thể gợi ý mở ứng dụng khi USB IR dongle được hỗ trợ được kết nối.",
-  "openOnUsbAttachEnabledMessage": "Sẽ gợi ý mở IR Blaster khi có USB dongle được hỗ trợ được gắn vào.",
+  "openOnUsbAttachEnabledMessage": "Sẽ gợi ý mở SwiftRemote khi có USB dongle được hỗ trợ được gắn vào.",
   "openOnUsbAttachDisabledMessage": "Sẽ không gợi ý mở khi gắn USB.",
   "failedToUpdateSetting": "Không cập nhật được cài đặt.",
   "unnamedButton": "Nút chưa tên",
