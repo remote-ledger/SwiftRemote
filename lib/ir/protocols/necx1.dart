@@ -35,7 +35,7 @@ class Necx1ProtocolEncoder implements IrProtocolEncoder {
 
   static const int carrierHz = 0x9600; /* 38400 */
   static const int T = 0x232; /* 562 */
-  static const int THREE_T = 0x697; /* 1687 */
+  static const int threeT = 0x697; /* 1687 */
   static const int pre = 0x1194; /* 4500 */
   static const int nineT = 0x1190; /* 4496 */
   static const int targetUs = 0x1A580; /* 108800 */
@@ -51,7 +51,7 @@ class Necx1ProtocolEncoder implements IrProtocolEncoder {
     seq.add(nineT);
     seq.add(nineT);
     seq.add(T);
-    seq.add(((firstByte & 0x01) == 1) ? THREE_T : T);
+    seq.add(((firstByte & 0x01) == 1) ? threeT : T);
     seq.add(T);
 
     final int used = _sum(seq);
@@ -81,7 +81,7 @@ class Necx1ProtocolEncoder implements IrProtocolEncoder {
 
     for (int i = 0; i < bits32.length; i++) {
       seq.add(T);
-      seq.add(bits32[i] == '0' ? T : THREE_T);
+      seq.add(bits32[i] == '0' ? T : threeT);
     }
 
     // trailing mark

@@ -64,14 +64,12 @@ jobs:
       # signing key is restored so a lint failure never leaves key material
       # sitting on the runner.
       #
-      # Infos are reported but not fatal. The project carries 76 of them,
-      # nearly all withOpacity and font_awesome icon names deprecated out from
-      # under it by dependency upgrades, and none is a defect. Failing on them
-      # would block every release behind a cleanup nobody has scheduled, which
-      # teaches people to ignore the gate. Warnings and errors do fail, which
-      # is what caught a real one the first time this ran.
+      # Infos are fatal too. The 76 the project carried have been cleared, so
+      # the next one to appear will be new, and a gate that only fails on
+      # things nobody introduced today is the kind people learn to scroll
+      # past.
       - name: Analyze the Dart sources
-        run: flutter analyze --no-fatal-infos
+        run: flutter analyze
 
       # These tests pin the IR encoders to their expected timings, and a
       # regression there stays invisible until a remote stops working in

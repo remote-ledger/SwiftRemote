@@ -173,7 +173,7 @@ class _DonationSheetState extends State<DonationSheet> {
             const SizedBox(height: 6),
             Text(
               'Optional. Helps prioritize what to work on next.',
-              style: theme.textTheme.bodyMedium?.copyWith(color: cs.onSurface.withOpacity(0.7)),
+              style: theme.textTheme.bodyMedium?.copyWith(color: cs.onSurface.withValues(alpha: 0.7)),
             ),
             const SizedBox(height: 16),
             Card(
@@ -267,7 +267,7 @@ class _DonationSheetState extends State<DonationSheet> {
     return Row(
       children: [
         CircleAvatar(
-          backgroundColor: cs.primaryContainer.withOpacity(0.7),
+          backgroundColor: cs.primaryContainer.withValues(alpha: 0.7),
           child: Icon(Icons.volunteer_activism_rounded, color: cs.onPrimaryContainer),
         ),
         const SizedBox(width: 12),
@@ -280,7 +280,7 @@ class _DonationSheetState extends State<DonationSheet> {
               Text(
                 'Optional donation that funds maintenance and features',
                 style: theme.textTheme.bodySmall?.copyWith(
-                  color: cs.onSurface.withOpacity(0.7),
+                  color: cs.onSurface.withValues(alpha: 0.7),
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -304,7 +304,7 @@ class _DonationSheetState extends State<DonationSheet> {
         const SizedBox(height: 4),
         Text(
           'Your contribution keeps this app free, maintained, and community-driven',
-          style: theme.textTheme.bodyMedium?.copyWith(color: cs.onSurface.withOpacity(0.7)),
+          style: theme.textTheme.bodyMedium?.copyWith(color: cs.onSurface.withValues(alpha: 0.7)),
         ),
       ],
     );
@@ -313,10 +313,10 @@ class _DonationSheetState extends State<DonationSheet> {
   Widget _buildLiberapayCard(ThemeData theme, ColorScheme cs) {
     return Card(
       elevation: 0,
-      color: cs.primaryContainer.withOpacity(0.4),
+      color: cs.primaryContainer.withValues(alpha: 0.4),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
-        side: BorderSide(color: cs.primary.withOpacity(0.3), width: 2),
+        side: BorderSide(color: cs.primary.withValues(alpha: 0.3), width: 2),
       ),
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -354,7 +354,7 @@ class _DonationSheetState extends State<DonationSheet> {
                   Text(
                     'Flexible support options',
                     style: theme.textTheme.bodySmall?.copyWith(
-                      color: cs.onPrimaryContainer.withOpacity(0.8),
+                      color: cs.onPrimaryContainer.withValues(alpha: 0.8),
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -367,9 +367,9 @@ class _DonationSheetState extends State<DonationSheet> {
             width: double.infinity,
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: cs.surface.withOpacity(0.7),
+              color: cs.surface.withValues(alpha: 0.7),
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: cs.outlineVariant.withOpacity(0.3)),
+              border: Border.all(color: cs.outlineVariant.withValues(alpha: 0.3)),
             ),
             child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Row(children: [
@@ -430,9 +430,9 @@ class _DonationSheetState extends State<DonationSheet> {
           Container(
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-              color: cs.surfaceContainerHighest.withOpacity(0.4),
+              color: cs.surfaceContainerHighest.withValues(alpha: 0.4),
               borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: cs.outlineVariant.withOpacity(0.3)),
+              border: Border.all(color: cs.outlineVariant.withValues(alpha: 0.3)),
             ),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -461,7 +461,7 @@ class _DonationSheetState extends State<DonationSheet> {
         const SizedBox(height: 4),
         Text(
           'Privacy-focused option • Scan QR or copy address',
-          style: theme.textTheme.bodyMedium?.copyWith(color: cs.onSurface.withOpacity(0.7)),
+          style: theme.textTheme.bodyMedium?.copyWith(color: cs.onSurface.withValues(alpha: 0.7)),
         ),
       ],
     );
@@ -495,19 +495,19 @@ class _DonationSheetState extends State<DonationSheet> {
       width: double.infinity,
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
       decoration: BoxDecoration(
-        color: cs.errorContainer.withOpacity(0.3),
+        color: cs.errorContainer.withValues(alpha: 0.3),
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: cs.outlineVariant.withOpacity(0.3)),
+        border: Border.all(color: cs.outlineVariant.withValues(alpha: 0.3)),
       ),
       child: Row(
         children: [
-          Icon(Icons.shield_outlined, color: cs.onErrorContainer.withOpacity(0.9), size: 20),
+          Icon(Icons.shield_outlined, color: cs.onErrorContainer.withValues(alpha: 0.9), size: 20),
           const SizedBox(width: 10),
           Expanded(
             child: Text(
               '$networkTitle • $preview',
               style: theme.textTheme.bodySmall?.copyWith(
-                color: cs.onErrorContainer.withOpacity(0.9),
+                color: cs.onErrorContainer.withValues(alpha: 0.9),
                 fontWeight: FontWeight.w900,
               ),
             ),
@@ -520,7 +520,7 @@ class _DonationSheetState extends State<DonationSheet> {
   Widget _buildQrCard(ThemeData theme, ColorScheme cs, bool isBtc, String focusLabel, Uint8List qrBytes) {
     return Card(
       elevation: 0,
-      color: cs.surfaceContainerHighest.withOpacity(0.6),
+      color: cs.surfaceContainerHighest.withValues(alpha: 0.6),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -542,9 +542,9 @@ class _DonationSheetState extends State<DonationSheet> {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 decoration: BoxDecoration(
-                  color: cs.primaryContainer.withOpacity(0.7),
+                  color: cs.primaryContainer.withValues(alpha: 0.7),
                   borderRadius: BorderRadius.circular(999),
-                  border: Border.all(color: cs.outlineVariant.withOpacity(0.3)),
+                  border: Border.all(color: cs.outlineVariant.withValues(alpha: 0.3)),
                 ),
                 child: Text(
                   focusLabel,
@@ -560,7 +560,7 @@ class _DonationSheetState extends State<DonationSheet> {
               decoration: BoxDecoration(
                 color: cs.surface,
                 borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: cs.outlineVariant.withOpacity(0.3)),
+                border: Border.all(color: cs.outlineVariant.withValues(alpha: 0.3)),
               ),
               child: qrBytes.isEmpty
                   ? SizedBox(
@@ -570,11 +570,11 @@ class _DonationSheetState extends State<DonationSheet> {
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Icon(Icons.qr_code_2_rounded, size: 64, color: cs.onSurface.withOpacity(0.3)),
+                            Icon(Icons.qr_code_2_rounded, size: 64, color: cs.onSurface.withValues(alpha: 0.3)),
                             const SizedBox(height: 8),
                             Text(
                               'QR code not available',
-                              style: theme.textTheme.bodySmall?.copyWith(color: cs.onSurface.withOpacity(0.5)),
+                              style: theme.textTheme.bodySmall?.copyWith(color: cs.onSurface.withValues(alpha: 0.5)),
                             ),
                           ],
                         ),
@@ -598,7 +598,7 @@ class _DonationSheetState extends State<DonationSheet> {
   ) {
     return Card(
       elevation: 0,
-      color: cs.surfaceContainerHighest.withOpacity(0.6),
+      color: cs.surfaceContainerHighest.withValues(alpha: 0.6),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -607,7 +607,7 @@ class _DonationSheetState extends State<DonationSheet> {
             'Address',
             style: theme.textTheme.labelLarge?.copyWith(
               fontWeight: FontWeight.w900,
-              color: cs.onSurface.withOpacity(0.85),
+              color: cs.onSurface.withValues(alpha: 0.85),
             ),
           ),
           const SizedBox(height: 8),
@@ -615,9 +615,9 @@ class _DonationSheetState extends State<DonationSheet> {
             width: double.infinity,
             padding: const EdgeInsets.all(14),
             decoration: BoxDecoration(
-              color: cs.surface.withOpacity(0.6),
+              color: cs.surface.withValues(alpha: 0.6),
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: cs.outlineVariant.withOpacity(0.3)),
+              border: Border.all(color: cs.outlineVariant.withValues(alpha: 0.3)),
             ),
             child: SelectableText(
               formatted,
@@ -667,7 +667,7 @@ class _DonationSheetState extends State<DonationSheet> {
       child: Text(
         'Security note: Never trust donation addresses from screenshots, reviews, or third-party pages. Use only this in-app screen.',
         style: theme.textTheme.bodySmall?.copyWith(
-          color: cs.onSurface.withOpacity(0.6),
+          color: cs.onSurface.withValues(alpha: 0.6),
           fontStyle: FontStyle.italic,
         ),
         textAlign: TextAlign.center,

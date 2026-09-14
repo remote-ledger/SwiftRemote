@@ -149,7 +149,7 @@ class _AboutScreenState extends State<AboutScreen> {
                 _AppLogo(
                   assetPath: _logoAssetPath,
                   size: 88,
-                  backgroundColor: cs.primaryContainer.withOpacity(0.7),
+                  backgroundColor: cs.primaryContainer.withValues(alpha: 0.7),
                   iconColor: cs.onPrimaryContainer,
                 ),
                 const SizedBox(height: 12),
@@ -162,7 +162,7 @@ class _AboutScreenState extends State<AboutScreen> {
                 Text(
                   'Version $ver',
                   style: theme.textTheme.bodySmall?.copyWith(
-                    color: cs.onSurface.withOpacity(0.7),
+                    color: cs.onSurface.withValues(alpha: 0.7),
                     fontWeight: FontWeight.w700,
                   ),
                 ),
@@ -170,7 +170,7 @@ class _AboutScreenState extends State<AboutScreen> {
                 Text(
                   'A fork of IR Blaster by KaijinLab Inc.',
                   style: theme.textTheme.bodyMedium?.copyWith(
-                    color: cs.onSurface.withOpacity(0.8),
+                    color: cs.onSurface.withValues(alpha: 0.8),
                     fontWeight: FontWeight.w800,
                   ),
                 ),
@@ -234,7 +234,7 @@ class _AboutScreenState extends State<AboutScreen> {
                   Text(
                     'SwiftRemote helps build and use custom IR remotes on Android: transmit with internal emitters, compatible USB IR dongles, or audio-to-IR LED adapters, and import signals from Flipper Zero .ir files. No accounts, no tracking, no ads.',
                     style: theme.textTheme.bodyMedium?.copyWith(
-                      color: cs.onSurface.withOpacity(0.85),
+                      color: cs.onSurface.withValues(alpha: 0.85),
                       height: 1.35,
                       fontWeight: FontWeight.w600,
                     ),
@@ -318,7 +318,7 @@ class _AboutScreenState extends State<AboutScreen> {
                         child: _AppLogo(
                           assetPath: _logoAssetPath,
                           size: 56,
-                          backgroundColor: cs.primaryContainer.withOpacity(0.7),
+                          backgroundColor: cs.primaryContainer.withValues(alpha: 0.7),
                           iconColor: cs.onPrimaryContainer,
                         ),
                       ),
@@ -344,7 +344,7 @@ class _AboutScreenState extends State<AboutScreen> {
             child: Text(
               '© $year KaijinLab • GPL-3.0 open-source software',
               style: theme.textTheme.bodySmall?.copyWith(
-                color: cs.onSurface.withOpacity(0.55),
+                color: cs.onSurface.withValues(alpha: 0.55),
                 fontWeight: FontWeight.w700,
               ),
               textAlign: TextAlign.center,
@@ -378,7 +378,7 @@ class _InfoRow extends StatelessWidget {
           child: Text(
             label,
             style: theme.textTheme.bodySmall?.copyWith(
-              color: cs.onSurface.withOpacity(0.65),
+              color: cs.onSurface.withValues(alpha: 0.65),
               fontWeight: FontWeight.w800,
             ),
           ),
@@ -389,7 +389,7 @@ class _InfoRow extends StatelessWidget {
             value,
             style: theme.textTheme.bodyMedium?.copyWith(
               fontWeight: FontWeight.w800,
-              color: cs.onSurface.withOpacity(0.9),
+              color: cs.onSurface.withValues(alpha: 0.9),
               height: 1.25,
             ),
           ),
@@ -441,7 +441,7 @@ class _AppLogo extends StatelessWidget {
       decoration: BoxDecoration(
         color: backgroundColor,
         borderRadius: BorderRadius.circular(size / 4),
-        border: Border.all(color: cs.outlineVariant.withOpacity(0.35)),
+        border: Border.all(color: cs.outlineVariant.withValues(alpha: 0.35)),
       ),
       alignment: Alignment.center,
       child: child,

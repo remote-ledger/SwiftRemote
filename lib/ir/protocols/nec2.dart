@@ -36,7 +36,7 @@ class Nec2ProtocolEncoder implements IrProtocolEncoder {
 
   static const int carrierHz = 0x954E; /* 38222 */
   static const int T = 0x232; /* 562 */
-  static const int THREE_T = 0x697; /* 1687 */
+  static const int threeT = 0x697; /* 1687 */
   static const int preMark = 0x2328; /* 9000 */
   static const int preSpace = 0x1194; /* 4500 */
   static const int targetUs = 0x1A580; /* 108800 */
@@ -59,7 +59,7 @@ class Nec2ProtocolEncoder implements IrProtocolEncoder {
 
     for (int i = 0; i < bits32.length; i++) {
       seq.add(T);
-      seq.add(bits32[i] == '0' ? T : THREE_T);
+      seq.add(bits32[i] == '0' ? T : threeT);
     }
 
     seq.add(T);
