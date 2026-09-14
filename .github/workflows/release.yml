@@ -1,13 +1,74 @@
 name: release
 
-flutter-version: '8b872868494e429d94fa06dca855c306438b22c0'
+# Publishes the APK the in-app updater installs.
+#
+# The updater asks GitHub for /releases/latest, compares that release's tag
+# with the installed version and downloads the first .apk attached to it, so a
+# release is only useful if its tag, its APK and the commit they were built
+# from all agree. Building here from the tagged commit is what keeps them
+# honest; attaching an APK by hand does not.
 
 on:
   workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
 
 jobs:
-  noop:
+  # Runs before the seven-minute build so a mistyped tag fails in seconds.
+  guard:
     runs-on: ubuntu-latest
     steps:
-      - name: noop
-        run: echo "ok"
+      - uses: actions/checkout@v4
+
+      - name: Check the tag against pubspec.yaml
+        run: |
+          set -euo pipefail
+          if [ "${GITHUB_REF_TYPE}" != "tag" ]; then
+            echo "::error::Run this workflow on a tag, not on ${GITHUB_REF}."
+            exit 1
+          fi
+          tag_version="${GITHUB_REF_NAME#v}"
+          pubspec_version=$(sed -n 's/^version: *\([0-9][^+ ]*\).*/\1/p' pubspec.yaml)
+          if [ "$tag_version" != "$pubspec_version" ]; then
+            # The app compares the release tag with its own package version, so
+            # a mismatch means every install is offered an update it can never
+            # satisfy.
+            echo "::error::Tag ${GITHUB_REF_NAME} does not match pubspec version ${pubspec_version}."
+            exit 1
+          fi
+          echo "Releasing ${GITHUB_REF_NAME} (pubspec ${pubspec_version})."
+
+  build:
+    needs: guard
+    uses: ./.github/workflows/build-apk.yml
+    secrets: inherit
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: swiftremote-release-apk
+          path: dist
+
+      - name: Attach the APK to the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          APK: ${{ needs.build.outputs.apk-name }}
+        run: |
+          set -euo pipefail
+          test -f "dist/$APK"
+          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            # Release notes were written by hand; only replace the binary.
+            gh release upload "$GITHUB_REF_NAME" "dist/$APK" --clobber
+          else
+            gh release create "$GITHUB_REF_NAME" "dist/$APK" \
+              --title "SwiftRemote ${GITHUB_REF_NAME#v}" \
+              --generate-notes
+          fi

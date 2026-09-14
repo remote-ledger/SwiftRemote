@@ -5,16 +5,31 @@ name: build-apk
 # auto-generated Android debug key, which a fresh runner regenerates on every
 # run -- that would give each build a different signature and stop Android
 # from installing one over the last.
+#
+# release.yml calls this workflow, so the APK attached to a release is built
+# by exactly these steps rather than a second copy of them that can drift.
 
 on:
   workflow_dispatch:
+  workflow_call:
+    outputs:
+      apk-name:
+        description: File name of the built APK.
+        value: ${{ jobs.apk.outputs.apk-name }}
+      version:
+        description: Version from pubspec.yaml, without the build number.
+        value: ${{ jobs.apk.outputs.version }}
   push:
     branches:
+      - master
       - fix/github-store-stale-search
 
 jobs:
   apk:
     runs-on: ubuntu-latest
+    outputs:
+      apk-name: ${{ steps.name.outputs.apk }}
+      version: ${{ steps.name.outputs.version }}
     steps:
       - uses: actions/checkout@v4
 
@@ -36,6 +51,18 @@ jobs:
       - run: flutter --version
       - run: flutter pub get
 
+      - name: Read the app version
+        id: name
+        run: |
+          set -euo pipefail
+          version=$(sed -n 's/^version: *\([0-9][^+ ]*\).*/\1/p' pubspec.yaml)
+          if [ -z "$version" ]; then
+            echo "::error::Could not read version from pubspec.yaml"
+            exit 1
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "apk=swiftremote-$version.apk" >> "$GITHUB_OUTPUT"
+
       - name: Restore the signing key
         env:
           KEYSTORE_BASE64: ${{ secrets.SWIFTREMOTE_KEYSTORE_BASE64 }}
@@ -55,7 +82,7 @@ jobs:
             echo "keyPassword=$KEYSTORE_PASSWORD"
           } > android/app/key.properties
 
-      # assets/db/irblaster.sqlite is declared in pubspec.yaml but gitignored;
+      # assets/db/swiftremote.sqlite is declared in pubspec.yaml but gitignored;
       # it is generated from the committed SQL dump. Without this, asset
       # bundling fails with "Error detected in pubspec.yaml".
       - name: Generate the bundled IR database
@@ -66,6 +93,14 @@ jobs:
       # every IconData to be const. Ship the full icon font instead.
       - run: flutter build apk --release --no-tree-shake-icons
 
+      # The in-app updater downloads the first .apk attached to a release, so
+      # the file carries the version rather than Flutter's generic name.
+      - name: Name the APK after the version
+        run: |
+          set -euo pipefail
+          mv build/app/outputs/flutter-apk/app-release.apk \
+             "build/app/outputs/flutter-apk/${{ steps.name.outputs.apk }}"
+
       - name: Drop the key material
         if: always()
         run: rm -f android/app/swiftremote.jks android/app/key.properties
@@ -73,5 +108,5 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: swiftremote-release-apk
-          path: build/app/outputs/flutter-apk/app-release.apk
+          path: build/app/outputs/flutter-apk/${{ steps.name.outputs.apk }}
           if-no-files-found: error
