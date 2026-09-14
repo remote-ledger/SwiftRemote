@@ -50,21 +50,28 @@ jobs:
       - run: flutter --version
       - run: flutter pub get
 
+      # assets/db/swiftremote.sqlite is declared in pubspec.yaml but gitignored;
+      # it is generated from the committed SQL dump. Everything downstream
+      # wants it there: the build bundles it, flutter test bundles the
+      # declared assets too, and flutter analyze checks that a declared asset
+      # exists at all, so this comes before the three of them.
+      - name: Generate the bundled IR database
+        run: python3 tools/build_ir_db.py
+
       # The analyzer has never run here, so nothing has been stopping a lint or
       # a stale import from reaching master. It goes before the Gradle build
       # because it answers in seconds rather than minutes, and before the
       # signing key is restored so a lint failure never leaves key material
       # sitting on the runner.
+      #
+      # Infos are reported but not fatal. The project carries 76 of them,
+      # nearly all withOpacity and font_awesome icon names deprecated out from
+      # under it by dependency upgrades, and none is a defect. Failing on them
+      # would block every release behind a cleanup nobody has scheduled, which
+      # teaches people to ignore the gate. Warnings and errors do fail, which
+      # is what caught a real one the first time this ran.
       - name: Analyze the Dart sources
-        run: flutter analyze
-
-      # assets/db/swiftremote.sqlite is declared in pubspec.yaml but gitignored;
-      # it is generated from the committed SQL dump. Without this, asset
-      # bundling fails with "Error detected in pubspec.yaml". flutter test
-      # bundles the declared assets as well, so this has to be in place before
-      # the tests run and not merely before the build.
-      - name: Generate the bundled IR database
-        run: python3 tools/build_ir_db.py
+        run: flutter analyze --no-fatal-infos
 
       # These tests pin the IR encoders to their expected timings, and a
       # regression there stays invisible until a remote stops working in
