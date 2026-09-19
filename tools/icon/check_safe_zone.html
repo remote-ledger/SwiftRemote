@@ -1,0 +1,51 @@
+<!--
+  Safe-zone check for the adaptive launcher layers.
+
+    google-chrome --headless --disable-gpu --allow-file-access-from-files \
+      --virtual-time-budget=8000 --dump-dom tools/icon/check_safe_zone.html
+
+  Android masks an adaptive icon down to the centre 72dp of its 108dp canvas and
+  only guarantees the inner 66dp circle, so `solidR` must stay under `66dp R`
+  or a circular launcher mask will shave the artwork.
+-->
+<canvas id="c"></canvas>
+<script>
+const files = [
+  "../../android/app/src/main/res/drawable-xxxhdpi/ic_launcher_foreground.png",
+  "../../android/app/src/main/res/drawable-xxxhdpi/ic_launcher_monochrome.png",
+];
+(async () => {
+  const lines = [];
+  for (const f of files) {
+    const img = new Image();
+    img.src = f;
+    await img.decode();
+    const n = img.width;
+    const c = document.getElementById("c");
+    c.width = c.height = n;
+    const x = c.getContext("2d");
+    x.clearRect(0, 0, n, n);
+    x.drawImage(img, 0, 0);
+    const d = x.getImageData(0, 0, n, n).data;
+    const mid = (n - 1) / 2;
+    let solid = 0, soft = 0, l = n, r = 0, t = n, b = 0;
+    for (let j = 0; j < n; j++) {
+      for (let i = 0; i < n; i++) {
+        const a = d[(j * n + i) * 4 + 3];
+        if (a < 8) continue;
+        soft = Math.max(soft, Math.hypot(i - mid, j - mid));
+        if (a <= 200) continue;           // ignore the soft edge of the drop shadow
+        solid = Math.max(solid, Math.hypot(i - mid, j - mid));
+        l = Math.min(l, i); r = Math.max(r, i); t = Math.min(t, j); b = Math.max(b, j);
+      }
+    }
+    const pct = (v) => ((v / n) * 100).toFixed(0) + "%";
+    lines.push(
+      `${f.split("/").pop()}  canvas=${n}  solidR=${solid.toFixed(1)}  softR=${soft.toFixed(1)}` +
+      `  66dp R=${(n * 33 / 108).toFixed(1)}  72dp R=${(n * 36 / 108).toFixed(1)}` +
+      `  bbox=${pct(r - l + 1)} x ${pct(b - t + 1)}` +
+      `  ${solid <= n * 33 / 108 ? "OK" : "OUTSIDE GUARANTEED CIRCLE"}`);
+  }
+  document.body.innerHTML = "<pre>" + lines.join("\n") + "</pre>";
+})();
+</script>
