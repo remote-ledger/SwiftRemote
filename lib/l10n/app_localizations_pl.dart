@@ -342,36 +342,10 @@ class AppLocalizationsPl extends AppLocalizations {
       'Zmniejsza zmęczenie oczu przy słabym świetle i oszczędza baterię na ekranach OLED';
 
   @override
-  String get supportDevelopmentTitle => 'Wesprzyj rozwój';
-
-  @override
-  String get supportDevelopmentSubtitle =>
-      'Pomóż utrzymać IR Blaster i zgodność ze sprzętem';
-
-  @override
-  String get supportDevelopmentBody =>
-      'Bez reklam, bez śledzenia, bez blokowanych funkcji. Twoje wsparcie finansuje pracę nad protokołami, obsługę dongli USB i lepszą zgodność między urządzeniami.';
-
-  @override
-  String get donate => 'Wesprzyj';
-
-  @override
   String get starRepo => 'Gwiazda repo';
 
   @override
   String get repositoryLinkCopied => 'Link do repo skopiowany';
-
-  @override
-  String get supportPillLocalOnly => 'Tylko lokalnie';
-
-  @override
-  String get supportPillNoTracking => 'Bez śledzenia';
-
-  @override
-  String get supportPillHardwareAware => 'Świadome sprzętu';
-
-  @override
-  String get supportPillOpenSource => 'Open source';
 
   @override
   String get appearanceTitle => 'Wygląd';
@@ -952,15 +926,6 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get licenseUrlCopied => 'URL licencji skopiowany';
-
-  @override
-  String get companyName => 'KaijinLab Inc.';
-
-  @override
-  String get visitWebsite => 'Odwiedź stronę';
-
-  @override
-  String get companyUrlCopied => 'URL firmy skopiowany';
 
   @override
   String get licenses => 'Licencje';

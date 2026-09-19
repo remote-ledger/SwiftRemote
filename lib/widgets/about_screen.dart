@@ -1,5 +1,4 @@
 import 'package:flutter/foundation.dart';
-import 'package:swiftremote/config/build_flags.dart';
 import 'package:swiftremote/state/haptics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -12,13 +11,11 @@ import 'settings/widgets/support_pill.dart';
 class AboutScreen extends StatefulWidget {
   final String repoUrl;
   final String issuesUrl;
-  final String? liberapayUrl;
 
   const AboutScreen({
     super.key,
     required this.repoUrl,
     required this.issuesUrl,
-    this.liberapayUrl,
   });
 
   @override
@@ -115,16 +112,6 @@ class _AboutScreenState extends State<AboutScreen> {
   String _packageName() => _info?.packageName ?? '—';
   String _appName() => (_info?.appName.trim().isNotEmpty ?? false) ? _info!.appName : 'SwiftRemote';
 
-  List<_OtherApp> _otherApps() {
-    return const <_OtherApp>[
-      _OtherApp(name: 'IR Blaster', url: 'https://github.com/iodn/android-ir-blaster'),
-      _OtherApp(name: 'USBDevInfo', url: 'https://github.com/iodn/android-usb-device-info'),
-      _OtherApp(name: 'GadgetFS', url: 'https://github.com/iodn/gadgetfs'),
-      _OtherApp(name: 'TapDucky', url: 'https://github.com/iodn/tap-ducky'),
-      _OtherApp(name: 'HIDWiggle', url: 'https://github.com/iodn/hid-wiggle'),
-    ];
-  }
-
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -135,8 +122,6 @@ class _AboutScreenState extends State<AboutScreen> {
     final pkg = _packageName();
     final mode = _buildModeLabel();
     final year = DateTime.now().year;
-    final showDonationLink =
-        BuildFlags.showDonations && widget.liberapayUrl != null;
 
     return Scaffold(
       appBar: AppBar(title: const Text('About')),
@@ -180,9 +165,7 @@ class _AboutScreenState extends State<AboutScreen> {
           const SizedBox(height: 18),
           SectionCard(
             title: 'Links',
-            subtitle: showDonationLink
-                ? 'Repository, issues, and donations'
-                : 'Repository and issues',
+            subtitle: 'Repository and issues',
             leading: Icon(Icons.link_rounded, color: cs.primary),
             child: Column(
               children: [
@@ -203,21 +186,6 @@ class _AboutScreenState extends State<AboutScreen> {
                   onTap: () => _launchExternal(context, widget.issuesUrl),
                   onLongPress: () => _copy(context, widget.issuesUrl, 'Issues link copied'),
                 ),
-                if (showDonationLink) ...[
-                  const Divider(height: 1),
-                  ListTile(
-                    leading: const Icon(Icons.favorite_rounded),
-                    title: const Text('Donate via Liberapay'),
-                    subtitle: Text(widget.liberapayUrl!),
-                    trailing: const Icon(Icons.open_in_new_rounded),
-                    onTap: () => _launchExternal(context, widget.liberapayUrl!),
-                    onLongPress: () => _copy(
-                      context,
-                      widget.liberapayUrl!,
-                      'Liberapay link copied',
-                    ),
-                  ),
-                ],
               ],
             ),
           ),
@@ -273,27 +241,6 @@ class _AboutScreenState extends State<AboutScreen> {
                   _InfoRow(label: 'Build', value: mode),
                 ],
               ),
-            ),
-          ),
-          const SizedBox(height: 12),
-          SectionCard(
-            title: 'Other apps by KaijinLab',
-            subtitle: 'More security and hardware-adjacent tools',
-            leading: Icon(Icons.apps_rounded, color: cs.primary),
-            child: Column(
-              children: [
-                for (final a in _otherApps()) ...[
-                  ListTile(
-                    leading: const Icon(Icons.launch_rounded),
-                    title: Text(a.name),
-                    subtitle: const Text('Open GitHub repository'),
-                    trailing: const Icon(Icons.open_in_new_rounded),
-                    onTap: () => _launchExternal(context, a.url),
-                    onLongPress: () => _copy(context, a.url, 'Repository link copied'),
-                  ),
-                  if (a != _otherApps().last) const Divider(height: 1),
-                ],
-              ],
             ),
           ),
           const SizedBox(height: 12),
@@ -449,12 +396,3 @@ class _AppLogo extends StatelessWidget {
   }
 }
 
-class _OtherApp {
-  final String name;
-  final String url;
-
-  const _OtherApp({
-    required this.name,
-    required this.url,
-  });
-}

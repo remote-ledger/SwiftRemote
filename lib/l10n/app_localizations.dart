@@ -708,30 +708,6 @@ abstract class AppLocalizations {
   /// **'Reduces eye strain in low-light conditions and saves battery on OLED screens'**
   String get themeHintDark;
 
-  /// No description provided for @supportDevelopmentTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Support Development'**
-  String get supportDevelopmentTitle;
-
-  /// No description provided for @supportDevelopmentSubtitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Keep IR Blaster maintained and hardware-compatible'**
-  String get supportDevelopmentSubtitle;
-
-  /// No description provided for @supportDevelopmentBody.
-  ///
-  /// In en, this message translates to:
-  /// **'No ads, no tracking, no locked features. Your support funds protocol work, USB dongle support, and better compatibility across devices.'**
-  String get supportDevelopmentBody;
-
-  /// No description provided for @donate.
-  ///
-  /// In en, this message translates to:
-  /// **'Donate'**
-  String get donate;
-
   /// No description provided for @starRepo.
   ///
   /// In en, this message translates to:
@@ -743,30 +719,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Repository link copied'**
   String get repositoryLinkCopied;
-
-  /// No description provided for @supportPillLocalOnly.
-  ///
-  /// In en, this message translates to:
-  /// **'Local-only'**
-  String get supportPillLocalOnly;
-
-  /// No description provided for @supportPillNoTracking.
-  ///
-  /// In en, this message translates to:
-  /// **'No tracking'**
-  String get supportPillNoTracking;
-
-  /// No description provided for @supportPillHardwareAware.
-  ///
-  /// In en, this message translates to:
-  /// **'Hardware-aware'**
-  String get supportPillHardwareAware;
-
-  /// No description provided for @supportPillOpenSource.
-  ///
-  /// In en, this message translates to:
-  /// **'Open-source'**
-  String get supportPillOpenSource;
 
   /// No description provided for @appearanceTitle.
   ///
@@ -1787,24 +1739,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'License URL copied'**
   String get licenseUrlCopied;
-
-  /// No description provided for @companyName.
-  ///
-  /// In en, this message translates to:
-  /// **'KaijinLab Inc.'**
-  String get companyName;
-
-  /// No description provided for @visitWebsite.
-  ///
-  /// In en, this message translates to:
-  /// **'Visit our website'**
-  String get visitWebsite;
-
-  /// No description provided for @companyUrlCopied.
-  ///
-  /// In en, this message translates to:
-  /// **'Company URL copied'**
-  String get companyUrlCopied;
 
   /// No description provided for @licenses.
   ///

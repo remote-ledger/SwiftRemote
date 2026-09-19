@@ -339,36 +339,10 @@ class AppLocalizationsHi extends AppLocalizations {
       'कम करता है आंख तनाव में low-light स्थितियां और बचाता है बैटरी पर OLED स्क्रीन';
 
   @override
-  String get supportDevelopmentTitle => 'विकास का समर्थन करें';
-
-  @override
-  String get supportDevelopmentSubtitle =>
-      'IR Blaster को बनाए रखें और हार्डवेयर-संगत बनाए रखें';
-
-  @override
-  String get supportDevelopmentBody =>
-      'कोई विज्ञापन नहीं, कोई ट्रैकिंग नहीं, कोई बंद फीचर नहीं। आपका समर्थन प्रोटोकॉल कार्य, USB डोंगल समर्थन और उपकरणों में बेहतर संगतता को वित्त देता है।';
-
-  @override
-  String get donate => 'Donate';
-
-  @override
   String get starRepo => 'रिपॉजिटरी को स्टार करें';
 
   @override
   String get repositoryLinkCopied => 'रिपॉजिटरी लिंक कॉपी किया गया';
-
-  @override
-  String get supportPillLocalOnly => 'केवल स्थानीय';
-
-  @override
-  String get supportPillNoTracking => 'कोई ट्रैकिंग नहीं';
-
-  @override
-  String get supportPillHardwareAware => 'हार्डवेयर-सचेत';
-
-  @override
-  String get supportPillOpenSource => 'ओपन-सोर्स';
 
   @override
   String get appearanceTitle => 'दिखावट';
@@ -945,15 +919,6 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get licenseUrlCopied => 'लाइसेंस URL कॉपी किया गया';
-
-  @override
-  String get companyName => 'KaijinLab Inc.';
-
-  @override
-  String get visitWebsite => 'हमारी वेबसाइट देखें';
-
-  @override
-  String get companyUrlCopied => 'Company URL कॉपी किया गया';
 
   @override
   String get licenses => 'Licenses';

@@ -342,36 +342,10 @@ class AppLocalizationsRu extends AppLocalizations {
       'Снижает нагрузку на глаза при слабом свете и экономит батарею на OLED';
 
   @override
-  String get supportDevelopmentTitle => 'Поддержать разработку';
-
-  @override
-  String get supportDevelopmentSubtitle =>
-      'Помогите поддерживать IR Blaster и совместимость с оборудованием';
-
-  @override
-  String get supportDevelopmentBody =>
-      'Без рекламы, без трекинга, без закрытых функций. Ваша поддержка идёт на работу с протоколами, поддержку USB-адаптеров и лучшую совместимость устройств.';
-
-  @override
-  String get donate => 'Поддержать';
-
-  @override
   String get starRepo => 'Поставить звезду';
 
   @override
   String get repositoryLinkCopied => 'Ссылка на репозиторий скопирована';
-
-  @override
-  String get supportPillLocalOnly => 'Только локально';
-
-  @override
-  String get supportPillNoTracking => 'Без трекинга';
-
-  @override
-  String get supportPillHardwareAware => 'С учётом железа';
-
-  @override
-  String get supportPillOpenSource => 'Open source';
 
   @override
   String get appearanceTitle => 'Внешний вид';
@@ -948,15 +922,6 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get licenseUrlCopied => 'URL лицензии скопирован';
-
-  @override
-  String get companyName => 'KaijinLab Inc.';
-
-  @override
-  String get visitWebsite => 'Открыть сайт';
-
-  @override
-  String get companyUrlCopied => 'URL компании скопирован';
 
   @override
   String get licenses => 'Лицензии';

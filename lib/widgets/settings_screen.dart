@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:swiftremote/config/build_flags.dart';
 import 'package:swiftremote/l10n/app_localizations.dart';
 import 'package:swiftremote/l10n/l10n.dart';
 import 'package:swiftremote/state/app_locale.dart';
@@ -20,9 +19,7 @@ import 'package:swiftremote/utils/remote.dart';
 import 'package:swiftremote/utils/remotes_io.dart';
 import 'package:swiftremote/app_update/app_update_screen.dart';
 import 'package:swiftremote/widgets/about_screen.dart';
-import 'package:swiftremote/widgets/settings/widgets/donation_sheet.dart';
 import 'package:swiftremote/widgets/settings/widgets/section_card.dart';
-import 'package:swiftremote/widgets/settings/widgets/support_pill.dart';
 import 'package:swiftremote/widgets/universal_power_screen.dart';
 import 'package:swiftremote/widgets/device_controls_screen.dart';
 import 'package:swiftremote/widgets/github_store_screen.dart';
@@ -40,17 +37,9 @@ class SettingsScreen extends StatelessWidget {
   static const String _licenseUrl =
       'https://github.com/shanjian/SwiftRemote/blob/master/LICENSE';
 
-  /// SwiftRemote is a fork; donations still go to the original author, so
-  /// the donation sheet points at their repository rather than this one.
-  static const String _upstreamRepoUrl =
-      'https://github.com/iodn/android-ir-blaster';
-  static const String _companyUrl = 'https://neroswarm.com';
-  static const String _creatorName = 'KaijinLab Inc.';
-  static const String _liberapayUrl = 'https://liberapay.com/KaijinLab/donate';
-  static const String _btcAddress =
-      'bc1qtf79uecssueu4u4u86zct46vcs0vcd2cnmvw6f';
-  static const String _ethAddress =
-      '0xCaCc52Cd2D534D869a5C61dD3cAac57455f3c2fD';
+  /// The fork's maintainer. Upstream authorship is credited on the About
+  /// screen, which is where it belongs; this names who ships SwiftRemote.
+  static const String _creatorName = 'shanjian';
   static const Map<String, String> _languageNativeNames = <String, String>{
     'en': 'English',
     'fr': 'Français',
@@ -262,31 +251,6 @@ class SettingsScreen extends StatelessWidget {
         SnackBar(content: Text(context.l10n.settingsAllRemotesDeleted)));
   }
 
-  void _openDonationSheet(BuildContext context) {
-    showModalBottomSheet<void>(
-      context: context,
-      useSafeArea: true,
-      isScrollControlled: true,
-      showDragHandle: true,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(18)),
-      ),
-      builder: (ctx) {
-        return FractionallySizedBox(
-          heightFactor: 0.92,
-          child: DonationSheet(
-            repoUrl: _upstreamRepoUrl,
-            btcAddress: _btcAddress,
-            ethAddress: _ethAddress,
-            liberapayUrl: _liberapayUrl,
-            onCopy: (text, message) =>
-                _copyToClipboard(ctx, text: text, message: message),
-          ),
-        );
-      },
-    );
-  }
-
   Future<void> _changeTheme(BuildContext context, ThemeMode mode) async {
     await AppThemeController.instance.setMode(mode);
     await Haptics.selectionClick();
@@ -483,10 +447,6 @@ class SettingsScreen extends StatelessWidget {
       body: ListView(
         children: [
           const SizedBox(height: 10),
-          if (BuildFlags.showDonations) ...[
-            _buildSupportSection(context),
-            const SizedBox(height: 10),
-          ],
           _buildAppearanceSection(context),
           const SizedBox(height: 10),
           _buildLocalizationSection(context),
@@ -510,101 +470,6 @@ class SettingsScreen extends StatelessWidget {
           _buildAboutSection(context),
           const SizedBox(height: 18),
         ],
-      ),
-    );
-  }
-
-  Widget _buildSupportSection(BuildContext context) {
-    final theme = Theme.of(context);
-    final cs = theme.colorScheme;
-
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: SectionCard(
-        title: context.l10n.supportDevelopmentTitle,
-        subtitle: context.l10n.supportDevelopmentSubtitle,
-        leading: Icon(Icons.volunteer_activism_rounded, color: cs.primary),
-        child: Padding(
-          padding: const EdgeInsets.all(14),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.all(14),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      cs.secondaryContainer.withValues(alpha: 0.7),
-                      cs.secondaryContainer.withValues(alpha: 0.4),
-                    ],
-                  ),
-                  borderRadius: BorderRadius.circular(14),
-                  border: Border.all(
-                      color: cs.outlineVariant.withValues(alpha: 0.3)),
-                ),
-                child: Text(
-                  context.l10n.supportDevelopmentBody,
-                  style: theme.textTheme.bodyMedium?.copyWith(
-                    color: cs.onSecondaryContainer,
-                    fontWeight: FontWeight.w600,
-                    height: 1.3,
-                  ),
-                ),
-              ),
-              const SizedBox(height: 14),
-              Row(
-                children: [
-                  Expanded(
-                    child: FilledButton.icon(
-                      onPressed: () => _openDonationSheet(context),
-                      icon: const Icon(Icons.favorite_rounded),
-                      label: Text(context.l10n.donate),
-                      style: FilledButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(vertical: 14),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: 12),
-                  Expanded(
-                    child: OutlinedButton.icon(
-                      onPressed: () => _launchUrl(context, _repoUrl),
-                      onLongPress: () => _copyToClipboard(
-                        context,
-                        text: _repoUrl,
-                        message: context.l10n.repositoryLinkCopied,
-                      ),
-                      icon: const Icon(Icons.star_border_rounded),
-                      label: Text(context.l10n.starRepo),
-                      style: OutlinedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(vertical: 14),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 12),
-              Wrap(
-                spacing: 8,
-                runSpacing: 8,
-                children: [
-                  SupportPill(
-                      icon: Icons.lock_outline_rounded,
-                      label: context.l10n.supportPillLocalOnly),
-                  SupportPill(
-                      icon: Icons.shield_outlined,
-                      label: context.l10n.supportPillNoTracking),
-                  SupportPill(
-                      icon: Icons.memory_rounded,
-                      label: context.l10n.supportPillHardwareAware),
-                  SupportPill(
-                      icon: Icons.code_rounded,
-                      label: context.l10n.supportPillOpenSource),
-                ],
-              ),
-            ],
-          ),
-        ),
       ),
     );
   }
@@ -1336,8 +1201,6 @@ class SettingsScreen extends StatelessWidget {
                         builder: (context) => AboutScreen(
                           repoUrl: _repoUrl,
                           issuesUrl: _issuesUrl,
-                          liberapayUrl:
-                              BuildFlags.showDonations ? _liberapayUrl : null,
                         ),
                       ),
                     );
@@ -1388,16 +1251,6 @@ class SettingsScreen extends StatelessWidget {
               onTap: () => _launchUrl(context, _licenseUrl),
               onLongPress: () => _copyToClipboard(context,
                   text: _licenseUrl, message: context.l10n.licenseUrlCopied),
-            ),
-            const Divider(height: 1),
-            ListTile(
-              leading: const Icon(Icons.business),
-              title: Text(context.l10n.companyName),
-              subtitle: Text(context.l10n.visitWebsite),
-              trailing: const Icon(Icons.open_in_new),
-              onTap: () => _launchUrl(context, _companyUrl),
-              onLongPress: () => _copyToClipboard(context,
-                  text: _companyUrl, message: context.l10n.companyUrlCopied),
             ),
             const Divider(height: 1),
             ListTile(

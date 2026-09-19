@@ -324,35 +324,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get themeHintDark => '暗い場所で目の負担を減らし OLED画面では電池も節約します。';
 
   @override
-  String get supportDevelopmentTitle => '開発を支援';
-
-  @override
-  String get supportDevelopmentSubtitle => 'IR Blasterの保守とハード互換性を支援';
-
-  @override
-  String get supportDevelopmentBody =>
-      '広告なし 追跡なし 機能制限なし。ご支援はプロトコル対応 USBドングル対応 端末互換性向上に使われます。';
-
-  @override
-  String get donate => '寄付';
-
-  @override
   String get starRepo => 'リポジトリにスター';
 
   @override
   String get repositoryLinkCopied => 'リポジトリのリンクをコピーしました';
-
-  @override
-  String get supportPillLocalOnly => 'ローカルのみ';
-
-  @override
-  String get supportPillNoTracking => '追跡なし';
-
-  @override
-  String get supportPillHardwareAware => 'ハード対応';
-
-  @override
-  String get supportPillOpenSource => 'オープンソース';
 
   @override
   String get appearanceTitle => '外観';
@@ -910,15 +885,6 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get licenseUrlCopied => 'ライセンスURLをコピーしました';
-
-  @override
-  String get companyName => 'KaijinLab Inc.';
-
-  @override
-  String get visitWebsite => 'Webサイトを開く';
-
-  @override
-  String get companyUrlCopied => '会社URLをコピーしました';
 
   @override
   String get licenses => 'ライセンス';

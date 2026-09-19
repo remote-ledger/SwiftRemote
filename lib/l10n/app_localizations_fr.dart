@@ -342,36 +342,10 @@ class AppLocalizationsFr extends AppLocalizations {
       'Réduit la fatigue visuelle en faible lumière et économise la batterie sur écran OLED';
 
   @override
-  String get supportDevelopmentTitle => 'Soutenir le développement';
-
-  @override
-  String get supportDevelopmentSubtitle =>
-      'Aidez IR Blaster à rester maintenu et compatible';
-
-  @override
-  String get supportDevelopmentBody =>
-      'Sans pub, sans suivi, sans fonctions bloquées. Votre soutien finance le travail protocole, le support des dongles USB et une meilleure compatibilité entre appareils.';
-
-  @override
-  String get donate => 'Faire un don';
-
-  @override
   String get starRepo => 'Mettre une étoile';
 
   @override
   String get repositoryLinkCopied => 'Lien du dépôt copié';
-
-  @override
-  String get supportPillLocalOnly => 'Local uniquement';
-
-  @override
-  String get supportPillNoTracking => 'Sans suivi';
-
-  @override
-  String get supportPillHardwareAware => 'Matériel pris en compte';
-
-  @override
-  String get supportPillOpenSource => 'Open source';
 
   @override
   String get appearanceTitle => 'Apparence';
@@ -956,15 +930,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get licenseUrlCopied => 'URL de la licence copiée';
-
-  @override
-  String get companyName => 'KaijinLab Inc.';
-
-  @override
-  String get visitWebsite => 'Visiter notre site';
-
-  @override
-  String get companyUrlCopied => 'URL de l\'entreprise copiée';
 
   @override
   String get licenses => 'Licences';

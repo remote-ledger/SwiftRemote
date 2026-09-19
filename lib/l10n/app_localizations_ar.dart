@@ -334,36 +334,10 @@ class AppLocalizationsAr extends AppLocalizations {
       'يقلل إجهاد العين في الإضاءة المنخفضة ويوفر البطارية على شاشات OLED';
 
   @override
-  String get supportDevelopmentTitle => 'دعم التطوير';
-
-  @override
-  String get supportDevelopmentSubtitle =>
-      'ساعد على إبقاء IR Blaster محدثاً ومتوافقاً مع العتاد';
-
-  @override
-  String get supportDevelopmentBody =>
-      'لا إعلانات، ولا تتبع، ولا ميزات مقفلة. دعمك يمول عمل البروتوكولات، ودعم دونجل USB، وتحسين التوافق بين الأجهزة.';
-
-  @override
-  String get donate => 'تبرع';
-
-  @override
   String get starRepo => 'Star Repo';
 
   @override
   String get repositoryLinkCopied => 'Repository link copied';
-
-  @override
-  String get supportPillLocalOnly => 'Local-only';
-
-  @override
-  String get supportPillNoTracking => 'No tracking';
-
-  @override
-  String get supportPillHardwareAware => 'Hardware-aware';
-
-  @override
-  String get supportPillOpenSource => 'فتح-source';
 
   @override
   String get appearanceTitle => 'Appearance';
@@ -934,15 +908,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get licenseUrlCopied => 'License URL copied';
-
-  @override
-  String get companyName => 'KaijinLab Inc.';
-
-  @override
-  String get visitWebsite => 'Visit our website';
-
-  @override
-  String get companyUrlCopied => 'Company URL copied';
 
   @override
   String get licenses => 'Licenses';
@@ -5288,36 +5253,10 @@ class AppLocalizationsArEg extends AppLocalizationsAr {
       'يقلل إجهاد العين في الإضاءة المنخفضة ويوفر البطارية على شاشات OLED';
 
   @override
-  String get supportDevelopmentTitle => 'دعم التطوير';
-
-  @override
-  String get supportDevelopmentSubtitle =>
-      'ساعد على إبقاء IR Blaster محدثاً ومتوافقاً مع العتاد';
-
-  @override
-  String get supportDevelopmentBody =>
-      'لا إعلانات، ولا تتبع، ولا ميزات مقفلة. دعمك يمول عمل البروتوكولات، ودعم دونجل USB، وتحسين التوافق بين الأجهزة.';
-
-  @override
-  String get donate => 'تبرع';
-
-  @override
   String get starRepo => 'Star Repo';
 
   @override
   String get repositoryLinkCopied => 'Repository link copied';
-
-  @override
-  String get supportPillLocalOnly => 'Local-only';
-
-  @override
-  String get supportPillNoTracking => 'No tracking';
-
-  @override
-  String get supportPillHardwareAware => 'Hardware-aware';
-
-  @override
-  String get supportPillOpenSource => 'فتح-source';
 
   @override
   String get appearanceTitle => 'Appearance';
@@ -5888,15 +5827,6 @@ class AppLocalizationsArEg extends AppLocalizationsAr {
 
   @override
   String get licenseUrlCopied => 'License URL copied';
-
-  @override
-  String get companyName => 'KaijinLab Inc.';
-
-  @override
-  String get visitWebsite => 'Visit our website';
-
-  @override
-  String get companyUrlCopied => 'Company URL copied';
 
   @override
   String get licenses => 'Licenses';
