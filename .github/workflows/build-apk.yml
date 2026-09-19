@@ -36,6 +36,21 @@ on:
     branches:
       - master
 
+# A pull request that gets three pushes in a minute does not need three
+# seven-minute builds; only the last one describes the code being proposed,
+# and the earlier ones just hold up the runner.
+#
+# Cancelling is limited to pull requests on purpose. release.yml reaches this
+# workflow through workflow_call, where the github context belongs to the
+# caller -- a tag push, so event_name is "push" and nothing here will cancel
+# it. That matters more than the saved minutes: a release killed halfway
+# leaves a published tag with no APK attached to it, and the in-app updater
+# reads exactly that. Pushes to master are left alone for the same reason,
+# since their artifact is what a release is cut from.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   apk:
     runs-on: ubuntu-latest
