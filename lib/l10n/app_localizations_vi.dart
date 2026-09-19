@@ -339,36 +339,10 @@ class AppLocalizationsVi extends AppLocalizations {
       'Giảm mỏi mắt trong môi trường thiếu sáng và tiết kiệm pin trên màn hình OLED';
 
   @override
-  String get supportDevelopmentTitle => 'Ủng hộ phát triển';
-
-  @override
-  String get supportDevelopmentSubtitle =>
-      'Giúp IR Blaster luôn được duy trì và tương thích phần cứng';
-
-  @override
-  String get supportDevelopmentBody =>
-      'Không quảng cáo, không theo dõi, không khóa tính năng. Sự ủng hộ của bạn giúp phát triển giao thức, hỗ trợ USB dongle và tăng tương thích giữa các thiết bị.';
-
-  @override
-  String get donate => 'Ủng hộ';
-
-  @override
   String get starRepo => 'Gắn sao repo';
 
   @override
   String get repositoryLinkCopied => 'Đã sao chép liên kết repo';
-
-  @override
-  String get supportPillLocalOnly => 'Chỉ cục bộ';
-
-  @override
-  String get supportPillNoTracking => 'Không theo dõi';
-
-  @override
-  String get supportPillHardwareAware => 'Hiểu phần cứng';
-
-  @override
-  String get supportPillOpenSource => 'Mã nguồn mở';
 
   @override
   String get appearanceTitle => 'Giao diện';
@@ -940,15 +914,6 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get licenseUrlCopied => 'Đã sao chép URL giấy phép';
-
-  @override
-  String get companyName => 'KaijinLab Inc.';
-
-  @override
-  String get visitWebsite => 'Truy cập website';
-
-  @override
-  String get companyUrlCopied => 'Đã sao chép URL công ty';
 
   @override
   String get licenses => 'Giấy phép';

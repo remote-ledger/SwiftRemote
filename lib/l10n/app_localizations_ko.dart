@@ -329,36 +329,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get themeHintDark => '어두운 환경에서 눈의 피로를 줄이고 OLED 화면의 배터리를 절약합니다';
 
   @override
-  String get supportDevelopmentTitle => '개발 지원';
-
-  @override
-  String get supportDevelopmentSubtitle =>
-      'IR Blaster를 계속 유지하고 하드웨어 호환성을 개선합니다';
-
-  @override
-  String get supportDevelopmentBody =>
-      '광고 없음, 추적 없음, 잠긴 기능 없음. 여러분의 지원은 프로토콜 작업, USB 동글 지원, 기기 간 호환성 개선에 사용됩니다.';
-
-  @override
-  String get donate => '후원';
-
-  @override
   String get starRepo => '저장소에 별표';
 
   @override
   String get repositoryLinkCopied => '저장소 링크를 복사했습니다';
-
-  @override
-  String get supportPillLocalOnly => '로컬 전용';
-
-  @override
-  String get supportPillNoTracking => '추적 없음';
-
-  @override
-  String get supportPillHardwareAware => '하드웨어 인식';
-
-  @override
-  String get supportPillOpenSource => '오픈 소스';
 
   @override
   String get appearanceTitle => '화면 표시';
@@ -917,15 +891,6 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get licenseUrlCopied => '라이선스 URL을 복사했습니다';
-
-  @override
-  String get companyName => 'KaijinLab Inc.';
-
-  @override
-  String get visitWebsite => '웹사이트 방문';
-
-  @override
-  String get companyUrlCopied => '회사 URL을 복사했습니다';
 
   @override
   String get licenses => '라이선스';

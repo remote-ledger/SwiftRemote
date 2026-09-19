@@ -319,35 +319,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get themeHintDark => '降低弱光下的眼疲劳，并在 OLED 屏幕上节省电量';
 
   @override
-  String get supportDevelopmentTitle => '支持开发';
-
-  @override
-  String get supportDevelopmentSubtitle => '帮助 IR Blaster 持续维护并兼容更多硬件';
-
-  @override
-  String get supportDevelopmentBody =>
-      '无广告，无跟踪，无功能锁定。你的支持将用于协议适配、USB dongle 支持以及提升设备兼容性。';
-
-  @override
-  String get donate => '捐赠';
-
-  @override
   String get starRepo => '给仓库点星';
 
   @override
   String get repositoryLinkCopied => '仓库链接已复制';
-
-  @override
-  String get supportPillLocalOnly => '仅本地';
-
-  @override
-  String get supportPillNoTracking => '无跟踪';
-
-  @override
-  String get supportPillHardwareAware => '适配硬件';
-
-  @override
-  String get supportPillOpenSource => '开源';
 
   @override
   String get appearanceTitle => '外观';
@@ -888,15 +863,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get licenseUrlCopied => '许可证 URL 已复制';
-
-  @override
-  String get companyName => 'KaijinLab Inc.';
-
-  @override
-  String get visitWebsite => '访问我们的网站';
-
-  @override
-  String get companyUrlCopied => '公司 URL 已复制';
 
   @override
   String get licenses => '许可证';

@@ -336,36 +336,10 @@ class AppLocalizationsMs extends AppLocalizations {
       'Mengurangi lelah mata pada kondisi minim cahaya dan menghemat baterai di layar OLED';
 
   @override
-  String get supportDevelopmentTitle => 'Dukung Pengembangan';
-
-  @override
-  String get supportDevelopmentSubtitle =>
-      'Bantu IR Blaster kekal terjaga dan serasi perkakasan';
-
-  @override
-  String get supportDevelopmentBody =>
-      'Tiada iklan, tiada penjejakan, tiada ciri terkunci. Sokongan anda membantu pembangunan protokol, sokongan dongel USB, dan keserasian yang lebih baik merentas peranti.';
-
-  @override
-  String get donate => 'Donasi';
-
-  @override
   String get starRepo => 'Bintang repositori';
 
   @override
   String get repositoryLinkCopied => 'Pautan repositori disalin';
-
-  @override
-  String get supportPillLocalOnly => 'Hanya lokal';
-
-  @override
-  String get supportPillNoTracking => 'Tanpa pelacakan';
-
-  @override
-  String get supportPillHardwareAware => 'Sadar peranti';
-
-  @override
-  String get supportPillOpenSource => 'Sumber terbuka';
 
   @override
   String get appearanceTitle => 'Tampilan';
@@ -942,15 +916,6 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get licenseUrlCopied => 'URL lesen disalin';
-
-  @override
-  String get companyName => 'KaijinLab Inc.';
-
-  @override
-  String get visitWebsite => 'Kunjungi situs kami';
-
-  @override
-  String get companyUrlCopied => 'URL perusahaan disalin';
 
   @override
   String get licenses => 'Lisensi';

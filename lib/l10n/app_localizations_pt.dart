@@ -343,36 +343,10 @@ class AppLocalizationsPt extends AppLocalizations {
       'Reduz a fadiga visual com pouca luz e poupa bateria em ecrãs OLED';
 
   @override
-  String get supportDevelopmentTitle => 'Apoyar desarrollo';
-
-  @override
-  String get supportDevelopmentSubtitle =>
-      'Ajuda a manter o IR Blaster e a sua compatibilidade de hardware';
-
-  @override
-  String get supportDevelopmentBody =>
-      'Sem anúncios, sem rastreio nem funções bloqueadas. O seu apoio financia protocolos, suporte USB e melhor compatibilidade entre dispositivos.';
-
-  @override
-  String get donate => 'Donar';
-
-  @override
   String get starRepo => 'Dar estrella';
 
   @override
   String get repositoryLinkCopied => 'Enlace do repositorio copiado';
-
-  @override
-  String get supportPillLocalOnly => 'Apenas local';
-
-  @override
-  String get supportPillNoTracking => 'Sem rastreio';
-
-  @override
-  String get supportPillHardwareAware => 'Consciente do hardware';
-
-  @override
-  String get supportPillOpenSource => 'Código aberto';
 
   @override
   String get appearanceTitle => 'Apariencia';
@@ -955,15 +929,6 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get licenseUrlCopied => 'URL da licença copiado';
-
-  @override
-  String get companyName => 'KaijinLab Inc.';
-
-  @override
-  String get visitWebsite => 'Visitar nuestro sitio web';
-
-  @override
-  String get companyUrlCopied => 'URL da empresa copiado';
 
   @override
   String get licenses => 'Licencias';
@@ -5362,36 +5327,10 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
       'Reduz a fadiga visual com pouca luz e economiza bateria em telas OLED';
 
   @override
-  String get supportDevelopmentTitle => 'Apoyar desarrollo';
-
-  @override
-  String get supportDevelopmentSubtitle =>
-      'Ajuda a manter o IR Blaster e a compatibilidade de hardware';
-
-  @override
-  String get supportDevelopmentBody =>
-      'Sem anúncios, sem rastreamento nem funções bloqueadas. O seu apoio financia protocolos, suporte USB e melhor compatibilidade entre dispositivos.';
-
-  @override
-  String get donate => 'Donar';
-
-  @override
   String get starRepo => 'Dar estrella';
 
   @override
   String get repositoryLinkCopied => 'Enlace do repositorio copiado';
-
-  @override
-  String get supportPillLocalOnly => 'Apenas local';
-
-  @override
-  String get supportPillNoTracking => 'Sem rastreio';
-
-  @override
-  String get supportPillHardwareAware => 'Consciente do hardware';
-
-  @override
-  String get supportPillOpenSource => 'Código aberto';
 
   @override
   String get appearanceTitle => 'Apariencia';
@@ -5975,15 +5914,6 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get licenseUrlCopied => 'URL da licença copiada';
-
-  @override
-  String get companyName => 'KaijinLab Inc.';
-
-  @override
-  String get visitWebsite => 'Visitar nuestro sitio web';
-
-  @override
-  String get companyUrlCopied => 'URL da empresa copiada';
 
   @override
   String get licenses => 'Licencias';
