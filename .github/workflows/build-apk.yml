@@ -22,6 +22,19 @@ on:
   push:
     branches:
       - master
+  # Without this the gate below only ever saw code that was already merged,
+  # which is the wrong end of the process to find out at. Note that analyze
+  # and test would not have caught the change that prompted this: deleting
+  # res/values/colors.xml breaks nothing a Dart analyzer can see, and only
+  # the Gradle build fails if a resource still points at it. So a pull
+  # request builds the APK too, rather than stopping at the cheap checks.
+  #
+  # A branch in this repository can read the signing secrets, so that build
+  # is signed like any other. One from a fork cannot, and stops at the guard
+  # in "Restore the signing key" with a message saying exactly that.
+  pull_request:
+    branches:
+      - master
 
 jobs:
   apk:
