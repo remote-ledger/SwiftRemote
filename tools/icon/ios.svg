@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2D9BF0"/>
+      <stop offset="0.55" stop-color="#1668D8"/>
+      <stop offset="1" stop-color="#0B3B96"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.28" cy="0.2" r="0.75">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="beam" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#FF7A3D"/>
+      <stop offset="1" stop-color="#FFD166"/>
+    </linearGradient>
+    <linearGradient id="shell" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#DBE6F4"/>
+    </linearGradient>
+    <filter id="cast" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#04205A" flood-opacity="0.34"/>
+    </filter>
+    <clipPath id="plate"><rect width="1024" height="1024" rx="0"/></clipPath>
+  </defs>
+  <g clip-path="url(#plate)">
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <rect width="1024" height="1024" fill="url(#glow)"/>
+  <g filter="url(#cast)"><g transform="translate(518,506) rotate(28) scale(1.15) translate(0,-24.5)">
+    <mask id="cpMask">
+      <rect x="-140" y="-105" width="280" height="470" rx="92" fill="#fff"/>
+      <g fill="#000">
+        <path d="M 29.8 12.4 A 52 52 0 1 1 -29.8 12.4" fill="none" stroke="#000" stroke-width="22" stroke-linecap="round"/>
+        <rect x="-11" y="-23" width="22" height="54" rx="11"/>
+        <circle cx="-55" cy="190" r="21"/>
+        <circle cx="55" cy="190" r="21"/>
+        <circle cx="-55" cy="268" r="21"/>
+        <circle cx="55" cy="268" r="21"/>
+      </g>
+    </mask>
+    <rect x="-140" y="-105" width="280" height="470" rx="92" fill="url(#shell)" mask="url(#cpMask)"/>
+    <rect x="-42" y="-84" width="84" height="26" rx="13" fill="url(#beam)"/>
+    <g fill="none" stroke="url(#beam)" stroke-linecap="round">
+      <path d="M -49.5 -169.5 A 70 70 0 0 1 49.5 -169.5" stroke-width="28"/>
+      <path d="M -88.4 -208.4 A 125 125 0 0 1 88.4 -208.4" stroke-width="30"/>
+      <path d="M -127.3 -247.3 A 180 180 0 0 1 127.3 -247.3" stroke-width="32"/>
+    </g>
+  </g></g>
+  </g>
+</svg>
