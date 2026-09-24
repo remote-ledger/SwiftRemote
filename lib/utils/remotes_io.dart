@@ -146,6 +146,35 @@ ImportPreviewResult analyzeImportedText(
       fallbackButtonLabel: fallbackButtonLabel,
     );
 
+    final int? ledgerVersion = kind == _ImportFileKind.json
+        ? _remoteLedgerJsonSchemaVersion(contents)
+        : null;
+    if (ledgerVersion != null) {
+      if (ledgerVersion != _remoteLedgerSchemaVersionSupported) {
+        return unsupported(
+          'Remote Ledger',
+          'This remote uses Remote Ledger schema version $ledgerVersion, which this version of SwiftRemote cannot read.',
+          issues: const <String>[
+            'An update to SwiftRemote may be able to import it.',
+          ],
+        );
+      }
+      if (!validRemotes(remotes)) {
+        return unsupported(
+          'Remote Ledger',
+          'This Remote Ledger remote has no key with a playable Pronto code.',
+        );
+      }
+      return ImportPreviewResult(
+        formatLabel: 'Remote Ledger',
+        isSupported: true,
+        supportReason:
+            'Compatible Remote Ledger remote. Each key uses its most trusted code.',
+        issues: const <String>[],
+        remotes: remotes,
+      );
+    }
+
     if (kind == _ImportFileKind.json) {
       if (!validRemotes(remotes)) {
         return unsupported(
@@ -899,6 +928,15 @@ List<Remote> _parseSupportedFileToRemotes(
     }
 
     if (decoded is Map) {
+      if (_remoteLedgerSchemaVersion(decoded) != null) {
+        final Remote? r = _parseRemoteLedgerRemote(
+          decoded,
+          remoteNameHint: remoteNameHint,
+          fallbackLabel: fallbackButtonLabel,
+        );
+        if (r == null) return const <Remote>[];
+        return <Remote>[r];
+      }
       final dynamic remotesRaw = decoded['remotes'];
       if (remotesRaw is List) {
         return remotesRaw
@@ -1416,7 +1454,36 @@ class _ProntoParsed {
   const _ProntoParsed({required this.frequencyHz, required this.rawDurations});
 }
 
+/// A Pronto code's two burst sequences in microseconds: [intro] is sent once
+/// and [repeat] for as long as the button is held. Either may be empty, but
+/// not both.
+class _ProntoSequences {
+  final int frequencyHz;
+  final List<int> intro;
+  final List<int> repeat;
+  const _ProntoSequences({
+    required this.frequencyHz,
+    required this.intro,
+    required this.repeat,
+  });
+}
+
 _ProntoParsed? _tryParseProntoHexToRaw(String payload) {
+  final _ProntoSequences? sequences = _tryParseProntoSequences(payload);
+  if (sequences == null) return null;
+  return _ProntoParsed(
+    frequencyHz: sequences.frequencyHz,
+    rawDurations: <int>[...sequences.intro, ...sequences.repeat].join(' '),
+  );
+}
+
+/// [minDurations] guards text that merely looks like Pronto, where four hex
+/// words are weak evidence. A source known to hold Pronto can accept less:
+/// Canon's RC-1 is two bursts 7 ms apart, and nothing longer.
+_ProntoSequences? _tryParseProntoSequences(
+  String payload, {
+  int minDurations = 6,
+}) {
   final cleaned = payload.replaceAll('\r', ' ').replaceAll('\n', ' ').trim();
   if (cleaned.isEmpty) return null;
 
@@ -1465,11 +1532,115 @@ _ProntoParsed? _tryParseProntoHexToRaw(String payload) {
     durations.add(us);
   }
 
-  if (durations.length < 6) return null;
-  return _ProntoParsed(
+  if (durations.length < minDurations) return null;
+  final int introLength = seq1 * 2;
+  return _ProntoSequences(
     frequencyHz: freqHz,
-    rawDurations: durations.join(' '),
+    intro: durations.sublist(0, introLength),
+    repeat: durations.sublist(introLength),
   );
+}
+
+const int _remoteLedgerSchemaVersionSupported = 1;
+
+/// The schema version of a remote compiled by Remote Ledger
+/// (github.com/remote-ledger/remote-ledger.github.io), or null when [decoded]
+/// is not shaped like one. Each such file holds one remote whose keys already
+/// carry their most trusted code as Pronto Hex.
+int? _remoteLedgerSchemaVersion(dynamic decoded) {
+  if (decoded is! Map) return null;
+  final dynamic version = decoded['schemaVersion'];
+  if (version is! int) return null;
+  if (decoded['keys'] is! Map || decoded['protocol'] is! Map) return null;
+  return version;
+}
+
+int? _remoteLedgerJsonSchemaVersion(String contents) {
+  try {
+    return _remoteLedgerSchemaVersion(jsonDecode(contents));
+  } catch (_) {
+    return null;
+  }
+}
+
+Remote? _parseRemoteLedgerRemote(
+  Map<dynamic, dynamic> decoded, {
+  required String remoteNameHint,
+  required String fallbackLabel,
+}) {
+  if (_remoteLedgerSchemaVersion(decoded) !=
+      _remoteLedgerSchemaVersionSupported) {
+    return null;
+  }
+  final Map<dynamic, dynamic> protocol = decoded['protocol'] as Map;
+  final Map<dynamic, dynamic> keys = decoded['keys'] as Map;
+
+  final dynamic minSends = protocol['minSends'];
+  final int sends = minSends is int ? minSends.clamp(1, 10) : 1;
+  final dynamic carrierHz = protocol['carrierHz'];
+  final int? carrier =
+      carrierHz is int && carrierHz >= 10000 && carrierHz <= 200000
+          ? carrierHz
+          : null;
+
+  final uuid = const Uuid();
+  final List<IRButton> buttons = <IRButton>[];
+  for (final MapEntry<dynamic, dynamic> entry in keys.entries) {
+    final dynamic key = entry.value;
+    if (key is! Map) continue;
+    final dynamic candidates = key['candidates'];
+    if (candidates is! Map) continue;
+    // `primary` is the candidate Remote Ledger trusts most. Any others are
+    // labelled fallbacks, which a button here has no way to offer.
+    final dynamic primary = candidates['primary'];
+    if (primary is! Map) continue;
+    final dynamic prontoHex = primary['prontoHex'];
+    if (prontoHex is! String) continue;
+    final _ProntoSequences? code =
+        _tryParseProntoSequences(prontoHex, minDurations: 2);
+    if (code == null) continue;
+
+    buttons.add(
+      IRButton(
+        id: uuid.v4(),
+        code: null,
+        rawData: _remoteLedgerSends(code, sends).join(' '),
+        frequency: carrier ?? code.frequencyHz,
+        image: _sanitizeLircButtonLabel(
+          entry.key.toString(),
+          fallbackLabel: fallbackLabel,
+        ),
+        isImage: false,
+      ),
+    );
+  }
+  if (buttons.isEmpty) return null;
+
+  final String name = <dynamic>[decoded['manufacturer'], decoded['model']]
+      .whereType<String>()
+      .map((part) => part.trim())
+      .where((part) => part.isNotEmpty)
+      .join(' ');
+  return Remote(
+    buttons: buttons,
+    name: name.isEmpty ? remoteNameHint : name,
+  );
+}
+
+/// Lays out every send a button needs, because a raw button is played once.
+///
+/// Remote Ledger compiles a code's first send as the Pronto intro and the
+/// sends after it as the repeat, and leaves `protocol.minSends` for the
+/// player to honour rather than multiplying the repeat into the Pronto
+/// string. The intro, when there is one, is the first send: an NEC code sent
+/// once is its frame without the repeat ditto, while a Sony code has no intro
+/// and is its frame three times.
+List<int> _remoteLedgerSends(_ProntoSequences code, int sends) {
+  final int repeats = code.intro.isEmpty ? sends : sends - 1;
+  return <int>[
+    ...code.intro,
+    for (int i = 0; i < repeats; i++) ...code.repeat,
+  ];
 }
 
 Remote? _parseIrplusXml(

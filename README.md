@@ -255,8 +255,8 @@ Notes:
 
 ### Using the GitHub Store
 1. Open Settings > GitHub Store.
-2. Enter a GitHub repository or folder URL, then load the repository when you want to browse it.
-3. Open a supported file to preview how it will be parsed.
+2. The store opens on [Remote Ledger](https://remote-ledger.github.io/)'s compiled remotes, arranged by manufacturer and model. To browse somewhere else, enter a GitHub repository or folder URL instead. Nothing is fetched until you load the repository.
+3. Open a supported file to preview how it will be parsed. A Remote Ledger remote imports each key's most trusted code, repeated as many times as its protocol needs.
 4. Import it into a new remote or add compatible buttons to an existing remote.
 
 ### Using the Signal Tester (IR Finder)
