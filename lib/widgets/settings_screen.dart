@@ -31,11 +31,11 @@ import 'package:url_launcher/url_launcher.dart';
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
 
-  static const String _repoUrl = 'https://github.com/shanjian/SwiftRemote';
+  static const String _repoUrl = 'https://github.com/remote-ledger/SwiftRemote';
   static const String _issuesUrl =
-      'https://github.com/shanjian/SwiftRemote/issues';
+      'https://github.com/remote-ledger/SwiftRemote/issues';
   static const String _licenseUrl =
-      'https://github.com/shanjian/SwiftRemote/blob/master/LICENSE';
+      'https://github.com/remote-ledger/SwiftRemote/blob/master/LICENSE';
 
   /// The fork's maintainer. Upstream authorship is credited on the About
   /// screen, which is where it belongs; this names who ships SwiftRemote.

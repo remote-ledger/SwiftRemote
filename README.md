@@ -1,7 +1,7 @@
 
 # SwiftRemote
 
-<a href="https://github.com/shanjian/SwiftRemote/releases/latest">
+<a href="https://github.com/remote-ledger/SwiftRemote/releases/latest">
 <img src="fastlane/metadata/android/en-US/images/icon.png" width="160" alt="SwiftRemote icon" align="left" style="border: solid 1px #ddd;"/>
 </a>
 <div>
@@ -20,10 +20,10 @@ SwiftRemote is designed to be flexible, hardware-agnostic, and user-friendly, wh
 
 <div align="center">
 
-  [![GitHub License](https://img.shields.io/github/license/shanjian/SwiftRemote)](LICENSE)
-  [![Build APK](https://github.com/shanjian/SwiftRemote/actions/workflows/build-apk.yml/badge.svg)](https://github.com/shanjian/SwiftRemote/actions/workflows/build-apk.yml)
-  [![Issues](https://img.shields.io/github/issues/shanjian/SwiftRemote.svg)](https://github.com/shanjian/SwiftRemote/issues)
-  [![Latest release](https://img.shields.io/github/v/release/shanjian/SwiftRemote)](https://github.com/shanjian/SwiftRemote/releases/latest)
+  [![GitHub License](https://img.shields.io/github/license/remote-ledger/SwiftRemote)](LICENSE)
+  [![Build APK](https://github.com/remote-ledger/SwiftRemote/actions/workflows/build-apk.yml/badge.svg)](https://github.com/remote-ledger/SwiftRemote/actions/workflows/build-apk.yml)
+  [![Issues](https://img.shields.io/github/issues/remote-ledger/SwiftRemote.svg)](https://github.com/remote-ledger/SwiftRemote/issues)
+  [![Latest release](https://img.shields.io/github/v/release/remote-ledger/SwiftRemote)](https://github.com/remote-ledger/SwiftRemote/releases/latest)
   [![Android Version](https://img.shields.io/badge/Android-11.0%2B-green.svg)](https://www.android.com)
 
 </div>
@@ -230,7 +230,7 @@ Notes:
 ## Installation
 
 1. Download the APK attached to the
-   [latest release](https://github.com/shanjian/SwiftRemote/releases/latest).
+   [latest release](https://github.com/remote-ledger/SwiftRemote/releases/latest).
 
 2. Install the Application:
    - Enable installation from unknown sources if needed.
