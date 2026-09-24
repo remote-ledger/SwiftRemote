@@ -76,9 +76,13 @@ dev_dependencies:
 # package replaces that vector with equivalent per-density PNGs from the image below.
 flutter_launcher_icons:
   android: true
-  ios: false
+  ios: true
   min_sdk_android: 21
   image_path_android: assets/images/logo.png
+  # iOS masks the corners itself and rejects an icon carrying an alpha channel,
+  # so its source is a full-bleed, fully opaque plate.
+  image_path_ios: assets/images/icon_ios.png
+  remove_alpha_ios: true
   adaptive_icon_background: assets/images/icon_background.png
   adaptive_icon_foreground: assets/images/icon_foreground.png
   adaptive_icon_monochrome: assets/images/icon_mono.png

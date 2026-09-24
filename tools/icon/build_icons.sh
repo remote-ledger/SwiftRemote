@@ -5,9 +5,10 @@
 #   tools/icon/build_icons.sh
 #
 # Writes the SVG masters next to this script and rasterises them straight into
-# the Android res/, assets/, web/ and fastlane/ trees, so `flutter_launcher_icons`
-# never has to run to refresh the icon. Rasterising needs headless Chrome
-# (google-chrome or chromium); everything else is plain shell.
+# the Android res/, ios/, assets/, web/ and fastlane/ trees, so
+# `flutter_launcher_icons` never has to run to refresh the icon. Needs headless
+# Chrome (google-chrome or chromium) to rasterise and ffmpeg to re-encode;
+# everything else is plain shell.
 set -euo pipefail
 
 here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -18,6 +19,7 @@ for c in google-chrome google-chrome-stable chromium chromium-browser; do
   command -v "$c" >/dev/null 2>&1 && chrome="$c" && break
 done
 [ -n "$chrome" ] || { echo "need google-chrome or chromium on PATH" >&2; exit 1; }
+command -v ffmpeg >/dev/null 2>&1 || { echo "need ffmpeg on PATH" >&2; exit 1; }
 
 # ---------------------------------------------------------------- the artwork
 #
@@ -144,6 +146,8 @@ svg_foreground   > "$here/foreground.svg"
 svg_monochrome   > "$here/monochrome.svg"
 svg_composed rounded "$FULL"  > "$here/icon.svg"
 svg_composed square  "$ADAPT" > "$here/maskable.svg"
+# iOS rounds the corners itself, so it takes the same art on a full-bleed plate.
+svg_composed square  "$FULL"  > "$here/ios.svg"
 
 # ------------------------------------------------- Android background layer
 #
@@ -193,19 +197,36 @@ EOF
 
 # --------------------------------------------------------------- rasterising
 
-# Chrome's PNGs re-deflate smaller through ffmpeg often enough to be worth a
-# try; the re-encode is pixel-for-pixel lossless, so keep whichever is smaller.
-squeeze() {
-  local png="$1" tmp
-  command -v ffmpeg >/dev/null 2>&1 || return 0
-  tmp="$(mktemp)".png
-  if ffmpeg -y -loglevel error -i "$png" -compression_level 100 "$tmp" 2>/dev/null &&
-     [ -s "$tmp" ] && [ "$(wc -c < "$tmp")" -lt "$(wc -c < "$png")" ]; then
-    mv "$tmp" "$png"
+# Every re-encode here is pixel-for-pixel lossless - only the PNG filtering
+# changes. Which filter deflates smallest swings by 20% between a flat
+# silhouette and a gradient and no single choice wins everywhere, so try the
+# lot and keep the smallest.
+reencode() { # reencode <png> <pix_fmt> <may-keep-original>
+  local png="$1" fmt="$2" keep="$3" best="" tmp pred
+  for pred in none sub up avg paeth mixed; do
+    tmp="$(mktemp)".png
+    if ffmpeg -y -loglevel error -i "$png" -pix_fmt "$fmt" -compression_level 100 \
+         -pred "$pred" "$tmp" 2>/dev/null && [ -s "$tmp" ] &&
+       { [ -z "$best" ] || [ "$(wc -c < "$tmp")" -lt "$(wc -c < "$best")" ]; }; then
+      rm -f "$best"; best="$tmp"
+    else
+      rm -f "$tmp"
+    fi
+  done
+  [ -n "$best" ] || return 0
+  if [ "$keep" = yes ] && [ "$(wc -c < "$png")" -le "$(wc -c < "$best")" ]; then
+    rm -f "$best"          # Chrome already encoded it smaller
   else
-    rm -f "$tmp"
+    mv "$best" "$png"
   fi
 }
+
+squeeze() { reencode "$1" rgba yes; }
+
+# Chrome always writes RGBA. The App Store rejects an icon that so much as
+# carries an alpha channel (ITMS-90717), so iOS PNGs drop theirs - which is not
+# optional, hence no keeping Chrome's original here.
+flatten() { reencode "$1" rgb24 no; }
 
 render() { # render <src.svg> <out.png> <size>
   local src="$1" out="$2" size="$3" tmp
@@ -219,6 +240,11 @@ render() { # render <src.svg> <out.png> <size>
   rm -rf "$tmp"
   squeeze "$out"
   echo "  ${out#$root/} (${size}px)"
+}
+
+render_opaque() { # render_opaque <src.svg> <out.png> <size>
+  render "$1" "$2" "$3"
+  flatten "$2"
 }
 
 echo "Android launcher layers"
@@ -238,6 +264,21 @@ render "$here/icon.svg"       "$root/assets/images/logo.png" 384
 render "$here/foreground.svg" "$root/assets/images/icon_foreground.png" 1024
 render "$here/background.svg" "$root/assets/images/icon_background.png" 512
 render "$here/monochrome.svg" "$root/assets/images/icon_mono.png" 1024
+render_opaque "$here/ios.svg" "$root/assets/images/icon_ios.png" 1024
+
+echo "iOS app icon"
+# One entry per file in ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json,
+# sized point-size x scale. Keep the two in step if Contents.json ever changes.
+for e in "20x20@1x 20" "20x20@2x 40" "20x20@3x 60" \
+         "29x29@1x 29" "29x29@2x 58" "29x29@3x 87" \
+         "40x40@1x 40" "40x40@2x 80" "40x40@3x 120" \
+         "60x60@2x 120" "60x60@3x 180" \
+         "76x76@1x 76" "76x76@2x 152" "83.5x83.5@2x 167" \
+         "1024x1024@1x 1024"; do
+  set -- $e
+  render_opaque "$here/ios.svg" \
+    "$root/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-$1.png" "$2"
+done
 
 echo "Store listing and web"
 render "$here/icon.svg"     "$root/fastlane/metadata/android/en-US/images/icon.png" 512
