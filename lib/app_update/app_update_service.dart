@@ -14,7 +14,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 /// user can point at: an updater that installs arbitrary APKs is a way to
 /// get a malicious package onto the device, so the source is fixed at build
 /// time and every download is signed with the key that built this app.
-const String kUpdateRepoOwner = 'shanjian';
+const String kUpdateRepoOwner = 'remote-ledger';
 const String kUpdateRepoName = 'SwiftRemote';
 
 /// Preference key for the startup check.
