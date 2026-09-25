@@ -59,6 +59,19 @@ void main() {
     expect(ref.originalUrl, url);
   });
 
+  test('A Pages repository keeps the dots in its name', () {
+    // The store's default source, Remote Ledger's compiled remotes.
+    final ref = parseGitHubUrl(
+      'https://github.com/remote-ledger/remote-ledger.github.io/tree/master/build/pronto',
+    );
+
+    expect(ref, isNotNull);
+    expect(ref!.owner, 'remote-ledger');
+    expect(ref.repo, 'remote-ledger.github.io');
+    expect(ref.branch, 'master');
+    expect(ref.path, 'build/pronto');
+  });
+
   test('An escaped folder name is decoded for the contents API', () {
     final ref = parseGitHubUrl(
       'https://github.com/Lucaslhm/Flipper-IRDB/tree/main/Audio%20Receivers',

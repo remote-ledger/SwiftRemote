@@ -60,8 +60,12 @@ class GitHubStoreScreen extends StatefulWidget {
 }
 
 class _GitHubStoreScreenState extends State<GitHubStoreScreen> {
+  /// Remote Ledger's compiled remotes: one JSON file per remote, each key's
+  /// most trusted code already rendered to Pronto Hex. The source files under
+  /// `remotes/` hold the same codes before compiling, which the importer
+  /// cannot play, so the store opens on the folder that it can.
   static const String _defaultRepoUrl =
-      'https://github.com/Lucaslhm/Flipper-IRDB';
+      'https://github.com/remote-ledger/remote-ledger.github.io/tree/master/build/pronto';
 
   final TextEditingController _urlCtrl = TextEditingController();
   final TextEditingController _searchCtrl = TextEditingController();
@@ -92,10 +96,10 @@ class _GitHubStoreScreenState extends State<GitHubStoreScreen> {
     final initial = last ??
         parseGitHubUrl(_defaultRepoUrl) ??
         const RepoRef(
-          owner: 'Lucaslhm',
-          repo: 'Flipper-IRDB',
-          branch: '',
-          path: '',
+          owner: 'remote-ledger',
+          repo: 'remote-ledger.github.io',
+          branch: 'master',
+          path: 'build/pronto',
           originalUrl: _defaultRepoUrl,
         );
 
@@ -150,8 +154,8 @@ class _GitHubStoreScreenState extends State<GitHubStoreScreen> {
   bool get _isDefaultRepoSelected {
     final repo = _repo;
     if (repo == null) return false;
-    return repo.owner.toLowerCase() == 'lucaslhm' &&
-        repo.repo.toLowerCase() == 'flipper-irdb';
+    return repo.owner.toLowerCase() == 'remote-ledger' &&
+        repo.repo.toLowerCase() == 'remote-ledger.github.io';
   }
 
   Future<void> _browseFromUrl() async {
@@ -599,7 +603,7 @@ class _GitHubStoreScreenState extends State<GitHubStoreScreen> {
                       children: [
                         Text(
                           _isDefaultRepoSelected
-                              ? 'Example GitHub source'
+                              ? 'Remote Ledger'
                               : 'Repository not loaded yet',
                           style: theme.textTheme.titleMedium?.copyWith(
                             fontWeight: FontWeight.w800,
@@ -608,7 +612,7 @@ class _GitHubStoreScreenState extends State<GitHubStoreScreen> {
                         const SizedBox(height: 8),
                         Text(
                           _isDefaultRepoSelected
-                              ? 'The default repository is only an example source for IR codes.'
+                              ? 'IR codes by manufacturer and remote model. Each key carries its most trusted code and cites where it came from.'
                               : 'Tap the button below to load the selected GitHub repository.',
                           style: theme.textTheme.bodyMedium?.copyWith(
                             color: theme.colorScheme.onSurfaceVariant,
@@ -620,7 +624,7 @@ class _GitHubStoreScreenState extends State<GitHubStoreScreen> {
                           icon: const Icon(Icons.cloud_download_rounded),
                           label: Text(
                             _isDefaultRepoSelected
-                                ? 'Load example repository'
+                                ? 'Load Remote Ledger'
                                 : 'Load repository',
                           ),
                         ),
