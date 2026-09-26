@@ -2119,6 +2119,14 @@ class AppLocalizationsFr extends AppLocalizations {
       '1 télécommande importée depuis une config LIRC. Les macros n\'ont pas été modifiées.';
 
   @override
+  String get importedOneRemoteFromRemoteLedger =>
+      '1 télécommande importée depuis Remote Ledger. Les macros n\'ont pas été modifiées.';
+
+  @override
+  String get importFailedInvalidRemoteLedger =>
+      'Import échoué : ce fichier Remote Ledger ne contient aucun code que SwiftRemote peut envoyer.';
+
+  @override
   String get unsupportedFileTypeSelected =>
       'Type de fichier non pris en charge.';
 

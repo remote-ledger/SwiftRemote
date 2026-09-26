@@ -2074,6 +2074,14 @@ class AppLocalizationsTh extends AppLocalizations {
       'นำเข้ารีโมต 1 รายการจากไฟล์ LIRC แมโครไม่เปลี่ยน';
 
   @override
+  String get importedOneRemoteFromRemoteLedger =>
+      'นำเข้ารีโมต 1 รายการจาก Remote Ledger แมโครไม่เปลี่ยน';
+
+  @override
+  String get importFailedInvalidRemoteLedger =>
+      'นำเข้าไม่สำเร็จ: ไฟล์ Remote Ledger นี้ไม่มีโค้ดที่ SwiftRemote ส่งได้';
+
+  @override
   String get unsupportedFileTypeSelected => 'Unที่รองรับ ไฟล์ type selected.';
 
   @override

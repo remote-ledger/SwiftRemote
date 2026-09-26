@@ -2021,6 +2021,14 @@ class AppLocalizationsKo extends AppLocalizations {
       'LIRC config에서 리모컨 1개를 가져왔습니다. 매크로는 변경되지 않았습니다.';
 
   @override
+  String get importedOneRemoteFromRemoteLedger =>
+      'Remote Ledger에서 리모컨 1개를 가져왔습니다. 매크로는 변경되지 않았습니다.';
+
+  @override
+  String get importFailedInvalidRemoteLedger =>
+      '가져오기 실패: 이 Remote Ledger 파일에는 SwiftRemote가 보낼 수 있는 코드가 없습니다.';
+
+  @override
   String get unsupportedFileTypeSelected => '지원되지 않는 파일 형식을 선택했습니다.';
 
   @override

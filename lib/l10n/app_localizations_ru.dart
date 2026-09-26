@@ -2099,6 +2099,14 @@ class AppLocalizationsRu extends AppLocalizations {
       'Импортирован 1 пульт из конфигурации LIRC. Макросы не менялись.';
 
   @override
+  String get importedOneRemoteFromRemoteLedger =>
+      'Импортирован 1 пульт из Remote Ledger. Макросы не менялись.';
+
+  @override
+  String get importFailedInvalidRemoteLedger =>
+      'Импорт не удался: в этом файле Remote Ledger нет кодов, которые SwiftRemote может отправить.';
+
+  @override
   String get unsupportedFileTypeSelected =>
       'Выбран неподдерживаемый тип файла.';
 

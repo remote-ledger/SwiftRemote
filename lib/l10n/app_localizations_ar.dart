@@ -2074,6 +2074,14 @@ class AppLocalizationsAr extends AppLocalizations {
       'تم استيراد جهاز تحكم واحد من إعداد LIRC. لم يتم تغيير الماكرو.';
 
   @override
+  String get importedOneRemoteFromRemoteLedger =>
+      'تم استيراد جهاز تحكم واحد من Remote Ledger. لم يتم تغيير الماكرو.';
+
+  @override
+  String get importFailedInvalidRemoteLedger =>
+      'فشل الاستيراد: لا يحتوي ملف Remote Ledger هذا على رموز يمكن لـ SwiftRemote إرسالها.';
+
+  @override
   String get unsupportedFileTypeSelected => 'Unsupported file type المحدد.';
 
   @override
@@ -6995,6 +7003,14 @@ class AppLocalizationsArEg extends AppLocalizationsAr {
   @override
   String get importedOneRemoteFromLirc =>
       'تم استيراد جهاز تحكم واحد من إعداد LIRC. لم يتم تغيير الماكرو.';
+
+  @override
+  String get importedOneRemoteFromRemoteLedger =>
+      'تم استيراد جهاز تحكم واحد من Remote Ledger. لم يتم تغيير الماكرو.';
+
+  @override
+  String get importFailedInvalidRemoteLedger =>
+      'فشل الاستيراد: لا يحتوي ملف Remote Ledger هذا على رموز يمكن لـ SwiftRemote إرسالها.';
 
   @override
   String get unsupportedFileTypeSelected => 'Unsupported file type المحدد.';

@@ -2182,6 +2182,14 @@ class AppLocalizationsPl extends AppLocalizations {
       'Imported 1 pilot from LIRC config. makra were nie changed.';
 
   @override
+  String get importedOneRemoteFromRemoteLedger =>
+      'Zaimportowano 1 pilota z Remote Ledger. Makra nie zostały zmienione.';
+
+  @override
+  String get importFailedInvalidRemoteLedger =>
+      'Import nieudany: ten plik Remote Ledger nie zawiera kodów, które SwiftRemote może wysłać.';
+
+  @override
   String get unsupportedFileTypeSelected => 'Unsupported plik type wybrano.';
 
   @override

@@ -783,6 +783,8 @@
   "importedOneRemoteFromIrplus": "Mengimport 1 remote dari irplus. Makro tidak diubah.",
   "importFailedInvalidLirc": "Import gagal: file LIRC tidak sah (tiada kod/kod mentah sah).",
   "importedOneRemoteFromLirc": "Mengimport 1 remote dari konfigurasi LIRC. Makro tidak diubah.",
+  "importedOneRemoteFromRemoteLedger": "Mengimport 1 remote dari Remote Ledger. Makro tidak diubah.",
+  "importFailedInvalidRemoteLedger": "Import gagal: fail Remote Ledger ini tiada kod yang boleh dihantar oleh SwiftRemote.",
   "unsupportedFileTypeSelected": "Unsupported file type terpilih.",
   "importFailedInvalidUnreadableFile": "Import gagal: file tidak sah atau tidak boleh dibaca.",
   "bulkImportNoSupportedFilesInFolder": "Import massal selesai: tiada file yang disokong di folder.",

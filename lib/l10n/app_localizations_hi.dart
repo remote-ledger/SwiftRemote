@@ -2092,6 +2092,14 @@ class AppLocalizationsHi extends AppLocalizations {
       'Imported 1 रिमोट से LIRC config. मैक्रो थे नहीं बदला गया.';
 
   @override
+  String get importedOneRemoteFromRemoteLedger =>
+      'Remote Ledger से 1 रिमोट आयात किया गया। मैक्रो नहीं बदले गए।';
+
+  @override
+  String get importFailedInvalidRemoteLedger =>
+      'आयात विफल: इस Remote Ledger फ़ाइल में ऐसा कोई कोड नहीं है जिसे SwiftRemote भेज सके।';
+
+  @override
   String get unsupportedFileTypeSelected => 'असमर्थित फ़ाइल प्रकार चुना गया।';
 
   @override

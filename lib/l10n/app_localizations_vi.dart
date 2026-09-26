@@ -2083,6 +2083,14 @@ class AppLocalizationsVi extends AppLocalizations {
       'Đã nhập 1 điều khiển từ cấu hình LIRC. Macro không đổi.';
 
   @override
+  String get importedOneRemoteFromRemoteLedger =>
+      'Đã nhập 1 điều khiển từ Remote Ledger. Macro không đổi.';
+
+  @override
+  String get importFailedInvalidRemoteLedger =>
+      'Nhập thất bại: tệp Remote Ledger này không có mã nào SwiftRemote có thể gửi.';
+
+  @override
   String get unsupportedFileTypeSelected =>
       'Đã chọn loại tệp không được hỗ trợ.';
 

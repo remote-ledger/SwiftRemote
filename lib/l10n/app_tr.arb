@@ -783,6 +783,8 @@
   "importedOneRemoteFromIrplus": "IRPLUS'tan 1 kumanda içe aktarıldı. Makrolar değiştirilmedi.",
   "importFailedInvalidLirc": "İçe aktarma başarısız: geçersiz LIRC dosyası (geçerli kod veya ham kod bulunamadı).",
   "importedOneRemoteFromLirc": "LIRC yapılandırmasından 1 kumanda içe aktarıldı. Makrolar değiştirilmedi.",
+  "importedOneRemoteFromRemoteLedger": "Remote Ledger'dan 1 kumanda içe aktarıldı. Makrolar değiştirilmedi.",
+  "importFailedInvalidRemoteLedger": "İçe aktarma başarısız: Bu Remote Ledger dosyasında SwiftRemote'un gönderebileceği kod yok.",
   "unsupportedFileTypeSelected": "Desteklenmeyen dosya türü seçildi.",
   "importFailedInvalidUnreadableFile": "İçe aktarma başarısız: geçersiz veya okunamayan dosya.",
   "bulkImportNoSupportedFilesInFolder": "Toplu içe aktarma tamamlandı: klasörde desteklenen dosya bulunamadı.",

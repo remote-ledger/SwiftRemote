@@ -2092,6 +2092,14 @@ class AppLocalizationsMs extends AppLocalizations {
       'Mengimport 1 remote dari konfigurasi LIRC. Makro tidak diubah.';
 
   @override
+  String get importedOneRemoteFromRemoteLedger =>
+      'Mengimport 1 remote dari Remote Ledger. Makro tidak diubah.';
+
+  @override
+  String get importFailedInvalidRemoteLedger =>
+      'Import gagal: fail Remote Ledger ini tiada kod yang boleh dihantar oleh SwiftRemote.';
+
+  @override
   String get unsupportedFileTypeSelected => 'Unsupported file type terpilih.';
 
   @override

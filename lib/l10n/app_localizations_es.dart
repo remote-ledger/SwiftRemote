@@ -2116,6 +2116,14 @@ class AppLocalizationsEs extends AppLocalizations {
       'Se importó 1 mando desde una config LIRC. Las macros no cambiaron.';
 
   @override
+  String get importedOneRemoteFromRemoteLedger =>
+      'Se importó 1 mando desde Remote Ledger. Las macros no cambiaron.';
+
+  @override
+  String get importFailedInvalidRemoteLedger =>
+      'Importación fallida: este archivo de Remote Ledger no tiene códigos que SwiftRemote pueda enviar.';
+
+  @override
   String get unsupportedFileTypeSelected =>
       'Se seleccionó un tipo de archivo no compatible.';
 

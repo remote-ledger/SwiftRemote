@@ -2127,6 +2127,14 @@ class AppLocalizationsNl extends AppLocalizations {
       '1 afstandsbediening geïmporteerd uit LIRC-configuratie. Macro\'s zijn niet gewijzigd.';
 
   @override
+  String get importedOneRemoteFromRemoteLedger =>
+      '1 afstandsbediening geïmporteerd uit Remote Ledger. Macro\'s zijn niet gewijzigd.';
+
+  @override
+  String get importFailedInvalidRemoteLedger =>
+      'Importeren mislukt: dit Remote Ledger-bestand bevat geen codes die SwiftRemote kan verzenden.';
+
+  @override
   String get unsupportedFileTypeSelected =>
       'Niet-ondersteund bestandstype geselecteerd.';
 

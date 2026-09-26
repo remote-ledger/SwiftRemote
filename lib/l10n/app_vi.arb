@@ -783,6 +783,8 @@
   "importedOneRemoteFromIrplus": "Đã nhập 1 điều khiển từ irplus. Macro không đổi.",
   "importFailedInvalidLirc": "Nhập thất bại: tệp LIRC không hợp lệ (không tìm thấy mã/raw code hợp lệ).",
   "importedOneRemoteFromLirc": "Đã nhập 1 điều khiển từ cấu hình LIRC. Macro không đổi.",
+  "importedOneRemoteFromRemoteLedger": "Đã nhập 1 điều khiển từ Remote Ledger. Macro không đổi.",
+  "importFailedInvalidRemoteLedger": "Nhập thất bại: tệp Remote Ledger này không có mã nào SwiftRemote có thể gửi.",
   "unsupportedFileTypeSelected": "Đã chọn loại tệp không được hỗ trợ.",
   "importFailedInvalidUnreadableFile": "Nhập thất bại: tệp không hợp lệ hoặc không đọc được.",
   "bulkImportNoSupportedFilesInFolder": "Nhập hàng loạt xong: không tìm thấy tệp được hỗ trợ trong thư mục.",

@@ -2114,6 +2114,14 @@ class AppLocalizationsFil extends AppLocalizations {
       'Imported 1 remote from LIRC config. Macros were not changed.';
 
   @override
+  String get importedOneRemoteFromRemoteLedger =>
+      'Na-import ang 1 remote mula sa Remote Ledger. Hindi binago ang mga macro.';
+
+  @override
+  String get importFailedInvalidRemoteLedger =>
+      'Nabigo ang pag-import: walang code sa file na ito ng Remote Ledger na kayang ipadala ng SwiftRemote.';
+
+  @override
   String get unsupportedFileTypeSelected => 'Unsupported file type selected.';
 
   @override

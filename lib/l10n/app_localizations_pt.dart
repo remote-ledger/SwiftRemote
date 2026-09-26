@@ -2120,6 +2120,14 @@ class AppLocalizationsPt extends AppLocalizations {
       'Foi importado 1 comando de uma configuração LIRC. As macros não foram alteradas.';
 
   @override
+  String get importedOneRemoteFromRemoteLedger =>
+      'Foi importado 1 comando do Remote Ledger. As macros não foram alteradas.';
+
+  @override
+  String get importFailedInvalidRemoteLedger =>
+      'Importação falhada: este ficheiro do Remote Ledger não tem códigos que o SwiftRemote consiga enviar.';
+
+  @override
   String get unsupportedFileTypeSelected =>
       'Foi selecionado um tipo de ficheiro não compatível.';
 
@@ -7108,6 +7116,14 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   @override
   String get importedOneRemoteFromLirc =>
       'Foi importado 1 controle de uma configuração LIRC. As macros não foram alteradas.';
+
+  @override
+  String get importedOneRemoteFromRemoteLedger =>
+      'Foi importado 1 controle do Remote Ledger. As macros não foram alteradas.';
+
+  @override
+  String get importFailedInvalidRemoteLedger =>
+      'Falha na importação: este arquivo do Remote Ledger não tem códigos que o SwiftRemote consiga enviar.';
 
   @override
   String get unsupportedFileTypeSelected =>

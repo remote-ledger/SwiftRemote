@@ -2129,6 +2129,14 @@ class AppLocalizationsDe extends AppLocalizations {
       '1 Fernbedienung aus LIRC-Konfiguration importiert. Makros wurden nicht geändert.';
 
   @override
+  String get importedOneRemoteFromRemoteLedger =>
+      '1 Fernbedienung aus Remote Ledger importiert. Makros wurden nicht geändert.';
+
+  @override
+  String get importFailedInvalidRemoteLedger =>
+      'Import fehlgeschlagen: Diese Remote-Ledger-Datei enthält keine Codes, die SwiftRemote senden kann.';
+
+  @override
   String get unsupportedFileTypeSelected =>
       'Nicht unterstützter Dateityp gewählt.';
 

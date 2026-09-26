@@ -429,6 +429,32 @@ Future<ImportResult?> importRemotesFromPicker(
         );
       }
 
+      if (decoded is Map && _remoteLedgerSchemaVersion(decoded) != null) {
+        // A Remote Ledger remote is one remote to add, like a Flipper or
+        // LIRC file, not a backup to restore.
+        final Remote? remoteFromLedger = _parseRemoteLedgerRemote(
+          decoded,
+          remoteNameHint: importedRemoteName,
+          fallbackLabel: l10n.buttonFallbackTitle,
+        );
+
+        if (remoteFromLedger == null) {
+          return ImportResult(
+            remotes: <Remote>[],
+            macros: null,
+            message: l10n.importFailedInvalidRemoteLedger,
+          );
+        }
+
+        final next = <Remote>[...current, remoteFromLedger];
+        _reassignIds(next);
+        return ImportResult(
+          remotes: next,
+          macros: null,
+          message: l10n.importedOneRemoteFromRemoteLedger,
+        );
+      }
+
       if (decoded is Map) {
         final hasRemotesKey = decoded.containsKey('remotes');
         final hasMacrosKey = decoded.containsKey('macros');

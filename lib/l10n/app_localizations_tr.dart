@@ -2095,6 +2095,14 @@ class AppLocalizationsTr extends AppLocalizations {
       'LIRC yapılandırmasından 1 kumanda içe aktarıldı. Makrolar değiştirilmedi.';
 
   @override
+  String get importedOneRemoteFromRemoteLedger =>
+      'Remote Ledger\'dan 1 kumanda içe aktarıldı. Makrolar değiştirilmedi.';
+
+  @override
+  String get importFailedInvalidRemoteLedger =>
+      'İçe aktarma başarısız: Bu Remote Ledger dosyasında SwiftRemote\'un gönderebileceği kod yok.';
+
+  @override
   String get unsupportedFileTypeSelected =>
       'Desteklenmeyen dosya türü seçildi.';
 

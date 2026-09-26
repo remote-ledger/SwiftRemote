@@ -2011,6 +2011,14 @@ class AppLocalizationsJa extends AppLocalizations {
       'LIRC設定から1つのリモコンを取り込みました。マクロは変更されませんでした。';
 
   @override
+  String get importedOneRemoteFromRemoteLedger =>
+      'Remote Ledger から1つのリモコンを取り込みました。マクロは変更されませんでした。';
+
+  @override
+  String get importFailedInvalidRemoteLedger =>
+      '取り込み失敗: この Remote Ledger ファイルには SwiftRemote で送信できるコードがありません。';
+
+  @override
   String get unsupportedFileTypeSelected => '未対応のファイル形式です';
 
   @override

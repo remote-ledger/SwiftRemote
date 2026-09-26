@@ -1967,6 +1967,14 @@ class AppLocalizationsZh extends AppLocalizations {
   String get importedOneRemoteFromLirc => '已从 LIRC 配置导入 1 个遥控器。宏未更改。';
 
   @override
+  String get importedOneRemoteFromRemoteLedger =>
+      '已从 Remote Ledger 导入 1 个遥控器。宏未更改。';
+
+  @override
+  String get importFailedInvalidRemoteLedger =>
+      '导入失败：此 Remote Ledger 文件中没有 SwiftRemote 可以发送的代码。';
+
+  @override
   String get unsupportedFileTypeSelected => '所选文件类型不受支持。';
 
   @override

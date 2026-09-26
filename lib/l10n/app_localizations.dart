@@ -3738,6 +3738,18 @@ abstract class AppLocalizations {
   /// **'Imported 1 remote from LIRC config. Macros were not changed.'**
   String get importedOneRemoteFromLirc;
 
+  /// No description provided for @importedOneRemoteFromRemoteLedger.
+  ///
+  /// In en, this message translates to:
+  /// **'Imported 1 remote from Remote Ledger. Macros were not changed.'**
+  String get importedOneRemoteFromRemoteLedger;
+
+  /// No description provided for @importFailedInvalidRemoteLedger.
+  ///
+  /// In en, this message translates to:
+  /// **'Import failed: this Remote Ledger file has no codes SwiftRemote can play.'**
+  String get importFailedInvalidRemoteLedger;
+
   /// No description provided for @unsupportedFileTypeSelected.
   ///
   /// In en, this message translates to:
