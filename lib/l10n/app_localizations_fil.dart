@@ -162,7 +162,8 @@ class AppLocalizationsFil extends AppLocalizations {
       'Maaari ka pa ring gumawa, mag-import, at mag-ayos ng mga remote ngayon din.';
 
   @override
-  String get homeWaysToUseIrBlaster => 'Mga paraan para gamitin ang SwiftRemote';
+  String get homeWaysToUseIrBlaster =>
+      'Mga paraan para gamitin ang SwiftRemote';
 
   @override
   String get homeBuiltInIrOptionTitle => 'Teleponong may built-in IR';
@@ -4942,22 +4943,26 @@ class AppLocalizationsFil extends AppLocalizations {
   String get updatesAutoCheck => 'Check on startup';
 
   @override
-  String get updatesAutoCheckSubtitle => 'Look for a new version each time the app opens';
+  String get updatesAutoCheckSubtitle =>
+      'Look for a new version each time the app opens';
 
   @override
-  String get updatesSourceNote => 'Updates come from the project’s own GitHub releases and are signed with the same key as this build.';
+  String get updatesSourceNote =>
+      'Updates come from the project’s own GitHub releases and are signed with the same key as this build.';
 
   @override
   String get updatesPermissionTitle => 'Allow installing apps';
 
   @override
-  String get updatesPermissionBody => 'Android needs permission before this app can install an update. Turn on "Allow from this source", then come back and install.';
+  String get updatesPermissionBody =>
+      'Android needs permission before this app can install an update. Turn on \"Allow from this source\", then come back and install.';
 
   @override
   String get updatesCheckFailed => 'Could not check for updates';
 
   @override
-  String get updatesRateLimited => 'GitHub is rate limiting this device, try again later';
+  String get updatesRateLimited =>
+      'GitHub is rate limiting this device, try again later';
 
   @override
   String get updatesNoRelease => 'No published release was found';

@@ -141,7 +141,7 @@ abstract class AppLocalizations {
   /// No description provided for @appTitle.
   ///
   /// In en, this message translates to:
-  /// **'IR Blaster'**
+  /// **'SwiftRemote'**
   String get appTitle;
 
   /// No description provided for @loading.
@@ -8839,6 +8839,162 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Tip: replace every unknown digit with X. Fixing known digits anywhere in the code can reduce the search dramatically.'**
   String get irFinderBruteforceMaskTip;
+
+  /// No description provided for @updatesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Updates'**
+  String get updatesTitle;
+
+  /// No description provided for @updatesSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Install new versions from GitHub'**
+  String get updatesSubtitle;
+
+  /// No description provided for @updatesCheckNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Check for updates'**
+  String get updatesCheckNow;
+
+  /// No description provided for @updatesChecking.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking for updates…'**
+  String get updatesChecking;
+
+  /// No description provided for @updatesUpToDate.
+  ///
+  /// In en, this message translates to:
+  /// **'You have the latest version'**
+  String get updatesUpToDate;
+
+  /// No description provided for @updatesAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Update available'**
+  String get updatesAvailable;
+
+  /// No description provided for @updatesView.
+  ///
+  /// In en, this message translates to:
+  /// **'View'**
+  String get updatesView;
+
+  /// No description provided for @updatesInstalledVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'Installed'**
+  String get updatesInstalledVersion;
+
+  /// No description provided for @updatesNewVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'New version'**
+  String get updatesNewVersion;
+
+  /// No description provided for @updatesReleaseNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Release notes'**
+  String get updatesReleaseNotes;
+
+  /// No description provided for @updatesDownloadInstall.
+  ///
+  /// In en, this message translates to:
+  /// **'Download and install'**
+  String get updatesDownloadInstall;
+
+  /// No description provided for @updatesDownloading.
+  ///
+  /// In en, this message translates to:
+  /// **'Downloading…'**
+  String get updatesDownloading;
+
+  /// No description provided for @updatesReadyToInstall.
+  ///
+  /// In en, this message translates to:
+  /// **'Ready to install'**
+  String get updatesReadyToInstall;
+
+  /// No description provided for @updatesInstall.
+  ///
+  /// In en, this message translates to:
+  /// **'Install'**
+  String get updatesInstall;
+
+  /// No description provided for @updatesCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get updatesCancel;
+
+  /// No description provided for @updatesOpenSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Open settings'**
+  String get updatesOpenSettings;
+
+  /// No description provided for @updatesAutoCheck.
+  ///
+  /// In en, this message translates to:
+  /// **'Check on startup'**
+  String get updatesAutoCheck;
+
+  /// No description provided for @updatesAutoCheckSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Look for a new version each time the app opens'**
+  String get updatesAutoCheckSubtitle;
+
+  /// No description provided for @updatesSourceNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Updates come from the project’s own GitHub releases and are signed with the same key as this build.'**
+  String get updatesSourceNote;
+
+  /// No description provided for @updatesPermissionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Allow installing apps'**
+  String get updatesPermissionTitle;
+
+  /// No description provided for @updatesPermissionBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Android needs permission before this app can install an update. Turn on \"Allow from this source\", then come back and install.'**
+  String get updatesPermissionBody;
+
+  /// No description provided for @updatesCheckFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not check for updates'**
+  String get updatesCheckFailed;
+
+  /// No description provided for @updatesRateLimited.
+  ///
+  /// In en, this message translates to:
+  /// **'GitHub is rate limiting this device, try again later'**
+  String get updatesRateLimited;
+
+  /// No description provided for @updatesNoRelease.
+  ///
+  /// In en, this message translates to:
+  /// **'No published release was found'**
+  String get updatesNoRelease;
+
+  /// No description provided for @updatesNoAsset.
+  ///
+  /// In en, this message translates to:
+  /// **'That release has no APK attached'**
+  String get updatesNoAsset;
+
+  /// No description provided for @updatesInstallFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'The installer could not be opened'**
+  String get updatesInstallFailed;
 }
 
 class _AppLocalizationsDelegate
@@ -8951,160 +9107,4 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
       'an issue with the localizations generation tool. Please file an issue '
       'on GitHub with a reproducible sample app and the gen-l10n configuration '
       'that was used.');
-
-  /// No description provided for @updatesTitle.
-  ///
-  /// In en, this message translates to:
-  /// **Updates**
-  String get updatesTitle;
-
-  /// No description provided for @updatesSubtitle.
-  ///
-  /// In en, this message translates to:
-  /// **Install new versions from GitHub**
-  String get updatesSubtitle;
-
-  /// No description provided for @updatesCheckNow.
-  ///
-  /// In en, this message translates to:
-  /// **Check for updates**
-  String get updatesCheckNow;
-
-  /// No description provided for @updatesChecking.
-  ///
-  /// In en, this message translates to:
-  /// **Checking for updates…**
-  String get updatesChecking;
-
-  /// No description provided for @updatesUpToDate.
-  ///
-  /// In en, this message translates to:
-  /// **You have the latest version**
-  String get updatesUpToDate;
-
-  /// No description provided for @updatesAvailable.
-  ///
-  /// In en, this message translates to:
-  /// **Update available**
-  String get updatesAvailable;
-
-  /// No description provided for @updatesView.
-  ///
-  /// In en, this message translates to:
-  /// **View**
-  String get updatesView;
-
-  /// No description provided for @updatesInstalledVersion.
-  ///
-  /// In en, this message translates to:
-  /// **Installed**
-  String get updatesInstalledVersion;
-
-  /// No description provided for @updatesNewVersion.
-  ///
-  /// In en, this message translates to:
-  /// **New version**
-  String get updatesNewVersion;
-
-  /// No description provided for @updatesReleaseNotes.
-  ///
-  /// In en, this message translates to:
-  /// **Release notes**
-  String get updatesReleaseNotes;
-
-  /// No description provided for @updatesDownloadInstall.
-  ///
-  /// In en, this message translates to:
-  /// **Download and install**
-  String get updatesDownloadInstall;
-
-  /// No description provided for @updatesDownloading.
-  ///
-  /// In en, this message translates to:
-  /// **Downloading…**
-  String get updatesDownloading;
-
-  /// No description provided for @updatesReadyToInstall.
-  ///
-  /// In en, this message translates to:
-  /// **Ready to install**
-  String get updatesReadyToInstall;
-
-  /// No description provided for @updatesInstall.
-  ///
-  /// In en, this message translates to:
-  /// **Install**
-  String get updatesInstall;
-
-  /// No description provided for @updatesCancel.
-  ///
-  /// In en, this message translates to:
-  /// **Cancel**
-  String get updatesCancel;
-
-  /// No description provided for @updatesOpenSettings.
-  ///
-  /// In en, this message translates to:
-  /// **Open settings**
-  String get updatesOpenSettings;
-
-  /// No description provided for @updatesAutoCheck.
-  ///
-  /// In en, this message translates to:
-  /// **Check on startup**
-  String get updatesAutoCheck;
-
-  /// No description provided for @updatesAutoCheckSubtitle.
-  ///
-  /// In en, this message translates to:
-  /// **Look for a new version each time the app opens**
-  String get updatesAutoCheckSubtitle;
-
-  /// No description provided for @updatesSourceNote.
-  ///
-  /// In en, this message translates to:
-  /// **Updates come from the project’s own GitHub releases and are signed with the same key as this build.**
-  String get updatesSourceNote;
-
-  /// No description provided for @updatesPermissionTitle.
-  ///
-  /// In en, this message translates to:
-  /// **Allow installing apps**
-  String get updatesPermissionTitle;
-
-  /// No description provided for @updatesPermissionBody.
-  ///
-  /// In en, this message translates to:
-  /// **Android needs permission before this app can install an update. Turn on \"Allow from this source\", then come back and install.**
-  String get updatesPermissionBody;
-
-  /// No description provided for @updatesCheckFailed.
-  ///
-  /// In en, this message translates to:
-  /// **Could not check for updates**
-  String get updatesCheckFailed;
-
-  /// No description provided for @updatesRateLimited.
-  ///
-  /// In en, this message translates to:
-  /// **GitHub is rate limiting this device, try again later**
-  String get updatesRateLimited;
-
-  /// No description provided for @updatesNoRelease.
-  ///
-  /// In en, this message translates to:
-  /// **No published release was found**
-  String get updatesNoRelease;
-
-  /// No description provided for @updatesNoAsset.
-  ///
-  /// In en, this message translates to:
-  /// **That release has no APK attached**
-  String get updatesNoAsset;
-
-  /// No description provided for @updatesInstallFailed.
-  ///
-  /// In en, this message translates to:
-  /// **The installer could not be opened**
-  String get updatesInstallFailed;
 }
