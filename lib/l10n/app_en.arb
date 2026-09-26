@@ -910,6 +910,8 @@
   "importedOneRemoteFromIrplus": "Imported 1 remote from irplus. Macros were not changed.",
   "importFailedInvalidLirc": "Import failed: invalid LIRC file (no valid codes/raw codes found).",
   "importedOneRemoteFromLirc": "Imported 1 remote from LIRC config. Macros were not changed.",
+  "importedOneRemoteFromRemoteLedger": "Imported 1 remote from Remote Ledger. Macros were not changed.",
+  "importFailedInvalidRemoteLedger": "Import failed: this Remote Ledger file has no codes SwiftRemote can play.",
   "unsupportedFileTypeSelected": "Unsupported file type selected.",
   "importFailedInvalidUnreadableFile": "Import failed: invalid or unreadable file.",
   "bulkImportNoSupportedFilesInFolder": "Bulk import complete: no supported files found in folder.",

@@ -783,6 +783,8 @@
   "importedOneRemoteFromIrplus": "Imported 1 pilot from irplus. makra were nie changed.",
   "importFailedInvalidLirc": "Import nieudane: invalid LIRC plik (no valid kody/raw kody znaleziono).",
   "importedOneRemoteFromLirc": "Imported 1 pilot from LIRC config. makra were nie changed.",
+  "importedOneRemoteFromRemoteLedger": "Zaimportowano 1 pilota z Remote Ledger. Makra nie zostały zmienione.",
+  "importFailedInvalidRemoteLedger": "Import nieudany: ten plik Remote Ledger nie zawiera kodów, które SwiftRemote może wysłać.",
   "unsupportedFileTypeSelected": "Unsupported plik type wybrano.",
   "importFailedInvalidUnreadableFile": "Import nieudany: plik jest nieprawidłowy lub nieczytelny.",
   "bulkImportNoSupportedFilesInFolder": "Import zbiorczy zakończony: nie znaleziono w folderze obsługiwanych plików.",

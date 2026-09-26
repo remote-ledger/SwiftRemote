@@ -2120,6 +2120,14 @@ class AppLocalizationsPt extends AppLocalizations {
       'Foi importado 1 comando de uma configuração LIRC. As macros não foram alteradas.';
 
   @override
+  String get importedOneRemoteFromRemoteLedger =>
+      'Foi importado 1 comando do Remote Ledger. As macros não foram alteradas.';
+
+  @override
+  String get importFailedInvalidRemoteLedger =>
+      'Importação falhada: este ficheiro do Remote Ledger não tem códigos que o SwiftRemote consiga enviar.';
+
+  @override
   String get unsupportedFileTypeSelected =>
       'Foi selecionado um tipo de ficheiro não compatível.';
 
@@ -4960,22 +4968,26 @@ class AppLocalizationsPt extends AppLocalizations {
   String get updatesAutoCheck => 'Check on startup';
 
   @override
-  String get updatesAutoCheckSubtitle => 'Look for a new version each time the app opens';
+  String get updatesAutoCheckSubtitle =>
+      'Look for a new version each time the app opens';
 
   @override
-  String get updatesSourceNote => 'Updates come from the project’s own GitHub releases and are signed with the same key as this build.';
+  String get updatesSourceNote =>
+      'Updates come from the project’s own GitHub releases and are signed with the same key as this build.';
 
   @override
   String get updatesPermissionTitle => 'Allow installing apps';
 
   @override
-  String get updatesPermissionBody => 'Android needs permission before this app can install an update. Turn on "Allow from this source", then come back and install.';
+  String get updatesPermissionBody =>
+      'Android needs permission before this app can install an update. Turn on \"Allow from this source\", then come back and install.';
 
   @override
   String get updatesCheckFailed => 'Could not check for updates';
 
   @override
-  String get updatesRateLimited => 'GitHub is rate limiting this device, try again later';
+  String get updatesRateLimited =>
+      'GitHub is rate limiting this device, try again later';
 
   @override
   String get updatesNoRelease => 'No published release was found';
@@ -7104,6 +7116,14 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   @override
   String get importedOneRemoteFromLirc =>
       'Foi importado 1 controle de uma configuração LIRC. As macros não foram alteradas.';
+
+  @override
+  String get importedOneRemoteFromRemoteLedger =>
+      'Foi importado 1 controle do Remote Ledger. As macros não foram alteradas.';
+
+  @override
+  String get importFailedInvalidRemoteLedger =>
+      'Falha na importação: este arquivo do Remote Ledger não tem códigos que o SwiftRemote consiga enviar.';
 
   @override
   String get unsupportedFileTypeSelected =>
@@ -9948,22 +9968,26 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get updatesAutoCheck => 'Check on startup';
 
   @override
-  String get updatesAutoCheckSubtitle => 'Look for a new version each time the app opens';
+  String get updatesAutoCheckSubtitle =>
+      'Look for a new version each time the app opens';
 
   @override
-  String get updatesSourceNote => 'Updates come from the project’s own GitHub releases and are signed with the same key as this build.';
+  String get updatesSourceNote =>
+      'Updates come from the project’s own GitHub releases and are signed with the same key as this build.';
 
   @override
   String get updatesPermissionTitle => 'Allow installing apps';
 
   @override
-  String get updatesPermissionBody => 'Android needs permission before this app can install an update. Turn on "Allow from this source", then come back and install.';
+  String get updatesPermissionBody =>
+      'Android needs permission before this app can install an update. Turn on \"Allow from this source\", then come back and install.';
 
   @override
   String get updatesCheckFailed => 'Could not check for updates';
 
   @override
-  String get updatesRateLimited => 'GitHub is rate limiting this device, try again later';
+  String get updatesRateLimited =>
+      'GitHub is rate limiting this device, try again later';
 
   @override
   String get updatesNoRelease => 'No published release was found';

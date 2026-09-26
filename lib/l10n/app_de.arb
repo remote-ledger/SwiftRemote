@@ -799,6 +799,8 @@
   "importedOneRemoteFromIrplus": "1 Fernbedienung aus irplus importiert. Makros wurden nicht geändert.",
   "importFailedInvalidLirc": "Import fehlgeschlagen: ungültige LIRC-Datei keine gültigen Codes oder Rohcodes gefunden.",
   "importedOneRemoteFromLirc": "1 Fernbedienung aus LIRC-Konfiguration importiert. Makros wurden nicht geändert.",
+  "importedOneRemoteFromRemoteLedger": "1 Fernbedienung aus Remote Ledger importiert. Makros wurden nicht geändert.",
+  "importFailedInvalidRemoteLedger": "Import fehlgeschlagen: Diese Remote-Ledger-Datei enthält keine Codes, die SwiftRemote senden kann.",
   "unsupportedFileTypeSelected": "Nicht unterstützter Dateityp gewählt.",
   "importFailedInvalidUnreadableFile": "Import fehlgeschlagen: ungültige oder unlesbare Datei.",
   "bulkImportNoSupportedFilesInFolder": "Sammelimport abgeschlossen: keine unterstützten Dateien im Ordner gefunden.",

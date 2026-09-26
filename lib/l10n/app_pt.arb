@@ -783,6 +783,8 @@
   "importedOneRemoteFromIrplus": "Foi importado 1 comando de irplus. As macros não foram alteradas.",
   "importFailedInvalidLirc": "Importação falhada: ficheiro LIRC não válido (não se encontraron códigos válidos/brutos).",
   "importedOneRemoteFromLirc": "Foi importado 1 comando de uma configuração LIRC. As macros não foram alteradas.",
+  "importedOneRemoteFromRemoteLedger": "Foi importado 1 comando do Remote Ledger. As macros não foram alteradas.",
+  "importFailedInvalidRemoteLedger": "Importação falhada: este ficheiro do Remote Ledger não tem códigos que o SwiftRemote consiga enviar.",
   "unsupportedFileTypeSelected": "Foi selecionado um tipo de ficheiro não compatível.",
   "importFailedInvalidUnreadableFile": "Importação falhada: ficheiro não válido o ilegible.",
   "bulkImportNoSupportedFilesInFolder": "Importação masiva concluída: não se encontraron ficheiros compatíveis en a pasta.",

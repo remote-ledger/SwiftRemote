@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:swiftremote/github_store/github_store_service.dart';
 import 'package:swiftremote/github_store/models.dart';
+import 'package:swiftremote/github_store/remote_ledger_index.dart';
 import 'package:swiftremote/github_store/url_parser.dart';
 import 'package:swiftremote/l10n/l10n.dart';
 import 'package:swiftremote/state/remotes_state.dart';
@@ -53,7 +54,11 @@ String _describeGitHubStoreError(
 }
 
 class GitHubStoreScreen extends StatefulWidget {
-  const GitHubStoreScreen({super.key});
+  const GitHubStoreScreen({super.key, this.ledgerService});
+
+  /// Where Remote Ledger searches get their index. Null uses the network, as
+  /// the app does; tests hand in one that serves a fixture.
+  final RemoteLedgerIndexService? ledgerService;
 
   @override
   State<GitHubStoreScreen> createState() => _GitHubStoreScreenState();
@@ -82,6 +87,17 @@ class _GitHubStoreScreenState extends State<GitHubStoreScreen> {
   bool _hasSavedToken = false;
   bool _hasLoadedDirectory = false;
   bool _hasAttemptedLoad = false;
+
+  /// Remote Ledger's own index. The search box searches this instead of the
+  /// open folder whenever Remote Ledger is the selected source.
+  late final RemoteLedgerIndexService _ledgerService =
+      widget.ledgerService ?? RemoteLedgerIndexService();
+  RemoteLedgerIndex? _ledger;
+  bool _ledgerLoading = false;
+  String? _ledgerError;
+
+  /// How many matching remotes one search lists, as the ledger's site does.
+  static const int _ledgerResultsShown = 50;
 
   @override
   void initState() {
@@ -277,6 +293,167 @@ class _GitHubStoreScreenState extends State<GitHubStoreScreen> {
     );
   }
 
+  void _onSearchChanged(String value) {
+    setState(() {});
+    if (_isDefaultRepoSelected &&
+        value.trim().isNotEmpty &&
+        _ledger == null &&
+        !_ledgerLoading) {
+      _loadLedgerIndex();
+    }
+  }
+
+  Future<void> _loadLedgerIndex({bool forceRefresh = false}) async {
+    setState(() {
+      _ledgerLoading = true;
+      _ledgerError = null;
+    });
+    try {
+      final index = await _ledgerService.load(forceRefresh: forceRefresh);
+      if (!mounted) return;
+      setState(() => _ledger = index);
+    } catch (e) {
+      if (!mounted) return;
+      setState(() {
+        _ledgerError = 'Could not load the Remote Ledger index. Check the '
+            'connection and try again.';
+      });
+    } finally {
+      if (mounted) setState(() => _ledgerLoading = false);
+    }
+  }
+
+  Future<void> _openLedgerRemote(RemoteLedgerEntry entry) {
+    return _openItem(
+      RepoItem(
+        type: RepoItemType.file,
+        name: entry.fileName,
+        path: entry.artifact,
+      ),
+    );
+  }
+
+  Widget _ledgerSearchResults(ThemeData theme, String query) {
+    final ledger = _ledger;
+    final muted = theme.textTheme.bodyMedium?.copyWith(
+      color: theme.colorScheme.onSurfaceVariant,
+    );
+
+    if (ledger == null) {
+      if (_ledgerError != null) {
+        return Card(
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  _ledgerError!,
+                  style: theme.textTheme.bodyMedium?.copyWith(
+                    color: theme.colorScheme.error,
+                  ),
+                ),
+                const SizedBox(height: 12),
+                FilledButton.icon(
+                  onPressed: _ledgerLoading ? null : _loadLedgerIndex,
+                  icon: const Icon(Icons.refresh_rounded),
+                  label: const Text('Try again'),
+                ),
+              ],
+            ),
+          ),
+        );
+      }
+      return const Padding(
+        padding: EdgeInsets.symmetric(vertical: 32),
+        child: Center(child: CircularProgressIndicator()),
+      );
+    }
+
+    final result = ledger.search(query);
+    if (result.remotes.isEmpty && result.unresolved.isEmpty) {
+      return Card(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Text(
+            // The ledger's third state: not "no remote exists" but "nobody
+            // has looked", which is worth saying so it is not mistaken for
+            // the other.
+            'Nothing in Remote Ledger matches "$query", and nobody has '
+            'recorded looking for it either.',
+            style: muted,
+          ),
+        ),
+      );
+    }
+
+    final shown = result.remotes.take(_ledgerResultsShown).toList();
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(4, 0, 4, 8),
+          child: Text(
+            result.remotes.length > shown.length
+                ? 'Showing ${shown.length} of ${result.remotes.length} '
+                    'remotes. Refine the search to see the rest.'
+                : '${result.remotes.length} '
+                    '${result.remotes.length == 1 ? 'remote' : 'remotes'} '
+                    'in Remote Ledger',
+            style: muted,
+          ),
+        ),
+        if (shown.isNotEmpty)
+          Card(
+            child: Column(
+              children: [
+                for (var i = 0; i < shown.length; i++) ...[
+                  ListTile(
+                    leading: Icon(
+                      shown[i].importedFrom == null
+                          ? Icons.verified_outlined
+                          : Icons.settings_remote_outlined,
+                    ),
+                    title: Text(shown[i].title),
+                    subtitle: Text(
+                      _ledgerEntryDetail(shown[i]),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    trailing: const Icon(Icons.chevron_right_rounded),
+                    onTap: () => _openLedgerRemote(shown[i]),
+                  ),
+                  if (i != shown.length - 1) const Divider(height: 1),
+                ],
+              ],
+            ),
+          ),
+        for (final device in result.unresolved)
+          Card(
+            child: ListTile(
+              leading: const Icon(Icons.help_outline_rounded),
+              title: Text(device.device),
+              subtitle: Text(
+                device.checked == null
+                    ? 'Checked, and no known remote found.'
+                    : 'Checked ${device.checked}, and no known remote found.',
+              ),
+            ),
+          ),
+      ],
+    );
+  }
+
+  static String _ledgerEntryDetail(RemoteLedgerEntry entry) {
+    final parts = <String>[
+      if (entry.controls.isNotEmpty) 'Controls ${entry.controls.join(', ')}',
+      '${entry.keyCount} ${entry.keyCount == 1 ? 'key' : 'keys'}',
+      if (entry.protocol != null) entry.protocol!,
+      entry.importedFrom == null ? 'authored' : 'imported',
+    ];
+    return parts.join(' · ');
+  }
+
   Future<void> _saveCurrentSource() async {
     final repo = _repo;
     if (repo == null) return;
@@ -400,6 +577,8 @@ class _GitHubStoreScreenState extends State<GitHubStoreScreen> {
     final theme = Theme.of(context);
     final repo = _repo;
     final query = _searchCtrl.text.trim().toLowerCase();
+    final searchingLedger =
+        repo != null && _isDefaultRepoSelected && query.isNotEmpty;
     final visible = query.isEmpty
         ? _items
         : _items
@@ -542,7 +721,8 @@ class _GitHubStoreScreenState extends State<GitHubStoreScreen> {
                 ),
               ),
               const SizedBox(height: 10),
-              if (repo != null && _hasLoadedDirectory) ...[
+              if (repo != null &&
+                  (_hasLoadedDirectory || _isDefaultRepoSelected)) ...[
                 Card(
                   child: Padding(
                     padding: const EdgeInsets.all(14),
@@ -576,11 +756,13 @@ class _GitHubStoreScreenState extends State<GitHubStoreScreen> {
                         const SizedBox(height: 12),
                         TextField(
                           controller: _searchCtrl,
-                          onChanged: (_) => setState(() {}),
-                          decoration: const InputDecoration(
-                            prefixIcon: Icon(Icons.search_rounded),
-                            hintText: 'Filter current folder',
-                            border: OutlineInputBorder(),
+                          onChanged: _onSearchChanged,
+                          decoration: InputDecoration(
+                            prefixIcon: const Icon(Icons.search_rounded),
+                            hintText: _isDefaultRepoSelected
+                                ? 'Search a device, model or maker, e.g. BDP-S185'
+                                : 'Filter current folder',
+                            border: const OutlineInputBorder(),
                           ),
                         ),
                       ],
@@ -589,7 +771,9 @@ class _GitHubStoreScreenState extends State<GitHubStoreScreen> {
                 ),
                 const SizedBox(height: 10),
               ],
-              if (_loading)
+              if (searchingLedger)
+                _ledgerSearchResults(theme, _searchCtrl.text.trim())
+              else if (_loading)
                 const Padding(
                   padding: EdgeInsets.symmetric(vertical: 32),
                   child: Center(child: CircularProgressIndicator()),
@@ -612,7 +796,7 @@ class _GitHubStoreScreenState extends State<GitHubStoreScreen> {
                         const SizedBox(height: 8),
                         Text(
                           _isDefaultRepoSelected
-                              ? 'IR codes by manufacturer and remote model. Each key carries its most trusted code and cites where it came from.'
+                              ? 'IR codes by manufacturer and remote model. Each key carries its most trusted code and cites where it came from. Search above by device, model or maker, or load the repository to browse it by folder.'
                               : 'Tap the button below to load the selected GitHub repository.',
                           style: theme.textTheme.bodyMedium?.copyWith(
                             color: theme.colorScheme.onSurfaceVariant,

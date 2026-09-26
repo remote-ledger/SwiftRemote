@@ -788,6 +788,8 @@
   "importedOneRemoteFromIrplus": "1 télécommande importée depuis irplus. Les macros n'ont pas été modifiées.",
   "importFailedInvalidLirc": "Import échoué : fichier LIRC invalide (aucun code ou code brut valide trouvé).",
   "importedOneRemoteFromLirc": "1 télécommande importée depuis une config LIRC. Les macros n'ont pas été modifiées.",
+  "importedOneRemoteFromRemoteLedger": "1 télécommande importée depuis Remote Ledger. Les macros n'ont pas été modifiées.",
+  "importFailedInvalidRemoteLedger": "Import échoué : ce fichier Remote Ledger ne contient aucun code que SwiftRemote peut envoyer.",
   "unsupportedFileTypeSelected": "Type de fichier non pris en charge.",
   "importFailedInvalidUnreadableFile": "Import échoué : fichier invalide ou illisible.",
   "bulkImportNoSupportedFilesInFolder": "Import groupé terminé : aucun fichier pris en charge dans le dossier.",

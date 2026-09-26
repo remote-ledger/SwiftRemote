@@ -783,6 +783,8 @@
   "importedOneRemoteFromIrplus": "1 afstandsbediening geïmporteerd uit irplus. Macro's zijn niet gewijzigd.",
   "importFailedInvalidLirc": "Importeren mislukt ongeldig LIRC-bestand geen geldige codes of ruwe codes gevonden.",
   "importedOneRemoteFromLirc": "1 afstandsbediening geïmporteerd uit LIRC-configuratie. Macro's zijn niet gewijzigd.",
+  "importedOneRemoteFromRemoteLedger": "1 afstandsbediening geïmporteerd uit Remote Ledger. Macro's zijn niet gewijzigd.",
+  "importFailedInvalidRemoteLedger": "Importeren mislukt: dit Remote Ledger-bestand bevat geen codes die SwiftRemote kan verzenden.",
   "unsupportedFileTypeSelected": "Niet-ondersteund bestandstype geselecteerd.",
   "importFailedInvalidUnreadableFile": "Importeren mislukt ongeldige of onleesbare bestand.",
   "bulkImportNoSupportedFilesInFolder": "Bulkimporteren voltooid: no ondersteunde files found in folder.",

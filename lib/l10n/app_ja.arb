@@ -783,6 +783,8 @@
   "importedOneRemoteFromIrplus": "irplus から1つのリモコンを取り込みました。マクロは変更されませんでした。",
   "importFailedInvalidLirc": "取り込み失敗 無効なLIRCファイルです 有効なコードまたは生コードが見つかりません。",
   "importedOneRemoteFromLirc": "LIRC設定から1つのリモコンを取り込みました。マクロは変更されませんでした。",
+  "importedOneRemoteFromRemoteLedger": "Remote Ledger から1つのリモコンを取り込みました。マクロは変更されませんでした。",
+  "importFailedInvalidRemoteLedger": "取り込み失敗: この Remote Ledger ファイルには SwiftRemote で送信できるコードがありません。",
   "unsupportedFileTypeSelected": "未対応のファイル形式です",
   "importFailedInvalidUnreadableFile": "取り込み失敗 無効または読めないファイルです。",
   "bulkImportNoSupportedFilesInFolder": "一括取り込み完了 対応ファイルがフォルダ内にありません。",

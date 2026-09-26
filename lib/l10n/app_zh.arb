@@ -783,6 +783,8 @@
   "importedOneRemoteFromIrplus": "已从 IRPlus 导入 1 个遥控器。宏未更改。",
   "importFailedInvalidLirc": "导入失败 LIRC 文件无效 未找到有效代码 原始代码。",
   "importedOneRemoteFromLirc": "已从 LIRC 配置导入 1 个遥控器。宏未更改。",
+  "importedOneRemoteFromRemoteLedger": "已从 Remote Ledger 导入 1 个遥控器。宏未更改。",
+  "importFailedInvalidRemoteLedger": "导入失败：此 Remote Ledger 文件中没有 SwiftRemote 可以发送的代码。",
   "unsupportedFileTypeSelected": "所选文件类型不受支持。",
   "importFailedInvalidUnreadableFile": "导入失败 文件无效或无法读取。",
   "bulkImportNoSupportedFilesInFolder": "批量导入完成 文件夹中未找到受支持文件。",

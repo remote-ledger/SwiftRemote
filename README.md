@@ -41,7 +41,7 @@ themselves from there.
   - USB IR dongle (with discovery, permission, and bulk transfers)
   - Audio IR (mono 1‑LED or stereo anti‑phase 2‑LED adapters)
 - Rich protocol support and a raw‑signal mode for precise mark/space patterns
-- Import/export of remotes, including Flipper Zero `.ir`, IRPLUS `.irplus` / XML, LIRC `.conf` / `.cfg` / `.lirc` files, JSON backups, and direct GitHub browsing/import
+- Import/export of remotes, including Flipper Zero `.ir`, IRPLUS `.irplus` / XML, LIRC `.conf` / `.cfg` / `.lirc` files, [Remote Ledger](https://remote-ledger.github.io/) `.json` remotes, JSON backups, and direct GitHub browsing/import
 - Learning Mode for supported USB learning dongles, with capture, preview, replay, and save flows
 
 Tip: At least one transmit path must be available (Internal, USB, or Audio). A built‑in IR blaster is not required if you use a USB dongle or audio adapter.
@@ -54,7 +54,7 @@ Tip: At least one transmit path must be available (Internal, USB, or Audio). A b
   - Choose Internal, USB, Audio (1 LED), or Audio (2 LEDs) under Settings > IR Transmitter.
   - Optional Auto Switch uses USB when a supported dongle is attached, otherwise Internal (disabled if Audio is selected).
 - Import/Export & Maintenance (Settings > Remotes):
-  - Import JSON backups, Flipper Zero `.ir`, IRPLUS `.irplus` / XML (beta), and LIRC `.conf` / `.cfg` / `.lirc` (beta) files
+  - Import JSON backups, Flipper Zero `.ir`, IRPLUS `.irplus` / XML (beta), LIRC `.conf` / `.cfg` / `.lirc` (beta), and Remote Ledger `.json` files
   - Browse compatible files from GitHub repositories in GitHub Store and import them directly into the app
   - Export remotes to Downloads
   - Restore the built‑in demo remote
@@ -255,7 +255,7 @@ Notes:
 
 ### Using the GitHub Store
 1. Open Settings > GitHub Store.
-2. The store opens on [Remote Ledger](https://remote-ledger.github.io/)'s compiled remotes, arranged by manufacturer and model. To browse somewhere else, enter a GitHub repository or folder URL instead. Nothing is fetched until you load the repository.
+2. The store opens on [Remote Ledger](https://remote-ledger.github.io/)'s compiled remotes. Search by the device you want to control, the remote's model or the maker (`BDP-S185`, `dx3 pro`, `sony`); spaces and punctuation are ignored, as on the ledger's site. Or load the repository to browse it by manufacturer and model. To browse somewhere else, enter a GitHub repository or folder URL instead. Nothing is fetched until you search or load.
 3. Open a supported file to preview how it will be parsed. A Remote Ledger remote imports each key's most trusted code, repeated as many times as its protocol needs.
 4. Import it into a new remote or add compatible buttons to an existing remote.
 

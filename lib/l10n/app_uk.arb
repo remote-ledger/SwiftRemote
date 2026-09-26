@@ -783,6 +783,8 @@
   "importedOneRemoteFromIrplus": "Імпортовано 1 пульт з irplus. Макроси не змінено.",
   "importFailedInvalidLirc": "Помилка імпорту: недійсний файл LIRC (дійсних кодів/необроблених кодів не знайдено).",
   "importedOneRemoteFromLirc": "Імпортовано 1 пульт із конфігурації LIRC. Макроси не змінено.",
+  "importedOneRemoteFromRemoteLedger": "Імпортовано 1 пульт із Remote Ledger. Макроси не змінено.",
+  "importFailedInvalidRemoteLedger": "Помилка імпорту: у цьому файлі Remote Ledger немає кодів, які SwiftRemote може надіслати.",
   "unsupportedFileTypeSelected": "Вибрано непідтримуваний тип файлу.",
   "importFailedInvalidUnreadableFile": "Помилка імпорту: недійсний або нечитабельний файл.",
   "bulkImportNoSupportedFilesInFolder": "Масовий імпорт завершено: у папці не знайдено підтримуваних файлів.",

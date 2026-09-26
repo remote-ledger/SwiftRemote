@@ -783,6 +783,8 @@
   "importedOneRemoteFromIrplus": "تم استيراد جهاز تحكم واحد من irplus. لم يتم تغيير الماكرو.",
   "importFailedInvalidLirc": "فشل الاستيراد: invalid LIRC file (no valid codes/raw codes موجود).",
   "importedOneRemoteFromLirc": "تم استيراد جهاز تحكم واحد من إعداد LIRC. لم يتم تغيير الماكرو.",
+  "importedOneRemoteFromRemoteLedger": "تم استيراد جهاز تحكم واحد من Remote Ledger. لم يتم تغيير الماكرو.",
+  "importFailedInvalidRemoteLedger": "فشل الاستيراد: لا يحتوي ملف Remote Ledger هذا على رموز يمكن لـ SwiftRemote إرسالها.",
   "unsupportedFileTypeSelected": "Unsupported file type المحدد.",
   "importFailedInvalidUnreadableFile": "فشل الاستيراد: invalid or unreadable file.",
   "bulkImportNoSupportedFilesInFolder": "اكتمل الاستيراد المجمع: no مدعوم files موجود in folder.",

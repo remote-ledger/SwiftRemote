@@ -783,6 +783,8 @@
   "importedOneRemoteFromIrplus": "นำเข้ารีโมต 1 รายการจาก irplus แมโครไม่เปลี่ยน",
   "importFailedInvalidLirc": "นำเข้าไม่สำเร็จ: invalid LIRC ไฟล์ (no valid codes/raw codes found).",
   "importedOneRemoteFromLirc": "นำเข้ารีโมต 1 รายการจากไฟล์ LIRC แมโครไม่เปลี่ยน",
+  "importedOneRemoteFromRemoteLedger": "นำเข้ารีโมต 1 รายการจาก Remote Ledger แมโครไม่เปลี่ยน",
+  "importFailedInvalidRemoteLedger": "นำเข้าไม่สำเร็จ: ไฟล์ Remote Ledger นี้ไม่มีโค้ดที่ SwiftRemote ส่งได้",
   "unsupportedFileTypeSelected": "Unที่รองรับ ไฟล์ type selected.",
   "importFailedInvalidUnreadableFile": "นำเข้าไม่สำเร็จ: invalid or unreadable ไฟล์.",
   "bulkImportNoSupportedFilesInFolder": "Bulk import complete: no ที่รองรับ ไฟล์s found in โฟลเดอร์.",

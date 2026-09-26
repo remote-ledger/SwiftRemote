@@ -2074,6 +2074,14 @@ class AppLocalizationsTh extends AppLocalizations {
       'นำเข้ารีโมต 1 รายการจากไฟล์ LIRC แมโครไม่เปลี่ยน';
 
   @override
+  String get importedOneRemoteFromRemoteLedger =>
+      'นำเข้ารีโมต 1 รายการจาก Remote Ledger แมโครไม่เปลี่ยน';
+
+  @override
+  String get importFailedInvalidRemoteLedger =>
+      'นำเข้าไม่สำเร็จ: ไฟล์ Remote Ledger นี้ไม่มีโค้ดที่ SwiftRemote ส่งได้';
+
+  @override
   String get unsupportedFileTypeSelected => 'Unที่รองรับ ไฟล์ type selected.';
 
   @override
@@ -4897,22 +4905,26 @@ class AppLocalizationsTh extends AppLocalizations {
   String get updatesAutoCheck => 'Check on startup';
 
   @override
-  String get updatesAutoCheckSubtitle => 'Look for a new version each time the app opens';
+  String get updatesAutoCheckSubtitle =>
+      'Look for a new version each time the app opens';
 
   @override
-  String get updatesSourceNote => 'Updates come from the project’s own GitHub releases and are signed with the same key as this build.';
+  String get updatesSourceNote =>
+      'Updates come from the project’s own GitHub releases and are signed with the same key as this build.';
 
   @override
   String get updatesPermissionTitle => 'Allow installing apps';
 
   @override
-  String get updatesPermissionBody => 'Android needs permission before this app can install an update. Turn on "Allow from this source", then come back and install.';
+  String get updatesPermissionBody =>
+      'Android needs permission before this app can install an update. Turn on \"Allow from this source\", then come back and install.';
 
   @override
   String get updatesCheckFailed => 'Could not check for updates';
 
   @override
-  String get updatesRateLimited => 'GitHub is rate limiting this device, try again later';
+  String get updatesRateLimited =>
+      'GitHub is rate limiting this device, try again later';
 
   @override
   String get updatesNoRelease => 'No published release was found';
