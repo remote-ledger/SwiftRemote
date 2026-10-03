@@ -1251,7 +1251,7 @@
   },
   "irFinderBruteforceTip": "Tipp: Nutze zuerst den Datenbankmodus. Brute Force ist am besten mit bekanntem Präfix etwa den ersten 1 bis 4 Bytes.",
   "irFinderDatabaseInitFailed": "Datenbankinitialisierung fehlgeschlagen.",
-  "irFinderPreparingDatabase": "Lokale IR-Code-Datenbank wird vorbereitet…",
+  "irFinderPreparingDatabase": "IR-Code-Datenbank wird geladen…",
   "irFinderDatabaseAssistedSearch": "Datenbankgestützte Suche",
   "irFinderBrand": "Marke",
   "irFinderSelectBrand": "Marke wählen",
@@ -2320,5 +2320,9 @@
   "updatesRateLimited": "GitHub is rate limiting this device, try again later",
   "updatesNoRelease": "No published release was found",
   "updatesNoAsset": "That release has no APK attached",
-  "updatesInstallFailed": "The installer could not be opened"
+  "updatesInstallFailed": "The installer could not be opened",
+  "irDbNeedsNetwork": "Die IR-Code-Datenbank wird beim ersten Öffnen einer Marke heruntergeladen und braucht daher eine Internetverbindung. Prüfe deine Verbindung und versuche es erneut.",
+  "irDbNeedsUpdate": "Diese Version von SwiftRemote kann die aktuelle IR-Code-Datenbank nicht lesen. Aktualisiere die App, um sie zu nutzen.",
+  "irDbSignalUnavailable": "Dieser Code wird aus seinem Signal in der Online-IR-Code-Datenbank abgespielt, und das Signal konnte nicht geladen werden. Prüfe deine Verbindung und versuche es erneut.",
+  "irDbSessionOutdated": "Die IR-Code-Datenbank wurde aktualisiert, nachdem dieser Durchlauf gespeichert wurde, daher kann er nicht fortgesetzt werden. Starte einen neuen Durchlauf."
 }

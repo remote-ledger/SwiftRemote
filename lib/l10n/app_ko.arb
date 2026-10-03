@@ -1235,7 +1235,7 @@
   },
   "irFinderBruteforceTip": "팁: 먼저 데이터베이스 모드를 사용하세요. 브루트포스는 알려진 접두사(예: 처음 1~4바이트)가 있을 때 가장 좋습니다.",
   "irFinderDatabaseInitFailed": "데이터베이스 초기화 실패.",
-  "irFinderPreparingDatabase": "로컬 IR 코드 데이터베이스 준비 중…",
+  "irFinderPreparingDatabase": "IR 코드 데이터베이스 불러오는 중…",
   "irFinderDatabaseAssistedSearch": "데이터베이스 보조 검색",
   "irFinderBrand": "브랜드",
   "irFinderSelectBrand": "브랜드 선택",
@@ -2320,5 +2320,9 @@
   "updatesRateLimited": "GitHub is rate limiting this device, try again later",
   "updatesNoRelease": "No published release was found",
   "updatesNoAsset": "That release has no APK attached",
-  "updatesInstallFailed": "The installer could not be opened"
+  "updatesInstallFailed": "The installer could not be opened",
+  "irDbNeedsNetwork": "IR 코드 데이터베이스는 브랜드를 처음 열 때 내려받기 때문에 인터넷 연결이 필요합니다. 연결을 확인하고 다시 시도하세요.",
+  "irDbNeedsUpdate": "이 버전의 SwiftRemote는 현재 IR 코드 데이터베이스를 읽을 수 없습니다. 앱을 업데이트하세요.",
+  "irDbSignalUnavailable": "이 코드는 온라인 IR 코드 데이터베이스에 있는 신호로 전송되는데, 그 신호를 불러오지 못했습니다. 연결을 확인하고 다시 시도하세요.",
+  "irDbSessionOutdated": "이 실행이 저장된 뒤 IR 코드 데이터베이스가 업데이트되어 다시 시작할 수 없습니다. 새 실행을 시작하세요."
 }

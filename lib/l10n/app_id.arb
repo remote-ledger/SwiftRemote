@@ -1235,7 +1235,7 @@
   },
   "irFinderBruteforceTip": "Tip: gunakan mode Basis data terlebih dahulu; brute-force paling baik dengan prefiks yang diketahui (misalnya 1–4 byte pertama).",
   "irFinderDatabaseInitFailed": "Basis data inisialisasi gagal.",
-  "irFinderPreparingDatabase": "Preparing local IR kode basis data…",
+  "irFinderPreparingDatabase": "Memuat basis data kode IR…",
   "irFinderDatabaseAssistedSearch": "Basis data-assisted pencarian",
   "irFinderBrand": "Merek",
   "irFinderSelectBrand": "Pilih merek",
@@ -2320,5 +2320,9 @@
   "updatesRateLimited": "GitHub is rate limiting this device, try again later",
   "updatesNoRelease": "No published release was found",
   "updatesNoAsset": "That release has no APK attached",
-  "updatesInstallFailed": "The installer could not be opened"
+  "updatesInstallFailed": "The installer could not be opened",
+  "irDbNeedsNetwork": "Basis data kode IR diunduh saat Anda pertama kali membuka sebuah merek, jadi perlu koneksi internet. Periksa koneksi Anda lalu coba lagi.",
+  "irDbNeedsUpdate": "Versi SwiftRemote ini tidak dapat membaca basis data kode IR yang terbaru. Perbarui aplikasi untuk menggunakannya.",
+  "irDbSignalUnavailable": "Kode ini dimainkan dari sinyalnya di basis data kode IR online, dan sinyal itu tidak dapat dimuat. Periksa koneksi Anda lalu coba lagi.",
+  "irDbSessionOutdated": "Basis data kode IR diperbarui setelah proses ini disimpan, sehingga tidak dapat dilanjutkan. Mulai proses baru."
 }

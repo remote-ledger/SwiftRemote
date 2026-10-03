@@ -2730,8 +2730,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get irFinderDatabaseInitFailed => 'Database initialization mislukt.';
 
   @override
-  String get irFinderPreparingDatabase =>
-      'Lokale IR-codedatabase wordt voorbereid…';
+  String get irFinderPreparingDatabase => 'IR-codedatabase laden…';
 
   @override
   String get irFinderDatabaseAssistedSearch => 'Database-assisted zoeken';
@@ -5001,4 +5000,20 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get updatesInstallFailed => 'The installer could not be opened';
+
+  @override
+  String get irDbNeedsNetwork =>
+      'De IR-codedatabase wordt gedownload wanneer je een merk voor het eerst opent, dus je hebt een internetverbinding nodig. Controleer je verbinding en probeer het opnieuw.';
+
+  @override
+  String get irDbNeedsUpdate =>
+      'Deze versie van SwiftRemote kan de huidige IR-codedatabase niet lezen. Werk de app bij om hem te gebruiken.';
+
+  @override
+  String get irDbSignalUnavailable =>
+      'Deze code wordt afgespeeld vanuit zijn signaal in de online IR-codedatabase, en dat signaal kon niet worden geladen. Controleer je verbinding en probeer het opnieuw.';
+
+  @override
+  String get irDbSessionOutdated =>
+      'De IR-codedatabase is bijgewerkt nadat deze run is opgeslagen, dus hij kan niet worden hervat. Start een nieuwe run.';
 }

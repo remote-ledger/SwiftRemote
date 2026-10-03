@@ -1235,7 +1235,7 @@
   },
   "irFinderBruteforceTip": "เคล็ดลับ: ใช้โหมดฐานข้อมูลก่อน การเดาสุ่มทั้งหมดเหมาะที่สุดเมื่อรู้พรีฟิกซ์ เช่น 1–4 ไบต์แรก",
   "irFinderDatabaseInitFailed": "ฐานข้อมูล เริ่มต้นไม่สำเร็จ.",
-  "irFinderPreparingDatabase": "กำลังเตรียมฐานข้อมูลโค้ด IR ในเครื่อง…",
+  "irFinderPreparingDatabase": "กำลังโหลดฐานข้อมูลโค้ด IR…",
   "irFinderDatabaseAssistedSearch": "ช่วยด้วยฐานข้อมูล search",
   "irFinderBrand": "ยี่ห้อ",
   "irFinderSelectBrand": "เลือกยี่ห้อ",
@@ -2320,5 +2320,9 @@
   "updatesRateLimited": "GitHub is rate limiting this device, try again later",
   "updatesNoRelease": "No published release was found",
   "updatesNoAsset": "That release has no APK attached",
-  "updatesInstallFailed": "The installer could not be opened"
+  "updatesInstallFailed": "The installer could not be opened",
+  "irDbNeedsNetwork": "ฐานข้อมูลโค้ด IR จะถูกดาวน์โหลดเมื่อคุณเปิดแบรนด์ครั้งแรก จึงต้องใช้การเชื่อมต่ออินเทอร์เน็ต ตรวจสอบการเชื่อมต่อแล้วลองอีกครั้ง",
+  "irDbNeedsUpdate": "SwiftRemote เวอร์ชันนี้อ่านฐานข้อมูลโค้ด IR ปัจจุบันไม่ได้ โปรดอัปเดตแอปเพื่อใช้งาน",
+  "irDbSignalUnavailable": "โค้ดนี้ส่งจากสัญญาณในฐานข้อมูลโค้ด IR ออนไลน์ แต่โหลดสัญญาณนั้นไม่สำเร็จ ตรวจสอบการเชื่อมต่อแล้วลองอีกครั้ง",
+  "irDbSessionOutdated": "ฐานข้อมูลโค้ด IR ถูกอัปเดตหลังจากบันทึกรอบนี้ จึงไม่สามารถดำเนินการต่อได้ โปรดเริ่มรอบใหม่"
 }

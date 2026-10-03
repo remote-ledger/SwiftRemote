@@ -2610,7 +2610,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get irFinderDatabaseInitFailed => '데이터베이스 초기화 실패.';
 
   @override
-  String get irFinderPreparingDatabase => '로컬 IR 코드 데이터베이스 준비 중…';
+  String get irFinderPreparingDatabase => 'IR 코드 데이터베이스 불러오는 중…';
 
   @override
   String get irFinderDatabaseAssistedSearch => '데이터베이스 보조 검색';
@@ -4852,4 +4852,20 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get updatesInstallFailed => 'The installer could not be opened';
+
+  @override
+  String get irDbNeedsNetwork =>
+      'IR 코드 데이터베이스는 브랜드를 처음 열 때 내려받기 때문에 인터넷 연결이 필요합니다. 연결을 확인하고 다시 시도하세요.';
+
+  @override
+  String get irDbNeedsUpdate =>
+      '이 버전의 SwiftRemote는 현재 IR 코드 데이터베이스를 읽을 수 없습니다. 앱을 업데이트하세요.';
+
+  @override
+  String get irDbSignalUnavailable =>
+      '이 코드는 온라인 IR 코드 데이터베이스에 있는 신호로 전송되는데, 그 신호를 불러오지 못했습니다. 연결을 확인하고 다시 시도하세요.';
+
+  @override
+  String get irDbSessionOutdated =>
+      '이 실행이 저장된 뒤 IR 코드 데이터베이스가 업데이트되어 다시 시작할 수 없습니다. 새 실행을 시작하세요.';
 }

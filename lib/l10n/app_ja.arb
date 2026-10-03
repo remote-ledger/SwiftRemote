@@ -1235,7 +1235,7 @@
   },
   "irFinderBruteforceTip": "ヒント まずデータベースモードを使ってください。総当たりは既知の接頭辞 例 先頭1から4バイト がある場合に最適です。",
   "irFinderDatabaseInitFailed": "データベース初期化に失敗しました",
-  "irFinderPreparingDatabase": "ローカルIRコードDBを準備中…",
+  "irFinderPreparingDatabase": "IRコードデータベースを読み込み中…",
   "irFinderDatabaseAssistedSearch": "DB支援検索",
   "irFinderBrand": "ブランド",
   "irFinderSelectBrand": "ブランドを選択",
@@ -2320,5 +2320,9 @@
   "updatesRateLimited": "GitHub is rate limiting this device, try again later",
   "updatesNoRelease": "No published release was found",
   "updatesNoAsset": "That release has no APK attached",
-  "updatesInstallFailed": "The installer could not be opened"
+  "updatesInstallFailed": "The installer could not be opened",
+  "irDbNeedsNetwork": "IRコードデータベースはブランドを初めて開くときにダウンロードされるため、インターネット接続が必要です。接続を確認して、もう一度お試しください。",
+  "irDbNeedsUpdate": "このバージョンのSwiftRemoteは現在のIRコードデータベースを読み取れません。アプリを更新してください。",
+  "irDbSignalUnavailable": "このコードはオンラインのIRコードデータベースにある信号から送信されますが、その信号を読み込めませんでした。接続を確認して、もう一度お試しください。",
+  "irDbSessionOutdated": "この実行が保存された後にIRコードデータベースが更新されたため、再開できません。新しく実行を開始してください。"
 }

@@ -1240,7 +1240,7 @@
   },
   "irFinderBruteforceTip": "Tip: gamitin muna ang Database mode. Pinakamainam ang brute-force kapag may kilalang prefix, halimbawa ang unang 1 hanggang 4 bytes.",
   "irFinderDatabaseInitFailed": "Database initialization nabigo.",
-  "irFinderPreparingDatabase": "Preparing local IR code database…",
+  "irFinderPreparingDatabase": "Nilo-load ang database ng mga IR code…",
   "irFinderDatabaseAssistedSearch": "Database-assisted search",
   "irFinderBrand": "Brand",
   "irFinderSelectBrand": "Select brand",
@@ -2320,5 +2320,9 @@
   "updatesRateLimited": "GitHub is rate limiting this device, try again later",
   "updatesNoRelease": "No published release was found",
   "updatesNoAsset": "That release has no APK attached",
-  "updatesInstallFailed": "The installer could not be opened"
+  "updatesInstallFailed": "The installer could not be opened",
+  "irDbNeedsNetwork": "Dina-download ang database ng mga IR code sa unang beses na magbukas ka ng brand, kaya kailangan nito ng koneksyon sa internet. Tingnan ang koneksyon mo at subukan ulit.",
+  "irDbNeedsUpdate": "Hindi mabasa ng bersyong ito ng SwiftRemote ang kasalukuyang database ng mga IR code. I-update ang app para magamit ito.",
+  "irDbSignalUnavailable": "Pinapatugtog ang code na ito mula sa signal nito sa online na database ng mga IR code, at hindi ma-load ang signal na iyon. Tingnan ang koneksyon mo at subukan ulit.",
+  "irDbSessionOutdated": "Na-update ang database ng mga IR code pagkatapos ma-save ang run na ito, kaya hindi ito maipagpapatuloy. Magsimula ng bagong run."
 }

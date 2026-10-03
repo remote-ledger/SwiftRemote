@@ -2702,7 +2702,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get irFinderDatabaseInitFailed => 'Не удалось инициализировать БД.';
 
   @override
-  String get irFinderPreparingDatabase => 'Подготовка локальной базы ИК-кодов…';
+  String get irFinderPreparingDatabase => 'Загрузка базы ИК-кодов…';
 
   @override
   String get irFinderDatabaseAssistedSearch => 'Поиск с помощью БД';
@@ -4967,4 +4967,20 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get updatesInstallFailed => 'The installer could not be opened';
+
+  @override
+  String get irDbNeedsNetwork =>
+      'База ИК-кодов скачивается при первом открытии бренда, поэтому нужно подключение к интернету. Проверьте соединение и повторите попытку.';
+
+  @override
+  String get irDbNeedsUpdate =>
+      'Эта версия SwiftRemote не может прочитать текущую базу ИК-кодов. Обновите приложение, чтобы ей пользоваться.';
+
+  @override
+  String get irDbSignalUnavailable =>
+      'Этот код воспроизводится по его сигналу из онлайн-базы ИК-кодов, но сигнал не удалось загрузить. Проверьте соединение и повторите попытку.';
+
+  @override
+  String get irDbSessionOutdated =>
+      'База ИК-кодов была обновлена после сохранения этого запуска, поэтому его нельзя продолжить. Начните новый запуск.';
 }

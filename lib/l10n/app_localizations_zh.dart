@@ -2549,7 +2549,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get irFinderDatabaseInitFailed => '数据库初始化失败。';
 
   @override
-  String get irFinderPreparingDatabase => '正在准备本地红外代码数据库…';
+  String get irFinderPreparingDatabase => '正在加载红外代码数据库…';
 
   @override
   String get irFinderDatabaseAssistedSearch => '数据库辅助搜索';
@@ -4781,4 +4781,17 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get updatesInstallFailed => 'The installer could not be opened';
+
+  @override
+  String get irDbNeedsNetwork => '红外代码数据库会在你首次打开某个品牌时下载，因此需要网络连接。请检查网络后重试。';
+
+  @override
+  String get irDbNeedsUpdate => '此版本的 SwiftRemote 无法读取当前的红外代码数据库。请更新应用后使用。';
+
+  @override
+  String get irDbSignalUnavailable =>
+      '此代码需要使用在线红外代码数据库中的信号发送，但该信号未能加载。请检查网络后重试。';
+
+  @override
+  String get irDbSessionOutdated => '保存此次运行之后红外代码数据库已更新，因此无法继续。请开始新的运行。';
 }

@@ -2799,8 +2799,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get irFinderDatabaseInitFailed => 'Помилка ініціалізації бази даних.';
 
   @override
-  String get irFinderPreparingDatabase =>
-      'Підготовка локальної бази даних ІЧ-кодів…';
+  String get irFinderPreparingDatabase => 'Завантаження бази ІЧ-кодів…';
 
   @override
   String get irFinderDatabaseAssistedSearch => 'Пошук за допомогою бази даних';
@@ -5075,4 +5074,20 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get updatesInstallFailed => 'The installer could not be opened';
+
+  @override
+  String get irDbNeedsNetwork =>
+      'База ІЧ-кодів завантажується, коли ви вперше відкриваєте бренд, тому потрібне підключення до інтернету. Перевірте з’єднання й спробуйте ще раз.';
+
+  @override
+  String get irDbNeedsUpdate =>
+      'Ця версія SwiftRemote не може прочитати поточну базу ІЧ-кодів. Оновіть застосунок, щоб користуватися нею.';
+
+  @override
+  String get irDbSignalUnavailable =>
+      'Цей код відтворюється за його сигналом із онлайн-бази ІЧ-кодів, але сигнал не вдалося завантажити. Перевірте з’єднання й спробуйте ще раз.';
+
+  @override
+  String get irDbSessionOutdated =>
+      'Базу ІЧ-кодів оновлено після збереження цього запуску, тому його не можна відновити. Почніть новий запуск.';
 }

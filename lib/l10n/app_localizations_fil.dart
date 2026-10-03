@@ -2713,7 +2713,8 @@ class AppLocalizationsFil extends AppLocalizations {
   String get irFinderDatabaseInitFailed => 'Database initialization nabigo.';
 
   @override
-  String get irFinderPreparingDatabase => 'Preparing local IR code database…';
+  String get irFinderPreparingDatabase =>
+      'Nilo-load ang database ng mga IR code…';
 
   @override
   String get irFinderDatabaseAssistedSearch => 'Database-assisted search';
@@ -4980,4 +4981,20 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get updatesInstallFailed => 'The installer could not be opened';
+
+  @override
+  String get irDbNeedsNetwork =>
+      'Dina-download ang database ng mga IR code sa unang beses na magbukas ka ng brand, kaya kailangan nito ng koneksyon sa internet. Tingnan ang koneksyon mo at subukan ulit.';
+
+  @override
+  String get irDbNeedsUpdate =>
+      'Hindi mabasa ng bersyong ito ng SwiftRemote ang kasalukuyang database ng mga IR code. I-update ang app para magamit ito.';
+
+  @override
+  String get irDbSignalUnavailable =>
+      'Pinapatugtog ang code na ito mula sa signal nito sa online na database ng mga IR code, at hindi ma-load ang signal na iyon. Tingnan ang koneksyon mo at subukan ulit.';
+
+  @override
+  String get irDbSessionOutdated =>
+      'Na-update ang database ng mga IR code pagkatapos ma-save ang run na ito, kaya hindi ito maipagpapatuloy. Magsimula ng bagong run.';
 }

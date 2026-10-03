@@ -2693,7 +2693,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get irFinderDatabaseInitFailed => 'डेटाबेस आरंभ विफल.';
 
   @override
-  String get irFinderPreparingDatabase => 'Preparing स्थानीय IR कोड डेटाबेस…';
+  String get irFinderPreparingDatabase => 'IR कोड डेटाबेस लोड हो रहा है…';
 
   @override
   String get irFinderDatabaseAssistedSearch => 'Database-assisted खोजें';
@@ -4959,4 +4959,20 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get updatesInstallFailed => 'The installer could not be opened';
+
+  @override
+  String get irDbNeedsNetwork =>
+      'IR कोड डेटाबेस किसी ब्रांड को पहली बार खोलने पर डाउनलोड होता है, इसलिए इंटरनेट कनेक्शन चाहिए। अपना कनेक्शन जाँचें और फिर कोशिश करें।';
+
+  @override
+  String get irDbNeedsUpdate =>
+      'SwiftRemote का यह संस्करण मौजूदा IR कोड डेटाबेस नहीं पढ़ सकता। इसे इस्तेमाल करने के लिए ऐप अपडेट करें।';
+
+  @override
+  String get irDbSignalUnavailable =>
+      'यह कोड ऑनलाइन IR कोड डेटाबेस में मौजूद अपने सिग्नल से भेजा जाता है, और वह सिग्नल लोड नहीं हो सका। अपना कनेक्शन जाँचें और फिर कोशिश करें।';
+
+  @override
+  String get irDbSessionOutdated =>
+      'यह रन सहेजे जाने के बाद IR कोड डेटाबेस अपडेट हो गया है, इसलिए इसे फिर से शुरू नहीं किया जा सकता। नया रन शुरू करें।';
 }

@@ -1235,7 +1235,7 @@
   },
   "irFinderBruteforceTip": "Wskazówka: najpierw użyj trybu bazy danych. Brute force działa najlepiej ze znanym prefiksem, np. pierwszymi 1-4 bajtami.",
   "irFinderDatabaseInitFailed": "Inicjalizacja bazy danych nie powiodła się.",
-  "irFinderPreparingDatabase": "Przygotowywanie lokalnej bazy kodów IR…",
+  "irFinderPreparingDatabase": "Wczytywanie bazy kodów IR…",
   "irFinderDatabaseAssistedSearch": "Wyszukiwanie wspomagane bazą",
   "irFinderBrand": "Marka",
   "irFinderSelectBrand": "Wybierz markę",
@@ -2320,5 +2320,9 @@
   "updatesRateLimited": "GitHub is rate limiting this device, try again later",
   "updatesNoRelease": "No published release was found",
   "updatesNoAsset": "That release has no APK attached",
-  "updatesInstallFailed": "The installer could not be opened"
+  "updatesInstallFailed": "The installer could not be opened",
+  "irDbNeedsNetwork": "Baza kodów IR jest pobierana przy pierwszym otwarciu marki, więc wymaga połączenia z internetem. Sprawdź połączenie i spróbuj ponownie.",
+  "irDbNeedsUpdate": "Ta wersja SwiftRemote nie potrafi odczytać aktualnej bazy kodów IR. Zaktualizuj aplikację, aby z niej korzystać.",
+  "irDbSignalUnavailable": "Ten kod jest odtwarzany z sygnału zapisanego w internetowej bazie kodów IR, a sygnału nie udało się wczytać. Sprawdź połączenie i spróbuj ponownie.",
+  "irDbSessionOutdated": "Baza kodów IR została zaktualizowana po zapisaniu tego przebiegu, więc nie można go wznowić. Rozpocznij nowy przebieg."
 }

@@ -4715,7 +4715,7 @@ abstract class AppLocalizations {
   /// No description provided for @irFinderPreparingDatabase.
   ///
   /// In en, this message translates to:
-  /// **'Preparing local IR code database…'**
+  /// **'Loading the IR code database…'**
   String get irFinderPreparingDatabase;
 
   /// No description provided for @irFinderDatabaseAssistedSearch.
@@ -9007,6 +9007,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'The installer could not be opened'**
   String get updatesInstallFailed;
+
+  /// No description provided for @irDbNeedsNetwork.
+  ///
+  /// In en, this message translates to:
+  /// **'The IR code database is downloaded the first time you open a brand, so it needs an internet connection. Check your connection and try again.'**
+  String get irDbNeedsNetwork;
+
+  /// No description provided for @irDbNeedsUpdate.
+  ///
+  /// In en, this message translates to:
+  /// **'This version of SwiftRemote can’t read the current IR code database. Update the app to use it.'**
+  String get irDbNeedsUpdate;
+
+  /// No description provided for @irDbSignalUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'This code is played from its signal in the online IR code database, and that signal could not be loaded. Check your connection and try again.'**
+  String get irDbSignalUnavailable;
+
+  /// No description provided for @irDbSessionOutdated.
+  ///
+  /// In en, this message translates to:
+  /// **'The IR code database was updated after this run was saved, so it can’t be resumed. Start a new run.'**
+  String get irDbSessionOutdated;
 }
 
 class _AppLocalizationsDelegate

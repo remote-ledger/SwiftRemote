@@ -2681,8 +2681,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get irFinderDatabaseInitFailed => 'Khởi tạo cơ sở dữ liệu thất bại.';
 
   @override
-  String get irFinderPreparingDatabase =>
-      'Đang chuẩn bị cơ sở dữ liệu mã IR cục bộ…';
+  String get irFinderPreparingDatabase => 'Đang tải cơ sở dữ liệu mã IR…';
 
   @override
   String get irFinderDatabaseAssistedSearch => 'Tìm kiếm có hỗ trợ CSDL';
@@ -4951,4 +4950,20 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get updatesInstallFailed => 'The installer could not be opened';
+
+  @override
+  String get irDbNeedsNetwork =>
+      'Cơ sở dữ liệu mã IR được tải xuống lần đầu bạn mở một thương hiệu, nên cần có kết nối Internet. Hãy kiểm tra kết nối rồi thử lại.';
+
+  @override
+  String get irDbNeedsUpdate =>
+      'Phiên bản SwiftRemote này không đọc được cơ sở dữ liệu mã IR hiện tại. Hãy cập nhật ứng dụng để sử dụng.';
+
+  @override
+  String get irDbSignalUnavailable =>
+      'Mã này được phát từ tín hiệu của nó trong cơ sở dữ liệu mã IR trực tuyến, nhưng không tải được tín hiệu đó. Hãy kiểm tra kết nối rồi thử lại.';
+
+  @override
+  String get irDbSessionOutdated =>
+      'Cơ sở dữ liệu mã IR đã được cập nhật sau khi lần chạy này được lưu, nên không thể tiếp tục. Hãy bắt đầu lần chạy mới.';
 }

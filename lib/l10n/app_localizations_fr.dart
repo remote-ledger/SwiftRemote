@@ -2727,8 +2727,7 @@ class AppLocalizationsFr extends AppLocalizations {
       'L’initialisation de la base de données a échoué.';
 
   @override
-  String get irFinderPreparingDatabase =>
-      'Préparation de la base locale de codes IR…';
+  String get irFinderPreparingDatabase => 'Chargement de la base de codes IR…';
 
   @override
   String get irFinderDatabaseAssistedSearch =>
@@ -5009,4 +5008,20 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get updatesInstallFailed => 'The installer could not be opened';
+
+  @override
+  String get irDbNeedsNetwork =>
+      'La base de codes IR est téléchargée la première fois que vous ouvrez une marque ; une connexion Internet est donc nécessaire. Vérifiez votre connexion et réessayez.';
+
+  @override
+  String get irDbNeedsUpdate =>
+      'Cette version de SwiftRemote ne peut pas lire la base de codes IR actuelle. Mettez l’application à jour pour l’utiliser.';
+
+  @override
+  String get irDbSignalUnavailable =>
+      'Ce code est émis à partir de son signal dans la base de codes IR en ligne, et ce signal n’a pas pu être chargé. Vérifiez votre connexion et réessayez.';
+
+  @override
+  String get irDbSessionOutdated =>
+      'La base de codes IR a été mise à jour après l’enregistrement de cette session, elle ne peut donc pas être reprise. Lancez une nouvelle session.';
 }

@@ -2673,8 +2673,7 @@ class AppLocalizationsTh extends AppLocalizations {
   String get irFinderDatabaseInitFailed => 'ฐานข้อมูล เริ่มต้นไม่สำเร็จ.';
 
   @override
-  String get irFinderPreparingDatabase =>
-      'กำลังเตรียมฐานข้อมูลโค้ด IR ในเครื่อง…';
+  String get irFinderPreparingDatabase => 'กำลังโหลดฐานข้อมูลโค้ด IR…';
 
   @override
   String get irFinderDatabaseAssistedSearch => 'ช่วยด้วยฐานข้อมูล search';
@@ -4934,4 +4933,20 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get updatesInstallFailed => 'The installer could not be opened';
+
+  @override
+  String get irDbNeedsNetwork =>
+      'ฐานข้อมูลโค้ด IR จะถูกดาวน์โหลดเมื่อคุณเปิดแบรนด์ครั้งแรก จึงต้องใช้การเชื่อมต่ออินเทอร์เน็ต ตรวจสอบการเชื่อมต่อแล้วลองอีกครั้ง';
+
+  @override
+  String get irDbNeedsUpdate =>
+      'SwiftRemote เวอร์ชันนี้อ่านฐานข้อมูลโค้ด IR ปัจจุบันไม่ได้ โปรดอัปเดตแอปเพื่อใช้งาน';
+
+  @override
+  String get irDbSignalUnavailable =>
+      'โค้ดนี้ส่งจากสัญญาณในฐานข้อมูลโค้ด IR ออนไลน์ แต่โหลดสัญญาณนั้นไม่สำเร็จ ตรวจสอบการเชื่อมต่อแล้วลองอีกครั้ง';
+
+  @override
+  String get irDbSessionOutdated =>
+      'ฐานข้อมูลโค้ด IR ถูกอัปเดตหลังจากบันทึกรอบนี้ จึงไม่สามารถดำเนินการต่อได้ โปรดเริ่มรอบใหม่';
 }
