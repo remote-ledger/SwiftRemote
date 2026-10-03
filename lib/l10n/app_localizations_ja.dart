@@ -1513,26 +1513,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get editButtonTitle => 'ボタンを編集';
 
   @override
-  String failedToLoadProtocols(Object error) {
-    return 'プロトコルの読み込みに失敗しました: $error';
-  }
-
-  @override
   String failedToLoadDatabaseKeys(Object error) {
     return 'データベースキーの読み込みに失敗しました: $error';
   }
-
-  @override
-  String get presetPower => '電源';
-
-  @override
-  String get presetVolume => '音量';
-
-  @override
-  String get presetChannel => 'チャンネル';
-
-  @override
-  String get presetNavigation => 'ナビ';
 
   @override
   String get all => 'すべて';
@@ -1724,21 +1707,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String get model => 'モデル';
 
   @override
-  String get selectBrand => 'ブランドを選択';
-
-  @override
-  String get searchBrand => 'ブランドを検索…';
-
-  @override
-  String get selectModel => 'モデルを選択';
-
-  @override
-  String get searchModel => 'モデルを検索…';
-
-  @override
-  String get unnamedKey => 'Unnamed key';
-
-  @override
   String get unknown => '不明';
 
   @override
@@ -1783,52 +1751,11 @@ class AppLocalizationsJa extends AppLocalizations {
   String get selectCommand => 'コマンドを選択';
 
   @override
-  String get databaseModeAutofillHint =>
-      'データベースモードではステップ2 ブランド モデル プロトコル を自動入力します。キー取り込み後は手動で調整できます。';
-
-  @override
   String get test => 'テスト';
 
   @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return '$addedCount個のボタンを取り込みました。重複$skippedCount件をスキップしました。';
-  }
-
-  @override
-  String get quickPresets => 'クイックプリセット';
-
-  @override
-  String get selectDeviceFirst => '先にデバイスを選択';
-
-  @override
-  String get searchByLabelOrHex => 'ラベルまたは16進で検索';
-
-  @override
-  String optionalRefinePresetKeys(Object preset) {
-    return '任意 $preset プリセットキーを絞り込む';
-  }
-
-  @override
-  String get selectBrandModelProtocolFirst => '先にブランド モデル プロトコルを選択してください。';
-
-  @override
-  String get noProtocolFoundForBrandModel => 'このブランドとモデルに対応するプロトコルが見つかりません。';
-
-  @override
-  String get protocolAutoDetected => 'プロトコル';
-
-  @override
-  String get protocolAutoDetectedHelper => 'データベースから自動検出されました。取り込み前に変更できます。';
-
-  @override
-  String get selectBrandModelToLoadKeys => 'キー読み込みのため ブランド モデル プロトコルを選択してください。';
-
-  @override
-  String get noKeysFound => 'キーが見つかりません。';
-
-  @override
-  String noKeysFoundForSearch(Object query) {
-    return '\"$query\" に一致するキーが見つかりません。';
   }
 
   @override
@@ -4168,9 +4095,6 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get iconNameGemFa => '宝石 FA';
-
-  @override
-  String get unknownLabel => '不明';
 
   @override
   String get selectedFilesLabel => '選択ファイル';

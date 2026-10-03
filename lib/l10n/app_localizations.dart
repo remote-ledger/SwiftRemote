@@ -2868,41 +2868,11 @@ abstract class AppLocalizations {
   /// **'Edit Button'**
   String get editButtonTitle;
 
-  /// No description provided for @failedToLoadProtocols.
-  ///
-  /// In en, this message translates to:
-  /// **'Failed to load protocols: {error}'**
-  String failedToLoadProtocols(Object error);
-
   /// No description provided for @failedToLoadDatabaseKeys.
   ///
   /// In en, this message translates to:
   /// **'Failed to load database keys: {error}'**
   String failedToLoadDatabaseKeys(Object error);
-
-  /// No description provided for @presetPower.
-  ///
-  /// In en, this message translates to:
-  /// **'Power'**
-  String get presetPower;
-
-  /// No description provided for @presetVolume.
-  ///
-  /// In en, this message translates to:
-  /// **'Volume'**
-  String get presetVolume;
-
-  /// No description provided for @presetChannel.
-  ///
-  /// In en, this message translates to:
-  /// **'Channel'**
-  String get presetChannel;
-
-  /// No description provided for @presetNavigation.
-  ///
-  /// In en, this message translates to:
-  /// **'Navigation'**
-  String get presetNavigation;
 
   /// No description provided for @all.
   ///
@@ -3240,36 +3210,6 @@ abstract class AppLocalizations {
   /// **'Model'**
   String get model;
 
-  /// No description provided for @selectBrand.
-  ///
-  /// In en, this message translates to:
-  /// **'Select brand'**
-  String get selectBrand;
-
-  /// No description provided for @searchBrand.
-  ///
-  /// In en, this message translates to:
-  /// **'Search brand…'**
-  String get searchBrand;
-
-  /// No description provided for @selectModel.
-  ///
-  /// In en, this message translates to:
-  /// **'Select model'**
-  String get selectModel;
-
-  /// No description provided for @searchModel.
-  ///
-  /// In en, this message translates to:
-  /// **'Search model…'**
-  String get searchModel;
-
-  /// No description provided for @unnamedKey.
-  ///
-  /// In en, this message translates to:
-  /// **'Unnamed key'**
-  String get unnamedKey;
-
   /// No description provided for @unknown.
   ///
   /// In en, this message translates to:
@@ -3354,12 +3294,6 @@ abstract class AppLocalizations {
   /// **'Select Command'**
   String get selectCommand;
 
-  /// No description provided for @databaseModeAutofillHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Database mode auto-fills Step 2 for you (brand + model + protocol). After importing a key, you can refine anything in Manual.'**
-  String get databaseModeAutofillHint;
-
   /// No description provided for @test.
   ///
   /// In en, this message translates to:
@@ -3371,72 +3305,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Imported {addedCount} button(s). Skipped {skippedCount} duplicate(s).'**
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount);
-
-  /// No description provided for @quickPresets.
-  ///
-  /// In en, this message translates to:
-  /// **'Quick presets'**
-  String get quickPresets;
-
-  /// No description provided for @selectDeviceFirst.
-  ///
-  /// In en, this message translates to:
-  /// **'Select device first'**
-  String get selectDeviceFirst;
-
-  /// No description provided for @searchByLabelOrHex.
-  ///
-  /// In en, this message translates to:
-  /// **'Search by label or hex'**
-  String get searchByLabelOrHex;
-
-  /// No description provided for @optionalRefinePresetKeys.
-  ///
-  /// In en, this message translates to:
-  /// **'Optional: refine the {preset} preset keys'**
-  String optionalRefinePresetKeys(Object preset);
-
-  /// No description provided for @selectBrandModelProtocolFirst.
-  ///
-  /// In en, this message translates to:
-  /// **'Select brand, model, and protocol first.'**
-  String get selectBrandModelProtocolFirst;
-
-  /// No description provided for @noProtocolFoundForBrandModel.
-  ///
-  /// In en, this message translates to:
-  /// **'No protocol found for this brand and model.'**
-  String get noProtocolFoundForBrandModel;
-
-  /// No description provided for @protocolAutoDetected.
-  ///
-  /// In en, this message translates to:
-  /// **'Protocol'**
-  String get protocolAutoDetected;
-
-  /// No description provided for @protocolAutoDetectedHelper.
-  ///
-  /// In en, this message translates to:
-  /// **'Auto-detected from the database. You can change it before importing.'**
-  String get protocolAutoDetectedHelper;
-
-  /// No description provided for @selectBrandModelToLoadKeys.
-  ///
-  /// In en, this message translates to:
-  /// **'Select a brand, model, and protocol to load keys.'**
-  String get selectBrandModelToLoadKeys;
-
-  /// No description provided for @noKeysFound.
-  ///
-  /// In en, this message translates to:
-  /// **'No keys found.'**
-  String get noKeysFound;
-
-  /// No description provided for @noKeysFoundForSearch.
-  ///
-  /// In en, this message translates to:
-  /// **'No keys found for “{query}”.'**
-  String noKeysFoundForSearch(Object query);
 
   /// No description provided for @noMacrosToExport.
   ///
@@ -7813,12 +7681,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Gem FA'**
   String get iconNameGemFa;
-
-  /// No description provided for @unknownLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Unknown'**
-  String get unknownLabel;
 
   /// No description provided for @selectedFilesLabel.
   ///

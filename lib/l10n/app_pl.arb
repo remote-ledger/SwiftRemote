@@ -489,22 +489,12 @@
   "createRemoteEmptyStateDescription": "Dodaj pierwszy przycisk, a potem przytrzymaj go, aby edytować lub usunąć.",
   "createButtonTitle": "Utwórz przycisk",
   "editButtonTitle": "Edytuj przycisk",
-  "failedToLoadProtocols": "nieudane do load protokoły: {error}",
-  "@failedToLoadProtocols": {
-    "placeholders": {
-      "error": {}
-    }
-  },
   "failedToLoadDatabaseKeys": "nieudane do load baza danych klawisze: {error}",
   "@failedToLoadDatabaseKeys": {
     "placeholders": {
       "error": {}
     }
   },
-  "presetPower": "Zasilanie",
-  "presetVolume": "głośność",
-  "presetChannel": "Kanał",
-  "presetNavigation": "Nawigacja",
   "all": "Wszystko",
   "completeRequiredFieldsToSave": "Uzupełnij wymagane pola, aby zapisać",
   "buttonLabelStepTitle": "Etykieta przycisku",
@@ -613,11 +603,6 @@
   },
   "brand": "Marka",
   "model": "model",
-  "selectBrand": "Wybierz markę",
-  "searchBrand": "szukaj marka…",
-  "selectModel": "Wybierz model",
-  "searchModel": "szukaj model…",
-  "unnamedKey": "Unnamed klawisz",
   "unknown": "Nieznane",
   "searchCommands": "szukaj komendy",
   "noMatchingCommands": "No matching komendy",
@@ -637,7 +622,6 @@
   "editButtonCodeTitle": "edytuj kod of przycisk",
   "thisRemoteHasNoButtons": "This pilot has no przyciski.",
   "selectCommand": "Select komenda",
-  "databaseModeAutofillHint": "baza danych mode auto-fills krok 2 dla you (marka + model + protokół). After importing a klawisz, you can refine anything in Manual.",
   "test": "Test",
   "importedButtonsSkippedDuplicates": "Imported {addedCount} przycisk(s). Skipped {skippedCount} duplicate(s).",
   "@importedButtonsSkippedDuplicates": {
@@ -648,27 +632,6 @@
       "skippedCount": {
         "type": "int"
       }
-    }
-  },
-  "quickPresets": "Quick presets",
-  "selectDeviceFirst": "Select urządzenie first",
-  "searchByLabelOrHex": "szukaj by etykieta lub hex",
-  "optionalRefinePresetKeys": "Optional: refine {preset} preset klawisze",
-  "@optionalRefinePresetKeys": {
-    "placeholders": {
-      "preset": {}
-    }
-  },
-  "selectBrandModelProtocolFirst": "Select marka, model, i protokół first.",
-  "noProtocolFoundForBrandModel": "No protokół znaleziono dla this marka i model.",
-  "protocolAutoDetected": "Protokół",
-  "protocolAutoDetectedHelper": "Wykryto automatycznie z bazy danych. Przed importem możesz to zmienić.",
-  "selectBrandModelToLoadKeys": "Select a marka, model, i protokół do load klawisze.",
-  "noKeysFound": "Nie znaleziono klawiszy.",
-  "noKeysFoundForSearch": "Nie znaleziono klawiszy dla \"{query}\".",
-  "@noKeysFoundForSearch": {
-    "placeholders": {
-      "query": {}
     }
   },
   "noMacrosToExport": "Brak makr do eksportu.",
@@ -1802,7 +1765,6 @@
   "iconNameTrophyFa": "Trophy FA",
   "iconNameCrownFa": "Crown FA",
   "iconNameGemFa": "Gem FA",
-  "unknownLabel": "Nieznane",
   "selectedFilesLabel": "wybrane pliki",
   "folderNotFoundOrInaccessible": "folder nie znaleziono lub inaccessible.",
   "importedRemoteDefaultName": "ImportedRemote",

@@ -489,22 +489,12 @@
   "createRemoteEmptyStateDescription": "İlk düğmenizi ekleyin, sonra düzenleme/kaldırma seçenekleri için ona uzun basın.",
   "createButtonTitle": "Create Düğme",
   "editButtonTitle": "Düzenle Düğme",
-  "failedToLoadProtocols": "Başarısız to load protocols: {error}",
-  "@failedToLoadProtocols": {
-    "placeholders": {
-      "error": {}
-    }
-  },
   "failedToLoadDatabaseKeys": "Veritabanı tuşları yüklenemedi: {error}",
   "@failedToLoadDatabaseKeys": {
     "placeholders": {
       "error": {}
     }
   },
-  "presetPower": "Güç",
-  "presetVolume": "Ses",
-  "presetChannel": "Kanal",
-  "presetNavigation": "Navigation",
   "all": "Tümü",
   "completeRequiredFieldsToSave": "Complete gerekli fields to kaydet",
   "buttonLabelStepTitle": "Düğme etiketi",
@@ -613,11 +603,6 @@
   },
   "brand": "Marka",
   "model": "Model",
-  "selectBrand": "Seç marka",
-  "searchBrand": "Ara marka…",
-  "selectModel": "Model seç",
-  "searchModel": "Model ara…",
-  "unnamedKey": "Unnamed key",
   "unknown": "Bilinmeyen",
   "searchCommands": "Ara commands",
   "noMatchingCommands": "Eşleşen yok commands",
@@ -637,7 +622,6 @@
   "editButtonCodeTitle": "Düzenle Kod of the düğme",
   "thisRemoteHasNoButtons": "Bu kumandada düğme yok.",
   "selectCommand": "Komut seç",
-  "databaseModeAutofillHint": "Veritabanı modu 2. adımı sizin için otomatik doldurur (marka + model + protokol). Bir tuş içe aktardıktan sonra Manuel bölümünde her şeyi iyileştirebilirsiniz.",
   "test": "Test",
   "importedButtonsSkippedDuplicates": "{addedCount} düğme içe aktarıldı. {skippedCount} yineleme atlandı.",
   "@importedButtonsSkippedDuplicates": {
@@ -648,27 +632,6 @@
       "skippedCount": {
         "type": "int"
       }
-    }
-  },
-  "quickPresets": "Hızlı ön ayarlar",
-  "selectDeviceFirst": "Seç cihaz first",
-  "searchByLabelOrHex": "Ara by label or hex",
-  "optionalRefinePresetKeys": "İsteğe bağlı: {preset} ön ayar tuşlarını iyileştirin",
-  "@optionalRefinePresetKeys": {
-    "placeholders": {
-      "preset": {}
-    }
-  },
-  "selectBrandModelProtocolFirst": "Önce marka, model ve protokol seçin.",
-  "noProtocolFoundForBrandModel": "Bu marka ve model için protokol bulunamadı.",
-  "protocolAutoDetected": "Protokol",
-  "protocolAutoDetectedHelper": "Veritabanından otomatik algılandı. İçe aktarmadan önce değiştirebilirsiniz.",
-  "selectBrandModelToLoadKeys": "Tuşları yüklemek için bir marka, model ve protokol seçin.",
-  "noKeysFound": "Tuş bulunamadı.",
-  "noKeysFoundForSearch": "“{query}” için tuş bulunamadı.",
-  "@noKeysFoundForSearch": {
-    "placeholders": {
-      "query": {}
     }
   },
   "noMacrosToExport": "No macros to dışa aktar.",
@@ -1807,7 +1770,6 @@
   "iconNameTrophyFa": "Trophy FA",
   "iconNameCrownFa": "Crown FA",
   "iconNameGemFa": "Gem FA",
-  "unknownLabel": "Bilinmeyen",
   "selectedFilesLabel": "seçili dosya(lar)",
   "folderNotFoundOrInaccessible": "Klasör bulunamadı veya erişilemiyor.",
   "importedRemoteDefaultName": "İçeAktarılanKumanda",

@@ -489,22 +489,12 @@
   "createRemoteEmptyStateDescription": "最初のボタンを追加し その後長押しで編集や削除の操作を使ってください。",
   "createButtonTitle": "ボタンを作成",
   "editButtonTitle": "ボタンを編集",
-  "failedToLoadProtocols": "プロトコルの読み込みに失敗しました: {error}",
-  "@failedToLoadProtocols": {
-    "placeholders": {
-      "error": {}
-    }
-  },
   "failedToLoadDatabaseKeys": "データベースキーの読み込みに失敗しました: {error}",
   "@failedToLoadDatabaseKeys": {
     "placeholders": {
       "error": {}
     }
   },
-  "presetPower": "電源",
-  "presetVolume": "音量",
-  "presetChannel": "チャンネル",
-  "presetNavigation": "ナビ",
   "all": "すべて",
   "completeRequiredFieldsToSave": "保存するには必須項目を入力してください",
   "buttonLabelStepTitle": "ボタンラベル",
@@ -613,11 +603,6 @@
   },
   "brand": "ブランド",
   "model": "モデル",
-  "selectBrand": "ブランドを選択",
-  "searchBrand": "ブランドを検索…",
-  "selectModel": "モデルを選択",
-  "searchModel": "モデルを検索…",
-  "unnamedKey": "Unnamed key",
   "unknown": "不明",
   "searchCommands": "コマンドを検索",
   "noMatchingCommands": "一致するコマンドがありません",
@@ -637,7 +622,6 @@
   "editButtonCodeTitle": "ボタンのコードを編集",
   "thisRemoteHasNoButtons": "このリモコンにボタンがありません。",
   "selectCommand": "コマンドを選択",
-  "databaseModeAutofillHint": "データベースモードではステップ2 ブランド モデル プロトコル を自動入力します。キー取り込み後は手動で調整できます。",
   "test": "テスト",
   "importedButtonsSkippedDuplicates": "{addedCount}個のボタンを取り込みました。重複{skippedCount}件をスキップしました。",
   "@importedButtonsSkippedDuplicates": {
@@ -648,27 +632,6 @@
       "skippedCount": {
         "type": "int"
       }
-    }
-  },
-  "quickPresets": "クイックプリセット",
-  "selectDeviceFirst": "先にデバイスを選択",
-  "searchByLabelOrHex": "ラベルまたは16進で検索",
-  "optionalRefinePresetKeys": "任意 {preset} プリセットキーを絞り込む",
-  "@optionalRefinePresetKeys": {
-    "placeholders": {
-      "preset": {}
-    }
-  },
-  "selectBrandModelProtocolFirst": "先にブランド モデル プロトコルを選択してください。",
-  "noProtocolFoundForBrandModel": "このブランドとモデルに対応するプロトコルが見つかりません。",
-  "protocolAutoDetected": "プロトコル",
-  "protocolAutoDetectedHelper": "データベースから自動検出されました。取り込み前に変更できます。",
-  "selectBrandModelToLoadKeys": "キー読み込みのため ブランド モデル プロトコルを選択してください。",
-  "noKeysFound": "キーが見つかりません。",
-  "noKeysFoundForSearch": "\"{query}\" に一致するキーが見つかりません。",
-  "@noKeysFoundForSearch": {
-    "placeholders": {
-      "query": {}
     }
   },
   "noMacrosToExport": "エクスポートするマクロがありません",
@@ -1802,7 +1765,6 @@
   "iconNameTrophyFa": "トロフィー FA",
   "iconNameCrownFa": "王冠 FA",
   "iconNameGemFa": "宝石 FA",
-  "unknownLabel": "不明",
   "selectedFilesLabel": "選択ファイル",
   "folderNotFoundOrInaccessible": "フォルダが見つからないかアクセスできません",
   "importedRemoteDefaultName": "取り込みリモコン",

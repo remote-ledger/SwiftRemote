@@ -489,22 +489,12 @@
   "createRemoteEmptyStateDescription": "Tambahkan tombol pertama, lalu tekan lama untuk opsi ubah/hapus.",
   "createButtonTitle": "Buat Tombol",
   "editButtonTitle": "Ubah Tombol",
-  "failedToLoadProtocols": "Gagal muat protocols: {error}",
-  "@failedToLoadProtocols": {
-    "placeholders": {
-      "error": {}
-    }
-  },
   "failedToLoadDatabaseKeys": "Gagal muat basis data tombol: {error}",
   "@failedToLoadDatabaseKeys": {
     "placeholders": {
       "error": {}
     }
   },
-  "presetPower": "Daya",
-  "presetVolume": "Volume",
-  "presetChannel": "Kanal",
-  "presetNavigation": "Navigasi",
   "all": "Semua",
   "completeRequiredFieldsToSave": "Lengkapi bidang wajib untuk menyimpan",
   "buttonLabelStepTitle": "Label tombol",
@@ -613,11 +603,6 @@
   },
   "brand": "Merek",
   "model": "Model",
-  "selectBrand": "Pilih merek",
-  "searchBrand": "Cari merek…",
-  "selectModel": "Pilih model",
-  "searchModel": "Cari model…",
-  "unnamedKey": "Unnamed tombol",
   "unknown": "Tidak dikenal",
   "searchCommands": "Cari commands",
   "noMatchingCommands": "Tidak ada matching commands",
@@ -637,7 +622,6 @@
   "editButtonCodeTitle": "Ubah Kode tombol",
   "thisRemoteHasNoButtons": "Remote ini tidak memiliki tombol.",
   "selectCommand": "Pilih Command",
-  "databaseModeAutofillHint": "Mode Basis data mengisi otomatis Langkah 2 untuk Anda (merek + model + protokol). Setelah mengimpor tombol, Anda bisa menyempurnakan apa pun di Manual.",
   "test": "Uji",
   "importedButtonsSkippedDuplicates": "Mengimpor {addedCount} tombol(s). Skipped {skippedCount} duplicate(s).",
   "@importedButtonsSkippedDuplicates": {
@@ -648,27 +632,6 @@
       "skippedCount": {
         "type": "int"
       }
-    }
-  },
-  "quickPresets": "Cepat presets",
-  "selectDeviceFirst": "Pilih perangkat terlebih dahulu",
-  "searchByLabelOrHex": "Cari menurut label atau hex",
-  "optionalRefinePresetKeys": "Opsional: perhalus tombol preset {preset}",
-  "@optionalRefinePresetKeys": {
-    "placeholders": {
-      "preset": {}
-    }
-  },
-  "selectBrandModelProtocolFirst": "Pilih merek, model, dan protokol terlebih dahulu.",
-  "noProtocolFoundForBrandModel": "Tidak ada protokol untuk merek dan model ini.",
-  "protocolAutoDetected": "Protokol",
-  "protocolAutoDetectedHelper": "Terdeteksi otomatis dari basis data. Anda bisa mengubahnya sebelum impor.",
-  "selectBrandModelToLoadKeys": "Pilih merek, model, dan protokol untuk memuat tombol.",
-  "noKeysFound": "Tidak ada tombol found.",
-  "noKeysFoundForSearch": "Tidak ada tombol ditemukan untuk “{query}”.",
-  "@noKeysFoundForSearch": {
-    "placeholders": {
-      "query": {}
     }
   },
   "noMacrosToExport": "Tidak ada makro untuk diekspor.",
@@ -1802,7 +1765,6 @@
   "iconNameTrophyFa": "Trophy FA",
   "iconNameCrownFa": "Crown FA",
   "iconNameGemFa": "Gem FA",
-  "unknownLabel": "Tidak dikenal",
   "selectedFilesLabel": "terpilih file(s)",
   "folderNotFoundOrInaccessible": "Folder tidak ditemukan atau tidak bisa diakses.",
   "importedRemoteDefaultName": "RemoteImpor",

@@ -1521,26 +1521,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get editButtonTitle => '편집 버튼';
 
   @override
-  String failedToLoadProtocols(Object error) {
-    return '프로토콜을 불러오지 못했습니다: $error';
-  }
-
-  @override
   String failedToLoadDatabaseKeys(Object error) {
     return '데이터베이스 키를 불러오지 못했습니다: $error';
   }
-
-  @override
-  String get presetPower => '전원';
-
-  @override
-  String get presetVolume => '볼륨';
-
-  @override
-  String get presetChannel => '채널';
-
-  @override
-  String get presetNavigation => '탐색';
 
   @override
   String get all => '전체';
@@ -1733,21 +1716,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String get model => '모델';
 
   @override
-  String get selectBrand => '브랜드 선택';
-
-  @override
-  String get searchBrand => '검색 브랜드…';
-
-  @override
-  String get selectModel => '모델 선택';
-
-  @override
-  String get searchModel => '검색 모델…';
-
-  @override
-  String get unnamedKey => '이름 없음 키';
-
-  @override
   String get unknown => '알 수 없음';
 
   @override
@@ -1792,53 +1760,11 @@ class AppLocalizationsKo extends AppLocalizations {
   String get selectCommand => '선택 명령';
 
   @override
-  String get databaseModeAutofillHint =>
-      '데이터베이스 모드는 2단계(브랜드 + 모델 + 프로토콜)를 자동으로 채웁니다. 키를 가져온 뒤에는 수동에서 세부 조정할 수 있습니다.';
-
-  @override
   String get test => '테스트';
 
   @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return '버튼 $addedCount개를 가져왔습니다. 중복 $skippedCount개는 건너뛰었습니다.';
-  }
-
-  @override
-  String get quickPresets => '빠른 프리셋';
-
-  @override
-  String get selectDeviceFirst => '선택 기기 첫';
-
-  @override
-  String get searchByLabelOrHex => '검색 에 의해 레이블 또는 16진수';
-
-  @override
-  String optionalRefinePresetKeys(Object preset) {
-    return '선택: $preset 프리셋 키 세부 조정';
-  }
-
-  @override
-  String get selectBrandModelProtocolFirst => '선택 브랜드, 모델, 및 프로토콜 첫.';
-
-  @override
-  String get noProtocolFoundForBrandModel => '없음 프로토콜 찾을 수 없음 브랜드 및 모델.';
-
-  @override
-  String get protocolAutoDetected => '프로토콜';
-
-  @override
-  String get protocolAutoDetectedHelper =>
-      '데이터베이스에서 자동 감지되었습니다. 가져오기 전에 변경할 수 있습니다.';
-
-  @override
-  String get selectBrandModelToLoadKeys => '선택 브랜드, 모델, 및 프로토콜 불러오기 키.';
-
-  @override
-  String get noKeysFound => '없음 키 찾을 수 없음.';
-
-  @override
-  String noKeysFoundForSearch(Object query) {
-    return '없음 키 찾을 수 없음 \"$query\".';
   }
 
   @override
@@ -4179,9 +4105,6 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get iconNameGemFa => 'Gem FA';
-
-  @override
-  String get unknownLabel => '알 수 없음';
 
   @override
   String get selectedFilesLabel => '선택한 파일';

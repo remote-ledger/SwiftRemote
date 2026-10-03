@@ -1588,26 +1588,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get editButtonTitle => 'Изменить кнопку';
 
   @override
-  String failedToLoadProtocols(Object error) {
-    return 'Не удалось загрузить протоколы: $error';
-  }
-
-  @override
   String failedToLoadDatabaseKeys(Object error) {
     return 'Не удалось загрузить ключи базы: $error';
   }
-
-  @override
-  String get presetPower => 'Питание';
-
-  @override
-  String get presetVolume => 'Громкость';
-
-  @override
-  String get presetChannel => 'Канал';
-
-  @override
-  String get presetNavigation => 'Навигация';
 
   @override
   String get all => 'Все';
@@ -1804,21 +1787,6 @@ class AppLocalizationsRu extends AppLocalizations {
   String get model => 'Модель';
 
   @override
-  String get selectBrand => 'Выберите бренд';
-
-  @override
-  String get searchBrand => 'Поиск бренда…';
-
-  @override
-  String get selectModel => 'Выберите модель';
-
-  @override
-  String get searchModel => 'Поиск модели…';
-
-  @override
-  String get unnamedKey => 'Безымянный ключ';
-
-  @override
   String get unknown => 'Неизвестно';
 
   @override
@@ -1863,56 +1831,11 @@ class AppLocalizationsRu extends AppLocalizations {
   String get selectCommand => 'Выберите команду';
 
   @override
-  String get databaseModeAutofillHint =>
-      'Режим База автоматически заполняет шаг 2, бренд, модель и протокол. После импорта ключа можно донастроить всё вручную.';
-
-  @override
   String get test => 'Тест';
 
   @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return 'Импортировано кнопок: $addedCount. Пропущено дубликатов: $skippedCount.';
-  }
-
-  @override
-  String get quickPresets => 'Быстрые пресеты';
-
-  @override
-  String get selectDeviceFirst => 'Сначала выберите устройство';
-
-  @override
-  String get searchByLabelOrHex => 'Поиск по метке или hex';
-
-  @override
-  String optionalRefinePresetKeys(Object preset) {
-    return 'Необяз.: уточните ключи пресета $preset';
-  }
-
-  @override
-  String get selectBrandModelProtocolFirst =>
-      'Сначала выберите бренд, модель и протокол.';
-
-  @override
-  String get noProtocolFoundForBrandModel =>
-      'Для этого бренда и модели протокол не найден.';
-
-  @override
-  String get protocolAutoDetected => 'Протокол';
-
-  @override
-  String get protocolAutoDetectedHelper =>
-      'Автоматически определён из базы. Его можно изменить перед импортом.';
-
-  @override
-  String get selectBrandModelToLoadKeys =>
-      'Выберите бренд, модель и протокол, чтобы загрузить ключи.';
-
-  @override
-  String get noKeysFound => 'Ключи не найдены.';
-
-  @override
-  String noKeysFoundForSearch(Object query) {
-    return 'Ключи для “$query” не найдены.';
   }
 
   @override
@@ -4276,9 +4199,6 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get iconNameGemFa => 'Самоцвет FA';
-
-  @override
-  String get unknownLabel => 'Неизвестно';
 
   @override
   String get selectedFilesLabel => 'выбранных файлов';

@@ -489,22 +489,12 @@
   "createRemoteEmptyStateDescription": "Adicione o seu primeiro botão e depois mantenha premido para editar ou remover.",
   "createButtonTitle": "Criar botão",
   "editButtonTitle": "Editar botão",
-  "failedToLoadProtocols": "Falha ao carregar protocolos: {error}",
-  "@failedToLoadProtocols": {
-    "placeholders": {
-      "error": {}
-    }
-  },
   "failedToLoadDatabaseKeys": "Falha ao carregar chaves da base de dados: {error}",
   "@failedToLoadDatabaseKeys": {
     "placeholders": {
       "error": {}
     }
   },
-  "presetPower": "Enc.",
-  "presetVolume": "Volume",
-  "presetChannel": "Canal",
-  "presetNavigation": "Navegación",
   "all": "Todos",
   "completeRequiredFieldsToSave": "Preencha os campos obrigatórios para guardar",
   "buttonLabelStepTitle": "Etiqueta do botão",
@@ -613,11 +603,6 @@
   },
   "brand": "Marca",
   "model": "Modelo",
-  "selectBrand": "Selecionar marca",
-  "searchBrand": "Pesquisar marca…",
-  "selectModel": "Selecionar modelo",
-  "searchModel": "Pesquisar modelo…",
-  "unnamedKey": "Tecla sem nome",
   "unknown": "Desconhecido",
   "searchCommands": "Pesquisar comandos",
   "noMatchingCommands": "Ainda não há comandos correspondentes",
@@ -637,7 +622,6 @@
   "editButtonCodeTitle": "Editar código do botão",
   "thisRemoteHasNoButtons": "Este comando não tem botões.",
   "selectCommand": "Selecionar comando",
-  "databaseModeAutofillHint": "O modo Base de dados preenche o Passo 2 por si (marca + modelo + protocolo). Depois de importar uma tecla, pode ajustar tudo em Manual.",
   "test": "Teste",
   "importedButtonsSkippedDuplicates": "Foram importados {addedCount} botão(es). Se omitieron {skippedCount} duplicado(s).",
   "@importedButtonsSkippedDuplicates": {
@@ -648,27 +632,6 @@
       "skippedCount": {
         "type": "int"
       }
-    }
-  },
-  "quickPresets": "Definições rápidas",
-  "selectDeviceFirst": "Selecione primeiro um dispositivo",
-  "searchByLabelOrHex": "Pesquisar por etiqueta o hex",
-  "optionalRefinePresetKeys": "Opcional: refine as teclas predefinidas de {preset}",
-  "@optionalRefinePresetKeys": {
-    "placeholders": {
-      "preset": {}
-    }
-  },
-  "selectBrandModelProtocolFirst": "Selecione primeiroo marca, modelo e protocolo.",
-  "noProtocolFoundForBrandModel": "Não foi encontrado nenhum protocolo para esta marca e modelo.",
-  "protocolAutoDetected": "Protocolo",
-  "protocolAutoDetectedHelper": "Detetado automaticamente na base de dados. Pode alterá-lo antes de importar.",
-  "selectBrandModelToLoadKeys": "Selecione uma marca, modelo e protocolo para carregar teclas.",
-  "noKeysFound": "Não foram encontradas teclas.",
-  "noKeysFoundForSearch": "Não foram encontradas teclas para \"{query}\".",
-  "@noKeysFoundForSearch": {
-    "placeholders": {
-      "query": {}
     }
   },
   "noMacrosToExport": "Não há macros para exportar.",
@@ -1802,7 +1765,6 @@
   "iconNameTrophyFa": "Trofeo FA",
   "iconNameCrownFa": "Corona FA",
   "iconNameGemFa": "Gema FA",
-  "unknownLabel": "Desconhecido",
   "selectedFilesLabel": "ficheiro(s) selecionado(s)",
   "folderNotFoundOrInaccessible": "Pasta não encontrada o inaccesible.",
   "importedRemoteDefaultName": "MandoImportado",

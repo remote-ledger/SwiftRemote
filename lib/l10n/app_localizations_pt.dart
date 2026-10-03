@@ -1603,26 +1603,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get editButtonTitle => 'Editar botão';
 
   @override
-  String failedToLoadProtocols(Object error) {
-    return 'Falha ao carregar protocolos: $error';
-  }
-
-  @override
   String failedToLoadDatabaseKeys(Object error) {
     return 'Falha ao carregar chaves da base de dados: $error';
   }
-
-  @override
-  String get presetPower => 'Enc.';
-
-  @override
-  String get presetVolume => 'Volume';
-
-  @override
-  String get presetChannel => 'Canal';
-
-  @override
-  String get presetNavigation => 'Navegación';
 
   @override
   String get all => 'Todos';
@@ -1820,21 +1803,6 @@ class AppLocalizationsPt extends AppLocalizations {
   String get model => 'Modelo';
 
   @override
-  String get selectBrand => 'Selecionar marca';
-
-  @override
-  String get searchBrand => 'Pesquisar marca…';
-
-  @override
-  String get selectModel => 'Selecionar modelo';
-
-  @override
-  String get searchModel => 'Pesquisar modelo…';
-
-  @override
-  String get unnamedKey => 'Tecla sem nome';
-
-  @override
   String get unknown => 'Desconhecido';
 
   @override
@@ -1881,56 +1849,11 @@ class AppLocalizationsPt extends AppLocalizations {
   String get selectCommand => 'Selecionar comando';
 
   @override
-  String get databaseModeAutofillHint =>
-      'O modo Base de dados preenche o Passo 2 por si (marca + modelo + protocolo). Depois de importar uma tecla, pode ajustar tudo em Manual.';
-
-  @override
   String get test => 'Teste';
 
   @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return 'Foram importados $addedCount botão(es). Se omitieron $skippedCount duplicado(s).';
-  }
-
-  @override
-  String get quickPresets => 'Definições rápidas';
-
-  @override
-  String get selectDeviceFirst => 'Selecione primeiro um dispositivo';
-
-  @override
-  String get searchByLabelOrHex => 'Pesquisar por etiqueta o hex';
-
-  @override
-  String optionalRefinePresetKeys(Object preset) {
-    return 'Opcional: refine as teclas predefinidas de $preset';
-  }
-
-  @override
-  String get selectBrandModelProtocolFirst =>
-      'Selecione primeiroo marca, modelo e protocolo.';
-
-  @override
-  String get noProtocolFoundForBrandModel =>
-      'Não foi encontrado nenhum protocolo para esta marca e modelo.';
-
-  @override
-  String get protocolAutoDetected => 'Protocolo';
-
-  @override
-  String get protocolAutoDetectedHelper =>
-      'Detetado automaticamente na base de dados. Pode alterá-lo antes de importar.';
-
-  @override
-  String get selectBrandModelToLoadKeys =>
-      'Selecione uma marca, modelo e protocolo para carregar teclas.';
-
-  @override
-  String get noKeysFound => 'Não foram encontradas teclas.';
-
-  @override
-  String noKeysFoundForSearch(Object query) {
-    return 'Não foram encontradas teclas para \"$query\".';
   }
 
   @override
@@ -4302,9 +4225,6 @@ class AppLocalizationsPt extends AppLocalizations {
   String get iconNameGemFa => 'Gema FA';
 
   @override
-  String get unknownLabel => 'Desconhecido';
-
-  @override
   String get selectedFilesLabel => 'ficheiro(s) selecionado(s)';
 
   @override
@@ -6549,26 +6469,9 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get editButtonTitle => 'Editar botão';
 
   @override
-  String failedToLoadProtocols(Object error) {
-    return 'Falha ao carregar protocolos: $error';
-  }
-
-  @override
   String failedToLoadDatabaseKeys(Object error) {
     return 'Falha ao carregar chaves do banco de dados: $error';
   }
-
-  @override
-  String get presetPower => 'Enc.';
-
-  @override
-  String get presetVolume => 'Volume';
-
-  @override
-  String get presetChannel => 'Canal';
-
-  @override
-  String get presetNavigation => 'Navegación';
 
   @override
   String get all => 'Todos';
@@ -6766,21 +6669,6 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get model => 'Modelo';
 
   @override
-  String get selectBrand => 'Selecionar marca';
-
-  @override
-  String get searchBrand => 'pesquisar marca…';
-
-  @override
-  String get selectModel => 'Selecionar modelo';
-
-  @override
-  String get searchModel => 'pesquisar modelo…';
-
-  @override
-  String get unnamedKey => 'Tecla sem nome';
-
-  @override
   String get unknown => 'Desconhecido';
 
   @override
@@ -6827,56 +6715,11 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get selectCommand => 'Selecionar controle';
 
   @override
-  String get databaseModeAutofillHint =>
-      'O modo Banco de dados preenche o Passo 2 para você (marca + modelo + protocolo). Após importar uma tecla, você pode ajustar tudo no modo Manual.';
-
-  @override
   String get test => 'Testar';
 
   @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return 'Foram importados $addedCount botão(es). Se omitieron $skippedCount duplicado(s).';
-  }
-
-  @override
-  String get quickPresets => 'configurações rápidos';
-
-  @override
-  String get selectDeviceFirst => 'Selecione primeiro um dispositivo';
-
-  @override
-  String get searchByLabelOrHex => 'pesquisar por etiqueta o hex';
-
-  @override
-  String optionalRefinePresetKeys(Object preset) {
-    return 'Opcional: refine as teclas predefinidas de $preset';
-  }
-
-  @override
-  String get selectBrandModelProtocolFirst =>
-      'Selecione primeiroo marca, modelo e protocolo.';
-
-  @override
-  String get noProtocolFoundForBrandModel =>
-      'Nenhum protocolo foi encontrado para esta marca e modelo.';
-
-  @override
-  String get protocolAutoDetected => 'Protocolo';
-
-  @override
-  String get protocolAutoDetectedHelper =>
-      'Detectado automaticamente no banco de dados. Você pode alterá-lo antes de importar.';
-
-  @override
-  String get selectBrandModelToLoadKeys =>
-      'Selecione uma marca, modelo e protocolo para carregar teclas.';
-
-  @override
-  String get noKeysFound => 'Nenhuma tecla encontrada.';
-
-  @override
-  String noKeysFoundForSearch(Object query) {
-    return 'Nenhuma tecla encontrada para \"$query\".';
   }
 
   @override
@@ -9247,9 +9090,6 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get iconNameGemFa => 'Gema FA';
-
-  @override
-  String get unknownLabel => 'Desconhecido';
 
   @override
   String get selectedFilesLabel => 'arquivo(s) selecionado(s)';

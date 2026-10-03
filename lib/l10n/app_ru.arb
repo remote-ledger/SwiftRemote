@@ -489,22 +489,12 @@
   "createRemoteEmptyStateDescription": "Добавьте первую кнопку, затем зажмите её для изменения или удаления.",
   "createButtonTitle": "Создать кнопку",
   "editButtonTitle": "Изменить кнопку",
-  "failedToLoadProtocols": "Не удалось загрузить протоколы: {error}",
-  "@failedToLoadProtocols": {
-    "placeholders": {
-      "error": {}
-    }
-  },
   "failedToLoadDatabaseKeys": "Не удалось загрузить ключи базы: {error}",
   "@failedToLoadDatabaseKeys": {
     "placeholders": {
       "error": {}
     }
   },
-  "presetPower": "Питание",
-  "presetVolume": "Громкость",
-  "presetChannel": "Канал",
-  "presetNavigation": "Навигация",
   "all": "Все",
   "completeRequiredFieldsToSave": "Заполните обязательные поля для сохранения",
   "buttonLabelStepTitle": "Метка кнопки",
@@ -613,11 +603,6 @@
   },
   "brand": "Бренд",
   "model": "Модель",
-  "selectBrand": "Выберите бренд",
-  "searchBrand": "Поиск бренда…",
-  "selectModel": "Выберите модель",
-  "searchModel": "Поиск модели…",
-  "unnamedKey": "Безымянный ключ",
   "unknown": "Неизвестно",
   "searchCommands": "Поиск команд",
   "noMatchingCommands": "Совпадающих команд нет",
@@ -637,7 +622,6 @@
   "editButtonCodeTitle": "Изменить код кнопки",
   "thisRemoteHasNoButtons": "В этом пульте нет кнопок.",
   "selectCommand": "Выберите команду",
-  "databaseModeAutofillHint": "Режим База автоматически заполняет шаг 2, бренд, модель и протокол. После импорта ключа можно донастроить всё вручную.",
   "test": "Тест",
   "importedButtonsSkippedDuplicates": "Импортировано кнопок: {addedCount}. Пропущено дубликатов: {skippedCount}.",
   "@importedButtonsSkippedDuplicates": {
@@ -648,27 +632,6 @@
       "skippedCount": {
         "type": "int"
       }
-    }
-  },
-  "quickPresets": "Быстрые пресеты",
-  "selectDeviceFirst": "Сначала выберите устройство",
-  "searchByLabelOrHex": "Поиск по метке или hex",
-  "optionalRefinePresetKeys": "Необяз.: уточните ключи пресета {preset}",
-  "@optionalRefinePresetKeys": {
-    "placeholders": {
-      "preset": {}
-    }
-  },
-  "selectBrandModelProtocolFirst": "Сначала выберите бренд, модель и протокол.",
-  "noProtocolFoundForBrandModel": "Для этого бренда и модели протокол не найден.",
-  "protocolAutoDetected": "Протокол",
-  "protocolAutoDetectedHelper": "Автоматически определён из базы. Его можно изменить перед импортом.",
-  "selectBrandModelToLoadKeys": "Выберите бренд, модель и протокол, чтобы загрузить ключи.",
-  "noKeysFound": "Ключи не найдены.",
-  "noKeysFoundForSearch": "Ключи для “{query}” не найдены.",
-  "@noKeysFoundForSearch": {
-    "placeholders": {
-      "query": {}
     }
   },
   "noMacrosToExport": "Нет макросов для экспорта.",
@@ -1802,7 +1765,6 @@
   "iconNameTrophyFa": "Трофей FA",
   "iconNameCrownFa": "Корона FA",
   "iconNameGemFa": "Самоцвет FA",
-  "unknownLabel": "Неизвестно",
   "selectedFilesLabel": "выбранных файлов",
   "folderNotFoundOrInaccessible": "Папка не найдена или недоступна.",
   "importedRemoteDefaultName": "Импортированный пульт",

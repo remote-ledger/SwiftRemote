@@ -1582,26 +1582,9 @@ class AppLocalizationsHi extends AppLocalizations {
   String get editButtonTitle => 'संपादित करें बटन';
 
   @override
-  String failedToLoadProtocols(Object error) {
-    return 'प्रोटोकॉल लोड विफल: $error';
-  }
-
-  @override
   String failedToLoadDatabaseKeys(Object error) {
     return 'लोड करें डेटाबेस keys: $error विफल';
   }
-
-  @override
-  String get presetPower => 'पावर';
-
-  @override
-  String get presetVolume => 'आवाज़';
-
-  @override
-  String get presetChannel => 'Channel';
-
-  @override
-  String get presetNavigation => 'नेविगेशन';
 
   @override
   String get all => 'सभी';
@@ -1797,21 +1780,6 @@ class AppLocalizationsHi extends AppLocalizations {
   String get model => 'मॉडल';
 
   @override
-  String get selectBrand => 'ब्रांड चुनें';
-
-  @override
-  String get searchBrand => 'खोजें ब्रांड…';
-
-  @override
-  String get selectModel => 'मॉडल चुनें';
-
-  @override
-  String get searchModel => 'खोजें मॉडल…';
-
-  @override
-  String get unnamedKey => 'बिना नाम की कुंजी';
-
-  @override
   String get unknown => 'अज्ञात';
 
   @override
@@ -1856,56 +1824,11 @@ class AppLocalizationsHi extends AppLocalizations {
   String get selectCommand => 'चुनें कमांड';
 
   @override
-  String get databaseModeAutofillHint =>
-      'डेटाबेस मोड auto-fills चरण 2 के लिए you (ब्रांड + मॉडल + प्रोटोकॉल). बाद आयात करते समय a key, you सकता है परिष्कृत करें anything में मैनुअल.';
-
-  @override
   String get test => 'जांचें';
 
   @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return '$addedCount बटन आयात किए गए। $skippedCount डुप्लिकेट छोड़े गए।';
-  }
-
-  @override
-  String get quickPresets => 'त्वरित प्रीसेट';
-
-  @override
-  String get selectDeviceFirst => 'चुनें डिवाइस पहले';
-
-  @override
-  String get searchByLabelOrHex => 'खोजें द्वारा लेबल या हेक्स';
-
-  @override
-  String optionalRefinePresetKeys(Object preset) {
-    return 'वैकल्पिक: $preset प्रीसेट कुंजियों को परिष्कृत करें';
-  }
-
-  @override
-  String get selectBrandModelProtocolFirst =>
-      'चुनें ब्रांड, मॉडल, और प्रोटोकॉल पहले.';
-
-  @override
-  String get noProtocolFoundForBrandModel =>
-      'नहीं प्रोटोकॉल मिला के लिए यह ब्रांड और मॉडल.';
-
-  @override
-  String get protocolAutoDetected => 'प्रोटोकॉल';
-
-  @override
-  String get protocolAutoDetectedHelper =>
-      'डेटाबेस से स्वतः पहचाना गया। आयात करने से पहले आप इसे बदल सकते हैं।';
-
-  @override
-  String get selectBrandModelToLoadKeys =>
-      'चुनें a ब्रांड, मॉडल, और प्रोटोकॉल तक लोड करें keys.';
-
-  @override
-  String get noKeysFound => 'नहीं keys मिला.';
-
-  @override
-  String noKeysFoundForSearch(Object query) {
-    return 'नहीं keys मिला के लिए “$query”.';
   }
 
   @override
@@ -4270,9 +4193,6 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get iconNameGemFa => 'Gem FA';
-
-  @override
-  String get unknownLabel => 'अज्ञात';
 
   @override
   String get selectedFilesLabel => 'चयनित फ़ाइल(s)';

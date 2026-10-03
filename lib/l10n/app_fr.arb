@@ -494,22 +494,12 @@
   "createRemoteEmptyStateDescription": "Ajoutez votre premier bouton, puis faites un appui long dessus pour voir modifier/retirer.",
   "createButtonTitle": "Créer un bouton",
   "editButtonTitle": "Modifier le bouton",
-  "failedToLoadProtocols": "Échec du chargement des protocoles : {error}",
-  "@failedToLoadProtocols": {
-    "placeholders": {
-      "error": {}
-    }
-  },
   "failedToLoadDatabaseKeys": "Échec du chargement des clés BD : {error}",
   "@failedToLoadDatabaseKeys": {
     "placeholders": {
       "error": {}
     }
   },
-  "presetPower": "Power",
-  "presetVolume": "Volume",
-  "presetChannel": "Canal",
-  "presetNavigation": "Navigation",
   "all": "Tout",
   "completeRequiredFieldsToSave": "Remplissez les champs requis pour enregistrer",
   "buttonLabelStepTitle": "Libellé du bouton",
@@ -618,11 +608,6 @@
   },
   "brand": "Marque",
   "model": "Modèle",
-  "selectBrand": "Choisir la marque",
-  "searchBrand": "Rechercher une marque…",
-  "selectModel": "Choisir le modèle",
-  "searchModel": "Rechercher un modèle…",
-  "unnamedKey": "Touche sans nom",
   "unknown": "Inconnu",
   "searchCommands": "Rechercher des commandes",
   "noMatchingCommands": "Aucune commande correspondante",
@@ -642,7 +627,6 @@
   "editButtonCodeTitle": "Modifier le code du bouton",
   "thisRemoteHasNoButtons": "Cette télécommande n'a aucun bouton.",
   "selectCommand": "Choisir la commande",
-  "databaseModeAutofillHint": "Le mode base auto-remplit l'étape 2 (marque + modèle + protocole). Après import d'une touche, vous pouvez tout affiner en Manuel.",
   "test": "Tester",
   "importedButtonsSkippedDuplicates": "{addedCount} bouton(s) importé(s). {skippedCount} doublon(s) ignoré(s).",
   "@importedButtonsSkippedDuplicates": {
@@ -653,27 +637,6 @@
       "skippedCount": {
         "type": "int"
       }
-    }
-  },
-  "quickPresets": "Préréglages rapides",
-  "selectDeviceFirst": "Choisissez d'abord l'appareil",
-  "searchByLabelOrHex": "Rechercher par libellé ou hex",
-  "optionalRefinePresetKeys": "Optionnel : affiner les touches du préréglage {preset}",
-  "@optionalRefinePresetKeys": {
-    "placeholders": {
-      "preset": {}
-    }
-  },
-  "selectBrandModelProtocolFirst": "Choisissez d'abord la marque, le modèle et le protocole.",
-  "noProtocolFoundForBrandModel": "Aucun protocole trouvé pour cette marque et ce modèle.",
-  "protocolAutoDetected": "Protocole",
-  "protocolAutoDetectedHelper": "Détecté automatiquement depuis la base. Vous pouvez le changer avant import.",
-  "selectBrandModelToLoadKeys": "Choisissez une marque, un modèle et un protocole pour charger les touches.",
-  "noKeysFound": "Aucune touche trouvée.",
-  "noKeysFoundForSearch": "Aucune touche trouvée pour “{query}”.",
-  "@noKeysFoundForSearch": {
-    "placeholders": {
-      "query": {}
     }
   },
   "noMacrosToExport": "Aucune macro à exporter.",
@@ -1807,7 +1770,6 @@
   "iconNameTrophyFa": "Trophy FA",
   "iconNameCrownFa": "Crown FA",
   "iconNameGemFa": "Gem FA",
-  "unknownLabel": "Inconnu",
   "selectedFilesLabel": "fichier(s) sélectionné(s)",
   "folderNotFoundOrInaccessible": "Dossier introuvable ou inaccessible.",
   "importedRemoteDefaultName": "TélécommandeImportée",

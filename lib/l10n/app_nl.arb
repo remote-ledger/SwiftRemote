@@ -489,22 +489,12 @@
   "createRemoteEmptyStateDescription": "Toevoegen your first knop, then long-press it for bewerken/remove options.",
   "createButtonTitle": "Maken Knop",
   "editButtonTitle": "Bewerken Knop",
-  "failedToLoadProtocols": "Mislukt to load protocols: {error}",
-  "@failedToLoadProtocols": {
-    "placeholders": {
-      "error": {}
-    }
-  },
   "failedToLoadDatabaseKeys": "Mislukt to load database keys: {error}",
   "@failedToLoadDatabaseKeys": {
     "placeholders": {
       "error": {}
     }
   },
-  "presetPower": "Aan/uit",
-  "presetVolume": "Volume",
-  "presetChannel": "Kanaal",
-  "presetNavigation": "Navigatie",
   "all": "Alles",
   "completeRequiredFieldsToSave": "Complete vereist fields to opslaan",
   "buttonLabelStepTitle": "Knoplabel",
@@ -613,11 +603,6 @@
   },
   "brand": "Merk",
   "model": "Model",
-  "selectBrand": "Selecteer brand",
-  "searchBrand": "Zoeken brand…",
-  "selectModel": "Selecteer model",
-  "searchModel": "Zoeken model…",
-  "unnamedKey": "Naamloze toets",
   "unknown": "Onbekend",
   "searchCommands": "Zoeken commands",
   "noMatchingCommands": "Geen matching commands",
@@ -637,7 +622,6 @@
   "editButtonCodeTitle": "Bewerken Code of the knop",
   "thisRemoteHasNoButtons": "Deze afstandsbediening heeft geen knoppen.",
   "selectCommand": "Selecteer Command",
-  "databaseModeAutofillHint": "Database mode auto-fills Step 2 for you (brand + model + protocol). After importerening a key, you can refine anything in Manual.",
   "test": "Test",
   "importedButtonsSkippedDuplicates": "Importerened {addedCount} knop(s). Overslaanped {skippedCount} duplicate(s).",
   "@importedButtonsSkippedDuplicates": {
@@ -648,27 +632,6 @@
       "skippedCount": {
         "type": "int"
       }
-    }
-  },
-  "quickPresets": "Snelle presets",
-  "selectDeviceFirst": "Selecteer apparaat first",
-  "searchByLabelOrHex": "Zoek op label of hex",
-  "optionalRefinePresetKeys": "Optioneel verfijn de presettoetsen voor {preset}",
-  "@optionalRefinePresetKeys": {
-    "placeholders": {
-      "preset": {}
-    }
-  },
-  "selectBrandModelProtocolFirst": "Selecteer brand, model, and protocol first.",
-  "noProtocolFoundForBrandModel": "Geen protocol gevonden voor dit merk en model.",
-  "protocolAutoDetected": "Protocol",
-  "protocolAutoDetectedHelper": "Automatisch uit de database gedetecteerd. Je kunt dit vóór het importereneren wijzigen.",
-  "selectBrandModelToLoadKeys": "Selecteereer een merk, model en protocol om toetsen te laden.",
-  "noKeysFound": "Geen keys found.",
-  "noKeysFoundForSearch": "Geen toetsen gevonden voor “{query}”.",
-  "@noKeysFoundForSearch": {
-    "placeholders": {
-      "query": {}
     }
   },
   "noMacrosToExport": "Geen macros to exporteren.",
@@ -1802,7 +1765,6 @@
   "iconNameTrophyFa": "Trophy FA",
   "iconNameCrownFa": "Crown FA",
   "iconNameGemFa": "Gem FA",
-  "unknownLabel": "Onbekend",
   "selectedFilesLabel": "geselecteerd file(s)",
   "folderNotFoundOrInaccessible": "Map niet gevonden of niet toegankelijk.",
   "importedRemoteDefaultName": "ImporterenedAfstandsbediening",

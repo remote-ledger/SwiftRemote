@@ -505,22 +505,12 @@
   "createRemoteEmptyStateDescription": "Füge deine erste Taste hinzu und halte sie dann für Bearbeiten oder Entfernen gedrückt.",
   "createButtonTitle": "Taste erstellen",
   "editButtonTitle": "Taste bearbeiten",
-  "failedToLoadProtocols": "Protokolle konnten nicht geladen werden: {error}",
-  "@failedToLoadProtocols": {
-    "placeholders": {
-      "error": {}
-    }
-  },
   "failedToLoadDatabaseKeys": "Datenbankschlüssel konnten nicht geladen werden: {error}",
   "@failedToLoadDatabaseKeys": {
     "placeholders": {
       "error": {}
     }
   },
-  "presetPower": "Ein/Aus",
-  "presetVolume": "Lautstärke",
-  "presetChannel": "Kanal",
-  "presetNavigation": "Navigation",
   "all": "Alle",
   "completeRequiredFieldsToSave": "Pflichtfelder zum Speichern ausfüllen",
   "buttonLabelStepTitle": "Taste beschriften",
@@ -629,11 +619,6 @@
   },
   "brand": "Marke",
   "model": "Modell",
-  "selectBrand": "Marke wählen",
-  "searchBrand": "Marke suchen…",
-  "selectModel": "Modell wählen",
-  "searchModel": "Modell suchen…",
-  "unnamedKey": "Unbenannter Schlüssel",
   "unknown": "Unbekannt",
   "searchCommands": "Befehle suchen",
   "noMatchingCommands": "Keine passenden Befehle",
@@ -653,7 +638,6 @@
   "editButtonCodeTitle": "Code der Taste bearbeiten",
   "thisRemoteHasNoButtons": "Diese Fernbedienung hat keine Tasten.",
   "selectCommand": "Befehl wählen",
-  "databaseModeAutofillHint": "Der Datenbankmodus füllt Schritt 2 automatisch für dich aus Marke, Modell und Protokoll. Nach dem Import einer Taste kannst du alles in Manuell verfeinern.",
   "test": "Test",
   "importedButtonsSkippedDuplicates": "{addedCount} Taste(n) importiert. {skippedCount} Duplikat(e) übersprungen.",
   "@importedButtonsSkippedDuplicates": {
@@ -664,27 +648,6 @@
       "skippedCount": {
         "type": "int"
       }
-    }
-  },
-  "quickPresets": "Schnellvorgaben",
-  "selectDeviceFirst": "Zuerst Gerät wählen",
-  "searchByLabelOrHex": "Nach Bezeichnung oder Hex suchen",
-  "optionalRefinePresetKeys": "Optional: die Vorgabetasten für {preset} verfeinern",
-  "@optionalRefinePresetKeys": {
-    "placeholders": {
-      "preset": {}
-    }
-  },
-  "selectBrandModelProtocolFirst": "Wähle zuerst Marke, Modell und Protokoll.",
-  "noProtocolFoundForBrandModel": "Kein Protokoll für diese Marke und dieses Modell gefunden.",
-  "protocolAutoDetected": "Protokoll",
-  "protocolAutoDetectedHelper": "Automatisch aus der Datenbank erkannt. Du kannst es vor dem Import ändern.",
-  "selectBrandModelToLoadKeys": "Wähle Marke, Modell und Protokoll, um Schlüssel zu laden.",
-  "noKeysFound": "Keine Schlüssel gefunden.",
-  "noKeysFoundForSearch": "Keine Schlüssel für {query} gefunden.",
-  "@noKeysFoundForSearch": {
-    "placeholders": {
-      "query": {}
     }
   },
   "noMacrosToExport": "Keine Makros zum Exportieren.",
@@ -1818,7 +1781,6 @@
   "iconNameTrophyFa": "Pokal FA",
   "iconNameCrownFa": "Krone FA",
   "iconNameGemFa": "Edelstein FA",
-  "unknownLabel": "Unbekannt",
   "selectedFilesLabel": "gewählte Datei(en)",
   "folderNotFoundOrInaccessible": "Ordner nicht gefunden oder nicht zugänglich.",
   "importedRemoteDefaultName": "ImportierteFernbedienung",

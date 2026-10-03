@@ -1606,26 +1606,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get editButtonTitle => 'Edit Button';
 
   @override
-  String failedToLoadProtocols(Object error) {
-    return 'Failed to load protocols: $error';
-  }
-
-  @override
   String failedToLoadDatabaseKeys(Object error) {
     return 'Failed to load database keys: $error';
   }
-
-  @override
-  String get presetPower => 'Power';
-
-  @override
-  String get presetVolume => 'Volume';
-
-  @override
-  String get presetChannel => 'Channel';
-
-  @override
-  String get presetNavigation => 'Navigation';
 
   @override
   String get all => 'All';
@@ -1822,21 +1805,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get model => 'Model';
 
   @override
-  String get selectBrand => 'Select brand';
-
-  @override
-  String get searchBrand => 'Search brand…';
-
-  @override
-  String get selectModel => 'Select model';
-
-  @override
-  String get searchModel => 'Search model…';
-
-  @override
-  String get unnamedKey => 'Unnamed key';
-
-  @override
   String get unknown => 'Unknown';
 
   @override
@@ -1881,56 +1849,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get selectCommand => 'Select Command';
 
   @override
-  String get databaseModeAutofillHint =>
-      'Database mode auto-fills Step 2 for you (brand + model + protocol). After importing a key, you can refine anything in Manual.';
-
-  @override
   String get test => 'Test';
 
   @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return 'Imported $addedCount button(s). Skipped $skippedCount duplicate(s).';
-  }
-
-  @override
-  String get quickPresets => 'Quick presets';
-
-  @override
-  String get selectDeviceFirst => 'Select device first';
-
-  @override
-  String get searchByLabelOrHex => 'Search by label or hex';
-
-  @override
-  String optionalRefinePresetKeys(Object preset) {
-    return 'Optional: refine the $preset preset keys';
-  }
-
-  @override
-  String get selectBrandModelProtocolFirst =>
-      'Select brand, model, and protocol first.';
-
-  @override
-  String get noProtocolFoundForBrandModel =>
-      'No protocol found for this brand and model.';
-
-  @override
-  String get protocolAutoDetected => 'Protocol';
-
-  @override
-  String get protocolAutoDetectedHelper =>
-      'Auto-detected from the database. You can change it before importing.';
-
-  @override
-  String get selectBrandModelToLoadKeys =>
-      'Select a brand, model, and protocol to load keys.';
-
-  @override
-  String get noKeysFound => 'No keys found.';
-
-  @override
-  String noKeysFoundForSearch(Object query) {
-    return 'No keys found for “$query”.';
   }
 
   @override
@@ -4317,9 +4240,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get iconNameGemFa => 'Gem FA';
-
-  @override
-  String get unknownLabel => 'Unknown';
 
   @override
   String get selectedFilesLabel => 'selected file(s)';

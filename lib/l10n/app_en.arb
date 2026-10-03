@@ -616,22 +616,12 @@
   "createRemoteEmptyStateDescription": "Add your first button, then long-press it for edit/remove options.",
   "createButtonTitle": "Create Button",
   "editButtonTitle": "Edit Button",
-  "failedToLoadProtocols": "Failed to load protocols: {error}",
-  "@failedToLoadProtocols": {
-    "placeholders": {
-      "error": {}
-    }
-  },
   "failedToLoadDatabaseKeys": "Failed to load database keys: {error}",
   "@failedToLoadDatabaseKeys": {
     "placeholders": {
       "error": {}
     }
   },
-  "presetPower": "Power",
-  "presetVolume": "Volume",
-  "presetChannel": "Channel",
-  "presetNavigation": "Navigation",
   "all": "All",
   "completeRequiredFieldsToSave": "Complete required fields to save",
   "buttonLabelStepTitle": "Button label",
@@ -740,11 +730,6 @@
   },
   "brand": "Brand",
   "model": "Model",
-  "selectBrand": "Select brand",
-  "searchBrand": "Search brand…",
-  "selectModel": "Select model",
-  "searchModel": "Search model…",
-  "unnamedKey": "Unnamed key",
   "unknown": "Unknown",
   "searchCommands": "Search commands",
   "noMatchingCommands": "No matching commands",
@@ -764,7 +749,6 @@
   "editButtonCodeTitle": "Edit Code of the button",
   "thisRemoteHasNoButtons": "This remote has no buttons.",
   "selectCommand": "Select Command",
-  "databaseModeAutofillHint": "Database mode auto-fills Step 2 for you (brand + model + protocol). After importing a key, you can refine anything in Manual.",
   "test": "Test",
   "importedButtonsSkippedDuplicates": "Imported {addedCount} button(s). Skipped {skippedCount} duplicate(s).",
   "@importedButtonsSkippedDuplicates": {
@@ -775,27 +759,6 @@
       "skippedCount": {
         "type": "int"
       }
-    }
-  },
-  "quickPresets": "Quick presets",
-  "selectDeviceFirst": "Select device first",
-  "searchByLabelOrHex": "Search by label or hex",
-  "optionalRefinePresetKeys": "Optional: refine the {preset} preset keys",
-  "@optionalRefinePresetKeys": {
-    "placeholders": {
-      "preset": {}
-    }
-  },
-  "selectBrandModelProtocolFirst": "Select brand, model, and protocol first.",
-  "noProtocolFoundForBrandModel": "No protocol found for this brand and model.",
-  "protocolAutoDetected": "Protocol",
-  "protocolAutoDetectedHelper": "Auto-detected from the database. You can change it before importing.",
-  "selectBrandModelToLoadKeys": "Select a brand, model, and protocol to load keys.",
-  "noKeysFound": "No keys found.",
-  "noKeysFoundForSearch": "No keys found for “{query}”.",
-  "@noKeysFoundForSearch": {
-    "placeholders": {
-      "query": {}
     }
   },
   "noMacrosToExport": "No macros to export.",
@@ -1934,7 +1897,6 @@
   "iconNameTrophyFa": "Trophy FA",
   "iconNameCrownFa": "Crown FA",
   "iconNameGemFa": "Gem FA",
-  "unknownLabel": "Unknown",
   "selectedFilesLabel": "selected file(s)",
   "folderNotFoundOrInaccessible": "Folder not found or inaccessible.",
   "importedRemoteDefaultName": "ImportedRemote",

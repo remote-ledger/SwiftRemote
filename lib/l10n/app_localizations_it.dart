@@ -1607,26 +1607,9 @@ class AppLocalizationsIt extends AppLocalizations {
   String get editButtonTitle => 'Modifica pulsante';
 
   @override
-  String failedToLoadProtocols(Object error) {
-    return 'Caricamento protocolli fallito: $error';
-  }
-
-  @override
   String failedToLoadDatabaseKeys(Object error) {
     return 'Caricamento tasti database fallito: $error';
   }
-
-  @override
-  String get presetPower => 'Accensione';
-
-  @override
-  String get presetVolume => 'Volume';
-
-  @override
-  String get presetChannel => 'Canale';
-
-  @override
-  String get presetNavigation => 'Navigazione';
 
   @override
   String get all => 'Tutti';
@@ -1825,21 +1808,6 @@ class AppLocalizationsIt extends AppLocalizations {
   String get model => 'Modello';
 
   @override
-  String get selectBrand => 'Seleziona marca';
-
-  @override
-  String get searchBrand => 'Cerca marca…';
-
-  @override
-  String get selectModel => 'Seleziona modello';
-
-  @override
-  String get searchModel => 'Cerca modello…';
-
-  @override
-  String get unnamedKey => 'Tasto senza nome';
-
-  @override
   String get unknown => 'Sconosciuto';
 
   @override
@@ -1884,56 +1852,11 @@ class AppLocalizationsIt extends AppLocalizations {
   String get selectCommand => 'Seleziona comando';
 
   @override
-  String get databaseModeAutofillHint =>
-      'La modalità database compila automaticamente per te il Passo 2, marca, modello e protocollo. Dopo aver importato un tasto puoi rifinire tutto in Manuale.';
-
-  @override
   String get test => 'Test';
 
   @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return 'Importati $addedCount pulsanti. Saltati $skippedCount duplicati.';
-  }
-
-  @override
-  String get quickPresets => 'Preset rapidi';
-
-  @override
-  String get selectDeviceFirst => 'Seleziona prima il dispositivo';
-
-  @override
-  String get searchByLabelOrHex => 'Cerca per etichetta o esadecimale';
-
-  @override
-  String optionalRefinePresetKeys(Object preset) {
-    return 'Opzionale. rifinisci i tasti preset $preset';
-  }
-
-  @override
-  String get selectBrandModelProtocolFirst =>
-      'Seleziona prima marca modello protocollo.';
-
-  @override
-  String get noProtocolFoundForBrandModel =>
-      'Nessun protocollo trovato per questa marca e questo modello.';
-
-  @override
-  String get protocolAutoDetected => 'Protocollo';
-
-  @override
-  String get protocolAutoDetectedHelper =>
-      'Rilevato automaticamente dal database. Puoi cambiarlo prima dell\'importazione.';
-
-  @override
-  String get selectBrandModelToLoadKeys =>
-      'Seleziona marca, modello e protocollo per caricare i tasti.';
-
-  @override
-  String get noKeysFound => 'Nessun tasto trovato.';
-
-  @override
-  String noKeysFoundForSearch(Object query) {
-    return 'Nessun tasto trovato per “$query”.';
   }
 
   @override
@@ -4301,9 +4224,6 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get iconNameGemFa => 'Gemma FA';
-
-  @override
-  String get unknownLabel => 'Sconosciuto';
 
   @override
   String get selectedFilesLabel => 'selezionati file(s)';

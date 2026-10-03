@@ -1600,26 +1600,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get editButtonTitle => 'Editar botón';
 
   @override
-  String failedToLoadProtocols(Object error) {
-    return 'No se pudieron cargar los protocolos: $error';
-  }
-
-  @override
   String failedToLoadDatabaseKeys(Object error) {
     return 'No se pudieron cargar las teclas de la base de datos: $error';
   }
-
-  @override
-  String get presetPower => 'Enc.';
-
-  @override
-  String get presetVolume => 'Volumen';
-
-  @override
-  String get presetChannel => 'Canal';
-
-  @override
-  String get presetNavigation => 'Navegación';
 
   @override
   String get all => 'Todo';
@@ -1818,21 +1801,6 @@ class AppLocalizationsEs extends AppLocalizations {
   String get model => 'Modelo';
 
   @override
-  String get selectBrand => 'Seleccionar marca';
-
-  @override
-  String get searchBrand => 'Buscar marca…';
-
-  @override
-  String get selectModel => 'Seleccionar modelo';
-
-  @override
-  String get searchModel => 'Buscar modelo…';
-
-  @override
-  String get unnamedKey => 'Tecla sin nombre';
-
-  @override
   String get unknown => 'Desconocido';
 
   @override
@@ -1878,56 +1846,11 @@ class AppLocalizationsEs extends AppLocalizations {
   String get selectCommand => 'Seleccionar comando';
 
   @override
-  String get databaseModeAutofillHint =>
-      'El modo Base de datos completa el Paso 2 por ti (marca + modelo + protocolo). Tras importar una tecla, puedes ajustar todo en Manual.';
-
-  @override
   String get test => 'Probar';
 
   @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return 'Se importaron $addedCount botón(es). Se omitieron $skippedCount duplicado(s).';
-  }
-
-  @override
-  String get quickPresets => 'Ajustes rápidos';
-
-  @override
-  String get selectDeviceFirst => 'Selecciona primero un dispositivo';
-
-  @override
-  String get searchByLabelOrHex => 'Buscar por etiqueta o hex';
-
-  @override
-  String optionalRefinePresetKeys(Object preset) {
-    return 'Opcional: afina las teclas predefinidas de $preset';
-  }
-
-  @override
-  String get selectBrandModelProtocolFirst =>
-      'Selecciona primero marca, modelo y protocolo.';
-
-  @override
-  String get noProtocolFoundForBrandModel =>
-      'No se encontró un protocolo para esta marca y modelo.';
-
-  @override
-  String get protocolAutoDetected => 'Protocolo';
-
-  @override
-  String get protocolAutoDetectedHelper =>
-      'Detectado automáticamente desde la base de datos. Puedes cambiarlo antes de importar.';
-
-  @override
-  String get selectBrandModelToLoadKeys =>
-      'Selecciona una marca, modelo y protocolo para cargar teclas.';
-
-  @override
-  String get noKeysFound => 'No se encontraron teclas.';
-
-  @override
-  String noKeysFoundForSearch(Object query) {
-    return 'No se encontraron teclas para “$query”.';
   }
 
   @override
@@ -4297,9 +4220,6 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get iconNameGemFa => 'Gema FA';
-
-  @override
-  String get unknownLabel => 'Desconocido';
 
   @override
   String get selectedFilesLabel => 'archivo(s) seleccionado(s)';

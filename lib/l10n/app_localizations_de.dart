@@ -1611,26 +1611,9 @@ class AppLocalizationsDe extends AppLocalizations {
   String get editButtonTitle => 'Taste bearbeiten';
 
   @override
-  String failedToLoadProtocols(Object error) {
-    return 'Protokolle konnten nicht geladen werden: $error';
-  }
-
-  @override
   String failedToLoadDatabaseKeys(Object error) {
     return 'Datenbankschlüssel konnten nicht geladen werden: $error';
   }
-
-  @override
-  String get presetPower => 'Ein/Aus';
-
-  @override
-  String get presetVolume => 'Lautstärke';
-
-  @override
-  String get presetChannel => 'Kanal';
-
-  @override
-  String get presetNavigation => 'Navigation';
 
   @override
   String get all => 'Alle';
@@ -1832,21 +1815,6 @@ class AppLocalizationsDe extends AppLocalizations {
   String get model => 'Modell';
 
   @override
-  String get selectBrand => 'Marke wählen';
-
-  @override
-  String get searchBrand => 'Marke suchen…';
-
-  @override
-  String get selectModel => 'Modell wählen';
-
-  @override
-  String get searchModel => 'Modell suchen…';
-
-  @override
-  String get unnamedKey => 'Unbenannter Schlüssel';
-
-  @override
   String get unknown => 'Unbekannt';
 
   @override
@@ -1892,56 +1860,11 @@ class AppLocalizationsDe extends AppLocalizations {
   String get selectCommand => 'Befehl wählen';
 
   @override
-  String get databaseModeAutofillHint =>
-      'Der Datenbankmodus füllt Schritt 2 automatisch für dich aus Marke, Modell und Protokoll. Nach dem Import einer Taste kannst du alles in Manuell verfeinern.';
-
-  @override
   String get test => 'Test';
 
   @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return '$addedCount Taste(n) importiert. $skippedCount Duplikat(e) übersprungen.';
-  }
-
-  @override
-  String get quickPresets => 'Schnellvorgaben';
-
-  @override
-  String get selectDeviceFirst => 'Zuerst Gerät wählen';
-
-  @override
-  String get searchByLabelOrHex => 'Nach Bezeichnung oder Hex suchen';
-
-  @override
-  String optionalRefinePresetKeys(Object preset) {
-    return 'Optional: die Vorgabetasten für $preset verfeinern';
-  }
-
-  @override
-  String get selectBrandModelProtocolFirst =>
-      'Wähle zuerst Marke, Modell und Protokoll.';
-
-  @override
-  String get noProtocolFoundForBrandModel =>
-      'Kein Protokoll für diese Marke und dieses Modell gefunden.';
-
-  @override
-  String get protocolAutoDetected => 'Protokoll';
-
-  @override
-  String get protocolAutoDetectedHelper =>
-      'Automatisch aus der Datenbank erkannt. Du kannst es vor dem Import ändern.';
-
-  @override
-  String get selectBrandModelToLoadKeys =>
-      'Wähle Marke, Modell und Protokoll, um Schlüssel zu laden.';
-
-  @override
-  String get noKeysFound => 'Keine Schlüssel gefunden.';
-
-  @override
-  String noKeysFoundForSearch(Object query) {
-    return 'Keine Schlüssel für $query gefunden.';
   }
 
   @override
@@ -4309,9 +4232,6 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get iconNameGemFa => 'Edelstein FA';
-
-  @override
-  String get unknownLabel => 'Unbekannt';
 
   @override
   String get selectedFilesLabel => 'gewählte Datei(en)';

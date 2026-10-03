@@ -489,22 +489,12 @@
   "createRemoteEmptyStateDescription": "أضف أول زر، ثم اضغطه مطولاً لخيارات التعديل أو الإزالة.",
   "createButtonTitle": "إنشاء زر",
   "editButtonTitle": "تعديل زر",
-  "failedToLoadProtocols": "فشل إلى تحميل protocols: {error}",
-  "@failedToLoadProtocols": {
-    "placeholders": {
-      "error": {}
-    }
-  },
   "failedToLoadDatabaseKeys": "فشل تحميل مفاتيح قاعدة البيانات: {error}",
   "@failedToLoadDatabaseKeys": {
     "placeholders": {
       "error": {}
     }
   },
-  "presetPower": "تشغيل",
-  "presetVolume": "الصوت",
-  "presetChannel": "Channel",
-  "presetNavigation": "تنقل",
   "all": "الكل",
   "completeRequiredFieldsToSave": "أكمل الحقول المطلوبة للحفظ",
   "buttonLabelStepTitle": "تسمية الزر",
@@ -613,11 +603,6 @@
   },
   "brand": "العلامة",
   "model": "الطراز",
-  "selectBrand": "اختر العلامة",
-  "searchBrand": "ابحث عن علامة…",
-  "selectModel": "اختر الطراز",
-  "searchModel": "ابحث عن طراز…",
-  "unnamedKey": "Unnamed key",
   "unknown": "غير معروف",
   "searchCommands": "ابحث commands",
   "noMatchingCommands": "No matching commands",
@@ -637,7 +622,6 @@
   "editButtonCodeTitle": "تعديل كود الزر",
   "thisRemoteHasNoButtons": "هذا الجهاز لا يحتوي على أزرار.",
   "selectCommand": "اختر Command",
-  "databaseModeAutofillHint": "يقوم وضع قاعدة البيانات بملء الخطوة 2 تلقائياً، العلامة والطراز والبروتوكول. بعد استيراد مفتاح، يمكنك تعديل أي شيء في الوضع اليدوي.",
   "test": "اختبار",
   "importedButtonsSkippedDuplicates": "تم استيراد {addedCount} زر. تم تخطي {skippedCount} من النسخ المكررة.",
   "@importedButtonsSkippedDuplicates": {
@@ -648,27 +632,6 @@
       "skippedCount": {
         "type": "int"
       }
-    }
-  },
-  "quickPresets": "Quick presets",
-  "selectDeviceFirst": "اختر الجهاز أولاً",
-  "searchByLabelOrHex": "ابحث by label or hex",
-  "optionalRefinePresetKeys": "اختياري: حسّن مفاتيح الإعداد المسبق {preset}",
-  "@optionalRefinePresetKeys": {
-    "placeholders": {
-      "preset": {}
-    }
-  },
-  "selectBrandModelProtocolFirst": "اختر العلامة والطراز والبروتوكول أولاً.",
-  "noProtocolFoundForBrandModel": "لم يتم العثور على بروتوكول لهذه العلامة والطراز.",
-  "protocolAutoDetected": "البروتوكول",
-  "protocolAutoDetectedHelper": "تم اكتشافه تلقائياً من قاعدة البيانات. يمكنك تغييره قبل الاستيراد.",
-  "selectBrandModelToLoadKeys": "اختر علامة وطرازاً وبروتوكولاً لتحميل المفاتيح.",
-  "noKeysFound": "No keys موجود.",
-  "noKeysFoundForSearch": "No keys موجود for “{query}”.",
-  "@noKeysFoundForSearch": {
-    "placeholders": {
-      "query": {}
     }
   },
   "noMacrosToExport": "لا توجد وحدات ماكرو للتصدير.",
@@ -1807,7 +1770,6 @@
   "iconNameTrophyFa": "Trophy FA",
   "iconNameCrownFa": "Crown FA",
   "iconNameGemFa": "Gem FA",
-  "unknownLabel": "غير معروف",
   "selectedFilesLabel": "المحدد file(s)",
   "folderNotFoundOrInaccessible": "مجلد not موجود or inaccessible.",
   "importedRemoteDefaultName": "ImportedRemote",

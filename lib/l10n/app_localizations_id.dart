@@ -1585,26 +1585,9 @@ class AppLocalizationsId extends AppLocalizations {
   String get editButtonTitle => 'Ubah Tombol';
 
   @override
-  String failedToLoadProtocols(Object error) {
-    return 'Gagal muat protocols: $error';
-  }
-
-  @override
   String failedToLoadDatabaseKeys(Object error) {
     return 'Gagal muat basis data tombol: $error';
   }
-
-  @override
-  String get presetPower => 'Daya';
-
-  @override
-  String get presetVolume => 'Volume';
-
-  @override
-  String get presetChannel => 'Kanal';
-
-  @override
-  String get presetNavigation => 'Navigasi';
 
   @override
   String get all => 'Semua';
@@ -1801,21 +1784,6 @@ class AppLocalizationsId extends AppLocalizations {
   String get model => 'Model';
 
   @override
-  String get selectBrand => 'Pilih merek';
-
-  @override
-  String get searchBrand => 'Cari merek…';
-
-  @override
-  String get selectModel => 'Pilih model';
-
-  @override
-  String get searchModel => 'Cari model…';
-
-  @override
-  String get unnamedKey => 'Unnamed tombol';
-
-  @override
   String get unknown => 'Tidak dikenal';
 
   @override
@@ -1860,56 +1828,11 @@ class AppLocalizationsId extends AppLocalizations {
   String get selectCommand => 'Pilih Command';
 
   @override
-  String get databaseModeAutofillHint =>
-      'Mode Basis data mengisi otomatis Langkah 2 untuk Anda (merek + model + protokol). Setelah mengimpor tombol, Anda bisa menyempurnakan apa pun di Manual.';
-
-  @override
   String get test => 'Uji';
 
   @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return 'Mengimpor $addedCount tombol(s). Skipped $skippedCount duplicate(s).';
-  }
-
-  @override
-  String get quickPresets => 'Cepat presets';
-
-  @override
-  String get selectDeviceFirst => 'Pilih perangkat terlebih dahulu';
-
-  @override
-  String get searchByLabelOrHex => 'Cari menurut label atau hex';
-
-  @override
-  String optionalRefinePresetKeys(Object preset) {
-    return 'Opsional: perhalus tombol preset $preset';
-  }
-
-  @override
-  String get selectBrandModelProtocolFirst =>
-      'Pilih merek, model, dan protokol terlebih dahulu.';
-
-  @override
-  String get noProtocolFoundForBrandModel =>
-      'Tidak ada protokol untuk merek dan model ini.';
-
-  @override
-  String get protocolAutoDetected => 'Protokol';
-
-  @override
-  String get protocolAutoDetectedHelper =>
-      'Terdeteksi otomatis dari basis data. Anda bisa mengubahnya sebelum impor.';
-
-  @override
-  String get selectBrandModelToLoadKeys =>
-      'Pilih merek, model, dan protokol untuk memuat tombol.';
-
-  @override
-  String get noKeysFound => 'Tidak ada tombol found.';
-
-  @override
-  String noKeysFoundForSearch(Object query) {
-    return 'Tidak ada tombol ditemukan untuk “$query”.';
   }
 
   @override
@@ -4273,9 +4196,6 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get iconNameGemFa => 'Gem FA';
-
-  @override
-  String get unknownLabel => 'Tidak dikenal';
 
   @override
   String get selectedFilesLabel => 'terpilih file(s)';

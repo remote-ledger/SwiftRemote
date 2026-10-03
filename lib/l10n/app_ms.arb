@@ -489,22 +489,12 @@
   "createRemoteEmptyStateDescription": "Tambahkan butang pertama, kemudian tekan lama untuk opsi ubah/hapus.",
   "createButtonTitle": "Buat Butang",
   "editButtonTitle": "Ubah Butang",
-  "failedToLoadProtocols": "Gagal muat protocols: {error}",
-  "@failedToLoadProtocols": {
-    "placeholders": {
-      "error": {}
-    }
-  },
   "failedToLoadDatabaseKeys": "Gagal muat pangkalan data butang: {error}",
   "@failedToLoadDatabaseKeys": {
     "placeholders": {
       "error": {}
     }
   },
-  "presetPower": "Daya",
-  "presetVolume": "Volum",
-  "presetChannel": "Kanal",
-  "presetNavigation": "Navigasi",
   "all": "Semua",
   "completeRequiredFieldsToSave": "Lengkapi bidang wajib untuk menyimpan",
   "buttonLabelStepTitle": "Label butang",
@@ -613,11 +603,6 @@
   },
   "brand": "Jenama",
   "model": "Model",
-  "selectBrand": "Pilih jenama",
-  "searchBrand": "Cari jenama…",
-  "selectModel": "Pilih model",
-  "searchModel": "Cari model…",
-  "unnamedKey": "Unnamed butang",
   "unknown": "Tidak dikenal",
   "searchCommands": "Cari arahans",
   "noMatchingCommands": "Tiada matching arahans",
@@ -637,7 +622,6 @@
   "editButtonCodeTitle": "Ubah Kod butang",
   "thisRemoteHasNoButtons": "Remote ini tidak mempunyai butang.",
   "selectCommand": "Pilih Arahan",
-  "databaseModeAutofillHint": "Mode Pangkalan data mengisi automatik Langkah 2 untuk Anda (jenama + model + protokol). Setelah mengimport butang, Anda boleh menyempurnakan apa pun di Manual.",
   "test": "Uji",
   "importedButtonsSkippedDuplicates": "Mengimport {addedCount} butang. Melangkau {skippedCount} pendua.",
   "@importedButtonsSkippedDuplicates": {
@@ -648,27 +632,6 @@
       "skippedCount": {
         "type": "int"
       }
-    }
-  },
-  "quickPresets": "Cepat presets",
-  "selectDeviceFirst": "Pilih peranti terlebih dahulu",
-  "searchByLabelOrHex": "Cari menurut label atau hex",
-  "optionalRefinePresetKeys": "Opsional: perhalus butang preset {preset}",
-  "@optionalRefinePresetKeys": {
-    "placeholders": {
-      "preset": {}
-    }
-  },
-  "selectBrandModelProtocolFirst": "Pilih jenama, model, dan protokol terlebih dahulu.",
-  "noProtocolFoundForBrandModel": "Tiada protokol untuk jenama dan model ini.",
-  "protocolAutoDetected": "Protokol",
-  "protocolAutoDetectedHelper": "Dikesan automatik dari pangkalan data. Anda boleh mengubahnya sebelum import.",
-  "selectBrandModelToLoadKeys": "Pilih jenama, model, dan protokol untuk memuat butang.",
-  "noKeysFound": "Tiada butang found.",
-  "noKeysFoundForSearch": "Tiada butang ditemui untuk “{query}”.",
-  "@noKeysFoundForSearch": {
-    "placeholders": {
-      "query": {}
     }
   },
   "noMacrosToExport": "Tiada makro untuk diekspor.",
@@ -1802,7 +1765,6 @@
   "iconNameTrophyFa": "Trophy FA",
   "iconNameCrownFa": "Crown FA",
   "iconNameGemFa": "Gem FA",
-  "unknownLabel": "Tidak dikenal",
   "selectedFilesLabel": "terpilih file(s)",
   "folderNotFoundOrInaccessible": "Folder tidak ditemui atau tidak boleh diakses.",
   "importedRemoteDefaultName": "RemoteImport",

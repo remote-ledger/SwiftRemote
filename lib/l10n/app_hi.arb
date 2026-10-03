@@ -489,22 +489,12 @@
   "createRemoteEmptyStateDescription": "जोड़ें आपकी पहले बटन, फिर लंबा दबाएं it के लिए संपादित करें/हटाएं options.",
   "createButtonTitle": "बनाएं बटन",
   "editButtonTitle": "संपादित करें बटन",
-  "failedToLoadProtocols": "प्रोटोकॉल लोड विफल: {error}",
-  "@failedToLoadProtocols": {
-    "placeholders": {
-      "error": {}
-    }
-  },
   "failedToLoadDatabaseKeys": "लोड करें डेटाबेस keys: {error} विफल",
   "@failedToLoadDatabaseKeys": {
     "placeholders": {
       "error": {}
     }
   },
-  "presetPower": "पावर",
-  "presetVolume": "आवाज़",
-  "presetChannel": "Channel",
-  "presetNavigation": "नेविगेशन",
   "all": "सभी",
   "completeRequiredFieldsToSave": "पूर्ण आवश्यक fields तक सहेजें",
   "buttonLabelStepTitle": "बटन लेबल",
@@ -613,11 +603,6 @@
   },
   "brand": "ब्रांड",
   "model": "मॉडल",
-  "selectBrand": "ब्रांड चुनें",
-  "searchBrand": "खोजें ब्रांड…",
-  "selectModel": "मॉडल चुनें",
-  "searchModel": "खोजें मॉडल…",
-  "unnamedKey": "बिना नाम की कुंजी",
   "unknown": "अज्ञात",
   "searchCommands": "खोजें कमांड",
   "noMatchingCommands": "नहीं मेल खाती कमांड",
@@ -637,7 +622,6 @@
   "editButtonCodeTitle": "संपादित करें कोड का the बटन",
   "thisRemoteHasNoButtons": "यह रिमोट has नहीं बटन.",
   "selectCommand": "चुनें कमांड",
-  "databaseModeAutofillHint": "डेटाबेस मोड auto-fills चरण 2 के लिए you (ब्रांड + मॉडल + प्रोटोकॉल). बाद आयात करते समय a key, you सकता है परिष्कृत करें anything में मैनुअल.",
   "test": "जांचें",
   "importedButtonsSkippedDuplicates": "{addedCount} बटन आयात किए गए। {skippedCount} डुप्लिकेट छोड़े गए।",
   "@importedButtonsSkippedDuplicates": {
@@ -648,27 +632,6 @@
       "skippedCount": {
         "type": "int"
       }
-    }
-  },
-  "quickPresets": "त्वरित प्रीसेट",
-  "selectDeviceFirst": "चुनें डिवाइस पहले",
-  "searchByLabelOrHex": "खोजें द्वारा लेबल या हेक्स",
-  "optionalRefinePresetKeys": "वैकल्पिक: {preset} प्रीसेट कुंजियों को परिष्कृत करें",
-  "@optionalRefinePresetKeys": {
-    "placeholders": {
-      "preset": {}
-    }
-  },
-  "selectBrandModelProtocolFirst": "चुनें ब्रांड, मॉडल, और प्रोटोकॉल पहले.",
-  "noProtocolFoundForBrandModel": "नहीं प्रोटोकॉल मिला के लिए यह ब्रांड और मॉडल.",
-  "protocolAutoDetected": "प्रोटोकॉल",
-  "protocolAutoDetectedHelper": "डेटाबेस से स्वतः पहचाना गया। आयात करने से पहले आप इसे बदल सकते हैं।",
-  "selectBrandModelToLoadKeys": "चुनें a ब्रांड, मॉडल, और प्रोटोकॉल तक लोड करें keys.",
-  "noKeysFound": "नहीं keys मिला.",
-  "noKeysFoundForSearch": "नहीं keys मिला के लिए “{query}”.",
-  "@noKeysFoundForSearch": {
-    "placeholders": {
-      "query": {}
     }
   },
   "noMacrosToExport": "नहीं मैक्रो तक निर्यात.",
@@ -1807,7 +1770,6 @@
   "iconNameTrophyFa": "Trophy FA",
   "iconNameCrownFa": "Crown FA",
   "iconNameGemFa": "Gem FA",
-  "unknownLabel": "अज्ञात",
   "selectedFilesLabel": "चयनित फ़ाइल(s)",
   "folderNotFoundOrInaccessible": "फ़ोल्डर नहीं मिला या inaccessible.",
   "importedRemoteDefaultName": "ImportedRemote",

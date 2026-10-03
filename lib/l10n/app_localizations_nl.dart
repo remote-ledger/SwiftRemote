@@ -1613,26 +1613,9 @@ class AppLocalizationsNl extends AppLocalizations {
   String get editButtonTitle => 'Bewerken Knop';
 
   @override
-  String failedToLoadProtocols(Object error) {
-    return 'Mislukt to load protocols: $error';
-  }
-
-  @override
   String failedToLoadDatabaseKeys(Object error) {
     return 'Mislukt to load database keys: $error';
   }
-
-  @override
-  String get presetPower => 'Aan/uit';
-
-  @override
-  String get presetVolume => 'Volume';
-
-  @override
-  String get presetChannel => 'Kanaal';
-
-  @override
-  String get presetNavigation => 'Navigatie';
 
   @override
   String get all => 'Alles';
@@ -1830,21 +1813,6 @@ class AppLocalizationsNl extends AppLocalizations {
   String get model => 'Model';
 
   @override
-  String get selectBrand => 'Selecteer brand';
-
-  @override
-  String get searchBrand => 'Zoeken brand…';
-
-  @override
-  String get selectModel => 'Selecteer model';
-
-  @override
-  String get searchModel => 'Zoeken model…';
-
-  @override
-  String get unnamedKey => 'Naamloze toets';
-
-  @override
   String get unknown => 'Onbekend';
 
   @override
@@ -1890,56 +1858,11 @@ class AppLocalizationsNl extends AppLocalizations {
   String get selectCommand => 'Selecteer Command';
 
   @override
-  String get databaseModeAutofillHint =>
-      'Database mode auto-fills Step 2 for you (brand + model + protocol). After importerening a key, you can refine anything in Manual.';
-
-  @override
   String get test => 'Test';
 
   @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return 'Importerened $addedCount knop(s). Overslaanped $skippedCount duplicate(s).';
-  }
-
-  @override
-  String get quickPresets => 'Snelle presets';
-
-  @override
-  String get selectDeviceFirst => 'Selecteer apparaat first';
-
-  @override
-  String get searchByLabelOrHex => 'Zoek op label of hex';
-
-  @override
-  String optionalRefinePresetKeys(Object preset) {
-    return 'Optioneel verfijn de presettoetsen voor $preset';
-  }
-
-  @override
-  String get selectBrandModelProtocolFirst =>
-      'Selecteer brand, model, and protocol first.';
-
-  @override
-  String get noProtocolFoundForBrandModel =>
-      'Geen protocol gevonden voor dit merk en model.';
-
-  @override
-  String get protocolAutoDetected => 'Protocol';
-
-  @override
-  String get protocolAutoDetectedHelper =>
-      'Automatisch uit de database gedetecteerd. Je kunt dit vóór het importereneren wijzigen.';
-
-  @override
-  String get selectBrandModelToLoadKeys =>
-      'Selecteereer een merk, model en protocol om toetsen te laden.';
-
-  @override
-  String get noKeysFound => 'Geen keys found.';
-
-  @override
-  String noKeysFoundForSearch(Object query) {
-    return 'Geen toetsen gevonden voor “$query”.';
   }
 
   @override
@@ -4306,9 +4229,6 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get iconNameGemFa => 'Gem FA';
-
-  @override
-  String get unknownLabel => 'Onbekend';
 
   @override
   String get selectedFilesLabel => 'geselecteerd file(s)';

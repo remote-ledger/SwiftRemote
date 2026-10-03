@@ -1564,26 +1564,9 @@ class AppLocalizationsTh extends AppLocalizations {
   String get editButtonTitle => 'แก้ไข ปุ่ม';
 
   @override
-  String failedToLoadProtocols(Object error) {
-    return 'โหลดโปรโตคอลไม่สำเร็จ: $error';
-  }
-
-  @override
   String failedToLoadDatabaseKeys(Object error) {
     return 'โหลดคีย์ฐานข้อมูลไม่สำเร็จ: $error';
   }
-
-  @override
-  String get presetPower => 'Power';
-
-  @override
-  String get presetVolume => 'Volume';
-
-  @override
-  String get presetChannel => 'ช่อง';
-
-  @override
-  String get presetNavigation => 'นำทาง';
 
   @override
   String get all => 'All';
@@ -1780,21 +1763,6 @@ class AppLocalizationsTh extends AppLocalizations {
   String get model => 'รุ่น';
 
   @override
-  String get selectBrand => 'เลือกยี่ห้อ';
-
-  @override
-  String get searchBrand => 'ค้นหา ยี่ห้อ…';
-
-  @override
-  String get selectModel => 'เลือกรุ่น';
-
-  @override
-  String get searchModel => 'ค้นหา รุ่น…';
-
-  @override
-  String get unnamedKey => 'คีย์ไม่มีชื่อ';
-
-  @override
   String get unknown => 'ไม่ทราบ';
 
   @override
@@ -1839,56 +1807,11 @@ class AppLocalizationsTh extends AppLocalizations {
   String get selectCommand => 'เลือกคำสั่ง';
 
   @override
-  String get databaseModeAutofillHint =>
-      'โหมดฐานข้อมูลจะกรอกขั้นตอนที่ 2 ให้อัตโนมัติ ยี่ห้อ รุ่น และโปรโตคอล หลังนำเข้าคีย์แล้ว คุณยังปรับทุกอย่างได้ในโหมด Manual';
-
-  @override
   String get test => 'ทดสอบ';
 
   @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return 'นำเข้า $addedCount ปุ่ม ข้ามรายการซ้ำ $skippedCount รายการ';
-  }
-
-  @override
-  String get quickPresets => 'พรีเซ็ตด่วน';
-
-  @override
-  String get selectDeviceFirst => 'เลือกอุปกรณ์ก่อน';
-
-  @override
-  String get searchByLabelOrHex => 'ค้นหาตามชื่อหรือเลขฐานสิบหก';
-
-  @override
-  String optionalRefinePresetKeys(Object preset) {
-    return 'ไม่บังคับ: ปรับคีย์พรีเซ็ต $preset';
-  }
-
-  @override
-  String get selectBrandModelProtocolFirst =>
-      'เลือก ยี่ห้อ, รุ่น, and โปรโตคอล ก่อน.';
-
-  @override
-  String get noProtocolFoundForBrandModel =>
-      'ไม่พบโปรโตคอลสำหรับยี่ห้อและรุ่นนี้';
-
-  @override
-  String get protocolAutoDetected => 'โปรโตคอล';
-
-  @override
-  String get protocolAutoDetectedHelper =>
-      'ตรวจพบจากฐานข้อมูลอัตโนมัติ คุณเปลี่ยนได้ก่อนนำเข้า';
-
-  @override
-  String get selectBrandModelToLoadKeys =>
-      'เลือก a ยี่ห้อ, รุ่น, and โปรโตคอล to load คีย์.';
-
-  @override
-  String get noKeysFound => 'ไม่พบคีย์';
-
-  @override
-  String noKeysFoundForSearch(Object query) {
-    return 'ไม่พบคีย์สำหรับ “$query”';
   }
 
   @override
@@ -4247,9 +4170,6 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get iconNameGemFa => 'อัญมณี FA';
-
-  @override
-  String get unknownLabel => 'ไม่ทราบ';
 
   @override
   String get selectedFilesLabel => 'ไฟล์ที่เลือก';

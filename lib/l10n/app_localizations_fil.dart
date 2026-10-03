@@ -1600,26 +1600,9 @@ class AppLocalizationsFil extends AppLocalizations {
   String get editButtonTitle => 'I-edit ang Button';
 
   @override
-  String failedToLoadProtocols(Object error) {
-    return 'Nabigong i-load ang mga protocol: $error';
-  }
-
-  @override
   String failedToLoadDatabaseKeys(Object error) {
     return 'Nabigong i-load ang mga database key: $error';
   }
-
-  @override
-  String get presetPower => 'Power';
-
-  @override
-  String get presetVolume => 'Volume';
-
-  @override
-  String get presetChannel => 'Channel';
-
-  @override
-  String get presetNavigation => 'Navigation';
 
   @override
   String get all => 'All';
@@ -1819,21 +1802,6 @@ class AppLocalizationsFil extends AppLocalizations {
   String get model => 'Modelo';
 
   @override
-  String get selectBrand => 'Select brand';
-
-  @override
-  String get searchBrand => 'Search brand…';
-
-  @override
-  String get selectModel => 'Select modelo';
-
-  @override
-  String get searchModel => 'Search modelo…';
-
-  @override
-  String get unnamedKey => 'Unnamed key';
-
-  @override
   String get unknown => 'Hindi kilala';
 
   @override
@@ -1878,56 +1846,11 @@ class AppLocalizationsFil extends AppLocalizations {
   String get selectCommand => 'Select Command';
 
   @override
-  String get databaseModeAutofillHint =>
-      'Awtomatikong pinupunan ng Database mode ang Hakbang 2 para sa iyo, brand, modelo, at protocol. Pagkatapos mag-import ng key, maaari mong ayusin pa ang lahat sa Manual.';
-
-  @override
   String get test => 'Subukan';
 
   @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return 'Imported $addedCount button(s). Skipped $skippedCount duplicate(s).';
-  }
-
-  @override
-  String get quickPresets => 'Quick presets';
-
-  @override
-  String get selectDeviceFirst => 'Select device first';
-
-  @override
-  String get searchByLabelOrHex => 'Search by label o hex';
-
-  @override
-  String optionalRefinePresetKeys(Object preset) {
-    return 'Optional: refine the $preset preset keys';
-  }
-
-  @override
-  String get selectBrandModelProtocolFirst =>
-      'Select brand, modelo, at protocol first.';
-
-  @override
-  String get noProtocolFoundForBrandModel =>
-      'Walang protocol found para sa this brand at modelo.';
-
-  @override
-  String get protocolAutoDetected => 'Protocol';
-
-  @override
-  String get protocolAutoDetectedHelper =>
-      'Auto-detected from the database. You can change it before importing.';
-
-  @override
-  String get selectBrandModelToLoadKeys =>
-      'Select a brand, modelo, at protocol to load keys.';
-
-  @override
-  String get noKeysFound => 'Walang keys found.';
-
-  @override
-  String noKeysFoundForSearch(Object query) {
-    return 'Walang keys found para sa “$query”.';
   }
 
   @override
@@ -4288,9 +4211,6 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get iconNameGemFa => 'Gem FA';
-
-  @override
-  String get unknownLabel => 'Hindi kilala';
 
   @override
   String get selectedFilesLabel => 'napiling file(s)';

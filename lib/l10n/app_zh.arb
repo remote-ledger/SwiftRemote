@@ -489,22 +489,12 @@
   "createRemoteEmptyStateDescription": "添加第一个按钮后，长按它可进行编辑或移除。",
   "createButtonTitle": "创建按钮",
   "editButtonTitle": "编辑按钮",
-  "failedToLoadProtocols": "加载协议失败 {error}",
-  "@failedToLoadProtocols": {
-    "placeholders": {
-      "error": {}
-    }
-  },
   "failedToLoadDatabaseKeys": "加载数据库按键失败 {error}",
   "@failedToLoadDatabaseKeys": {
     "placeholders": {
       "error": {}
     }
   },
-  "presetPower": "电源",
-  "presetVolume": "音量",
-  "presetChannel": "频道",
-  "presetNavigation": "导航",
   "all": "全部",
   "completeRequiredFieldsToSave": "请填写必填项后再保存",
   "buttonLabelStepTitle": "按钮标签",
@@ -613,11 +603,6 @@
   },
   "brand": "品牌",
   "model": "型号",
-  "selectBrand": "选择品牌",
-  "searchBrand": "搜索品牌…",
-  "selectModel": "选择型号",
-  "searchModel": "搜索型号…",
-  "unnamedKey": "未命名按键",
   "unknown": "未知",
   "searchCommands": "搜索命令",
   "noMatchingCommands": "没有匹配命令",
@@ -637,7 +622,6 @@
   "editButtonCodeTitle": "编辑按钮代码",
   "thisRemoteHasNoButtons": "此遥控器没有按钮。",
   "selectCommand": "选择命令",
-  "databaseModeAutofillHint": "数据库模式会自动为你填充第 2 步 品牌 型号 协议。导入按键后，你仍可在手动模式中进一步调整。",
   "test": "测试",
   "importedButtonsSkippedDuplicates": "已导入 {addedCount} 个按钮。跳过 {skippedCount} 个重复项。",
   "@importedButtonsSkippedDuplicates": {
@@ -648,27 +632,6 @@
       "skippedCount": {
         "type": "int"
       }
-    }
-  },
-  "quickPresets": "快捷预设",
-  "selectDeviceFirst": "请先选择设备",
-  "searchByLabelOrHex": "按标签或十六进制搜索",
-  "optionalRefinePresetKeys": "可选 进一步细化 {preset} 预设按键",
-  "@optionalRefinePresetKeys": {
-    "placeholders": {
-      "preset": {}
-    }
-  },
-  "selectBrandModelProtocolFirst": "请先选择品牌、型号和协议。",
-  "noProtocolFoundForBrandModel": "未找到此品牌和型号对应的协议。",
-  "protocolAutoDetected": "协议",
-  "protocolAutoDetectedHelper": "已从数据库自动检测。导入前你仍可修改。",
-  "selectBrandModelToLoadKeys": "请选择品牌、型号和协议以加载按键。",
-  "noKeysFound": "未找到按键。",
-  "noKeysFoundForSearch": "未找到 “{query}” 的按键。",
-  "@noKeysFoundForSearch": {
-    "placeholders": {
-      "query": {}
     }
   },
   "noMacrosToExport": "没有可导出的宏。",
@@ -1802,7 +1765,6 @@
   "iconNameTrophyFa": "奖杯 FA",
   "iconNameCrownFa": "王冠 FA",
   "iconNameGemFa": "宝石 FA",
-  "unknownLabel": "未知",
   "selectedFilesLabel": "已选择文件",
   "folderNotFoundOrInaccessible": "文件夹不存在或无法访问。",
   "importedRemoteDefaultName": "已导入遥控器",
