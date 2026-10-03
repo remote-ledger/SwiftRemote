@@ -2694,8 +2694,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get irFinderDatabaseInitFailed => 'Veritabanı başlatma başarısız.';
 
   @override
-  String get irFinderPreparingDatabase =>
-      'Yerel IR kod veritabanı hazırlanıyor…';
+  String get irFinderPreparingDatabase => 'IR kod veritabanı yükleniyor…';
 
   @override
   String get irFinderDatabaseAssistedSearch => 'Veritabanı-assisted arama';
@@ -4961,4 +4960,20 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get updatesInstallFailed => 'The installer could not be opened';
+
+  @override
+  String get irDbNeedsNetwork =>
+      'IR kod veritabanı bir markayı ilk açtığınızda indirilir, bu yüzden internet bağlantısı gerekir. Bağlantınızı kontrol edip tekrar deneyin.';
+
+  @override
+  String get irDbNeedsUpdate =>
+      'SwiftRemote’un bu sürümü güncel IR kod veritabanını okuyamıyor. Kullanmak için uygulamayı güncelleyin.';
+
+  @override
+  String get irDbSignalUnavailable =>
+      'Bu kod, çevrimiçi IR kod veritabanındaki sinyalinden gönderilir ve bu sinyal yüklenemedi. Bağlantınızı kontrol edip tekrar deneyin.';
+
+  @override
+  String get irDbSessionOutdated =>
+      'IR kod veritabanı, bu çalıştırma kaydedildikten sonra güncellendi; bu yüzden devam ettirilemez. Yeni bir çalıştırma başlatın.';
 }

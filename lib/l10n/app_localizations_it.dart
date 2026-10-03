@@ -2724,7 +2724,8 @@ class AppLocalizationsIt extends AppLocalizations {
   String get irFinderDatabaseInitFailed => 'Inizializzazione database fallita.';
 
   @override
-  String get irFinderPreparingDatabase => 'Preparazione database IR locale…';
+  String get irFinderPreparingDatabase =>
+      'Caricamento del database dei codici IR…';
 
   @override
   String get irFinderDatabaseAssistedSearch => 'Ricerca assistita da database';
@@ -4996,4 +4997,20 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get updatesInstallFailed => 'The installer could not be opened';
+
+  @override
+  String get irDbNeedsNetwork =>
+      'Il database dei codici IR viene scaricato la prima volta che apri un marchio, quindi serve una connessione a Internet. Controlla la connessione e riprova.';
+
+  @override
+  String get irDbNeedsUpdate =>
+      'Questa versione di SwiftRemote non riesce a leggere l’attuale database dei codici IR. Aggiorna l’app per usarlo.';
+
+  @override
+  String get irDbSignalUnavailable =>
+      'Questo codice viene riprodotto dal suo segnale nel database online dei codici IR, e il segnale non è stato caricato. Controlla la connessione e riprova.';
+
+  @override
+  String get irDbSessionOutdated =>
+      'Il database dei codici IR è stato aggiornato dopo il salvataggio di questa esecuzione, quindi non può essere ripresa. Avvia una nuova esecuzione.';
 }

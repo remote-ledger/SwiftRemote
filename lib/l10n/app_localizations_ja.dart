@@ -2599,7 +2599,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get irFinderDatabaseInitFailed => 'データベース初期化に失敗しました';
 
   @override
-  String get irFinderPreparingDatabase => 'ローカルIRコードDBを準備中…';
+  String get irFinderPreparingDatabase => 'IRコードデータベースを読み込み中…';
 
   @override
   String get irFinderDatabaseAssistedSearch => 'DB支援検索';
@@ -4838,4 +4838,20 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get updatesInstallFailed => 'The installer could not be opened';
+
+  @override
+  String get irDbNeedsNetwork =>
+      'IRコードデータベースはブランドを初めて開くときにダウンロードされるため、インターネット接続が必要です。接続を確認して、もう一度お試しください。';
+
+  @override
+  String get irDbNeedsUpdate =>
+      'このバージョンのSwiftRemoteは現在のIRコードデータベースを読み取れません。アプリを更新してください。';
+
+  @override
+  String get irDbSignalUnavailable =>
+      'このコードはオンラインのIRコードデータベースにある信号から送信されますが、その信号を読み込めませんでした。接続を確認して、もう一度お試しください。';
+
+  @override
+  String get irDbSessionOutdated =>
+      'この実行が保存された後にIRコードデータベースが更新されたため、再開できません。新しく実行を開始してください。';
 }

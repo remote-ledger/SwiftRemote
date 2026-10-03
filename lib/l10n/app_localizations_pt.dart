@@ -2726,8 +2726,7 @@ class AppLocalizationsPt extends AppLocalizations {
       'Falhou a inicialização de a base de dados.';
 
   @override
-  String get irFinderPreparingDatabase =>
-      'Preparando base local de códigos IR…';
+  String get irFinderPreparingDatabase => 'A carregar a base de códigos IR…';
 
   @override
   String get irFinderDatabaseAssistedSearch => 'Pesquisa asistida por BD';
@@ -4997,6 +4996,22 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get updatesInstallFailed => 'The installer could not be opened';
+
+  @override
+  String get irDbNeedsNetwork =>
+      'A base de códigos IR é transferida na primeira vez que abre uma marca, por isso precisa de ligação à Internet. Verifique a ligação e tente novamente.';
+
+  @override
+  String get irDbNeedsUpdate =>
+      'Esta versão do SwiftRemote não consegue ler a base de códigos IR atual. Atualize a aplicação para a usar.';
+
+  @override
+  String get irDbSignalUnavailable =>
+      'Este código é reproduzido a partir do seu sinal na base de códigos IR online, e esse sinal não pôde ser carregado. Verifique a ligação e tente novamente.';
+
+  @override
+  String get irDbSessionOutdated =>
+      'A base de códigos IR foi atualizada depois de esta execução ser guardada, por isso não pode ser retomada. Inicie uma nova execução.';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -7724,8 +7739,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
       'Falhou a inicialização de a base de dados.';
 
   @override
-  String get irFinderPreparingDatabase =>
-      'Preparando base local de códigos IR…';
+  String get irFinderPreparingDatabase => 'Carregando a base de códigos IR…';
 
   @override
   String get irFinderDatabaseAssistedSearch => 'Pesquisa asistida por BD';
@@ -9997,4 +10011,20 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get updatesInstallFailed => 'The installer could not be opened';
+
+  @override
+  String get irDbNeedsNetwork =>
+      'A base de códigos IR é baixada na primeira vez que você abre uma marca, então é preciso conexão com a internet. Verifique sua conexão e tente novamente.';
+
+  @override
+  String get irDbNeedsUpdate =>
+      'Esta versão do SwiftRemote não consegue ler a base de códigos IR atual. Atualize o app para usá-la.';
+
+  @override
+  String get irDbSignalUnavailable =>
+      'Este código é reproduzido a partir do seu sinal na base de códigos IR online, e esse sinal não pôde ser carregado. Verifique sua conexão e tente novamente.';
+
+  @override
+  String get irDbSessionOutdated =>
+      'A base de códigos IR foi atualizada depois que esta execução foi salva, então ela não pode ser retomada. Inicie uma nova execução.';
 }

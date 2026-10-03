@@ -1235,7 +1235,7 @@
   },
   "irFinderBruteforceTip": "Petua: guna mod Pangkalan data dahulu; brute-force paling baik dengan awalan yang diketahui, contohnya 1 hingga 4 bait pertama.",
   "irFinderDatabaseInitFailed": "Pangkalan data inisialisasi gagal.",
-  "irFinderPreparingDatabase": "Menyedia pangkalan data kod IR setempat…",
+  "irFinderPreparingDatabase": "Memuatkan pangkalan data kod IR…",
   "irFinderDatabaseAssistedSearch": "Pangkalan data-assisted pencarian",
   "irFinderBrand": "Jenama",
   "irFinderSelectBrand": "Pilih jenama",
@@ -2320,5 +2320,9 @@
   "updatesRateLimited": "GitHub is rate limiting this device, try again later",
   "updatesNoRelease": "No published release was found",
   "updatesNoAsset": "That release has no APK attached",
-  "updatesInstallFailed": "The installer could not be opened"
+  "updatesInstallFailed": "The installer could not be opened",
+  "irDbNeedsNetwork": "Pangkalan data kod IR dimuat turun kali pertama anda membuka sesuatu jenama, jadi ia memerlukan sambungan internet. Semak sambungan anda dan cuba lagi.",
+  "irDbNeedsUpdate": "Versi SwiftRemote ini tidak dapat membaca pangkalan data kod IR semasa. Kemas kini apl untuk menggunakannya.",
+  "irDbSignalUnavailable": "Kod ini dimainkan daripada isyaratnya dalam pangkalan data kod IR dalam talian, dan isyarat itu tidak dapat dimuatkan. Semak sambungan anda dan cuba lagi.",
+  "irDbSessionOutdated": "Pangkalan data kod IR dikemas kini selepas larian ini disimpan, jadi ia tidak boleh disambung semula. Mulakan larian baharu."
 }

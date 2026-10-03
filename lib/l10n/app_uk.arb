@@ -1235,7 +1235,7 @@
   },
   "irFinderBruteforceTip": "Порада: спочатку використовуйте режим бази даних; brute-force найкраще з відомим префіксом (наприклад, перші 1–4 байти).",
   "irFinderDatabaseInitFailed": "Помилка ініціалізації бази даних.",
-  "irFinderPreparingDatabase": "Підготовка локальної бази даних ІЧ-кодів…",
+  "irFinderPreparingDatabase": "Завантаження бази ІЧ-кодів…",
   "irFinderDatabaseAssistedSearch": "Пошук за допомогою бази даних",
   "irFinderBrand": "Бренд",
   "irFinderSelectBrand": "Виберіть бренд",
@@ -2320,5 +2320,9 @@
   "updatesRateLimited": "GitHub is rate limiting this device, try again later",
   "updatesNoRelease": "No published release was found",
   "updatesNoAsset": "That release has no APK attached",
-  "updatesInstallFailed": "The installer could not be opened"
+  "updatesInstallFailed": "The installer could not be opened",
+  "irDbNeedsNetwork": "База ІЧ-кодів завантажується, коли ви вперше відкриваєте бренд, тому потрібне підключення до інтернету. Перевірте з’єднання й спробуйте ще раз.",
+  "irDbNeedsUpdate": "Ця версія SwiftRemote не може прочитати поточну базу ІЧ-кодів. Оновіть застосунок, щоб користуватися нею.",
+  "irDbSignalUnavailable": "Цей код відтворюється за його сигналом із онлайн-бази ІЧ-кодів, але сигнал не вдалося завантажити. Перевірте з’єднання й спробуйте ще раз.",
+  "irDbSessionOutdated": "Базу ІЧ-кодів оновлено після збереження цього запуску, тому його не можна відновити. Почніть новий запуск."
 }

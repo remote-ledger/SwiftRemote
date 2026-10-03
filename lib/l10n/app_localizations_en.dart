@@ -2743,7 +2743,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get irFinderDatabaseInitFailed => 'Database initialization failed.';
 
   @override
-  String get irFinderPreparingDatabase => 'Preparing local IR code database…';
+  String get irFinderPreparingDatabase => 'Loading the IR code database…';
 
   @override
   String get irFinderDatabaseAssistedSearch => 'Database-assisted search';
@@ -5007,4 +5007,20 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get updatesInstallFailed => 'The installer could not be opened';
+
+  @override
+  String get irDbNeedsNetwork =>
+      'The IR code database is downloaded the first time you open a brand, so it needs an internet connection. Check your connection and try again.';
+
+  @override
+  String get irDbNeedsUpdate =>
+      'This version of SwiftRemote can’t read the current IR code database. Update the app to use it.';
+
+  @override
+  String get irDbSignalUnavailable =>
+      'This code is played from its signal in the online IR code database, and that signal could not be loaded. Check your connection and try again.';
+
+  @override
+  String get irDbSessionOutdated =>
+      'The IR code database was updated after this run was saved, so it can’t be resumed. Start a new run.';
 }

@@ -1367,7 +1367,7 @@
   },
   "irFinderBruteforceTip": "Tip: Use Database mode first; brute-force is best with a known prefix (for example, the first 1–4 bytes).",
   "irFinderDatabaseInitFailed": "Database initialization failed.",
-  "irFinderPreparingDatabase": "Preparing local IR code database…",
+  "irFinderPreparingDatabase": "Loading the IR code database…",
   "irFinderDatabaseAssistedSearch": "Database-assisted search",
   "irFinderBrand": "Brand",
   "irFinderSelectBrand": "Select brand",
@@ -2491,5 +2491,9 @@
   "updatesRateLimited": "GitHub is rate limiting this device, try again later",
   "updatesNoRelease": "No published release was found",
   "updatesNoAsset": "That release has no APK attached",
-  "updatesInstallFailed": "The installer could not be opened"
+  "updatesInstallFailed": "The installer could not be opened",
+  "irDbNeedsNetwork": "The IR code database is downloaded the first time you open a brand, so it needs an internet connection. Check your connection and try again.",
+  "irDbNeedsUpdate": "This version of SwiftRemote can’t read the current IR code database. Update the app to use it.",
+  "irDbSignalUnavailable": "This code is played from its signal in the online IR code database, and that signal could not be loaded. Check your connection and try again.",
+  "irDbSessionOutdated": "The IR code database was updated after this run was saved, so it can’t be resumed. Start a new run."
 }

@@ -2732,8 +2732,7 @@ class AppLocalizationsDe extends AppLocalizations {
       'Datenbankinitialisierung fehlgeschlagen.';
 
   @override
-  String get irFinderPreparingDatabase =>
-      'Lokale IR-Code-Datenbank wird vorbereitet…';
+  String get irFinderPreparingDatabase => 'IR-Code-Datenbank wird geladen…';
 
   @override
   String get irFinderDatabaseAssistedSearch => 'Datenbankgestützte Suche';
@@ -5008,4 +5007,20 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get updatesInstallFailed => 'The installer could not be opened';
+
+  @override
+  String get irDbNeedsNetwork =>
+      'Die IR-Code-Datenbank wird beim ersten Öffnen einer Marke heruntergeladen und braucht daher eine Internetverbindung. Prüfe deine Verbindung und versuche es erneut.';
+
+  @override
+  String get irDbNeedsUpdate =>
+      'Diese Version von SwiftRemote kann die aktuelle IR-Code-Datenbank nicht lesen. Aktualisiere die App, um sie zu nutzen.';
+
+  @override
+  String get irDbSignalUnavailable =>
+      'Dieser Code wird aus seinem Signal in der Online-IR-Code-Datenbank abgespielt, und das Signal konnte nicht geladen werden. Prüfe deine Verbindung und versuche es erneut.';
+
+  @override
+  String get irDbSessionOutdated =>
+      'Die IR-Code-Datenbank wurde aktualisiert, nachdem dieser Durchlauf gespeichert wurde, daher kann er nicht fortgesetzt werden. Starte einen neuen Durchlauf.';
 }

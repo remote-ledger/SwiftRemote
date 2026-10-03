@@ -1240,7 +1240,7 @@
   },
   "irFinderBruteforceTip": "ملاحظة: استخدم وضع قاعدة البيانات أولاً؛ القوة الغاشمة أفضل مع بادئة معروفة، مثل أول 1 إلى 4 بايتات.",
   "irFinderDatabaseInitFailed": "فشل تهيئة قاعدة البيانات.",
-  "irFinderPreparingDatabase": "جار تجهيز قاعدة بيانات IR المحلية…",
+  "irFinderPreparingDatabase": "جارٍ تحميل قاعدة بيانات رموز IR…",
   "irFinderDatabaseAssistedSearch": "بحث بمساعدة قاعدة البيانات",
   "irFinderBrand": "العلامة",
   "irFinderSelectBrand": "اختر العلامة",
@@ -2320,5 +2320,9 @@
   "updatesRateLimited": "GitHub is rate limiting this device, try again later",
   "updatesNoRelease": "No published release was found",
   "updatesNoAsset": "That release has no APK attached",
-  "updatesInstallFailed": "The installer could not be opened"
+  "updatesInstallFailed": "The installer could not be opened",
+  "irDbNeedsNetwork": "يتم تنزيل قاعدة بيانات رموز IR عند فتح علامة تجارية لأول مرة، لذا تحتاج إلى اتصال بالإنترنت. تحقق من اتصالك وحاول مرة أخرى.",
+  "irDbNeedsUpdate": "لا يستطيع هذا الإصدار من SwiftRemote قراءة قاعدة بيانات رموز IR الحالية. حدّث التطبيق لاستخدامها.",
+  "irDbSignalUnavailable": "يتم إرسال هذا الرمز من إشارته في قاعدة بيانات رموز IR على الإنترنت، وتعذّر تحميل تلك الإشارة. تحقق من اتصالك وحاول مرة أخرى.",
+  "irDbSessionOutdated": "تم تحديث قاعدة بيانات رموز IR بعد حفظ هذه الجلسة، لذا لا يمكن استئنافها. ابدأ جلسة جديدة."
 }

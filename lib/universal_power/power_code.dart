@@ -1,3 +1,5 @@
+import 'package:swiftremote/ledger_db/ledger_models.dart';
+
 class PowerCode {
   final String protocolId;
   final String hexCode;
@@ -5,7 +7,16 @@ class PowerCode {
   final String? brand;
   final String? model;
   final int? frequencyHz;
+
+  /// A curated raw pattern, in carrier cycles.
   final List<int>? rawPattern;
+
+  /// Whether this code is played from the IR code database's compiled
+  /// [signal] and never from the app's own reading of [hexCode], which for
+  /// the protocols this applies to is not the wire's. A code that requires a
+  /// signal and has none is not sent.
+  final bool requiresSignal;
+  final LedgerSignal? signal;
 
   const PowerCode({
     required this.protocolId,
@@ -15,6 +26,8 @@ class PowerCode {
     this.model,
     this.frequencyHz,
     this.rawPattern,
+    this.requiresSignal = false,
+    this.signal,
   });
 }
 

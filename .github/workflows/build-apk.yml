@@ -78,14 +78,6 @@ jobs:
       - run: flutter --version
       - run: flutter pub get
 
-      # assets/db/swiftremote.sqlite is declared in pubspec.yaml but gitignored;
-      # it is generated from the committed SQL dump. Everything downstream
-      # wants it there: the build bundles it, flutter test bundles the
-      # declared assets too, and flutter analyze checks that a declared asset
-      # exists at all, so this comes before the three of them.
-      - name: Generate the bundled IR database
-        run: python3 tools/build_ir_db.py
-
       # The analyzer has never run here, so nothing has been stopping a lint or
       # a stale import from reaching master. It goes before the Gradle build
       # because it answers in seconds rather than minutes, and before the

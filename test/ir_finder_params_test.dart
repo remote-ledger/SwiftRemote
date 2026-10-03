@@ -2,6 +2,12 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:swiftremote/ir/ir_protocol_registry.dart';
 import 'package:swiftremote/ir_finder/ir_finder_models.dart';
 
+// These tests hold the Signal Tester's own decoding of a hex code into
+// protocol fields. Brute force uses it, and so does a hit saved before the IR
+// code database came from the Remote Ledger (those keep the parameters the user
+// tested). A database row of Sony, Pioneer, JVC, Sharp, Denon, Thomson7, Proton
+// or RCC2026 no longer reaches it: it carries the ledger's compiled signal
+// instead (test/ledger_signal_policy_test.dart).
 void main() {
   test('F12 editor limits input to its 12-bit payload', () {
     expect(
@@ -45,7 +51,7 @@ void main() {
     );
   });
 
-  test('Signal Tester preserves Pioneer two-part database codes', () {
+  test('Signal Tester keeps the two-part Pioneer layout of a hex code', () {
     expect(
       IrFinderParams.buildParamsForProtocol('pioneer', 'A57AA5E0'),
       <String, dynamic>{

@@ -2694,8 +2694,7 @@ class AppLocalizationsMs extends AppLocalizations {
   String get irFinderDatabaseInitFailed => 'Pangkalan data inisialisasi gagal.';
 
   @override
-  String get irFinderPreparingDatabase =>
-      'Menyedia pangkalan data kod IR setempat…';
+  String get irFinderPreparingDatabase => 'Memuatkan pangkalan data kod IR…';
 
   @override
   String get irFinderDatabaseAssistedSearch =>
@@ -4965,4 +4964,20 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get updatesInstallFailed => 'The installer could not be opened';
+
+  @override
+  String get irDbNeedsNetwork =>
+      'Pangkalan data kod IR dimuat turun kali pertama anda membuka sesuatu jenama, jadi ia memerlukan sambungan internet. Semak sambungan anda dan cuba lagi.';
+
+  @override
+  String get irDbNeedsUpdate =>
+      'Versi SwiftRemote ini tidak dapat membaca pangkalan data kod IR semasa. Kemas kini apl untuk menggunakannya.';
+
+  @override
+  String get irDbSignalUnavailable =>
+      'Kod ini dimainkan daripada isyaratnya dalam pangkalan data kod IR dalam talian, dan isyarat itu tidak dapat dimuatkan. Semak sambungan anda dan cuba lagi.';
+
+  @override
+  String get irDbSessionOutdated =>
+      'Pangkalan data kod IR dikemas kini selepas larian ini disimpan, jadi ia tidak boleh disambung semula. Mulakan larian baharu.';
 }

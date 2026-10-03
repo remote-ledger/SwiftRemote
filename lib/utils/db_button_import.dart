@@ -1,11 +1,37 @@
 import 'package:swiftremote/ir/ir_protocol_registry.dart';
 import 'package:swiftremote/ir/ir_protocol_types.dart';
 import 'package:swiftremote/ir_finder/ir_finder_models.dart';
+import 'package:swiftremote/utils/ledger_signal.dart';
 import 'package:swiftremote/utils/remote.dart';
 import 'package:uuid/uuid.dart';
 
+/// A button for one key of the IR code database, or null when the row cannot
+/// become one.
+///
+/// A row of a protocol the ledger's compiled signal stands in for
+/// ([IrDbKeyCandidate.requiresSignal]) becomes a raw button of that signal and
+/// never reaches the hex decoding below, which for those protocols reads the
+/// database's code differently from the wire. Without its signal such a row
+/// has no button: it is not guessed at.
 IRButton? buildButtonFromDbRow(IrDbKeyCandidate row, {String unnamedLabel = ''}) {
   final String label = _deriveLabel(row, unnamedLabel: unnamedLabel);
+
+  if (row.requiresSignal) {
+    final LedgerPlayback? playback = row.signal?.playback();
+    if (playback == null) return null;
+    return IRButton(
+      id: _newId(),
+      code: null,
+      rawData: playback.rawData,
+      frequency: playback.frequencyHz,
+      image: label,
+      isImage: false,
+      necBitOrder: null,
+      protocol: null,
+      protocolParams: null,
+    );
+  }
+
   final String protoDb = row.protocol.trim();
   final String hexClean = _cleanHex(row.hexcode);
 

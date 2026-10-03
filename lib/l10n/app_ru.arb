@@ -1235,7 +1235,7 @@
   },
   "irFinderBruteforceTip": "Подсказка: сначала используйте режим База; brute-force лучше работает с известным префиксом, например первыми 1–4 байтами.",
   "irFinderDatabaseInitFailed": "Не удалось инициализировать БД.",
-  "irFinderPreparingDatabase": "Подготовка локальной базы ИК-кодов…",
+  "irFinderPreparingDatabase": "Загрузка базы ИК-кодов…",
   "irFinderDatabaseAssistedSearch": "Поиск с помощью БД",
   "irFinderBrand": "Бренд",
   "irFinderSelectBrand": "Выберите бренд",
@@ -2320,5 +2320,9 @@
   "updatesRateLimited": "GitHub is rate limiting this device, try again later",
   "updatesNoRelease": "No published release was found",
   "updatesNoAsset": "That release has no APK attached",
-  "updatesInstallFailed": "The installer could not be opened"
+  "updatesInstallFailed": "The installer could not be opened",
+  "irDbNeedsNetwork": "База ИК-кодов скачивается при первом открытии бренда, поэтому нужно подключение к интернету. Проверьте соединение и повторите попытку.",
+  "irDbNeedsUpdate": "Эта версия SwiftRemote не может прочитать текущую базу ИК-кодов. Обновите приложение, чтобы ей пользоваться.",
+  "irDbSignalUnavailable": "Этот код воспроизводится по его сигналу из онлайн-базы ИК-кодов, но сигнал не удалось загрузить. Проверьте соединение и повторите попытку.",
+  "irDbSessionOutdated": "База ИК-кодов была обновлена после сохранения этого запуска, поэтому его нельзя продолжить. Начните новый запуск."
 }

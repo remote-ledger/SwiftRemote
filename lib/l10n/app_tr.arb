@@ -1240,7 +1240,7 @@
   },
   "irFinderBruteforceTip": "İpucu: Önce Veritabanı modunu kullanın; kaba kuvvet en iyi bilinen bir önekle çalışır (örneğin ilk 1–4 bayt).",
   "irFinderDatabaseInitFailed": "Veritabanı başlatma başarısız.",
-  "irFinderPreparingDatabase": "Yerel IR kod veritabanı hazırlanıyor…",
+  "irFinderPreparingDatabase": "IR kod veritabanı yükleniyor…",
   "irFinderDatabaseAssistedSearch": "Veritabanı-assisted arama",
   "irFinderBrand": "Marka",
   "irFinderSelectBrand": "Seç marka",
@@ -2320,5 +2320,9 @@
   "updatesRateLimited": "GitHub is rate limiting this device, try again later",
   "updatesNoRelease": "No published release was found",
   "updatesNoAsset": "That release has no APK attached",
-  "updatesInstallFailed": "The installer could not be opened"
+  "updatesInstallFailed": "The installer could not be opened",
+  "irDbNeedsNetwork": "IR kod veritabanı bir markayı ilk açtığınızda indirilir, bu yüzden internet bağlantısı gerekir. Bağlantınızı kontrol edip tekrar deneyin.",
+  "irDbNeedsUpdate": "SwiftRemote’un bu sürümü güncel IR kod veritabanını okuyamıyor. Kullanmak için uygulamayı güncelleyin.",
+  "irDbSignalUnavailable": "Bu kod, çevrimiçi IR kod veritabanındaki sinyalinden gönderilir ve bu sinyal yüklenemedi. Bağlantınızı kontrol edip tekrar deneyin.",
+  "irDbSessionOutdated": "IR kod veritabanı, bu çalıştırma kaydedildikten sonra güncellendi; bu yüzden devam ettirilemez. Yeni bir çalıştırma başlatın."
 }

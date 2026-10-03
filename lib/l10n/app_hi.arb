@@ -1240,7 +1240,7 @@
   },
   "irFinderBruteforceTip": "सुझाव: उपयोग करें डेटाबेस मोड पहले; brute-force है best के साथ a ज्ञात प्रीफ़िक्स (के लिए उदाहरण, the पहले 1–4 bytes).",
   "irFinderDatabaseInitFailed": "डेटाबेस आरंभ विफल.",
-  "irFinderPreparingDatabase": "Preparing स्थानीय IR कोड डेटाबेस…",
+  "irFinderPreparingDatabase": "IR कोड डेटाबेस लोड हो रहा है…",
   "irFinderDatabaseAssistedSearch": "Database-assisted खोजें",
   "irFinderBrand": "ब्रांड",
   "irFinderSelectBrand": "ब्रांड चुनें",
@@ -2320,5 +2320,9 @@
   "updatesRateLimited": "GitHub is rate limiting this device, try again later",
   "updatesNoRelease": "No published release was found",
   "updatesNoAsset": "That release has no APK attached",
-  "updatesInstallFailed": "The installer could not be opened"
+  "updatesInstallFailed": "The installer could not be opened",
+  "irDbNeedsNetwork": "IR कोड डेटाबेस किसी ब्रांड को पहली बार खोलने पर डाउनलोड होता है, इसलिए इंटरनेट कनेक्शन चाहिए। अपना कनेक्शन जाँचें और फिर कोशिश करें।",
+  "irDbNeedsUpdate": "SwiftRemote का यह संस्करण मौजूदा IR कोड डेटाबेस नहीं पढ़ सकता। इसे इस्तेमाल करने के लिए ऐप अपडेट करें।",
+  "irDbSignalUnavailable": "यह कोड ऑनलाइन IR कोड डेटाबेस में मौजूद अपने सिग्नल से भेजा जाता है, और वह सिग्नल लोड नहीं हो सका। अपना कनेक्शन जाँचें और फिर कोशिश करें।",
+  "irDbSessionOutdated": "यह रन सहेजे जाने के बाद IR कोड डेटाबेस अपडेट हो गया है, इसलिए इसे फिर से शुरू नहीं किया जा सकता। नया रन शुरू करें।"
 }

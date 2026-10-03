@@ -1,344 +1,196 @@
 /* lib/ir_finder/irblaster_db.dart */
-import 'dart:io';
+import 'dart:async';
+import 'dart:math' as math;
 import 'dart:typed_data';
 
-import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter/foundation.dart' show visibleForTesting;
 import 'package:swiftremote/ir_finder/ir_finder_models.dart';
-import 'package:path/path.dart' as p;
-import 'package:sqflite/sqflite.dart';
+import 'package:swiftremote/ledger_db/ledger_db.dart';
+import 'package:swiftremote/ledger_db/ledger_errors.dart';
+import 'package:swiftremote/ledger_db/ledger_models.dart';
+import 'package:swiftremote/ledger_db/ledger_selection.dart';
+import 'package:swiftremote/ledger_db/sqlite_text.dart';
 
+/// A code of the Universal Power list: one of the codes whose label ranks as a
+/// power key, with the number of remotes that use it.
+class IrDbPowerRow {
+  const IrDbPowerRow({
+    required this.protocol,
+    required this.hexcode,
+    required this.label,
+    required this.nIds,
+    required this.rank,
+    required this.requiresSignal,
+  });
+
+  /// The database protocol name.
+  final String protocol;
+  final String hexcode;
+  final String label;
+  final int nIds;
+
+  /// The app's `powerLabelRank` of [label], 0 or 1.
+  final int rank;
+
+  /// Whether the code is played from the ledger's compiled signal.
+  final bool requiresSignal;
+}
+
+/// The IR code database: brands, models, protocols and keys, as the app's
+/// screens ask for them.
+///
+/// The codes come from the Remote Ledger (`lib/ledger_db/`), read online and
+/// kept on the device, and not from a bundled sqlite as they once did. The
+/// questions and their answers are the same ones, in the same order:
+///
+/// * brands and models in `COLLATE NOCASE` order, searched with `LIKE %q%`;
+/// * keys by the quick-wins rank when asked for, then `UPPER(label)`,
+///   `UPPER(protocol)`, `UPPER(hexcode)` and the remote id; filtered by
+///   protocol, hex prefix and a word in the label or the hex; paged by limit
+///   and offset.
+///
+/// "ASCII" matters: SQLite folds only the 26 ASCII letters, so `é` and `É`
+/// stay different here too (`lib/ledger_db/sqlite_text.dart`).
+///
+/// What changed on purpose:
+///
+/// * the old join returned one row per (model, key), so listing a whole brand
+///   repeated every key once per model; each key is now listed once;
+/// * nothing is read until it is asked for, and anything that needs the
+///   network says so with [LedgerDbUnavailable] instead of failing quietly;
+/// * for the protocols whose database codes the app decodes differently from
+///   the wire, a row carries the ledger's compiled [LedgerSignal] and the app
+///   plays that. See [IrDbKeyCandidate.requiresSignal].
 class IrBlasterDb {
-  IrBlasterDb._();
-  static final IrBlasterDb instance = IrBlasterDb._();
+  IrBlasterDb._(this._ledger, this._run);
 
-  static const String _assetDbPath = 'assets/db/swiftremote.sqlite';
-  static const String _dbFileName = 'swiftremote.sqlite';
+  static final IrBlasterDb instance = IrBlasterDb._(LedgerDb(), runOffloaded);
 
-  /// The name this database had before the app was renamed to SwiftRemote.
-  /// An install that upgrades from one of those builds still has the old
-  /// copy sitting in the databases directory; it is never read again, so
-  /// delete it rather than leave tens of megabytes behind.
-  static const String _legacyDbFileName = 'irblaster.sqlite';
+  @visibleForTesting
+  factory IrBlasterDb.forTesting(
+    LedgerDb ledger, {
+    LedgerRunner runner = runInline,
+  }) =>
+      IrBlasterDb._(ledger, runner);
 
-  /// Bump this by hand whenever assets/db/swiftremote.sqlite is regenerated.
-  /// The copy in the databases directory is only refreshed when the marker
-  /// beside it disagrees with this number, so a corrected database actually
-  /// reaches installs that already ran the app instead of being ignored for
-  /// the life of the install. Comparing the two by content would mean
-  /// unpacking and hashing fifty megabytes of asset every time the finder is
-  /// opened, which is far too slow for a file that changes once or twice a
-  /// year, and the app already invalidates its GitHub directory cache with
-  /// the same kind of hand-bumped constant.
-  static const int _assetDbVersion = 1;
+  final LedgerDb _ledger;
+  final LedgerRunner _run;
 
-  /// Records the [_assetDbVersion] that produced the database sitting next to
-  /// it. The marker lives in the databases directory rather than in the
-  /// shared preferences so that it is created, backed up, restored and wiped
-  /// together with the file it describes; a marker kept anywhere else could
-  /// outlive that file and vouch for a database that is no longer there.
-  static const String _dbVersionFileName = 'swiftremote.sqlite.version';
-
-  Database? _db;
+  LedgerManifest? _manifest;
+  List<LedgerBrand>? _brands;
+  Map<String, LedgerBrand> _brandByName = <String, LedgerBrand>{};
   Future<void>? _initFuture;
-  bool _perfTuned = false;
 
-  // Protocol normalization cache: normalizedKey -> canonical DB value as stored in keys.protocol
-  bool _protocolMapLoaded = false;
-  final Map<String, String> _canonicalProtocolByKey = <String, String>{};
+  /// The ledger's `dataVersion` the answers come from, once the database has
+  /// been initialised.
+  String? get dataVersion => _manifest?.dataVersion;
 
+  /// Reads the manifest and the brand list, from the device or, when they are
+  /// not there or are older than half a day, the network. Cheap once done.
+  ///
+  /// Throws [LedgerDbUnavailable] when they cannot be had from anywhere. A
+  /// failed call can simply be made again.
   Future<void> ensureInitialized() {
-    _initFuture ??= _open();
-    return _initFuture!;
-  }
-
-  Future<void> _open() async {
-    if (_db != null) return;
-
-    final String dbDir = await getDatabasesPath();
-    final String dbPath = p.join(dbDir, _dbFileName);
-    final String versionPath = p.join(dbDir, _dbVersionFileName);
-
-    await _deleteLegacyDb(dbDir);
-
-    if (!await _hasUsableDb(dbPath)) {
-      // There is no database to fall back on, so a failure here has to reach
-      // the caller rather than be swallowed into an empty finder.
-      await _installAssetDb(dbPath, versionPath);
-    } else if (await _readInstalledDbVersion(versionPath) != _assetDbVersion) {
-      try {
-        await _installAssetDb(dbPath, versionPath);
-      } catch (_) {
-        // The database on disk is readable, merely older than the one we
-        // ship. Serving slightly stale codes beats refusing to open the
-        // finder at all, and the refresh is attempted again next time
-        // because the marker is only written by a copy that completed.
-      }
+    final Future<void>? running = _initFuture;
+    if (running != null) return running;
+    final Future<void> f = _initialize();
+    _initFuture = f;
+    void done() {
+      if (identical(_initFuture, f)) _initFuture = null;
     }
 
-    // Open writable so we can create indexes (no data mutations; just performance indexes).
-    _db = await openDatabase(
-      dbPath,
-      readOnly: false,
-      singleInstance: true,
-    );
-
-    await _ensurePerformanceTuning();
+    unawaited(f.then<void>((_) => done(), onError: (Object _) => done()));
+    return f;
   }
 
-  Future<void> _deleteLegacyDb(String dbDir) async {
-    await _deleteQuietly(File(p.join(dbDir, _legacyDbFileName)));
-  }
-
-  /// Whether the databases directory already holds something worth opening.
-  /// The length test is what catches an install that was interrupted while
-  /// the asset was being unpacked: such a file still answers databaseExists
-  /// but has no header for SQLite to read.
-  Future<bool> _hasUsableDb(String dbPath) async {
-    if (!await databaseExists(dbPath)) return false;
-    final File f = File(dbPath);
-    if (!await f.exists()) return false;
-    return await f.length() > 0;
-  }
-
-  /// The asset version that produced the database on disk, or 0 when that
-  /// cannot be established. An install made before this marker existed is
-  /// therefore refreshed once: we have no way of telling which build of the
-  /// asset it copied, and a single extra copy is a small price for knowing
-  /// exactly what it holds from then on.
-  Future<int> _readInstalledDbVersion(String versionPath) async {
-    try {
-      final File marker = File(versionPath);
-      if (!await marker.exists()) return 0;
-      return int.tryParse((await marker.readAsString()).trim()) ?? 0;
-    } catch (_) {
-      // A marker we cannot read is treated as missing, so the database is
-      // rebuilt from the asset instead of being trusted on its word.
-      return 0;
+  Future<void> _initialize() async {
+    final LedgerManifest manifest = await _ledger.manifest();
+    if (_manifest?.dataVersion != manifest.dataVersion) {
+      _selections.clear();
+      _pinned = null;
+      _brands = null;
     }
-  }
-
-  /// Unpacks the bundled database over [targetPath] and records the asset
-  /// version it came from.
-  Future<void> _installAssetDb(String targetPath, String versionPath) async {
-    final ByteData data = await rootBundle.load(_assetDbPath);
-    final bytes =
-        data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
-
-    final File target = File(targetPath);
-    await target.parent.create(recursive: true);
-
-    // Write the fifty megabytes to a staging file and only then move it into
-    // place. Writing straight over the database would, if the process were
-    // killed or the disk filled up half way through, leave a truncated file
-    // that still looks present and non-empty and would be opened as though
-    // it were a real database.
-    final File staging = File('$targetPath.new');
-    try {
-      await staging.writeAsBytes(bytes, flush: true);
-
-      // Drop the marker before disturbing the database. Everything from here
-      // on is a fast metadata operation, and an interruption in the middle of
-      // them leaves either no database or a complete one, both of which the
-      // next open rebuilds because no marker vouches for them.
-      await _deleteQuietly(File(versionPath));
-      await _deleteQuietly(target);
-
-      // SQLite keeps its rollback journal beside the database. One left over
-      // from the previous copy describes pages of a file that no longer
-      // exists, so letting SQLite replay it onto the new one would corrupt
-      // the very database we just installed.
-      for (final String suffix in const <String>['-journal', '-wal', '-shm']) {
-        await _deleteQuietly(File('$targetPath$suffix'));
-      }
-
-      await staging.rename(targetPath);
-    } catch (_) {
-      await _deleteQuietly(staging);
-      rethrow;
+    final List<LedgerBrand> brands = await _ledger.brands();
+    if (!identical(brands, _brands)) {
+      _brandByName = <String, LedgerBrand>{
+        for (final LedgerBrand b in brands) b.name: b,
+      };
+      _brands = brands;
     }
-
-    try {
-      await File(versionPath).writeAsString('$_assetDbVersion', flush: true);
-    } catch (_) {
-      // The database itself is in place; a marker that cannot be written
-      // only costs a redundant copy next time, which is not worth failing
-      // the open over.
-    }
+    _manifest = manifest;
   }
 
-  Future<void> _deleteQuietly(File file) async {
-    try {
-      if (await file.exists()) {
-        await file.delete();
-      }
-    } catch (_) {
-      // Housekeeping only: a file that cannot be removed must not stop the
-      // finder from opening the database we actually use.
-    }
+  Future<void> _ready() {
+    if (_manifest != null && _brands != null) return Future<void>.value();
+    return ensureInitialized();
   }
 
-  Database _requireDb() {
-    final Database? db = _db;
-    if (db == null) {
-      throw StateError('IrBlasterDb not initialized. Call ensureInitialized() first.');
-    }
-    return db;
-  }
+  // ---- protocol normalisation ----
 
-  Future<void> _ensurePerformanceTuning() async {
-    if (_perfTuned) return;
-    final db = _requireDb();
-
-    Future<void> tryExec(String sql) async {
-      try {
-        await db.execute(sql);
-      } catch (_) {
-        // ignore
-      }
-    }
-
-    await tryExec('PRAGMA temp_store=MEMORY;');
-    await tryExec('PRAGMA cache_size=-20000;'); // ~20MB cache (negative => KB pages)
-    await tryExec('PRAGMA mmap_size=268435456;'); // 256MB mmap (best-effort)
-    await tryExec('PRAGMA synchronous=NORMAL;');
-    await tryExec('PRAGMA foreign_keys=OFF;');
-
-    // Core indexes
-    await tryExec('CREATE INDEX IF NOT EXISTS idx_keys_protocol_id ON keys(protocol, id);');
-    await tryExec('CREATE INDEX IF NOT EXISTS idx_keys_id ON keys(id);');
-    await tryExec('CREATE INDEX IF NOT EXISTS idx_models_brand_id ON models(brand, id);');
-    await tryExec('CREATE INDEX IF NOT EXISTS idx_models_brand_model ON models(brand, model);');
-    await tryExec('CREATE INDEX IF NOT EXISTS idx_brands_name_nocase ON brands(name COLLATE NOCASE);');
-
-    // Helpful optional indexes for case-insensitive / normalized protocol matching:
-    await tryExec('CREATE INDEX IF NOT EXISTS idx_keys_protocol_nocase_id ON keys(protocol COLLATE NOCASE, id);');
-
-    // Expression index (best-effort; supported on modern SQLite). If unsupported, it will be ignored.
-    await tryExec(
-      "CREATE INDEX IF NOT EXISTS idx_keys_protocol_norm_id ON keys("
-      "lower(replace(replace(replace(protocol,'-',''),'_',''),' ','')), id"
-      ");",
-    );
-
-    await tryExec('PRAGMA optimize;');
-
-    _perfTuned = true;
-  }
-
-  // ---- Protocol normalization helpers ----
-
-  static String _protocolKey(String s) {
-    // Keep only [a-z0-9] after lowercasing; this makes:
-    // "RCA-38" == "rca_38" == "RCA 38" -> "rca38"
-    return s
-        .trim()
-        .toLowerCase()
-        .replaceAll(RegExp(r'[^a-z0-9]+'), '');
-  }
-
-  static String _sqlProtocolNormExpr(String column) {
-    // Mirror a subset of _protocolKey() in SQL (fast enough + indexable via expression index).
-    // We normalize by removing '-', '_' and spaces and lowercasing.
-    return "lower(replace(replace(replace($column,'-',''),'_',''),' ',''))";
-  }
-
-  Future<void> _ensureProtocolMapLoaded() async {
-    if (_protocolMapLoaded) return;
-    final db = _requireDb();
-
-    // Distinct over protocol is usually cheap with idx_keys_protocol_id.
-    final rows = await db.rawQuery('SELECT DISTINCT protocol FROM keys WHERE protocol IS NOT NULL;');
-    for (final r in rows) {
-      final v = r['protocol'];
-      if (v == null) continue;
-      final String protoStr = v.toString();
-      final String key = _protocolKey(protoStr);
-      if (key.isEmpty) continue;
-      _canonicalProtocolByKey.putIfAbsent(key, () => protoStr);
-    }
-
-    _protocolMapLoaded = true;
-  }
-
-  Future<_ProtocolFilter?> _resolveProtocolFilter(String? selectedProtocolId) async {
-    final String? s = (selectedProtocolId == null || selectedProtocolId.trim().isEmpty)
-        ? null
-        : selectedProtocolId.trim();
+  _ProtocolFilter? _resolveProtocolFilter(String? selectedProtocolId) {
+    final String? s =
+        (selectedProtocolId == null || selectedProtocolId.trim().isEmpty)
+            ? null
+            : selectedProtocolId.trim();
     if (s == null) return null;
-
-    final String key = _protocolKey(s);
+    final String key = protocolKey(s);
     if (key.isEmpty) return null;
 
-    await _ensureProtocolMapLoaded();
-
-    // If DB has a canonical spelling for this normalized key, use it (fast path).
-    final String? canonical = _canonicalProtocolByKey[key];
-
-    return _ProtocolFilter(
-      normalizedKey: key,
-      canonicalDbValue: canonical,
-    );
-  }
-
-  void _appendProtocolWhere({
-    required List<String> where,
-    required List<Object?> args,
-    required String column,
-    required _ProtocolFilter filter,
-  }) {
-    if (filter.canonicalDbValue != null) {
-      // Exact DB value -> uses idx_keys_protocol_id
-      where.add('$column = ?');
-      args.add(filter.canonicalDbValue);
-    } else {
-      // Fallback normalized expression (works even if DB uses different separators/case)
-      where.add('${_sqlProtocolNormExpr(column)} = ?');
-      args.add(filter.normalizedKey);
+    int mask = 0;
+    for (final LedgerProtocol p in _manifest!.protocols) {
+      if (p.key == key) mask |= 1 << p.index;
     }
+    return _ProtocolFilter(key: key, mask: mask);
   }
 
-  // ---- Public API ----
+  static String? _trimmedOrNull(String? s) =>
+      (s == null || s.trim().isEmpty) ? null : s.trim();
 
-  Future<List<String>> listProtocolsFor({required String brand, required String model}) async {
-    await ensureInitialized();
-    final db = _requireDb();
+  static List<T> _page<T>(Iterable<T> items, int limit, int offset) {
+    Iterable<T> it = items;
+    if (offset > 0) it = it.skip(offset);
+    if (limit >= 0) it = it.take(limit);
+    return it.toList(growable: false);
+  }
+
+  // ---- brands, models, protocols ----
+
+  Future<List<String>> listProtocolsFor({
+    required String brand,
+    required String model,
+  }) async {
+    await _ready();
     final String b = brand.trim();
     final String m = model.trim();
     if (b.isEmpty || m.isEmpty) return <String>[];
-
-    final rows = await db.rawQuery('''
-      SELECT DISTINCT k.protocol AS protocol
-      FROM models m
-      JOIN keys k ON k.id = m.id
-      WHERE m.brand = ? AND m.model = ? AND k.protocol IS NOT NULL
-      ORDER BY UPPER(k.protocol) ASC
-    ''', [b, m]);
-    return rows
-        .map((r) => (r['protocol'] as String?)?.trim())
-        .whereType<String>()
-        .toList(growable: false);
+    final LedgerBrand? entry = _brandByName[b];
+    if (entry == null) return <String>[];
+    final LedgerBrandModels models = await _ledger.brandModels(entry.key);
+    final LedgerModel? found = models.model(m);
+    if (found == null) return <String>[];
+    return _protocolNames(models.maskOf(found.idIndexes));
   }
 
   /// Returns distinct protocols used by [brand] across all its models,
   /// ordered alphabetically. Used to auto-adjust the protocol when a
   /// brand is selected in the IR Finder without a protocol filter.
   Future<List<String>> listProtocolsForBrand(String brand) async {
-    await ensureInitialized();
-    final db = _requireDb();
+    await _ready();
     final String b = brand.trim();
     if (b.isEmpty) return <String>[];
+    final LedgerBrand? entry = _brandByName[b];
+    if (entry == null) return <String>[];
+    return _protocolNames(entry.protoMask);
+  }
 
-    final rows = await db.rawQuery('''
-      SELECT DISTINCT k.protocol AS protocol
-      FROM models m
-      JOIN keys k ON k.id = m.id
-      WHERE m.brand = ? AND k.protocol IS NOT NULL
-      ORDER BY UPPER(k.protocol) ASC
-    ''', [b]);
-    return rows
-        .map((r) => (r['protocol'] as String?)?.trim())
-        .whereType<String>()
-        .toList(growable: false);
+  /// The protocols in [mask], by `UPPER(name)`.
+  List<String> _protocolNames(int mask) {
+    final List<String> names = <String>[
+      for (final LedgerProtocol p in _manifest!.protocols)
+        if ((mask >> p.index) & 1 == 1) p.db.trim(),
+    ]..sort(
+        (String a, String b) => compareBinary(asciiUpper(a), asciiUpper(b)));
+    return names;
   }
 
   Future<List<String>> listBrands({
@@ -347,48 +199,21 @@ class IrBlasterDb {
     int limit = 60,
     int offset = 0,
   }) async {
-    await ensureInitialized();
-    final db = _requireDb();
+    await _ready();
+    final String? q = _trimmedOrNull(search);
+    final _ProtocolFilter? pf = _resolveProtocolFilter(protocolId);
 
-    final String? q = (search == null || search.trim().isEmpty) ? null : search.trim();
-    final _ProtocolFilter? pf = await _resolveProtocolFilter(protocolId);
-
-    // Always query through models+keys so the returned brand names are
-    // exactly the same strings stored in models.brand. This is critical for
-    // consistency: listProtocolsForBrand, listModelsDistinct, and the signal
-    // test all query models.brand with an exact-match WHERE clause. If we
-    // returned brand names from the separate `brands` display table they might
-    // differ in capitalisation or spacing (e.g. "O General" vs "O-General"),
-    // causing those follow-up queries to return zero results.
-    final where = <String>[];
-    final args = <Object?>[];
-
+    // Brand names are exactly the strings the models were filed under, so the
+    // follow-up queries that match them exactly (protocols, models, keys)
+    // find what the list showed.
+    Iterable<LedgerBrand> brands = _brands!;
     if (pf != null) {
-      _appendProtocolWhere(where: where, args: args, column: 'k.protocol', filter: pf);
+      brands = brands.where((LedgerBrand b) => (b.protoMask & pf.mask) != 0);
     }
-
     if (q != null) {
-      where.add('m.brand LIKE ? ESCAPE \'\\\'');
-      args.add('%${_escapeLike(q)}%');
+      brands = brands.where((LedgerBrand b) => likeContains(b.name, q));
     }
-
-    final String whereSql =
-        where.isEmpty ? '' : 'WHERE ${where.join(' AND ')}';
-
-    final sql = '''
-      SELECT DISTINCT m.brand AS name
-      FROM models m
-      JOIN keys k ON k.id = m.id
-      $whereSql
-      ORDER BY name COLLATE NOCASE ASC
-      LIMIT ? OFFSET ?
-    ''';
-
-    args.add(limit);
-    args.add(offset);
-
-    final rows = await db.rawQuery(sql, args);
-    return rows.map((r) => (r['name'] as String)).toList(growable: false);
+    return _page(brands.map((LedgerBrand b) => b.name), limit, offset);
   }
 
   Future<List<String>> listModelsDistinct({
@@ -398,63 +223,113 @@ class IrBlasterDb {
     int limit = 60,
     int offset = 0,
   }) async {
-    await ensureInitialized();
-    final db = _requireDb();
-
+    await _ready();
     final String b = brand.trim();
     if (b.isEmpty) return <String>[];
+    final LedgerBrand? entry = _brandByName[b];
+    if (entry == null) return <String>[];
 
-    final String? q = (search == null || search.trim().isEmpty) ? null : search.trim();
-    final _ProtocolFilter? pf = await _resolveProtocolFilter(protocolId);
+    final String? q = _trimmedOrNull(search);
+    final _ProtocolFilter? pf = _resolveProtocolFilter(protocolId);
+    final LedgerBrandModels models = await _ledger.brandModels(entry.key);
 
-    // No protocol filter: keep it simple.
-    if (pf == null) {
-      final where = <String>['brand = ?'];
-      final args = <Object?>[b];
-
-      if (q != null) {
-        where.add('model LIKE ? ESCAPE \'\\\'');
-        args.add('%${_escapeLike(q)}%');
-      }
-
-      final rows = await db.query(
-        'models',
-        columns: const <String>['model'],
-        distinct: true,
-        where: where.join(' AND '),
-        whereArgs: args,
-        orderBy: 'model COLLATE NOCASE ASC',
-        limit: limit,
-        offset: offset,
+    Iterable<LedgerModel> list = models.models;
+    if (pf != null) {
+      list = list.where(
+        (LedgerModel m) => (models.maskOf(m.idIndexes) & pf.mask) != 0,
       );
-      return rows.map((r) => (r['model'] as String)).toList(growable: false);
     }
-
-    // Protocol-filtered models for a brand:
-    final where = <String>['m.brand = ?'];
-    final args = <Object?>[b];
-
-    _appendProtocolWhere(where: where, args: args, column: 'k.protocol', filter: pf);
-
     if (q != null) {
-      where.add('m.model LIKE ? ESCAPE \'\\\'');
-      args.add('%${_escapeLike(q)}%');
+      list = list.where((LedgerModel m) => likeContains(m.name, q));
+    }
+    return _page(list.map((LedgerModel m) => m.name), limit, offset);
+  }
+
+  // ---- keys ----
+
+  final Map<String, _Selection> _selections = <String, _Selection>{};
+  _Selection? _pinned;
+
+  LedgerSelectionRequest _request({
+    String? model,
+    String? selectedProtocolId,
+    required bool quickWinsFirst,
+    String? hexPrefixUpper,
+    String? search,
+  }) {
+    final String? m = _trimmedOrNull(model);
+    final String? prefix =
+        (hexPrefixUpper == null || hexPrefixUpper.trim().isEmpty)
+            ? null
+            : hexPrefixUpper.replaceAll(RegExp(r'\s+'), '').toUpperCase();
+    return LedgerSelectionRequest(
+      model: m,
+      protocolKey: _resolveProtocolFilter(selectedProtocolId)?.key,
+      quickWinsFirst: quickWinsFirst,
+      hexPrefix: prefix,
+      search: _trimmedOrNull(search),
+    );
+  }
+
+  /// The rows a question selects, in order, kept by the question's arguments:
+  /// the IR Finder asks for them one at a time (`limit: 1`, offset 0, 1, 2,
+  /// ...) and must not pay for the filtering and the sort each time.
+  Future<_Selection?> _selection(
+    String brand,
+    LedgerSelectionRequest request, {
+    required bool sorted,
+  }) async {
+    final LedgerBrand? entry = _brandByName[brand];
+    if (entry == null) return null;
+    final String signature =
+        '${entry.key}\u0001${request.signature}\u0001$sorted';
+
+    final _Selection? pinned = _pinned;
+    if (pinned != null && pinned.signature == signature) return pinned;
+    final _Selection? cached = _selections.remove(signature);
+    if (cached != null) {
+      _selections[signature] = cached;
+      return cached;
     }
 
-    final sql = '''
-      SELECT DISTINCT m.model AS model
-      FROM models m
-      JOIN keys k ON k.id = m.id
-      WHERE ${where.join(' AND ')}
-      ORDER BY model COLLATE NOCASE ASC
-      LIMIT ? OFFSET ?
-    ''';
+    final LedgerBrandData data = await _ledger.brand(entry.key);
+    final LedgerSelectionInput input = LedgerSelectionInput(
+      keys: data.keys,
+      models: data.models,
+      protocolNames: <String>[
+        for (final LedgerProtocol p in _manifest!.protocols) p.db,
+      ],
+      request: request,
+      sorted: sorted,
+    );
+    final int estimate = request.model == null
+        ? data.keys.rowCount
+        : _modelRows(data, request.model!);
+    final Int32List rows = await _runSelection(_run, input, estimate * 8);
+    final _Selection selection = _Selection(
+      signature: signature,
+      brand: entry,
+      data: data,
+      model: request.model,
+      rows: rows,
+    );
+    _selections[signature] = selection;
+    while (_selections.length > 6) {
+      _selections.remove(_selections.keys.first);
+    }
+    return selection;
+  }
 
-    args.add(limit);
-    args.add(offset);
-
-    final rows = await db.rawQuery(sql, args);
-    return rows.map((r) => (r['model'] as String)).toList(growable: false);
+  static int _modelRows(LedgerBrandData data, String model) {
+    final LedgerModel? m = data.models.model(model);
+    if (m == null) return 0;
+    int total = 0;
+    for (final int i in m.idIndexes) {
+      if (i >= 0 && i < data.models.idKeyCounts.length) {
+        total += data.models.idKeyCounts[i];
+      }
+    }
+    return total;
   }
 
   Future<List<IrDbKeyCandidate>> fetchCandidateKeys({
@@ -467,106 +342,66 @@ class IrBlasterDb {
     int limit = 100,
     int offset = 0,
   }) async {
-    await ensureInitialized();
-    final db = _requireDb();
-
+    await _ready();
     final String b = brand.trim();
     if (b.isEmpty) return <IrDbKeyCandidate>[];
 
-    final String? m = (model == null || model.trim().isEmpty) ? null : model.trim();
-    final String? prefix = (hexPrefixUpper == null || hexPrefixUpper.trim().isEmpty)
-        ? null
-        : hexPrefixUpper.replaceAll(RegExp(r'\s+'), '').toUpperCase();
+    final _Selection? selection = await _selection(
+      b,
+      _request(
+        model: model,
+        selectedProtocolId: selectedProtocolId,
+        quickWinsFirst: quickWinsFirst,
+        hexPrefixUpper: hexPrefixUpper,
+        search: search,
+      ),
+      sorted: true,
+    );
+    if (selection == null) return <IrDbKeyCandidate>[];
 
-    final _ProtocolFilter? pf = await _resolveProtocolFilter(selectedProtocolId);
+    final int from = math.min(math.max(offset, 0), selection.rows.length);
+    final int to = limit < 0
+        ? selection.rows.length
+        : math.min(from + limit, selection.rows.length);
+    if (from >= to) return <IrDbKeyCandidate>[];
 
-    final args = <Object?>[];
-    final where = <String>[];
-
-    where.add('m.brand = ?');
-    args.add(b);
-
-    if (m != null) {
-      where.add('m.model = ?');
-      args.add(m);
+    final LedgerBrandKeys keys = selection.data.keys;
+    // Load the signals the page needs before building any row, so that a
+    // network failure fails the whole page rather than leaving a row that
+    // looks usable and is not.
+    final Map<int, LedgerSignalShard> shards = <int, LedgerSignalShard>{};
+    for (int i = from; i < to; i++) {
+      final int protocolIndex = keys.protocols[selection.rows[i]];
+      final LedgerProtocol? protocol = _protocolAt(protocolIndex);
+      if (protocol != null &&
+          protocol.appReadingDiffers &&
+          !shards.containsKey(protocolIndex)) {
+        shards[protocolIndex] = await _ledger.signalShard(protocol.db);
+      }
     }
 
-    if (pf != null) {
-      _appendProtocolWhere(where: where, args: args, column: 'k.protocol', filter: pf);
-    }
-
-    if (prefix != null) {
-      where.add('UPPER(k.hexcode) LIKE ?');
-      args.add('$prefix%');
-    }
-
-    final String? q = (search == null || search.trim().isEmpty) ? null : _escapeLike(search.trim());
-    if (q != null) {
-      where.add('(UPPER(k.label) LIKE UPPER(?) ESCAPE \'\\\' OR UPPER(k.hexcode) LIKE UPPER(?))');
-      args.add('%$q%');
-      args.add('%${q.toUpperCase()}%');
-    }
-
-    final String orderBy = quickWinsFirst
-        ? '''
- CASE
- WHEN UPPER(k.label) LIKE '%POWER%' OR UPPER(k.label) IN ('PWR','POWER','ON','OFF') THEN 0
- WHEN UPPER(k.label) LIKE '%MUTE%' OR UPPER(k.label) = 'MUTE' THEN 1
- WHEN UPPER(k.label) LIKE 'VOL%' OR UPPER(k.label) LIKE '%VOLUME%' THEN 2
- WHEN UPPER(k.label) LIKE 'CH%' OR UPPER(k.label) LIKE '%CHANNEL%' THEN 3
- WHEN UPPER(k.label) IN ('OK','ENTER','MENU','HOME','BACK','UP','DOWN','LEFT','RIGHT') THEN 4
- ELSE 9
- END ASC,
- UPPER(k.label) ASC,
- UPPER(k.protocol) ASC,
- UPPER(k.hexcode) ASC,
- k.id ASC
- '''
-        : '''
- UPPER(k.label) ASC,
- UPPER(k.protocol) ASC,
- UPPER(k.hexcode) ASC,
- k.id ASC
- ''';
-
-    final sql = '''
- SELECT
-   k.id AS remote_id,
-   k.label AS label,
-   k.hexcode AS hexcode,
-   k.protocol AS protocol,
-   m.brand AS brand,
-   m.model AS model
- FROM models m
- JOIN keys k ON k.id = m.id
- WHERE ${where.join(' AND ')}
- ORDER BY $orderBy
- LIMIT ? OFFSET ?
-''';
-
-    args.add(limit);
-    args.add(offset);
-
-    final rows = await db.rawQuery(sql, args);
-
-    return rows.map((r) {
-      final int remoteId = (r['remote_id'] as int);
-      final String label = (r['label'] as String);
-      final String hex = (r['hexcode'] as String);
-      final String protocol = (r['protocol'] as String);
-      final String rb = (r['brand'] as String);
-      final String rm = (r['model'] as String);
-
-      return IrDbKeyCandidate(
-        id: remoteId,
-        protocol: protocol,
+    final List<IrDbKeyCandidate> out = <IrDbKeyCandidate>[];
+    for (int i = from; i < to; i++) {
+      final int row = selection.rows[i];
+      final LedgerProtocol? protocol = _protocolAt(keys.protocols[row]);
+      if (protocol == null) continue;
+      final int id = keys.ids[keys.blockOfRow(row)];
+      final String hex = keys.hexes[row];
+      out.add(IrDbKeyCandidate(
+        id: id,
+        protocol: protocol.db,
         hexcode: hex,
-        remoteId: remoteId,
-        label: label,
-        brand: rb,
-        model: rm,
-      );
-    }).toList(growable: false);
+        remoteId: id,
+        label: keys.labels[row],
+        brand: selection.brand.name,
+        model: selection.model ?? selection.data.models.firstModelOfId(id),
+        requiresSignal: protocol.appReadingDiffers,
+        signal: protocol.appReadingDiffers
+            ? _signalOf(protocol, shards[protocol.index]!, hex)
+            : null,
+      ));
+    }
+    return out;
   }
 
   Future<int> countCandidateKeys({
@@ -576,70 +411,182 @@ class IrBlasterDb {
     String? hexPrefixUpper,
     String? search,
   }) async {
-    await ensureInitialized();
-    final db = _requireDb();
-
+    await _ready();
     final String b = brand.trim();
     if (b.isEmpty) return 0;
-
-    final String? m = (model == null || model.trim().isEmpty) ? null : model.trim();
-    final String? prefix = (hexPrefixUpper == null || hexPrefixUpper.trim().isEmpty)
-        ? null
-        : hexPrefixUpper.replaceAll(RegExp(r'\s+'), '').toUpperCase();
-
-    final _ProtocolFilter? pf = await _resolveProtocolFilter(selectedProtocolId);
-
-    final args = <Object?>[];
-    final where = <String>[];
-
-    where.add('m.brand = ?');
-    args.add(b);
-
-    if (m != null) {
-      where.add('m.model = ?');
-      args.add(m);
-    }
-
-    if (pf != null) {
-      _appendProtocolWhere(where: where, args: args, column: 'k.protocol', filter: pf);
-    }
-
-    if (prefix != null) {
-      where.add('UPPER(k.hexcode) LIKE ?');
-      args.add('$prefix%');
-    }
-
-    final String? q = (search == null || search.trim().isEmpty) ? null : _escapeLike(search.trim());
-    if (q != null) {
-      where.add('(UPPER(k.label) LIKE UPPER(?) ESCAPE \'\\\' OR UPPER(k.hexcode) LIKE UPPER(?))');
-      args.add('%$q%');
-      args.add('%${q.toUpperCase()}%');
-    }
-
-    final sql = '''
- SELECT COUNT(1) AS cnt
- FROM models m
- JOIN keys k ON k.id = m.id
- WHERE ${where.join(' AND ')}
-''';
-
-    final rows = await db.rawQuery(sql, args);
-    if (rows.isEmpty) return 0;
-    final dynamic v = rows.first['cnt'];
-    if (v is int) return v;
-    return int.tryParse('$v') ?? 0;
+    final _Selection? selection = await _selection(
+      b,
+      _request(
+        model: model,
+        selectedProtocolId: selectedProtocolId,
+        quickWinsFirst: false,
+        hexPrefixUpper: hexPrefixUpper,
+        search: search,
+      ),
+      sorted: false,
+    );
+    return selection?.rows.length ?? 0;
   }
 
-  static String _escapeLike(String input) {
-    return input.replaceAll('\\', '\\\\').replaceAll('%', '\\%').replaceAll('_', '\\_');
+  /// Loads everything a run through a selection will touch (the brand's files,
+  /// the filtered and sorted rows, and the signals of every protocol that is
+  /// played from one) and returns how many keys it holds. A later
+  /// [fetchCandidateKeys] with the same arguments then needs no network, so a
+  /// timer driving it one row at a time cannot hit a failure half way.
+  ///
+  /// The selection stays in memory until the next call.
+  Future<int> prepareCandidates({
+    required String brand,
+    String? model,
+    String? selectedProtocolId,
+    required bool quickWinsFirst,
+    String? hexPrefixUpper,
+    String? search,
+  }) async {
+    await _ready();
+    final String b = brand.trim();
+    if (b.isEmpty) return 0;
+    final _Selection? selection = await _selection(
+      b,
+      _request(
+        model: model,
+        selectedProtocolId: selectedProtocolId,
+        quickWinsFirst: quickWinsFirst,
+        hexPrefixUpper: hexPrefixUpper,
+        search: search,
+      ),
+      sorted: true,
+    );
+    if (selection == null) return 0;
+
+    final Set<int> present = <int>{};
+    final LedgerBrandKeys keys = selection.data.keys;
+    for (int i = 0; i < selection.rows.length; i++) {
+      present.add(keys.protocols[selection.rows[i]]);
+    }
+    for (final int index in present) {
+      final LedgerProtocol? protocol = _protocolAt(index);
+      if (protocol != null && protocol.appReadingDiffers) {
+        await _ledger.signalShard(protocol.db);
+      }
+    }
+    _pinned = selection;
+    return selection.rows.length;
+  }
+
+  /// The content hash of a brand's key file (`b/<key>.m.json`'s `hash`), which
+  /// changes when any key of the brand does; null for a brand the database
+  /// does not have.
+  Future<String?> brandContentHash(String brand) async {
+    await _ready();
+    final LedgerBrand? entry = _brandByName[brand.trim()];
+    if (entry == null) return null;
+    return (await _ledger.brandModels(entry.key)).hash;
+  }
+
+  // ---- signals and the power list ----
+
+  LedgerProtocol? _protocolAt(int index) {
+    final List<LedgerProtocol> list = _manifest!.protocols;
+    return (index >= 0 && index < list.length) ? list[index] : null;
+  }
+
+  LedgerSignal? _signalOf(
+    LedgerProtocol protocol,
+    LedgerSignalShard shard,
+    String hex,
+  ) {
+    final String? pronto = shard.signals[hex];
+    if (pronto == null) return null;
+    return LedgerSignal(
+      protocol: protocol.db,
+      hexcode: hex,
+      pronto: pronto,
+      carrierHz: shard.carrierHz ?? protocol.carrierHz,
+      minSends: shard.minSends ?? protocol.minSends,
+      play: shard.play ?? protocol.play,
+    );
+  }
+
+  /// Whether codes of the database protocol [dbProtocol] are played from the
+  /// ledger's compiled signal. Needs [ensureInitialized] to have succeeded.
+  bool requiresSignal(String dbProtocol) {
+    final LedgerManifest? m = _manifest;
+    if (m == null) return false;
+    return m.protocolByDb(dbProtocol)?.appReadingDiffers ?? false;
+  }
+
+  /// The compiled signal of one code of a protocol that has them, or null
+  /// when the database has none for that code. Loads the protocol's file on
+  /// first use (once per protocol).
+  ///
+  /// Throws [LedgerDbUnavailable] when the file is neither cached nor
+  /// reachable.
+  Future<LedgerSignal?> signalFor(String dbProtocol, String hexcode) async {
+    await _ready();
+    final LedgerProtocol? protocol = _manifest!.protocolByDb(dbProtocol);
+    if (protocol == null || !protocol.appReadingDiffers) return null;
+    final LedgerSignalShard shard = await _ledger.signalShard(protocol.db);
+    return _signalOf(protocol, shard, hexcode);
+  }
+
+  /// The Universal Power list for all brands: the codes whose label ranks as
+  /// a power key, the ones used by most remotes first.
+  Future<List<IrDbPowerRow>> powerRows() async {
+    await _ready();
+    final List<LedgerPowerRow> rows = await _ledger.power();
+    final List<IrDbPowerRow> out = <IrDbPowerRow>[];
+    for (final LedgerPowerRow r in rows) {
+      final LedgerProtocol? protocol = _protocolAt(r.protoIdx);
+      if (protocol == null) continue;
+      out.add(IrDbPowerRow(
+        protocol: protocol.db,
+        hexcode: r.hex,
+        label: r.label,
+        nIds: r.nIds,
+        rank: r.rank,
+        requiresSignal: protocol.appReadingDiffers,
+      ));
+    }
+    return out;
   }
 }
 
+/// A top-level function, so that the closure handed to the runner captures
+/// only [input], which can cross to another isolate, and not the database.
+Future<Int32List> _runSelection(
+  LedgerRunner run,
+  LedgerSelectionInput input,
+  int weight,
+) {
+  return run<Int32List>(() => buildSelection(input), weight: weight);
+}
+
 class _ProtocolFilter {
-  final String normalizedKey;
-  final String? canonicalDbValue;
-  const _ProtocolFilter({
-    required this.normalizedKey,
-    required this.canonicalDbValue,
+  const _ProtocolFilter({required this.key, required this.mask});
+
+  /// The normalised key the caller's spelling reduces to.
+  final String key;
+
+  /// The bits of the manifest's protocols that have that key. Zero for a
+  /// spelling the database has no protocol for, which matches nothing.
+  final int mask;
+}
+
+class _Selection {
+  _Selection({
+    required this.signature,
+    required this.brand,
+    required this.data,
+    required this.model,
+    required this.rows,
   });
+
+  final String signature;
+  final LedgerBrand brand;
+  final LedgerBrandData data;
+  final String? model;
+
+  /// Row numbers of [LedgerBrandData.keys], in the order they are listed.
+  final Int32List rows;
 }

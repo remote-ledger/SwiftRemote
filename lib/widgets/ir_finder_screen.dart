@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:swiftremote/ir/ir_protocol_registry.dart';
 import 'package:swiftremote/ir/ir_protocol_types.dart';
+import 'package:swiftremote/ir_finder/ir_finder_db_candidate.dart';
 import 'package:swiftremote/ir_finder/ir_finder_models.dart';
 import 'package:swiftremote/ir_finder/ir_finder_prefs.dart';
 import 'package:swiftremote/ir_finder/ir_finder_run_controller.dart';
@@ -11,14 +12,16 @@ import 'package:swiftremote/ir_finder/ir_finder_search.dart';
 import 'package:swiftremote/ir_finder/ir_prefix.dart';
 import 'package:swiftremote/ir_finder/irblaster_db.dart';
 import 'package:swiftremote/l10n/l10n.dart';
+import 'package:swiftremote/ledger_db/ledger_errors.dart';
 import 'package:swiftremote/state/continue_context_prefs.dart';
 import 'package:swiftremote/state/haptics.dart';
 import 'package:swiftremote/state/last_action_strip.dart';
 import 'package:swiftremote/state/orientation_pref.dart';
 import 'package:swiftremote/utils/ir.dart';
+import 'package:swiftremote/utils/ledger_signal.dart';
 import 'package:swiftremote/utils/remote.dart';
 import 'package:swiftremote/state/remotes_state.dart';
-import 'package:uuid/uuid.dart';
+import 'package:swiftremote/widgets/ledger_db_error_view.dart';
 import 'dart:io';
 import 'dart:convert';
 import 'package:path_provider/path_provider.dart';
@@ -57,6 +60,9 @@ class _IrFinderScreenState extends State<IrFinderScreen>
                 'dbLabel': h.dbLabel,
                 'dbRemoteId': h.dbRemoteId,
                 'protocolParams': h.protocolParams,
+                if (h.rawData != null) 'rawData': h.rawData,
+                if (h.rawFrequencyHz != null)
+                  'rawFrequencyHz': h.rawFrequencyHz,
               })
           .toList();
       await f.writeAsString(const JsonEncoder.withIndent('  ').convert(payload),
@@ -99,6 +105,10 @@ class _IrFinderScreenState extends State<IrFinderScreen>
           protocolParams: m['protocolParams'] is Map
               ? Map<String, dynamic>.from(m['protocolParams'] as Map)
               : null,
+          rawData: m['rawData'] as String?,
+          rawFrequencyHz: m['rawFrequencyHz'] is int
+              ? m['rawFrequencyHz'] as int
+              : int.tryParse('${m['rawFrequencyHz'] ?? ''}'),
         );
       }).toList();
       if (loaded.isEmpty) return;
@@ -196,21 +206,8 @@ class _IrFinderScreenState extends State<IrFinderScreen>
 
   Future<bool> _appendHitToRemote(Remote remote, IrFinderHit hit) async {
     try {
-      final uuid = const Uuid();
-      final params = IrFinderParams.paramsForHit(
-        hit,
-        kaseikyoVendor: _kaseikyoVendor,
-      );
-      final IRButton btn = IRButton(
-        id: uuid.v4(),
-        code: null,
-        rawData: null,
-        frequency: null,
-        image: hit.dbLabel ?? hit.code,
-        isImage: false,
-        protocol: hit.protocolId,
-        protocolParams: params,
-      );
+      final IRButton btn =
+          buttonForHit(hit, kaseikyoVendor: _kaseikyoVendor);
       remote.buttons.add(btn);
       await writeRemotelist(remotes);
       notifyRemotesChanged();
@@ -223,24 +220,10 @@ class _IrFinderScreenState extends State<IrFinderScreen>
   Future<bool> _createRemoteFromHit(
       BuildContext context, IrFinderHit hit) async {
     try {
-      final uuid = const Uuid();
-      final params = IrFinderParams.paramsForHit(
-        hit,
-        kaseikyoVendor: _kaseikyoVendor,
-      );
       final Remote r = Remote(
         name: hit.dbBrand ?? context.l10n.newRemoteDefaultName,
         buttons: <IRButton>[
-          IRButton(
-            id: uuid.v4(),
-            code: null,
-            rawData: null,
-            frequency: null,
-            image: hit.dbLabel ?? hit.code,
-            isImage: false,
-            protocol: hit.protocolId,
-            protocolParams: params,
-          )
+          buttonForHit(hit, kaseikyoVendor: _kaseikyoVendor),
         ],
         useNewStyle: true,
       );
@@ -267,13 +250,7 @@ class _IrFinderScreenState extends State<IrFinderScreen>
         model: _model,
         protocolId: _dbOnlySelectedProtocol ? _protocolId : null,
         quickWinsFirst: _dbQuickWinsFirst,
-        hexPrefixUpper: (_prefixParsed != null &&
-                _prefixParsed!.ok &&
-                _prefixParsed!.bytes.isNotEmpty)
-            ? IrPrefix.formatBytesAsHex(_prefixParsed!.bytes)
-                .replaceAll(' ', '')
-                .toUpperCase()
-            : null,
+        hexPrefixUpper: _hexPrefixUpperFor(_prefixParsed),
         onJumpToOffset: (offset) {
           if (!context.mounted) return;
           _run.jumpToOffset(offset);
@@ -282,21 +259,9 @@ class _IrFinderScreenState extends State<IrFinderScreen>
             SnackBar(content: Text(context.l10n.jumpedToOffsetPaused(offset))),
           );
         },
-        onSend: (protocolId, codeHex) async {
+        onSend: (row) async {
           try {
-            final params = _buildParamsForProtocol(
-                protocolId: protocolId, codeHex: codeHex);
-            final c = IrFinderCandidate(
-              protocolId: protocolId,
-              displayProtocol: IrProtocolRegistry.encoderFor(protocolId)
-                  .definition
-                  .displayName,
-              displayCode: _fitHexDigitsForProtocol(protocolId, codeHex),
-              params: params,
-              source: IrFinderSource.database,
-              dbBrand: _brand,
-              dbModel: _model,
-            );
+            final c = _candidateFromDbRow(row, brand: _brand, model: _model);
             await _sendCandidateForRun(c);
             if (!context.mounted) return;
             ScaffoldMessenger.of(context).showSnackBar(
@@ -305,14 +270,15 @@ class _IrFinderScreenState extends State<IrFinderScreen>
           } catch (e) {
             if (!context.mounted) return;
             ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text(context.l10n.failedToSend(e.toString()))),
+              SnackBar(content: Text(_sendErrorText(context, e))),
             );
           }
         },
-        onCopy: (protocolId, codeHex) async {
+        onCopy: (row) async {
+          final protocolId = normalizedDbProtocolId(row.protocol);
           await Clipboard.setData(ClipboardData(
               text:
-                  '$protocolId:${_fitHexDigitsForProtocol(protocolId, codeHex)}'));
+                  '$protocolId:${_fitHexDigitsForProtocol(protocolId, row.hexcode)}'));
           if (!context.mounted) return;
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(content: Text(context.l10n.copiedProtocolCode)),
@@ -341,6 +307,13 @@ class _IrFinderScreenState extends State<IrFinderScreen>
 
   bool _dbReady = false;
   bool _dbInitFailed = false;
+  bool _dbInitializing = false;
+  Object? _dbError;
+
+  /// What the saved session needs to know to be resumed later: the ledger
+  /// data the offsets were counted over (see [IrFinderSessionSnapshot]).
+  String? _dbDataVersion;
+  String? _dbBrandHash;
 
   String? _brand;
   String? _model;
@@ -421,7 +394,9 @@ class _IrFinderScreenState extends State<IrFinderScreen>
     _kaseikyoVendorCtl.text = _kaseikyoVendor;
     _kaseikyoVendorCtl.addListener(_onKaseikyoVendorChanged);
 
-    _initDb();
+    // The database is not read here: this screen is built when the app
+    // starts, and the first read of it is a download. It is read when the
+    // screen is set to database mode, or a database session is resumed.
     _applyPrefixLimitForCurrentProtocol();
     unawaited(_loadResumeSession());
     unawaited(_loadHitsFromDisk());
@@ -513,21 +488,44 @@ class _IrFinderScreenState extends State<IrFinderScreen>
     }
   }
 
+  /// Reads the IR code database's manifest and list of brands, from the
+  /// device or the network. Safe to call again, which is what Retry does.
   Future<void> _initDb() async {
+    if (_dbInitializing) return;
+    setState(() {
+      _dbInitializing = true;
+      _dbInitFailed = false;
+      _dbError = null;
+    });
     try {
       await _db.ensureInitialized();
       if (!mounted) return;
       setState(() {
         _dbReady = true;
         _dbInitFailed = false;
+        _dbError = null;
+        _dbDataVersion = _db.dataVersion;
       });
-    } catch (_) {
+      _syncRunConfigToController();
+    } catch (e) {
       if (!mounted) return;
       setState(() {
         _dbReady = false;
         _dbInitFailed = true;
+        _dbError = e;
       });
+    } finally {
+      if (mounted) setState(() => _dbInitializing = false);
     }
+  }
+
+  /// The prefix typed for database mode, as the database wants it: hex digits
+  /// without spaces, upper case; null when there is none.
+  String? _hexPrefixUpperFor(IrPrefixParseResult? parsed) {
+    if (parsed == null || !parsed.ok || parsed.bytes.isEmpty) return null;
+    return IrPrefix.formatBytesAsHex(parsed.bytes)
+        .replaceAll(' ', '')
+        .toUpperCase();
   }
 
   void _onPrefixChanged() {
@@ -702,6 +700,8 @@ class _IrFinderScreenState extends State<IrFinderScreen>
 
   void _syncRunConfigToController() {
     _run.configure(
+      dataVersion: _dbDataVersion,
+      brandHash: _dbBrandHash,
       mode: _mode,
       protocolId: _protocolId,
       delayMs: _delayMs,
@@ -776,63 +776,62 @@ class _IrFinderScreenState extends State<IrFinderScreen>
     final String? brand = _brand;
     if (brand == null || brand.trim().isEmpty) return null;
 
-    final String? hexPrefixUpper = (_prefixParsed != null &&
-            _prefixParsed!.ok &&
-            _prefixParsed!.bytes.isNotEmpty)
-        ? IrPrefix.formatBytesAsHex(_prefixParsed!.bytes)
-            .replaceAll(' ', '')
-            .toUpperCase()
-        : null;
-
+    // Once a run is prepared (see _prepareDbRun) this reads memory only; the
+    // run controller stops the run if it ever does throw.
     final rows = await _db.fetchCandidateKeys(
       brand: brand,
       model: _model,
       selectedProtocolId: _dbOnlySelectedProtocol ? _protocolId : null,
       quickWinsFirst: _dbQuickWinsFirst,
-      hexPrefixUpper: hexPrefixUpper,
+      hexPrefixUpper: _hexPrefixUpperFor(_prefixParsed),
       limit: 1,
       offset: ctl.currentOffset,
     );
 
     if (rows.isEmpty) return null;
 
-    final row = rows.first;
-    final normId = row.protocol.trim().toLowerCase().replaceAll('-', '_');
-
-    IrProtocolDefinition def;
     try {
-      def = _definitionFor(normId);
-    } catch (_) {
-      return null;
-    }
-
-    Map<String, dynamic> params;
-    try {
-      params =
-          _buildParamsForProtocol(protocolId: normId, codeHex: row.hexcode);
+      return _candidateFromDbRow(rows.first, brand: _brand, model: _model);
     } catch (e) {
       ctl.lastError = e;
       return null;
     }
+  }
 
-    return IrFinderCandidate(
-      protocolId: normId,
-      displayProtocol: def.displayName,
-      displayCode: _fitHexDigitsForProtocol(normId, row.hexcode),
-      params: params,
-      source: IrFinderSource.database,
-      dbRemoteId: row.remoteId,
-      dbLabel: row.label,
-      dbBrand: _brand,
-      dbModel: _model,
+  /// The candidate a database row stands for; see [candidateForDbRow], which
+  /// keeps the protocols played from a signal away from the decoders.
+  IrFinderCandidate _candidateFromDbRow(
+    IrDbKeyCandidate row, {
+    required String? brand,
+    required String? model,
+  }) {
+    return candidateForDbRow(
+      row,
+      brand: brand,
+      model: model,
+      displayName: (protocolId) => _definitionFor(protocolId).displayName,
+      buildParams: (protocolId, hexcode) =>
+          _buildParamsForProtocol(protocolId: protocolId, codeHex: hexcode),
+      fitHex: _fitHexDigitsForProtocol,
     );
   }
 
-  Future<void> _sendCandidateForRun(IrFinderCandidate c) async {
+  /// Plays a candidate once: its signal when it has one, else its protocol's
+  /// encoding of its parameters.
+  Future<void> _transmitCandidate(IrFinderCandidate c) async {
+    final LedgerPlayback? raw = c.raw;
+    if (raw != null) {
+      await transmitRaw(raw.frequencyHz, raw.pattern);
+      return;
+    }
     final enc = IrProtocolRegistry.encoderFor(c.protocolId);
     final IrEncodeResult res = enc.encode(c.params);
     final int freq = (res.frequencyHz <= 0) ? 38000 : res.frequencyHz;
     await transmitRaw(freq, res.pattern);
+  }
+
+  Future<void> _sendCandidateForRun(IrFinderCandidate c) async {
+    await _transmitCandidate(c);
     final remoteName = [c.dbBrand, c.dbModel]
         .whereType<String>()
         .where((v) => v.trim().isNotEmpty)
@@ -840,12 +839,7 @@ class _IrFinderScreenState extends State<IrFinderScreen>
     showLastAction(
       title: '${c.displayProtocol} ${c.displayCode}',
       remoteName: remoteName.isEmpty ? null : remoteName,
-      onRepeat: () async {
-        final enc = IrProtocolRegistry.encoderFor(c.protocolId);
-        final res = enc.encode(c.params);
-        final freq = (res.frequencyHz <= 0) ? 38000 : res.frequencyHz;
-        await transmitRaw(freq, res.pattern);
-      },
+      onRepeat: () => _transmitCandidate(c),
     );
   }
 
@@ -926,13 +920,108 @@ class _IrFinderScreenState extends State<IrFinderScreen>
       }
     }
 
+    if (_mode == IrFinderMode.database) {
+      // Load everything the run will read, so that the timer that drives it
+      // cannot meet a network failure half way.
+      if (!await _prepareDbRun()) return;
+    }
+
     _syncRunConfigToController();
     await _run.start();
     await Haptics.mediumImpact();
   }
 
+  Future<bool> _prepareDbRun() async {
+    final String? brand = _brand;
+    if (brand == null || brand.trim().isEmpty) return false;
+    try {
+      await _db.prepareCandidates(
+        brand: brand,
+        model: _model,
+        selectedProtocolId: _dbOnlySelectedProtocol ? _protocolId : null,
+        quickWinsFirst: _dbQuickWinsFirst,
+        hexPrefixUpper: _hexPrefixUpperFor(_prefixParsed),
+      );
+      _dbBrandHash = await _db.brandContentHash(brand);
+      _dbDataVersion = _db.dataVersion;
+      return true;
+    } catch (e) {
+      if (!mounted) return false;
+      showLedgerDbErrorSnack(
+        context,
+        e,
+        onRetry: () => unawaited(_playPauseToggle()),
+        fallback: context.l10n.failedToLoadDatabaseKeys(e.toString()),
+      );
+      return false;
+    }
+  }
+
+  /// What to say about a failed send: a database code whose signal could not
+  /// be loaded says so, anything else is reported as it always was.
+  String _sendErrorText(BuildContext context, Object e) {
+    if (e is LedgerSignalUnavailable || e is LedgerDbUnavailable) {
+      return ledgerDbErrorText(context, e);
+    }
+    return context.l10n.failedToSend(e.toString());
+  }
+
+  /// Gets the database ready for a saved database session: reads it, checks
+  /// that the keys the session's offset counts over are still the ones the
+  /// database holds, and loads the whole selection so that the run cannot hit
+  /// the network. A session that no longer fits is dropped.
+  Future<bool> _prepareDbForResume(IrFinderSessionSnapshot s) async {
+    await _initDb();
+    if (!mounted) return false;
+    if (!_dbReady) {
+      showLedgerDbErrorSnack(
+        context,
+        _dbError ?? StateError('The IR code database is not ready.'),
+        onRetry: () => unawaited(_resumeFromSnapshot(s)),
+      );
+      return false;
+    }
+    final String brand = (s.brand ?? '').trim();
+    if (brand.isEmpty) return true;
+    try {
+      final String? hash = await _db.brandContentHash(brand);
+      if (!s.isResumableWith(dataVersion: _db.dataVersion, brandHash: hash)) {
+        await _discardResumeSession();
+        if (!mounted) return false;
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(context.l10n.irDbSessionOutdated)),
+        );
+        return false;
+      }
+      await _db.prepareCandidates(
+        brand: brand,
+        model: s.model,
+        selectedProtocolId: s.onlySelectedProtocol ? s.protocolId : null,
+        quickWinsFirst: s.quickWinsFirst,
+        hexPrefixUpper: _hexPrefixUpperFor(IrPrefix.parse(s.prefixRaw)),
+      );
+      _dbBrandHash = hash;
+      _dbDataVersion = _db.dataVersion;
+      return true;
+    } catch (e) {
+      if (!mounted) return false;
+      showLedgerDbErrorSnack(
+        context,
+        e,
+        onRetry: () => unawaited(_resumeFromSnapshot(s)),
+        fallback: context.l10n.failedToLoadDatabaseKeys(e.toString()),
+      );
+      return false;
+    }
+  }
+
   Future<void> _resumeFromSnapshot(IrFinderSessionSnapshot s) async {
     if (!mounted) return;
+
+    if (s.mode == IrFinderMode.database) {
+      if (!await _prepareDbForResume(s)) return;
+      if (!mounted) return;
+    }
 
     setState(() {
       _mode = s.mode;
@@ -1004,8 +1093,11 @@ class _IrFinderScreenState extends State<IrFinderScreen>
       dbModel: c.dbModel,
       dbRemoteId: c.dbRemoteId,
       dbLabel: c.dbLabel,
-      protocolParams:
-          c.params is Map ? Map<String, dynamic>.from(c.params as Map) : null,
+      protocolParams: c.raw == null && c.params is Map
+          ? Map<String, dynamic>.from(c.params as Map)
+          : null,
+      rawData: c.raw?.rawData,
+      rawFrequencyHz: c.raw?.frequencyHz,
     );
 
     setState(() {
@@ -1023,12 +1115,21 @@ class _IrFinderScreenState extends State<IrFinderScreen>
   }
 
   Future<void> _testHit(IrFinderHit h) async {
-    Map<String, dynamic> params;
+    // A hit found as a signal is played as that signal; it has no parameters
+    // to rebuild and must not be rebuilt from its hex code.
+    final LedgerPlayback? press = h.rawData != null ? h.rawPlayback : null;
+    Map<String, dynamic> params = const <String, dynamic>{};
     try {
-      params = IrFinderParams.paramsForHit(
-        h,
-        kaseikyoVendor: _kaseikyoVendor,
-      );
+      if (h.rawData != null) {
+        if (press == null) {
+          throw StateError('The saved signal of this hit cannot be played.');
+        }
+      } else {
+        params = IrFinderParams.paramsForHit(
+          h,
+          kaseikyoVendor: _kaseikyoVendor,
+        );
+      }
     } catch (e) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
@@ -1048,6 +1149,7 @@ class _IrFinderScreenState extends State<IrFinderScreen>
       dbModel: h.dbModel,
       dbRemoteId: h.dbRemoteId,
       dbLabel: h.dbLabel,
+      raw: press,
     );
 
     try {
@@ -1451,6 +1553,7 @@ class _IrFinderScreenState extends State<IrFinderScreen>
                     }
                   });
                   _syncRunConfigToController();
+                  if (m == IrFinderMode.database) unawaited(_initDb());
                 },
         ),
         const SizedBox(height: 12),
@@ -1554,6 +1657,7 @@ class _IrFinderScreenState extends State<IrFinderScreen>
             theme: theme,
             dbReady: _dbReady,
             dbInitFailed: _dbInitFailed,
+            dbError: _dbError,
             brand: _brand,
             model: _model,
             onlySelectedProtocol: _dbOnlySelectedProtocol,
@@ -2479,6 +2583,7 @@ class _DbSetupCard extends StatelessWidget {
   final ThemeData theme;
   final bool dbReady;
   final bool dbInitFailed;
+  final Object? dbError;
   final String? brand;
   final String? model;
   final bool onlySelectedProtocol;
@@ -2496,6 +2601,7 @@ class _DbSetupCard extends StatelessWidget {
     required this.theme,
     required this.dbReady,
     required this.dbInitFailed,
+    required this.dbError,
     required this.brand,
     required this.model,
     required this.onlySelectedProtocol,
@@ -2532,12 +2638,12 @@ class _DbSetupCard extends StatelessWidget {
               Expanded(
                 child: Text(
                   dbInitFailed
-                      ? context.l10n.irFinderDatabaseInitFailed
+                      ? ledgerDbErrorText(context, dbError)
                       : context.l10n.irFinderPreparingDatabase,
                   style: theme.textTheme.bodyMedium,
                 ),
               ),
-              if (dbInitFailed)
+              if (dbInitFailed && ledgerDbErrorIsRetryable(dbError))
                 FilledButton.tonal(
                   onPressed: running ? null : onRetryDbInit,
                   child: Text(context.l10n.retry),
@@ -3105,8 +3211,8 @@ class _DbCandidatesSheet extends StatefulWidget {
   final bool quickWinsFirst;
   final String? hexPrefixUpper;
   final ValueChanged<int> onJumpToOffset;
-  final Future<void> Function(String protocolId, String codeHex) onSend;
-  final Future<void> Function(String protocolId, String codeHex) onCopy;
+  final Future<void> Function(IrDbKeyCandidate row) onSend;
+  final Future<void> Function(IrDbKeyCandidate row) onCopy;
 
   const _DbCandidatesSheet({
     required this.db,
@@ -3130,6 +3236,7 @@ class _DbCandidatesSheetState extends State<_DbCandidatesSheet> {
   final ScrollController _scrollCtl = ScrollController();
   bool _loading = false;
   bool _exhausted = false;
+  Object? _error;
   int _offset = 0;
   final List<IrDbKeyCandidate> _rows = <IrDbKeyCandidate>[];
 
@@ -3165,7 +3272,10 @@ class _DbCandidatesSheetState extends State<_DbCandidatesSheet> {
 
   Future<void> _load({required bool reset}) async {
     if (_loading) return;
-    setState(() => _loading = true);
+    setState(() {
+      _loading = true;
+      _error = null;
+    });
     try {
       if (reset) {
         _offset = 0;
@@ -3188,9 +3298,12 @@ class _DbCandidatesSheetState extends State<_DbCandidatesSheet> {
         _offset += rows.length;
         if (rows.isEmpty) _exhausted = true;
       });
-    } catch (_) {
+    } catch (e) {
       if (!mounted) return;
-      setState(() => _exhausted = true);
+      setState(() {
+        _exhausted = true;
+        _error = e;
+      });
     } finally {
       if (mounted) {
         setState(() => _loading = false);
@@ -3231,7 +3344,14 @@ class _DbCandidatesSheetState extends State<_DbCandidatesSheet> {
             ),
             const SizedBox(height: 8),
             Expanded(
-              child: _rows.isEmpty && _loading
+              child: _error != null && _rows.isEmpty
+                  ? LedgerDbErrorView(
+                      error: _error!,
+                      fallback: context.l10n
+                          .failedToLoadDatabaseKeys(_error.toString()),
+                      onRetry: () => _load(reset: true),
+                    )
+                  : _rows.isEmpty && _loading
                   ? const Center(child: CircularProgressIndicator())
                   : ListView.separated(
                       controller: _scrollCtl,
@@ -3247,10 +3367,6 @@ class _DbCandidatesSheetState extends State<_DbCandidatesSheet> {
                           );
                         }
                         final r = _rows[i];
-                        final protoNorm = r.protocol
-                            .trim()
-                            .toLowerCase()
-                            .replaceAll('-', '_');
                         return ListTile(
                           title: Text('${r.label} · ${r.hexcode}'),
                           subtitle: Text(
@@ -3272,14 +3388,12 @@ class _DbCandidatesSheetState extends State<_DbCandidatesSheet> {
                               ),
                               IconButton(
                                 tooltip: context.l10n.send,
-                                onPressed: () =>
-                                    widget.onSend(protoNorm, r.hexcode),
+                                onPressed: () => widget.onSend(r),
                                 icon: const Icon(Icons.play_arrow_rounded),
                               ),
                               IconButton(
                                 tooltip: context.l10n.copy,
-                                onPressed: () =>
-                                    widget.onCopy(protoNorm, r.hexcode),
+                                onPressed: () => widget.onCopy(r),
                                 icon: const Icon(Icons.copy_rounded),
                               ),
                             ],
@@ -3300,6 +3414,7 @@ class _DbPickerSheetState extends State<_DbPickerSheet> {
   final ScrollController _scrollCtl = ScrollController();
   bool _loading = false;
   bool _exhausted = false;
+  Object? _error;
   int _offset = 0;
   final List<String> _items = <String>[];
   Timer? _debounce;
@@ -3340,7 +3455,10 @@ class _DbPickerSheetState extends State<_DbPickerSheet> {
 
   Future<void> _load({required bool reset}) async {
     if (_loading) return;
-    setState(() => _loading = true);
+    setState(() {
+      _loading = true;
+      _error = null;
+    });
     try {
       if (reset) {
         _offset = 0;
@@ -3374,9 +3492,12 @@ class _DbPickerSheetState extends State<_DbPickerSheet> {
         _offset += rows.length;
         if (rows.isEmpty) _exhausted = true;
       });
-    } catch (_) {
+    } catch (e) {
       if (!mounted) return;
-      setState(() => _exhausted = true);
+      setState(() {
+        _exhausted = true;
+        _error = e;
+      });
     } finally {
       if (mounted) {
         setState(() => _loading = false);
@@ -3426,7 +3547,12 @@ class _DbPickerSheetState extends State<_DbPickerSheet> {
             ),
             const SizedBox(height: 10),
             Expanded(
-              child: _items.isEmpty && _loading
+              child: _error != null && _items.isEmpty
+                  ? LedgerDbErrorView(
+                      error: _error!,
+                      onRetry: () => _load(reset: true),
+                    )
+                  : _items.isEmpty && _loading
                   ? const Center(child: CircularProgressIndicator())
                   : ListView.separated(
                       controller: _scrollCtl,

@@ -2671,7 +2671,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get irFinderDatabaseInitFailed => 'فشل تهيئة قاعدة البيانات.';
 
   @override
-  String get irFinderPreparingDatabase => 'جار تجهيز قاعدة بيانات IR المحلية…';
+  String get irFinderPreparingDatabase => 'جارٍ تحميل قاعدة بيانات رموز IR…';
 
   @override
   String get irFinderDatabaseAssistedSearch => 'بحث بمساعدة قاعدة البيانات';
@@ -4933,6 +4933,22 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get updatesInstallFailed => 'The installer could not be opened';
+
+  @override
+  String get irDbNeedsNetwork =>
+      'يتم تنزيل قاعدة بيانات رموز IR عند فتح علامة تجارية لأول مرة، لذا تحتاج إلى اتصال بالإنترنت. تحقق من اتصالك وحاول مرة أخرى.';
+
+  @override
+  String get irDbNeedsUpdate =>
+      'لا يستطيع هذا الإصدار من SwiftRemote قراءة قاعدة بيانات رموز IR الحالية. حدّث التطبيق لاستخدامها.';
+
+  @override
+  String get irDbSignalUnavailable =>
+      'يتم إرسال هذا الرمز من إشارته في قاعدة بيانات رموز IR على الإنترنت، وتعذّر تحميل تلك الإشارة. تحقق من اتصالك وحاول مرة أخرى.';
+
+  @override
+  String get irDbSessionOutdated =>
+      'تم تحديث قاعدة بيانات رموز IR بعد حفظ هذه الجلسة، لذا لا يمكن استئنافها. ابدأ جلسة جديدة.';
 }
 
 /// The translations for Arabic, as used in Egypt (`ar_EG`).
@@ -7602,7 +7618,7 @@ class AppLocalizationsArEg extends AppLocalizationsAr {
   String get irFinderDatabaseInitFailed => 'فشل تهيئة قاعدة البيانات.';
 
   @override
-  String get irFinderPreparingDatabase => 'جار تجهيز قاعدة بيانات IR المحلية…';
+  String get irFinderPreparingDatabase => 'جارٍ تحميل قاعدة بيانات رموز IR…';
 
   @override
   String get irFinderDatabaseAssistedSearch => 'بحث بمساعدة قاعدة البيانات';
@@ -9864,4 +9880,20 @@ class AppLocalizationsArEg extends AppLocalizationsAr {
 
   @override
   String get updatesInstallFailed => 'The installer could not be opened';
+
+  @override
+  String get irDbNeedsNetwork =>
+      'يتم تنزيل قاعدة بيانات رموز IR عند فتح علامة تجارية لأول مرة، لذا تحتاج إلى اتصال بالإنترنت. تحقق من اتصالك وحاول مرة أخرى.';
+
+  @override
+  String get irDbNeedsUpdate =>
+      'لا يستطيع هذا الإصدار من SwiftRemote قراءة قاعدة بيانات رموز IR الحالية. حدّث التطبيق لاستخدامها.';
+
+  @override
+  String get irDbSignalUnavailable =>
+      'يتم إرسال هذا الرمز من إشارته في قاعدة بيانات رموز IR على الإنترنت، وتعذّر تحميل تلك الإشارة. تحقق من اتصالك وحاول مرة أخرى.';
+
+  @override
+  String get irDbSessionOutdated =>
+      'تم تحديث قاعدة بيانات رموز IR بعد حفظ هذه الجلسة، لذا لا يمكن استئنافها. ابدأ جلسة جديدة.';
 }

@@ -139,7 +139,19 @@ The Signal Tester is designed to help discover unknown working IR commands.
 - Prefer Internal or USB for consistent timing; use Audio with max media volume and a known‑good adapter.
 - Stop the run as soon as your device reacts and save that code into a remote button.
 
-> Implementation references: `lib/widgets/ir_finder_screen.dart`, `lib/ir_finder/ir_prefix.dart`, `lib/ir_finder/irblaster_db.dart`, `lib/ir_finder/ir_finder_models.dart`.
+> Implementation references: `lib/widgets/ir_finder_screen.dart`, `lib/ir_finder/ir_prefix.dart`, `lib/ir_finder/irblaster_db.dart`, `lib/ir_finder/ir_finder_models.dart`, `lib/ledger_db/`.
+
+### The IR code database
+
+Database mode, Universal Power and importing keys from the database read their codes from [Remote Ledger](https://remote-ledger.github.io/)'s IR code database, published as static files under `https://remote-ledger.github.io/app/v1/`. The app does not bundle a copy.
+
+- The first time you open a brand its files are downloaded (a few kilobytes for most brands, a few megabytes for the largest) and kept on the device, in the app's support directory rather than the cache that Android may clear. From then on that brand works offline; anything not downloaded yet needs a connection, and the app says so with a Retry.
+- The ledger's manifest is checked at most every 12 hours. When it reports new data, the small files (the brand list, a brand's models, a protocol's signals) are fetched again as they are used, and a brand's key file only if its content changed. A key file that fails its hash is rejected and fetched once more, and whatever is on the device is used when the network fails. The copy is capped at 40 MB; the brands used longest ago are dropped first.
+- Brands and models are listed in the order the old database listed them (ASCII case-insensitive), and a brand's keys appear once each rather than once per model.
+- Ten protocols (Sony 12, 15 and 20, Pioneer, JVC, Sharp, Denon, Thomson7, Proton and RCC2026) have database codes the app's own hex decoding reads differently from the wire. For those the app plays the ledger's compiled signal (one download per protocol), never its own decoding, and blocks the send with a message if the signal cannot be loaded. Which protocols these are comes from the database's manifest, not from a list in the app.
+- The ledger could not represent 2,066 of the old database's keys, so they are no longer offered (a few brands and models that only they made up are gone with them).
+
+Updating from a build that bundled the database deletes the unused copy of it, and drops any saved Signal Tester session that was counting keys in its order.
 
 ## Remotes Management
 

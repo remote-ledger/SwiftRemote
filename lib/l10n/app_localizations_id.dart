@@ -2699,7 +2699,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get irFinderDatabaseInitFailed => 'Basis data inisialisasi gagal.';
 
   @override
-  String get irFinderPreparingDatabase => 'Preparing local IR kode basis data…';
+  String get irFinderPreparingDatabase => 'Memuat basis data kode IR…';
 
   @override
   String get irFinderDatabaseAssistedSearch => 'Basis data-assisted pencarian';
@@ -4966,4 +4966,20 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get updatesInstallFailed => 'The installer could not be opened';
+
+  @override
+  String get irDbNeedsNetwork =>
+      'Basis data kode IR diunduh saat Anda pertama kali membuka sebuah merek, jadi perlu koneksi internet. Periksa koneksi Anda lalu coba lagi.';
+
+  @override
+  String get irDbNeedsUpdate =>
+      'Versi SwiftRemote ini tidak dapat membaca basis data kode IR yang terbaru. Perbarui aplikasi untuk menggunakannya.';
+
+  @override
+  String get irDbSignalUnavailable =>
+      'Kode ini dimainkan dari sinyalnya di basis data kode IR online, dan sinyal itu tidak dapat dimuat. Periksa koneksi Anda lalu coba lagi.';
+
+  @override
+  String get irDbSessionOutdated =>
+      'Basis data kode IR diperbarui setelah proses ini disimpan, sehingga tidak dapat dilanjutkan. Mulai proses baru.';
 }
