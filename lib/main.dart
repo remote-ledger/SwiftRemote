@@ -4,6 +4,7 @@ import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:swiftremote/ledger_db/legacy_db_cleanup.dart';
 import 'package:swiftremote/state/app_locale.dart';
 import 'package:swiftremote/state/app_shortcuts.dart';
 import 'package:swiftremote/state/app_theme.dart';
@@ -61,6 +62,9 @@ Future<void> main() async {
   }, (error, stack) {
     debugPrint('Zone error: $error\n$stack');
   });
+  // The IR code database is read from the Remote Ledger now; drop the copy of
+  // the old bundled one an upgraded install still carries.
+  unawaited(removeLegacyIrDatabaseOnce());
 }
 
 final GlobalKey<NavigatorState> _navKey = GlobalKey<NavigatorState>();
