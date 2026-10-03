@@ -7,6 +7,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:swiftremote/l10n/l10n.dart';
 import 'package:swiftremote/models/timed_macro.dart';
+import 'package:swiftremote/utils/ledger_signal.dart';
 import 'package:swiftremote/utils/macros_io.dart';
 import 'package:swiftremote/utils/remote.dart';
 import 'package:media_store_plus/media_store_plus.dart';
@@ -1480,90 +1481,12 @@ class _ProntoParsed {
   const _ProntoParsed({required this.frequencyHz, required this.rawDurations});
 }
 
-/// A Pronto code's two burst sequences in microseconds: [intro] is sent once
-/// and [repeat] for as long as the button is held. Either may be empty, but
-/// not both.
-class _ProntoSequences {
-  final int frequencyHz;
-  final List<int> intro;
-  final List<int> repeat;
-  const _ProntoSequences({
-    required this.frequencyHz,
-    required this.intro,
-    required this.repeat,
-  });
-}
-
 _ProntoParsed? _tryParseProntoHexToRaw(String payload) {
-  final _ProntoSequences? sequences = _tryParseProntoSequences(payload);
+  final ProntoSequences? sequences = tryParseProntoSequences(payload);
   if (sequences == null) return null;
   return _ProntoParsed(
     frequencyHz: sequences.frequencyHz,
     rawDurations: <int>[...sequences.intro, ...sequences.repeat].join(' '),
-  );
-}
-
-/// [minDurations] guards text that merely looks like Pronto, where four hex
-/// words are weak evidence. A source known to hold Pronto can accept less:
-/// Canon's RC-1 is two bursts 7 ms apart, and nothing longer.
-_ProntoSequences? _tryParseProntoSequences(
-  String payload, {
-  int minDurations = 6,
-}) {
-  final cleaned = payload.replaceAll('\r', ' ').replaceAll('\n', ' ').trim();
-  if (cleaned.isEmpty) return null;
-
-  final tokens =
-      cleaned.split(RegExp(r'\s+')).where((e) => e.isNotEmpty).toList();
-  if (tokens.length < 6) return null;
-
-  bool looksHex = true;
-  for (final t in tokens.take(4)) {
-    if (!RegExp(r'^[0-9A-Fa-f]{4}$').hasMatch(t)) {
-      looksHex = false;
-      break;
-    }
-  }
-  if (!looksHex) return null;
-
-  final List<int> words = <int>[];
-  for (final t in tokens) {
-    final v = int.tryParse(t, radix: 16);
-    if (v == null) return null;
-    words.add(v);
-  }
-
-  final int type = words[0];
-  final int freqWord = words[1];
-  if (type != 0x0000 && type != 0x0100) return null;
-  if (freqWord <= 0) return null;
-
-  final int seq1 = words[2];
-  final int seq2 = words[3];
-  final int totalPairs = (seq1 + seq2) * 2;
-  final int requiredWords = 4 + totalPairs;
-  if (words.length < requiredWords) return null;
-
-  final double carrierPeriodUs = freqWord * 0.241246;
-  if (carrierPeriodUs <= 0) return null;
-
-  final int freqHz = (1000000.0 / carrierPeriodUs).round().clamp(10000, 200000);
-  final List<int> durations = <int>[];
-
-  for (int i = 4; i < requiredWords; i++) {
-    final int w = words[i];
-    if (w <= 0) return null;
-    final int us = (w * carrierPeriodUs).round();
-    if (us <= 0) return null;
-    durations.add(us);
-  }
-
-  if (durations.length < minDurations) return null;
-  final int introLength = seq1 * 2;
-  return _ProntoSequences(
-    frequencyHz: freqHz,
-    intro: durations.sublist(0, introLength),
-    repeat: durations.sublist(introLength),
   );
 }
 
@@ -1622,15 +1545,15 @@ Remote? _parseRemoteLedgerRemote(
     if (primary is! Map) continue;
     final dynamic prontoHex = primary['prontoHex'];
     if (prontoHex is! String) continue;
-    final _ProntoSequences? code =
-        _tryParseProntoSequences(prontoHex, minDurations: 2);
+    final ProntoSequences? code =
+        tryParseProntoSequences(prontoHex, minDurations: 2);
     if (code == null) continue;
 
     buttons.add(
       IRButton(
         id: uuid.v4(),
         code: null,
-        rawData: _remoteLedgerSends(code, sends).join(' '),
+        rawData: remoteLedgerSends(code, sends).join(' '),
         frequency: carrier ?? code.frequencyHz,
         image: _sanitizeLircButtonLabel(
           entry.key.toString(),
@@ -1651,22 +1574,6 @@ Remote? _parseRemoteLedgerRemote(
     buttons: buttons,
     name: name.isEmpty ? remoteNameHint : name,
   );
-}
-
-/// Lays out every send a button needs, because a raw button is played once.
-///
-/// Remote Ledger compiles a code's first send as the Pronto intro and the
-/// sends after it as the repeat, and leaves `protocol.minSends` for the
-/// player to honour rather than multiplying the repeat into the Pronto
-/// string. The intro, when there is one, is the first send: an NEC code sent
-/// once is its frame without the repeat ditto, while a Sony code has no intro
-/// and is its frame three times.
-List<int> _remoteLedgerSends(_ProntoSequences code, int sends) {
-  final int repeats = code.intro.isEmpty ? sends : sends - 1;
-  return <int>[
-    ...code.intro,
-    for (int i = 0; i < repeats; i++) ...code.repeat,
-  ];
 }
 
 Remote? _parseIrplusXml(
