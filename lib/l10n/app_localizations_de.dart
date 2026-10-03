@@ -1595,9 +1595,6 @@ class AppLocalizationsDe extends AppLocalizations {
   String get importFromRemotes => 'Aus Fernbedienungen importieren';
 
   @override
-  String get importFromDatabase => 'Aus Datenbank importieren';
-
-  @override
   String get addButton => 'Taste hinzufügen';
 
   @override
@@ -1853,9 +1850,6 @@ class AppLocalizationsDe extends AppLocalizations {
   String get unknown => 'Unbekannt';
 
   @override
-  String get emDash => '—';
-
-  @override
   String get searchCommands => 'Befehle suchen';
 
   @override
@@ -1905,37 +1899,9 @@ class AppLocalizationsDe extends AppLocalizations {
   String get test => 'Test';
 
   @override
-  String get allSelectedButtonsWereDuplicates =>
-      'Alle gewählten Tasten waren Duplikate.';
-
-  @override
-  String get noButtonsImported => 'Keine Tasten importiert.';
-
-  @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return '$addedCount Taste(n) importiert. $skippedCount Duplikat(e) übersprungen.';
   }
-
-  @override
-  String get importAllMatchingTitle => 'Alle passenden Tasten importieren';
-
-  @override
-  String get noMatchingKeysFound => 'Keine passenden Schlüssel gefunden.';
-
-  @override
-  String importAllMatchingMessage(int count) {
-    return 'Dadurch werden bis zu $count passende Schlüssel aus der aktuellen Datenbankauswahl importiert.';
-  }
-
-  @override
-  String get importAll => 'Alle importieren';
-
-  @override
-  String get importingButtons => 'Tasten werden importiert…';
-
-  @override
-  String get allMatchingButtonsWereDuplicates =>
-      'Alle passenden Tasten waren Duplikate.';
 
   @override
   String get quickPresets => 'Schnellvorgaben';
@@ -1954,27 +1920,6 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get selectBrandModelProtocolFirst =>
       'Wähle zuerst Marke, Modell und Protokoll.';
-
-  @override
-  String get importFromDatabaseTitle => 'Aus Datenbank importieren';
-
-  @override
-  String get importFromDatabaseSubtitle =>
-      'Wähle ein Gerät, lade passende Schlüssel und importiere dann die ausgewählten Tasten.';
-
-  @override
-  String get deviceAndFilters => 'Gerät und Filter';
-
-  @override
-  String loadedCount(int count) {
-    return '$count geladen';
-  }
-
-  @override
-  String get hideFilters => 'Filter ausblenden';
-
-  @override
-  String get showFilters => 'Filter anzeigen';
 
   @override
   String get noProtocolFoundForBrandModel =>
@@ -1998,16 +1943,6 @@ class AppLocalizationsDe extends AppLocalizations {
   String noKeysFoundForSearch(Object query) {
     return 'Keine Schlüssel für $query gefunden.';
   }
-
-  @override
-  String get skipDuplicates => 'Duplikate überspringen';
-
-  @override
-  String get skipDuplicatesSubtitle =>
-      'Tasten nicht importieren, die bereits in dieser Fernbedienung existieren.';
-
-  @override
-  String get importSelected => 'Auswahl importieren';
 
   @override
   String get noMacrosToExport => 'Keine Makros zum Exportieren.';

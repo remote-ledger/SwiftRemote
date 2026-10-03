@@ -1622,9 +1622,6 @@ class AppLocalizationsUk extends AppLocalizations {
   String get importFromRemotes => 'Імпорт з пультів';
 
   @override
-  String get importFromDatabase => 'Імпорт з БД';
-
-  @override
   String get addButton => 'Додати кнопку';
 
   @override
@@ -1875,9 +1872,6 @@ class AppLocalizationsUk extends AppLocalizations {
   String get unknown => 'Невідомий';
 
   @override
-  String get emDash => '-';
-
-  @override
   String get searchCommands => 'Команди пошуку';
 
   @override
@@ -1927,37 +1921,9 @@ class AppLocalizationsUk extends AppLocalizations {
   String get test => 'Тест';
 
   @override
-  String get allSelectedButtonsWereDuplicates =>
-      'Усі вибрані кнопки були дублікатами.';
-
-  @override
-  String get noButtonsImported => 'Кнопки не імпортовано.';
-
-  @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return 'Імпортовані кнопки $addedCount. Пропущений дублікат(и) $skippedCount.';
   }
-
-  @override
-  String get importAllMatchingTitle => 'Імпортувати всі відповідні кнопки?';
-
-  @override
-  String get noMatchingKeysFound => 'Не знайдено відповідних ключів.';
-
-  @override
-  String importAllMatchingMessage(int count) {
-    return 'Це імпортує до $count відповідних ключів із поточного вибору бази даних.';
-  }
-
-  @override
-  String get importAll => 'Імпортувати все';
-
-  @override
-  String get importingButtons => 'Імпорт кнопок…';
-
-  @override
-  String get allMatchingButtonsWereDuplicates =>
-      'Усі відповідні кнопки були дублікатами.';
 
   @override
   String get quickPresets => 'Швидкі налаштування';
@@ -1976,27 +1942,6 @@ class AppLocalizationsUk extends AppLocalizations {
   @override
   String get selectBrandModelProtocolFirst =>
       'Спочатку виберіть бренд, модель і протокол.';
-
-  @override
-  String get importFromDatabaseTitle => 'Імпорт з бази даних';
-
-  @override
-  String get importFromDatabaseSubtitle =>
-      'Виберіть пристрій, завантажте відповідні ключі, а потім імпортуйте вибрані кнопки.';
-
-  @override
-  String get deviceAndFilters => 'Пристрій і фільтри';
-
-  @override
-  String loadedCount(int count) {
-    return '$count завантажено';
-  }
-
-  @override
-  String get hideFilters => 'Сховати фільтри';
-
-  @override
-  String get showFilters => 'Показати фільтри';
 
   @override
   String get noProtocolFoundForBrandModel =>
@@ -2020,16 +1965,6 @@ class AppLocalizationsUk extends AppLocalizations {
   String noKeysFoundForSearch(Object query) {
     return 'Не знайдено ключів для “$query”.';
   }
-
-  @override
-  String get skipDuplicates => 'Пропустити дублікати';
-
-  @override
-  String get skipDuplicatesSubtitle =>
-      'Не імпортуйте кнопки, які вже існують на цьому пульті.';
-
-  @override
-  String get importSelected => 'Вибрано імпорт';
 
   @override
   String get noMacrosToExport => 'Немає макросів для експорту.';

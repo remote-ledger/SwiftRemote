@@ -1556,9 +1556,6 @@ class AppLocalizationsVi extends AppLocalizations {
   String get importFromRemotes => 'Nhập từ điều khiển';
 
   @override
-  String get importFromDatabase => 'Nhập từ CSDL';
-
-  @override
   String get addButton => 'Thêm nút';
 
   @override
@@ -1809,9 +1806,6 @@ class AppLocalizationsVi extends AppLocalizations {
   String get unknown => 'Không rõ';
 
   @override
-  String get emDash => '—';
-
-  @override
   String get searchCommands => 'Tìm lệnh';
 
   @override
@@ -1860,37 +1854,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get test => 'Kiểm tra';
 
   @override
-  String get allSelectedButtonsWereDuplicates =>
-      'Tất cả nút đã chọn đều là bản trùng.';
-
-  @override
-  String get noButtonsImported => 'Không nhập nút nào.';
-
-  @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return 'Imported $addedCount nút. Bỏ quaped $skippedCount duplicate(s).';
   }
-
-  @override
-  String get importAllMatchingTitle => 'Nhập tất cả nút khớp?';
-
-  @override
-  String get noMatchingKeysFound => 'Không tìm thấy khóa khớp.';
-
-  @override
-  String importAllMatchingMessage(int count) {
-    return 'Thao tác này sẽ nhập tối đa $count khóa khớp từ lựa chọn CSDL hiện tại.';
-  }
-
-  @override
-  String get importAll => 'Nhập tất cả';
-
-  @override
-  String get importingButtons => 'Đang nhập nút…';
-
-  @override
-  String get allMatchingButtonsWereDuplicates =>
-      'Tất cả nút khớp đều là bản trùng.';
 
   @override
   String get quickPresets => 'Mẫu nhanh';
@@ -1909,27 +1875,6 @@ class AppLocalizationsVi extends AppLocalizations {
   @override
   String get selectBrandModelProtocolFirst =>
       'Chọn hãng, mẫu và giao thức trước.';
-
-  @override
-  String get importFromDatabaseTitle => 'Nhập từ cơ sở dữ liệu';
-
-  @override
-  String get importFromDatabaseSubtitle =>
-      'Chọn thiết bị, tải khóa khớp rồi nhập các nút đã chọn.';
-
-  @override
-  String get deviceAndFilters => 'Thiết bị và bộ lọc';
-
-  @override
-  String loadedCount(int count) {
-    return 'Đã tải $count';
-  }
-
-  @override
-  String get hideFilters => 'Ẩn bộ lọc';
-
-  @override
-  String get showFilters => 'Hiện bộ lọc';
 
   @override
   String get noProtocolFoundForBrandModel =>
@@ -1953,16 +1898,6 @@ class AppLocalizationsVi extends AppLocalizations {
   String noKeysFoundForSearch(Object query) {
     return 'Không tìm thấy khóa cho “$query”.';
   }
-
-  @override
-  String get skipDuplicates => 'Bỏ qua duplicates';
-
-  @override
-  String get skipDuplicatesSubtitle =>
-      'Không nhập các nút đã tồn tại trong điều khiển này.';
-
-  @override
-  String get importSelected => 'Nhập mục đã chọn';
 
   @override
   String get noMacrosToExport => 'Không có macro để xuất.';

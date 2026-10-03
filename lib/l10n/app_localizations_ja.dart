@@ -1497,9 +1497,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String get importFromRemotes => 'リモコンから取り込み';
 
   @override
-  String get importFromDatabase => 'DBから取り込み';
-
-  @override
   String get addButton => 'ボタンを追加';
 
   @override
@@ -1745,9 +1742,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String get unknown => '不明';
 
   @override
-  String get emDash => '—';
-
-  @override
   String get searchCommands => 'コマンドを検索';
 
   @override
@@ -1796,35 +1790,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get test => 'テスト';
 
   @override
-  String get allSelectedButtonsWereDuplicates => '選択したボタンはすべて重複でした。';
-
-  @override
-  String get noButtonsImported => 'ボタンは取り込まれませんでした。';
-
-  @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return '$addedCount個のボタンを取り込みました。重複$skippedCount件をスキップしました。';
   }
-
-  @override
-  String get importAllMatchingTitle => '一致する全ボタンを取り込みますか?';
-
-  @override
-  String get noMatchingKeysFound => '一致するキーが見つかりません。';
-
-  @override
-  String importAllMatchingMessage(int count) {
-    return 'This will import up to $count matching keys from the current database selection.';
-  }
-
-  @override
-  String get importAll => 'すべて取り込み';
-
-  @override
-  String get importingButtons => 'ボタンを取り込み中…';
-
-  @override
-  String get allMatchingButtonsWereDuplicates => '一致したボタンはすべて重複でした。';
 
   @override
   String get quickPresets => 'クイックプリセット';
@@ -1842,27 +1810,6 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get selectBrandModelProtocolFirst => '先にブランド モデル プロトコルを選択してください。';
-
-  @override
-  String get importFromDatabaseTitle => 'データベースから取り込み';
-
-  @override
-  String get importFromDatabaseSubtitle =>
-      'デバイスを選び 一致するキーを読み込み 選択したボタンを取り込みます。';
-
-  @override
-  String get deviceAndFilters => 'デバイスとフィルタ';
-
-  @override
-  String loadedCount(int count) {
-    return '$count loaded';
-  }
-
-  @override
-  String get hideFilters => 'フィルタを隠す';
-
-  @override
-  String get showFilters => 'フィルタを表示';
 
   @override
   String get noProtocolFoundForBrandModel => 'このブランドとモデルに対応するプロトコルが見つかりません。';
@@ -1883,15 +1830,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String noKeysFoundForSearch(Object query) {
     return '\"$query\" に一致するキーが見つかりません。';
   }
-
-  @override
-  String get skipDuplicates => '重複をスキップ';
-
-  @override
-  String get skipDuplicatesSubtitle => 'このリモコンにあるボタンは取り込みません';
-
-  @override
-  String get importSelected => '選択を取り込み';
 
   @override
   String get noMacrosToExport => 'エクスポートするマクロがありません';

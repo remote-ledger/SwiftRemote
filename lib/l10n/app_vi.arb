@@ -484,7 +484,6 @@
   "layoutWideDescription": "Rộng: nút 2 cột với chi tiết bổ sung (khuyên dùng).",
   "layoutCompactDescription": "Gọn: classic 4× grid (icons/text only).",
   "importFromRemotes": "Nhập từ điều khiển",
-  "importFromDatabase": "Nhập từ CSDL",
   "addButton": "Thêm nút",
   "noButtonsYet": "Chưa có nút nào",
   "createRemoteEmptyStateDescription": "Thêm nút đầu tiên, rồi nhấn giữ để xem tùy chọn sửa/xóa.",
@@ -620,7 +619,6 @@
   "searchModel": "Tìm mẫu…",
   "unnamedKey": "Khóa chưa tên",
   "unknown": "Không rõ",
-  "emDash": "—",
   "searchCommands": "Tìm lệnh",
   "noMatchingCommands": "Không có lệnh khớp",
   "quickTileFavoritesTitle": "Yêu thích ô nhanh",
@@ -641,8 +639,6 @@
   "selectCommand": "Chọn lệnh",
   "databaseModeAutofillHint": "Chế độ CSDL sẽ tự điền Bước 2 cho bạn (hãng + mẫu + giao thức). Sau khi nhập một khóa, bạn có thể chỉnh mọi thứ trong Thủ công.",
   "test": "Kiểm tra",
-  "allSelectedButtonsWereDuplicates": "Tất cả nút đã chọn đều là bản trùng.",
-  "noButtonsImported": "Không nhập nút nào.",
   "importedButtonsSkippedDuplicates": "Imported {addedCount} nút. Bỏ quaped {skippedCount} duplicate(s).",
   "@importedButtonsSkippedDuplicates": {
     "placeholders": {
@@ -654,19 +650,6 @@
       }
     }
   },
-  "importAllMatchingTitle": "Nhập tất cả nút khớp?",
-  "noMatchingKeysFound": "Không tìm thấy khóa khớp.",
-  "importAllMatchingMessage": "Thao tác này sẽ nhập tối đa {count} khóa khớp từ lựa chọn CSDL hiện tại.",
-  "@importAllMatchingMessage": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "importAll": "Nhập tất cả",
-  "importingButtons": "Đang nhập nút…",
-  "allMatchingButtonsWereDuplicates": "Tất cả nút khớp đều là bản trùng.",
   "quickPresets": "Mẫu nhanh",
   "selectDeviceFirst": "Chọn thiết bị trước",
   "searchByLabelOrHex": "Tìm theo nhãn hoặc hex",
@@ -677,19 +660,6 @@
     }
   },
   "selectBrandModelProtocolFirst": "Chọn hãng, mẫu và giao thức trước.",
-  "importFromDatabaseTitle": "Nhập từ cơ sở dữ liệu",
-  "importFromDatabaseSubtitle": "Chọn thiết bị, tải khóa khớp rồi nhập các nút đã chọn.",
-  "deviceAndFilters": "Thiết bị và bộ lọc",
-  "loadedCount": "Đã tải {count}",
-  "@loadedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "hideFilters": "Ẩn bộ lọc",
-  "showFilters": "Hiện bộ lọc",
   "noProtocolFoundForBrandModel": "Không tìm thấy giao thức cho hãng và mẫu này.",
   "protocolAutoDetected": "Giao thức",
   "protocolAutoDetectedHelper": "Tự phát hiện từ cơ sở dữ liệu. Bạn có thể đổi trước khi nhập.",
@@ -701,9 +671,6 @@
       "query": {}
     }
   },
-  "skipDuplicates": "Bỏ qua duplicates",
-  "skipDuplicatesSubtitle": "Không nhập các nút đã tồn tại trong điều khiển này.",
-  "importSelected": "Nhập mục đã chọn",
   "noMacrosToExport": "Không có macro để xuất.",
   "macrosExportedToDownloads": "Đã xuất macro vào Downloads.",
   "failedToExportMacros": "Xuất macro thất bại.",

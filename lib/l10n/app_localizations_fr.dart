@@ -1585,9 +1585,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get importFromRemotes => 'Importer depuis télés';
 
   @override
-  String get importFromDatabase => 'Importer depuis la BD';
-
-  @override
   String get addButton => 'Ajouter un bouton';
 
   @override
@@ -1841,9 +1838,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get unknown => 'Inconnu';
 
   @override
-  String get emDash => '-';
-
-  @override
   String get searchCommands => 'Rechercher des commandes';
 
   @override
@@ -1892,38 +1886,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get test => 'Tester';
 
   @override
-  String get allSelectedButtonsWereDuplicates =>
-      'Tous les boutons choisis étaient des doublons.';
-
-  @override
-  String get noButtonsImported => 'Aucun bouton importé.';
-
-  @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return '$addedCount bouton(s) importé(s). $skippedCount doublon(s) ignoré(s).';
   }
-
-  @override
-  String get importAllMatchingTitle =>
-      'Importer tous les boutons correspondants ?';
-
-  @override
-  String get noMatchingKeysFound => 'Aucune touche correspondante trouvée.';
-
-  @override
-  String importAllMatchingMessage(int count) {
-    return 'Cela importera jusqu\'à $count touches correspondantes selon la sélection actuelle de la base.';
-  }
-
-  @override
-  String get importAll => 'Tout importer';
-
-  @override
-  String get importingButtons => 'Import des boutons…';
-
-  @override
-  String get allMatchingButtonsWereDuplicates =>
-      'Tous les boutons correspondants étaient des doublons.';
 
   @override
   String get quickPresets => 'Préréglages rapides';
@@ -1942,27 +1907,6 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get selectBrandModelProtocolFirst =>
       'Choisissez d\'abord la marque, le modèle et le protocole.';
-
-  @override
-  String get importFromDatabaseTitle => 'Importer depuis la base';
-
-  @override
-  String get importFromDatabaseSubtitle =>
-      'Choisissez un appareil, chargez les touches correspondantes, puis importez les boutons choisis.';
-
-  @override
-  String get deviceAndFilters => 'Appareil et filtres';
-
-  @override
-  String loadedCount(int count) {
-    return '$count chargé(s)';
-  }
-
-  @override
-  String get hideFilters => 'Masquer les filtres';
-
-  @override
-  String get showFilters => 'Afficher les filtres';
 
   @override
   String get noProtocolFoundForBrandModel =>
@@ -1986,16 +1930,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String noKeysFoundForSearch(Object query) {
     return 'Aucune touche trouvée pour “$query”.';
   }
-
-  @override
-  String get skipDuplicates => 'Ignorer doublons';
-
-  @override
-  String get skipDuplicatesSubtitle =>
-      'N\'importe pas les boutons qui existent déjà dans cette télécommande.';
-
-  @override
-  String get importSelected => 'Importer la sélection';
 
   @override
   String get noMacrosToExport => 'Aucune macro à exporter.';

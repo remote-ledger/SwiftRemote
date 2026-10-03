@@ -1505,9 +1505,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String get importFromRemotes => '가져오기 에서 리모컨';
 
   @override
-  String get importFromDatabase => '가져오기 에서 DB';
-
-  @override
   String get addButton => '추가 버튼';
 
   @override
@@ -1754,9 +1751,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String get unknown => '알 수 없음';
 
   @override
-  String get emDash => '—';
-
-  @override
   String get searchCommands => '검색 명령';
 
   @override
@@ -1805,35 +1799,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get test => '테스트';
 
   @override
-  String get allSelectedButtonsWereDuplicates => '선택한 버튼이 모두 중복이었습니다.';
-
-  @override
-  String get noButtonsImported => '가져온 버튼이 없습니다.';
-
-  @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return '버튼 $addedCount개를 가져왔습니다. 중복 $skippedCount개는 건너뛰었습니다.';
   }
-
-  @override
-  String get importAllMatchingTitle => '가져오기 모든 일치하는 버튼?';
-
-  @override
-  String get noMatchingKeysFound => '없음 일치하는 키 찾을 수 없음.';
-
-  @override
-  String importAllMatchingMessage(int count) {
-    return '현재 데이터베이스 선택에서 일치하는 키를 최대 $count개까지 가져옵니다.';
-  }
-
-  @override
-  String get importAll => '가져오기 모든';
-
-  @override
-  String get importingButtons => '버튼 가져오는 중…';
-
-  @override
-  String get allMatchingButtonsWereDuplicates => '일치하는 버튼이 모두 중복이었습니다.';
 
   @override
   String get quickPresets => '빠른 프리셋';
@@ -1851,27 +1819,6 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get selectBrandModelProtocolFirst => '선택 브랜드, 모델, 및 프로토콜 첫.';
-
-  @override
-  String get importFromDatabaseTitle => '가져오기 에서 데이터베이스';
-
-  @override
-  String get importFromDatabaseSubtitle =>
-      '기기를 선택하고 일치하는 키를 불러온 뒤 선택한 버튼을 가져오세요.';
-
-  @override
-  String get deviceAndFilters => '기기 & 필터';
-
-  @override
-  String loadedCount(int count) {
-    return '$count개 불러옴';
-  }
-
-  @override
-  String get hideFilters => '필터 숨기기';
-
-  @override
-  String get showFilters => '표시 필터';
 
   @override
   String get noProtocolFoundForBrandModel => '없음 프로토콜 찾을 수 없음 브랜드 및 모델.';
@@ -1893,15 +1840,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String noKeysFoundForSearch(Object query) {
     return '없음 키 찾을 수 없음 \"$query\".';
   }
-
-  @override
-  String get skipDuplicates => '중복 건너뛰기';
-
-  @override
-  String get skipDuplicatesSubtitle => '리모컨에 이미 있는 버튼은 가져오지 않습니다.';
-
-  @override
-  String get importSelected => '가져오기 선택됨';
 
   @override
   String get noMacrosToExport => '없음 매크로 내보내기.';

@@ -143,7 +143,7 @@ The Signal Tester is designed to help discover unknown working IR commands.
 
 ### The IR code database
 
-Database mode, Universal Power and importing keys from the database read their codes from [Remote Ledger](https://remote-ledger.github.io/)'s IR code database, published as static files under `https://remote-ledger.github.io/app/v1/`. The app does not bundle a copy.
+The Signal Tester's database mode, the button creator's database mode and Universal Power read their codes from [Remote Ledger](https://remote-ledger.github.io/)'s IR code database, published as static files under `https://remote-ledger.github.io/app/v1/`. The app does not bundle a copy.
 
 - The first time you open a brand its files are downloaded (a few kilobytes for most brands, a few megabytes for the largest) and kept on the device, in the app's support directory rather than the cache that Android may clear. From then on that brand works offline; anything not downloaded yet needs a connection, and the app says so with a Retry.
 - The ledger's manifest is checked at most every 12 hours. When it reports new data, the small files (the brand list, a brand's models, a protocol's signals) are fetched again as they are used, and a brand's key file only if its content changed. A key file that fails its hash is rejected and fetched once more, and whatever is on the device is used when the network fails. The copy is capped at 40 MB; the brands used longest ago are dropped first.
@@ -262,7 +262,7 @@ Notes:
 
 ### Creating Custom Remotes
 1. Open the Remotes tab.
-2. Create a remote and add buttons using protocol encoders, raw patterns, GitHub Store imports, or buttons imported from existing remotes and the database.
+2. Create a remote and add buttons using protocol encoders, raw patterns, GitHub Store imports (Remote Ledger is the store's default source), or buttons imported from existing remotes.
 3. Save and test your buttons from the Remote view.
 
 ### Using the GitHub Store

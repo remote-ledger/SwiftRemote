@@ -1615,9 +1615,6 @@ class AppLocalizationsPl extends AppLocalizations {
   String get importFromRemotes => 'Import z pilotów';
 
   @override
-  String get importFromDatabase => 'Import z bazy';
-
-  @override
   String get addButton => 'Dodaj przycisk';
 
   @override
@@ -1868,9 +1865,6 @@ class AppLocalizationsPl extends AppLocalizations {
   String get unknown => 'Nieznane';
 
   @override
-  String get emDash => '—';
-
-  @override
   String get searchCommands => 'szukaj komendy';
 
   @override
@@ -1919,37 +1913,9 @@ class AppLocalizationsPl extends AppLocalizations {
   String get test => 'Test';
 
   @override
-  String get allSelectedButtonsWereDuplicates =>
-      'All wybrano przyciski were duplicates.';
-
-  @override
-  String get noButtonsImported => 'No przyciski imported.';
-
-  @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return 'Imported $addedCount przycisk(s). Skipped $skippedCount duplicate(s).';
   }
-
-  @override
-  String get importAllMatchingTitle => 'Import wszystkie matching przyciski?';
-
-  @override
-  String get noMatchingKeysFound => 'No matching klawisze znaleziono.';
-
-  @override
-  String importAllMatchingMessage(int count) {
-    return 'This will import up do $count matching klawisze from current baza danych selection.';
-  }
-
-  @override
-  String get importAll => 'Import wszystkie';
-
-  @override
-  String get importingButtons => 'Importing przyciski…';
-
-  @override
-  String get allMatchingButtonsWereDuplicates =>
-      'All matching przyciski were duplicates.';
 
   @override
   String get quickPresets => 'Quick presets';
@@ -1968,27 +1934,6 @@ class AppLocalizationsPl extends AppLocalizations {
   @override
   String get selectBrandModelProtocolFirst =>
       'Select marka, model, i protokół first.';
-
-  @override
-  String get importFromDatabaseTitle => 'Import from baza danych';
-
-  @override
-  String get importFromDatabaseSubtitle =>
-      'Wybierz a urządzenie, load matching klawisze, then import wybrano przyciski.';
-
-  @override
-  String get deviceAndFilters => 'urządzenie & filters';
-
-  @override
-  String loadedCount(int count) {
-    return 'Wczytano $count';
-  }
-
-  @override
-  String get hideFilters => 'Hide filters';
-
-  @override
-  String get showFilters => 'Pokaż filters';
 
   @override
   String get noProtocolFoundForBrandModel =>
@@ -2012,16 +1957,6 @@ class AppLocalizationsPl extends AppLocalizations {
   String noKeysFoundForSearch(Object query) {
     return 'Nie znaleziono klawiszy dla \"$query\".';
   }
-
-  @override
-  String get skipDuplicates => 'Pomiń duplikaty';
-
-  @override
-  String get skipDuplicatesSubtitle =>
-      'Nie importuj przycisków, które już istnieją w tym pilocie.';
-
-  @override
-  String get importSelected => 'Importuj wybrane';
 
   @override
   String get noMacrosToExport => 'Brak makr do eksportu.';

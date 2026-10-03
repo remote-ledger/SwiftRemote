@@ -489,7 +489,6 @@
   "layoutWideDescription": "Large : boutons sur 2 colonnes avec plus de détails (recommandé).",
   "layoutCompactDescription": "Compact : grille 4× classique (icônes/texte seuls).",
   "importFromRemotes": "Importer depuis télés",
-  "importFromDatabase": "Importer depuis la BD",
   "addButton": "Ajouter un bouton",
   "noButtonsYet": "Aucun bouton",
   "createRemoteEmptyStateDescription": "Ajoutez votre premier bouton, puis faites un appui long dessus pour voir modifier/retirer.",
@@ -625,7 +624,6 @@
   "searchModel": "Rechercher un modèle…",
   "unnamedKey": "Touche sans nom",
   "unknown": "Inconnu",
-  "emDash": "-",
   "searchCommands": "Rechercher des commandes",
   "noMatchingCommands": "Aucune commande correspondante",
   "quickTileFavoritesTitle": "Favoris de tuiles rapides",
@@ -646,8 +644,6 @@
   "selectCommand": "Choisir la commande",
   "databaseModeAutofillHint": "Le mode base auto-remplit l'étape 2 (marque + modèle + protocole). Après import d'une touche, vous pouvez tout affiner en Manuel.",
   "test": "Tester",
-  "allSelectedButtonsWereDuplicates": "Tous les boutons choisis étaient des doublons.",
-  "noButtonsImported": "Aucun bouton importé.",
   "importedButtonsSkippedDuplicates": "{addedCount} bouton(s) importé(s). {skippedCount} doublon(s) ignoré(s).",
   "@importedButtonsSkippedDuplicates": {
     "placeholders": {
@@ -659,19 +655,6 @@
       }
     }
   },
-  "importAllMatchingTitle": "Importer tous les boutons correspondants ?",
-  "noMatchingKeysFound": "Aucune touche correspondante trouvée.",
-  "importAllMatchingMessage": "Cela importera jusqu'à {count} touches correspondantes selon la sélection actuelle de la base.",
-  "@importAllMatchingMessage": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "importAll": "Tout importer",
-  "importingButtons": "Import des boutons…",
-  "allMatchingButtonsWereDuplicates": "Tous les boutons correspondants étaient des doublons.",
   "quickPresets": "Préréglages rapides",
   "selectDeviceFirst": "Choisissez d'abord l'appareil",
   "searchByLabelOrHex": "Rechercher par libellé ou hex",
@@ -682,19 +665,6 @@
     }
   },
   "selectBrandModelProtocolFirst": "Choisissez d'abord la marque, le modèle et le protocole.",
-  "importFromDatabaseTitle": "Importer depuis la base",
-  "importFromDatabaseSubtitle": "Choisissez un appareil, chargez les touches correspondantes, puis importez les boutons choisis.",
-  "deviceAndFilters": "Appareil et filtres",
-  "loadedCount": "{count} chargé(s)",
-  "@loadedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "hideFilters": "Masquer les filtres",
-  "showFilters": "Afficher les filtres",
   "noProtocolFoundForBrandModel": "Aucun protocole trouvé pour cette marque et ce modèle.",
   "protocolAutoDetected": "Protocole",
   "protocolAutoDetectedHelper": "Détecté automatiquement depuis la base. Vous pouvez le changer avant import.",
@@ -706,9 +676,6 @@
       "query": {}
     }
   },
-  "skipDuplicates": "Ignorer doublons",
-  "skipDuplicatesSubtitle": "N'importe pas les boutons qui existent déjà dans cette télécommande.",
-  "importSelected": "Importer la sélection",
   "noMacrosToExport": "Aucune macro à exporter.",
   "macrosExportedToDownloads": "Macros exportées dans Téléchargements.",
   "failedToExportMacros": "Échec de l'export des macros.",

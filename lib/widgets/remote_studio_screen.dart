@@ -87,16 +87,6 @@ class _RemoteStudioScreenState extends State<RemoteStudioScreen> {
     }
   }
 
-  Future<void> _openBulkImport() async {
-    final imported = await RemoteEditorActions.importFromDatabase(
-      context,
-      existingButtons: _draft.buttons,
-    );
-    if (imported == null || imported.isEmpty || !mounted) return;
-    setState(() => _draft.addButtons(imported));
-    _showSnack(context.l10n.importedButtonCount(imported.length));
-  }
-
   Future<void> _openImportFromExistingRemotes() async {
     final imported = await RemoteEditorActions.importFromExistingRemotes(
       context,
@@ -128,9 +118,6 @@ class _RemoteStudioScreenState extends State<RemoteStudioScreen> {
         break;
       case AddButtonSheetAction.importFromRemotes:
         await _openImportFromExistingRemotes();
-        break;
-      case AddButtonSheetAction.importFromDatabase:
-        await _openBulkImport();
         break;
       case AddButtonSheetAction.browseGithubStore:
         await _openGitHubStore();
@@ -548,35 +535,37 @@ class _RemoteStudioScreenState extends State<RemoteStudioScreen> {
               ),
             ),
             SizedBox(height: compactPhone ? 16 : 20),
-            GridView.count(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              crossAxisCount: 2,
-              mainAxisSpacing: 10,
-              crossAxisSpacing: 10,
-              childAspectRatio: compactPhone ? 2.5 : 2.8,
-              children: [
-                FilledButton.icon(
-                  onPressed: _openBulkImport,
-                  icon: const Icon(Icons.storage_rounded),
-                  label: Text(context.l10n.importFromDatabase),
-                ),
-                FilledButton.tonalIcon(
-                  onPressed: _addButton,
-                  icon: const Icon(Icons.edit_note_rounded),
-                  label: Text(context.l10n.addButton),
-                ),
-                OutlinedButton.icon(
-                  onPressed: _openImportFromExistingRemotes,
-                  icon: const Icon(Icons.import_export_rounded),
-                  label: Text(context.l10n.importFromRemotes),
-                ),
-                OutlinedButton.icon(
-                  onPressed: _openGitHubStore,
-                  icon: const FaIcon(FontAwesomeIcons.github, size: 18),
-                  label: Text(context.l10n.browseGithubStore),
-                ),
-              ],
+            SizedBox(
+              height: compactPhone ? 56 : 60,
+              child: Row(
+                children: [
+                  Expanded(
+                    child: FilledButton.tonalIcon(
+                      onPressed: _addButton,
+                      icon: const Icon(Icons.edit_note_rounded),
+                      label: Text(context.l10n.addButton),
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: OutlinedButton.icon(
+                      onPressed: _openImportFromExistingRemotes,
+                      icon: const Icon(Icons.import_export_rounded),
+                      label: Text(context.l10n.importFromRemotes),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 10),
+            SizedBox(
+              height: compactPhone ? 56 : 60,
+              width: double.infinity,
+              child: OutlinedButton.icon(
+                onPressed: _openGitHubStore,
+                icon: const FaIcon(FontAwesomeIcons.github, size: 18),
+                label: Text(context.l10n.browseGithubStore),
+              ),
             ),
           ],
         ),

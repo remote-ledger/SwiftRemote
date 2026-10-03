@@ -484,7 +484,6 @@
   "layoutWideDescription": "Ancho: botões de 2 columnas con detalhes extra (recomendado).",
   "layoutCompactDescription": "Compacto: grade clássica 4x (apenas ícones/texto).",
   "importFromRemotes": "Importar de controles",
-  "importFromDatabase": "Importar de BD",
   "addButton": "Adicionar botão",
   "noButtonsYet": "Ainda não há botões",
   "createRemoteEmptyStateDescription": "Adicione seu primeiro botão e depois mantenha pressionado para editar ou remover.",
@@ -620,7 +619,6 @@
   "searchModel": "pesquisar modelo…",
   "unnamedKey": "Tecla sem nome",
   "unknown": "Desconhecido",
-  "emDash": "-",
   "searchCommands": "pesquisar controles",
   "noMatchingCommands": "Não há controles correspondentes",
   "quickTileFavoritesTitle": "Favoritos dos blocos rápidos",
@@ -641,8 +639,6 @@
   "selectCommand": "Selecionar controle",
   "databaseModeAutofillHint": "O modo Banco de dados preenche o Passo 2 para você (marca + modelo + protocolo). Após importar uma tecla, você pode ajustar tudo no modo Manual.",
   "test": "Testar",
-  "allSelectedButtonsWereDuplicates": "Todos os botões elegidos eran duplicados.",
-  "noButtonsImported": "Nenhum botão foi importado.",
   "importedButtonsSkippedDuplicates": "Foram importados {addedCount} botão(es). Se omitieron {skippedCount} duplicado(s).",
   "@importedButtonsSkippedDuplicates": {
     "placeholders": {
@@ -654,19 +650,6 @@
       }
     }
   },
-  "importAllMatchingTitle": "Importar todos os botões correspondentes?",
-  "noMatchingKeysFound": "Nenhuma tecla correspondente foi encontrada.",
-  "importAllMatchingMessage": "Isto importará até {count} teclas correspondentes da seleção atual do banco de dados.",
-  "@importAllMatchingMessage": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "importAll": "Importar tudo",
-  "importingButtons": "Importando botões…",
-  "allMatchingButtonsWereDuplicates": "Todos os botões correspondentes eran duplicados.",
   "quickPresets": "configurações rápidos",
   "selectDeviceFirst": "Selecione primeiro um dispositivo",
   "searchByLabelOrHex": "pesquisar por etiqueta o hex",
@@ -677,19 +660,6 @@
     }
   },
   "selectBrandModelProtocolFirst": "Selecione primeiroo marca, modelo e protocolo.",
-  "importFromDatabaseTitle": "Importar de a base de dados",
-  "importFromDatabaseSubtitle": "Escolha um dispositivo, carregue as teclas correspondentes e depois importe os botões selecionados.",
-  "deviceAndFilters": "Dispositivo e filtros",
-  "loadedCount": "{count} cargados",
-  "@loadedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "hideFilters": "Ocultar filtros",
-  "showFilters": "Mostrar filtros",
   "noProtocolFoundForBrandModel": "Nenhum protocolo foi encontrado para esta marca e modelo.",
   "protocolAutoDetected": "Protocolo",
   "protocolAutoDetectedHelper": "Detectado automaticamente no banco de dados. Você pode alterá-lo antes de importar.",
@@ -701,9 +671,6 @@
       "query": {}
     }
   },
-  "skipDuplicates": "Omitir duplicados",
-  "skipDuplicatesSubtitle": "Não importes botões que já existan en este controle.",
-  "importSelected": "Importar selecionados",
   "noMacrosToExport": "Não há macros para exportar.",
   "macrosExportedToDownloads": "Macros exportedas a Descargas.",
   "failedToExportMacros": "Não se pudieron exporter as macros.",

@@ -484,7 +484,6 @@
   "layoutWideDescription": "Geniş: Ek ayrıntılarla 2 sütunlu düğmeler (önerilen).",
   "layoutCompactDescription": "Compact: classic 4× grid (icons/text yalnızca).",
   "importFromRemotes": "Kumandalardan içe aktar",
-  "importFromDatabase": "Veritabanından içe aktar",
   "addButton": "Ekle düğme",
   "noButtonsYet": "Henüz düğme yok",
   "createRemoteEmptyStateDescription": "İlk düğmenizi ekleyin, sonra düzenleme/kaldırma seçenekleri için ona uzun basın.",
@@ -620,7 +619,6 @@
   "searchModel": "Model ara…",
   "unnamedKey": "Unnamed key",
   "unknown": "Bilinmeyen",
-  "emDash": "—",
   "searchCommands": "Ara commands",
   "noMatchingCommands": "Eşleşen yok commands",
   "quickTileFavoritesTitle": "Hızlı döşeme favorileri",
@@ -641,8 +639,6 @@
   "selectCommand": "Komut seç",
   "databaseModeAutofillHint": "Veritabanı modu 2. adımı sizin için otomatik doldurur (marka + model + protokol). Bir tuş içe aktardıktan sonra Manuel bölümünde her şeyi iyileştirebilirsiniz.",
   "test": "Test",
-  "allSelectedButtonsWereDuplicates": "Tüm seçili düğmeler yinelemeydi.",
-  "noButtonsImported": "Hiç düğme içe aktarılmadı.",
   "importedButtonsSkippedDuplicates": "{addedCount} düğme içe aktarıldı. {skippedCount} yineleme atlandı.",
   "@importedButtonsSkippedDuplicates": {
     "placeholders": {
@@ -654,19 +650,6 @@
       }
     }
   },
-  "importAllMatchingTitle": "Eşleşen tüm düğmeler içe aktarılsın mı?",
-  "noMatchingKeysFound": "Eşleşen tuş bulunamadı.",
-  "importAllMatchingMessage": "Bu işlem mevcut veritabanı seçiminden en fazla {count} eşleşen tuşu içe aktarır.",
-  "@importAllMatchingMessage": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "importAll": "Tümünü içe aktar",
-  "importingButtons": "Düğmeler içe aktarılıyor…",
-  "allMatchingButtonsWereDuplicates": "Eşleşen tüm düğmeler yinelemeydi.",
   "quickPresets": "Hızlı ön ayarlar",
   "selectDeviceFirst": "Seç cihaz first",
   "searchByLabelOrHex": "Ara by label or hex",
@@ -677,19 +660,6 @@
     }
   },
   "selectBrandModelProtocolFirst": "Önce marka, model ve protokol seçin.",
-  "importFromDatabaseTitle": "Veritabanından içe aktar",
-  "importFromDatabaseSubtitle": "Bir cihaz seçin, eşleşen tuşları yükleyin, sonra seçili düğmeleri içe aktarın.",
-  "deviceAndFilters": "Cihaz ve filtreler",
-  "loadedCount": "{count} loaded",
-  "@loadedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "hideFilters": "Hide filtres",
-  "showFilters": "Filtreleri göster",
   "noProtocolFoundForBrandModel": "Bu marka ve model için protokol bulunamadı.",
   "protocolAutoDetected": "Protokol",
   "protocolAutoDetectedHelper": "Veritabanından otomatik algılandı. İçe aktarmadan önce değiştirebilirsiniz.",
@@ -701,9 +671,6 @@
       "query": {}
     }
   },
-  "skipDuplicates": "Skip duplicates",
-  "skipDuplicatesSubtitle": "Bu kumandada zaten bulunan düğmeleri içe aktarmayın.",
-  "importSelected": "İçe aktar seçili",
   "noMacrosToExport": "No macros to dışa aktar.",
   "macrosExportedToDownloads": "Makrolar İndirilenler'e aktarıldı.",
   "failedToExportMacros": "Başarısız to dışa aktar macros.",

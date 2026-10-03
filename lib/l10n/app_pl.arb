@@ -484,7 +484,6 @@
   "layoutWideDescription": "Szeroki: przyciski w 2 kolumnach z dodatkowymi szczegółami (zalecane).",
   "layoutCompactDescription": "Kompaktowy: klasyczna siatka 4× (tylko ikony/tekst).",
   "importFromRemotes": "Import z pilotów",
-  "importFromDatabase": "Import z bazy",
   "addButton": "Dodaj przycisk",
   "noButtonsYet": "Brak przycisków",
   "createRemoteEmptyStateDescription": "Dodaj pierwszy przycisk, a potem przytrzymaj go, aby edytować lub usunąć.",
@@ -620,7 +619,6 @@
   "searchModel": "szukaj model…",
   "unnamedKey": "Unnamed klawisz",
   "unknown": "Nieznane",
-  "emDash": "—",
   "searchCommands": "szukaj komendy",
   "noMatchingCommands": "No matching komendy",
   "quickTileFavoritesTitle": "Quick kafelek ulubione",
@@ -641,8 +639,6 @@
   "selectCommand": "Select komenda",
   "databaseModeAutofillHint": "baza danych mode auto-fills krok 2 dla you (marka + model + protokół). After importing a klawisz, you can refine anything in Manual.",
   "test": "Test",
-  "allSelectedButtonsWereDuplicates": "All wybrano przyciski were duplicates.",
-  "noButtonsImported": "No przyciski imported.",
   "importedButtonsSkippedDuplicates": "Imported {addedCount} przycisk(s). Skipped {skippedCount} duplicate(s).",
   "@importedButtonsSkippedDuplicates": {
     "placeholders": {
@@ -654,19 +650,6 @@
       }
     }
   },
-  "importAllMatchingTitle": "Import wszystkie matching przyciski?",
-  "noMatchingKeysFound": "No matching klawisze znaleziono.",
-  "importAllMatchingMessage": "This will import up do {count} matching klawisze from current baza danych selection.",
-  "@importAllMatchingMessage": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "importAll": "Import wszystkie",
-  "importingButtons": "Importing przyciski…",
-  "allMatchingButtonsWereDuplicates": "All matching przyciski were duplicates.",
   "quickPresets": "Quick presets",
   "selectDeviceFirst": "Select urządzenie first",
   "searchByLabelOrHex": "szukaj by etykieta lub hex",
@@ -677,19 +660,6 @@
     }
   },
   "selectBrandModelProtocolFirst": "Select marka, model, i protokół first.",
-  "importFromDatabaseTitle": "Import from baza danych",
-  "importFromDatabaseSubtitle": "Wybierz a urządzenie, load matching klawisze, then import wybrano przyciski.",
-  "deviceAndFilters": "urządzenie & filters",
-  "loadedCount": "Wczytano {count}",
-  "@loadedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "hideFilters": "Hide filters",
-  "showFilters": "Pokaż filters",
   "noProtocolFoundForBrandModel": "No protokół znaleziono dla this marka i model.",
   "protocolAutoDetected": "Protokół",
   "protocolAutoDetectedHelper": "Wykryto automatycznie z bazy danych. Przed importem możesz to zmienić.",
@@ -701,9 +671,6 @@
       "query": {}
     }
   },
-  "skipDuplicates": "Pomiń duplikaty",
-  "skipDuplicatesSubtitle": "Nie importuj przycisków, które już istnieją w tym pilocie.",
-  "importSelected": "Importuj wybrane",
   "noMacrosToExport": "Brak makr do eksportu.",
   "macrosExportedToDownloads": "Wyeksportowano makra do Pobranych.",
   "failedToExportMacros": "Nie udało się wyeksportować makr.",

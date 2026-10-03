@@ -1584,9 +1584,6 @@ class AppLocalizationsFil extends AppLocalizations {
   String get importFromRemotes => 'Import from mga remote';
 
   @override
-  String get importFromDatabase => 'Import from DB';
-
-  @override
   String get addButton => 'Add button';
 
   @override
@@ -1840,9 +1837,6 @@ class AppLocalizationsFil extends AppLocalizations {
   String get unknown => 'Hindi kilala';
 
   @override
-  String get emDash => '—';
-
-  @override
   String get searchCommands => 'Search commands';
 
   @override
@@ -1891,37 +1885,9 @@ class AppLocalizationsFil extends AppLocalizations {
   String get test => 'Subukan';
 
   @override
-  String get allSelectedButtonsWereDuplicates =>
-      'All napiling mga button were duplicates.';
-
-  @override
-  String get noButtonsImported => 'Walang mga button imported.';
-
-  @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return 'Imported $addedCount button(s). Skipped $skippedCount duplicate(s).';
   }
-
-  @override
-  String get importAllMatchingTitle => 'Import all matching mga button?';
-
-  @override
-  String get noMatchingKeysFound => 'Walang matching keys found.';
-
-  @override
-  String importAllMatchingMessage(int count) {
-    return 'Ang will import up to $count matching keys from the kasalukuyang database selection.';
-  }
-
-  @override
-  String get importAll => 'Import all';
-
-  @override
-  String get importingButtons => 'Importing mga button…';
-
-  @override
-  String get allMatchingButtonsWereDuplicates =>
-      'All matching mga button were duplicates.';
 
   @override
   String get quickPresets => 'Quick presets';
@@ -1940,27 +1906,6 @@ class AppLocalizationsFil extends AppLocalizations {
   @override
   String get selectBrandModelProtocolFirst =>
       'Select brand, modelo, at protocol first.';
-
-  @override
-  String get importFromDatabaseTitle => 'Import from database';
-
-  @override
-  String get importFromDatabaseSubtitle =>
-      'Pumili ng device, i-load ang magkakatugmang keys, saka i-import ang mga napiling button.';
-
-  @override
-  String get deviceAndFilters => 'Device & filters';
-
-  @override
-  String loadedCount(int count) {
-    return '$count na-load';
-  }
-
-  @override
-  String get hideFilters => 'Hide filters';
-
-  @override
-  String get showFilters => 'Show filters';
 
   @override
   String get noProtocolFoundForBrandModel =>
@@ -1984,16 +1929,6 @@ class AppLocalizationsFil extends AppLocalizations {
   String noKeysFoundForSearch(Object query) {
     return 'Walang keys found para sa “$query”.';
   }
-
-  @override
-  String get skipDuplicates => 'Skip duplicates';
-
-  @override
-  String get skipDuplicatesSubtitle =>
-      'Huwag i-import ang mga button na nasa remote na ito.';
-
-  @override
-  String get importSelected => 'Import selected';
 
   @override
   String get noMacrosToExport => 'Walang mga macro to export.';

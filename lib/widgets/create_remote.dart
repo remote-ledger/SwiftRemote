@@ -65,18 +65,6 @@ class _CreateRemoteState extends State<CreateRemote> {
     });
   }
 
-  Future<void> _openBulkImport() async {
-    final imported = await RemoteEditorActions.importFromDatabase(
-      context,
-      existingButtons: remote.buttons,
-    );
-    if (imported == null || imported.isEmpty || !mounted) return;
-    setState(() {
-      remote.buttons.addAll(imported);
-    });
-    _showSnack(context.l10n.importedButtonCount(imported.length));
-  }
-
   Future<void> _openImportFromExistingRemotes() async {
     final imported = await RemoteEditorActions.importFromExistingRemotes(
       context,
@@ -332,24 +320,10 @@ class _CreateRemoteState extends State<CreateRemote> {
                       label: Text(context.l10n.addButton),
                     ),
                     const SizedBox(height: 8),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: FilledButton.tonalIcon(
-                            onPressed: _openImportFromExistingRemotes,
-                            icon: const Icon(Icons.merge_type_rounded),
-                            label: Text(context.l10n.importFromRemotes),
-                          ),
-                        ),
-                        const SizedBox(width: 8),
-                        Expanded(
-                          child: FilledButton.tonalIcon(
-                            onPressed: _openBulkImport,
-                            icon: const Icon(Icons.playlist_add_rounded),
-                            label: Text(context.l10n.importFromDatabase),
-                          ),
-                        ),
-                      ],
+                    FilledButton.tonalIcon(
+                      onPressed: _openImportFromExistingRemotes,
+                      icon: const Icon(Icons.merge_type_rounded),
+                      label: Text(context.l10n.importFromRemotes),
                     ),
                   ],
                 ),
@@ -468,24 +442,10 @@ class _CreateRemoteState extends State<CreateRemote> {
           style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w800),
         ),
         const SizedBox(height: 8),
-        Row(
-          children: [
-            Expanded(
-              child: FilledButton.tonalIcon(
-                onPressed: _openImportFromExistingRemotes,
-                icon: const Icon(Icons.merge_type_rounded),
-                label: Text(context.l10n.importFromRemotes),
-              ),
-            ),
-            const SizedBox(width: 8),
-            Expanded(
-              child: FilledButton.tonalIcon(
-                onPressed: _openBulkImport,
-                icon: const Icon(Icons.playlist_add_rounded),
-                label: Text(context.l10n.importFromDatabase),
-              ),
-            ),
-          ],
+        FilledButton.tonalIcon(
+          onPressed: _openImportFromExistingRemotes,
+          icon: const Icon(Icons.merge_type_rounded),
+          label: Text(context.l10n.importFromRemotes),
         ),
         const SizedBox(height: 8),
         FilledButton.tonalIcon(

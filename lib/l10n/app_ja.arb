@@ -484,7 +484,6 @@
   "layoutWideDescription": "ワイド 2列ボタンで詳細も表示 推奨。",
   "layoutCompactDescription": "コンパクト 定番の4×グリッド アイコンまたは文字のみ。",
   "importFromRemotes": "リモコンから取り込み",
-  "importFromDatabase": "DBから取り込み",
   "addButton": "ボタンを追加",
   "noButtonsYet": "まだボタンがありません",
   "createRemoteEmptyStateDescription": "最初のボタンを追加し その後長押しで編集や削除の操作を使ってください。",
@@ -620,7 +619,6 @@
   "searchModel": "モデルを検索…",
   "unnamedKey": "Unnamed key",
   "unknown": "不明",
-  "emDash": "—",
   "searchCommands": "コマンドを検索",
   "noMatchingCommands": "一致するコマンドがありません",
   "quickTileFavoritesTitle": "クイックタイルお気に入り",
@@ -641,8 +639,6 @@
   "selectCommand": "コマンドを選択",
   "databaseModeAutofillHint": "データベースモードではステップ2 ブランド モデル プロトコル を自動入力します。キー取り込み後は手動で調整できます。",
   "test": "テスト",
-  "allSelectedButtonsWereDuplicates": "選択したボタンはすべて重複でした。",
-  "noButtonsImported": "ボタンは取り込まれませんでした。",
   "importedButtonsSkippedDuplicates": "{addedCount}個のボタンを取り込みました。重複{skippedCount}件をスキップしました。",
   "@importedButtonsSkippedDuplicates": {
     "placeholders": {
@@ -654,19 +650,6 @@
       }
     }
   },
-  "importAllMatchingTitle": "一致する全ボタンを取り込みますか?",
-  "noMatchingKeysFound": "一致するキーが見つかりません。",
-  "importAllMatchingMessage": "This will import up to {count} matching keys from the current database selection.",
-  "@importAllMatchingMessage": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "importAll": "すべて取り込み",
-  "importingButtons": "ボタンを取り込み中…",
-  "allMatchingButtonsWereDuplicates": "一致したボタンはすべて重複でした。",
   "quickPresets": "クイックプリセット",
   "selectDeviceFirst": "先にデバイスを選択",
   "searchByLabelOrHex": "ラベルまたは16進で検索",
@@ -677,19 +660,6 @@
     }
   },
   "selectBrandModelProtocolFirst": "先にブランド モデル プロトコルを選択してください。",
-  "importFromDatabaseTitle": "データベースから取り込み",
-  "importFromDatabaseSubtitle": "デバイスを選び 一致するキーを読み込み 選択したボタンを取り込みます。",
-  "deviceAndFilters": "デバイスとフィルタ",
-  "loadedCount": "{count} loaded",
-  "@loadedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "hideFilters": "フィルタを隠す",
-  "showFilters": "フィルタを表示",
   "noProtocolFoundForBrandModel": "このブランドとモデルに対応するプロトコルが見つかりません。",
   "protocolAutoDetected": "プロトコル",
   "protocolAutoDetectedHelper": "データベースから自動検出されました。取り込み前に変更できます。",
@@ -701,9 +671,6 @@
       "query": {}
     }
   },
-  "skipDuplicates": "重複をスキップ",
-  "skipDuplicatesSubtitle": "このリモコンにあるボタンは取り込みません",
-  "importSelected": "選択を取り込み",
   "noMacrosToExport": "エクスポートするマクロがありません",
   "macrosExportedToDownloads": "マクロをDownloadsに書き出しました。",
   "failedToExportMacros": "マクロのエクスポートに失敗しました。",

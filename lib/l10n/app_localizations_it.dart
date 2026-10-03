@@ -1591,9 +1591,6 @@ class AppLocalizationsIt extends AppLocalizations {
   String get importFromRemotes => 'Importa dai telecomandi';
 
   @override
-  String get importFromDatabase => 'Importa dal DB';
-
-  @override
   String get addButton => 'Aggiungi pulsante';
 
   @override
@@ -1846,9 +1843,6 @@ class AppLocalizationsIt extends AppLocalizations {
   String get unknown => 'Sconosciuto';
 
   @override
-  String get emDash => '-';
-
-  @override
   String get searchCommands => 'Cerca comandi';
 
   @override
@@ -1897,38 +1891,9 @@ class AppLocalizationsIt extends AppLocalizations {
   String get test => 'Test';
 
   @override
-  String get allSelectedButtonsWereDuplicates =>
-      'Tutti i pulsanti selezionati erano duplicati.';
-
-  @override
-  String get noButtonsImported => 'Nessun pulsante importato.';
-
-  @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return 'Importati $addedCount pulsanti. Saltati $skippedCount duplicati.';
   }
-
-  @override
-  String get importAllMatchingTitle =>
-      'Importare tutti i pulsanti corrispondenti?';
-
-  @override
-  String get noMatchingKeysFound => 'Nessun tasto corrispondente trovato.';
-
-  @override
-  String importAllMatchingMessage(int count) {
-    return 'Questo importerà fino a $count tasti corrispondenti dalla selezione attuale del database.';
-  }
-
-  @override
-  String get importAll => 'Importa tutto';
-
-  @override
-  String get importingButtons => 'Importazione pulsanti…';
-
-  @override
-  String get allMatchingButtonsWereDuplicates =>
-      'Tutti i pulsanti corrispondenti erano duplicati.';
 
   @override
   String get quickPresets => 'Preset rapidi';
@@ -1947,27 +1912,6 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get selectBrandModelProtocolFirst =>
       'Seleziona prima marca modello protocollo.';
-
-  @override
-  String get importFromDatabaseTitle => 'Importa dal database';
-
-  @override
-  String get importFromDatabaseSubtitle =>
-      'Scegli un dispositivo, carica i tasti corrispondenti, poi importa i pulsanti selezionati.';
-
-  @override
-  String get deviceAndFilters => 'Dispositivo e filtri';
-
-  @override
-  String loadedCount(int count) {
-    return '$count caricati';
-  }
-
-  @override
-  String get hideFilters => 'Nascondi filtri';
-
-  @override
-  String get showFilters => 'Mostra filtri';
 
   @override
   String get noProtocolFoundForBrandModel =>
@@ -1991,16 +1935,6 @@ class AppLocalizationsIt extends AppLocalizations {
   String noKeysFoundForSearch(Object query) {
     return 'Nessun tasto trovato per “$query”.';
   }
-
-  @override
-  String get skipDuplicates => 'Salta duplicati';
-
-  @override
-  String get skipDuplicatesSubtitle =>
-      'Non importare pulsanti che esistono già in questo telecomando.';
-
-  @override
-  String get importSelected => 'Importa selezionati';
 
   @override
   String get noMacrosToExport => 'Nessuna macro da esportare.';

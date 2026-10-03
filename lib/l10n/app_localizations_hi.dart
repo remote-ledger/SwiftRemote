@@ -1566,9 +1566,6 @@ class AppLocalizationsHi extends AppLocalizations {
   String get importFromRemotes => 'आयात करें से रिमोट';
 
   @override
-  String get importFromDatabase => 'आयात करें से DB';
-
-  @override
   String get addButton => 'जोड़ें बटन';
 
   @override
@@ -1818,9 +1815,6 @@ class AppLocalizationsHi extends AppLocalizations {
   String get unknown => 'अज्ञात';
 
   @override
-  String get emDash => '—';
-
-  @override
   String get searchCommands => 'खोजें कमांड';
 
   @override
@@ -1869,36 +1863,9 @@ class AppLocalizationsHi extends AppLocalizations {
   String get test => 'जांचें';
 
   @override
-  String get allSelectedButtonsWereDuplicates => 'सभी चयनित बटन थे डुप्लिकेट.';
-
-  @override
-  String get noButtonsImported => 'कोई बटन आयात नहीं हुआ।';
-
-  @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return '$addedCount बटन आयात किए गए। $skippedCount डुप्लिकेट छोड़े गए।';
   }
-
-  @override
-  String get importAllMatchingTitle => 'आयात करें सभी मेल खाती बटन?';
-
-  @override
-  String get noMatchingKeysFound => 'नहीं मेल खाती keys मिला.';
-
-  @override
-  String importAllMatchingMessage(int count) {
-    return 'यह होगा आयात ऊपर तक $count मेल खाती keys से the वर्तमान डेटाबेस selection.';
-  }
-
-  @override
-  String get importAll => 'आयात करें सभी';
-
-  @override
-  String get importingButtons => 'बटन आयात हो रहे हैं…';
-
-  @override
-  String get allMatchingButtonsWereDuplicates =>
-      'सभी मेल खाती बटन थे डुप्लिकेट.';
 
   @override
   String get quickPresets => 'त्वरित प्रीसेट';
@@ -1917,27 +1884,6 @@ class AppLocalizationsHi extends AppLocalizations {
   @override
   String get selectBrandModelProtocolFirst =>
       'चुनें ब्रांड, मॉडल, और प्रोटोकॉल पहले.';
-
-  @override
-  String get importFromDatabaseTitle => 'आयात करें से डेटाबेस';
-
-  @override
-  String get importFromDatabaseSubtitle =>
-      'चुनें a डिवाइस, लोड करें मेल खाती keys, फिर आयात चयनित बटन.';
-
-  @override
-  String get deviceAndFilters => 'डिवाइस & फ़िल्टर';
-
-  @override
-  String loadedCount(int count) {
-    return '$count लोड किया गया';
-  }
-
-  @override
-  String get hideFilters => 'छिपाएं फ़िल्टर';
-
-  @override
-  String get showFilters => 'दिखाएं फ़िल्टर';
 
   @override
   String get noProtocolFoundForBrandModel =>
@@ -1961,16 +1907,6 @@ class AppLocalizationsHi extends AppLocalizations {
   String noKeysFoundForSearch(Object query) {
     return 'नहीं keys मिला के लिए “$query”.';
   }
-
-  @override
-  String get skipDuplicates => 'छोड़ें डुप्लिकेट';
-
-  @override
-  String get skipDuplicatesSubtitle =>
-      'Do नहीं आयात बटन वह already exist में यह रिमोट.';
-
-  @override
-  String get importSelected => 'आयात करें चयनित';
 
   @override
   String get noMacrosToExport => 'नहीं मैक्रो तक निर्यात.';

@@ -1464,9 +1464,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get importFromRemotes => '从遥控器导入';
 
   @override
-  String get importFromDatabase => '从数据库导入';
-
-  @override
   String get addButton => '添加按钮';
 
   @override
@@ -1710,9 +1707,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get unknown => '未知';
 
   @override
-  String get emDash => '-';
-
-  @override
   String get searchCommands => '搜索命令';
 
   @override
@@ -1761,35 +1755,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get test => '测试';
 
   @override
-  String get allSelectedButtonsWereDuplicates => '所选按钮全部为重复项。';
-
-  @override
-  String get noButtonsImported => '未导入任何按钮。';
-
-  @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return '已导入 $addedCount 个按钮。跳过 $skippedCount 个重复项。';
   }
-
-  @override
-  String get importAllMatchingTitle => '导入所有匹配按钮';
-
-  @override
-  String get noMatchingKeysFound => '未找到匹配按键。';
-
-  @override
-  String importAllMatchingMessage(int count) {
-    return '这将从当前数据库选择中导入最多 $count 个匹配按键。';
-  }
-
-  @override
-  String get importAll => '全部导入';
-
-  @override
-  String get importingButtons => '正在导入按钮…';
-
-  @override
-  String get allMatchingButtonsWereDuplicates => '所有匹配按钮都是重复项。';
 
   @override
   String get quickPresets => '快捷预设';
@@ -1807,26 +1775,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get selectBrandModelProtocolFirst => '请先选择品牌、型号和协议。';
-
-  @override
-  String get importFromDatabaseTitle => '从数据库导入';
-
-  @override
-  String get importFromDatabaseSubtitle => '选择设备，加载匹配按键，然后导入所选按钮。';
-
-  @override
-  String get deviceAndFilters => '设备与筛选';
-
-  @override
-  String loadedCount(int count) {
-    return '已加载 $count';
-  }
-
-  @override
-  String get hideFilters => '隐藏筛选';
-
-  @override
-  String get showFilters => '显示筛选';
 
   @override
   String get noProtocolFoundForBrandModel => '未找到此品牌和型号对应的协议。';
@@ -1847,15 +1795,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String noKeysFoundForSearch(Object query) {
     return '未找到 “$query” 的按键。';
   }
-
-  @override
-  String get skipDuplicates => '跳过重复项';
-
-  @override
-  String get skipDuplicatesSubtitle => '不要导入此遥控器中已存在的按钮。';
-
-  @override
-  String get importSelected => '导入所选';
 
   @override
   String get noMacrosToExport => '没有可导出的宏。';

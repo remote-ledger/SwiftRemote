@@ -484,7 +484,6 @@
   "layoutWideDescription": "Wide: 2-column knoppen with extra details (recommended).",
   "layoutCompactDescription": "Compact klassieke 4×-rasterknoppen alleen pictogrammen of tekst.",
   "importFromRemotes": "Importeren from remotes",
-  "importFromDatabase": "Importeren from DB",
   "addButton": "Toevoegen knop",
   "noButtonsYet": "Geen knoppen yet",
   "createRemoteEmptyStateDescription": "Toevoegen your first knop, then long-press it for bewerken/remove options.",
@@ -620,7 +619,6 @@
   "searchModel": "Zoeken model…",
   "unnamedKey": "Naamloze toets",
   "unknown": "Onbekend",
-  "emDash": "—",
   "searchCommands": "Zoeken commands",
   "noMatchingCommands": "Geen matching commands",
   "quickTileFavoritesTitle": "Quick tile favorieten",
@@ -641,8 +639,6 @@
   "selectCommand": "Selecteer Command",
   "databaseModeAutofillHint": "Database mode auto-fills Step 2 for you (brand + model + protocol). After importerening a key, you can refine anything in Manual.",
   "test": "Test",
-  "allSelectedButtonsWereDuplicates": "All geselecteerd knoppen were duplicates.",
-  "noButtonsImported": "Geen knoppen importerened.",
   "importedButtonsSkippedDuplicates": "Importerened {addedCount} knop(s). Overslaanped {skippedCount} duplicate(s).",
   "@importedButtonsSkippedDuplicates": {
     "placeholders": {
@@ -654,19 +650,6 @@
       }
     }
   },
-  "importAllMatchingTitle": "Importeren all matching knoppen?",
-  "noMatchingKeysFound": "Geen overeenkomende toetsen gevonden.",
-  "importAllMatchingMessage": "This will importeren up to {count} matching keys from the current database selection.",
-  "@importAllMatchingMessage": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "importAll": "Importeren all",
-  "importingButtons": "Importeren knoppen…",
-  "allMatchingButtonsWereDuplicates": "All matching knoppen were duplicates.",
   "quickPresets": "Snelle presets",
   "selectDeviceFirst": "Selecteer apparaat first",
   "searchByLabelOrHex": "Zoek op label of hex",
@@ -677,19 +660,6 @@
     }
   },
   "selectBrandModelProtocolFirst": "Selecteer brand, model, and protocol first.",
-  "importFromDatabaseTitle": "Importereneren uit database",
-  "importFromDatabaseSubtitle": "Kies een apparaat, laad overeenkomende toetsen en importereneer daarna de geselecteerde knoppen.",
-  "deviceAndFilters": "Apparaat & filters",
-  "loadedCount": "{count} geladen",
-  "@loadedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "hideFilters": "Filters verbergen",
-  "showFilters": "Filters tonen",
   "noProtocolFoundForBrandModel": "Geen protocol gevonden voor dit merk en model.",
   "protocolAutoDetected": "Protocol",
   "protocolAutoDetectedHelper": "Automatisch uit de database gedetecteerd. Je kunt dit vóór het importereneren wijzigen.",
@@ -701,9 +671,6 @@
       "query": {}
     }
   },
-  "skipDuplicates": "Overslaan duplicates",
-  "skipDuplicatesSubtitle": "Do not importeren knoppen that already exist in this remote.",
-  "importSelected": "Importeren geselecteerd",
   "noMacrosToExport": "Geen macros to exporteren.",
   "macrosExportedToDownloads": "Macro's exporterened to Downloads.",
   "failedToExportMacros": "Macro's exportereneren mislukt.",

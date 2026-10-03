@@ -2838,12 +2838,6 @@ abstract class AppLocalizations {
   /// **'Import from remotes'**
   String get importFromRemotes;
 
-  /// No description provided for @importFromDatabase.
-  ///
-  /// In en, this message translates to:
-  /// **'Import from DB'**
-  String get importFromDatabase;
-
   /// No description provided for @addButton.
   ///
   /// In en, this message translates to:
@@ -3282,12 +3276,6 @@ abstract class AppLocalizations {
   /// **'Unknown'**
   String get unknown;
 
-  /// No description provided for @emDash.
-  ///
-  /// In en, this message translates to:
-  /// **'-'**
-  String get emDash;
-
   /// No description provided for @searchCommands.
   ///
   /// In en, this message translates to:
@@ -3378,59 +3366,11 @@ abstract class AppLocalizations {
   /// **'Test'**
   String get test;
 
-  /// No description provided for @allSelectedButtonsWereDuplicates.
-  ///
-  /// In en, this message translates to:
-  /// **'All selected buttons were duplicates.'**
-  String get allSelectedButtonsWereDuplicates;
-
-  /// No description provided for @noButtonsImported.
-  ///
-  /// In en, this message translates to:
-  /// **'No buttons imported.'**
-  String get noButtonsImported;
-
   /// No description provided for @importedButtonsSkippedDuplicates.
   ///
   /// In en, this message translates to:
   /// **'Imported {addedCount} button(s). Skipped {skippedCount} duplicate(s).'**
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount);
-
-  /// No description provided for @importAllMatchingTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Import all matching buttons?'**
-  String get importAllMatchingTitle;
-
-  /// No description provided for @noMatchingKeysFound.
-  ///
-  /// In en, this message translates to:
-  /// **'No matching keys found.'**
-  String get noMatchingKeysFound;
-
-  /// No description provided for @importAllMatchingMessage.
-  ///
-  /// In en, this message translates to:
-  /// **'This will import up to {count} matching keys from the current database selection.'**
-  String importAllMatchingMessage(int count);
-
-  /// No description provided for @importAll.
-  ///
-  /// In en, this message translates to:
-  /// **'Import all'**
-  String get importAll;
-
-  /// No description provided for @importingButtons.
-  ///
-  /// In en, this message translates to:
-  /// **'Importing buttons…'**
-  String get importingButtons;
-
-  /// No description provided for @allMatchingButtonsWereDuplicates.
-  ///
-  /// In en, this message translates to:
-  /// **'All matching buttons were duplicates.'**
-  String get allMatchingButtonsWereDuplicates;
 
   /// No description provided for @quickPresets.
   ///
@@ -3461,42 +3401,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Select brand, model, and protocol first.'**
   String get selectBrandModelProtocolFirst;
-
-  /// No description provided for @importFromDatabaseTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Import from database'**
-  String get importFromDatabaseTitle;
-
-  /// No description provided for @importFromDatabaseSubtitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Choose a device, load matching keys, then import selected buttons.'**
-  String get importFromDatabaseSubtitle;
-
-  /// No description provided for @deviceAndFilters.
-  ///
-  /// In en, this message translates to:
-  /// **'Device & filters'**
-  String get deviceAndFilters;
-
-  /// No description provided for @loadedCount.
-  ///
-  /// In en, this message translates to:
-  /// **'{count} loaded'**
-  String loadedCount(int count);
-
-  /// No description provided for @hideFilters.
-  ///
-  /// In en, this message translates to:
-  /// **'Hide filters'**
-  String get hideFilters;
-
-  /// No description provided for @showFilters.
-  ///
-  /// In en, this message translates to:
-  /// **'Show filters'**
-  String get showFilters;
 
   /// No description provided for @noProtocolFoundForBrandModel.
   ///
@@ -3533,24 +3437,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No keys found for “{query}”.'**
   String noKeysFoundForSearch(Object query);
-
-  /// No description provided for @skipDuplicates.
-  ///
-  /// In en, this message translates to:
-  /// **'Skip duplicates'**
-  String get skipDuplicates;
-
-  /// No description provided for @skipDuplicatesSubtitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Do not import buttons that already exist in this remote.'**
-  String get skipDuplicatesSubtitle;
-
-  /// No description provided for @importSelected.
-  ///
-  /// In en, this message translates to:
-  /// **'Import selected'**
-  String get importSelected;
 
   /// No description provided for @noMacrosToExport.
   ///

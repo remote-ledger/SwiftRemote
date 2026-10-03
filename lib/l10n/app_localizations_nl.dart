@@ -1597,9 +1597,6 @@ class AppLocalizationsNl extends AppLocalizations {
   String get importFromRemotes => 'Importeren from remotes';
 
   @override
-  String get importFromDatabase => 'Importeren from DB';
-
-  @override
   String get addButton => 'Toevoegen knop';
 
   @override
@@ -1851,9 +1848,6 @@ class AppLocalizationsNl extends AppLocalizations {
   String get unknown => 'Onbekend';
 
   @override
-  String get emDash => '—';
-
-  @override
   String get searchCommands => 'Zoeken commands';
 
   @override
@@ -1903,37 +1897,9 @@ class AppLocalizationsNl extends AppLocalizations {
   String get test => 'Test';
 
   @override
-  String get allSelectedButtonsWereDuplicates =>
-      'All geselecteerd knoppen were duplicates.';
-
-  @override
-  String get noButtonsImported => 'Geen knoppen importerened.';
-
-  @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return 'Importerened $addedCount knop(s). Overslaanped $skippedCount duplicate(s).';
   }
-
-  @override
-  String get importAllMatchingTitle => 'Importeren all matching knoppen?';
-
-  @override
-  String get noMatchingKeysFound => 'Geen overeenkomende toetsen gevonden.';
-
-  @override
-  String importAllMatchingMessage(int count) {
-    return 'This will importeren up to $count matching keys from the current database selection.';
-  }
-
-  @override
-  String get importAll => 'Importeren all';
-
-  @override
-  String get importingButtons => 'Importeren knoppen…';
-
-  @override
-  String get allMatchingButtonsWereDuplicates =>
-      'All matching knoppen were duplicates.';
 
   @override
   String get quickPresets => 'Snelle presets';
@@ -1952,27 +1918,6 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get selectBrandModelProtocolFirst =>
       'Selecteer brand, model, and protocol first.';
-
-  @override
-  String get importFromDatabaseTitle => 'Importereneren uit database';
-
-  @override
-  String get importFromDatabaseSubtitle =>
-      'Kies een apparaat, laad overeenkomende toetsen en importereneer daarna de geselecteerde knoppen.';
-
-  @override
-  String get deviceAndFilters => 'Apparaat & filters';
-
-  @override
-  String loadedCount(int count) {
-    return '$count geladen';
-  }
-
-  @override
-  String get hideFilters => 'Filters verbergen';
-
-  @override
-  String get showFilters => 'Filters tonen';
 
   @override
   String get noProtocolFoundForBrandModel =>
@@ -1996,16 +1941,6 @@ class AppLocalizationsNl extends AppLocalizations {
   String noKeysFoundForSearch(Object query) {
     return 'Geen toetsen gevonden voor “$query”.';
   }
-
-  @override
-  String get skipDuplicates => 'Overslaan duplicates';
-
-  @override
-  String get skipDuplicatesSubtitle =>
-      'Do not importeren knoppen that already exist in this remote.';
-
-  @override
-  String get importSelected => 'Importeren geselecteerd';
 
   @override
   String get noMacrosToExport => 'Geen macros to exporteren.';

@@ -484,7 +484,6 @@
   "layoutWideDescription": "عريض: أزرار بعمودين مع تفاصيل إضافية، موصى به.",
   "layoutCompactDescription": "Compact: classic 4× grid (icons/text only).",
   "importFromRemotes": "استيراد من remotes",
-  "importFromDatabase": "استيراد من DB",
   "addButton": "إضافة زر",
   "noButtonsYet": "No أزرار yet",
   "createRemoteEmptyStateDescription": "أضف أول زر، ثم اضغطه مطولاً لخيارات التعديل أو الإزالة.",
@@ -620,7 +619,6 @@
   "searchModel": "ابحث عن طراز…",
   "unnamedKey": "Unnamed key",
   "unknown": "غير معروف",
-  "emDash": "—",
   "searchCommands": "ابحث commands",
   "noMatchingCommands": "No matching commands",
   "quickTileFavoritesTitle": "Quick tile favorites",
@@ -641,8 +639,6 @@
   "selectCommand": "اختر Command",
   "databaseModeAutofillHint": "يقوم وضع قاعدة البيانات بملء الخطوة 2 تلقائياً، العلامة والطراز والبروتوكول. بعد استيراد مفتاح، يمكنك تعديل أي شيء في الوضع اليدوي.",
   "test": "اختبار",
-  "allSelectedButtonsWereDuplicates": "الكل المحدد أزرار were duplicates.",
-  "noButtonsImported": "No أزرار imported.",
   "importedButtonsSkippedDuplicates": "تم استيراد {addedCount} زر. تم تخطي {skippedCount} من النسخ المكررة.",
   "@importedButtonsSkippedDuplicates": {
     "placeholders": {
@@ -654,19 +650,6 @@
       }
     }
   },
-  "importAllMatchingTitle": "استيراد all matching أزرار?",
-  "noMatchingKeysFound": "No matching keys موجود.",
-  "importAllMatchingMessage": "سيتم استيراد ما يصل إلى {count} من المفاتيح المطابقة من اختيار قاعدة البيانات الحالي.",
-  "@importAllMatchingMessage": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "importAll": "استيراد all",
-  "importingButtons": "Importing أزرار…",
-  "allMatchingButtonsWereDuplicates": "الكل matching أزرار were duplicates.",
   "quickPresets": "Quick presets",
   "selectDeviceFirst": "اختر الجهاز أولاً",
   "searchByLabelOrHex": "ابحث by label or hex",
@@ -677,19 +660,6 @@
     }
   },
   "selectBrandModelProtocolFirst": "اختر العلامة والطراز والبروتوكول أولاً.",
-  "importFromDatabaseTitle": "استيراد من قاعدة البيانات",
-  "importFromDatabaseSubtitle": "اختر جهازاً، حمّل المفاتيح المطابقة، ثم استورد الأزرار المحددة.",
-  "deviceAndFilters": "الجهاز & filters",
-  "loadedCount": "{count} loaded",
-  "@loadedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "hideFilters": "Hide filters",
-  "showFilters": "Show filters",
   "noProtocolFoundForBrandModel": "لم يتم العثور على بروتوكول لهذه العلامة والطراز.",
   "protocolAutoDetected": "البروتوكول",
   "protocolAutoDetectedHelper": "تم اكتشافه تلقائياً من قاعدة البيانات. يمكنك تغييره قبل الاستيراد.",
@@ -701,9 +671,6 @@
       "query": {}
     }
   },
-  "skipDuplicates": "Skip duplicates",
-  "skipDuplicatesSubtitle": "لا تستورد الأزرار الموجودة بالفعل في جهاز التحكم هذا.",
-  "importSelected": "استيراد المحدد",
   "noMacrosToExport": "لا توجد وحدات ماكرو للتصدير.",
   "macrosExportedToDownloads": "تم تصدير الماكرو إلى التنزيلات.",
   "failedToExportMacros": "فشل تصدير الماكرو.",

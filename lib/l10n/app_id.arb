@@ -484,7 +484,6 @@
   "layoutWideDescription": "Lebar: tombol 2 kolom dengan detail tambahan (disarankan).",
   "layoutCompactDescription": "Ringkas: kisi 4× klasik (ikon/teks saja).",
   "importFromRemotes": "Impor dari remote",
-  "importFromDatabase": "Impor dari DB",
   "addButton": "Tambah tombol",
   "noButtonsYet": "Tidak ada tombol yet",
   "createRemoteEmptyStateDescription": "Tambahkan tombol pertama, lalu tekan lama untuk opsi ubah/hapus.",
@@ -620,7 +619,6 @@
   "searchModel": "Cari model…",
   "unnamedKey": "Unnamed tombol",
   "unknown": "Tidak dikenal",
-  "emDash": "—",
   "searchCommands": "Cari commands",
   "noMatchingCommands": "Tidak ada matching commands",
   "quickTileFavoritesTitle": "Cepat tile favorit",
@@ -641,8 +639,6 @@
   "selectCommand": "Pilih Command",
   "databaseModeAutofillHint": "Mode Basis data mengisi otomatis Langkah 2 untuk Anda (merek + model + protokol). Setelah mengimpor tombol, Anda bisa menyempurnakan apa pun di Manual.",
   "test": "Uji",
-  "allSelectedButtonsWereDuplicates": "Semua tombol terpilih adalah duplikat.",
-  "noButtonsImported": "Tidak ada tombol imported.",
   "importedButtonsSkippedDuplicates": "Mengimpor {addedCount} tombol(s). Skipped {skippedCount} duplicate(s).",
   "@importedButtonsSkippedDuplicates": {
     "placeholders": {
@@ -654,19 +650,6 @@
       }
     }
   },
-  "importAllMatchingTitle": "Impor semua matching tombol?",
-  "noMatchingKeysFound": "Tidak ada matching tombol found.",
-  "importAllMatchingMessage": "Ini akan mengimpor hingga {count} tombol yang cocok dari pilihan basis data saat ini.",
-  "@importAllMatchingMessage": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "importAll": "Impor semua",
-  "importingButtons": "Importing tombol…",
-  "allMatchingButtonsWereDuplicates": "Semua tombol yang cocok adalah duplikat.",
   "quickPresets": "Cepat presets",
   "selectDeviceFirst": "Pilih perangkat terlebih dahulu",
   "searchByLabelOrHex": "Cari menurut label atau hex",
@@ -677,19 +660,6 @@
     }
   },
   "selectBrandModelProtocolFirst": "Pilih merek, model, dan protokol terlebih dahulu.",
-  "importFromDatabaseTitle": "Impor dari basis data",
-  "importFromDatabaseSubtitle": "Pilih perangkat, muat tombol yang cocok, lalu impor tombol terpilih.",
-  "deviceAndFilters": "Perangkat & filters",
-  "loadedCount": "{count} dimuat",
-  "@loadedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "hideFilters": "Sembunyikan filter",
-  "showFilters": "Tampilkan filter",
   "noProtocolFoundForBrandModel": "Tidak ada protokol untuk merek dan model ini.",
   "protocolAutoDetected": "Protokol",
   "protocolAutoDetectedHelper": "Terdeteksi otomatis dari basis data. Anda bisa mengubahnya sebelum impor.",
@@ -701,9 +671,6 @@
       "query": {}
     }
   },
-  "skipDuplicates": "Lewati duplikat",
-  "skipDuplicatesSubtitle": "Jangan impor tombol yang sudah ada di remote ini.",
-  "importSelected": "Impor terpilih",
   "noMacrosToExport": "Tidak ada makro untuk diekspor.",
   "macrosExportedToDownloads": "Makro diekspor ke Unduhan.",
   "failedToExportMacros": "Gagal export makro.",

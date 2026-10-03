@@ -1,7 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:swiftremote/ir/protocols/rc5.dart';
-import 'package:swiftremote/ir_finder/ir_finder_models.dart';
-import 'package:swiftremote/utils/db_button_import.dart';
 
 void main() {
   test('RC5 supports the field bit used by 7-bit commands', () {
@@ -60,19 +58,5 @@ void main() {
     expect(command.max, 0x7F);
     expect(command.label, contains('7 bits'));
     expect(existing.pattern, structured.pattern);
-  });
-
-  test('RC5 database import decodes the inverted field bit', () {
-    final button = buildButtonFromDbRow(const IrDbKeyCandidate(
-      id: 1,
-      protocol: 'RC5',
-      hexcode: '140',
-    ));
-
-    expect(button, isNotNull);
-    expect(button!.protocolParams, <String, dynamic>{
-      'address': 0x05,
-      'command': 0x40,
-    });
   });
 }

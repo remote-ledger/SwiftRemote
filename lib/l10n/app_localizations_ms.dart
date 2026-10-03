@@ -1566,9 +1566,6 @@ class AppLocalizationsMs extends AppLocalizations {
   String get importFromRemotes => 'Import dari remote';
 
   @override
-  String get importFromDatabase => 'Import dari DB';
-
-  @override
   String get addButton => 'Tambah butang';
 
   @override
@@ -1819,9 +1816,6 @@ class AppLocalizationsMs extends AppLocalizations {
   String get unknown => 'Tidak dikenal';
 
   @override
-  String get emDash => '—';
-
-  @override
   String get searchCommands => 'Cari arahans';
 
   @override
@@ -1870,37 +1864,9 @@ class AppLocalizationsMs extends AppLocalizations {
   String get test => 'Uji';
 
   @override
-  String get allSelectedButtonsWereDuplicates =>
-      'Semua butang terpilih adalah duplikat.';
-
-  @override
-  String get noButtonsImported => 'Tiada butang importted.';
-
-  @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return 'Mengimport $addedCount butang. Melangkau $skippedCount pendua.';
   }
-
-  @override
-  String get importAllMatchingTitle => 'Import semua matching butang?';
-
-  @override
-  String get noMatchingKeysFound => 'Tiada matching butang found.';
-
-  @override
-  String importAllMatchingMessage(int count) {
-    return 'Ini akan mengimport hingga $count butang yang sepadan dari pilihan pangkalan data semasa.';
-  }
-
-  @override
-  String get importAll => 'Import semua';
-
-  @override
-  String get importingButtons => 'Importting butang…';
-
-  @override
-  String get allMatchingButtonsWereDuplicates =>
-      'Semua butang yang cocok adalah duplikat.';
 
   @override
   String get quickPresets => 'Cepat presets';
@@ -1919,27 +1885,6 @@ class AppLocalizationsMs extends AppLocalizations {
   @override
   String get selectBrandModelProtocolFirst =>
       'Pilih jenama, model, dan protokol terlebih dahulu.';
-
-  @override
-  String get importFromDatabaseTitle => 'Import dari pangkalan data';
-
-  @override
-  String get importFromDatabaseSubtitle =>
-      'Pilih peranti, muat butang yang cocok, kemudian import butang terpilih.';
-
-  @override
-  String get deviceAndFilters => 'Peranti & filters';
-
-  @override
-  String loadedCount(int count) {
-    return '$count dimuat';
-  }
-
-  @override
-  String get hideFilters => 'Sembunyikan filter';
-
-  @override
-  String get showFilters => 'Tampilkan filter';
 
   @override
   String get noProtocolFoundForBrandModel =>
@@ -1963,16 +1908,6 @@ class AppLocalizationsMs extends AppLocalizations {
   String noKeysFoundForSearch(Object query) {
     return 'Tiada butang ditemui untuk “$query”.';
   }
-
-  @override
-  String get skipDuplicates => 'Lewati duplikat';
-
-  @override
-  String get skipDuplicatesSubtitle =>
-      'Jangan import butang yang sudah ada di remote ini.';
-
-  @override
-  String get importSelected => 'Import terpilih';
 
   @override
   String get noMacrosToExport => 'Tiada makro untuk diekspor.';

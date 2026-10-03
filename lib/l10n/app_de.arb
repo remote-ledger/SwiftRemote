@@ -500,7 +500,6 @@
   "layoutWideDescription": "Breit: 2-Spalten-Tasten mit mehr Details empfohlen.",
   "layoutCompactDescription": "Kompakt: klassisches 4× Raster nur Symbole oder Text.",
   "importFromRemotes": "Aus Fernbedienungen importieren",
-  "importFromDatabase": "Aus Datenbank importieren",
   "addButton": "Taste hinzufügen",
   "noButtonsYet": "Noch keine Tasten",
   "createRemoteEmptyStateDescription": "Füge deine erste Taste hinzu und halte sie dann für Bearbeiten oder Entfernen gedrückt.",
@@ -636,7 +635,6 @@
   "searchModel": "Modell suchen…",
   "unnamedKey": "Unbenannter Schlüssel",
   "unknown": "Unbekannt",
-  "emDash": "—",
   "searchCommands": "Befehle suchen",
   "noMatchingCommands": "Keine passenden Befehle",
   "quickTileFavoritesTitle": "Schnellkachel-Favoriten",
@@ -657,8 +655,6 @@
   "selectCommand": "Befehl wählen",
   "databaseModeAutofillHint": "Der Datenbankmodus füllt Schritt 2 automatisch für dich aus Marke, Modell und Protokoll. Nach dem Import einer Taste kannst du alles in Manuell verfeinern.",
   "test": "Test",
-  "allSelectedButtonsWereDuplicates": "Alle gewählten Tasten waren Duplikate.",
-  "noButtonsImported": "Keine Tasten importiert.",
   "importedButtonsSkippedDuplicates": "{addedCount} Taste(n) importiert. {skippedCount} Duplikat(e) übersprungen.",
   "@importedButtonsSkippedDuplicates": {
     "placeholders": {
@@ -670,19 +666,6 @@
       }
     }
   },
-  "importAllMatchingTitle": "Alle passenden Tasten importieren",
-  "noMatchingKeysFound": "Keine passenden Schlüssel gefunden.",
-  "importAllMatchingMessage": "Dadurch werden bis zu {count} passende Schlüssel aus der aktuellen Datenbankauswahl importiert.",
-  "@importAllMatchingMessage": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "importAll": "Alle importieren",
-  "importingButtons": "Tasten werden importiert…",
-  "allMatchingButtonsWereDuplicates": "Alle passenden Tasten waren Duplikate.",
   "quickPresets": "Schnellvorgaben",
   "selectDeviceFirst": "Zuerst Gerät wählen",
   "searchByLabelOrHex": "Nach Bezeichnung oder Hex suchen",
@@ -693,19 +676,6 @@
     }
   },
   "selectBrandModelProtocolFirst": "Wähle zuerst Marke, Modell und Protokoll.",
-  "importFromDatabaseTitle": "Aus Datenbank importieren",
-  "importFromDatabaseSubtitle": "Wähle ein Gerät, lade passende Schlüssel und importiere dann die ausgewählten Tasten.",
-  "deviceAndFilters": "Gerät und Filter",
-  "loadedCount": "{count} geladen",
-  "@loadedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "hideFilters": "Filter ausblenden",
-  "showFilters": "Filter anzeigen",
   "noProtocolFoundForBrandModel": "Kein Protokoll für diese Marke und dieses Modell gefunden.",
   "protocolAutoDetected": "Protokoll",
   "protocolAutoDetectedHelper": "Automatisch aus der Datenbank erkannt. Du kannst es vor dem Import ändern.",
@@ -717,9 +687,6 @@
       "query": {}
     }
   },
-  "skipDuplicates": "Duplikate überspringen",
-  "skipDuplicatesSubtitle": "Tasten nicht importieren, die bereits in dieser Fernbedienung existieren.",
-  "importSelected": "Auswahl importieren",
   "noMacrosToExport": "Keine Makros zum Exportieren.",
   "macrosExportedToDownloads": "Makros in Downloads exportiert.",
   "failedToExportMacros": "Makros konnten nicht exportiert werden.",

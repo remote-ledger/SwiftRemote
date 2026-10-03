@@ -484,7 +484,6 @@
   "layoutWideDescription": "Ampio. Pulsanti a 2 colonne con dettagli extra consigliato.",
   "layoutCompactDescription": "Compatto. Griglia classica 4× solo icone e testo.",
   "importFromRemotes": "Importa dai telecomandi",
-  "importFromDatabase": "Importa dal DB",
   "addButton": "Aggiungi pulsante",
   "noButtonsYet": "Nessun pulsante ancora",
   "createRemoteEmptyStateDescription": "Aggiungi il primo pulsante, poi tienilo premuto per opzioni modifica o rimozione.",
@@ -620,7 +619,6 @@
   "searchModel": "Cerca modello…",
   "unnamedKey": "Tasto senza nome",
   "unknown": "Sconosciuto",
-  "emDash": "-",
   "searchCommands": "Cerca comandi",
   "noMatchingCommands": "Nessun comando corrispondente",
   "quickTileFavoritesTitle": "Preferiti riquadro rapido",
@@ -641,8 +639,6 @@
   "selectCommand": "Seleziona comando",
   "databaseModeAutofillHint": "La modalità database compila automaticamente per te il Passo 2, marca, modello e protocollo. Dopo aver importato un tasto puoi rifinire tutto in Manuale.",
   "test": "Test",
-  "allSelectedButtonsWereDuplicates": "Tutti i pulsanti selezionati erano duplicati.",
-  "noButtonsImported": "Nessun pulsante importato.",
   "importedButtonsSkippedDuplicates": "Importati {addedCount} pulsanti. Saltati {skippedCount} duplicati.",
   "@importedButtonsSkippedDuplicates": {
     "placeholders": {
@@ -654,19 +650,6 @@
       }
     }
   },
-  "importAllMatchingTitle": "Importare tutti i pulsanti corrispondenti?",
-  "noMatchingKeysFound": "Nessun tasto corrispondente trovato.",
-  "importAllMatchingMessage": "Questo importerà fino a {count} tasti corrispondenti dalla selezione attuale del database.",
-  "@importAllMatchingMessage": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "importAll": "Importa tutto",
-  "importingButtons": "Importazione pulsanti…",
-  "allMatchingButtonsWereDuplicates": "Tutti i pulsanti corrispondenti erano duplicati.",
   "quickPresets": "Preset rapidi",
   "selectDeviceFirst": "Seleziona prima il dispositivo",
   "searchByLabelOrHex": "Cerca per etichetta o esadecimale",
@@ -677,19 +660,6 @@
     }
   },
   "selectBrandModelProtocolFirst": "Seleziona prima marca modello protocollo.",
-  "importFromDatabaseTitle": "Importa dal database",
-  "importFromDatabaseSubtitle": "Scegli un dispositivo, carica i tasti corrispondenti, poi importa i pulsanti selezionati.",
-  "deviceAndFilters": "Dispositivo e filtri",
-  "loadedCount": "{count} caricati",
-  "@loadedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "hideFilters": "Nascondi filtri",
-  "showFilters": "Mostra filtri",
   "noProtocolFoundForBrandModel": "Nessun protocollo trovato per questa marca e questo modello.",
   "protocolAutoDetected": "Protocollo",
   "protocolAutoDetectedHelper": "Rilevato automaticamente dal database. Puoi cambiarlo prima dell'importazione.",
@@ -701,9 +671,6 @@
       "query": {}
     }
   },
-  "skipDuplicates": "Salta duplicati",
-  "skipDuplicatesSubtitle": "Non importare pulsanti che esistono già in questo telecomando.",
-  "importSelected": "Importa selezionati",
   "noMacrosToExport": "Nessuna macro da esportare.",
   "macrosExportedToDownloads": "Macro esportate in Download.",
   "failedToExportMacros": "Esportazione macro fallita.",

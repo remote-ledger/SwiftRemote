@@ -489,7 +489,6 @@
   "layoutWideDescription": "Ancho: botones de 2 columnas con detalles extra (recomendado).",
   "layoutCompactDescription": "Compacto: cuadrícula clásica 4× (solo iconos/texto).",
   "importFromRemotes": "Importar desde mandos",
-  "importFromDatabase": "Importar de BD",
   "addButton": "Añadir botón",
   "noButtonsYet": "Aún no hay botones",
   "createRemoteEmptyStateDescription": "Añade tu primer botón y luego mantén pulsado para editar o quitar.",
@@ -625,7 +624,6 @@
   "searchModel": "Buscar modelo…",
   "unnamedKey": "Tecla sin nombre",
   "unknown": "Desconocido",
-  "emDash": "-",
   "searchCommands": "Buscar comandos",
   "noMatchingCommands": "No hay comandos coincidentes",
   "quickTileFavoritesTitle": "Favoritos de mosaicos",
@@ -646,8 +644,6 @@
   "selectCommand": "Seleccionar comando",
   "databaseModeAutofillHint": "El modo Base de datos completa el Paso 2 por ti (marca + modelo + protocolo). Tras importar una tecla, puedes ajustar todo en Manual.",
   "test": "Probar",
-  "allSelectedButtonsWereDuplicates": "Todos los botones elegidos eran duplicados.",
-  "noButtonsImported": "No se importó ningún botón.",
   "importedButtonsSkippedDuplicates": "Se importaron {addedCount} botón(es). Se omitieron {skippedCount} duplicado(s).",
   "@importedButtonsSkippedDuplicates": {
     "placeholders": {
@@ -659,19 +655,6 @@
       }
     }
   },
-  "importAllMatchingTitle": "¿Importar todos los botones coincidentes?",
-  "noMatchingKeysFound": "No se encontraron teclas coincidentes.",
-  "importAllMatchingMessage": "Esto importará hasta {count} teclas coincidentes de la selección actual de la base de datos.",
-  "@importAllMatchingMessage": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "importAll": "Importar todo",
-  "importingButtons": "Importando botones…",
-  "allMatchingButtonsWereDuplicates": "Todos los botones coincidentes eran duplicados.",
   "quickPresets": "Ajustes rápidos",
   "selectDeviceFirst": "Selecciona primero un dispositivo",
   "searchByLabelOrHex": "Buscar por etiqueta o hex",
@@ -682,19 +665,6 @@
     }
   },
   "selectBrandModelProtocolFirst": "Selecciona primero marca, modelo y protocolo.",
-  "importFromDatabaseTitle": "Importar de la base de datos",
-  "importFromDatabaseSubtitle": "Elige un dispositivo, carga las teclas coincidentes y luego importa los botones seleccionados.",
-  "deviceAndFilters": "Dispositivo y filtros",
-  "loadedCount": "{count} cargados",
-  "@loadedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "hideFilters": "Ocultar filtros",
-  "showFilters": "Mostrar filtros",
   "noProtocolFoundForBrandModel": "No se encontró un protocolo para esta marca y modelo.",
   "protocolAutoDetected": "Protocolo",
   "protocolAutoDetectedHelper": "Detectado automáticamente desde la base de datos. Puedes cambiarlo antes de importar.",
@@ -706,9 +676,6 @@
       "query": {}
     }
   },
-  "skipDuplicates": "Omitir duplicados",
-  "skipDuplicatesSubtitle": "No importes botones que ya existan en este mando.",
-  "importSelected": "Importar seleccionados",
   "noMacrosToExport": "No hay macros para exportar.",
   "macrosExportedToDownloads": "Macros exportadas a Descargas.",
   "failedToExportMacros": "No se pudieron exportar las macros.",
