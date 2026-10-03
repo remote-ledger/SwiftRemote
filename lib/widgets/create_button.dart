@@ -11,7 +11,9 @@ import 'package:swiftremote/l10n/l10n.dart';
 import 'package:swiftremote/state/last_action_strip.dart';
 import 'package:swiftremote/utils/button_color_accessibility.dart';
 import 'package:swiftremote/utils/ir.dart';
+import 'package:swiftremote/utils/ledger_signal.dart';
 import 'package:swiftremote/utils/remote.dart';
+import 'package:swiftremote/widgets/ledger_db_error_view.dart';
 import 'package:swiftremote/widgets/code_test.dart';
 import 'package:swiftremote/widgets/icon_picker.dart';
 import 'package:swiftremote/widgets/ir_waveform_view.dart';
@@ -1418,13 +1420,25 @@ class _CreateButtonState extends State<CreateButton> {
     );
   }
 
-  Future<void> _dbEnsureReady() async {
-    if (_dbInit) return;
-
+  /// Reads the IR code database, which the first time is a download. When it
+  /// cannot be read this says so, with a Retry that runs [onRetry], and
+  /// returns false.
+  Future<bool> _dbEnsureReady({VoidCallback? onRetry}) async {
+    if (_dbInit) return true;
     setState(() => _dbMetaLoading = true);
     try {
       await IrBlasterDb.instance.ensureInitialized();
       _dbInit = true;
+      return true;
+    } catch (e) {
+      if (mounted) {
+        showLedgerDbErrorSnack(
+          context,
+          e,
+          onRetry: onRetry ?? () => unawaited(_dbEnsureReady()),
+        );
+      }
+      return false;
     } finally {
       if (mounted) setState(() => _dbMetaLoading = false);
     }
@@ -1524,7 +1538,7 @@ class _CreateButtonState extends State<CreateButton> {
     });
 
     try {
-      await _dbEnsureReady();
+      if (!await _dbEnsureReady(onRetry: _dbLoadProtocolsForSelection)) return;
 
       final prots = await IrBlasterDb.instance.listProtocolsFor(
         brand: _dbBrand!,
@@ -1536,7 +1550,14 @@ class _CreateButtonState extends State<CreateButton> {
         _dbProtocol = prots.isNotEmpty ? prots.first : null;
       });
     } catch (e) {
-      if (mounted) _showSnack(context.l10n.failedToLoadProtocols(e.toString()));
+      if (mounted) {
+        showLedgerDbErrorSnack(
+          context,
+          e,
+          onRetry: _dbLoadProtocolsForSelection,
+          fallback: context.l10n.failedToLoadProtocols(e.toString()),
+        );
+      }
     } finally {
       if (mounted) setState(() => _dbMetaLoading = false);
     }
@@ -1561,7 +1582,10 @@ class _CreateButtonState extends State<CreateButton> {
     setState(() => _dbLoading = true);
 
     try {
-      await _dbEnsureReady();
+      if (!await _dbEnsureReady(
+          onRetry: () => _dbReloadKeys(reset: reset))) {
+        return;
+      }
 
       final search = _dbEffectiveSearch();
       final offset = reset ? 0 : _dbOffset;
@@ -1585,7 +1609,12 @@ class _CreateButtonState extends State<CreateButton> {
       });
     } catch (e) {
       if (mounted && requestGeneration == _dbLoadGeneration) {
-        _showSnack(context.l10n.failedToLoadDatabaseKeys(e.toString()));
+        showLedgerDbErrorSnack(
+          context,
+          e,
+          onRetry: () => _dbReloadKeys(reset: reset),
+          fallback: context.l10n.failedToLoadDatabaseKeys(e.toString()),
+        );
       }
     } finally {
       if (mounted && requestGeneration == _dbLoadGeneration) {
@@ -1610,7 +1639,6 @@ class _CreateButtonState extends State<CreateButton> {
   }
 
   Future<String?> _pickBrand(BuildContext context) async {
-    await IrBlasterDb.instance.ensureInitialized();
     if (!context.mounted) return null;
 
     String? selected;
@@ -1624,6 +1652,7 @@ class _CreateButtonState extends State<CreateButton> {
     bool loading = false;
     bool exhausted = false;
     int generation = 0;
+    Object? error;
 
     try {
       await showModalBottomSheet<void>(
@@ -1636,7 +1665,10 @@ class _CreateButtonState extends State<CreateButton> {
             if (!reset && loading) return;
 
             final requestGeneration = reset ? ++generation : generation;
-            setModal(() => loading = true);
+            setModal(() {
+              loading = true;
+              error = null;
+            });
 
             try {
               if (reset) {
@@ -1659,6 +1691,12 @@ class _CreateButtonState extends State<CreateButton> {
               if (next.isEmpty) exhausted = true;
 
               setModal(() {});
+            } catch (e) {
+              if (alive && requestGeneration == generation) {
+                error = e;
+                exhausted = true;
+                setModal(() {});
+              }
             } finally {
               if (alive && requestGeneration == generation) {
                 setModal(() => loading = false);
@@ -1733,30 +1771,35 @@ class _CreateButtonState extends State<CreateButton> {
                       ),
                       const SizedBox(height: 8),
                       Expanded(
-                        child: ListView.separated(
-                          controller: scrollCtl,
-                          itemCount: items.length + (loading ? 1 : 0),
-                          separatorBuilder: (_, __) => const Divider(height: 0),
-                          itemBuilder: (ctx3, i) {
-                            if (i >= items.length) {
-                              return const Padding(
-                                padding: EdgeInsets.all(14),
-                                child: Center(
-                                    child: CircularProgressIndicator(
-                                        strokeWidth: 2)),
-                              );
-                            }
-                            final b = items[i];
-                            return ListTile(
-                              title: Text(b),
-                              onTap: () {
-                                selected = b;
-                                alive = false;
-                                Navigator.of(ctx2).pop();
-                              },
-                            );
-                          },
-                        ),
+                        child: (error != null && items.isEmpty)
+                            ? LedgerDbErrorView(
+                                error: error!,
+                                onRetry: () => load(setModal, reset: true),
+                              )
+                            : ListView.separated(
+                                controller: scrollCtl,
+                                itemCount: items.length + (loading ? 1 : 0),
+                                separatorBuilder: (_, __) => const Divider(height: 0),
+                                itemBuilder: (ctx3, i) {
+                                  if (i >= items.length) {
+                                    return const Padding(
+                                      padding: EdgeInsets.all(14),
+                                      child: Center(
+                                          child: CircularProgressIndicator(
+                                              strokeWidth: 2)),
+                                    );
+                                  }
+                                  final b = items[i];
+                                  return ListTile(
+                                    title: Text(b),
+                                    onTap: () {
+                                      selected = b;
+                                      alive = false;
+                                      Navigator.of(ctx2).pop();
+                                    },
+                                  );
+                                },
+                            ),
                       ),
                     ],
                   ),
@@ -1778,7 +1821,6 @@ class _CreateButtonState extends State<CreateButton> {
 
   Future<String?> _pickModel(BuildContext context,
       {required String brand}) async {
-    await IrBlasterDb.instance.ensureInitialized();
     if (!context.mounted) return null;
 
     String? selected;
@@ -1792,6 +1834,7 @@ class _CreateButtonState extends State<CreateButton> {
     bool loading = false;
     bool exhausted = false;
     int generation = 0;
+    Object? error;
 
     try {
       await showModalBottomSheet<void>(
@@ -1804,7 +1847,10 @@ class _CreateButtonState extends State<CreateButton> {
             if (!reset && loading) return;
 
             final requestGeneration = reset ? ++generation : generation;
-            setModal(() => loading = true);
+            setModal(() {
+              loading = true;
+              error = null;
+            });
 
             try {
               if (reset) {
@@ -1828,6 +1874,12 @@ class _CreateButtonState extends State<CreateButton> {
               if (next.isEmpty) exhausted = true;
 
               setModal(() {});
+            } catch (e) {
+              if (alive && requestGeneration == generation) {
+                error = e;
+                exhausted = true;
+                setModal(() {});
+              }
             } finally {
               if (alive && requestGeneration == generation) {
                 setModal(() => loading = false);
@@ -1902,30 +1954,35 @@ class _CreateButtonState extends State<CreateButton> {
                       ),
                       const SizedBox(height: 8),
                       Expanded(
-                        child: ListView.separated(
-                          controller: scrollCtl,
-                          itemCount: items.length + (loading ? 1 : 0),
-                          separatorBuilder: (_, __) => const Divider(height: 0),
-                          itemBuilder: (ctx3, i) {
-                            if (i >= items.length) {
-                              return const Padding(
-                                padding: EdgeInsets.all(14),
-                                child: Center(
-                                    child: CircularProgressIndicator(
-                                        strokeWidth: 2)),
-                              );
-                            }
-                            final m = items[i];
-                            return ListTile(
-                              title: Text(m),
-                              onTap: () {
-                                selected = m;
-                                alive = false;
-                                Navigator.of(ctx2).pop();
-                              },
-                            );
-                          },
-                        ),
+                        child: (error != null && items.isEmpty)
+                            ? LedgerDbErrorView(
+                                error: error!,
+                                onRetry: () => load(setModal, reset: true),
+                              )
+                            : ListView.separated(
+                                controller: scrollCtl,
+                                itemCount: items.length + (loading ? 1 : 0),
+                                separatorBuilder: (_, __) => const Divider(height: 0),
+                                itemBuilder: (ctx3, i) {
+                                  if (i >= items.length) {
+                                    return const Padding(
+                                      padding: EdgeInsets.all(14),
+                                      child: Center(
+                                          child: CircularProgressIndicator(
+                                              strokeWidth: 2)),
+                                    );
+                                  }
+                                  final m = items[i];
+                                  return ListTile(
+                                    title: Text(m),
+                                    onTap: () {
+                                      selected = m;
+                                      alive = false;
+                                      Navigator.of(ctx2).pop();
+                                    },
+                                  );
+                                },
+                            ),
                       ),
                     ],
                   ),
@@ -1946,7 +2003,7 @@ class _CreateButtonState extends State<CreateButton> {
   }
 
   Future<void> _dbSelectBrand() async {
-    await _dbEnsureReady();
+    if (!await _dbEnsureReady(onRetry: _dbSelectBrand)) return;
     if (!mounted) return;
 
     final b = await _pickBrand(context);
@@ -1971,7 +2028,7 @@ class _CreateButtonState extends State<CreateButton> {
   }
 
   Future<void> _dbSelectModel() async {
-    await _dbEnsureReady();
+    if (!await _dbEnsureReady(onRetry: _dbSelectModel)) return;
     if (_dbBrand == null) return;
     if (!mounted) return;
 
@@ -2129,6 +2186,19 @@ class _CreateButtonState extends State<CreateButton> {
     final sel = _dbSelected;
     if (sel == null) return;
 
+    // A protocol the ledger's compiled signal stands in for is imported as
+    // that signal, in the raw form, and never decoded from its hex code: the
+    // decoders below read these protocols' database codes differently from
+    // the wire.
+    LedgerPlayback? signalPlayback;
+    if (sel.requiresSignal) {
+      signalPlayback = sel.signal?.playback();
+      if (signalPlayback == null) {
+        _showSnack(context.l10n.irDbSignalUnavailable);
+        return;
+      }
+    }
+
     final protoDb = sel.protocol.trim();
     final hexClean = sel.hexcode.replaceAll(' ', '').toUpperCase();
     final labelTrim = (sel.label ?? '').trim();
@@ -2143,6 +2213,22 @@ class _CreateButtonState extends State<CreateButton> {
       }
       _tabDatabase = false;
     });
+
+    if (signalPlayback != null) {
+      final LedgerPlayback playback = signalPlayback;
+      setState(() {
+        _signalType = _SignalType.raw;
+        freqController.text = playback.frequencyHz.toString();
+        rawDataController.text = playback.rawData;
+      });
+      if (!_hasLabel) {
+        _showSnack(
+            'IR signal imported. Step 1 still requires a label (icon or text).');
+      } else {
+        _showSnack('Imported from database.');
+      }
+      return;
+    }
 
     if (protoDb.isEmpty) {
       setState(() {

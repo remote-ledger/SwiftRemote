@@ -3,13 +3,16 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:swiftremote/ir_finder/irblaster_db.dart';
 import 'package:swiftremote/l10n/l10n.dart';
+import 'package:swiftremote/ledger_db/ledger_errors.dart';
 import 'package:swiftremote/state/continue_context_prefs.dart';
 import 'package:swiftremote/state/haptics.dart';
 import 'package:swiftremote/state/orientation_pref.dart';
 import 'package:swiftremote/universal_power/power_code_repository.dart';
+import 'package:swiftremote/universal_power/power_code.dart';
 import 'package:swiftremote/universal_power/universal_power_controller.dart';
 import 'package:swiftremote/universal_power/universal_power_prefs.dart';
 import 'package:swiftremote/utils/ir_transmitter_platform.dart';
+import 'package:swiftremote/widgets/ledger_db_error_view.dart';
 
 class UniversalPowerScreen extends StatefulWidget {
   final String? initialBrand;
@@ -36,6 +39,7 @@ class _UniversalPowerScreenState extends State<UniversalPowerScreen>
 
   bool _dbReady = false;
   bool _dbInitFailed = false;
+  Object? _dbError;
 
   bool _consentLoaded = false;
   bool _consented = false;
@@ -96,18 +100,26 @@ class _UniversalPowerScreenState extends State<UniversalPowerScreen>
   }
 
   Future<void> _initDb() async {
+    if (mounted && _dbInitFailed) {
+      setState(() {
+        _dbInitFailed = false;
+        _dbError = null;
+      });
+    }
     try {
       await _db.ensureInitialized();
       if (!mounted) return;
       setState(() {
         _dbReady = true;
         _dbInitFailed = false;
+        _dbError = null;
       });
-    } catch (_) {
+    } catch (e) {
       if (!mounted) return;
       setState(() {
         _dbReady = false;
         _dbInitFailed = true;
+        _dbError = e;
       });
     }
   }
@@ -169,21 +181,41 @@ class _UniversalPowerScreenState extends State<UniversalPowerScreen>
     }
 
     final String? brand = _brand?.trim();
-    final codes = (brand == null || brand.isEmpty)
-        ? await _repo.loadAllPowerCodes(
-            broadenSearch: _broadenSearch,
-            maxCodes: 1200,
-            depth: _depth,
-          )
-        : await _repo.loadPowerCodes(
-            brand: brand,
-            model: _model?.trim(),
-            broadenSearch: _broadenSearch,
-            maxCodes: 600,
-            depth: _depth,
-          );
+    final List<PowerCode> codes;
+    try {
+      codes = (brand == null || brand.isEmpty)
+          ? await _repo.loadAllPowerCodes(
+              broadenSearch: _broadenSearch,
+              maxCodes: 1200,
+              depth: _depth,
+            )
+          : await _repo.loadPowerCodes(
+              brand: brand,
+              model: _model?.trim(),
+              broadenSearch: _broadenSearch,
+              maxCodes: 600,
+              depth: _depth,
+            );
+    } catch (e) {
+      if (!mounted) return;
+      showLedgerDbErrorSnack(
+        context,
+        e,
+        onRetry: () => unawaited(_startRun()),
+        fallback: context.l10n.failedToLoadDatabaseKeys(e.toString()),
+      );
+      return;
+    }
 
     if (!mounted) return;
+    if (_repo.skippedSignalProtocols.isNotEmpty) {
+      // Codes that are played from the database's compiled signal were left
+      // out because it could not be loaded; the run goes on with the rest.
+      showLedgerDbErrorSnack(
+        context,
+        LedgerSignalUnavailable(_repo.skippedSignalProtocols.join(', ')),
+      );
+    }
     if (codes.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(context.l10n.universalPowerNoCodesFound)),
@@ -464,11 +496,11 @@ class _UniversalPowerScreenState extends State<UniversalPowerScreen>
                   Expanded(
                     child: Text(
                       _dbInitFailed
-                          ? context.l10n.irFinderDatabaseInitFailed
+                          ? ledgerDbErrorText(context, _dbError)
                           : context.l10n.irFinderPreparingDatabase,
                     ),
                   ),
-                  if (_dbInitFailed)
+                  if (_dbInitFailed && ledgerDbErrorIsRetryable(_dbError))
                     FilledButton.tonal(
                       onPressed: _initDb,
                       child: Text(context.l10n.retry),
@@ -623,8 +655,10 @@ class _UniversalPowerScreenState extends State<UniversalPowerScreen>
                 ],
                 if (_controller.lastError != null) ...[
                   const SizedBox(height: 8),
-                  Text(context.l10n
-                      .irFinderSendError(_controller.lastError.toString())),
+                  Text(_controller.lastError is LedgerSignalUnavailable
+                      ? ledgerDbErrorText(context, _controller.lastError)
+                      : context.l10n.irFinderSendError(
+                          _controller.lastError.toString())),
                 ],
               ],
             ),
@@ -708,6 +742,7 @@ class _PowerDbPickerSheetState extends State<_PowerDbPickerSheet> {
   final ScrollController _scrollCtl = ScrollController();
   bool _loading = false;
   bool _exhausted = false;
+  Object? _error;
   int _offset = 0;
   final List<String> _items = <String>[];
   Timer? _debounce;
@@ -748,7 +783,10 @@ class _PowerDbPickerSheetState extends State<_PowerDbPickerSheet> {
 
   Future<void> _load({required bool reset}) async {
     if (_loading) return;
-    setState(() => _loading = true);
+    setState(() {
+      _loading = true;
+      _error = null;
+    });
     try {
       if (reset) {
         _offset = 0;
@@ -780,9 +818,12 @@ class _PowerDbPickerSheetState extends State<_PowerDbPickerSheet> {
         _offset += rows.length;
         if (rows.isEmpty) _exhausted = true;
       });
-    } catch (_) {
+    } catch (e) {
       if (!mounted) return;
-      setState(() => _exhausted = true);
+      setState(() {
+        _exhausted = true;
+        _error = e;
+      });
     } finally {
       if (mounted) {
         setState(() => _loading = false);
@@ -832,7 +873,12 @@ class _PowerDbPickerSheetState extends State<_PowerDbPickerSheet> {
             ),
             const SizedBox(height: 10),
             Expanded(
-              child: _items.isEmpty && _loading
+              child: _error != null && _items.isEmpty
+                  ? LedgerDbErrorView(
+                      error: _error!,
+                      onRetry: () => _load(reset: true),
+                    )
+                  : _items.isEmpty && _loading
                   ? const Center(child: CircularProgressIndicator())
                   : ListView.separated(
                       controller: _scrollCtl,

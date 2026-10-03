@@ -3,6 +3,8 @@ import 'dart:math';
 import 'package:swiftremote/ir/ir_protocol_registry.dart';
 import 'package:swiftremote/ir/ir_protocol_types.dart';
 import 'package:swiftremote/ir_finder/ir_finder_search.dart';
+import 'package:swiftremote/ledger_db/ledger_models.dart';
+import 'package:swiftremote/utils/ledger_signal.dart';
 
 enum IrFinderMode { bruteforce, database }
 
@@ -26,6 +28,12 @@ class IrFinderCandidate {
   final String? dbLabel;
   final int? dbRemoteId;
 
+  /// The press to play, when the code is played from the ledger's compiled
+  /// signal instead of being encoded from [params]. A database code of a
+  /// protocol the app decodes differently from the wire has this and no
+  /// params: nothing may rebuild such a code from its hex.
+  final LedgerPlayback? raw;
+
   const IrFinderCandidate({
     required this.protocolId,
     required this.displayProtocol,
@@ -36,6 +44,7 @@ class IrFinderCandidate {
     this.dbModel,
     this.dbLabel,
     this.dbRemoteId,
+    this.raw,
   });
 
   /// Backward-compat aliases
@@ -63,6 +72,13 @@ class IrFinderHit {
   final int? dbRemoteId;
   final Map<String, dynamic>? protocolParams;
 
+  /// For a hit found from the ledger's compiled signal rather than from the
+  /// app's own encoding of a hex code: the microsecond durations of the press
+  /// (space-separated, as a raw button stores them) and its carrier. Such a
+  /// hit has no [protocolParams]; the press is what was tested.
+  final String? rawData;
+  final int? rawFrequencyHz;
+
   const IrFinderHit({
     required this.savedAt,
     required this.protocolId,
@@ -74,7 +90,25 @@ class IrFinderHit {
     this.dbLabel,
     this.dbRemoteId,
     this.protocolParams,
+    this.rawData,
+    this.rawFrequencyHz,
   });
+
+  /// The press this hit plays, when it was found as a signal.
+  LedgerPlayback? get rawPlayback {
+    final String? data = rawData;
+    final int? hz = rawFrequencyHz;
+    if (data == null || hz == null || hz <= 0) return null;
+    final List<int> pattern = <int>[];
+    for (final String part in data.split(RegExp(r'\s+'))) {
+      if (part.isEmpty) continue;
+      final int? v = int.tryParse(part);
+      if (v == null || v <= 0) return null;
+      pattern.add(v);
+    }
+    if (pattern.isEmpty) return null;
+    return LedgerPlayback(frequencyHz: hz, pattern: pattern);
+  }
 
   /// Backward-compat aliases
   DateTime get foundAt => savedAt;
@@ -97,6 +131,14 @@ class IrDbKeyCandidate {
   final String? brand;
   final String? model;
 
+  /// Whether this protocol's database codes are played from the ledger's
+  /// compiled signal ([signal]) and never from the app's own reading of the
+  /// hex code, which for these protocols is not the wire's (the manifest's
+  /// `appReadingDiffers`). A row that requires a signal and has none cannot be
+  /// sent, imported or saved.
+  final bool requiresSignal;
+  final LedgerSignal? signal;
+
   const IrDbKeyCandidate({
     required this.id,
     required this.protocol,
@@ -105,6 +147,8 @@ class IrDbKeyCandidate {
     this.label,
     this.brand,
     this.model,
+    this.requiresSignal = false,
+    this.signal,
   });
 
   /// Backward-compat aliases

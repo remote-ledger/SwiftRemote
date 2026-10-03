@@ -2,9 +2,11 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:swiftremote/ir/ir_protocol_registry.dart';
+import 'package:swiftremote/ledger_db/ledger_errors.dart';
 import 'package:swiftremote/universal_power/power_code.dart';
 import 'package:swiftremote/universal_power/power_params.dart';
 import 'package:swiftremote/utils/ir.dart';
+import 'package:swiftremote/utils/ledger_signal.dart';
 
 class UniversalPowerController extends ChangeNotifier {
   List<PowerCode> _queue = <PowerCode>[];
@@ -123,6 +125,14 @@ class UniversalPowerController extends ChangeNotifier {
     final int? rawFreq = code.frequencyHz;
     if (raw != null && rawFreq != null && rawFreq > 0) {
       await transmitRawCycles(rawFreq, raw);
+      return;
+    }
+    if (code.requiresSignal) {
+      // Played from the ledger's compiled signal, or not at all: the decoder
+      // below reads this protocol's database codes differently from the wire.
+      final LedgerPlayback? press = code.signal?.playback();
+      if (press == null) throw LedgerSignalUnavailable(code.protocolId);
+      await transmitRaw(press.frequencyHz, press.pattern);
       return;
     }
     final params = buildParamsForProtocol(

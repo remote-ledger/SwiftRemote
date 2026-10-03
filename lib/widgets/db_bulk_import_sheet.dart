@@ -7,6 +7,7 @@ import 'package:swiftremote/ir_finder/irblaster_db.dart';
 import 'package:swiftremote/l10n/l10n.dart';
 import 'package:swiftremote/utils/db_button_import.dart';
 import 'package:swiftremote/utils/remote.dart';
+import 'package:swiftremote/widgets/ledger_db_error_view.dart';
 
 enum _DbPreset { all, power, volume, channel, navigation }
 
@@ -67,12 +68,25 @@ class _DbBulkImportSheetState extends State<DbBulkImportSheet> {
     super.dispose();
   }
 
-  Future<void> _dbEnsureReady() async {
-    if (_dbInit) return;
+  /// Reads the IR code database, which the first time is a download. When it
+  /// cannot be read this says so, with a Retry that runs [onRetry], and
+  /// returns false.
+  Future<bool> _dbEnsureReady({VoidCallback? onRetry}) async {
+    if (_dbInit) return true;
     setState(() => _dbMetaLoading = true);
     try {
       await IrBlasterDb.instance.ensureInitialized();
       _dbInit = true;
+      return true;
+    } catch (e) {
+      if (mounted) {
+        showLedgerDbErrorSnack(
+          context,
+          e,
+          onRetry: onRetry ?? () => unawaited(_dbEnsureReady()),
+        );
+      }
+      return false;
     } finally {
       if (mounted) setState(() => _dbMetaLoading = false);
     }
@@ -149,7 +163,7 @@ class _DbBulkImportSheetState extends State<DbBulkImportSheet> {
     });
 
     try {
-      await _dbEnsureReady();
+      if (!await _dbEnsureReady(onRetry: _dbLoadProtocolsForSelection)) return;
       final prots = await IrBlasterDb.instance.listProtocolsFor(
         brand: _dbBrand!,
         model: _dbModel!,
@@ -160,7 +174,14 @@ class _DbBulkImportSheetState extends State<DbBulkImportSheet> {
         _dbProtocol = prots.isNotEmpty ? prots.first : null;
       });
     } catch (e) {
-      if (mounted) _showSnack(context.l10n.failedToLoadProtocols(e.toString()));
+      if (mounted) {
+        showLedgerDbErrorSnack(
+          context,
+          e,
+          onRetry: _dbLoadProtocolsForSelection,
+          fallback: context.l10n.failedToLoadProtocols(e.toString()),
+        );
+      }
     } finally {
       if (mounted) setState(() => _dbMetaLoading = false);
     }
@@ -185,7 +206,10 @@ class _DbBulkImportSheetState extends State<DbBulkImportSheet> {
     setState(() => _dbLoading = true);
 
     try {
-      await _dbEnsureReady();
+      if (!await _dbEnsureReady(
+          onRetry: () => _dbReloadKeys(reset: reset))) {
+        return;
+      }
       final search = _dbEffectiveSearch();
       final offset = reset ? 0 : _dbOffset;
       final rows = await IrBlasterDb.instance.fetchCandidateKeys(
@@ -206,7 +230,12 @@ class _DbBulkImportSheetState extends State<DbBulkImportSheet> {
       });
     } catch (e) {
       if (mounted && requestGeneration == _dbLoadGeneration) {
-        _showSnack(context.l10n.failedToLoadDatabaseKeys(e.toString()));
+        showLedgerDbErrorSnack(
+          context,
+          e,
+          onRetry: () => _dbReloadKeys(reset: reset),
+          fallback: context.l10n.failedToLoadDatabaseKeys(e.toString()),
+        );
       }
     } finally {
       if (mounted && requestGeneration == _dbLoadGeneration) {
@@ -231,7 +260,7 @@ class _DbBulkImportSheetState extends State<DbBulkImportSheet> {
   }
 
   Future<void> _dbSelectBrand() async {
-    await _dbEnsureReady();
+    if (!await _dbEnsureReady(onRetry: _dbSelectBrand)) return;
     if (!mounted) return;
     final b = await _pickBrand(context);
     if (!mounted) return;
@@ -255,7 +284,7 @@ class _DbBulkImportSheetState extends State<DbBulkImportSheet> {
   }
 
   Future<void> _dbSelectModel() async {
-    await _dbEnsureReady();
+    if (!await _dbEnsureReady(onRetry: _dbSelectModel)) return;
     if (_dbBrand == null) return;
     if (!mounted) return;
 
@@ -311,7 +340,6 @@ class _DbBulkImportSheetState extends State<DbBulkImportSheet> {
   }
 
   Future<String?> _pickBrand(BuildContext context) async {
-    await IrBlasterDb.instance.ensureInitialized();
     if (!context.mounted) return null;
 
     String? selected;
@@ -325,13 +353,17 @@ class _DbBulkImportSheetState extends State<DbBulkImportSheet> {
     bool loading = false;
     bool exhausted = false;
     int generation = 0;
+    Object? error;
 
     Future<void> load(StateSetter setModal, {required bool reset}) async {
       if (!alive) return;
       if (!reset && loading) return;
 
       final requestGeneration = reset ? ++generation : generation;
-      setModal(() => loading = true);
+      setModal(() {
+        loading = true;
+        error = null;
+      });
 
       try {
         if (reset) {
@@ -354,6 +386,12 @@ class _DbBulkImportSheetState extends State<DbBulkImportSheet> {
         if (next.isEmpty) exhausted = true;
 
         setModal(() {});
+      } catch (e) {
+        if (alive && requestGeneration == generation) {
+          error = e;
+          exhausted = true;
+          setModal(() {});
+        }
       } finally {
         if (alive && requestGeneration == generation) {
           setModal(() => loading = false);
@@ -434,32 +472,37 @@ class _DbBulkImportSheetState extends State<DbBulkImportSheet> {
                       ),
                       const SizedBox(height: 8),
                       Expanded(
-                        child: ListView.separated(
-                          controller: scrollCtl,
-                          itemCount: items.length + (loading ? 1 : 0),
-                          separatorBuilder: (_, __) => const Divider(height: 0),
-                          itemBuilder: (ctx3, i) {
-                            if (i >= items.length) {
-                              return const Padding(
-                                padding: EdgeInsets.all(14),
-                                child: Center(
-                                  child: CircularProgressIndicator(
-                                    strokeWidth: 2,
-                                  ),
-                                ),
-                              );
-                            }
-                            final b = items[i];
-                            return ListTile(
-                              title: Text(b),
-                              onTap: () {
-                                selected = b;
-                                alive = false;
-                                Navigator.of(ctx2).pop();
-                              },
-                            );
-                          },
-                        ),
+                        child: (error != null && items.isEmpty)
+                            ? LedgerDbErrorView(
+                                error: error!,
+                                onRetry: () => load(setModal, reset: true),
+                              )
+                            : ListView.separated(
+                                controller: scrollCtl,
+                                itemCount: items.length + (loading ? 1 : 0),
+                                separatorBuilder: (_, __) => const Divider(height: 0),
+                                itemBuilder: (ctx3, i) {
+                                  if (i >= items.length) {
+                                    return const Padding(
+                                      padding: EdgeInsets.all(14),
+                                      child: Center(
+                                        child: CircularProgressIndicator(
+                                          strokeWidth: 2,
+                                        ),
+                                      ),
+                                    );
+                                  }
+                                  final b = items[i];
+                                  return ListTile(
+                                    title: Text(b),
+                                    onTap: () {
+                                      selected = b;
+                                      alive = false;
+                                      Navigator.of(ctx2).pop();
+                                    },
+                                  );
+                                },
+                            ),
                       ),
                     ],
                   ),
@@ -480,7 +523,6 @@ class _DbBulkImportSheetState extends State<DbBulkImportSheet> {
 
   Future<String?> _pickModel(BuildContext context,
       {required String brand}) async {
-    await IrBlasterDb.instance.ensureInitialized();
     if (!context.mounted) return null;
 
     String? selected;
@@ -494,13 +536,17 @@ class _DbBulkImportSheetState extends State<DbBulkImportSheet> {
     bool loading = false;
     bool exhausted = false;
     int generation = 0;
+    Object? error;
 
     Future<void> load(StateSetter setModal, {required bool reset}) async {
       if (!alive) return;
       if (!reset && loading) return;
 
       final requestGeneration = reset ? ++generation : generation;
-      setModal(() => loading = true);
+      setModal(() {
+        loading = true;
+        error = null;
+      });
 
       try {
         if (reset) {
@@ -524,6 +570,12 @@ class _DbBulkImportSheetState extends State<DbBulkImportSheet> {
         if (next.isEmpty) exhausted = true;
 
         setModal(() {});
+      } catch (e) {
+        if (alive && requestGeneration == generation) {
+          error = e;
+          exhausted = true;
+          setModal(() {});
+        }
       } finally {
         if (alive && requestGeneration == generation) {
           setModal(() => loading = false);
@@ -604,32 +656,37 @@ class _DbBulkImportSheetState extends State<DbBulkImportSheet> {
                       ),
                       const SizedBox(height: 8),
                       Expanded(
-                        child: ListView.separated(
-                          controller: scrollCtl,
-                          itemCount: items.length + (loading ? 1 : 0),
-                          separatorBuilder: (_, __) => const Divider(height: 0),
-                          itemBuilder: (ctx3, i) {
-                            if (i >= items.length) {
-                              return const Padding(
-                                padding: EdgeInsets.all(14),
-                                child: Center(
-                                  child: CircularProgressIndicator(
-                                    strokeWidth: 2,
-                                  ),
-                                ),
-                              );
-                            }
-                            final m = items[i];
-                            return ListTile(
-                              title: Text(m),
-                              onTap: () {
-                                selected = m;
-                                alive = false;
-                                Navigator.of(ctx2).pop();
-                              },
-                            );
-                          },
-                        ),
+                        child: (error != null && items.isEmpty)
+                            ? LedgerDbErrorView(
+                                error: error!,
+                                onRetry: () => load(setModal, reset: true),
+                              )
+                            : ListView.separated(
+                                controller: scrollCtl,
+                                itemCount: items.length + (loading ? 1 : 0),
+                                separatorBuilder: (_, __) => const Divider(height: 0),
+                                itemBuilder: (ctx3, i) {
+                                  if (i >= items.length) {
+                                    return const Padding(
+                                      padding: EdgeInsets.all(14),
+                                      child: Center(
+                                        child: CircularProgressIndicator(
+                                          strokeWidth: 2,
+                                        ),
+                                      ),
+                                    );
+                                  }
+                                  final m = items[i];
+                                  return ListTile(
+                                    title: Text(m),
+                                    onTap: () {
+                                      selected = m;
+                                      alive = false;
+                                      Navigator.of(ctx2).pop();
+                                    },
+                                  );
+                                },
+                            ),
                       ),
                     ],
                   ),
@@ -733,13 +790,25 @@ class _DbBulkImportSheetState extends State<DbBulkImportSheet> {
   Future<void> _importAllMatching() async {
     if (_dbBrand == null || _dbModel == null || _dbProtocol == null) return;
     final search = _dbEffectiveSearch();
-    final total = await IrBlasterDb.instance.countCandidateKeys(
-      brand: _dbBrand!,
-      model: _dbModel!,
-      selectedProtocolId: _dbProtocol,
-      hexPrefixUpper: null,
-      search: search,
-    );
+    final int total;
+    try {
+      total = await IrBlasterDb.instance.countCandidateKeys(
+        brand: _dbBrand!,
+        model: _dbModel!,
+        selectedProtocolId: _dbProtocol,
+        hexPrefixUpper: null,
+        search: search,
+      );
+    } catch (e) {
+      if (!mounted) return;
+      showLedgerDbErrorSnack(
+        context,
+        e,
+        onRetry: () => unawaited(_importAllMatching()),
+        fallback: context.l10n.failedToLoadDatabaseKeys(e.toString()),
+      );
+      return;
+    }
     if (!mounted) return;
 
     final bool? confirm = await showDialog<bool>(
@@ -769,6 +838,7 @@ class _DbBulkImportSheetState extends State<DbBulkImportSheet> {
     final existing = widget.existingButtons.map(_dupKeyForButton).toSet();
     final added = <IRButton>[];
     final addedKeys = <String>{};
+    Object? failure;
 
     await showDialog<void>(
       context: context,
@@ -778,34 +848,41 @@ class _DbBulkImportSheetState extends State<DbBulkImportSheet> {
         StateSetter? setModal;
         Future<void> run() async {
           int offset = 0;
-          while (alive) {
-            final rows = await IrBlasterDb.instance.fetchCandidateKeys(
-              brand: _dbBrand!,
-              model: _dbModel!,
-              selectedProtocolId: _dbProtocol,
-              quickWinsFirst: true,
-              hexPrefixUpper: null,
-              search: search,
-              limit: 200,
-              offset: offset,
-            );
-            if (rows.isEmpty) break;
-            for (final r in rows) {
-              final btn = buildButtonFromDbRow(r, unnamedLabel: unnamedLabel);
-              if (btn == null) continue;
-              final key = _dupKeyForButton(btn);
-              if (_skipDuplicates &&
-                  (existing.contains(key) || addedKeys.contains(key))) {
-                skipped++;
-                continue;
+          try {
+            while (alive) {
+              final rows = await IrBlasterDb.instance.fetchCandidateKeys(
+                brand: _dbBrand!,
+                model: _dbModel!,
+                selectedProtocolId: _dbProtocol,
+                quickWinsFirst: true,
+                hexPrefixUpper: null,
+                search: search,
+                limit: 200,
+                offset: offset,
+              );
+              if (rows.isEmpty) break;
+              for (final r in rows) {
+                final btn =
+                    buildButtonFromDbRow(r, unnamedLabel: unnamedLabel);
+                if (btn == null) continue;
+                final key = _dupKeyForButton(btn);
+                if (_skipDuplicates &&
+                    (existing.contains(key) || addedKeys.contains(key))) {
+                  skipped++;
+                  continue;
+                }
+                added.add(btn);
+                addedKeys.add(key);
               }
-              added.add(btn);
-              addedKeys.add(key);
+              offset += rows.length;
+              processed += rows.length;
+              if (!mounted) break;
+              if (setModal != null) setModal!(() {});
             }
-            offset += rows.length;
-            processed += rows.length;
-            if (!mounted) break;
-            if (setModal != null) setModal!(() {});
+          } catch (e) {
+            // Nothing is imported from a run that did not finish: the dialog
+            // closes and the reason is shown.
+            failure = e;
           }
           if (ctx.mounted) {
             Navigator.of(ctx).pop();
@@ -837,6 +914,16 @@ class _DbBulkImportSheetState extends State<DbBulkImportSheet> {
     );
 
     if (!mounted) return;
+    final Object? failed = failure;
+    if (failed != null) {
+      showLedgerDbErrorSnack(
+        context,
+        failed,
+        onRetry: () => unawaited(_importAllMatching()),
+        fallback: context.l10n.failedToLoadDatabaseKeys(failed.toString()),
+      );
+      return;
+    }
     if (added.isEmpty) {
       _showSnack(
         skipped > 0
