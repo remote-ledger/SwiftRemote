@@ -31,6 +31,11 @@ class IrFinderRunController extends ChangeNotifier {
   String prefixRaw = '';
   String kaseikyoVendor = '2002';
 
+  /// The ledger data a database run's offset is counted over; saved with the
+  /// session so that it is not resumed over different data.
+  String? dataVersion;
+  String? brandHash;
+
   bool onlySelectedProtocol = true;
   bool quickWinsFirst = true;
 
@@ -60,6 +65,8 @@ class IrFinderRunController extends ChangeNotifier {
   });
 
   void configure({
+    String? dataVersion,
+    String? brandHash,
     required IrFinderMode mode,
     required String protocolId,
     required int delayMs,
@@ -74,6 +81,8 @@ class IrFinderRunController extends ChangeNotifier {
     required String? brand,
     required String? model,
   }) {
+    this.dataVersion = dataVersion;
+    this.brandHash = brandHash;
     this.mode = mode;
     this.protocolId = protocolId.trim().toLowerCase();
     this.delayMs = delayMs.clamp(250, 20000);
@@ -197,7 +206,9 @@ class IrFinderRunController extends ChangeNotifier {
 
   IrFinderSessionSnapshot snapshot() {
     return IrFinderSessionSnapshot(
-      v: 2,
+      v: IrFinderSessionSnapshot.currentVersion,
+      dataVersion: mode == IrFinderMode.database ? dataVersion : null,
+      brandHash: mode == IrFinderMode.database ? brandHash : null,
       mode: mode,
       protocolId: protocolId,
       brand: brand,
@@ -269,7 +280,17 @@ class IrFinderRunController extends ChangeNotifier {
       if (!advance && lastCandidate != null) {
         c = lastCandidate;
       } else {
-        c = await fetchCandidate(this);
+        try {
+          c = await fetchCandidate(this);
+        } catch (e) {
+          // The fetcher is called from a timer, which nothing awaits: an error
+          // here would be an unhandled one and the run would carry on blind.
+          // (The IR code database is loaded before a run starts, so this is
+          // for what cannot be foreseen.)
+          lastError = e;
+          await stop(clearPersistedSession: false);
+          return;
+        }
       }
 
       if (c == null) {
