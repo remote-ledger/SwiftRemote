@@ -12,7 +12,6 @@ import 'package:swiftremote/state/app_theme.dart';
 import 'package:swiftremote/state/dynamic_color.dart';
 import 'package:swiftremote/state/haptics.dart';
 import 'package:swiftremote/state/orientation_pref.dart';
-import 'package:swiftremote/state/remote_display_prefs.dart';
 import 'package:swiftremote/state/startup_prefs.dart';
 import 'package:swiftremote/state/transmitter_prefs.dart';
 import 'package:swiftremote/state/remotes_state.dart';
@@ -58,7 +57,6 @@ Future<void> main() async {
     await Future.wait([
       HapticsController.instance.load(),
       RemoteOrientationController.instance.load(),
-      RemoteDisplayController.instance.load(),
       StartupPrefsController.instance.load(),
       TransmitterPrefs.instance.load(),
       // lazy import to avoid circulars; we refer by string to keep tool happy

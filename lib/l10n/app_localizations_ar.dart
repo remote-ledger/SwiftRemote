@@ -798,19 +798,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get intensityStrong => 'Strong';
 
   @override
-  String get remoteButtonMetadataTitle => 'إظهار التسميات التقنية للأزرار';
-
-  @override
-  String get remoteButtonMetadataSubtitle =>
-      'اعرض البروتوكول والرمز وتردد الإرسال على أزرار جهاز التحكم.';
-
-  @override
-  String get remoteButtonMetadataShown => 'تم إظهار التسميات التقنية للأزرار.';
-
-  @override
-  String get remoteButtonMetadataHidden => 'تم إخفاء التسميات التقنية للأزرار.';
-
-  @override
   String get flipRemoteDefaultTitle => 'Flip جهاز التحكم عرض by default';
 
   @override
@@ -5465,19 +5452,6 @@ class AppLocalizationsArEg extends AppLocalizationsAr {
 
   @override
   String get intensityStrong => 'Strong';
-
-  @override
-  String get remoteButtonMetadataTitle => 'إظهار التسميات التقنية للأزرار';
-
-  @override
-  String get remoteButtonMetadataSubtitle =>
-      'اعرض البروتوكول والرمز وتردد الإرسال على أزرار جهاز التحكم.';
-
-  @override
-  String get remoteButtonMetadataShown => 'تم إظهار التسميات التقنية للأزرار.';
-
-  @override
-  String get remoteButtonMetadataHidden => 'تم إخفاء التسميات التقنية للأزرار.';
 
   @override
   String get flipRemoteDefaultTitle => 'Flip جهاز التحكم عرض by default';
