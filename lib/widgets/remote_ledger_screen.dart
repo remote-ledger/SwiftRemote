@@ -94,13 +94,56 @@ class _RemoteLedgerScreenState extends State<RemoteLedgerScreen> {
   bool _ledgerLoading = false;
   String? _ledgerError;
 
-  /// How many matching remotes one search lists, as the ledger's site does.
-  static const int _ledgerResultsShown = 50;
+  /// Matches are listed a page at a time: the first page, then another each
+  /// time the scroll nears the end of what is listed, until every match is.
+  static const int _ledgerPageSize = 30;
+  static const double _ledgerLoadMoreWithin = 400;
+  int _ledgerShown = _ledgerPageSize;
+  final ScrollController _scrollCtrl = ScrollController();
+
+  /// The last search, kept so that the scroll listener, which asks how many
+  /// matches there are every time the scroll moves, does not search again.
+  ({
+    RemoteLedgerIndex ledger,
+    String query,
+    RemoteLedgerSearchResult result
+  })? _lastSearch;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollCtrl.addListener(_listMoreNearEnd);
+  }
 
   @override
   void dispose() {
+    _scrollCtrl.dispose();
     _searchCtrl.dispose();
     super.dispose();
+  }
+
+  RemoteLedgerSearchResult _searchLedger(
+    RemoteLedgerIndex ledger,
+    String query,
+  ) {
+    final last = _lastSearch;
+    if (last != null && identical(last.ledger, ledger) && last.query == query) {
+      return last.result;
+    }
+    final result = ledger.search(query);
+    _lastSearch = (ledger: ledger, query: query, result: result);
+    return result;
+  }
+
+  /// Lists another page of matches when the scroll is near the end of those
+  /// listed, and does nothing when all of them are.
+  void _listMoreNearEnd() {
+    final ledger = _ledger;
+    final query = _searchCtrl.text.trim();
+    if (ledger == null || query.isEmpty || !_scrollCtrl.hasClients) return;
+    if (_ledgerShown >= _searchLedger(ledger, query).remotes.length) return;
+    if (_scrollCtrl.position.extentAfter > _ledgerLoadMoreWithin) return;
+    setState(() => _ledgerShown += _ledgerPageSize);
   }
 
   bool get _canNavigateUp =>
@@ -302,7 +345,8 @@ class _RemoteLedgerScreenState extends State<RemoteLedgerScreen> {
   }
 
   void _onSearchChanged(String value) {
-    setState(() {});
+    // A new query starts from its first page again.
+    setState(() => _ledgerShown = _ledgerPageSize);
     if (value.trim().isNotEmpty && _ledger == null && !_ledgerLoading) {
       _loadLedgerIndex();
     }
@@ -375,7 +419,7 @@ class _RemoteLedgerScreenState extends State<RemoteLedgerScreen> {
       );
     }
 
-    final result = ledger.search(query);
+    final result = _searchLedger(ledger, query);
     if (result.remotes.isEmpty && result.unresolved.isEmpty) {
       return Card(
         child: Padding(
@@ -392,18 +436,23 @@ class _RemoteLedgerScreenState extends State<RemoteLedgerScreen> {
       );
     }
 
-    final shown = result.remotes.take(_ledgerResultsShown).toList();
+    final shown = result.remotes.take(_ledgerShown).toList();
+    final allShown = shown.length == result.remotes.length;
+    if (!allShown) {
+      // A page that does not reach past the bottom of the screen has nothing
+      // to scroll, so nothing would ask for the next one.
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) _listMoreNearEnd();
+      });
+    }
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Padding(
           padding: const EdgeInsets.fromLTRB(4, 0, 4, 8),
           child: Text(
-            result.remotes.length > shown.length
-                ? 'Showing ${shown.length} of ${result.remotes.length} '
-                    'remotes. Refine the search to see the rest.'
-                : '${result.remotes.length} '
-                    '${result.remotes.length == 1 ? 'remote' : 'remotes'}',
+            '${result.remotes.length} '
+            '${result.remotes.length == 1 ? 'remote' : 'remotes'}',
             style: muted,
           ),
         ),
@@ -432,18 +481,21 @@ class _RemoteLedgerScreenState extends State<RemoteLedgerScreen> {
               ],
             ),
           ),
-        for (final device in result.unresolved)
-          Card(
-            child: ListTile(
-              leading: const Icon(Icons.help_outline_rounded),
-              title: Text(device.device),
-              subtitle: Text(
-                device.checked == null
-                    ? 'Checked, and no known remote found.'
-                    : 'Checked ${device.checked}, and no known remote found.',
+        // The devices nobody found a remote for come after the last remote,
+        // so they wait until the remotes have all been listed.
+        if (allShown)
+          for (final device in result.unresolved)
+            Card(
+              child: ListTile(
+                leading: const Icon(Icons.help_outline_rounded),
+                title: Text(device.device),
+                subtitle: Text(
+                  device.checked == null
+                      ? 'Checked, and no known remote found.'
+                      : 'Checked ${device.checked}, and no known remote found.',
+                ),
               ),
             ),
-          ),
       ],
     );
   }
@@ -515,6 +567,7 @@ class _RemoteLedgerScreenState extends State<RemoteLedgerScreen> {
             }
           },
           child: ListView(
+            controller: _scrollCtrl,
             physics: const AlwaysScrollableScrollPhysics(),
             padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
             children: [
