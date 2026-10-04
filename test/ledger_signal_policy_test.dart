@@ -7,7 +7,6 @@ import 'package:swiftremote/ir_finder/ir_finder_models.dart';
 import 'package:swiftremote/ir_finder/irblaster_db.dart';
 import 'package:swiftremote/ledger_db/ledger_errors.dart';
 import 'package:swiftremote/ledger_db/ledger_models.dart';
-import 'package:swiftremote/utils/db_button_import.dart';
 import 'package:swiftremote/utils/ir.dart';
 import 'package:swiftremote/utils/ledger_signal.dart';
 import 'package:swiftremote/utils/remote.dart';
@@ -93,28 +92,6 @@ void main() {
   });
 
   group('a divergent protocol\'s row never reaches the hex decoders', () {
-    test('every code of the ten becomes a raw button of its signal', () async {
-      int checked = 0;
-      for (final String protocol in _theTen) {
-        final List<IrDbKeyCandidate> rows = await keysOf(protocol);
-        expect(rows, isNotEmpty, reason: protocol);
-        for (final IrDbKeyCandidate row in rows) {
-          final IRButton? button = buildButtonFromDbRow(row);
-
-          expect(button, isNotNull, reason: '$protocol ${row.hexcode}');
-          expect(button!.protocol, isNull, reason: protocol);
-          expect(button.protocolParams, isNull, reason: protocol);
-          expect(button.code, isNull, reason: protocol);
-          final LedgerPlayback press = row.signal!.playback()!;
-          expect(button.rawData, press.rawData,
-              reason: '$protocol ${row.hexcode}');
-          expect(button.frequency, press.frequencyHz, reason: protocol);
-          checked++;
-        }
-      }
-      expect(checked, greaterThan(150));
-    });
-
     test(
         'the Signal Tester candidate plays the signal and builds no parameters',
         () async {
@@ -141,7 +118,6 @@ void main() {
         requiresSignal: true,
       );
 
-      expect(buildButtonFromDbRow(pioneer), isNull);
       expect(() => candidateWithoutDecoders(pioneer),
           throwsA(isA<LedgerSignalUnavailable>()));
     });
@@ -155,10 +131,7 @@ void main() {
       );
       expect(rows, isNotEmpty);
 
-      final IRButton button = buildButtonFromDbRow(rows.first)!;
-      expect(button.protocol, 'rc5');
-      expect(button.protocolParams, isNotEmpty);
-      expect(button.rawData, isNull);
+      expect(rows.first.requiresSignal, isFalse);
       expect(
         () => candidateWithoutDecoders(rows.first),
         throwsA(isA<StateError>()),

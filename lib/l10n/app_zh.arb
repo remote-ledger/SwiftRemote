@@ -484,28 +484,17 @@
   "layoutWideDescription": "宽布局 2 列按钮并显示更多详情 推荐。",
   "layoutCompactDescription": "紧凑布局 经典 4× 网格 仅图标 文本。",
   "importFromRemotes": "从遥控器导入",
-  "importFromDatabase": "从数据库导入",
   "addButton": "添加按钮",
   "noButtonsYet": "还没有按钮",
   "createRemoteEmptyStateDescription": "添加第一个按钮后，长按它可进行编辑或移除。",
   "createButtonTitle": "创建按钮",
   "editButtonTitle": "编辑按钮",
-  "failedToLoadProtocols": "加载协议失败 {error}",
-  "@failedToLoadProtocols": {
-    "placeholders": {
-      "error": {}
-    }
-  },
   "failedToLoadDatabaseKeys": "加载数据库按键失败 {error}",
   "@failedToLoadDatabaseKeys": {
     "placeholders": {
       "error": {}
     }
   },
-  "presetPower": "电源",
-  "presetVolume": "音量",
-  "presetChannel": "频道",
-  "presetNavigation": "导航",
   "all": "全部",
   "completeRequiredFieldsToSave": "请填写必填项后再保存",
   "buttonLabelStepTitle": "按钮标签",
@@ -614,13 +603,7 @@
   },
   "brand": "品牌",
   "model": "型号",
-  "selectBrand": "选择品牌",
-  "searchBrand": "搜索品牌…",
-  "selectModel": "选择型号",
-  "searchModel": "搜索型号…",
-  "unnamedKey": "未命名按键",
   "unknown": "未知",
-  "emDash": "-",
   "searchCommands": "搜索命令",
   "noMatchingCommands": "没有匹配命令",
   "quickTileFavoritesTitle": "快捷磁贴收藏",
@@ -639,10 +622,7 @@
   "editButtonCodeTitle": "编辑按钮代码",
   "thisRemoteHasNoButtons": "此遥控器没有按钮。",
   "selectCommand": "选择命令",
-  "databaseModeAutofillHint": "数据库模式会自动为你填充第 2 步 品牌 型号 协议。导入按键后，你仍可在手动模式中进一步调整。",
   "test": "测试",
-  "allSelectedButtonsWereDuplicates": "所选按钮全部为重复项。",
-  "noButtonsImported": "未导入任何按钮。",
   "importedButtonsSkippedDuplicates": "已导入 {addedCount} 个按钮。跳过 {skippedCount} 个重复项。",
   "@importedButtonsSkippedDuplicates": {
     "placeholders": {
@@ -654,56 +634,6 @@
       }
     }
   },
-  "importAllMatchingTitle": "导入所有匹配按钮",
-  "noMatchingKeysFound": "未找到匹配按键。",
-  "importAllMatchingMessage": "这将从当前数据库选择中导入最多 {count} 个匹配按键。",
-  "@importAllMatchingMessage": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "importAll": "全部导入",
-  "importingButtons": "正在导入按钮…",
-  "allMatchingButtonsWereDuplicates": "所有匹配按钮都是重复项。",
-  "quickPresets": "快捷预设",
-  "selectDeviceFirst": "请先选择设备",
-  "searchByLabelOrHex": "按标签或十六进制搜索",
-  "optionalRefinePresetKeys": "可选 进一步细化 {preset} 预设按键",
-  "@optionalRefinePresetKeys": {
-    "placeholders": {
-      "preset": {}
-    }
-  },
-  "selectBrandModelProtocolFirst": "请先选择品牌、型号和协议。",
-  "importFromDatabaseTitle": "从数据库导入",
-  "importFromDatabaseSubtitle": "选择设备，加载匹配按键，然后导入所选按钮。",
-  "deviceAndFilters": "设备与筛选",
-  "loadedCount": "已加载 {count}",
-  "@loadedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "hideFilters": "隐藏筛选",
-  "showFilters": "显示筛选",
-  "noProtocolFoundForBrandModel": "未找到此品牌和型号对应的协议。",
-  "protocolAutoDetected": "协议",
-  "protocolAutoDetectedHelper": "已从数据库自动检测。导入前你仍可修改。",
-  "selectBrandModelToLoadKeys": "请选择品牌、型号和协议以加载按键。",
-  "noKeysFound": "未找到按键。",
-  "noKeysFoundForSearch": "未找到 “{query}” 的按键。",
-  "@noKeysFoundForSearch": {
-    "placeholders": {
-      "query": {}
-    }
-  },
-  "skipDuplicates": "跳过重复项",
-  "skipDuplicatesSubtitle": "不要导入此遥控器中已存在的按钮。",
-  "importSelected": "导入所选",
   "noMacrosToExport": "没有可导出的宏。",
   "macrosExportedToDownloads": "宏已导出到下载目录。",
   "failedToExportMacros": "导出宏失败。",
@@ -1835,7 +1765,6 @@
   "iconNameTrophyFa": "奖杯 FA",
   "iconNameCrownFa": "王冠 FA",
   "iconNameGemFa": "宝石 FA",
-  "unknownLabel": "未知",
   "selectedFilesLabel": "已选择文件",
   "folderNotFoundOrInaccessible": "文件夹不存在或无法访问。",
   "importedRemoteDefaultName": "已导入遥控器",

@@ -484,28 +484,17 @@
   "layoutWideDescription": "와이드: 추가 정보가 있는 2열 버튼(권장).",
   "layoutCompactDescription": "컴팩트: 아이콘/텍스트만 있는 클래식 4× 격자.",
   "importFromRemotes": "가져오기 에서 리모컨",
-  "importFromDatabase": "가져오기 에서 DB",
   "addButton": "추가 버튼",
   "noButtonsYet": "없음 버튼 아직",
   "createRemoteEmptyStateDescription": "첫 버튼을 추가한 뒤 길게 눌러 편집/제거 옵션을 여세요.",
   "createButtonTitle": "생성 버튼",
   "editButtonTitle": "편집 버튼",
-  "failedToLoadProtocols": "프로토콜을 불러오지 못했습니다: {error}",
-  "@failedToLoadProtocols": {
-    "placeholders": {
-      "error": {}
-    }
-  },
   "failedToLoadDatabaseKeys": "데이터베이스 키를 불러오지 못했습니다: {error}",
   "@failedToLoadDatabaseKeys": {
     "placeholders": {
       "error": {}
     }
   },
-  "presetPower": "전원",
-  "presetVolume": "볼륨",
-  "presetChannel": "채널",
-  "presetNavigation": "탐색",
   "all": "전체",
   "completeRequiredFieldsToSave": "저장하려면 필수 항목을 모두 완료하세요",
   "buttonLabelStepTitle": "버튼 레이블",
@@ -614,13 +603,7 @@
   },
   "brand": "브랜드",
   "model": "모델",
-  "selectBrand": "브랜드 선택",
-  "searchBrand": "검색 브랜드…",
-  "selectModel": "모델 선택",
-  "searchModel": "검색 모델…",
-  "unnamedKey": "이름 없음 키",
   "unknown": "알 수 없음",
-  "emDash": "—",
   "searchCommands": "검색 명령",
   "noMatchingCommands": "없음 일치하는 명령",
   "quickTileFavoritesTitle": "빠른 타일 즐겨찾기",
@@ -639,10 +622,7 @@
   "editButtonCodeTitle": "편집 코드 버튼",
   "thisRemoteHasNoButtons": "이 리모컨 있음 없음 버튼.",
   "selectCommand": "선택 명령",
-  "databaseModeAutofillHint": "데이터베이스 모드는 2단계(브랜드 + 모델 + 프로토콜)를 자동으로 채웁니다. 키를 가져온 뒤에는 수동에서 세부 조정할 수 있습니다.",
   "test": "테스트",
-  "allSelectedButtonsWereDuplicates": "선택한 버튼이 모두 중복이었습니다.",
-  "noButtonsImported": "가져온 버튼이 없습니다.",
   "importedButtonsSkippedDuplicates": "버튼 {addedCount}개를 가져왔습니다. 중복 {skippedCount}개는 건너뛰었습니다.",
   "@importedButtonsSkippedDuplicates": {
     "placeholders": {
@@ -654,56 +634,6 @@
       }
     }
   },
-  "importAllMatchingTitle": "가져오기 모든 일치하는 버튼?",
-  "noMatchingKeysFound": "없음 일치하는 키 찾을 수 없음.",
-  "importAllMatchingMessage": "현재 데이터베이스 선택에서 일치하는 키를 최대 {count}개까지 가져옵니다.",
-  "@importAllMatchingMessage": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "importAll": "가져오기 모든",
-  "importingButtons": "버튼 가져오는 중…",
-  "allMatchingButtonsWereDuplicates": "일치하는 버튼이 모두 중복이었습니다.",
-  "quickPresets": "빠른 프리셋",
-  "selectDeviceFirst": "선택 기기 첫",
-  "searchByLabelOrHex": "검색 에 의해 레이블 또는 16진수",
-  "optionalRefinePresetKeys": "선택: {preset} 프리셋 키 세부 조정",
-  "@optionalRefinePresetKeys": {
-    "placeholders": {
-      "preset": {}
-    }
-  },
-  "selectBrandModelProtocolFirst": "선택 브랜드, 모델, 및 프로토콜 첫.",
-  "importFromDatabaseTitle": "가져오기 에서 데이터베이스",
-  "importFromDatabaseSubtitle": "기기를 선택하고 일치하는 키를 불러온 뒤 선택한 버튼을 가져오세요.",
-  "deviceAndFilters": "기기 & 필터",
-  "loadedCount": "{count}개 불러옴",
-  "@loadedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "hideFilters": "필터 숨기기",
-  "showFilters": "표시 필터",
-  "noProtocolFoundForBrandModel": "없음 프로토콜 찾을 수 없음 브랜드 및 모델.",
-  "protocolAutoDetected": "프로토콜",
-  "protocolAutoDetectedHelper": "데이터베이스에서 자동 감지되었습니다. 가져오기 전에 변경할 수 있습니다.",
-  "selectBrandModelToLoadKeys": "선택 브랜드, 모델, 및 프로토콜 불러오기 키.",
-  "noKeysFound": "없음 키 찾을 수 없음.",
-  "noKeysFoundForSearch": "없음 키 찾을 수 없음 \"{query}\".",
-  "@noKeysFoundForSearch": {
-    "placeholders": {
-      "query": {}
-    }
-  },
-  "skipDuplicates": "중복 건너뛰기",
-  "skipDuplicatesSubtitle": "리모컨에 이미 있는 버튼은 가져오지 않습니다.",
-  "importSelected": "가져오기 선택됨",
   "noMacrosToExport": "없음 매크로 내보내기.",
   "macrosExportedToDownloads": "매크로를 Downloads로 내보냈습니다.",
   "failedToExportMacros": "내보내기 매크로하지 못했습니다.",
@@ -1835,7 +1765,6 @@
   "iconNameTrophyFa": "Trophy FA",
   "iconNameCrownFa": "Crown FA",
   "iconNameGemFa": "Gem FA",
-  "unknownLabel": "알 수 없음",
   "selectedFilesLabel": "선택한 파일",
   "folderNotFoundOrInaccessible": "폴더 않음 찾을 수 없음 또는 inaccessible.",
   "importedRemoteDefaultName": "ImportedRemote",

@@ -484,28 +484,17 @@
   "layoutWideDescription": "Rộng: nút 2 cột với chi tiết bổ sung (khuyên dùng).",
   "layoutCompactDescription": "Gọn: classic 4× grid (icons/text only).",
   "importFromRemotes": "Nhập từ điều khiển",
-  "importFromDatabase": "Nhập từ CSDL",
   "addButton": "Thêm nút",
   "noButtonsYet": "Chưa có nút nào",
   "createRemoteEmptyStateDescription": "Thêm nút đầu tiên, rồi nhấn giữ để xem tùy chọn sửa/xóa.",
   "createButtonTitle": "Tạo nút",
   "editButtonTitle": "Sửa nút",
-  "failedToLoadProtocols": "Không tải được giao thức: {error}",
-  "@failedToLoadProtocols": {
-    "placeholders": {
-      "error": {}
-    }
-  },
   "failedToLoadDatabaseKeys": "Không tải được khóa CSDL: {error}",
   "@failedToLoadDatabaseKeys": {
     "placeholders": {
       "error": {}
     }
   },
-  "presetPower": "Nguồn",
-  "presetVolume": "Âm lượng",
-  "presetChannel": "Kênh",
-  "presetNavigation": "Điều hướng",
   "all": "Tất cả",
   "completeRequiredFieldsToSave": "Điền đủ trường bắt buộc để lưu",
   "buttonLabelStepTitle": "Nhãn nút",
@@ -614,13 +603,7 @@
   },
   "brand": "Hãng",
   "model": "Mẫu",
-  "selectBrand": "Chọn hãng",
-  "searchBrand": "Tìm hãng…",
-  "selectModel": "Chọn mẫu",
-  "searchModel": "Tìm mẫu…",
-  "unnamedKey": "Khóa chưa tên",
   "unknown": "Không rõ",
-  "emDash": "—",
   "searchCommands": "Tìm lệnh",
   "noMatchingCommands": "Không có lệnh khớp",
   "quickTileFavoritesTitle": "Yêu thích ô nhanh",
@@ -639,10 +622,7 @@
   "editButtonCodeTitle": "Sửa mã của nút",
   "thisRemoteHasNoButtons": "Điều khiển này không có nút nào.",
   "selectCommand": "Chọn lệnh",
-  "databaseModeAutofillHint": "Chế độ CSDL sẽ tự điền Bước 2 cho bạn (hãng + mẫu + giao thức). Sau khi nhập một khóa, bạn có thể chỉnh mọi thứ trong Thủ công.",
   "test": "Kiểm tra",
-  "allSelectedButtonsWereDuplicates": "Tất cả nút đã chọn đều là bản trùng.",
-  "noButtonsImported": "Không nhập nút nào.",
   "importedButtonsSkippedDuplicates": "Imported {addedCount} nút. Bỏ quaped {skippedCount} duplicate(s).",
   "@importedButtonsSkippedDuplicates": {
     "placeholders": {
@@ -654,56 +634,6 @@
       }
     }
   },
-  "importAllMatchingTitle": "Nhập tất cả nút khớp?",
-  "noMatchingKeysFound": "Không tìm thấy khóa khớp.",
-  "importAllMatchingMessage": "Thao tác này sẽ nhập tối đa {count} khóa khớp từ lựa chọn CSDL hiện tại.",
-  "@importAllMatchingMessage": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "importAll": "Nhập tất cả",
-  "importingButtons": "Đang nhập nút…",
-  "allMatchingButtonsWereDuplicates": "Tất cả nút khớp đều là bản trùng.",
-  "quickPresets": "Mẫu nhanh",
-  "selectDeviceFirst": "Chọn thiết bị trước",
-  "searchByLabelOrHex": "Tìm theo nhãn hoặc hex",
-  "optionalRefinePresetKeys": "Tùy chọn: tinh chỉnh khóa mẫu {preset}",
-  "@optionalRefinePresetKeys": {
-    "placeholders": {
-      "preset": {}
-    }
-  },
-  "selectBrandModelProtocolFirst": "Chọn hãng, mẫu và giao thức trước.",
-  "importFromDatabaseTitle": "Nhập từ cơ sở dữ liệu",
-  "importFromDatabaseSubtitle": "Chọn thiết bị, tải khóa khớp rồi nhập các nút đã chọn.",
-  "deviceAndFilters": "Thiết bị và bộ lọc",
-  "loadedCount": "Đã tải {count}",
-  "@loadedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "hideFilters": "Ẩn bộ lọc",
-  "showFilters": "Hiện bộ lọc",
-  "noProtocolFoundForBrandModel": "Không tìm thấy giao thức cho hãng và mẫu này.",
-  "protocolAutoDetected": "Giao thức",
-  "protocolAutoDetectedHelper": "Tự phát hiện từ cơ sở dữ liệu. Bạn có thể đổi trước khi nhập.",
-  "selectBrandModelToLoadKeys": "Chọn hãng, mẫu và giao thức để tải khóa.",
-  "noKeysFound": "Không tìm thấy khóa nào.",
-  "noKeysFoundForSearch": "Không tìm thấy khóa cho “{query}”.",
-  "@noKeysFoundForSearch": {
-    "placeholders": {
-      "query": {}
-    }
-  },
-  "skipDuplicates": "Bỏ qua duplicates",
-  "skipDuplicatesSubtitle": "Không nhập các nút đã tồn tại trong điều khiển này.",
-  "importSelected": "Nhập mục đã chọn",
   "noMacrosToExport": "Không có macro để xuất.",
   "macrosExportedToDownloads": "Đã xuất macro vào Downloads.",
   "failedToExportMacros": "Xuất macro thất bại.",
@@ -1835,7 +1765,6 @@
   "iconNameTrophyFa": "Cúp FA",
   "iconNameCrownFa": "Vương miện FA",
   "iconNameGemFa": "Ngọc FA",
-  "unknownLabel": "Không rõ",
   "selectedFilesLabel": "tệp đã chọn",
   "folderNotFoundOrInaccessible": "Không tìm thấy thư mục hoặc không thể truy cập.",
   "importedRemoteDefaultName": "ĐiềuKhiểnĐãNhập",

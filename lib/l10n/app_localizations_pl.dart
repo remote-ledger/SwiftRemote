@@ -1615,9 +1615,6 @@ class AppLocalizationsPl extends AppLocalizations {
   String get importFromRemotes => 'Import z pilotów';
 
   @override
-  String get importFromDatabase => 'Import z bazy';
-
-  @override
   String get addButton => 'Dodaj przycisk';
 
   @override
@@ -1634,26 +1631,9 @@ class AppLocalizationsPl extends AppLocalizations {
   String get editButtonTitle => 'Edytuj przycisk';
 
   @override
-  String failedToLoadProtocols(Object error) {
-    return 'nieudane do load protokoły: $error';
-  }
-
-  @override
   String failedToLoadDatabaseKeys(Object error) {
     return 'nieudane do load baza danych klawisze: $error';
   }
-
-  @override
-  String get presetPower => 'Zasilanie';
-
-  @override
-  String get presetVolume => 'głośność';
-
-  @override
-  String get presetChannel => 'Kanał';
-
-  @override
-  String get presetNavigation => 'Nawigacja';
 
   @override
   String get all => 'Wszystko';
@@ -1850,25 +1830,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get model => 'model';
 
   @override
-  String get selectBrand => 'Wybierz markę';
-
-  @override
-  String get searchBrand => 'szukaj marka…';
-
-  @override
-  String get selectModel => 'Wybierz model';
-
-  @override
-  String get searchModel => 'szukaj model…';
-
-  @override
-  String get unnamedKey => 'Unnamed klawisz';
-
-  @override
   String get unknown => 'Nieznane';
-
-  @override
-  String get emDash => '—';
 
   @override
   String get searchCommands => 'szukaj komendy';
@@ -1912,116 +1874,12 @@ class AppLocalizationsPl extends AppLocalizations {
   String get selectCommand => 'Select komenda';
 
   @override
-  String get databaseModeAutofillHint =>
-      'baza danych mode auto-fills krok 2 dla you (marka + model + protokół). After importing a klawisz, you can refine anything in Manual.';
-
-  @override
   String get test => 'Test';
-
-  @override
-  String get allSelectedButtonsWereDuplicates =>
-      'All wybrano przyciski were duplicates.';
-
-  @override
-  String get noButtonsImported => 'No przyciski imported.';
 
   @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return 'Imported $addedCount przycisk(s). Skipped $skippedCount duplicate(s).';
   }
-
-  @override
-  String get importAllMatchingTitle => 'Import wszystkie matching przyciski?';
-
-  @override
-  String get noMatchingKeysFound => 'No matching klawisze znaleziono.';
-
-  @override
-  String importAllMatchingMessage(int count) {
-    return 'This will import up do $count matching klawisze from current baza danych selection.';
-  }
-
-  @override
-  String get importAll => 'Import wszystkie';
-
-  @override
-  String get importingButtons => 'Importing przyciski…';
-
-  @override
-  String get allMatchingButtonsWereDuplicates =>
-      'All matching przyciski were duplicates.';
-
-  @override
-  String get quickPresets => 'Quick presets';
-
-  @override
-  String get selectDeviceFirst => 'Select urządzenie first';
-
-  @override
-  String get searchByLabelOrHex => 'szukaj by etykieta lub hex';
-
-  @override
-  String optionalRefinePresetKeys(Object preset) {
-    return 'Optional: refine $preset preset klawisze';
-  }
-
-  @override
-  String get selectBrandModelProtocolFirst =>
-      'Select marka, model, i protokół first.';
-
-  @override
-  String get importFromDatabaseTitle => 'Import from baza danych';
-
-  @override
-  String get importFromDatabaseSubtitle =>
-      'Wybierz a urządzenie, load matching klawisze, then import wybrano przyciski.';
-
-  @override
-  String get deviceAndFilters => 'urządzenie & filters';
-
-  @override
-  String loadedCount(int count) {
-    return 'Wczytano $count';
-  }
-
-  @override
-  String get hideFilters => 'Hide filters';
-
-  @override
-  String get showFilters => 'Pokaż filters';
-
-  @override
-  String get noProtocolFoundForBrandModel =>
-      'No protokół znaleziono dla this marka i model.';
-
-  @override
-  String get protocolAutoDetected => 'Protokół';
-
-  @override
-  String get protocolAutoDetectedHelper =>
-      'Wykryto automatycznie z bazy danych. Przed importem możesz to zmienić.';
-
-  @override
-  String get selectBrandModelToLoadKeys =>
-      'Select a marka, model, i protokół do load klawisze.';
-
-  @override
-  String get noKeysFound => 'Nie znaleziono klawiszy.';
-
-  @override
-  String noKeysFoundForSearch(Object query) {
-    return 'Nie znaleziono klawiszy dla \"$query\".';
-  }
-
-  @override
-  String get skipDuplicates => 'Pomiń duplikaty';
-
-  @override
-  String get skipDuplicatesSubtitle =>
-      'Nie importuj przycisków, które już istnieją w tym pilocie.';
-
-  @override
-  String get importSelected => 'Importuj wybrane';
 
   @override
   String get noMacrosToExport => 'Brak makr do eksportu.';
@@ -4426,9 +4284,6 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get iconNameGemFa => 'Gem FA';
-
-  @override
-  String get unknownLabel => 'Nieznane';
 
   @override
   String get selectedFilesLabel => 'wybrane pliki';

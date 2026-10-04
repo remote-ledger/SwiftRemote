@@ -484,28 +484,17 @@
   "layoutWideDescription": "Широкий: 2-колонкові кнопки з додатковими деталями (рекомендовано).",
   "layoutCompactDescription": "Компактний: класична сітка 4× (лише значки/текст).",
   "importFromRemotes": "Імпорт з пультів",
-  "importFromDatabase": "Імпорт з БД",
   "addButton": "Додати кнопку",
   "noButtonsYet": "Ще немає кнопок",
   "createRemoteEmptyStateDescription": "Додайте свою першу кнопку, а потім утримуйте її, щоб переглянути параметри редагування/видалення.",
   "createButtonTitle": "Створити кнопку",
   "editButtonTitle": "Кнопка редагування",
-  "failedToLoadProtocols": "Не вдалося завантажити протоколи: {error}",
-  "@failedToLoadProtocols": {
-    "placeholders": {
-      "error": {}
-    }
-  },
   "failedToLoadDatabaseKeys": "Не вдалося завантажити ключі бази даних: {error}",
   "@failedToLoadDatabaseKeys": {
     "placeholders": {
       "error": {}
     }
   },
-  "presetPower": "Живлення",
-  "presetVolume": "Обсяг",
-  "presetChannel": "Канал",
-  "presetNavigation": "Навігація",
   "all": "все",
   "completeRequiredFieldsToSave": "Заповніть необхідні поля для збереження",
   "buttonLabelStepTitle": "Мітка кнопки",
@@ -614,13 +603,7 @@
   },
   "brand": "Бренд",
   "model": "Модель",
-  "selectBrand": "Виберіть бренд",
-  "searchBrand": "Шукати бренд…",
-  "selectModel": "Виберіть модель",
-  "searchModel": "Пошук моделі…",
-  "unnamedKey": "Безіменний ключ",
   "unknown": "Невідомий",
-  "emDash": "-",
   "searchCommands": "Команди пошуку",
   "noMatchingCommands": "Немає відповідних команд",
   "quickTileFavoritesTitle": "Швидкі вибрані плитки",
@@ -639,10 +622,7 @@
   "editButtonCodeTitle": "Редагувати код кнопки",
   "thisRemoteHasNoButtons": "Цей пульт не має кнопок.",
   "selectCommand": "Виберіть команду",
-  "databaseModeAutofillHint": "Режим бази даних автоматично заповнює крок 2 для вас (бренд + модель + протокол). Після імпортування ключа ви можете вдосконалити будь-що вручну.",
   "test": "Тест",
-  "allSelectedButtonsWereDuplicates": "Усі вибрані кнопки були дублікатами.",
-  "noButtonsImported": "Кнопки не імпортовано.",
   "importedButtonsSkippedDuplicates": "Імпортовані кнопки {addedCount}. Пропущений дублікат(и) {skippedCount}.",
   "@importedButtonsSkippedDuplicates": {
     "placeholders": {
@@ -654,56 +634,6 @@
       }
     }
   },
-  "importAllMatchingTitle": "Імпортувати всі відповідні кнопки?",
-  "noMatchingKeysFound": "Не знайдено відповідних ключів.",
-  "importAllMatchingMessage": "Це імпортує до {count} відповідних ключів із поточного вибору бази даних.",
-  "@importAllMatchingMessage": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "importAll": "Імпортувати все",
-  "importingButtons": "Імпорт кнопок…",
-  "allMatchingButtonsWereDuplicates": "Усі відповідні кнопки були дублікатами.",
-  "quickPresets": "Швидкі налаштування",
-  "selectDeviceFirst": "Спочатку виберіть пристрій",
-  "searchByLabelOrHex": "Пошук за міткою або шістнадцятковим",
-  "optionalRefinePresetKeys": "Додатково: уточніть попередньо встановлені клавіші {preset}",
-  "@optionalRefinePresetKeys": {
-    "placeholders": {
-      "preset": {}
-    }
-  },
-  "selectBrandModelProtocolFirst": "Спочатку виберіть бренд, модель і протокол.",
-  "importFromDatabaseTitle": "Імпорт з бази даних",
-  "importFromDatabaseSubtitle": "Виберіть пристрій, завантажте відповідні ключі, а потім імпортуйте вибрані кнопки.",
-  "deviceAndFilters": "Пристрій і фільтри",
-  "loadedCount": "{count} завантажено",
-  "@loadedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "hideFilters": "Сховати фільтри",
-  "showFilters": "Показати фільтри",
-  "noProtocolFoundForBrandModel": "Для цієї марки та моделі протокол не знайдено.",
-  "protocolAutoDetected": "Протокол",
-  "protocolAutoDetectedHelper": "Автоматично визначено з бази даних. Ви можете змінити його перед імпортом.",
-  "selectBrandModelToLoadKeys": "Виберіть бренд, модель і протокол для завантаження ключів.",
-  "noKeysFound": "Ключі не знайдено.",
-  "noKeysFoundForSearch": "Не знайдено ключів для “{query}”.",
-  "@noKeysFoundForSearch": {
-    "placeholders": {
-      "query": {}
-    }
-  },
-  "skipDuplicates": "Пропустити дублікати",
-  "skipDuplicatesSubtitle": "Не імпортуйте кнопки, які вже існують на цьому пульті.",
-  "importSelected": "Вибрано імпорт",
   "noMacrosToExport": "Немає макросів для експорту.",
   "macrosExportedToDownloads": "Макроси експортовано до завантажень.",
   "failedToExportMacros": "Не вдалося експортувати макроси.",
@@ -1835,7 +1765,6 @@
   "iconNameTrophyFa": "Трофей FA",
   "iconNameCrownFa": "Корона FA",
   "iconNameGemFa": "Коштовність FA",
-  "unknownLabel": "Невідомий",
   "selectedFilesLabel": "вибрані файли",
   "folderNotFoundOrInaccessible": "Папка не знайдена або недоступна.",
   "importedRemoteDefaultName": "Імпортований пульт",

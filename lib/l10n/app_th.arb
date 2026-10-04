@@ -484,28 +484,17 @@
   "layoutWideDescription": "กว้าง: ปุ่ม 2 คอลัมน์พร้อมรายละเอียดเพิ่ม แนะนำ",
   "layoutCompactDescription": "กะทัดรัด: กริด 4× แบบคลาสสิก ไอคอนและข้อความเท่านั้น",
   "importFromRemotes": "นำเข้าจากรีโมต",
-  "importFromDatabase": "นำเข้าจากฐานข้อมูล",
   "addButton": "เพิ่มปุ่ม",
   "noButtonsYet": "ยังไม่มีปุ่ม",
   "createRemoteEmptyStateDescription": "เพิ่มปุ่มแรกของคุณ แล้วกดค้างเพื่อแก้ไขหรือลบ",
   "createButtonTitle": "สร้างปุ่ม",
   "editButtonTitle": "แก้ไข ปุ่ม",
-  "failedToLoadProtocols": "โหลดโปรโตคอลไม่สำเร็จ: {error}",
-  "@failedToLoadProtocols": {
-    "placeholders": {
-      "error": {}
-    }
-  },
   "failedToLoadDatabaseKeys": "โหลดคีย์ฐานข้อมูลไม่สำเร็จ: {error}",
   "@failedToLoadDatabaseKeys": {
     "placeholders": {
       "error": {}
     }
   },
-  "presetPower": "Power",
-  "presetVolume": "Volume",
-  "presetChannel": "ช่อง",
-  "presetNavigation": "นำทาง",
   "all": "All",
   "completeRequiredFieldsToSave": "กรอกข้อมูลที่จำเป็นให้ครบเพื่อบันทึก",
   "buttonLabelStepTitle": "ป้ายชื่อปุ่ม",
@@ -614,13 +603,7 @@
   },
   "brand": "ยี่ห้อ",
   "model": "รุ่น",
-  "selectBrand": "เลือกยี่ห้อ",
-  "searchBrand": "ค้นหา ยี่ห้อ…",
-  "selectModel": "เลือกรุ่น",
-  "searchModel": "ค้นหา รุ่น…",
-  "unnamedKey": "คีย์ไม่มีชื่อ",
   "unknown": "ไม่ทราบ",
-  "emDash": "—",
   "searchCommands": "ค้นหาคำสั่ง",
   "noMatchingCommands": "ไม่พบคำสั่งที่ตรงกัน",
   "quickTileFavoritesTitle": "รายการโปรดไทล์ด่วน",
@@ -639,10 +622,7 @@
   "editButtonCodeTitle": "แก้ไขโค้ดของปุ่ม",
   "thisRemoteHasNoButtons": "รีโมตนี้ไม่มีปุ่ม",
   "selectCommand": "เลือกคำสั่ง",
-  "databaseModeAutofillHint": "โหมดฐานข้อมูลจะกรอกขั้นตอนที่ 2 ให้อัตโนมัติ ยี่ห้อ รุ่น และโปรโตคอล หลังนำเข้าคีย์แล้ว คุณยังปรับทุกอย่างได้ในโหมด Manual",
   "test": "ทดสอบ",
-  "allSelectedButtonsWereDuplicates": "ปุ่มที่เลือกทั้งหมดเป็นรายการซ้ำ",
-  "noButtonsImported": "ไม่มีปุ่มที่นำเข้า",
   "importedButtonsSkippedDuplicates": "นำเข้า {addedCount} ปุ่ม ข้ามรายการซ้ำ {skippedCount} รายการ",
   "@importedButtonsSkippedDuplicates": {
     "placeholders": {
@@ -654,56 +634,6 @@
       }
     }
   },
-  "importAllMatchingTitle": "นำเข้าปุ่มที่ตรงกันทั้งหมด",
-  "noMatchingKeysFound": "ไม่พบคีย์ที่ตรงกัน",
-  "importAllMatchingMessage": "การดำเนินการนี้จะนำเข้าคีย์ที่ตรงกันได้สูงสุด {count} รายการจากตัวเลือกฐานข้อมูลปัจจุบัน",
-  "@importAllMatchingMessage": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "importAll": "นำเข้าทั้งหมด",
-  "importingButtons": "กำลังนำเข้าปุ่ม…",
-  "allMatchingButtonsWereDuplicates": "ปุ่มที่ตรงกันทั้งหมดเป็นรายการซ้ำ",
-  "quickPresets": "พรีเซ็ตด่วน",
-  "selectDeviceFirst": "เลือกอุปกรณ์ก่อน",
-  "searchByLabelOrHex": "ค้นหาตามชื่อหรือเลขฐานสิบหก",
-  "optionalRefinePresetKeys": "ไม่บังคับ: ปรับคีย์พรีเซ็ต {preset}",
-  "@optionalRefinePresetKeys": {
-    "placeholders": {
-      "preset": {}
-    }
-  },
-  "selectBrandModelProtocolFirst": "เลือก ยี่ห้อ, รุ่น, and โปรโตคอล ก่อน.",
-  "importFromDatabaseTitle": "นำเข้าจากฐานข้อมูล",
-  "importFromDatabaseSubtitle": "เลือกอุปกรณ์ โหลดคีย์ที่ตรงกัน แล้วนำเข้าปุ่มที่เลือก",
-  "deviceAndFilters": "อุปกรณ์และตัวกรอง",
-  "loadedCount": "โหลดแล้ว {count}",
-  "@loadedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "hideFilters": "ซ่อนตัวกรอง",
-  "showFilters": "แสดงตัวกรอง",
-  "noProtocolFoundForBrandModel": "ไม่พบโปรโตคอลสำหรับยี่ห้อและรุ่นนี้",
-  "protocolAutoDetected": "โปรโตคอล",
-  "protocolAutoDetectedHelper": "ตรวจพบจากฐานข้อมูลอัตโนมัติ คุณเปลี่ยนได้ก่อนนำเข้า",
-  "selectBrandModelToLoadKeys": "เลือก a ยี่ห้อ, รุ่น, and โปรโตคอล to load คีย์.",
-  "noKeysFound": "ไม่พบคีย์",
-  "noKeysFoundForSearch": "ไม่พบคีย์สำหรับ “{query}”",
-  "@noKeysFoundForSearch": {
-    "placeholders": {
-      "query": {}
-    }
-  },
-  "skipDuplicates": "ข้ามรายการซ้ำ",
-  "skipDuplicatesSubtitle": "ไม่นำเข้าปุ่มที่มีอยู่แล้วในรีโมตนี้",
-  "importSelected": "นำเข้าที่เลือก",
   "noMacrosToExport": "ไม่มีแมโครให้ส่งออก",
   "macrosExportedToDownloads": "แมโครs exported to ดาวน์โหลด.",
   "failedToExportMacros": "ไม่สำเร็จในการexport แมโครs.",
@@ -1835,7 +1765,6 @@
   "iconNameTrophyFa": "ถ้วยรางวัล FA",
   "iconNameCrownFa": "มงกุฎ FA",
   "iconNameGemFa": "อัญมณี FA",
-  "unknownLabel": "ไม่ทราบ",
   "selectedFilesLabel": "ไฟล์ที่เลือก",
   "folderNotFoundOrInaccessible": "ไม่พบโฟลเดอร์หรือไม่สามารถเข้าถึงได้",
   "importedRemoteDefaultName": "นำเข้าแล้วรีโมต",

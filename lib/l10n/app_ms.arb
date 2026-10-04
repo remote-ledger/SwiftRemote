@@ -484,28 +484,17 @@
   "layoutWideDescription": "Luas: butang 2 kolom dengan detail tambahan (disyorkan).",
   "layoutCompactDescription": "Ringkas: kisi 4× klasik (ikon/teks saja).",
   "importFromRemotes": "Import dari remote",
-  "importFromDatabase": "Import dari DB",
   "addButton": "Tambah butang",
   "noButtonsYet": "Tiada butang yet",
   "createRemoteEmptyStateDescription": "Tambahkan butang pertama, kemudian tekan lama untuk opsi ubah/hapus.",
   "createButtonTitle": "Buat Butang",
   "editButtonTitle": "Ubah Butang",
-  "failedToLoadProtocols": "Gagal muat protocols: {error}",
-  "@failedToLoadProtocols": {
-    "placeholders": {
-      "error": {}
-    }
-  },
   "failedToLoadDatabaseKeys": "Gagal muat pangkalan data butang: {error}",
   "@failedToLoadDatabaseKeys": {
     "placeholders": {
       "error": {}
     }
   },
-  "presetPower": "Daya",
-  "presetVolume": "Volum",
-  "presetChannel": "Kanal",
-  "presetNavigation": "Navigasi",
   "all": "Semua",
   "completeRequiredFieldsToSave": "Lengkapi bidang wajib untuk menyimpan",
   "buttonLabelStepTitle": "Label butang",
@@ -614,13 +603,7 @@
   },
   "brand": "Jenama",
   "model": "Model",
-  "selectBrand": "Pilih jenama",
-  "searchBrand": "Cari jenama…",
-  "selectModel": "Pilih model",
-  "searchModel": "Cari model…",
-  "unnamedKey": "Unnamed butang",
   "unknown": "Tidak dikenal",
-  "emDash": "—",
   "searchCommands": "Cari arahans",
   "noMatchingCommands": "Tiada matching arahans",
   "quickTileFavoritesTitle": "Cepat jubin kegemaran",
@@ -639,10 +622,7 @@
   "editButtonCodeTitle": "Ubah Kod butang",
   "thisRemoteHasNoButtons": "Remote ini tidak mempunyai butang.",
   "selectCommand": "Pilih Arahan",
-  "databaseModeAutofillHint": "Mode Pangkalan data mengisi automatik Langkah 2 untuk Anda (jenama + model + protokol). Setelah mengimport butang, Anda boleh menyempurnakan apa pun di Manual.",
   "test": "Uji",
-  "allSelectedButtonsWereDuplicates": "Semua butang terpilih adalah duplikat.",
-  "noButtonsImported": "Tiada butang importted.",
   "importedButtonsSkippedDuplicates": "Mengimport {addedCount} butang. Melangkau {skippedCount} pendua.",
   "@importedButtonsSkippedDuplicates": {
     "placeholders": {
@@ -654,56 +634,6 @@
       }
     }
   },
-  "importAllMatchingTitle": "Import semua matching butang?",
-  "noMatchingKeysFound": "Tiada matching butang found.",
-  "importAllMatchingMessage": "Ini akan mengimport hingga {count} butang yang sepadan dari pilihan pangkalan data semasa.",
-  "@importAllMatchingMessage": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "importAll": "Import semua",
-  "importingButtons": "Importting butang…",
-  "allMatchingButtonsWereDuplicates": "Semua butang yang cocok adalah duplikat.",
-  "quickPresets": "Cepat presets",
-  "selectDeviceFirst": "Pilih peranti terlebih dahulu",
-  "searchByLabelOrHex": "Cari menurut label atau hex",
-  "optionalRefinePresetKeys": "Opsional: perhalus butang preset {preset}",
-  "@optionalRefinePresetKeys": {
-    "placeholders": {
-      "preset": {}
-    }
-  },
-  "selectBrandModelProtocolFirst": "Pilih jenama, model, dan protokol terlebih dahulu.",
-  "importFromDatabaseTitle": "Import dari pangkalan data",
-  "importFromDatabaseSubtitle": "Pilih peranti, muat butang yang cocok, kemudian import butang terpilih.",
-  "deviceAndFilters": "Peranti & filters",
-  "loadedCount": "{count} dimuat",
-  "@loadedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "hideFilters": "Sembunyikan filter",
-  "showFilters": "Tampilkan filter",
-  "noProtocolFoundForBrandModel": "Tiada protokol untuk jenama dan model ini.",
-  "protocolAutoDetected": "Protokol",
-  "protocolAutoDetectedHelper": "Dikesan automatik dari pangkalan data. Anda boleh mengubahnya sebelum import.",
-  "selectBrandModelToLoadKeys": "Pilih jenama, model, dan protokol untuk memuat butang.",
-  "noKeysFound": "Tiada butang found.",
-  "noKeysFoundForSearch": "Tiada butang ditemui untuk “{query}”.",
-  "@noKeysFoundForSearch": {
-    "placeholders": {
-      "query": {}
-    }
-  },
-  "skipDuplicates": "Lewati duplikat",
-  "skipDuplicatesSubtitle": "Jangan import butang yang sudah ada di remote ini.",
-  "importSelected": "Import terpilih",
   "noMacrosToExport": "Tiada makro untuk diekspor.",
   "macrosExportedToDownloads": "Makro diekspor ke Unduhan.",
   "failedToExportMacros": "Gagal export makro.",
@@ -1835,7 +1765,6 @@
   "iconNameTrophyFa": "Trophy FA",
   "iconNameCrownFa": "Crown FA",
   "iconNameGemFa": "Gem FA",
-  "unknownLabel": "Tidak dikenal",
   "selectedFilesLabel": "terpilih file(s)",
   "folderNotFoundOrInaccessible": "Folder tidak ditemui atau tidak boleh diakses.",
   "importedRemoteDefaultName": "RemoteImport",

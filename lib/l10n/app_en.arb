@@ -611,28 +611,17 @@
   "layoutWideDescription": "Wide: 2-column buttons with extra details (recommended).",
   "layoutCompactDescription": "Compact: classic 4× grid (icons/text only).",
   "importFromRemotes": "Import from remotes",
-  "importFromDatabase": "Import from DB",
   "addButton": "Add button",
   "noButtonsYet": "No buttons yet",
   "createRemoteEmptyStateDescription": "Add your first button, then long-press it for edit/remove options.",
   "createButtonTitle": "Create Button",
   "editButtonTitle": "Edit Button",
-  "failedToLoadProtocols": "Failed to load protocols: {error}",
-  "@failedToLoadProtocols": {
-    "placeholders": {
-      "error": {}
-    }
-  },
   "failedToLoadDatabaseKeys": "Failed to load database keys: {error}",
   "@failedToLoadDatabaseKeys": {
     "placeholders": {
       "error": {}
     }
   },
-  "presetPower": "Power",
-  "presetVolume": "Volume",
-  "presetChannel": "Channel",
-  "presetNavigation": "Navigation",
   "all": "All",
   "completeRequiredFieldsToSave": "Complete required fields to save",
   "buttonLabelStepTitle": "Button label",
@@ -741,13 +730,7 @@
   },
   "brand": "Brand",
   "model": "Model",
-  "selectBrand": "Select brand",
-  "searchBrand": "Search brand…",
-  "selectModel": "Select model",
-  "searchModel": "Search model…",
-  "unnamedKey": "Unnamed key",
   "unknown": "Unknown",
-  "emDash": "-",
   "searchCommands": "Search commands",
   "noMatchingCommands": "No matching commands",
   "quickTileFavoritesTitle": "Quick tile favorites",
@@ -766,10 +749,7 @@
   "editButtonCodeTitle": "Edit Code of the button",
   "thisRemoteHasNoButtons": "This remote has no buttons.",
   "selectCommand": "Select Command",
-  "databaseModeAutofillHint": "Database mode auto-fills Step 2 for you (brand + model + protocol). After importing a key, you can refine anything in Manual.",
   "test": "Test",
-  "allSelectedButtonsWereDuplicates": "All selected buttons were duplicates.",
-  "noButtonsImported": "No buttons imported.",
   "importedButtonsSkippedDuplicates": "Imported {addedCount} button(s). Skipped {skippedCount} duplicate(s).",
   "@importedButtonsSkippedDuplicates": {
     "placeholders": {
@@ -781,56 +761,6 @@
       }
     }
   },
-  "importAllMatchingTitle": "Import all matching buttons?",
-  "noMatchingKeysFound": "No matching keys found.",
-  "importAllMatchingMessage": "This will import up to {count} matching keys from the current database selection.",
-  "@importAllMatchingMessage": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "importAll": "Import all",
-  "importingButtons": "Importing buttons…",
-  "allMatchingButtonsWereDuplicates": "All matching buttons were duplicates.",
-  "quickPresets": "Quick presets",
-  "selectDeviceFirst": "Select device first",
-  "searchByLabelOrHex": "Search by label or hex",
-  "optionalRefinePresetKeys": "Optional: refine the {preset} preset keys",
-  "@optionalRefinePresetKeys": {
-    "placeholders": {
-      "preset": {}
-    }
-  },
-  "selectBrandModelProtocolFirst": "Select brand, model, and protocol first.",
-  "importFromDatabaseTitle": "Import from database",
-  "importFromDatabaseSubtitle": "Choose a device, load matching keys, then import selected buttons.",
-  "deviceAndFilters": "Device & filters",
-  "loadedCount": "{count} loaded",
-  "@loadedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "hideFilters": "Hide filters",
-  "showFilters": "Show filters",
-  "noProtocolFoundForBrandModel": "No protocol found for this brand and model.",
-  "protocolAutoDetected": "Protocol",
-  "protocolAutoDetectedHelper": "Auto-detected from the database. You can change it before importing.",
-  "selectBrandModelToLoadKeys": "Select a brand, model, and protocol to load keys.",
-  "noKeysFound": "No keys found.",
-  "noKeysFoundForSearch": "No keys found for “{query}”.",
-  "@noKeysFoundForSearch": {
-    "placeholders": {
-      "query": {}
-    }
-  },
-  "skipDuplicates": "Skip duplicates",
-  "skipDuplicatesSubtitle": "Do not import buttons that already exist in this remote.",
-  "importSelected": "Import selected",
   "noMacrosToExport": "No macros to export.",
   "macrosExportedToDownloads": "Macros exported to Downloads.",
   "failedToExportMacros": "Failed to export macros.",
@@ -1967,7 +1897,6 @@
   "iconNameTrophyFa": "Trophy FA",
   "iconNameCrownFa": "Crown FA",
   "iconNameGemFa": "Gem FA",
-  "unknownLabel": "Unknown",
   "selectedFilesLabel": "selected file(s)",
   "folderNotFoundOrInaccessible": "Folder not found or inaccessible.",
   "importedRemoteDefaultName": "ImportedRemote",

@@ -484,28 +484,17 @@
   "layoutWideDescription": "चौड़ी: 2-स्तंभ बटन के साथ अतिरिक्त विवरण (अनुशंसित).",
   "layoutCompactDescription": "कॉम्पैक्ट: क्लासिक 4× ग्रिड (icons/पाठ केवल).",
   "importFromRemotes": "आयात करें से रिमोट",
-  "importFromDatabase": "आयात करें से DB",
   "addButton": "जोड़ें बटन",
   "noButtonsYet": "नहीं बटन yet",
   "createRemoteEmptyStateDescription": "जोड़ें आपकी पहले बटन, फिर लंबा दबाएं it के लिए संपादित करें/हटाएं options.",
   "createButtonTitle": "बनाएं बटन",
   "editButtonTitle": "संपादित करें बटन",
-  "failedToLoadProtocols": "प्रोटोकॉल लोड विफल: {error}",
-  "@failedToLoadProtocols": {
-    "placeholders": {
-      "error": {}
-    }
-  },
   "failedToLoadDatabaseKeys": "लोड करें डेटाबेस keys: {error} विफल",
   "@failedToLoadDatabaseKeys": {
     "placeholders": {
       "error": {}
     }
   },
-  "presetPower": "पावर",
-  "presetVolume": "आवाज़",
-  "presetChannel": "Channel",
-  "presetNavigation": "नेविगेशन",
   "all": "सभी",
   "completeRequiredFieldsToSave": "पूर्ण आवश्यक fields तक सहेजें",
   "buttonLabelStepTitle": "बटन लेबल",
@@ -614,13 +603,7 @@
   },
   "brand": "ब्रांड",
   "model": "मॉडल",
-  "selectBrand": "ब्रांड चुनें",
-  "searchBrand": "खोजें ब्रांड…",
-  "selectModel": "मॉडल चुनें",
-  "searchModel": "खोजें मॉडल…",
-  "unnamedKey": "बिना नाम की कुंजी",
   "unknown": "अज्ञात",
-  "emDash": "—",
   "searchCommands": "खोजें कमांड",
   "noMatchingCommands": "नहीं मेल खाती कमांड",
   "quickTileFavoritesTitle": "त्वरित tile पसंदीदा",
@@ -639,10 +622,7 @@
   "editButtonCodeTitle": "संपादित करें कोड का the बटन",
   "thisRemoteHasNoButtons": "यह रिमोट has नहीं बटन.",
   "selectCommand": "चुनें कमांड",
-  "databaseModeAutofillHint": "डेटाबेस मोड auto-fills चरण 2 के लिए you (ब्रांड + मॉडल + प्रोटोकॉल). बाद आयात करते समय a key, you सकता है परिष्कृत करें anything में मैनुअल.",
   "test": "जांचें",
-  "allSelectedButtonsWereDuplicates": "सभी चयनित बटन थे डुप्लिकेट.",
-  "noButtonsImported": "कोई बटन आयात नहीं हुआ।",
   "importedButtonsSkippedDuplicates": "{addedCount} बटन आयात किए गए। {skippedCount} डुप्लिकेट छोड़े गए।",
   "@importedButtonsSkippedDuplicates": {
     "placeholders": {
@@ -654,56 +634,6 @@
       }
     }
   },
-  "importAllMatchingTitle": "आयात करें सभी मेल खाती बटन?",
-  "noMatchingKeysFound": "नहीं मेल खाती keys मिला.",
-  "importAllMatchingMessage": "यह होगा आयात ऊपर तक {count} मेल खाती keys से the वर्तमान डेटाबेस selection.",
-  "@importAllMatchingMessage": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "importAll": "आयात करें सभी",
-  "importingButtons": "बटन आयात हो रहे हैं…",
-  "allMatchingButtonsWereDuplicates": "सभी मेल खाती बटन थे डुप्लिकेट.",
-  "quickPresets": "त्वरित प्रीसेट",
-  "selectDeviceFirst": "चुनें डिवाइस पहले",
-  "searchByLabelOrHex": "खोजें द्वारा लेबल या हेक्स",
-  "optionalRefinePresetKeys": "वैकल्पिक: {preset} प्रीसेट कुंजियों को परिष्कृत करें",
-  "@optionalRefinePresetKeys": {
-    "placeholders": {
-      "preset": {}
-    }
-  },
-  "selectBrandModelProtocolFirst": "चुनें ब्रांड, मॉडल, और प्रोटोकॉल पहले.",
-  "importFromDatabaseTitle": "आयात करें से डेटाबेस",
-  "importFromDatabaseSubtitle": "चुनें a डिवाइस, लोड करें मेल खाती keys, फिर आयात चयनित बटन.",
-  "deviceAndFilters": "डिवाइस & फ़िल्टर",
-  "loadedCount": "{count} लोड किया गया",
-  "@loadedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "hideFilters": "छिपाएं फ़िल्टर",
-  "showFilters": "दिखाएं फ़िल्टर",
-  "noProtocolFoundForBrandModel": "नहीं प्रोटोकॉल मिला के लिए यह ब्रांड और मॉडल.",
-  "protocolAutoDetected": "प्रोटोकॉल",
-  "protocolAutoDetectedHelper": "डेटाबेस से स्वतः पहचाना गया। आयात करने से पहले आप इसे बदल सकते हैं।",
-  "selectBrandModelToLoadKeys": "चुनें a ब्रांड, मॉडल, और प्रोटोकॉल तक लोड करें keys.",
-  "noKeysFound": "नहीं keys मिला.",
-  "noKeysFoundForSearch": "नहीं keys मिला के लिए “{query}”.",
-  "@noKeysFoundForSearch": {
-    "placeholders": {
-      "query": {}
-    }
-  },
-  "skipDuplicates": "छोड़ें डुप्लिकेट",
-  "skipDuplicatesSubtitle": "Do नहीं आयात बटन वह already exist में यह रिमोट.",
-  "importSelected": "आयात करें चयनित",
   "noMacrosToExport": "नहीं मैक्रो तक निर्यात.",
   "macrosExportedToDownloads": "मैक्रो Downloads में निर्यात किए गए।",
   "failedToExportMacros": "निर्यात मैक्रो. विफल",
@@ -1840,7 +1770,6 @@
   "iconNameTrophyFa": "Trophy FA",
   "iconNameCrownFa": "Crown FA",
   "iconNameGemFa": "Gem FA",
-  "unknownLabel": "अज्ञात",
   "selectedFilesLabel": "चयनित फ़ाइल(s)",
   "folderNotFoundOrInaccessible": "फ़ोल्डर नहीं मिला या inaccessible.",
   "importedRemoteDefaultName": "ImportedRemote",

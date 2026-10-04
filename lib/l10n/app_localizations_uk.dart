@@ -1622,9 +1622,6 @@ class AppLocalizationsUk extends AppLocalizations {
   String get importFromRemotes => 'Імпорт з пультів';
 
   @override
-  String get importFromDatabase => 'Імпорт з БД';
-
-  @override
   String get addButton => 'Додати кнопку';
 
   @override
@@ -1641,26 +1638,9 @@ class AppLocalizationsUk extends AppLocalizations {
   String get editButtonTitle => 'Кнопка редагування';
 
   @override
-  String failedToLoadProtocols(Object error) {
-    return 'Не вдалося завантажити протоколи: $error';
-  }
-
-  @override
   String failedToLoadDatabaseKeys(Object error) {
     return 'Не вдалося завантажити ключі бази даних: $error';
   }
-
-  @override
-  String get presetPower => 'Живлення';
-
-  @override
-  String get presetVolume => 'Обсяг';
-
-  @override
-  String get presetChannel => 'Канал';
-
-  @override
-  String get presetNavigation => 'Навігація';
 
   @override
   String get all => 'все';
@@ -1857,25 +1837,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get model => 'Модель';
 
   @override
-  String get selectBrand => 'Виберіть бренд';
-
-  @override
-  String get searchBrand => 'Шукати бренд…';
-
-  @override
-  String get selectModel => 'Виберіть модель';
-
-  @override
-  String get searchModel => 'Пошук моделі…';
-
-  @override
-  String get unnamedKey => 'Безіменний ключ';
-
-  @override
   String get unknown => 'Невідомий';
-
-  @override
-  String get emDash => '-';
 
   @override
   String get searchCommands => 'Команди пошуку';
@@ -1920,116 +1882,12 @@ class AppLocalizationsUk extends AppLocalizations {
   String get selectCommand => 'Виберіть команду';
 
   @override
-  String get databaseModeAutofillHint =>
-      'Режим бази даних автоматично заповнює крок 2 для вас (бренд + модель + протокол). Після імпортування ключа ви можете вдосконалити будь-що вручну.';
-
-  @override
   String get test => 'Тест';
-
-  @override
-  String get allSelectedButtonsWereDuplicates =>
-      'Усі вибрані кнопки були дублікатами.';
-
-  @override
-  String get noButtonsImported => 'Кнопки не імпортовано.';
 
   @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return 'Імпортовані кнопки $addedCount. Пропущений дублікат(и) $skippedCount.';
   }
-
-  @override
-  String get importAllMatchingTitle => 'Імпортувати всі відповідні кнопки?';
-
-  @override
-  String get noMatchingKeysFound => 'Не знайдено відповідних ключів.';
-
-  @override
-  String importAllMatchingMessage(int count) {
-    return 'Це імпортує до $count відповідних ключів із поточного вибору бази даних.';
-  }
-
-  @override
-  String get importAll => 'Імпортувати все';
-
-  @override
-  String get importingButtons => 'Імпорт кнопок…';
-
-  @override
-  String get allMatchingButtonsWereDuplicates =>
-      'Усі відповідні кнопки були дублікатами.';
-
-  @override
-  String get quickPresets => 'Швидкі налаштування';
-
-  @override
-  String get selectDeviceFirst => 'Спочатку виберіть пристрій';
-
-  @override
-  String get searchByLabelOrHex => 'Пошук за міткою або шістнадцятковим';
-
-  @override
-  String optionalRefinePresetKeys(Object preset) {
-    return 'Додатково: уточніть попередньо встановлені клавіші $preset';
-  }
-
-  @override
-  String get selectBrandModelProtocolFirst =>
-      'Спочатку виберіть бренд, модель і протокол.';
-
-  @override
-  String get importFromDatabaseTitle => 'Імпорт з бази даних';
-
-  @override
-  String get importFromDatabaseSubtitle =>
-      'Виберіть пристрій, завантажте відповідні ключі, а потім імпортуйте вибрані кнопки.';
-
-  @override
-  String get deviceAndFilters => 'Пристрій і фільтри';
-
-  @override
-  String loadedCount(int count) {
-    return '$count завантажено';
-  }
-
-  @override
-  String get hideFilters => 'Сховати фільтри';
-
-  @override
-  String get showFilters => 'Показати фільтри';
-
-  @override
-  String get noProtocolFoundForBrandModel =>
-      'Для цієї марки та моделі протокол не знайдено.';
-
-  @override
-  String get protocolAutoDetected => 'Протокол';
-
-  @override
-  String get protocolAutoDetectedHelper =>
-      'Автоматично визначено з бази даних. Ви можете змінити його перед імпортом.';
-
-  @override
-  String get selectBrandModelToLoadKeys =>
-      'Виберіть бренд, модель і протокол для завантаження ключів.';
-
-  @override
-  String get noKeysFound => 'Ключі не знайдено.';
-
-  @override
-  String noKeysFoundForSearch(Object query) {
-    return 'Не знайдено ключів для “$query”.';
-  }
-
-  @override
-  String get skipDuplicates => 'Пропустити дублікати';
-
-  @override
-  String get skipDuplicatesSubtitle =>
-      'Не імпортуйте кнопки, які вже існують на цьому пульті.';
-
-  @override
-  String get importSelected => 'Вибрано імпорт';
 
   @override
   String get noMacrosToExport => 'Немає макросів для експорту.';
@@ -4441,9 +4299,6 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get iconNameGemFa => 'Коштовність FA';
-
-  @override
-  String get unknownLabel => 'Невідомий';
 
   @override
   String get selectedFilesLabel => 'вибрані файли';

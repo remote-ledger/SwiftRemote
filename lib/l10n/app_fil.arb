@@ -484,28 +484,17 @@
   "layoutWideDescription": "Wide: 2-column mga button with extra details (recommended).",
   "layoutCompactDescription": "Compact: classic 4× grid (icons/text only).",
   "importFromRemotes": "Import from mga remote",
-  "importFromDatabase": "Import from DB",
   "addButton": "Add button",
   "noButtonsYet": "Walang mga button yet",
   "createRemoteEmptyStateDescription": "Idagdag ang una mong button, saka pindutin ito nang matagal para sa edit o remove na opsyon.",
   "createButtonTitle": "Create Button",
   "editButtonTitle": "I-edit ang Button",
-  "failedToLoadProtocols": "Nabigong i-load ang mga protocol: {error}",
-  "@failedToLoadProtocols": {
-    "placeholders": {
-      "error": {}
-    }
-  },
   "failedToLoadDatabaseKeys": "Nabigong i-load ang mga database key: {error}",
   "@failedToLoadDatabaseKeys": {
     "placeholders": {
       "error": {}
     }
   },
-  "presetPower": "Power",
-  "presetVolume": "Volume",
-  "presetChannel": "Channel",
-  "presetNavigation": "Navigation",
   "all": "All",
   "completeRequiredFieldsToSave": "Complete kailangan fields to save",
   "buttonLabelStepTitle": "Button label",
@@ -614,13 +603,7 @@
   },
   "brand": "Brand",
   "model": "Modelo",
-  "selectBrand": "Select brand",
-  "searchBrand": "Search brand…",
-  "selectModel": "Select modelo",
-  "searchModel": "Search modelo…",
-  "unnamedKey": "Unnamed key",
   "unknown": "Hindi kilala",
-  "emDash": "—",
   "searchCommands": "Search commands",
   "noMatchingCommands": "Walang matching commands",
   "quickTileFavoritesTitle": "Quick tile favorites",
@@ -639,10 +622,7 @@
   "editButtonCodeTitle": "I-edit ang Code ng button",
   "thisRemoteHasNoButtons": "Ang remote has no mga button.",
   "selectCommand": "Select Command",
-  "databaseModeAutofillHint": "Awtomatikong pinupunan ng Database mode ang Hakbang 2 para sa iyo, brand, modelo, at protocol. Pagkatapos mag-import ng key, maaari mong ayusin pa ang lahat sa Manual.",
   "test": "Subukan",
-  "allSelectedButtonsWereDuplicates": "All napiling mga button were duplicates.",
-  "noButtonsImported": "Walang mga button imported.",
   "importedButtonsSkippedDuplicates": "Imported {addedCount} button(s). Skipped {skippedCount} duplicate(s).",
   "@importedButtonsSkippedDuplicates": {
     "placeholders": {
@@ -654,56 +634,6 @@
       }
     }
   },
-  "importAllMatchingTitle": "Import all matching mga button?",
-  "noMatchingKeysFound": "Walang matching keys found.",
-  "importAllMatchingMessage": "Ang will import up to {count} matching keys from the kasalukuyang database selection.",
-  "@importAllMatchingMessage": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "importAll": "Import all",
-  "importingButtons": "Importing mga button…",
-  "allMatchingButtonsWereDuplicates": "All matching mga button were duplicates.",
-  "quickPresets": "Quick presets",
-  "selectDeviceFirst": "Select device first",
-  "searchByLabelOrHex": "Search by label o hex",
-  "optionalRefinePresetKeys": "Optional: refine the {preset} preset keys",
-  "@optionalRefinePresetKeys": {
-    "placeholders": {
-      "preset": {}
-    }
-  },
-  "selectBrandModelProtocolFirst": "Select brand, modelo, at protocol first.",
-  "importFromDatabaseTitle": "Import from database",
-  "importFromDatabaseSubtitle": "Pumili ng device, i-load ang magkakatugmang keys, saka i-import ang mga napiling button.",
-  "deviceAndFilters": "Device & filters",
-  "loadedCount": "{count} na-load",
-  "@loadedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "hideFilters": "Hide filters",
-  "showFilters": "Show filters",
-  "noProtocolFoundForBrandModel": "Walang protocol found para sa this brand at modelo.",
-  "protocolAutoDetected": "Protocol",
-  "protocolAutoDetectedHelper": "Auto-detected from the database. You can change it before importing.",
-  "selectBrandModelToLoadKeys": "Select a brand, modelo, at protocol to load keys.",
-  "noKeysFound": "Walang keys found.",
-  "noKeysFoundForSearch": "Walang keys found para sa “{query}”.",
-  "@noKeysFoundForSearch": {
-    "placeholders": {
-      "query": {}
-    }
-  },
-  "skipDuplicates": "Skip duplicates",
-  "skipDuplicatesSubtitle": "Huwag i-import ang mga button na nasa remote na ito.",
-  "importSelected": "Import selected",
   "noMacrosToExport": "Walang mga macro to export.",
   "macrosExportedToDownloads": "Macros exported to Downloads.",
   "failedToExportMacros": "Nabigong i-export ang mga macro.",
@@ -1840,7 +1770,6 @@
   "iconNameTrophyFa": "Trophy FA",
   "iconNameCrownFa": "Crown FA",
   "iconNameGemFa": "Gem FA",
-  "unknownLabel": "Hindi kilala",
   "selectedFilesLabel": "napiling file(s)",
   "folderNotFoundOrInaccessible": "Folder not found o inaccessible.",
   "importedRemoteDefaultName": "ImportedRemote",

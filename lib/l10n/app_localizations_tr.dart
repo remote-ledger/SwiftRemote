@@ -1567,9 +1567,6 @@ class AppLocalizationsTr extends AppLocalizations {
   String get importFromRemotes => 'Kumandalardan içe aktar';
 
   @override
-  String get importFromDatabase => 'Veritabanından içe aktar';
-
-  @override
   String get addButton => 'Ekle düğme';
 
   @override
@@ -1586,26 +1583,9 @@ class AppLocalizationsTr extends AppLocalizations {
   String get editButtonTitle => 'Düzenle Düğme';
 
   @override
-  String failedToLoadProtocols(Object error) {
-    return 'Başarısız to load protocols: $error';
-  }
-
-  @override
   String failedToLoadDatabaseKeys(Object error) {
     return 'Veritabanı tuşları yüklenemedi: $error';
   }
-
-  @override
-  String get presetPower => 'Güç';
-
-  @override
-  String get presetVolume => 'Ses';
-
-  @override
-  String get presetChannel => 'Kanal';
-
-  @override
-  String get presetNavigation => 'Navigation';
 
   @override
   String get all => 'Tümü';
@@ -1803,25 +1783,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get model => 'Model';
 
   @override
-  String get selectBrand => 'Seç marka';
-
-  @override
-  String get searchBrand => 'Ara marka…';
-
-  @override
-  String get selectModel => 'Model seç';
-
-  @override
-  String get searchModel => 'Model ara…';
-
-  @override
-  String get unnamedKey => 'Unnamed key';
-
-  @override
   String get unknown => 'Bilinmeyen';
-
-  @override
-  String get emDash => '—';
 
   @override
   String get searchCommands => 'Ara commands';
@@ -1865,117 +1827,12 @@ class AppLocalizationsTr extends AppLocalizations {
   String get selectCommand => 'Komut seç';
 
   @override
-  String get databaseModeAutofillHint =>
-      'Veritabanı modu 2. adımı sizin için otomatik doldurur (marka + model + protokol). Bir tuş içe aktardıktan sonra Manuel bölümünde her şeyi iyileştirebilirsiniz.';
-
-  @override
   String get test => 'Test';
-
-  @override
-  String get allSelectedButtonsWereDuplicates =>
-      'Tüm seçili düğmeler yinelemeydi.';
-
-  @override
-  String get noButtonsImported => 'Hiç düğme içe aktarılmadı.';
 
   @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return '$addedCount düğme içe aktarıldı. $skippedCount yineleme atlandı.';
   }
-
-  @override
-  String get importAllMatchingTitle =>
-      'Eşleşen tüm düğmeler içe aktarılsın mı?';
-
-  @override
-  String get noMatchingKeysFound => 'Eşleşen tuş bulunamadı.';
-
-  @override
-  String importAllMatchingMessage(int count) {
-    return 'Bu işlem mevcut veritabanı seçiminden en fazla $count eşleşen tuşu içe aktarır.';
-  }
-
-  @override
-  String get importAll => 'Tümünü içe aktar';
-
-  @override
-  String get importingButtons => 'Düğmeler içe aktarılıyor…';
-
-  @override
-  String get allMatchingButtonsWereDuplicates =>
-      'Eşleşen tüm düğmeler yinelemeydi.';
-
-  @override
-  String get quickPresets => 'Hızlı ön ayarlar';
-
-  @override
-  String get selectDeviceFirst => 'Seç cihaz first';
-
-  @override
-  String get searchByLabelOrHex => 'Ara by label or hex';
-
-  @override
-  String optionalRefinePresetKeys(Object preset) {
-    return 'İsteğe bağlı: $preset ön ayar tuşlarını iyileştirin';
-  }
-
-  @override
-  String get selectBrandModelProtocolFirst =>
-      'Önce marka, model ve protokol seçin.';
-
-  @override
-  String get importFromDatabaseTitle => 'Veritabanından içe aktar';
-
-  @override
-  String get importFromDatabaseSubtitle =>
-      'Bir cihaz seçin, eşleşen tuşları yükleyin, sonra seçili düğmeleri içe aktarın.';
-
-  @override
-  String get deviceAndFilters => 'Cihaz ve filtreler';
-
-  @override
-  String loadedCount(int count) {
-    return '$count loaded';
-  }
-
-  @override
-  String get hideFilters => 'Hide filtres';
-
-  @override
-  String get showFilters => 'Filtreleri göster';
-
-  @override
-  String get noProtocolFoundForBrandModel =>
-      'Bu marka ve model için protokol bulunamadı.';
-
-  @override
-  String get protocolAutoDetected => 'Protokol';
-
-  @override
-  String get protocolAutoDetectedHelper =>
-      'Veritabanından otomatik algılandı. İçe aktarmadan önce değiştirebilirsiniz.';
-
-  @override
-  String get selectBrandModelToLoadKeys =>
-      'Tuşları yüklemek için bir marka, model ve protokol seçin.';
-
-  @override
-  String get noKeysFound => 'Tuş bulunamadı.';
-
-  @override
-  String noKeysFoundForSearch(Object query) {
-    return '“$query” için tuş bulunamadı.';
-  }
-
-  @override
-  String get skipDuplicates => 'Skip duplicates';
-
-  @override
-  String get skipDuplicatesSubtitle =>
-      'Bu kumandada zaten bulunan düğmeleri içe aktarmayın.';
-
-  @override
-  String get importSelected => 'İçe aktar seçili';
 
   @override
   String get noMacrosToExport => 'No macros to dışa aktar.';
@@ -4334,9 +4191,6 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get iconNameGemFa => 'Gem FA';
-
-  @override
-  String get unknownLabel => 'Bilinmeyen';
 
   @override
   String get selectedFilesLabel => 'seçili dosya(lar)';

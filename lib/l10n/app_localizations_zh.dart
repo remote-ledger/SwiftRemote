@@ -1464,9 +1464,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get importFromRemotes => '从遥控器导入';
 
   @override
-  String get importFromDatabase => '从数据库导入';
-
-  @override
   String get addButton => '添加按钮';
 
   @override
@@ -1482,26 +1479,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get editButtonTitle => '编辑按钮';
 
   @override
-  String failedToLoadProtocols(Object error) {
-    return '加载协议失败 $error';
-  }
-
-  @override
   String failedToLoadDatabaseKeys(Object error) {
     return '加载数据库按键失败 $error';
   }
-
-  @override
-  String get presetPower => '电源';
-
-  @override
-  String get presetVolume => '音量';
-
-  @override
-  String get presetChannel => '频道';
-
-  @override
-  String get presetNavigation => '导航';
 
   @override
   String get all => '全部';
@@ -1692,25 +1672,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get model => '型号';
 
   @override
-  String get selectBrand => '选择品牌';
-
-  @override
-  String get searchBrand => '搜索品牌…';
-
-  @override
-  String get selectModel => '选择型号';
-
-  @override
-  String get searchModel => '搜索型号…';
-
-  @override
-  String get unnamedKey => '未命名按键';
-
-  @override
   String get unknown => '未知';
-
-  @override
-  String get emDash => '-';
 
   @override
   String get searchCommands => '搜索命令';
@@ -1754,108 +1716,12 @@ class AppLocalizationsZh extends AppLocalizations {
   String get selectCommand => '选择命令';
 
   @override
-  String get databaseModeAutofillHint =>
-      '数据库模式会自动为你填充第 2 步 品牌 型号 协议。导入按键后，你仍可在手动模式中进一步调整。';
-
-  @override
   String get test => '测试';
-
-  @override
-  String get allSelectedButtonsWereDuplicates => '所选按钮全部为重复项。';
-
-  @override
-  String get noButtonsImported => '未导入任何按钮。';
 
   @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return '已导入 $addedCount 个按钮。跳过 $skippedCount 个重复项。';
   }
-
-  @override
-  String get importAllMatchingTitle => '导入所有匹配按钮';
-
-  @override
-  String get noMatchingKeysFound => '未找到匹配按键。';
-
-  @override
-  String importAllMatchingMessage(int count) {
-    return '这将从当前数据库选择中导入最多 $count 个匹配按键。';
-  }
-
-  @override
-  String get importAll => '全部导入';
-
-  @override
-  String get importingButtons => '正在导入按钮…';
-
-  @override
-  String get allMatchingButtonsWereDuplicates => '所有匹配按钮都是重复项。';
-
-  @override
-  String get quickPresets => '快捷预设';
-
-  @override
-  String get selectDeviceFirst => '请先选择设备';
-
-  @override
-  String get searchByLabelOrHex => '按标签或十六进制搜索';
-
-  @override
-  String optionalRefinePresetKeys(Object preset) {
-    return '可选 进一步细化 $preset 预设按键';
-  }
-
-  @override
-  String get selectBrandModelProtocolFirst => '请先选择品牌、型号和协议。';
-
-  @override
-  String get importFromDatabaseTitle => '从数据库导入';
-
-  @override
-  String get importFromDatabaseSubtitle => '选择设备，加载匹配按键，然后导入所选按钮。';
-
-  @override
-  String get deviceAndFilters => '设备与筛选';
-
-  @override
-  String loadedCount(int count) {
-    return '已加载 $count';
-  }
-
-  @override
-  String get hideFilters => '隐藏筛选';
-
-  @override
-  String get showFilters => '显示筛选';
-
-  @override
-  String get noProtocolFoundForBrandModel => '未找到此品牌和型号对应的协议。';
-
-  @override
-  String get protocolAutoDetected => '协议';
-
-  @override
-  String get protocolAutoDetectedHelper => '已从数据库自动检测。导入前你仍可修改。';
-
-  @override
-  String get selectBrandModelToLoadKeys => '请选择品牌、型号和协议以加载按键。';
-
-  @override
-  String get noKeysFound => '未找到按键。';
-
-  @override
-  String noKeysFoundForSearch(Object query) {
-    return '未找到 “$query” 的按键。';
-  }
-
-  @override
-  String get skipDuplicates => '跳过重复项';
-
-  @override
-  String get skipDuplicatesSubtitle => '不要导入此遥控器中已存在的按钮。';
-
-  @override
-  String get importSelected => '导入所选';
 
   @override
   String get noMacrosToExport => '没有可导出的宏。';
@@ -4177,9 +4043,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get iconNameGemFa => '宝石 FA';
-
-  @override
-  String get unknownLabel => '未知';
 
   @override
   String get selectedFilesLabel => '已选择文件';

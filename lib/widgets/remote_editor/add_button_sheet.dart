@@ -4,7 +4,6 @@ import 'package:swiftremote/l10n/l10n.dart';
 enum AddButtonSheetAction {
   addButton,
   importFromRemotes,
-  importFromDatabase,
   browseGithubStore,
 }
 
@@ -50,14 +49,6 @@ class AddButtonSheet extends StatelessWidget {
                   title: Text(l10n.importFromRemotes),
                   onTap: () => Navigator.of(context)
                       .pop(AddButtonSheetAction.importFromRemotes),
-                ),
-                const Divider(height: 0),
-                ListTile(
-                  leading: const Icon(Icons.playlist_add_rounded),
-                  title: Text(l10n.importFromDatabase),
-                  subtitle: Text(l10n.importFromDatabaseSubtitle),
-                  onTap: () => Navigator.of(context)
-                      .pop(AddButtonSheetAction.importFromDatabase),
                 ),
               ],
             ),

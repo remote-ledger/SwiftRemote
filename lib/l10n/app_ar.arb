@@ -484,28 +484,17 @@
   "layoutWideDescription": "عريض: أزرار بعمودين مع تفاصيل إضافية، موصى به.",
   "layoutCompactDescription": "Compact: classic 4× grid (icons/text only).",
   "importFromRemotes": "استيراد من remotes",
-  "importFromDatabase": "استيراد من DB",
   "addButton": "إضافة زر",
   "noButtonsYet": "No أزرار yet",
   "createRemoteEmptyStateDescription": "أضف أول زر، ثم اضغطه مطولاً لخيارات التعديل أو الإزالة.",
   "createButtonTitle": "إنشاء زر",
   "editButtonTitle": "تعديل زر",
-  "failedToLoadProtocols": "فشل إلى تحميل protocols: {error}",
-  "@failedToLoadProtocols": {
-    "placeholders": {
-      "error": {}
-    }
-  },
   "failedToLoadDatabaseKeys": "فشل تحميل مفاتيح قاعدة البيانات: {error}",
   "@failedToLoadDatabaseKeys": {
     "placeholders": {
       "error": {}
     }
   },
-  "presetPower": "تشغيل",
-  "presetVolume": "الصوت",
-  "presetChannel": "Channel",
-  "presetNavigation": "تنقل",
   "all": "الكل",
   "completeRequiredFieldsToSave": "أكمل الحقول المطلوبة للحفظ",
   "buttonLabelStepTitle": "تسمية الزر",
@@ -614,13 +603,7 @@
   },
   "brand": "العلامة",
   "model": "الطراز",
-  "selectBrand": "اختر العلامة",
-  "searchBrand": "ابحث عن علامة…",
-  "selectModel": "اختر الطراز",
-  "searchModel": "ابحث عن طراز…",
-  "unnamedKey": "Unnamed key",
   "unknown": "غير معروف",
-  "emDash": "—",
   "searchCommands": "ابحث commands",
   "noMatchingCommands": "No matching commands",
   "quickTileFavoritesTitle": "Quick tile favorites",
@@ -639,10 +622,7 @@
   "editButtonCodeTitle": "تعديل كود الزر",
   "thisRemoteHasNoButtons": "هذا الجهاز لا يحتوي على أزرار.",
   "selectCommand": "اختر Command",
-  "databaseModeAutofillHint": "يقوم وضع قاعدة البيانات بملء الخطوة 2 تلقائياً، العلامة والطراز والبروتوكول. بعد استيراد مفتاح، يمكنك تعديل أي شيء في الوضع اليدوي.",
   "test": "اختبار",
-  "allSelectedButtonsWereDuplicates": "الكل المحدد أزرار were duplicates.",
-  "noButtonsImported": "No أزرار imported.",
   "importedButtonsSkippedDuplicates": "تم استيراد {addedCount} زر. تم تخطي {skippedCount} من النسخ المكررة.",
   "@importedButtonsSkippedDuplicates": {
     "placeholders": {
@@ -654,56 +634,6 @@
       }
     }
   },
-  "importAllMatchingTitle": "استيراد all matching أزرار?",
-  "noMatchingKeysFound": "No matching keys موجود.",
-  "importAllMatchingMessage": "سيتم استيراد ما يصل إلى {count} من المفاتيح المطابقة من اختيار قاعدة البيانات الحالي.",
-  "@importAllMatchingMessage": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "importAll": "استيراد all",
-  "importingButtons": "Importing أزرار…",
-  "allMatchingButtonsWereDuplicates": "الكل matching أزرار were duplicates.",
-  "quickPresets": "Quick presets",
-  "selectDeviceFirst": "اختر الجهاز أولاً",
-  "searchByLabelOrHex": "ابحث by label or hex",
-  "optionalRefinePresetKeys": "اختياري: حسّن مفاتيح الإعداد المسبق {preset}",
-  "@optionalRefinePresetKeys": {
-    "placeholders": {
-      "preset": {}
-    }
-  },
-  "selectBrandModelProtocolFirst": "اختر العلامة والطراز والبروتوكول أولاً.",
-  "importFromDatabaseTitle": "استيراد من قاعدة البيانات",
-  "importFromDatabaseSubtitle": "اختر جهازاً، حمّل المفاتيح المطابقة، ثم استورد الأزرار المحددة.",
-  "deviceAndFilters": "الجهاز & filters",
-  "loadedCount": "{count} loaded",
-  "@loadedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "hideFilters": "Hide filters",
-  "showFilters": "Show filters",
-  "noProtocolFoundForBrandModel": "لم يتم العثور على بروتوكول لهذه العلامة والطراز.",
-  "protocolAutoDetected": "البروتوكول",
-  "protocolAutoDetectedHelper": "تم اكتشافه تلقائياً من قاعدة البيانات. يمكنك تغييره قبل الاستيراد.",
-  "selectBrandModelToLoadKeys": "اختر علامة وطرازاً وبروتوكولاً لتحميل المفاتيح.",
-  "noKeysFound": "No keys موجود.",
-  "noKeysFoundForSearch": "No keys موجود for “{query}”.",
-  "@noKeysFoundForSearch": {
-    "placeholders": {
-      "query": {}
-    }
-  },
-  "skipDuplicates": "Skip duplicates",
-  "skipDuplicatesSubtitle": "لا تستورد الأزرار الموجودة بالفعل في جهاز التحكم هذا.",
-  "importSelected": "استيراد المحدد",
   "noMacrosToExport": "لا توجد وحدات ماكرو للتصدير.",
   "macrosExportedToDownloads": "تم تصدير الماكرو إلى التنزيلات.",
   "failedToExportMacros": "فشل تصدير الماكرو.",
@@ -1840,7 +1770,6 @@
   "iconNameTrophyFa": "Trophy FA",
   "iconNameCrownFa": "Crown FA",
   "iconNameGemFa": "Gem FA",
-  "unknownLabel": "غير معروف",
   "selectedFilesLabel": "المحدد file(s)",
   "folderNotFoundOrInaccessible": "مجلد not موجود or inaccessible.",
   "importedRemoteDefaultName": "ImportedRemote",

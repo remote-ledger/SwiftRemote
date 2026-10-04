@@ -1590,9 +1590,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get importFromRemotes => 'Import from remotes';
 
   @override
-  String get importFromDatabase => 'Import from DB';
-
-  @override
   String get addButton => 'Add button';
 
   @override
@@ -1609,26 +1606,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get editButtonTitle => 'Edit Button';
 
   @override
-  String failedToLoadProtocols(Object error) {
-    return 'Failed to load protocols: $error';
-  }
-
-  @override
   String failedToLoadDatabaseKeys(Object error) {
     return 'Failed to load database keys: $error';
   }
-
-  @override
-  String get presetPower => 'Power';
-
-  @override
-  String get presetVolume => 'Volume';
-
-  @override
-  String get presetChannel => 'Channel';
-
-  @override
-  String get presetNavigation => 'Navigation';
 
   @override
   String get all => 'All';
@@ -1825,25 +1805,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get model => 'Model';
 
   @override
-  String get selectBrand => 'Select brand';
-
-  @override
-  String get searchBrand => 'Search brand…';
-
-  @override
-  String get selectModel => 'Select model';
-
-  @override
-  String get searchModel => 'Search model…';
-
-  @override
-  String get unnamedKey => 'Unnamed key';
-
-  @override
   String get unknown => 'Unknown';
-
-  @override
-  String get emDash => '-';
 
   @override
   String get searchCommands => 'Search commands';
@@ -1887,116 +1849,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get selectCommand => 'Select Command';
 
   @override
-  String get databaseModeAutofillHint =>
-      'Database mode auto-fills Step 2 for you (brand + model + protocol). After importing a key, you can refine anything in Manual.';
-
-  @override
   String get test => 'Test';
-
-  @override
-  String get allSelectedButtonsWereDuplicates =>
-      'All selected buttons were duplicates.';
-
-  @override
-  String get noButtonsImported => 'No buttons imported.';
 
   @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return 'Imported $addedCount button(s). Skipped $skippedCount duplicate(s).';
   }
-
-  @override
-  String get importAllMatchingTitle => 'Import all matching buttons?';
-
-  @override
-  String get noMatchingKeysFound => 'No matching keys found.';
-
-  @override
-  String importAllMatchingMessage(int count) {
-    return 'This will import up to $count matching keys from the current database selection.';
-  }
-
-  @override
-  String get importAll => 'Import all';
-
-  @override
-  String get importingButtons => 'Importing buttons…';
-
-  @override
-  String get allMatchingButtonsWereDuplicates =>
-      'All matching buttons were duplicates.';
-
-  @override
-  String get quickPresets => 'Quick presets';
-
-  @override
-  String get selectDeviceFirst => 'Select device first';
-
-  @override
-  String get searchByLabelOrHex => 'Search by label or hex';
-
-  @override
-  String optionalRefinePresetKeys(Object preset) {
-    return 'Optional: refine the $preset preset keys';
-  }
-
-  @override
-  String get selectBrandModelProtocolFirst =>
-      'Select brand, model, and protocol first.';
-
-  @override
-  String get importFromDatabaseTitle => 'Import from database';
-
-  @override
-  String get importFromDatabaseSubtitle =>
-      'Choose a device, load matching keys, then import selected buttons.';
-
-  @override
-  String get deviceAndFilters => 'Device & filters';
-
-  @override
-  String loadedCount(int count) {
-    return '$count loaded';
-  }
-
-  @override
-  String get hideFilters => 'Hide filters';
-
-  @override
-  String get showFilters => 'Show filters';
-
-  @override
-  String get noProtocolFoundForBrandModel =>
-      'No protocol found for this brand and model.';
-
-  @override
-  String get protocolAutoDetected => 'Protocol';
-
-  @override
-  String get protocolAutoDetectedHelper =>
-      'Auto-detected from the database. You can change it before importing.';
-
-  @override
-  String get selectBrandModelToLoadKeys =>
-      'Select a brand, model, and protocol to load keys.';
-
-  @override
-  String get noKeysFound => 'No keys found.';
-
-  @override
-  String noKeysFoundForSearch(Object query) {
-    return 'No keys found for “$query”.';
-  }
-
-  @override
-  String get skipDuplicates => 'Skip duplicates';
-
-  @override
-  String get skipDuplicatesSubtitle =>
-      'Do not import buttons that already exist in this remote.';
-
-  @override
-  String get importSelected => 'Import selected';
 
   @override
   String get noMacrosToExport => 'No macros to export.';
@@ -4382,9 +4240,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get iconNameGemFa => 'Gem FA';
-
-  @override
-  String get unknownLabel => 'Unknown';
 
   @override
   String get selectedFilesLabel => 'selected file(s)';

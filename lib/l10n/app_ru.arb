@@ -484,28 +484,17 @@
   "layoutWideDescription": "Широкий: кнопки в 2 колонки с доп. деталями, рекомендуется.",
   "layoutCompactDescription": "Компактный: классическая сетка 4×, только иконки или текст.",
   "importFromRemotes": "Импорт из пультов",
-  "importFromDatabase": "Импорт из БД",
   "addButton": "Добавить кнопку",
   "noButtonsYet": "Кнопок пока нет",
   "createRemoteEmptyStateDescription": "Добавьте первую кнопку, затем зажмите её для изменения или удаления.",
   "createButtonTitle": "Создать кнопку",
   "editButtonTitle": "Изменить кнопку",
-  "failedToLoadProtocols": "Не удалось загрузить протоколы: {error}",
-  "@failedToLoadProtocols": {
-    "placeholders": {
-      "error": {}
-    }
-  },
   "failedToLoadDatabaseKeys": "Не удалось загрузить ключи базы: {error}",
   "@failedToLoadDatabaseKeys": {
     "placeholders": {
       "error": {}
     }
   },
-  "presetPower": "Питание",
-  "presetVolume": "Громкость",
-  "presetChannel": "Канал",
-  "presetNavigation": "Навигация",
   "all": "Все",
   "completeRequiredFieldsToSave": "Заполните обязательные поля для сохранения",
   "buttonLabelStepTitle": "Метка кнопки",
@@ -614,13 +603,7 @@
   },
   "brand": "Бренд",
   "model": "Модель",
-  "selectBrand": "Выберите бренд",
-  "searchBrand": "Поиск бренда…",
-  "selectModel": "Выберите модель",
-  "searchModel": "Поиск модели…",
-  "unnamedKey": "Безымянный ключ",
   "unknown": "Неизвестно",
-  "emDash": "—",
   "searchCommands": "Поиск команд",
   "noMatchingCommands": "Совпадающих команд нет",
   "quickTileFavoritesTitle": "Избр. быстрых плиток",
@@ -639,10 +622,7 @@
   "editButtonCodeTitle": "Изменить код кнопки",
   "thisRemoteHasNoButtons": "В этом пульте нет кнопок.",
   "selectCommand": "Выберите команду",
-  "databaseModeAutofillHint": "Режим База автоматически заполняет шаг 2, бренд, модель и протокол. После импорта ключа можно донастроить всё вручную.",
   "test": "Тест",
-  "allSelectedButtonsWereDuplicates": "Все выбранные кнопки были дубликатами.",
-  "noButtonsImported": "Кнопки не импортированы.",
   "importedButtonsSkippedDuplicates": "Импортировано кнопок: {addedCount}. Пропущено дубликатов: {skippedCount}.",
   "@importedButtonsSkippedDuplicates": {
     "placeholders": {
@@ -654,56 +634,6 @@
       }
     }
   },
-  "importAllMatchingTitle": "Импортировать все подходящие кнопки?",
-  "noMatchingKeysFound": "Подходящие ключи не найдены.",
-  "importAllMatchingMessage": "Будет импортировано до {count} подходящих ключей из текущего выбора базы.",
-  "@importAllMatchingMessage": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "importAll": "Импортировать всё",
-  "importingButtons": "Импорт кнопок…",
-  "allMatchingButtonsWereDuplicates": "Все подходящие кнопки были дубликатами.",
-  "quickPresets": "Быстрые пресеты",
-  "selectDeviceFirst": "Сначала выберите устройство",
-  "searchByLabelOrHex": "Поиск по метке или hex",
-  "optionalRefinePresetKeys": "Необяз.: уточните ключи пресета {preset}",
-  "@optionalRefinePresetKeys": {
-    "placeholders": {
-      "preset": {}
-    }
-  },
-  "selectBrandModelProtocolFirst": "Сначала выберите бренд, модель и протокол.",
-  "importFromDatabaseTitle": "Импорт из базы",
-  "importFromDatabaseSubtitle": "Выберите устройство, загрузите подходящие ключи и импортируйте выбранные кнопки.",
-  "deviceAndFilters": "Устройство и фильтры",
-  "loadedCount": "Загружено: {count}",
-  "@loadedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "hideFilters": "Скрыть фильтры",
-  "showFilters": "Показать фильтры",
-  "noProtocolFoundForBrandModel": "Для этого бренда и модели протокол не найден.",
-  "protocolAutoDetected": "Протокол",
-  "protocolAutoDetectedHelper": "Автоматически определён из базы. Его можно изменить перед импортом.",
-  "selectBrandModelToLoadKeys": "Выберите бренд, модель и протокол, чтобы загрузить ключи.",
-  "noKeysFound": "Ключи не найдены.",
-  "noKeysFoundForSearch": "Ключи для “{query}” не найдены.",
-  "@noKeysFoundForSearch": {
-    "placeholders": {
-      "query": {}
-    }
-  },
-  "skipDuplicates": "Пропускать дубликаты",
-  "skipDuplicatesSubtitle": "Не импортировать кнопки, которые уже есть в этом пульте.",
-  "importSelected": "Импортировать выбранное",
   "noMacrosToExport": "Нет макросов для экспорта.",
   "macrosExportedToDownloads": "Макросы экспортированы в Downloads.",
   "failedToExportMacros": "Не удалось экспортировать макросы.",
@@ -1835,7 +1765,6 @@
   "iconNameTrophyFa": "Трофей FA",
   "iconNameCrownFa": "Корона FA",
   "iconNameGemFa": "Самоцвет FA",
-  "unknownLabel": "Неизвестно",
   "selectedFilesLabel": "выбранных файлов",
   "folderNotFoundOrInaccessible": "Папка не найдена или недоступна.",
   "importedRemoteDefaultName": "Импортированный пульт",

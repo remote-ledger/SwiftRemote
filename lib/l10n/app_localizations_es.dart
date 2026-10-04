@@ -1584,9 +1584,6 @@ class AppLocalizationsEs extends AppLocalizations {
   String get importFromRemotes => 'Importar desde mandos';
 
   @override
-  String get importFromDatabase => 'Importar de BD';
-
-  @override
   String get addButton => 'Añadir botón';
 
   @override
@@ -1603,26 +1600,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get editButtonTitle => 'Editar botón';
 
   @override
-  String failedToLoadProtocols(Object error) {
-    return 'No se pudieron cargar los protocolos: $error';
-  }
-
-  @override
   String failedToLoadDatabaseKeys(Object error) {
     return 'No se pudieron cargar las teclas de la base de datos: $error';
   }
-
-  @override
-  String get presetPower => 'Enc.';
-
-  @override
-  String get presetVolume => 'Volumen';
-
-  @override
-  String get presetChannel => 'Canal';
-
-  @override
-  String get presetNavigation => 'Navegación';
 
   @override
   String get all => 'Todo';
@@ -1821,25 +1801,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get model => 'Modelo';
 
   @override
-  String get selectBrand => 'Seleccionar marca';
-
-  @override
-  String get searchBrand => 'Buscar marca…';
-
-  @override
-  String get selectModel => 'Seleccionar modelo';
-
-  @override
-  String get searchModel => 'Buscar modelo…';
-
-  @override
-  String get unnamedKey => 'Tecla sin nombre';
-
-  @override
   String get unknown => 'Desconocido';
-
-  @override
-  String get emDash => '-';
 
   @override
   String get searchCommands => 'Buscar comandos';
@@ -1884,117 +1846,12 @@ class AppLocalizationsEs extends AppLocalizations {
   String get selectCommand => 'Seleccionar comando';
 
   @override
-  String get databaseModeAutofillHint =>
-      'El modo Base de datos completa el Paso 2 por ti (marca + modelo + protocolo). Tras importar una tecla, puedes ajustar todo en Manual.';
-
-  @override
   String get test => 'Probar';
-
-  @override
-  String get allSelectedButtonsWereDuplicates =>
-      'Todos los botones elegidos eran duplicados.';
-
-  @override
-  String get noButtonsImported => 'No se importó ningún botón.';
 
   @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return 'Se importaron $addedCount botón(es). Se omitieron $skippedCount duplicado(s).';
   }
-
-  @override
-  String get importAllMatchingTitle =>
-      '¿Importar todos los botones coincidentes?';
-
-  @override
-  String get noMatchingKeysFound => 'No se encontraron teclas coincidentes.';
-
-  @override
-  String importAllMatchingMessage(int count) {
-    return 'Esto importará hasta $count teclas coincidentes de la selección actual de la base de datos.';
-  }
-
-  @override
-  String get importAll => 'Importar todo';
-
-  @override
-  String get importingButtons => 'Importando botones…';
-
-  @override
-  String get allMatchingButtonsWereDuplicates =>
-      'Todos los botones coincidentes eran duplicados.';
-
-  @override
-  String get quickPresets => 'Ajustes rápidos';
-
-  @override
-  String get selectDeviceFirst => 'Selecciona primero un dispositivo';
-
-  @override
-  String get searchByLabelOrHex => 'Buscar por etiqueta o hex';
-
-  @override
-  String optionalRefinePresetKeys(Object preset) {
-    return 'Opcional: afina las teclas predefinidas de $preset';
-  }
-
-  @override
-  String get selectBrandModelProtocolFirst =>
-      'Selecciona primero marca, modelo y protocolo.';
-
-  @override
-  String get importFromDatabaseTitle => 'Importar de la base de datos';
-
-  @override
-  String get importFromDatabaseSubtitle =>
-      'Elige un dispositivo, carga las teclas coincidentes y luego importa los botones seleccionados.';
-
-  @override
-  String get deviceAndFilters => 'Dispositivo y filtros';
-
-  @override
-  String loadedCount(int count) {
-    return '$count cargados';
-  }
-
-  @override
-  String get hideFilters => 'Ocultar filtros';
-
-  @override
-  String get showFilters => 'Mostrar filtros';
-
-  @override
-  String get noProtocolFoundForBrandModel =>
-      'No se encontró un protocolo para esta marca y modelo.';
-
-  @override
-  String get protocolAutoDetected => 'Protocolo';
-
-  @override
-  String get protocolAutoDetectedHelper =>
-      'Detectado automáticamente desde la base de datos. Puedes cambiarlo antes de importar.';
-
-  @override
-  String get selectBrandModelToLoadKeys =>
-      'Selecciona una marca, modelo y protocolo para cargar teclas.';
-
-  @override
-  String get noKeysFound => 'No se encontraron teclas.';
-
-  @override
-  String noKeysFoundForSearch(Object query) {
-    return 'No se encontraron teclas para “$query”.';
-  }
-
-  @override
-  String get skipDuplicates => 'Omitir duplicados';
-
-  @override
-  String get skipDuplicatesSubtitle =>
-      'No importes botones que ya existan en este mando.';
-
-  @override
-  String get importSelected => 'Importar seleccionados';
 
   @override
   String get noMacrosToExport => 'No hay macros para exportar.';
@@ -4363,9 +4220,6 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get iconNameGemFa => 'Gema FA';
-
-  @override
-  String get unknownLabel => 'Desconocido';
 
   @override
   String get selectedFilesLabel => 'archivo(s) seleccionado(s)';

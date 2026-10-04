@@ -1546,9 +1546,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get importFromRemotes => 'استيراد من remotes';
 
   @override
-  String get importFromDatabase => 'استيراد من DB';
-
-  @override
   String get addButton => 'إضافة زر';
 
   @override
@@ -1565,26 +1562,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get editButtonTitle => 'تعديل زر';
 
   @override
-  String failedToLoadProtocols(Object error) {
-    return 'فشل إلى تحميل protocols: $error';
-  }
-
-  @override
   String failedToLoadDatabaseKeys(Object error) {
     return 'فشل تحميل مفاتيح قاعدة البيانات: $error';
   }
-
-  @override
-  String get presetPower => 'تشغيل';
-
-  @override
-  String get presetVolume => 'الصوت';
-
-  @override
-  String get presetChannel => 'Channel';
-
-  @override
-  String get presetNavigation => 'تنقل';
 
   @override
   String get all => 'الكل';
@@ -1780,25 +1760,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get model => 'الطراز';
 
   @override
-  String get selectBrand => 'اختر العلامة';
-
-  @override
-  String get searchBrand => 'ابحث عن علامة…';
-
-  @override
-  String get selectModel => 'اختر الطراز';
-
-  @override
-  String get searchModel => 'ابحث عن طراز…';
-
-  @override
-  String get unnamedKey => 'Unnamed key';
-
-  @override
   String get unknown => 'غير معروف';
-
-  @override
-  String get emDash => '—';
 
   @override
   String get searchCommands => 'ابحث commands';
@@ -1842,116 +1804,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get selectCommand => 'اختر Command';
 
   @override
-  String get databaseModeAutofillHint =>
-      'يقوم وضع قاعدة البيانات بملء الخطوة 2 تلقائياً، العلامة والطراز والبروتوكول. بعد استيراد مفتاح، يمكنك تعديل أي شيء في الوضع اليدوي.';
-
-  @override
   String get test => 'اختبار';
-
-  @override
-  String get allSelectedButtonsWereDuplicates =>
-      'الكل المحدد أزرار were duplicates.';
-
-  @override
-  String get noButtonsImported => 'No أزرار imported.';
 
   @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return 'تم استيراد $addedCount زر. تم تخطي $skippedCount من النسخ المكررة.';
   }
-
-  @override
-  String get importAllMatchingTitle => 'استيراد all matching أزرار?';
-
-  @override
-  String get noMatchingKeysFound => 'No matching keys موجود.';
-
-  @override
-  String importAllMatchingMessage(int count) {
-    return 'سيتم استيراد ما يصل إلى $count من المفاتيح المطابقة من اختيار قاعدة البيانات الحالي.';
-  }
-
-  @override
-  String get importAll => 'استيراد all';
-
-  @override
-  String get importingButtons => 'Importing أزرار…';
-
-  @override
-  String get allMatchingButtonsWereDuplicates =>
-      'الكل matching أزرار were duplicates.';
-
-  @override
-  String get quickPresets => 'Quick presets';
-
-  @override
-  String get selectDeviceFirst => 'اختر الجهاز أولاً';
-
-  @override
-  String get searchByLabelOrHex => 'ابحث by label or hex';
-
-  @override
-  String optionalRefinePresetKeys(Object preset) {
-    return 'اختياري: حسّن مفاتيح الإعداد المسبق $preset';
-  }
-
-  @override
-  String get selectBrandModelProtocolFirst =>
-      'اختر العلامة والطراز والبروتوكول أولاً.';
-
-  @override
-  String get importFromDatabaseTitle => 'استيراد من قاعدة البيانات';
-
-  @override
-  String get importFromDatabaseSubtitle =>
-      'اختر جهازاً، حمّل المفاتيح المطابقة، ثم استورد الأزرار المحددة.';
-
-  @override
-  String get deviceAndFilters => 'الجهاز & filters';
-
-  @override
-  String loadedCount(int count) {
-    return '$count loaded';
-  }
-
-  @override
-  String get hideFilters => 'Hide filters';
-
-  @override
-  String get showFilters => 'Show filters';
-
-  @override
-  String get noProtocolFoundForBrandModel =>
-      'لم يتم العثور على بروتوكول لهذه العلامة والطراز.';
-
-  @override
-  String get protocolAutoDetected => 'البروتوكول';
-
-  @override
-  String get protocolAutoDetectedHelper =>
-      'تم اكتشافه تلقائياً من قاعدة البيانات. يمكنك تغييره قبل الاستيراد.';
-
-  @override
-  String get selectBrandModelToLoadKeys =>
-      'اختر علامة وطرازاً وبروتوكولاً لتحميل المفاتيح.';
-
-  @override
-  String get noKeysFound => 'No keys موجود.';
-
-  @override
-  String noKeysFoundForSearch(Object query) {
-    return 'No keys موجود for “$query”.';
-  }
-
-  @override
-  String get skipDuplicates => 'Skip duplicates';
-
-  @override
-  String get skipDuplicatesSubtitle =>
-      'لا تستورد الأزرار الموجودة بالفعل في جهاز التحكم هذا.';
-
-  @override
-  String get importSelected => 'استيراد المحدد';
 
   @override
   String get noMacrosToExport => 'لا توجد وحدات ماكرو للتصدير.';
@@ -4309,9 +4167,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get iconNameGemFa => 'Gem FA';
-
-  @override
-  String get unknownLabel => 'غير معروف';
 
   @override
   String get selectedFilesLabel => 'المحدد file(s)';
@@ -6493,9 +6348,6 @@ class AppLocalizationsArEg extends AppLocalizationsAr {
   String get importFromRemotes => 'استيراد من remotes';
 
   @override
-  String get importFromDatabase => 'استيراد من DB';
-
-  @override
   String get addButton => 'إضافة زر';
 
   @override
@@ -6512,26 +6364,9 @@ class AppLocalizationsArEg extends AppLocalizationsAr {
   String get editButtonTitle => 'تعديل زر';
 
   @override
-  String failedToLoadProtocols(Object error) {
-    return 'فشل إلى تحميل protocols: $error';
-  }
-
-  @override
   String failedToLoadDatabaseKeys(Object error) {
     return 'فشل تحميل مفاتيح قاعدة البيانات: $error';
   }
-
-  @override
-  String get presetPower => 'تشغيل';
-
-  @override
-  String get presetVolume => 'الصوت';
-
-  @override
-  String get presetChannel => 'Channel';
-
-  @override
-  String get presetNavigation => 'تنقل';
 
   @override
   String get all => 'الكل';
@@ -6727,25 +6562,7 @@ class AppLocalizationsArEg extends AppLocalizationsAr {
   String get model => 'الطراز';
 
   @override
-  String get selectBrand => 'اختر العلامة';
-
-  @override
-  String get searchBrand => 'ابحث عن علامة…';
-
-  @override
-  String get selectModel => 'اختر الطراز';
-
-  @override
-  String get searchModel => 'ابحث عن طراز…';
-
-  @override
-  String get unnamedKey => 'Unnamed key';
-
-  @override
   String get unknown => 'غير معروف';
-
-  @override
-  String get emDash => '—';
 
   @override
   String get searchCommands => 'ابحث commands';
@@ -6789,116 +6606,12 @@ class AppLocalizationsArEg extends AppLocalizationsAr {
   String get selectCommand => 'اختر Command';
 
   @override
-  String get databaseModeAutofillHint =>
-      'يقوم وضع قاعدة البيانات بملء الخطوة 2 تلقائياً، العلامة والطراز والبروتوكول. بعد استيراد مفتاح، يمكنك تعديل أي شيء في الوضع اليدوي.';
-
-  @override
   String get test => 'اختبار';
-
-  @override
-  String get allSelectedButtonsWereDuplicates =>
-      'الكل المحدد أزرار were duplicates.';
-
-  @override
-  String get noButtonsImported => 'No أزرار imported.';
 
   @override
   String importedButtonsSkippedDuplicates(int addedCount, int skippedCount) {
     return 'تم استيراد $addedCount زر. تم تخطي $skippedCount من النسخ المكررة.';
   }
-
-  @override
-  String get importAllMatchingTitle => 'استيراد all matching أزرار?';
-
-  @override
-  String get noMatchingKeysFound => 'No matching keys موجود.';
-
-  @override
-  String importAllMatchingMessage(int count) {
-    return 'سيتم استيراد ما يصل إلى $count من المفاتيح المطابقة من اختيار قاعدة البيانات الحالي.';
-  }
-
-  @override
-  String get importAll => 'استيراد all';
-
-  @override
-  String get importingButtons => 'Importing أزرار…';
-
-  @override
-  String get allMatchingButtonsWereDuplicates =>
-      'الكل matching أزرار were duplicates.';
-
-  @override
-  String get quickPresets => 'Quick presets';
-
-  @override
-  String get selectDeviceFirst => 'اختر الجهاز أولاً';
-
-  @override
-  String get searchByLabelOrHex => 'ابحث by label or hex';
-
-  @override
-  String optionalRefinePresetKeys(Object preset) {
-    return 'اختياري: حسّن مفاتيح الإعداد المسبق $preset';
-  }
-
-  @override
-  String get selectBrandModelProtocolFirst =>
-      'اختر العلامة والطراز والبروتوكول أولاً.';
-
-  @override
-  String get importFromDatabaseTitle => 'استيراد من قاعدة البيانات';
-
-  @override
-  String get importFromDatabaseSubtitle =>
-      'اختر جهازاً، حمّل المفاتيح المطابقة، ثم استورد الأزرار المحددة.';
-
-  @override
-  String get deviceAndFilters => 'الجهاز & filters';
-
-  @override
-  String loadedCount(int count) {
-    return '$count loaded';
-  }
-
-  @override
-  String get hideFilters => 'Hide filters';
-
-  @override
-  String get showFilters => 'Show filters';
-
-  @override
-  String get noProtocolFoundForBrandModel =>
-      'لم يتم العثور على بروتوكول لهذه العلامة والطراز.';
-
-  @override
-  String get protocolAutoDetected => 'البروتوكول';
-
-  @override
-  String get protocolAutoDetectedHelper =>
-      'تم اكتشافه تلقائياً من قاعدة البيانات. يمكنك تغييره قبل الاستيراد.';
-
-  @override
-  String get selectBrandModelToLoadKeys =>
-      'اختر علامة وطرازاً وبروتوكولاً لتحميل المفاتيح.';
-
-  @override
-  String get noKeysFound => 'No keys موجود.';
-
-  @override
-  String noKeysFoundForSearch(Object query) {
-    return 'No keys موجود for “$query”.';
-  }
-
-  @override
-  String get skipDuplicates => 'Skip duplicates';
-
-  @override
-  String get skipDuplicatesSubtitle =>
-      'لا تستورد الأزرار الموجودة بالفعل في جهاز التحكم هذا.';
-
-  @override
-  String get importSelected => 'استيراد المحدد';
 
   @override
   String get noMacrosToExport => 'لا توجد وحدات ماكرو للتصدير.';
@@ -9256,9 +8969,6 @@ class AppLocalizationsArEg extends AppLocalizationsAr {
 
   @override
   String get iconNameGemFa => 'Gem FA';
-
-  @override
-  String get unknownLabel => 'غير معروف';
 
   @override
   String get selectedFilesLabel => 'المحدد file(s)';
