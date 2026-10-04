@@ -87,10 +87,6 @@ class RemoteEditorDraft {
     buttons.add(button);
   }
 
-  void addButtons(Iterable<IRButton> values) {
-    buttons.addAll(values);
-  }
-
   void insertButton(int index, IRButton button) {
     buttons.insert(index, button);
   }

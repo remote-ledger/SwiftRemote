@@ -436,14 +436,6 @@
       }
     }
   },
-  "importedButtonsFromExistingRemotes": "تم استيراد {count} زر من أجهزة التحكم الموجودة.",
-  "@importedButtonsFromExistingRemotes": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "editButtonSettingsSubtitle": "غيّر التسمية والإشارة والإعدادات المتقدمة",
   "createButtonCopySubtitle": "أنشئ نسخة من هذا الزر",
   "duplicateAndEditButtonSubtitle": "أنشئ نسخة وعدلها فوراً",
@@ -457,7 +449,6 @@
   "layoutStyle": "Layout style",
   "layoutWideDescription": "عريض: أزرار بعمودين مع تفاصيل إضافية، موصى به.",
   "layoutCompactDescription": "Compact: classic 4× grid (icons/text only).",
-  "importFromRemotes": "استيراد من remotes",
   "addButton": "إضافة زر",
   "noButtonsYet": "No أزرار yet",
   "createRemoteEmptyStateDescription": "أضف أول زر، ثم اضغطه مطولاً لخيارات التعديل أو الإزالة.",
@@ -612,37 +603,8 @@
   "macrosExportedToDownloads": "تم تصدير الماكرو إلى التنزيلات.",
   "failedToExportMacros": "فشل تصدير الماكرو.",
   "failedToReadFile": "فشل إلى read file.",
-  "importFromExistingRemotesTitle": "استيراد من Existing أجهزة التحكم",
-  "selectedCount": "{count} المحدد",
-  "@selectedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "noOtherRemotesWithButtons": "لم يتم العثور على أجهزة تحكم أخرى تحتوي على أزرار.",
-  "sourceRemote": "جهاز التحكم المصدر",
-  "searchButtons": "ابحث أزرار",
-  "searchButtonsHint": "تشغيل, الصوت, كتم...",
-  "selectVisible": "اختر visible",
-  "clearVisible": "Clear visible",
-  "protocolNamed": "البروتوكول: {name}",
-  "@protocolNamed": {
-    "placeholders": {
-      "name": {}
-    }
-  },
   "rawSignal": "خام",
   "legacyCode": "Legacy code",
-  "importCount": "استيراد {count}",
-  "@importCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "storagePermissionDeniedLegacy": "تم رفض إذن التخزين، وهو مطلوب في بعض أجهزة أندرويد الأقدم.",
   "backupExportedToDownloads": "تم تصدير النسخة الاحتياطية إلى التنزيلات.",
   "failedToExport": "فشل إلى export: {error}",

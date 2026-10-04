@@ -436,14 +436,6 @@
       }
     }
   },
-  "importedButtonsFromExistingRemotes": "Na-import ang {count} button mula sa kasalukuyang mga remote.",
-  "@importedButtonsFromExistingRemotes": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "editButtonSettingsSubtitle": "Change label, signal, at advanced settings",
   "createButtonCopySubtitle": "Gumawa ng kopya ng button na ito",
   "duplicateAndEditButtonSubtitle": "Gumawa ng kopya at i-edit agad ito",
@@ -457,7 +449,6 @@
   "layoutStyle": "Layout style",
   "layoutWideDescription": "Wide: 2-column mga button with extra details (recommended).",
   "layoutCompactDescription": "Compact: classic 4× grid (icons/text only).",
-  "importFromRemotes": "Import from mga remote",
   "addButton": "Add button",
   "noButtonsYet": "Walang mga button yet",
   "createRemoteEmptyStateDescription": "Idagdag ang una mong button, saka pindutin ito nang matagal para sa edit o remove na opsyon.",
@@ -612,37 +603,8 @@
   "macrosExportedToDownloads": "Macros exported to Downloads.",
   "failedToExportMacros": "Nabigong i-export ang mga macro.",
   "failedToReadFile": "Nabigong basahin ang file.",
-  "importFromExistingRemotesTitle": "Import from Existing Remotes",
-  "selectedCount": "{count} selected",
-  "@selectedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "noOtherRemotesWithButtons": "Walang ibang remote na may button ang nahanap.",
-  "sourceRemote": "Source remote",
-  "searchButtons": "Search mga button",
-  "searchButtonsHint": "Power, Volume, Mute...",
-  "selectVisible": "Select visible",
-  "clearVisible": "Clear visible",
-  "protocolNamed": "Protocol: {name}",
-  "@protocolNamed": {
-    "placeholders": {
-      "name": {}
-    }
-  },
   "rawSignal": "Raw",
   "legacyCode": "Legacy code",
-  "importCount": "Import {count}",
-  "@importCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "storagePermissionDeniedLegacy": "Storage pahintulot tinanggihan (needed on some older Android mga device).",
   "backupExportedToDownloads": "Backup exported to Downloads.",
   "failedToExport": "Nabigong i-export: {error}",

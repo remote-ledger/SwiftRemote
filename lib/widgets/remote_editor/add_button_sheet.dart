@@ -3,7 +3,6 @@ import 'package:swiftremote/l10n/l10n.dart';
 
 enum AddButtonSheetAction {
   addButton,
-  importFromRemotes,
   browseRemoteLedger,
 }
 
@@ -25,33 +24,6 @@ class AddButtonSheet extends StatelessWidget {
             onPressed: () => Navigator.of(context).pop(AddButtonSheetAction.addButton),
             icon: const Icon(Icons.add_circle_outline_rounded),
             label: Text(l10n.addButton),
-          ),
-          const SizedBox(height: 14),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 4),
-            child: Text(
-              l10n.importFromRemotes,
-              style: theme.textTheme.labelLarge?.copyWith(
-                color: cs.onSurfaceVariant,
-                fontWeight: FontWeight.w800,
-              ),
-            ),
-          ),
-          const SizedBox(height: 6),
-          Card(
-            clipBehavior: Clip.antiAlias,
-            margin: EdgeInsets.zero,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                ListTile(
-                  leading: const Icon(Icons.merge_type_rounded),
-                  title: Text(l10n.importFromRemotes),
-                  onTap: () => Navigator.of(context)
-                      .pop(AddButtonSheetAction.importFromRemotes),
-                ),
-              ],
-            ),
           ),
           const SizedBox(height: 12),
           ListTile(

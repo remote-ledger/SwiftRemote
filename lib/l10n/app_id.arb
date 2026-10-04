@@ -436,14 +436,6 @@
       }
     }
   },
-  "importedButtonsFromExistingRemotes": "Mengimpor {count} tombol dari remote yang ada.",
-  "@importedButtonsFromExistingRemotes": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "editButtonSettingsSubtitle": "Ubah label, sinyal, dan setelan lanjutan",
   "createButtonCopySubtitle": "Buat salinan tombol ini",
   "duplicateAndEditButtonSubtitle": "Buat salinan lalu langsung ubah",
@@ -457,7 +449,6 @@
   "layoutStyle": "Gaya tata letak",
   "layoutWideDescription": "Lebar: tombol 2 kolom dengan detail tambahan (disarankan).",
   "layoutCompactDescription": "Ringkas: kisi 4× klasik (ikon/teks saja).",
-  "importFromRemotes": "Impor dari remote",
   "addButton": "Tambah tombol",
   "noButtonsYet": "Tidak ada tombol yet",
   "createRemoteEmptyStateDescription": "Tambahkan tombol pertama, lalu tekan lama untuk opsi ubah/hapus.",
@@ -612,37 +603,8 @@
   "macrosExportedToDownloads": "Makro diekspor ke Unduhan.",
   "failedToExportMacros": "Gagal export makro.",
   "failedToReadFile": "Gagal read file.",
-  "importFromExistingRemotesTitle": "Impor dari Remote yang Ada",
-  "selectedCount": "{count} terpilih",
-  "@selectedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "noOtherRemotesWithButtons": "Tidak ada remote lain dengan tombol.",
-  "sourceRemote": "Sumber remote",
-  "searchButtons": "Cari tombol",
-  "searchButtonsHint": "Daya, Volume, Bisu...",
-  "selectVisible": "Pilih visible",
-  "clearVisible": "Bersihkan yang terlihat",
-  "protocolNamed": "Protokol: {name}",
-  "@protocolNamed": {
-    "placeholders": {
-      "name": {}
-    }
-  },
   "rawSignal": "Mentah",
   "legacyCode": "Legacy kode",
-  "importCount": "Impor {count}",
-  "@importCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "storagePermissionDeniedLegacy": "Izin penyimpanan ditolak (diperlukan di beberapa perangkat Android lama).",
   "backupExportedToDownloads": "Cadangan diekspor ke Unduhan.",
   "failedToExport": "Gagal export: {error}",

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:swiftremote/l10n/l10n.dart';
 import 'package:swiftremote/utils/remote.dart';
 import 'package:swiftremote/widgets/create_button.dart';
-import 'package:swiftremote/widgets/existing_remote_button_import_sheet.dart';
 import 'package:swiftremote/widgets/remote_ledger_screen.dart';
 import 'package:uuid/uuid.dart';
 
@@ -73,30 +72,6 @@ class RemoteEditorActions {
       ),
     );
     return result ?? false;
-  }
-
-  static Future<List<IRButton>?> importFromExistingRemotes(
-    BuildContext context, {
-    required List<IRButton> existingButtons,
-    int? currentRemoteId,
-  }) async {
-    try {
-      return await showModalBottomSheet<List<IRButton>>(
-        context: context,
-        isScrollControlled: true,
-        useSafeArea: true,
-        showDragHandle: true,
-        builder: (_) => FractionallySizedBox(
-          heightFactor: 0.97,
-          child: ExistingRemoteButtonImportSheet(
-            existingButtons: existingButtons,
-            currentRemoteId: currentRemoteId,
-          ),
-        ),
-      );
-    } catch (_) {
-      return null;
-    }
   }
 
   static Future<void> browseRemoteLedger(BuildContext context) async {

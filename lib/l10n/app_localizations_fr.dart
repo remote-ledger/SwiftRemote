@@ -1476,11 +1476,6 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String importedButtonsFromExistingRemotes(int count) {
-    return '$count bouton(s) importé(s) depuis les télécommandes existantes.';
-  }
-
-  @override
   String get editButtonSettingsSubtitle =>
       'Changer le libellé, le signal et les réglages avancés';
 
@@ -1525,9 +1520,6 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get layoutCompactDescription =>
       'Compact : grille 4× classique (icônes/texte seuls).';
-
-  @override
-  String get importFromRemotes => 'Importer depuis télés';
 
   @override
   String get addButton => 'Ajouter un bouton';
@@ -1813,48 +1805,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get failedToReadFile => 'Échec de la lecture du fichier.';
 
   @override
-  String get importFromExistingRemotesTitle =>
-      'Importer depuis des télés existantes';
-
-  @override
-  String selectedCount(int count) {
-    return '$count sélectionné(s)';
-  }
-
-  @override
-  String get noOtherRemotesWithButtons =>
-      'Aucune autre télécommande avec boutons trouvée.';
-
-  @override
-  String get sourceRemote => 'Télécommande source';
-
-  @override
-  String get searchButtons => 'Rechercher des boutons';
-
-  @override
-  String get searchButtonsHint => 'Power, Volume, Muet...';
-
-  @override
-  String get selectVisible => 'Sélectionner visibles';
-
-  @override
-  String get clearVisible => 'Effacer visibles';
-
-  @override
-  String protocolNamed(Object name) {
-    return 'Protocole : $name';
-  }
-
-  @override
   String get rawSignal => 'Brut';
 
   @override
   String get legacyCode => 'Code legacy';
-
-  @override
-  String importCount(int count) {
-    return 'Importer $count';
-  }
 
   @override
   String get storagePermissionDeniedLegacy =>

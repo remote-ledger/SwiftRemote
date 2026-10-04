@@ -551,14 +551,6 @@
       }
     }
   },
-  "importedButtonsFromExistingRemotes": "{count, plural, one{Imported {count} button from existing remotes.} other{Imported {count} buttons from existing remotes.}}",
-  "@importedButtonsFromExistingRemotes": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "editButtonSettingsSubtitle": "Change label, signal, and advanced settings",
   "createButtonCopySubtitle": "Create a copy of this button",
   "duplicateAndEditButtonSubtitle": "Create a copy and edit it immediately",
@@ -572,7 +564,6 @@
   "layoutStyle": "Layout style",
   "layoutWideDescription": "Wide: 2-column buttons with extra details (recommended).",
   "layoutCompactDescription": "Compact: classic 4× grid (icons/text only).",
-  "importFromRemotes": "Import from remotes",
   "addButton": "Add button",
   "noButtonsYet": "No buttons yet",
   "createRemoteEmptyStateDescription": "Add your first button, then long-press it for edit/remove options.",
@@ -727,37 +718,8 @@
   "macrosExportedToDownloads": "Macros exported to Downloads.",
   "failedToExportMacros": "Failed to export macros.",
   "failedToReadFile": "Failed to read file.",
-  "importFromExistingRemotesTitle": "Import from Existing Remotes",
-  "selectedCount": "{count} selected",
-  "@selectedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "noOtherRemotesWithButtons": "No other remotes with buttons found.",
-  "sourceRemote": "Source remote",
-  "searchButtons": "Search buttons",
-  "searchButtonsHint": "Power, Volume, Mute...",
-  "selectVisible": "Select visible",
-  "clearVisible": "Clear visible",
-  "protocolNamed": "Protocol: {name}",
-  "@protocolNamed": {
-    "placeholders": {
-      "name": {}
-    }
-  },
   "rawSignal": "Raw",
   "legacyCode": "Legacy code",
-  "importCount": "Import {count}",
-  "@importCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "storagePermissionDeniedLegacy": "Storage permission denied (needed on some older Android devices).",
   "backupExportedToDownloads": "Backup exported to Downloads.",
   "failedToExport": "Failed to export: {error}",

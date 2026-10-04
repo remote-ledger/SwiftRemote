@@ -1406,11 +1406,6 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String importedButtonsFromExistingRemotes(int count) {
-    return '기존 리모컨에서 버튼 $count개를 가져왔습니다.';
-  }
-
-  @override
   String get editButtonSettingsSubtitle => '레이블, 신호 및 고급 설정 변경';
 
   @override
@@ -1448,9 +1443,6 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get layoutCompactDescription => '컴팩트: 아이콘/텍스트만 있는 클래식 4× 격자.';
-
-  @override
-  String get importFromRemotes => '가져오기 에서 리모컨';
 
   @override
   String get addButton => '추가 버튼';
@@ -1728,46 +1720,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get failedToReadFile => '파일을 읽지 못했습니다.';
 
   @override
-  String get importFromExistingRemotesTitle => '기존 리모컨에서 가져오기';
-
-  @override
-  String selectedCount(int count) {
-    return '$count개 선택됨';
-  }
-
-  @override
-  String get noOtherRemotesWithButtons => '버튼이 있는 다른 리모컨을 찾지 못했습니다.';
-
-  @override
-  String get sourceRemote => '소스 리모컨';
-
-  @override
-  String get searchButtons => '검색 버튼';
-
-  @override
-  String get searchButtonsHint => '전원, 볼륨, 음소거...';
-
-  @override
-  String get selectVisible => '선택 보이는';
-
-  @override
-  String get clearVisible => '지우기 보이는';
-
-  @override
-  String protocolNamed(Object name) {
-    return '프로토콜: $name';
-  }
-
-  @override
   String get rawSignal => '원시 신호';
 
   @override
   String get legacyCode => '레거시 코드';
-
-  @override
-  String importCount(int count) {
-    return '$count개 가져오기';
-  }
 
   @override
   String get storagePermissionDeniedLegacy =>

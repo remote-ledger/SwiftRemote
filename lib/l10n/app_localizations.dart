@@ -2652,12 +2652,6 @@ abstract class AppLocalizations {
   /// **'{count, plural, one{Imported {count} button.} other{Imported {count} buttons.}}'**
   String importedButtonCount(int count);
 
-  /// No description provided for @importedButtonsFromExistingRemotes.
-  ///
-  /// In en, this message translates to:
-  /// **'{count, plural, one{Imported {count} button from existing remotes.} other{Imported {count} buttons from existing remotes.}}'**
-  String importedButtonsFromExistingRemotes(int count);
-
   /// No description provided for @editButtonSettingsSubtitle.
   ///
   /// In en, this message translates to:
@@ -2735,12 +2729,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Compact: classic 4× grid (icons/text only).'**
   String get layoutCompactDescription;
-
-  /// No description provided for @importFromRemotes.
-  ///
-  /// In en, this message translates to:
-  /// **'Import from remotes'**
-  String get importFromRemotes;
 
   /// No description provided for @addButton.
   ///
@@ -3234,60 +3222,6 @@ abstract class AppLocalizations {
   /// **'Failed to read file.'**
   String get failedToReadFile;
 
-  /// No description provided for @importFromExistingRemotesTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Import from Existing Remotes'**
-  String get importFromExistingRemotesTitle;
-
-  /// No description provided for @selectedCount.
-  ///
-  /// In en, this message translates to:
-  /// **'{count} selected'**
-  String selectedCount(int count);
-
-  /// No description provided for @noOtherRemotesWithButtons.
-  ///
-  /// In en, this message translates to:
-  /// **'No other remotes with buttons found.'**
-  String get noOtherRemotesWithButtons;
-
-  /// No description provided for @sourceRemote.
-  ///
-  /// In en, this message translates to:
-  /// **'Source remote'**
-  String get sourceRemote;
-
-  /// No description provided for @searchButtons.
-  ///
-  /// In en, this message translates to:
-  /// **'Search buttons'**
-  String get searchButtons;
-
-  /// No description provided for @searchButtonsHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Power, Volume, Mute...'**
-  String get searchButtonsHint;
-
-  /// No description provided for @selectVisible.
-  ///
-  /// In en, this message translates to:
-  /// **'Select visible'**
-  String get selectVisible;
-
-  /// No description provided for @clearVisible.
-  ///
-  /// In en, this message translates to:
-  /// **'Clear visible'**
-  String get clearVisible;
-
-  /// No description provided for @protocolNamed.
-  ///
-  /// In en, this message translates to:
-  /// **'Protocol: {name}'**
-  String protocolNamed(Object name);
-
   /// No description provided for @rawSignal.
   ///
   /// In en, this message translates to:
@@ -3299,12 +3233,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Legacy code'**
   String get legacyCode;
-
-  /// No description provided for @importCount.
-  ///
-  /// In en, this message translates to:
-  /// **'Import {count}'**
-  String importCount(int count);
 
   /// No description provided for @storagePermissionDeniedLegacy.
   ///

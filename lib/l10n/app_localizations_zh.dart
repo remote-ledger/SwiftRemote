@@ -1365,11 +1365,6 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String importedButtonsFromExistingRemotes(int count) {
-    return '已从现有遥控器导入 $count 个按钮。';
-  }
-
-  @override
   String get editButtonSettingsSubtitle => '更改标签、信号和高级设置';
 
   @override
@@ -1407,9 +1402,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get layoutCompactDescription => '紧凑布局 经典 4× 网格 仅图标 文本。';
-
-  @override
-  String get importFromRemotes => '从遥控器导入';
 
   @override
   String get addButton => '添加按钮';
@@ -1684,46 +1676,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get failedToReadFile => '读取文件失败。';
 
   @override
-  String get importFromExistingRemotesTitle => '从现有遥控器导入';
-
-  @override
-  String selectedCount(int count) {
-    return '已选择 $count';
-  }
-
-  @override
-  String get noOtherRemotesWithButtons => '未找到其他带按钮的遥控器。';
-
-  @override
-  String get sourceRemote => '来源遥控器';
-
-  @override
-  String get searchButtons => '搜索按钮';
-
-  @override
-  String get searchButtonsHint => '电源、音量、静音…';
-
-  @override
-  String get selectVisible => '选择可见项';
-
-  @override
-  String get clearVisible => '清除可见项';
-
-  @override
-  String protocolNamed(Object name) {
-    return '协议 $name';
-  }
-
-  @override
   String get rawSignal => '原始';
 
   @override
   String get legacyCode => '旧代码';
-
-  @override
-  String importCount(int count) {
-    return '导入 $count';
-  }
 
   @override
   String get storagePermissionDeniedLegacy => '存储权限被拒 某些旧版 Android 设备需要此权限。';

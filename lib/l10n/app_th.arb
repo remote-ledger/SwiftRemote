@@ -436,14 +436,6 @@
       }
     }
   },
-  "importedButtonsFromExistingRemotes": "นำเข้า {count} ปุ่มจากรีโมตที่มีอยู่แล้ว",
-  "@importedButtonsFromExistingRemotes": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "editButtonSettingsSubtitle": "เปลี่ยนชื่อ สัญญาณ และการตั้งค่าขั้นสูง",
   "createButtonCopySubtitle": "สร้างสำเนาของปุ่มนี้",
   "duplicateAndEditButtonSubtitle": "สร้างสำเนาและแก้ไขทันที",
@@ -457,7 +449,6 @@
   "layoutStyle": "รูปแบบเลย์เอาต์",
   "layoutWideDescription": "กว้าง: ปุ่ม 2 คอลัมน์พร้อมรายละเอียดเพิ่ม แนะนำ",
   "layoutCompactDescription": "กะทัดรัด: กริด 4× แบบคลาสสิก ไอคอนและข้อความเท่านั้น",
-  "importFromRemotes": "นำเข้าจากรีโมต",
   "addButton": "เพิ่มปุ่ม",
   "noButtonsYet": "ยังไม่มีปุ่ม",
   "createRemoteEmptyStateDescription": "เพิ่มปุ่มแรกของคุณ แล้วกดค้างเพื่อแก้ไขหรือลบ",
@@ -612,37 +603,8 @@
   "macrosExportedToDownloads": "แมโครs exported to ดาวน์โหลด.",
   "failedToExportMacros": "ไม่สำเร็จในการexport แมโครs.",
   "failedToReadFile": "ไม่สำเร็จในการread ไฟล์.",
-  "importFromExistingRemotesTitle": "นำเข้าจากรีโมตที่มีอยู่",
-  "selectedCount": "เลือกแล้ว {count}",
-  "@selectedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "noOtherRemotesWithButtons": "ไม่มี other รีโมต with ปุ่มs found.",
-  "sourceRemote": "รีโมตต้นทาง",
-  "searchButtons": "ค้นหาปุ่ม",
-  "searchButtonsHint": "Power, Volume, Mute...",
-  "selectVisible": "เลือกที่แสดง",
-  "clearVisible": "ล้างที่มองเห็น",
-  "protocolNamed": "โปรโตคอล: {name}",
-  "@protocolNamed": {
-    "placeholders": {
-      "name": {}
-    }
-  },
   "rawSignal": "Raw",
   "legacyCode": "โค้ดแบบเก่า",
-  "importCount": "นำเข้า {count}",
-  "@importCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "storagePermissionDeniedLegacy": "สิทธิ์พื้นที่เก็บข้อมูลถูกปฏิเสธ จำเป็นในอุปกรณ์ Android รุ่นเก่าบางรุ่น",
   "backupExportedToDownloads": "ส่งออกข้อมูลสำรองไปยัง Downloads แล้ว",
   "failedToExport": "ส่งออกไม่สำเร็จ: {error}",

@@ -436,14 +436,6 @@
       }
     }
   },
-  "importedButtonsFromExistingRemotes": "Mengimport {count} butang dari remote sedia ada.",
-  "@importedButtonsFromExistingRemotes": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "editButtonSettingsSubtitle": "Ubah label, isyarat, dan tetapan lanjutan",
   "createButtonCopySubtitle": "Buat salinan butang ini",
   "duplicateAndEditButtonSubtitle": "Buat salinan kemudian langsung ubah",
@@ -457,7 +449,6 @@
   "layoutStyle": "Gaya tata letak",
   "layoutWideDescription": "Luas: butang 2 kolom dengan detail tambahan (disyorkan).",
   "layoutCompactDescription": "Ringkas: kisi 4× klasik (ikon/teks saja).",
-  "importFromRemotes": "Import dari remote",
   "addButton": "Tambah butang",
   "noButtonsYet": "Tiada butang yet",
   "createRemoteEmptyStateDescription": "Tambahkan butang pertama, kemudian tekan lama untuk opsi ubah/hapus.",
@@ -612,37 +603,8 @@
   "macrosExportedToDownloads": "Makro diekspor ke Unduhan.",
   "failedToExportMacros": "Gagal export makro.",
   "failedToReadFile": "Gagal read file.",
-  "importFromExistingRemotesTitle": "Import dari Remote yang Ada",
-  "selectedCount": "{count} terpilih",
-  "@selectedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "noOtherRemotesWithButtons": "Tiada remote lain dengan butang.",
-  "sourceRemote": "Sumber remote",
-  "searchButtons": "Cari butang",
-  "searchButtonsHint": "Kuasa, Volum, Senyap...",
-  "selectVisible": "Pilih visible",
-  "clearVisible": "Bersihkan yang terlihat",
-  "protocolNamed": "Protokol: {name}",
-  "@protocolNamed": {
-    "placeholders": {
-      "name": {}
-    }
-  },
   "rawSignal": "Mentah",
   "legacyCode": "Lama kod",
-  "importCount": "Import {count}",
-  "@importCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "storagePermissionDeniedLegacy": "Izin penyimpanan ditolak (diperlukan di beberapa peranti Android lama).",
   "backupExportedToDownloads": "Sandaran diekspor ke Unduhan.",
   "failedToExport": "Gagal export: {error}",

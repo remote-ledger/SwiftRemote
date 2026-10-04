@@ -1459,11 +1459,6 @@ class AppLocalizationsHi extends AppLocalizations {
   }
 
   @override
-  String importedButtonsFromExistingRemotes(int count) {
-    return 'Imported $count बटन(s) से मौजूदा रिमोट.';
-  }
-
-  @override
   String get editButtonSettingsSubtitle =>
       'बदलें लेबल, सिग्नल, और advanced सेटिंग्स';
 
@@ -1506,9 +1501,6 @@ class AppLocalizationsHi extends AppLocalizations {
   @override
   String get layoutCompactDescription =>
       'कॉम्पैक्ट: क्लासिक 4× ग्रिड (icons/पाठ केवल).';
-
-  @override
-  String get importFromRemotes => 'आयात करें से रिमोट';
 
   @override
   String get addButton => 'जोड़ें बटन';
@@ -1790,46 +1782,10 @@ class AppLocalizationsHi extends AppLocalizations {
   String get failedToReadFile => 'read फ़ाइल. विफल';
 
   @override
-  String get importFromExistingRemotesTitle => 'आयात करें से मौजूदा रिमोट';
-
-  @override
-  String selectedCount(int count) {
-    return '$count चयनित';
-  }
-
-  @override
-  String get noOtherRemotesWithButtons => 'नहीं अन्य रिमोट के साथ बटन मिला.';
-
-  @override
-  String get sourceRemote => 'स्रोत रिमोट';
-
-  @override
-  String get searchButtons => 'खोजें बटन';
-
-  @override
-  String get searchButtonsHint => 'पावर, आवाज़, म्यूट...';
-
-  @override
-  String get selectVisible => 'दृश्यमान चुनें';
-
-  @override
-  String get clearVisible => 'दृश्यमान साफ करें';
-
-  @override
-  String protocolNamed(Object name) {
-    return 'प्रोटोकॉल: $name';
-  }
-
-  @override
   String get rawSignal => 'रॉ';
 
   @override
   String get legacyCode => 'पुराना कोड';
-
-  @override
-  String importCount(int count) {
-    return 'आयात करें $count';
-  }
 
   @override
   String get storagePermissionDeniedLegacy =>

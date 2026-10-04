@@ -436,14 +436,6 @@
       }
     }
   },
-  "importedButtonsFromExistingRemotes": "Foram importados {count} botão(ões) de controles existentes.",
-  "@importedButtonsFromExistingRemotes": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "editButtonSettingsSubtitle": "Cambiar etiqueta, sinal e configurações avanzados",
   "createButtonCopySubtitle": "Criar uma cópia deste botão",
   "duplicateAndEditButtonSubtitle": "Criar uma cópia e editá-la imediatamente",
@@ -457,7 +449,6 @@
   "layoutStyle": "Estilo de diseño",
   "layoutWideDescription": "Ancho: botões de 2 columnas con detalhes extra (recomendado).",
   "layoutCompactDescription": "Compacto: grade clássica 4x (apenas ícones/texto).",
-  "importFromRemotes": "Importar de controles",
   "addButton": "Adicionar botão",
   "noButtonsYet": "Ainda não há botões",
   "createRemoteEmptyStateDescription": "Adicione seu primeiro botão e depois mantenha pressionado para editar ou remover.",
@@ -612,37 +603,8 @@
   "macrosExportedToDownloads": "Macros exportedas a Descargas.",
   "failedToExportMacros": "Não se pudieron exporter as macros.",
   "failedToReadFile": "Não se pudo leer o arquivo.",
-  "importFromExistingRemotesTitle": "Importar de controles existentes",
-  "selectedCount": "{count} selecionados",
-  "@selectedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "noOtherRemotesWithButtons": "Nenhum outro controle com botões foi encontrado.",
-  "sourceRemote": "controle origen",
-  "searchButtons": "pesquisar botões",
-  "searchButtonsHint": "Enc., Volume, Silencio..",
-  "selectVisible": "Selecionar visibles",
-  "clearVisible": "Limpiar visibles",
-  "protocolNamed": "Protocolo: {name}",
-  "@protocolNamed": {
-    "placeholders": {
-      "name": {}
-    }
-  },
   "rawSignal": "Bruto",
   "legacyCode": "Código antiguo",
-  "importCount": "Importar {count}",
-  "@importCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "storagePermissionDeniedLegacy": "Permissão de almacenamiento negada (necesario en algums Android antiguos).",
   "backupExportedToDownloads": "Cópia exporteda a Descargas.",
   "failedToExport": "Falha ao exportar: {error}",

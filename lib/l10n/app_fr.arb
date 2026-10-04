@@ -441,14 +441,6 @@
       }
     }
   },
-  "importedButtonsFromExistingRemotes": "{count} bouton(s) importé(s) depuis les télécommandes existantes.",
-  "@importedButtonsFromExistingRemotes": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "editButtonSettingsSubtitle": "Changer le libellé, le signal et les réglages avancés",
   "createButtonCopySubtitle": "Créer une copie de ce bouton",
   "duplicateAndEditButtonSubtitle": "Créer une copie et la modifier tout de suite",
@@ -462,7 +454,6 @@
   "layoutStyle": "Style de disposition",
   "layoutWideDescription": "Large : boutons sur 2 colonnes avec plus de détails (recommandé).",
   "layoutCompactDescription": "Compact : grille 4× classique (icônes/texte seuls).",
-  "importFromRemotes": "Importer depuis télés",
   "addButton": "Ajouter un bouton",
   "noButtonsYet": "Aucun bouton",
   "createRemoteEmptyStateDescription": "Ajoutez votre premier bouton, puis faites un appui long dessus pour voir modifier/retirer.",
@@ -617,37 +608,8 @@
   "macrosExportedToDownloads": "Macros exportées dans Téléchargements.",
   "failedToExportMacros": "Échec de l'export des macros.",
   "failedToReadFile": "Échec de la lecture du fichier.",
-  "importFromExistingRemotesTitle": "Importer depuis des télés existantes",
-  "selectedCount": "{count} sélectionné(s)",
-  "@selectedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "noOtherRemotesWithButtons": "Aucune autre télécommande avec boutons trouvée.",
-  "sourceRemote": "Télécommande source",
-  "searchButtons": "Rechercher des boutons",
-  "searchButtonsHint": "Power, Volume, Muet...",
-  "selectVisible": "Sélectionner visibles",
-  "clearVisible": "Effacer visibles",
-  "protocolNamed": "Protocole : {name}",
-  "@protocolNamed": {
-    "placeholders": {
-      "name": {}
-    }
-  },
   "rawSignal": "Brut",
   "legacyCode": "Code legacy",
-  "importCount": "Importer {count}",
-  "@importCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "storagePermissionDeniedLegacy": "Autorisation de stockage refusée (nécessaire sur certains anciens appareils Android).",
   "backupExportedToDownloads": "Sauvegarde exportée dans Téléchargements.",
   "failedToExport": "Échec de l'export : {error}",

@@ -436,14 +436,6 @@
       }
     }
   },
-  "importedButtonsFromExistingRemotes": "Importerened {count} knop(s) from existing remotes.",
-  "@importedButtonsFromExistingRemotes": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "editButtonSettingsSubtitle": "Wijzig label, signaal en geavanceerde instellingen",
   "createButtonCopySubtitle": "Maak een kopie van deze knop",
   "duplicateAndEditButtonSubtitle": "Maak een kopie en bewerk die meteen",
@@ -457,7 +449,6 @@
   "layoutStyle": "Lay-outstijl",
   "layoutWideDescription": "Wide: 2-column knoppen with extra details (recommended).",
   "layoutCompactDescription": "Compact klassieke 4×-rasterknoppen alleen pictogrammen of tekst.",
-  "importFromRemotes": "Importeren from remotes",
   "addButton": "Toevoegen knop",
   "noButtonsYet": "Geen knoppen yet",
   "createRemoteEmptyStateDescription": "Toevoegen your first knop, then long-press it for bewerken/remove options.",
@@ -612,37 +603,8 @@
   "macrosExportedToDownloads": "Macro's exporterened to Downloads.",
   "failedToExportMacros": "Macro's exportereneren mislukt.",
   "failedToReadFile": "Bestand lezen mislukt.",
-  "importFromExistingRemotesTitle": "Importereneren uit bestaande afstandsbedieningen",
-  "selectedCount": "{count} geselecteerd",
-  "@selectedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "noOtherRemotesWithButtons": "Geen andere afstandsbedieningen met knoppen gevonden.",
-  "sourceRemote": "Bron-afstandsbediening",
-  "searchButtons": "Zoeken knoppen",
-  "searchButtonsHint": "Power, Volume, Mute..",
-  "selectVisible": "Selecteer visible",
-  "clearVisible": "Zichtbare wissen",
-  "protocolNamed": "Protocol: {name}",
-  "@protocolNamed": {
-    "placeholders": {
-      "name": {}
-    }
-  },
   "rawSignal": "Ruw",
   "legacyCode": "Verouderde code",
-  "importCount": "Importeren {count}",
-  "@importCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "storagePermissionDeniedLegacy": "Opslagtoestemming geweigerd nodig op sommige oudere Android-apparaten.",
   "backupExportedToDownloads": "Back-up exporterened to Downloads.",
   "failedToExport": "Mislukt to exporteren: {error}",

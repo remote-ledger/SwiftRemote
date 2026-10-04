@@ -86,19 +86,6 @@ class _RemoteStudioScreenState extends State<RemoteStudioScreen> {
     }
   }
 
-  Future<void> _openImportFromExistingRemotes() async {
-    final imported = await RemoteEditorActions.importFromExistingRemotes(
-      context,
-      existingButtons: _draft.buttons,
-      currentRemoteId: _draft.remoteId,
-    );
-    if (imported == null || imported.isEmpty || !mounted) return;
-    final before = _draft.buttonCount;
-    setState(() => _draft.addButtons(imported));
-    final added = _draft.buttonCount - before;
-    _showSnack(context.l10n.importedButtonsFromExistingRemotes(added));
-  }
-
   Future<void> _openRemoteLedger() async {
     await RemoteEditorActions.browseRemoteLedger(context);
   }
@@ -114,9 +101,6 @@ class _RemoteStudioScreenState extends State<RemoteStudioScreen> {
     switch (action) {
       case AddButtonSheetAction.addButton:
         await _addButton();
-        break;
-      case AddButtonSheetAction.importFromRemotes:
-        await _openImportFromExistingRemotes();
         break;
       case AddButtonSheetAction.browseRemoteLedger:
         await _openRemoteLedger();
@@ -536,24 +520,11 @@ class _RemoteStudioScreenState extends State<RemoteStudioScreen> {
             SizedBox(height: compactPhone ? 16 : 20),
             SizedBox(
               height: compactPhone ? 56 : 60,
-              child: Row(
-                children: [
-                  Expanded(
-                    child: FilledButton.tonalIcon(
-                      onPressed: _addButton,
-                      icon: const Icon(Icons.edit_note_rounded),
-                      label: Text(context.l10n.addButton),
-                    ),
-                  ),
-                  const SizedBox(width: 10),
-                  Expanded(
-                    child: OutlinedButton.icon(
-                      onPressed: _openImportFromExistingRemotes,
-                      icon: const Icon(Icons.import_export_rounded),
-                      label: Text(context.l10n.importFromRemotes),
-                    ),
-                  ),
-                ],
+              width: double.infinity,
+              child: FilledButton.tonalIcon(
+                onPressed: _addButton,
+                icon: const Icon(Icons.edit_note_rounded),
+                label: Text(context.l10n.addButton),
               ),
             ),
             const SizedBox(height: 10),

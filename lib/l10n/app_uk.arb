@@ -436,14 +436,6 @@
       }
     }
   },
-  "importedButtonsFromExistingRemotes": "{count, plural, one{Імпортовано {count} кнопку з наявних пультів.} few{Імпортовано {count} кнопки з наявних пультів.} many{Імпортовано {count} кнопок з наявних пультів.} other{Імпортовано {count} кнопки з наявних пультів.}}",
-  "@importedButtonsFromExistingRemotes": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "editButtonSettingsSubtitle": "Змініть мітку, сигнал і розширені налаштування",
   "createButtonCopySubtitle": "Створіть копію цієї кнопки",
   "duplicateAndEditButtonSubtitle": "Створіть копію та негайно відредагуйте її",
@@ -457,7 +449,6 @@
   "layoutStyle": "Стиль оформлення",
   "layoutWideDescription": "Широкий: 2-колонкові кнопки з додатковими деталями (рекомендовано).",
   "layoutCompactDescription": "Компактний: класична сітка 4× (лише значки/текст).",
-  "importFromRemotes": "Імпорт з пультів",
   "addButton": "Додати кнопку",
   "noButtonsYet": "Ще немає кнопок",
   "createRemoteEmptyStateDescription": "Додайте свою першу кнопку, а потім утримуйте її, щоб переглянути параметри редагування/видалення.",
@@ -612,37 +603,8 @@
   "macrosExportedToDownloads": "Макроси експортовано до завантажень.",
   "failedToExportMacros": "Не вдалося експортувати макроси.",
   "failedToReadFile": "Не вдалося прочитати файл.",
-  "importFromExistingRemotesTitle": "Імпортувати з наявних пультів",
-  "selectedCount": "Вибрано {count}",
-  "@selectedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "noOtherRemotesWithButtons": "Інших пультів з кнопками не знайдено.",
-  "sourceRemote": "Пульт-джерело",
-  "searchButtons": "Кнопки пошуку",
-  "searchButtonsHint": "Живлення, гучність, вимкнення звуку...",
-  "selectVisible": "Виберіть видимий",
-  "clearVisible": "Ясно видно",
-  "protocolNamed": "Протокол: {name}",
-  "@protocolNamed": {
-    "placeholders": {
-      "name": {}
-    }
-  },
   "rawSignal": "Сирий",
   "legacyCode": "Застарілий код",
-  "importCount": "Імпортувати {count}",
-  "@importCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "storagePermissionDeniedLegacy": "У дозволі на зберігання відмовлено (потрібен на деяких старіших пристроях Android).",
   "backupExportedToDownloads": "Резервну копію експортовано до завантажень.",
   "failedToExport": "Не вдалося експортувати: {error}",

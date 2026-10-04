@@ -1485,11 +1485,6 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String importedButtonsFromExistingRemotes(int count) {
-    return '$count Taste(n) aus vorhandenen Fernbedienungen importiert.';
-  }
-
-  @override
   String get editButtonSettingsSubtitle =>
       'Beschriftung, Signal und erweiterte Einstellungen ändern';
 
@@ -1534,9 +1529,6 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get layoutCompactDescription =>
       'Kompakt: klassisches 4× Raster nur Symbole oder Text.';
-
-  @override
-  String get importFromRemotes => 'Aus Fernbedienungen importieren';
 
   @override
   String get addButton => 'Taste hinzufügen';
@@ -1824,48 +1816,10 @@ class AppLocalizationsDe extends AppLocalizations {
   String get failedToReadFile => 'Datei konnte nicht gelesen werden.';
 
   @override
-  String get importFromExistingRemotesTitle =>
-      'Aus vorhandenen Fernbedienungen importieren';
-
-  @override
-  String selectedCount(int count) {
-    return '$count gewählt';
-  }
-
-  @override
-  String get noOtherRemotesWithButtons =>
-      'Keine anderen Fernbedienungen mit Tasten gefunden.';
-
-  @override
-  String get sourceRemote => 'Quell-Fernbedienung';
-
-  @override
-  String get searchButtons => 'Tasten suchen';
-
-  @override
-  String get searchButtonsHint => 'Ein/Aus, Lautstärke, Stumm…';
-
-  @override
-  String get selectVisible => 'Sichtbare wählen';
-
-  @override
-  String get clearVisible => 'Sichtbare leeren';
-
-  @override
-  String protocolNamed(Object name) {
-    return 'Protokoll: $name';
-  }
-
-  @override
   String get rawSignal => 'Rohsignal';
 
   @override
   String get legacyCode => 'Alter Code';
-
-  @override
-  String importCount(int count) {
-    return '$count importieren';
-  }
 
   @override
   String get storagePermissionDeniedLegacy =>

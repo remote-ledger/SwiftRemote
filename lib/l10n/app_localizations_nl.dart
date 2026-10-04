@@ -1487,11 +1487,6 @@ class AppLocalizationsNl extends AppLocalizations {
   }
 
   @override
-  String importedButtonsFromExistingRemotes(int count) {
-    return 'Importerened $count knop(s) from existing remotes.';
-  }
-
-  @override
   String get editButtonSettingsSubtitle =>
       'Wijzig label, signaal en geavanceerde instellingen';
 
@@ -1536,9 +1531,6 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get layoutCompactDescription =>
       'Compact klassieke 4×-rasterknoppen alleen pictogrammen of tekst.';
-
-  @override
-  String get importFromRemotes => 'Importeren from remotes';
 
   @override
   String get addButton => 'Toevoegen knop';
@@ -1822,48 +1814,10 @@ class AppLocalizationsNl extends AppLocalizations {
   String get failedToReadFile => 'Bestand lezen mislukt.';
 
   @override
-  String get importFromExistingRemotesTitle =>
-      'Importereneren uit bestaande afstandsbedieningen';
-
-  @override
-  String selectedCount(int count) {
-    return '$count geselecteerd';
-  }
-
-  @override
-  String get noOtherRemotesWithButtons =>
-      'Geen andere afstandsbedieningen met knoppen gevonden.';
-
-  @override
-  String get sourceRemote => 'Bron-afstandsbediening';
-
-  @override
-  String get searchButtons => 'Zoeken knoppen';
-
-  @override
-  String get searchButtonsHint => 'Power, Volume, Mute..';
-
-  @override
-  String get selectVisible => 'Selecteer visible';
-
-  @override
-  String get clearVisible => 'Zichtbare wissen';
-
-  @override
-  String protocolNamed(Object name) {
-    return 'Protocol: $name';
-  }
-
-  @override
   String get rawSignal => 'Ruw';
 
   @override
   String get legacyCode => 'Verouderde code';
-
-  @override
-  String importCount(int count) {
-    return 'Importeren $count';
-  }
 
   @override
   String get storagePermissionDeniedLegacy =>

@@ -436,14 +436,6 @@
       }
     }
   },
-  "importedButtonsFromExistingRemotes": "Imported {count} nút from existing remotes.",
-  "@importedButtonsFromExistingRemotes": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "editButtonSettingsSubtitle": "Đổi nhãn, tín hiệu và cài đặt nâng cao",
   "createButtonCopySubtitle": "Tạo bản sao của nút này",
   "duplicateAndEditButtonSubtitle": "Tạo bản sao và sửa ngay",
@@ -457,7 +449,6 @@
   "layoutStyle": "Kiểu bố cục",
   "layoutWideDescription": "Rộng: nút 2 cột với chi tiết bổ sung (khuyên dùng).",
   "layoutCompactDescription": "Gọn: classic 4× grid (icons/text only).",
-  "importFromRemotes": "Nhập từ điều khiển",
   "addButton": "Thêm nút",
   "noButtonsYet": "Chưa có nút nào",
   "createRemoteEmptyStateDescription": "Thêm nút đầu tiên, rồi nhấn giữ để xem tùy chọn sửa/xóa.",
@@ -612,37 +603,8 @@
   "macrosExportedToDownloads": "Đã xuất macro vào Downloads.",
   "failedToExportMacros": "Xuất macro thất bại.",
   "failedToReadFile": "Đọc tệp thất bại.",
-  "importFromExistingRemotesTitle": "Nhập từ điều khiển hiện có",
-  "selectedCount": "Đã chọn {count}",
-  "@selectedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "noOtherRemotesWithButtons": "Không tìm thấy điều khiển nào khác có nút.",
-  "sourceRemote": "Điều khiển nguồn",
-  "searchButtons": "Tìm nút",
-  "searchButtonsHint": "Nguồn, Âm lượng, Tắt tiếng...",
-  "selectVisible": "Chọn hiển thị",
-  "clearVisible": "Xóa hiển thị",
-  "protocolNamed": "Giao thức: {name}",
-  "@protocolNamed": {
-    "placeholders": {
-      "name": {}
-    }
-  },
   "rawSignal": "Raw",
   "legacyCode": "Mã cũ",
-  "importCount": "Nhập {count}",
-  "@importCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "storagePermissionDeniedLegacy": "Quyền bộ nhớ bị từ chối (cần trên một số thiết bị Android cũ).",
   "backupExportedToDownloads": "Đã xuất bản sao lưu vào Downloads.",
   "failedToExport": "Xuất thất bại: {error}",

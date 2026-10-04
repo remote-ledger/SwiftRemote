@@ -1475,11 +1475,6 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String importedButtonsFromExistingRemotes(int count) {
-    return 'Foram importados $count botão(ões) de comandos existentes.';
-  }
-
-  @override
   String get editButtonSettingsSubtitle =>
       'Cambiar etiqueta, sinal e definições avanzados';
 
@@ -1524,9 +1519,6 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get layoutCompactDescription =>
       'Compacto: grelha clássica 4x (apenas ícones/texto).';
-
-  @override
-  String get importFromRemotes => 'Importar de comandos';
 
   @override
   String get addButton => 'Adicionar botão';
@@ -1811,48 +1803,10 @@ class AppLocalizationsPt extends AppLocalizations {
   String get failedToReadFile => 'Não se pudo leer o ficheiro.';
 
   @override
-  String get importFromExistingRemotesTitle =>
-      'Importar de comandos existentes';
-
-  @override
-  String selectedCount(int count) {
-    return '$count selecionados';
-  }
-
-  @override
-  String get noOtherRemotesWithButtons =>
-      'Não foram encontrados outros comandos com botões.';
-
-  @override
-  String get sourceRemote => 'Comando origen';
-
-  @override
-  String get searchButtons => 'Pesquisar botões';
-
-  @override
-  String get searchButtonsHint => 'Enc., Volume, Silencio..';
-
-  @override
-  String get selectVisible => 'Selecionar visibles';
-
-  @override
-  String get clearVisible => 'Limpiar visibles';
-
-  @override
-  String protocolNamed(Object name) {
-    return 'Protocolo: $name';
-  }
-
-  @override
   String get rawSignal => 'Bruto';
 
   @override
   String get legacyCode => 'Código antiguo';
-
-  @override
-  String importCount(int count) {
-    return 'Importar $count';
-  }
 
   @override
   String get storagePermissionDeniedLegacy =>
@@ -6189,11 +6143,6 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   }
 
   @override
-  String importedButtonsFromExistingRemotes(int count) {
-    return 'Foram importados $count botão(ões) de controles existentes.';
-  }
-
-  @override
   String get editButtonSettingsSubtitle =>
       'Cambiar etiqueta, sinal e configurações avanzados';
 
@@ -6238,9 +6187,6 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   @override
   String get layoutCompactDescription =>
       'Compacto: grade clássica 4x (apenas ícones/texto).';
-
-  @override
-  String get importFromRemotes => 'Importar de controles';
 
   @override
   String get addButton => 'Adicionar botão';
@@ -6525,48 +6471,10 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get failedToReadFile => 'Não se pudo leer o arquivo.';
 
   @override
-  String get importFromExistingRemotesTitle =>
-      'Importar de controles existentes';
-
-  @override
-  String selectedCount(int count) {
-    return '$count selecionados';
-  }
-
-  @override
-  String get noOtherRemotesWithButtons =>
-      'Nenhum outro controle com botões foi encontrado.';
-
-  @override
-  String get sourceRemote => 'controle origen';
-
-  @override
-  String get searchButtons => 'pesquisar botões';
-
-  @override
-  String get searchButtonsHint => 'Enc., Volume, Silencio..';
-
-  @override
-  String get selectVisible => 'Selecionar visibles';
-
-  @override
-  String get clearVisible => 'Limpiar visibles';
-
-  @override
-  String protocolNamed(Object name) {
-    return 'Protocolo: $name';
-  }
-
-  @override
   String get rawSignal => 'Bruto';
 
   @override
   String get legacyCode => 'Código antiguo';
-
-  @override
-  String importCount(int count) {
-    return 'Importar $count';
-  }
 
   @override
   String get storagePermissionDeniedLegacy =>

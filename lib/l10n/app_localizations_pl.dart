@@ -1497,19 +1497,6 @@ class AppLocalizationsPl extends AppLocalizations {
   }
 
   @override
-  String importedButtonsFromExistingRemotes(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count przycisków',
-      many: '$count przycisków',
-      few: '$count przyciski',
-      one: '$count przycisk',
-    );
-    return 'Zaimportowano $_temp0 z istniejących pilotów.';
-  }
-
-  @override
   String get editButtonSettingsSubtitle =>
       'Change etykieta, signal, i advanced ustawienia';
 
@@ -1552,9 +1539,6 @@ class AppLocalizationsPl extends AppLocalizations {
   @override
   String get layoutCompactDescription =>
       'Kompaktowy: klasyczna siatka 4× (tylko ikony/tekst).';
-
-  @override
-  String get importFromRemotes => 'Import z pilotów';
 
   @override
   String get addButton => 'Dodaj przycisk';
@@ -1836,47 +1820,10 @@ class AppLocalizationsPl extends AppLocalizations {
   String get failedToReadFile => 'Nie udało się odczytać pliku.';
 
   @override
-  String get importFromExistingRemotesTitle => 'Import z istniejących pilotów';
-
-  @override
-  String selectedCount(int count) {
-    return 'Wybrano $count';
-  }
-
-  @override
-  String get noOtherRemotesWithButtons =>
-      'Nie znaleziono innych pilotów z przyciskami.';
-
-  @override
-  String get sourceRemote => 'Pilot źródłowy';
-
-  @override
-  String get searchButtons => 'Szukaj przycisków';
-
-  @override
-  String get searchButtonsHint => 'zasilanie, głośność, mute...';
-
-  @override
-  String get selectVisible => 'Wybierz widoczne';
-
-  @override
-  String get clearVisible => 'Wyczyść widoczne';
-
-  @override
-  String protocolNamed(Object name) {
-    return 'Protokół: $name';
-  }
-
-  @override
   String get rawSignal => 'Raw';
 
   @override
   String get legacyCode => 'Legacy kod';
-
-  @override
-  String importCount(int count) {
-    return 'Import $count';
-  }
 
   @override
   String get storagePermissionDeniedLegacy =>
