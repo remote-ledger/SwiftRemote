@@ -66,6 +66,7 @@ void main() {
     WidgetTester tester, {
     String artifactText = '{"not": "a remote"}',
     int artifactStatus = 200,
+    bool offerCreate = false,
   }) async {
     SharedPreferences.setMockInitialValues(<String, Object>{});
     requests = 0;
@@ -83,6 +84,7 @@ void main() {
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         home: RemoteLedgerScreen(
+          offerCreate: offerCreate,
           ledgerService: service,
           storeService: GitHubStoreService(
             client: MockClient((request) async {
@@ -225,6 +227,52 @@ void main() {
       expect(find.byTooltip(tooltip), findsNothing, reason: tooltip);
     }
     expect(find.text('remote-ledger/remote-ledger.github.io'), findsNothing);
+  });
+
+  testWidgets('it offers no way to create a remote unless asked',
+      (tester) async {
+    await openStore(tester);
+    expect(find.text('Create remote'), findsNothing);
+    expect(find.byType(OutlinedButton), findsNothing);
+  });
+
+  testWidgets('Create remote closes the page with true, and Back with nothing',
+      (tester) async {
+    SharedPreferences.setMockInitialValues(<String, Object>{});
+    Object? result = 'not closed yet';
+    await tester.pumpWidget(
+      MaterialApp(
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+        home: Builder(
+          builder: (context) => TextButton(
+            onPressed: () async {
+              result = await Navigator.of(context).push<bool>(
+                MaterialPageRoute(
+                  builder: (_) => const RemoteLedgerScreen(offerCreate: true),
+                ),
+              );
+            },
+            child: const Text('open'),
+          ),
+        ),
+      ),
+    );
+
+    await tester.tap(find.text('open'));
+    await tester.pumpAndSettle();
+    expect(find.text('Import a remote'), findsOneWidget);
+    expect(find.text('Create remote'), findsOneWidget);
+
+    await tester.tap(find.text('Create remote'));
+    await tester.pumpAndSettle();
+    expect(result, isTrue);
+
+    await tester.tap(find.text('open'));
+    await tester.pumpAndSettle();
+    await tester.pageBack();
+    await tester.pumpAndSettle();
+    expect(result, isNull);
   });
 
   testWidgets('the screen never names where the remotes come from',

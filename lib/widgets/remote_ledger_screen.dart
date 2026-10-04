@@ -42,8 +42,22 @@ String _describeStoreError(Object error) {
 /// by device, model or maker, or browse its compiled remotes by folder, and
 /// tap a remote to import it as a new remote. There is no way to point it
 /// elsewhere: the repository is fixed in [GitHubStoreService].
+///
+/// This is where adding a remote starts, since most people want one that
+/// already exists. With [offerCreate] the page also offers to start a new
+/// remote instead, and closes with `true` when that is chosen; the caller then
+/// goes on to name it and pick its layout.
 class RemoteLedgerScreen extends StatefulWidget {
-  const RemoteLedgerScreen({super.key, this.ledgerService, this.storeService});
+  const RemoteLedgerScreen({
+    super.key,
+    this.ledgerService,
+    this.storeService,
+    this.offerCreate = false,
+  });
+
+  /// Whether to offer "Create remote" below the search, for a remote that is
+  /// not found. Off where the page is only a place to import from.
+  final bool offerCreate;
 
   /// Where searches get the index. Null uses the network, as the app does;
   /// tests hand in one that serves a fixture.
@@ -483,6 +497,17 @@ class _RemoteLedgerScreenState extends State<RemoteLedgerScreen> {
             ),
           ],
         ),
+        bottomNavigationBar: widget.offerCreate
+            ? SafeArea(
+                minimum: const EdgeInsets.fromLTRB(16, 8, 16, 12),
+                child: OutlinedButton.icon(
+                  onPressed:
+                      _importing ? null : () => Navigator.of(context).pop(true),
+                  icon: const Icon(Icons.add_rounded),
+                  label: Text(context.l10n.createRemoteTitle),
+                ),
+              )
+            : null,
         body: RefreshIndicator(
           onRefresh: () async {
             if (_hasLoadedDirectory) {
