@@ -10,6 +10,7 @@ import 'package:swiftremote/utils/button_label.dart';
 import 'package:swiftremote/utils/ir.dart';
 import 'package:swiftremote/utils/remote.dart';
 import 'package:swiftremote/widgets/global_search_delegate.dart';
+import 'package:swiftremote/widgets/remote_ledger_screen.dart';
 import 'package:swiftremote/widgets/remote_view.dart';
 import 'package:swiftremote/widgets/remote_editor/remote_editor_draft.dart';
 import 'package:swiftremote/widgets/remote_setup_screen.dart';
@@ -351,6 +352,16 @@ class _RemoteListState extends State<RemoteList> {
   Future<void> _addRemote() async {
     if (_reorderMode) _setReorderMode(false);
     try {
+      // Search first: most people want a remote that already exists, and
+      // importing one saves it without more steps. Only "Create remote" goes
+      // on to name it and choose its layout.
+      final bool? createOwn = await Navigator.push<bool>(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const RemoteLedgerScreen(offerCreate: true),
+        ),
+      );
+      if (createOwn != true || !mounted) return;
       final RemoteEditorDraft? setupDraft =
           await Navigator.push<RemoteEditorDraft?>(
         context,
