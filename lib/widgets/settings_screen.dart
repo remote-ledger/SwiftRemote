@@ -20,7 +20,6 @@ import 'package:swiftremote/utils/remotes_io.dart';
 import 'package:swiftremote/app_update/app_update_screen.dart';
 import 'package:swiftremote/widgets/about_screen.dart';
 import 'package:swiftremote/widgets/settings/widgets/section_card.dart';
-import 'package:swiftremote/widgets/universal_power_screen.dart';
 import 'package:swiftremote/widgets/device_controls_screen.dart';
 import 'package:swiftremote/widgets/remote_ledger_screen.dart';
 import 'package:swiftremote/widgets/learning_mode_screen.dart';
@@ -464,8 +463,6 @@ class SettingsScreen extends StatelessWidget {
           _buildDeviceControlsSection(context),
           const SizedBox(height: 10),
           _buildQuickSettingsSection(context),
-          const SizedBox(height: 10),
-          _buildTvKillSection(context),
           const SizedBox(height: 10),
           _buildAboutSection(context),
           const SizedBox(height: 18),
@@ -1353,36 +1350,6 @@ class SettingsScreen extends StatelessWidget {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                       builder: (_) => const QuickSettingsScreen()),
-                );
-              },
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildTvKillSection(BuildContext context) {
-    final theme = Theme.of(context);
-    final cs = theme.colorScheme;
-
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: SectionCard(
-        title: context.l10n.tvKillTitle,
-        subtitle: context.l10n.tvKillSubtitle,
-        leading: Icon(Icons.power_settings_new_rounded, color: cs.primary),
-        child: Column(
-          children: [
-            ListTile(
-              leading: const Icon(Icons.flash_on_rounded),
-              title: Text(context.l10n.openTvKill),
-              subtitle: Text(context.l10n.openTvKillSubtitle),
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                      builder: (_) => const UniversalPowerScreen()),
                 );
               },
             ),

@@ -959,20 +959,6 @@ class AppLocalizationsHi extends AppLocalizations {
   String get configureTilesSubtitle => 'Map टाइलें तक रिमोट बटन';
 
   @override
-  String get tvKillTitle => 'TVKill';
-
-  @override
-  String get tvKillSubtitle =>
-      'स्वामित्व वाले उपकरणों के लिए यूनिवर्सल पावर चक्रण';
-
-  @override
-  String get openTvKill => 'TVKill खोलें';
-
-  @override
-  String get openTvKillSubtitle =>
-      'Cycle पावर कोड (उपयोग करें केवल पर डिवाइस you own)';
-
-  @override
   String get failedToLoadTransmitterSettings =>
       'लोड करें प्रेषक सेटिंग्स. विफल';
 
@@ -2721,101 +2707,6 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get iconPickerCategoryFavorite => 'पसंदीदा';
-
-  @override
-  String get universalPowerTitle => 'यूनिवर्सल पावर';
-
-  @override
-  String get universalPowerRunTab => 'चलाएं';
-
-  @override
-  String get universalPowerUseResponsibly => 'जिम्मेदारी से उपयोग करें';
-
-  @override
-  String get universalPowerConsentBody =>
-      'यूनिवर्सल पावर IR पावर कोड को चक्रित करता है। इसे केवल उन्हीं उपकरणों पर उपयोग करें जिनके आप मालिक हैं या जिन्हें नियंत्रित करते हैं। जैसे ही उपकरण प्रतिक्रिया दे, रोक दें।';
-
-  @override
-  String get universalPowerConsentCheckbox =>
-      'मैं इस डिवाइस का मालिक हूँ या इसे नियंत्रित करता हूँ';
-
-  @override
-  String get universalPowerSetupBody =>
-      'Cycles पावर कोड के लिए आपकी चयनित ब्रांड. रोकें जैसे ही the डिवाइस प्रतिक्रिया देता है.';
-
-  @override
-  String universalPowerLastSent(Object value) {
-    return 'अंतिम भेजा गया: $value';
-  }
-
-  @override
-  String get universalPowerNoCodesFound =>
-      'नहीं पावर कोड मिला. कोशिश broadening the खोजें.';
-
-  @override
-  String get universalPowerUnableToStart => 'Unable तक प्रारंभ.';
-
-  @override
-  String get universalPowerAllBrands => 'सभी ब्रांड (कोई फ़िल्टर नहीं)';
-
-  @override
-  String get universalPowerClearBrandFilter => 'स्पष्ट ब्रांड filter';
-
-  @override
-  String get universalPowerBroadenSearch => 'ज़रूरत हो तो खोज बढ़ाएं';
-
-  @override
-  String get universalPowerBroadenSearchHint =>
-      'यदि कोई power label नहीं मिले, तो अन्य keys शामिल करें।';
-
-  @override
-  String get universalPowerAdditionalPatternsDepth =>
-      'Additional patterns depth';
-
-  @override
-  String get universalPowerDepth1 => 'केवल प्राथमिकता: पावर/OFF';
-
-  @override
-  String get universalPowerDepth2 => 'पावर उपनाम शामिल करें';
-
-  @override
-  String get universalPowerDepth3 => 'द्वितीयक पावर labels शामिल करें';
-
-  @override
-  String get universalPowerDepth4 =>
-      'सभी labels शामिल करें (सबसे कम प्राथमिकता)';
-
-  @override
-  String get universalPowerLoopUntilStopped => 'रोकने तक लूप करें';
-
-  @override
-  String get universalPowerLoopUntilStoppedHint =>
-      'जब तक आप इसे रोकें नहीं, queue को चक्रित करता रहता है।';
-
-  @override
-  String get universalPowerDelayBetweenCodes => 'कोडों के बीच विलंब';
-
-  @override
-  String get universalPowerStart => 'प्रारंभ यूनिवर्सल पावर';
-
-  @override
-  String get universalPowerRunStatus => 'चलाएं status';
-
-  @override
-  String universalPowerProgress(Object value) {
-    return 'Progress: $value';
-  }
-
-  @override
-  String get universalPowerPausedInBackground =>
-      'ऐप पृष्ठभूमि में जाने के कारण रोका गया।';
-
-  @override
-  String get universalPowerSendOneCode => 'भेजें एक कोड';
-
-  @override
-  String get universalPowerStopWhenDeviceResponds =>
-      'जैसे ही डिवाइस प्रतिक्रिया दे, रोक दें।';
 
   @override
   String get iconNamePlay => 'Play';

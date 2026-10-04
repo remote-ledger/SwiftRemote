@@ -14,7 +14,6 @@ import 'package:swiftremote/widgets/ir_finder_screen.dart';
 import 'package:swiftremote/widgets/learning_mode_screen.dart';
 import 'package:swiftremote/widgets/macro_run_screen.dart';
 import 'package:swiftremote/widgets/remote_view.dart';
-import 'package:swiftremote/widgets/universal_power_screen.dart';
 
 class AppShortcutController {
   AppShortcutController._();
@@ -91,16 +90,6 @@ class AppShortcutController {
                 : snapshot.macro!.macroName.trim(),
           ),
         },
-      {
-        'id': _ShortcutAction.universalPower.value,
-        'shortLabel': l10n.universalPowerTitle,
-        'longLabel': _longLabel(
-          l10n.universalPowerTitle,
-          snapshot.universalPower?.brand?.trim().isNotEmpty == true
-              ? snapshot.universalPower!.brand!.trim()
-              : '',
-        ),
-      },
     ];
 
     try {
@@ -206,16 +195,6 @@ class AppShortcutController {
           ),
         );
         break;
-      case _ShortcutAction.universalPower:
-        await navigator.push(
-          MaterialPageRoute(
-            builder: (_) => UniversalPowerScreen(
-              initialBrand: snapshot.universalPower?.brand,
-              initialModel: snapshot.universalPower?.model,
-            ),
-          ),
-        );
-        break;
       case null:
         return;
     }
@@ -271,8 +250,7 @@ enum _ShortcutAction {
   lastRemote('last_remote'),
   irFinder('ir_finder'),
   learningMode('learning_mode'),
-  lastMacro('last_macro'),
-  universalPower('universal_power');
+  lastMacro('last_macro');
 
   final String value;
   const _ShortcutAction(this.value);

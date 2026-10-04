@@ -969,20 +969,6 @@ class AppLocalizationsPt extends AppLocalizations {
   String get configureTilesSubtitle => 'Atribuir mosaicos a botões do comando';
 
   @override
-  String get tvKillTitle => 'TVKill';
-
-  @override
-  String get tvKillSubtitle =>
-      'Ciclo universal de energia para dispositivos próprios';
-
-  @override
-  String get openTvKill => 'Abrir TVKill';
-
-  @override
-  String get openTvKillSubtitle =>
-      'Ciclar códigos de energia (use apenas em dispositivos seus)';
-
-  @override
   String get failedToLoadTransmitterSettings =>
       'Falha ao carregar as definições do emissor.';
 
@@ -2752,100 +2738,6 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get iconPickerCategoryFavorite => 'Favorito';
-
-  @override
-  String get universalPowerTitle => 'Ligado universal';
-
-  @override
-  String get universalPowerRunTab => 'Executar';
-
-  @override
-  String get universalPowerUseResponsibly => 'Úsalo con responsabilidad';
-
-  @override
-  String get universalPowerConsentBody =>
-      'Ligado universal cicla códigos IR de ligado. Úsalo apenas en dispositivos que posees o controlas. Deténlo en cuanto o dispositivo responda.';
-
-  @override
-  String get universalPowerConsentCheckbox => 'Poseo o controlo o dispositivo';
-
-  @override
-  String get universalPowerSetupBody =>
-      'Cicla códigos de ligado para a marca escolhida. Deténlo en cuanto o dispositivo responda.';
-
-  @override
-  String universalPowerLastSent(Object value) {
-    return 'Último enviado: $value';
-  }
-
-  @override
-  String get universalPowerNoCodesFound =>
-      'Não foram encontrados códigos de energia. Tente ampliar a pesquisa.';
-
-  @override
-  String get universalPowerUnableToStart => 'Não se pudo iniciar.';
-
-  @override
-  String get universalPowerAllBrands => 'Todas as marcas (sem filtro)';
-
-  @override
-  String get universalPowerClearBrandFilter => 'Limpiar filtro de marca';
-
-  @override
-  String get universalPowerBroadenSearch => 'Amplía a pesquisa se hace falta';
-
-  @override
-  String get universalPowerBroadenSearchHint =>
-      'Se não forem encontradas etiquetas de energia, inclua outras teclas.';
-
-  @override
-  String get universalPowerAdditionalPatternsDepth =>
-      'Profundidad de patrones extra';
-
-  @override
-  String get universalPowerDepth1 => 'Apenas prioridad: POWER/OFF';
-
-  @override
-  String get universalPowerDepth2 => 'Incluir alias de POWER';
-
-  @override
-  String get universalPowerDepth3 => 'Incluir etiquetas secundarias de ligado';
-
-  @override
-  String get universalPowerDepth4 =>
-      'Incluir todas as etiquetas (menor prioridad)';
-
-  @override
-  String get universalPowerLoopUntilStopped => 'Repetir até parar';
-
-  @override
-  String get universalPowerLoopUntilStoppedHint =>
-      'Continua a percorrer a fila até parar.';
-
-  @override
-  String get universalPowerDelayBetweenCodes => 'Pausa entre códigos';
-
-  @override
-  String get universalPowerStart => 'Iniciar Ligado universal';
-
-  @override
-  String get universalPowerRunStatus => 'Estado de execução';
-
-  @override
-  String universalPowerProgress(Object value) {
-    return 'Progreso: $value';
-  }
-
-  @override
-  String get universalPowerPausedInBackground =>
-      'Em pausa porque a app passou para segundo plano.';
-
-  @override
-  String get universalPowerSendOneCode => 'Enviar um código';
-
-  @override
-  String get universalPowerStopWhenDeviceResponds =>
-      'Deténlo en cuanto o dispositivo responda.';
 
   @override
   String get iconNamePlay => 'Reproduzir';
@@ -5834,20 +5726,6 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get configureTilesSubtitle => 'Atribuir blocos aos botões do controle';
 
   @override
-  String get tvKillTitle => 'TVKill';
-
-  @override
-  String get tvKillSubtitle =>
-      'Ciclo universal de energia para dispositivos seus';
-
-  @override
-  String get openTvKill => 'Abrir TVKill';
-
-  @override
-  String get openTvKillSubtitle =>
-      'Ciclar códigos de energia (use apenas em dispositivos seus)';
-
-  @override
   String get failedToLoadTransmitterSettings =>
       'Falha ao carregar as configurações do emissor.';
 
@@ -7618,101 +7496,6 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get iconPickerCategoryFavorite => 'Favorito';
-
-  @override
-  String get universalPowerTitle => 'conectado universal';
-
-  @override
-  String get universalPowerRunTab => 'Executar';
-
-  @override
-  String get universalPowerUseResponsibly => 'Úsalo con responsabilidad';
-
-  @override
-  String get universalPowerConsentBody =>
-      'conectado universal cicla códigos IR de conectado. Úsalo apenas en dispositivos que posees o controlas. Deténlo en cuanto o dispositivo responda.';
-
-  @override
-  String get universalPowerConsentCheckbox => 'Poseo o controle o dispositivo';
-
-  @override
-  String get universalPowerSetupBody =>
-      'Cicla códigos de conectado para a marca escolhida. Deténlo en cuanto o dispositivo responda.';
-
-  @override
-  String universalPowerLastSent(Object value) {
-    return 'Último enviado: $value';
-  }
-
-  @override
-  String get universalPowerNoCodesFound =>
-      'Nenhum código de energia foi encontrado. Tente ampliar a pesquisa.';
-
-  @override
-  String get universalPowerUnableToStart => 'Não se pudo iniciar.';
-
-  @override
-  String get universalPowerAllBrands => 'Todas as marcas (sem filtro)';
-
-  @override
-  String get universalPowerClearBrandFilter => 'Limpiar filtro de marca';
-
-  @override
-  String get universalPowerBroadenSearch => 'Amplía a pesquisa se hace falta';
-
-  @override
-  String get universalPowerBroadenSearchHint =>
-      'Se nenhuma etiqueta de energia for encontrada, inclua outras teclas.';
-
-  @override
-  String get universalPowerAdditionalPatternsDepth =>
-      'Profundidad de patrones extra';
-
-  @override
-  String get universalPowerDepth1 => 'Apenas prioridad: POWER/OFF';
-
-  @override
-  String get universalPowerDepth2 => 'Incluir alias de POWER';
-
-  @override
-  String get universalPowerDepth3 =>
-      'Incluir etiquetas secundarias de conectado';
-
-  @override
-  String get universalPowerDepth4 =>
-      'Incluir todas as etiquetas (menor prioridad)';
-
-  @override
-  String get universalPowerLoopUntilStopped => 'Repetir até parar';
-
-  @override
-  String get universalPowerLoopUntilStoppedHint =>
-      'Continua percorrendo a fila até você parar.';
-
-  @override
-  String get universalPowerDelayBetweenCodes => 'Pausa entre códigos';
-
-  @override
-  String get universalPowerStart => 'Iniciar conectado universal';
-
-  @override
-  String get universalPowerRunStatus => 'Estado de execução';
-
-  @override
-  String universalPowerProgress(Object value) {
-    return 'Progreso: $value';
-  }
-
-  @override
-  String get universalPowerPausedInBackground =>
-      'Pausado porque o app foi para segundo plano.';
-
-  @override
-  String get universalPowerSendOneCode => 'Enviar um código';
-
-  @override
-  String get universalPowerStopWhenDeviceResponds =>
-      'Deténlo en cuanto o dispositivo responda.';
 
   @override
   String get iconNamePlay => 'Reproduzir';

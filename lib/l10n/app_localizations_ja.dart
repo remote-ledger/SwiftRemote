@@ -922,18 +922,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String get configureTilesSubtitle => 'タイルにリモコンボタンを割当';
 
   @override
-  String get tvKillTitle => 'TVKill';
-
-  @override
-  String get tvKillSubtitle => '所有デバイス向けの電源コード巡回';
-
-  @override
-  String get openTvKill => 'TVKillを開く';
-
-  @override
-  String get openTvKillSubtitle => '電源コードを巡回 所有デバイスのみで使用';
-
-  @override
   String get failedToLoadTransmitterSettings => '送信機設定の読み込みに失敗しました。';
 
   @override
@@ -2631,93 +2619,6 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get iconPickerCategoryFavorite => 'お気に入り';
-
-  @override
-  String get universalPowerTitle => 'ユニバーサル電源';
-
-  @override
-  String get universalPowerRunTab => '実行';
-
-  @override
-  String get universalPowerUseResponsibly => '責任を持って使用';
-
-  @override
-  String get universalPowerConsentBody =>
-      'ユニバーサル電源はIR電源コードを順に送信します。所有または管理するデバイスのみに使ってください。反応したらすぐ停止してください。';
-
-  @override
-  String get universalPowerConsentCheckbox => 'このデバイスを所有または管理しています';
-
-  @override
-  String get universalPowerSetupBody =>
-      '選択したブランドの電源コードを順に送信します。デバイスが反応したらすぐ停止してください。';
-
-  @override
-  String universalPowerLastSent(Object value) {
-    return '最後に送信: $value';
-  }
-
-  @override
-  String get universalPowerNoCodesFound => '電源コードが見つかりません。検索範囲を広げてください。';
-
-  @override
-  String get universalPowerUnableToStart => '開始できません';
-
-  @override
-  String get universalPowerAllBrands => '全ブランド フィルタなし';
-
-  @override
-  String get universalPowerClearBrandFilter => 'ブランドフィルタを解除';
-
-  @override
-  String get universalPowerBroadenSearch => '必要なら検索を広げる';
-
-  @override
-  String get universalPowerBroadenSearchHint => '電源ラベルが見つからない場合は 他のキーも含めてください。';
-
-  @override
-  String get universalPowerAdditionalPatternsDepth => '追加パターン深度';
-
-  @override
-  String get universalPowerDepth1 => '優先のみ POWER OFF';
-
-  @override
-  String get universalPowerDepth2 => 'POWERの別名を含める';
-
-  @override
-  String get universalPowerDepth3 => '副次的な電源ラベルを含める';
-
-  @override
-  String get universalPowerDepth4 => 'すべてのラベルを含める 最低優先';
-
-  @override
-  String get universalPowerLoopUntilStopped => '停止までループ';
-
-  @override
-  String get universalPowerLoopUntilStoppedHint => '停止するまでキューを巡回し続けます。';
-
-  @override
-  String get universalPowerDelayBetweenCodes => 'コード間の待機';
-
-  @override
-  String get universalPowerStart => 'ユニバーサル電源を開始';
-
-  @override
-  String get universalPowerRunStatus => '実行状態';
-
-  @override
-  String universalPowerProgress(Object value) {
-    return '進捗: $value';
-  }
-
-  @override
-  String get universalPowerPausedInBackground => 'アプリがバックグラウンドに入ったため一時停止しました。';
-
-  @override
-  String get universalPowerSendOneCode => 'コードを1つ送信';
-
-  @override
-  String get universalPowerStopWhenDeviceResponds => 'デバイスが反応したらすぐ停止';
 
   @override
   String get iconNamePlay => '再生';

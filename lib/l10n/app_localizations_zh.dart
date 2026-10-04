@@ -900,18 +900,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get configureTilesSubtitle => '将磁贴映射到遥控器按钮';
 
   @override
-  String get tvKillTitle => 'TVKill';
-
-  @override
-  String get tvKillSubtitle => '对自有设备进行通用电源循环';
-
-  @override
-  String get openTvKill => '打开 TVKill';
-
-  @override
-  String get openTvKillSubtitle => '循环发送电源码 仅用于你拥有的设备';
-
-  @override
   String get failedToLoadTransmitterSettings => '加载发射器设置失败。';
 
   @override
@@ -2580,92 +2568,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get iconPickerCategoryFavorite => '收藏';
-
-  @override
-  String get universalPowerTitle => '通用电源';
-
-  @override
-  String get universalPowerRunTab => '运行';
-
-  @override
-  String get universalPowerUseResponsibly => '请谨慎使用';
-
-  @override
-  String get universalPowerConsentBody =>
-      '通用电源会循环发送红外电源码。仅可用于你拥有或控制的设备。设备有反应后请立即停止。';
-
-  @override
-  String get universalPowerConsentCheckbox => '我拥有或控制该设备';
-
-  @override
-  String get universalPowerSetupBody => '为所选品牌循环发送电源码。设备有反应后请立即停止。';
-
-  @override
-  String universalPowerLastSent(Object value) {
-    return '上次发送 $value';
-  }
-
-  @override
-  String get universalPowerNoCodesFound => '未找到电源码。请尝试扩大搜索范围。';
-
-  @override
-  String get universalPowerUnableToStart => '无法启动。';
-
-  @override
-  String get universalPowerAllBrands => '所有品牌 不筛选';
-
-  @override
-  String get universalPowerClearBrandFilter => '清除品牌筛选';
-
-  @override
-  String get universalPowerBroadenSearch => '必要时扩大搜索范围';
-
-  @override
-  String get universalPowerBroadenSearchHint => '如果未找到电源标签，请包含其他按键。';
-
-  @override
-  String get universalPowerAdditionalPatternsDepth => '附加模式深度';
-
-  @override
-  String get universalPowerDepth1 => '仅优先级 POWER OFF';
-
-  @override
-  String get universalPowerDepth2 => '包含 POWER 别名';
-
-  @override
-  String get universalPowerDepth3 => '包含次级电源标签';
-
-  @override
-  String get universalPowerDepth4 => '包含所有标签 最低优先级';
-
-  @override
-  String get universalPowerLoopUntilStopped => '循环直到停止';
-
-  @override
-  String get universalPowerLoopUntilStoppedHint => '会持续循环队列，直到你停止。';
-
-  @override
-  String get universalPowerDelayBetweenCodes => '代码之间的延迟';
-
-  @override
-  String get universalPowerStart => '开始通用电源';
-
-  @override
-  String get universalPowerRunStatus => '运行状态';
-
-  @override
-  String universalPowerProgress(Object value) {
-    return '进度 $value';
-  }
-
-  @override
-  String get universalPowerPausedInBackground => '因应用切到后台而暂停。';
-
-  @override
-  String get universalPowerSendOneCode => '发送一个代码';
-
-  @override
-  String get universalPowerStopWhenDeviceResponds => '设备有反应后请立即停止。';
 
   @override
   String get iconNamePlay => '播放';

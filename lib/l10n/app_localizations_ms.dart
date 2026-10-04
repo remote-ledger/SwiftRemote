@@ -956,20 +956,6 @@ class AppLocalizationsMs extends AppLocalizations {
   String get configureTilesSubtitle => 'Petakan jubin ke butang remote';
 
   @override
-  String get tvKillTitle => 'TVKill';
-
-  @override
-  String get tvKillSubtitle =>
-      'Perputaran daya universal untuk peranti milik Anda';
-
-  @override
-  String get openTvKill => 'Buka TVKill';
-
-  @override
-  String get openTvKillSubtitle =>
-      'Putar kod daya (gunakan hanya pada peranti milik Anda)';
-
-  @override
   String get failedToLoadTransmitterSettings =>
       'Gagal memuat tetapan pemancar.';
 
@@ -2722,99 +2708,6 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get iconPickerCategoryFavorite => 'Favorit';
-
-  @override
-  String get universalPowerTitle => 'Universal Daya';
-
-  @override
-  String get universalPowerRunTab => 'Jalankan';
-
-  @override
-  String get universalPowerUseResponsibly => 'Gunakan responsibly';
-
-  @override
-  String get universalPowerConsentBody =>
-      'Kuasa Sejagat mengitar kod kuasa IR. Guna hanya pada peranti yang anda miliki atau kawal. Hentikan sebaik sahaja peranti memberi respons.';
-
-  @override
-  String get universalPowerConsentCheckbox =>
-      'Saya memiliki atau mengendalikan peranti';
-
-  @override
-  String get universalPowerSetupBody =>
-      'Memutar kod daya untuk jenama terpilih. Hentikan segera saat peranti merespons.';
-
-  @override
-  String universalPowerLastSent(Object value) {
-    return 'Terakhir dihantar: $value';
-  }
-
-  @override
-  String get universalPowerNoCodesFound =>
-      'Tiada kod daya ditemui. Cuba perluas pencarian.';
-
-  @override
-  String get universalPowerUnableToStart => 'Tidak dapat memula.';
-
-  @override
-  String get universalPowerAllBrands => 'Semua brands (tiada filter)';
-
-  @override
-  String get universalPowerClearBrandFilter => 'Clear jenama filter';
-
-  @override
-  String get universalPowerBroadenSearch => 'Perluas pencarian bila perlu';
-
-  @override
-  String get universalPowerBroadenSearchHint =>
-      'Jika tiada label kuasa ditemui, sertakan butang lain.';
-
-  @override
-  String get universalPowerAdditionalPatternsDepth => 'Kedalaman pola tambahan';
-
-  @override
-  String get universalPowerDepth1 => 'Hanya prioritas: POWER/OFF';
-
-  @override
-  String get universalPowerDepth2 => 'Sertakan alias POWER';
-
-  @override
-  String get universalPowerDepth3 => 'Include secondary daya labels';
-
-  @override
-  String get universalPowerDepth4 => 'Include semua labels (lowest priority)';
-
-  @override
-  String get universalPowerLoopUntilStopped => 'Loop sampai dihentikan';
-
-  @override
-  String get universalPowerLoopUntilStoppedHint =>
-      'Terus memutar antrean sampai Anda menghentikannya.';
-
-  @override
-  String get universalPowerDelayBetweenCodes => 'Jeda between codes';
-
-  @override
-  String get universalPowerStart => 'Mula Universal Daya';
-
-  @override
-  String get universalPowerRunStatus => 'Status jalan';
-
-  @override
-  String universalPowerProgress(Object value) {
-    return 'Progres: $value';
-  }
-
-  @override
-  String get universalPowerPausedInBackground =>
-      'Dijeda karena aplikasi dipindah ke latar belakang.';
-
-  @override
-  String get universalPowerSendOneCode => 'Kirim one kod';
-
-  @override
-  String get universalPowerStopWhenDeviceResponds =>
-      'Hentikan segera saat peranti merespons.';
 
   @override
   String get iconNamePlay => 'Play';

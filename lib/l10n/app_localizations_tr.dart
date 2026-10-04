@@ -959,20 +959,6 @@ class AppLocalizationsTr extends AppLocalizations {
   String get configureTilesSubtitle => 'Döşemeleri kumanda düğmelerine eşleyin';
 
   @override
-  String get tvKillTitle => 'TVKill';
-
-  @override
-  String get tvKillSubtitle =>
-      'Sahip olduğunuz cihazlar için evrensel güç döngüsü';
-
-  @override
-  String get openTvKill => 'Aç TVKill';
-
-  @override
-  String get openTvKillSubtitle =>
-      'Güç kodlarını döngüye alın (yalnızca size ait cihazlarda kullanın)';
-
-  @override
   String get failedToLoadTransmitterSettings =>
       'Başarısız to load verici settings.';
 
@@ -2720,100 +2706,6 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get iconPickerCategoryFavorite => 'Favori';
-
-  @override
-  String get universalPowerTitle => 'Universal Güç';
-
-  @override
-  String get universalPowerRunTab => 'Çalıştır';
-
-  @override
-  String get universalPowerUseResponsibly => 'Sorumlu kullanın';
-
-  @override
-  String get universalPowerConsentBody =>
-      'Evrensel Güç, IR güç kodlarını döngüye alır. Bunu yalnızca sahip olduğunuz veya kontrol ettiğiniz cihazlarda kullanın. Cihaz yanıt verir vermez durdurun.';
-
-  @override
-  String get universalPowerConsentCheckbox =>
-      'Cihazın sahibiyim veya kontrol ediyorum';
-
-  @override
-  String get universalPowerSetupBody =>
-      'Seçili markanız için güç kodlarını döngüye alır. Cihaz yanıt verir vermez durdurun.';
-
-  @override
-  String universalPowerLastSent(Object value) {
-    return 'Son gönderilen: $value';
-  }
-
-  @override
-  String get universalPowerNoCodesFound =>
-      'Güç kodu bulunamadı. Aramayı genişletmeyi deneyin.';
-
-  @override
-  String get universalPowerUnableToStart => 'Başlatılamıyor.';
-
-  @override
-  String get universalPowerAllBrands => 'Tüm markalar (filtresiz)';
-
-  @override
-  String get universalPowerClearBrandFilter => 'Marka filtresini temizle';
-
-  @override
-  String get universalPowerBroadenSearch => 'Gerekirse aramayı genişletin';
-
-  @override
-  String get universalPowerBroadenSearchHint =>
-      'Güç etiketleri bulunamazsa diğer tuşları da dahil edin.';
-
-  @override
-  String get universalPowerAdditionalPatternsDepth => 'Ek desen derinliği';
-
-  @override
-  String get universalPowerDepth1 => 'Yalnızca öncelik: POWER/OFF';
-
-  @override
-  String get universalPowerDepth2 => 'POWER takma adlarını dahil et';
-
-  @override
-  String get universalPowerDepth3 => 'İkincil güç etiketlerini dahil et';
-
-  @override
-  String get universalPowerDepth4 =>
-      'Tüm etiketleri dahil et (en düşük öncelik)';
-
-  @override
-  String get universalPowerLoopUntilStopped => 'Durdurulana kadar döngü';
-
-  @override
-  String get universalPowerLoopUntilStoppedHint =>
-      'Kuyruğu siz durdurana kadar döngüde tutar.';
-
-  @override
-  String get universalPowerDelayBetweenCodes => 'Delay between codes';
-
-  @override
-  String get universalPowerStart => 'Başlat Universal Güç';
-
-  @override
-  String get universalPowerRunStatus => 'Çalıştır status';
-
-  @override
-  String universalPowerProgress(Object value) {
-    return 'Progress: $value';
-  }
-
-  @override
-  String get universalPowerPausedInBackground =>
-      'Uygulama arka plana alındığı için duraklatıldı.';
-
-  @override
-  String get universalPowerSendOneCode => 'Gönder one kod';
-
-  @override
-  String get universalPowerStopWhenDeviceResponds =>
-      'Cihaz yanıt verir vermez durdurun.';
 
   @override
   String get iconNamePlay => 'Oynat';

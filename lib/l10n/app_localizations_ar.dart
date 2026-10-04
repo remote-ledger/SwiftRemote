@@ -947,19 +947,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get configureTilesSubtitle => 'اربط المربعات بأزرار جهاز التحكم';
 
   @override
-  String get tvKillTitle => 'TVKill';
-
-  @override
-  String get tvKillSubtitle => 'Universal power cycling for owned أجهزة';
-
-  @override
-  String get openTvKill => 'فتح TVKill';
-
-  @override
-  String get openTvKillSubtitle =>
-      'Cycle power codes (use only on أجهزة you own)';
-
-  @override
   String get failedToLoadTransmitterSettings =>
       'فشل إلى تحميل transmitter settings.';
 
@@ -2698,98 +2685,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get iconPickerCategoryFavorite => 'مفضل';
-
-  @override
-  String get universalPowerTitle => 'Universal تشغيل';
-
-  @override
-  String get universalPowerRunTab => 'تشغيل';
-
-  @override
-  String get universalPowerUseResponsibly => 'Use responsibly';
-
-  @override
-  String get universalPowerConsentBody =>
-      'يقوم Universal Power بتدوير أكواد الطاقة عبر IR. استخدمه فقط مع الأجهزة التي تملكها أو تتحكم بها. توقف فور استجابة الجهاز.';
-
-  @override
-  String get universalPowerConsentCheckbox => 'أنا أملك الجهاز أو أتحكم به';
-
-  @override
-  String get universalPowerSetupBody =>
-      'يدوّر أكواد الطاقة للعلامة المحددة. توقف فور استجابة الجهاز.';
-
-  @override
-  String universalPowerLastSent(Object value) {
-    return 'Last sent: $value';
-  }
-
-  @override
-  String get universalPowerNoCodesFound =>
-      'لم يتم العثور على أكواد طاقة. جرّب توسيع البحث.';
-
-  @override
-  String get universalPowerUnableToStart => 'Unable إلى start.';
-
-  @override
-  String get universalPowerAllBrands => 'الكل brands (no filter)';
-
-  @override
-  String get universalPowerClearBrandFilter => 'مسح عامل تصفية العلامة';
-
-  @override
-  String get universalPowerBroadenSearch => 'وسّع البحث عند الحاجة';
-
-  @override
-  String get universalPowerBroadenSearchHint =>
-      'If no power labels are موجود, include other keys.';
-
-  @override
-  String get universalPowerAdditionalPatternsDepth =>
-      'Additional patterns depth';
-
-  @override
-  String get universalPowerDepth1 => 'Priority only: POWER/OFF';
-
-  @override
-  String get universalPowerDepth2 => 'Include POWER aliases';
-
-  @override
-  String get universalPowerDepth3 => 'Include secondary power labels';
-
-  @override
-  String get universalPowerDepth4 => 'Include all labels (lowest priority)';
-
-  @override
-  String get universalPowerLoopUntilStopped => 'Loop until stopped';
-
-  @override
-  String get universalPowerLoopUntilStoppedHint =>
-      'يستمر في تدوير الطابور حتى توقفه.';
-
-  @override
-  String get universalPowerDelayBetweenCodes => 'تأخير between codes';
-
-  @override
-  String get universalPowerStart => 'بدء Universal تشغيل';
-
-  @override
-  String get universalPowerRunStatus => 'تشغيل status';
-
-  @override
-  String universalPowerProgress(Object value) {
-    return 'التقدم: $value';
-  }
-
-  @override
-  String get universalPowerPausedInBackground =>
-      'تم الإيقاف المؤقت لأن التطبيق انتقل إلى الخلفية.';
-
-  @override
-  String get universalPowerSendOneCode => 'إرسال one code';
-
-  @override
-  String get universalPowerStopWhenDeviceResponds => 'توقف فور استجابة الجهاز.';
 
   @override
   String get iconNamePlay => 'تشغيل';
@@ -5749,19 +5644,6 @@ class AppLocalizationsArEg extends AppLocalizationsAr {
   String get configureTilesSubtitle => 'اربط المربعات بأزرار جهاز التحكم';
 
   @override
-  String get tvKillTitle => 'TVKill';
-
-  @override
-  String get tvKillSubtitle => 'Universal power cycling for owned أجهزة';
-
-  @override
-  String get openTvKill => 'فتح TVKill';
-
-  @override
-  String get openTvKillSubtitle =>
-      'Cycle power codes (use only on أجهزة you own)';
-
-  @override
   String get failedToLoadTransmitterSettings =>
       'فشل إلى تحميل transmitter settings.';
 
@@ -7500,98 +7382,6 @@ class AppLocalizationsArEg extends AppLocalizationsAr {
 
   @override
   String get iconPickerCategoryFavorite => 'مفضل';
-
-  @override
-  String get universalPowerTitle => 'Universal تشغيل';
-
-  @override
-  String get universalPowerRunTab => 'تشغيل';
-
-  @override
-  String get universalPowerUseResponsibly => 'Use responsibly';
-
-  @override
-  String get universalPowerConsentBody =>
-      'يقوم Universal Power بتدوير أكواد الطاقة عبر IR. استخدمه فقط مع الأجهزة التي تملكها أو تتحكم بها. توقف فور استجابة الجهاز.';
-
-  @override
-  String get universalPowerConsentCheckbox => 'أنا أملك الجهاز أو أتحكم به';
-
-  @override
-  String get universalPowerSetupBody =>
-      'يدوّر أكواد الطاقة للعلامة المحددة. توقف فور استجابة الجهاز.';
-
-  @override
-  String universalPowerLastSent(Object value) {
-    return 'Last sent: $value';
-  }
-
-  @override
-  String get universalPowerNoCodesFound =>
-      'لم يتم العثور على أكواد طاقة. جرّب توسيع البحث.';
-
-  @override
-  String get universalPowerUnableToStart => 'Unable إلى start.';
-
-  @override
-  String get universalPowerAllBrands => 'الكل brands (no filter)';
-
-  @override
-  String get universalPowerClearBrandFilter => 'مسح عامل تصفية العلامة';
-
-  @override
-  String get universalPowerBroadenSearch => 'وسّع البحث عند الحاجة';
-
-  @override
-  String get universalPowerBroadenSearchHint =>
-      'If no power labels are موجود, include other keys.';
-
-  @override
-  String get universalPowerAdditionalPatternsDepth =>
-      'Additional patterns depth';
-
-  @override
-  String get universalPowerDepth1 => 'Priority only: POWER/OFF';
-
-  @override
-  String get universalPowerDepth2 => 'Include POWER aliases';
-
-  @override
-  String get universalPowerDepth3 => 'Include secondary power labels';
-
-  @override
-  String get universalPowerDepth4 => 'Include all labels (lowest priority)';
-
-  @override
-  String get universalPowerLoopUntilStopped => 'Loop until stopped';
-
-  @override
-  String get universalPowerLoopUntilStoppedHint =>
-      'يستمر في تدوير الطابور حتى توقفه.';
-
-  @override
-  String get universalPowerDelayBetweenCodes => 'تأخير between codes';
-
-  @override
-  String get universalPowerStart => 'بدء Universal تشغيل';
-
-  @override
-  String get universalPowerRunStatus => 'تشغيل status';
-
-  @override
-  String universalPowerProgress(Object value) {
-    return 'التقدم: $value';
-  }
-
-  @override
-  String get universalPowerPausedInBackground =>
-      'تم الإيقاف المؤقت لأن التطبيق انتقل إلى الخلفية.';
-
-  @override
-  String get universalPowerSendOneCode => 'إرسال one code';
-
-  @override
-  String get universalPowerStopWhenDeviceResponds => 'توقف فور استجابة الجهاز.';
 
   @override
   String get iconNamePlay => 'تشغيل';

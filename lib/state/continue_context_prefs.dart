@@ -18,7 +18,6 @@ class ContinueContextsPrefs {
   static const String _remoteKey = 'continue.last_remote.v1';
   static const String _macroKey = 'continue.last_macro.v1';
   static const String _irFinderKey = 'continue.last_ir_finder_hit.v1';
-  static const String _universalPowerKey = 'continue.last_universal_power.v1';
 
   static Future<ContinueContextsSnapshot> load() async {
     final prefs = await SharedPreferences.getInstance();
@@ -26,8 +25,6 @@ class ContinueContextsPrefs {
       remote: _decodeRemote(prefs.getString(_remoteKey)),
       macro: _decodeMacro(prefs.getString(_macroKey)),
       irFinderHit: _decodeIrFinderHit(prefs.getString(_irFinderKey)),
-      universalPower:
-          _decodeUniversalPower(prefs.getString(_universalPowerKey)),
     );
   }
 
@@ -88,31 +85,6 @@ class ContinueContextsPrefs {
     notifyContinueContextsChanged();
   }
 
-  static Future<void> saveLastUniversalPower({
-    required String? brand,
-    required String? model,
-  }) async {
-    final String? cleanBrand = brand?.trim();
-    final String? cleanModel = model?.trim();
-    if ((cleanBrand == null || cleanBrand.isEmpty) &&
-        (cleanModel == null || cleanModel.isEmpty)) {
-      return;
-    }
-
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString(
-      _universalPowerKey,
-      jsonEncode(
-        LastUniversalPowerContext(
-          brand: cleanBrand,
-          model: cleanModel,
-          savedAt: DateTime.now(),
-        ).toJson(),
-      ),
-    );
-    notifyContinueContextsChanged();
-  }
-
   static LastRemoteContext? _decodeRemote(String? raw) {
     if (raw == null || raw.trim().isEmpty) return null;
     try {
@@ -146,37 +118,20 @@ class ContinueContextsPrefs {
     }
   }
 
-  static LastUniversalPowerContext? _decodeUniversalPower(String? raw) {
-    if (raw == null || raw.trim().isEmpty) return null;
-    try {
-      final decoded = jsonDecode(raw);
-      if (decoded is! Map) return null;
-      return LastUniversalPowerContext.fromJson(
-          decoded.cast<String, dynamic>());
-    } catch (_) {
-      return null;
-    }
-  }
 }
 
 class ContinueContextsSnapshot {
   final LastRemoteContext? remote;
   final LastMacroContext? macro;
   final LastIrFinderHitContext? irFinderHit;
-  final LastUniversalPowerContext? universalPower;
 
   const ContinueContextsSnapshot({
     required this.remote,
     required this.macro,
     required this.irFinderHit,
-    required this.universalPower,
   });
 
-  bool get isEmpty =>
-      remote == null &&
-      macro == null &&
-      irFinderHit == null &&
-      universalPower == null;
+  bool get isEmpty => remote == null && macro == null && irFinderHit == null;
 }
 
 class LastRemoteContext {
@@ -298,33 +253,6 @@ class LastIrFinderHitContext {
       remoteId: json['remoteId'] is int
           ? json['remoteId'] as int
           : int.tryParse('${json['remoteId'] ?? ''}'),
-      savedAt: DateTime.tryParse((json['savedAt'] as String?) ?? '') ??
-          DateTime.now(),
-    );
-  }
-}
-
-class LastUniversalPowerContext {
-  final String? brand;
-  final String? model;
-  final DateTime savedAt;
-
-  const LastUniversalPowerContext({
-    required this.brand,
-    required this.model,
-    required this.savedAt,
-  });
-
-  Map<String, dynamic> toJson() => <String, dynamic>{
-        'brand': brand,
-        'model': model,
-        'savedAt': savedAt.toIso8601String(),
-      };
-
-  factory LastUniversalPowerContext.fromJson(Map<String, dynamic> json) {
-    return LastUniversalPowerContext(
-      brand: (json['brand'] as String?)?.trim(),
-      model: (json['model'] as String?)?.trim(),
       savedAt: DateTime.tryParse((json['savedAt'] as String?) ?? '') ??
           DateTime.now(),
     );

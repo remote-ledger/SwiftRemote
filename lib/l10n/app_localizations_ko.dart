@@ -928,18 +928,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String get configureTilesSubtitle => '타일을 리모컨 버튼에 매핑';
 
   @override
-  String get tvKillTitle => 'TVKill';
-
-  @override
-  String get tvKillSubtitle => '소유한 기기의 전원 코드를 순환';
-
-  @override
-  String get openTvKill => 'TVKill 열기';
-
-  @override
-  String get openTvKillSubtitle => '전원 코드를 순환합니다(소유한 기기에서만 사용)';
-
-  @override
   String get failedToLoadTransmitterSettings => '송신기 설정을 불러오지 못했습니다.';
 
   @override
@@ -2641,93 +2629,6 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get iconPickerCategoryFavorite => '즐겨찾기';
-
-  @override
-  String get universalPowerTitle => '범용 전원';
-
-  @override
-  String get universalPowerRunTab => '실행';
-
-  @override
-  String get universalPowerUseResponsibly => '책임 있게 사용';
-
-  @override
-  String get universalPowerConsentBody =>
-      '범용 전원은 IR 전원 코드를 순환합니다. 소유하거나 제어하는 기기에서만 사용하세요. 기기가 반응하면 즉시 중지하세요.';
-
-  @override
-  String get universalPowerConsentCheckbox => '나는 이 기기를 소유하거나 제어합니다';
-
-  @override
-  String get universalPowerSetupBody =>
-      '선택한 브랜드의 전원 코드를 순환합니다. 기기가 반응하면 즉시 중지하세요.';
-
-  @override
-  String universalPowerLastSent(Object value) {
-    return '마지막 전송: $value';
-  }
-
-  @override
-  String get universalPowerNoCodesFound => '전원 코드를 찾지 못했습니다. 검색 범위를 넓혀 보세요.';
-
-  @override
-  String get universalPowerUnableToStart => '시작할 수 없습니다.';
-
-  @override
-  String get universalPowerAllBrands => '모든 브랜드(필터 없음)';
-
-  @override
-  String get universalPowerClearBrandFilter => '브랜드 필터 지우기';
-
-  @override
-  String get universalPowerBroadenSearch => '필요하면 검색 범위 넓히기';
-
-  @override
-  String get universalPowerBroadenSearchHint => '전원 레이블이 없으면 다른 키도 포함하세요.';
-
-  @override
-  String get universalPowerAdditionalPatternsDepth => '추가 패턴 깊이';
-
-  @override
-  String get universalPowerDepth1 => '우선순위만: POWER/OFF';
-
-  @override
-  String get universalPowerDepth2 => 'POWER 별칭 포함';
-
-  @override
-  String get universalPowerDepth3 => '보조 전원 레이블 포함';
-
-  @override
-  String get universalPowerDepth4 => '모든 레이블 포함(가장 낮은 우선순위)';
-
-  @override
-  String get universalPowerLoopUntilStopped => '반복 까지 중지됨';
-
-  @override
-  String get universalPowerLoopUntilStoppedHint => '중지할 때까지 대기열을 계속 순환합니다';
-
-  @override
-  String get universalPowerDelayBetweenCodes => '코드 사이 지연';
-
-  @override
-  String get universalPowerStart => '시작 범용 전원';
-
-  @override
-  String get universalPowerRunStatus => '실행 상태';
-
-  @override
-  String universalPowerProgress(Object value) {
-    return '진행률: $value';
-  }
-
-  @override
-  String get universalPowerPausedInBackground => '앱이 백그라운드로 가서 일시정지되었습니다.';
-
-  @override
-  String get universalPowerSendOneCode => '전송 하나 코드';
-
-  @override
-  String get universalPowerStopWhenDeviceResponds => '기기가 반응하면 즉시 중지하세요.';
 
   @override
   String get iconNamePlay => '재생';

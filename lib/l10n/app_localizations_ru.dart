@@ -961,20 +961,6 @@ class AppLocalizationsRu extends AppLocalizations {
   String get configureTilesSubtitle => 'Привязать плитки к кнопкам пульта';
 
   @override
-  String get tvKillTitle => 'TVKill';
-
-  @override
-  String get tvKillSubtitle =>
-      'Перебор универсальных кодов питания для своих устройств';
-
-  @override
-  String get openTvKill => 'Открыть TVKill';
-
-  @override
-  String get openTvKillSubtitle =>
-      'Перебор кодов питания, только для своих устройств';
-
-  @override
   String get failedToLoadTransmitterSettings =>
       'Не удалось загрузить настройки передатчика.';
 
@@ -2729,99 +2715,6 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get iconPickerCategoryFavorite => 'Избранное';
-
-  @override
-  String get universalPowerTitle => 'Универсальное питание';
-
-  @override
-  String get universalPowerRunTab => 'Запуск';
-
-  @override
-  String get universalPowerUseResponsibly => 'Используйте ответственно';
-
-  @override
-  String get universalPowerConsentBody =>
-      'Универсальное питание перебирает ИК-коды питания. Используйте его только на устройствах, которыми владеете или управляете. Остановите сразу, как только устройство ответит.';
-
-  @override
-  String get universalPowerConsentCheckbox =>
-      'Я владею устройством или управляю им';
-
-  @override
-  String get universalPowerSetupBody =>
-      'Перебирает коды питания для выбранного бренда. Остановите, как только устройство ответит.';
-
-  @override
-  String universalPowerLastSent(Object value) {
-    return 'Последнее отправленное: $value';
-  }
-
-  @override
-  String get universalPowerNoCodesFound =>
-      'Коды питания не найдены. Попробуйте расширить поиск.';
-
-  @override
-  String get universalPowerUnableToStart => 'Не удалось запустить.';
-
-  @override
-  String get universalPowerAllBrands => 'Все бренды, без фильтра';
-
-  @override
-  String get universalPowerClearBrandFilter => 'Очистить фильтр бренда';
-
-  @override
-  String get universalPowerBroadenSearch => 'При необходимости расширьте поиск';
-
-  @override
-  String get universalPowerBroadenSearchHint =>
-      'Если метки питания не найдены, включите другие ключи.';
-
-  @override
-  String get universalPowerAdditionalPatternsDepth => 'Глубина доп. паттернов';
-
-  @override
-  String get universalPowerDepth1 => 'Только приоритет: POWER/OFF';
-
-  @override
-  String get universalPowerDepth2 => 'Включить алиасы POWER';
-
-  @override
-  String get universalPowerDepth3 => 'Включить вторичные метки питания';
-
-  @override
-  String get universalPowerDepth4 => 'Включить все метки, низший приоритет';
-
-  @override
-  String get universalPowerLoopUntilStopped => 'Цикл до остановки';
-
-  @override
-  String get universalPowerLoopUntilStoppedHint =>
-      'Продолжает крутить очередь, пока вы не остановите.';
-
-  @override
-  String get universalPowerDelayBetweenCodes => 'Задержка между кодами';
-
-  @override
-  String get universalPowerStart => 'Запустить универсальное питание';
-
-  @override
-  String get universalPowerRunStatus => 'Статус запуска';
-
-  @override
-  String universalPowerProgress(Object value) {
-    return 'Прогресс: $value';
-  }
-
-  @override
-  String get universalPowerPausedInBackground =>
-      'Приостановлено, так как приложение ушло в фон.';
-
-  @override
-  String get universalPowerSendOneCode => 'Отправить один код';
-
-  @override
-  String get universalPowerStopWhenDeviceResponds =>
-      'Остановить, как только устройство ответит.';
 
   @override
   String get iconNamePlay => 'Пуск';
