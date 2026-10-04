@@ -2070,7 +2070,7 @@
   "learningModeSaveFailed": "Không thể lưu nút đã học.",
   "remoteSetupIntro": "Hãy chọn tên và bố cục trước. Bạn có thể thêm nút sau.",
   "startWithDefault": "Bắt đầu với mặc định",
-  "browseGithubStore": "Mở GitHub Store",
+  "browseRemoteLedger": "Mở Remote Ledger",
   "addFirstButton": "Thêm nút đầu tiên",
   "moreWaysToStart": "Thêm cách để bắt đầu",
   "unsavedRemoteSetupChangesMessage": "Hủy thiết lập điều khiển mới này và rời khỏi màn hình?",

@@ -2070,7 +2070,7 @@
   "learningModeSaveFailed": "لا يمكن حفظ الزر الذي تم التعرف عليه.",
   "remoteSetupIntro": "اختر الاسم والتخطيط أولاً. يمكنك إضافة الأزرار بعد ذلك.",
   "startWithDefault": "ابدأ بالإعدادات الافتراضية",
-  "browseGithubStore": "تصفح متجر GitHub",
+  "browseRemoteLedger": "تصفح Remote Ledger",
   "addFirstButton": "أضف الزر الأول",
   "moreWaysToStart": "المزيد من طرق البدء",
   "unsavedRemoteSetupChangesMessage": "هل تريد تجاهل إعداد هذا الريموت الجديد ومغادرة هذه الشاشة؟",

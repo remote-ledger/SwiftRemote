@@ -2,7 +2,7 @@
 /// (github.com/remote-ledger/remote-ledger.github.io) becomes the burst
 /// pattern the transmitter plays.
 ///
-/// Two places need it: a Remote Ledger file imported from the GitHub Store
+/// Two places need it: a Remote Ledger file imported from the Remote Ledger screen
 /// (`remotes_io.dart`), and the IR code database the ledger publishes for the
 /// protocols whose database codes the app's own decoders read differently from
 /// the wire (`lib/ledger_db/`). Both follow the one rule below, so a key

@@ -4217,7 +4217,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get startWithDefault => '使用默认设置开始';
 
   @override
-  String get browseGithubStore => '浏览 GitHub 商店';
+  String get browseRemoteLedger => '浏览 Remote Ledger';
 
   @override
   String get addFirstButton => '添加第一个按钮';

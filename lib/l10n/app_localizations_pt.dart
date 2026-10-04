@@ -4407,7 +4407,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get startWithDefault => 'Começar com o padrão';
 
   @override
-  String get browseGithubStore => 'Explorar GitHub Store';
+  String get browseRemoteLedger => 'Explorar Remote Ledger';
 
   @override
   String get addFirstButton => 'Adicionar primeiro botão';
@@ -9276,7 +9276,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get startWithDefault => 'Começar com o padrão';
 
   @override
-  String get browseGithubStore => 'Explorar GitHub Store';
+  String get browseRemoteLedger => 'Explorar Remote Ledger';
 
   @override
   String get addFirstButton => 'Adicionar primeiro botão';

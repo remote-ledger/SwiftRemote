@@ -2070,7 +2070,7 @@
   "learningModeSaveFailed": "Hindi ma-save ang button na natutunan.",
   "remoteSetupIntro": "Pumili muna ng pangalan at layout. Maaari kang magdagdag ng mga button pagkatapos.",
   "startWithDefault": "Magsimula sa default",
-  "browseGithubStore": "Buksan ang GitHub Store",
+  "browseRemoteLedger": "Buksan ang Remote Ledger",
   "addFirstButton": "Idagdag ang unang button",
   "moreWaysToStart": "Iba pang paraan para magsimula",
   "unsavedRemoteSetupChangesMessage": "Itapon ang bagong setup ng remote na ito at umalis sa screen na ito?",

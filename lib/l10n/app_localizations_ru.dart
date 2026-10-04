@@ -4382,7 +4382,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get startWithDefault => 'Начать с настроек по умолчанию';
 
   @override
-  String get browseGithubStore => 'Открыть GitHub Store';
+  String get browseRemoteLedger => 'Открыть Remote Ledger';
 
   @override
   String get addFirstButton => 'Добавить первую кнопку';

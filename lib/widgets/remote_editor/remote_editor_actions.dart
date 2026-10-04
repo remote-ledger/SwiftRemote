@@ -3,7 +3,7 @@ import 'package:swiftremote/l10n/l10n.dart';
 import 'package:swiftremote/utils/remote.dart';
 import 'package:swiftremote/widgets/create_button.dart';
 import 'package:swiftremote/widgets/existing_remote_button_import_sheet.dart';
-import 'package:swiftremote/widgets/github_store_screen.dart';
+import 'package:swiftremote/widgets/remote_ledger_screen.dart';
 import 'package:uuid/uuid.dart';
 
 class RemoteEditorActions {
@@ -99,10 +99,10 @@ class RemoteEditorActions {
     }
   }
 
-  static Future<void> browseGithubStore(BuildContext context) async {
+  static Future<void> browseRemoteLedger(BuildContext context) async {
     try {
       await Navigator.of(context).push<void>(
-        MaterialPageRoute(builder: (_) => const GitHubStoreScreen()),
+        MaterialPageRoute(builder: (_) => const RemoteLedgerScreen()),
       );
     } catch (_) {}
   }

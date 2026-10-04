@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:swiftremote/ir/ir_protocol_registry.dart';
 import 'package:swiftremote/l10n/icon_picker_names.dart';
@@ -100,8 +99,8 @@ class _RemoteStudioScreenState extends State<RemoteStudioScreen> {
     _showSnack(context.l10n.importedButtonsFromExistingRemotes(added));
   }
 
-  Future<void> _openGitHubStore() async {
-    await RemoteEditorActions.browseGithubStore(context);
+  Future<void> _openRemoteLedger() async {
+    await RemoteEditorActions.browseRemoteLedger(context);
   }
 
   Future<void> _openAddSheet() async {
@@ -119,8 +118,8 @@ class _RemoteStudioScreenState extends State<RemoteStudioScreen> {
       case AddButtonSheetAction.importFromRemotes:
         await _openImportFromExistingRemotes();
         break;
-      case AddButtonSheetAction.browseGithubStore:
-        await _openGitHubStore();
+      case AddButtonSheetAction.browseRemoteLedger:
+        await _openRemoteLedger();
         break;
     }
   }
@@ -562,9 +561,9 @@ class _RemoteStudioScreenState extends State<RemoteStudioScreen> {
               height: compactPhone ? 56 : 60,
               width: double.infinity,
               child: OutlinedButton.icon(
-                onPressed: _openGitHubStore,
-                icon: const FaIcon(FontAwesomeIcons.github, size: 18),
-                label: Text(context.l10n.browseGithubStore),
+                onPressed: _openRemoteLedger,
+                icon: const Icon(Icons.storefront_rounded, size: 18),
+                label: Text(context.l10n.browseRemoteLedger),
               ),
             ),
           ],

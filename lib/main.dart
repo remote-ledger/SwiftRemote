@@ -4,6 +4,7 @@ import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:swiftremote/github_store/legacy_store_prefs.dart';
 import 'package:swiftremote/ledger_db/legacy_db_cleanup.dart';
 import 'package:swiftremote/state/app_locale.dart';
 import 'package:swiftremote/state/app_shortcuts.dart';
@@ -65,6 +66,9 @@ Future<void> main() async {
   // The IR code database is read from the Remote Ledger now; drop the copy of
   // the old bundled one an upgraded install still carries.
   unawaited(removeLegacyIrDatabaseOnce());
+  // Likewise for the repository list and GitHub token of the old store, which
+  // took remotes from any repository and now takes them from Remote Ledger.
+  unawaited(removeLegacyGitHubStorePrefsOnce());
 }
 
 final GlobalKey<NavigatorState> _navKey = GlobalKey<NavigatorState>();

@@ -4272,7 +4272,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get startWithDefault => 'デフォルトで開始';
 
   @override
-  String get browseGithubStore => 'GitHubストアを見る';
+  String get browseRemoteLedger => 'Remote Ledgerを見る';
 
   @override
   String get addFirstButton => '最初のボタンを追加';

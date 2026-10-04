@@ -4415,7 +4415,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get startWithDefault => 'Start met standaardinstellingen';
 
   @override
-  String get browseGithubStore => 'GitHub Store bekijken';
+  String get browseRemoteLedger => 'Remote Ledger bekijken';
 
   @override
   String get addFirstButton => 'Eerste knop toevoegen';

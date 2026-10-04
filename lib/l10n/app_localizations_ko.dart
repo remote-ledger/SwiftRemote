@@ -4282,7 +4282,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get startWithDefault => '기본값으로 시작';
 
   @override
-  String get browseGithubStore => 'GitHub 스토어 보기';
+  String get browseRemoteLedger => 'Remote Ledger 보기';
 
   @override
   String get addFirstButton => '첫 버튼 추가';

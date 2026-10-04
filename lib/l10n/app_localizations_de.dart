@@ -4420,7 +4420,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get startWithDefault => 'Mit Standardwerten starten';
 
   @override
-  String get browseGithubStore => 'GitHub-Store durchsuchen';
+  String get browseRemoteLedger => 'Remote Ledger durchsuchen';
 
   @override
   String get addFirstButton => 'Erste Taste hinzufügen';

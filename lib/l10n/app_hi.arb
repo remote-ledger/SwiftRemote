@@ -2070,7 +2070,7 @@
   "learningModeSaveFailed": "सीखा गया बटन सहेजा नहीं जा सका.",
   "remoteSetupIntro": "पहले नाम और लेआउट चुनें। उसके बाद आप बटन जोड़ सकते हैं।",
   "startWithDefault": "डिफ़ॉल्ट से शुरू करें",
-  "browseGithubStore": "GitHub स्टोर देखें",
+  "browseRemoteLedger": "Remote Ledger देखें",
   "addFirstButton": "पहला बटन जोड़ें",
   "moreWaysToStart": "शुरू करने के और तरीके",
   "unsavedRemoteSetupChangesMessage": "क्या इस नए रिमोट सेटअप को छोड़कर इस स्क्रीन से बाहर निकलना है?",

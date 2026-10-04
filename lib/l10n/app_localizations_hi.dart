@@ -4375,7 +4375,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get startWithDefault => 'डिफ़ॉल्ट से शुरू करें';
 
   @override
-  String get browseGithubStore => 'GitHub स्टोर देखें';
+  String get browseRemoteLedger => 'Remote Ledger देखें';
 
   @override
   String get addFirstButton => 'पहला बटन जोड़ें';

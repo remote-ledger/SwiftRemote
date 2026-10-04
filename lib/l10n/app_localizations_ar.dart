@@ -4351,7 +4351,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get startWithDefault => 'ابدأ بالإعدادات الافتراضية';
 
   @override
-  String get browseGithubStore => 'تصفح متجر GitHub';
+  String get browseRemoteLedger => 'تصفح Remote Ledger';
 
   @override
   String get addFirstButton => 'أضف الزر الأول';
@@ -9153,7 +9153,7 @@ class AppLocalizationsArEg extends AppLocalizationsAr {
   String get startWithDefault => 'ابدأ بالإعدادات الافتراضية';
 
   @override
-  String get browseGithubStore => 'تصفح متجر GitHub';
+  String get browseRemoteLedger => 'تصفح Remote Ledger';
 
   @override
   String get addFirstButton => 'أضف الزر الأول';

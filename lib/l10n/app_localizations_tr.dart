@@ -4375,7 +4375,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get startWithDefault => 'Varsayılanla başla';
 
   @override
-  String get browseGithubStore => 'GitHub Store\'u aç';
+  String get browseRemoteLedger => 'Remote Ledger\'ı aç';
 
   @override
   String get addFirstButton => 'İlk düğmeyi ekle';

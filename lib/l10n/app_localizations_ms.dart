@@ -4379,7 +4379,7 @@ class AppLocalizationsMs extends AppLocalizations {
   String get startWithDefault => 'Mulakan dengan lalai';
 
   @override
-  String get browseGithubStore => 'Semak GitHub Store';
+  String get browseRemoteLedger => 'Semak Remote Ledger';
 
   @override
   String get addFirstButton => 'Tambah butang pertama';

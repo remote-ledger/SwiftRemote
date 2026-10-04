@@ -81,8 +81,8 @@ class _CreateRemoteState extends State<CreateRemote> {
     _showSnack(context.l10n.importedButtonsFromExistingRemotes(added));
   }
 
-  Future<void> _openGitHubStore() async {
-    await RemoteEditorActions.browseGithubStore(context);
+  Future<void> _openRemoteLedger() async {
+    await RemoteEditorActions.browseRemoteLedger(context);
   }
 
   Future<void> _openButtonActions(int index) async {
@@ -449,9 +449,9 @@ class _CreateRemoteState extends State<CreateRemote> {
         ),
         const SizedBox(height: 8),
         FilledButton.tonalIcon(
-          onPressed: _openGitHubStore,
+          onPressed: _openRemoteLedger,
           icon: const Icon(Icons.storefront_rounded),
-          label: const Text('Browse GitHub Store'),
+          label: Text(context.l10n.browseRemoteLedger),
         ),
       ],
     );
