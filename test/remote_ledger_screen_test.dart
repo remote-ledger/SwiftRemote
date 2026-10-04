@@ -36,6 +36,7 @@ final String indexBody = jsonEncode(<String, Object>{
 /// What the contents API answers for each folder the tests open.
 const String _contents =
     '/repos/remote-ledger/remote-ledger.github.io/contents';
+const String artifactPath = 'build/pronto/sony/RMT-B118P.json';
 final Map<String, List<Object>> folders = <String, List<Object>>{
   '$_contents/build/pronto': <Object>[
     <String, Object>{
@@ -59,7 +60,13 @@ void main() {
   /// Every request the folder browser sends to GitHub, as path and query.
   late List<String> githubRequests;
 
-  Future<void> openStore(WidgetTester tester) async {
+  /// Serves [artifactText] as the contents API's answer for the one remote
+  /// the fixture lists, with [artifactStatus] as the status code.
+  Future<void> openStore(
+    WidgetTester tester, {
+    String artifactText = '{"not": "a remote"}',
+    int artifactStatus = 200,
+  }) async {
     SharedPreferences.setMockInitialValues(<String, Object>{});
     requests = 0;
     githubRequests = <String>[];
@@ -80,6 +87,17 @@ void main() {
           storeService: GitHubStoreService(
             client: MockClient((request) async {
               githubRequests.add(request.url.toString());
+              if (request.url.path == '$_contents/$artifactPath') {
+                return http.Response(
+                  jsonEncode(<String, Object>{
+                    'name': 'RMT-B118P.json',
+                    'size': artifactText.length,
+                    'encoding': 'base64',
+                    'content': base64.encode(utf8.encode(artifactText)),
+                  }),
+                  artifactStatus,
+                );
+              }
               return http.Response(
                 jsonEncode(folders[request.url.path] ?? <Object>[]),
                 200,
@@ -145,6 +163,49 @@ void main() {
 
     expect(find.text('Sony RMT-B118P'), findsNothing);
     expect(find.text('Load Remote Ledger'), findsOneWidget);
+  });
+
+  testWidgets(
+      'a remote that cannot be imported is explained on the spot, not previewed',
+      (tester) async {
+    await openStore(tester);
+    await search(tester, 'bdp s185');
+
+    await tester.tap(find.text('Sony RMT-B118P'));
+    await tester.pump();
+    await tester.pump();
+
+    expect(find.textContaining('no importable IR buttons'), findsOneWidget);
+    // There is no second screen: the file is not shown, and nothing asks
+    // whether to create a remote or add to one.
+    expect(find.text('File preview'), findsNothing);
+    expect(find.text('Create new remote'), findsNothing);
+    expect(find.text('Add buttons to existing remote'), findsNothing);
+    expect(find.widgetWithText(TextField, searchHint), findsOneWidget);
+    expect(find.byType(LinearProgressIndicator), findsNothing);
+  });
+
+  testWidgets('a file in the folder browser imports without a preview too',
+      (tester) async {
+    await openStore(tester, artifactStatus: 404);
+    await tester.tap(find.text('Load Remote Ledger'));
+    await tester.pump();
+    await tester.pump();
+    await tester.tap(find.text('sony'));
+    await tester.pump();
+    await tester.pump();
+
+    await tester.tap(find.text('RMT-B118P.json'));
+    await tester.pump();
+    await tester.pump();
+
+    expect(
+      find.text('Import failed: Repository, branch, folder, or file not found.'),
+      findsOneWidget,
+    );
+    expect(find.text('File preview'), findsNothing);
+    expect(find.text('/build/pronto/sony'), findsOneWidget);
+    expect(find.byType(LinearProgressIndicator), findsNothing);
   });
 
   testWidgets('there is nowhere to choose another source', (tester) async {

@@ -689,7 +689,7 @@ class SettingsScreen extends StatelessWidget {
               leading: const Icon(Icons.storefront_outlined),
               title: const Text('Open Remote Ledger'),
               subtitle: const Text(
-                'Preview a remote, then import it as a new remote or into an existing one.',
+                'Search or browse Remote Ledger and import a remote as a new remote with one tap.',
               ),
               trailing: const Icon(Icons.chevron_right_rounded),
               onTap: () {

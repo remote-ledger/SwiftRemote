@@ -156,7 +156,7 @@ Updating from a build that bundled the database deletes the unused copy of it, a
 ## Remotes Management
 
 - Import remotes: JSON backups and Flipper Zero `.ir` files (Settings > Remotes > Import remotes).
-- Remote Ledger: Search and browse the ledger, preview a remote, and import it directly into your remote library.
+- Remote Ledger: Search and browse the ledger and import a remote into your remote library with one tap.
 - Export remotes: Save a JSON backup to Downloads.
 - Restore Demo Remote: Reset to a built‑in demo configuration.
 - Delete all remotes: Clear the entire list from this device.
@@ -268,8 +268,8 @@ Notes:
 ### Using Remote Ledger
 1. Open Settings > Remote Ledger.
 2. The screen opens on [Remote Ledger](https://remote-ledger.github.io/)'s compiled remotes, the only source the app reads remotes from. Search by the device you want to control, the remote's model or the maker (`BDP-S185`, `dx3 pro`, `sony`); spaces and punctuation are ignored, as on the ledger's site. Or load the repository to browse it by manufacturer and model. Nothing is fetched until you search or load.
-3. Open a remote to preview how it will be parsed. A Remote Ledger remote imports each key's most trusted code, repeated as many times as its protocol needs.
-4. Import it into a new remote or add compatible buttons to an existing remote.
+3. Tap a remote to import it as a new remote. A Remote Ledger remote imports each key's most trusted code, repeated as many times as its protocol needs; there is no file preview step.
+4. Choose Open remote to use it now, or Keep browsing. To move some of its buttons into another remote, use the remote editor's import from existing remotes.
 
 ### Using the Signal Tester (IR Finder)
 1. Open the "Signal Tester" tab.
