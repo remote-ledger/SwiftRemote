@@ -1444,11 +1444,6 @@ class AppLocalizationsTh extends AppLocalizations {
   }
 
   @override
-  String importedButtonsFromExistingRemotes(int count) {
-    return 'นำเข้า $count ปุ่มจากรีโมตที่มีอยู่แล้ว';
-  }
-
-  @override
   String get editButtonSettingsSubtitle =>
       'เปลี่ยนชื่อ สัญญาณ และการตั้งค่าขั้นสูง';
 
@@ -1489,9 +1484,6 @@ class AppLocalizationsTh extends AppLocalizations {
   @override
   String get layoutCompactDescription =>
       'กะทัดรัด: กริด 4× แบบคลาสสิก ไอคอนและข้อความเท่านั้น';
-
-  @override
-  String get importFromRemotes => 'นำเข้าจากรีโมต';
 
   @override
   String get addButton => 'เพิ่มปุ่ม';
@@ -1773,46 +1765,10 @@ class AppLocalizationsTh extends AppLocalizations {
   String get failedToReadFile => 'ไม่สำเร็จในการread ไฟล์.';
 
   @override
-  String get importFromExistingRemotesTitle => 'นำเข้าจากรีโมตที่มีอยู่';
-
-  @override
-  String selectedCount(int count) {
-    return 'เลือกแล้ว $count';
-  }
-
-  @override
-  String get noOtherRemotesWithButtons => 'ไม่มี other รีโมต with ปุ่มs found.';
-
-  @override
-  String get sourceRemote => 'รีโมตต้นทาง';
-
-  @override
-  String get searchButtons => 'ค้นหาปุ่ม';
-
-  @override
-  String get searchButtonsHint => 'Power, Volume, Mute...';
-
-  @override
-  String get selectVisible => 'เลือกที่แสดง';
-
-  @override
-  String get clearVisible => 'ล้างที่มองเห็น';
-
-  @override
-  String protocolNamed(Object name) {
-    return 'โปรโตคอล: $name';
-  }
-
-  @override
   String get rawSignal => 'Raw';
 
   @override
   String get legacyCode => 'โค้ดแบบเก่า';
-
-  @override
-  String importCount(int count) {
-    return 'นำเข้า $count';
-  }
 
   @override
   String get storagePermissionDeniedLegacy =>

@@ -436,14 +436,6 @@
       }
     }
   },
-  "importedButtonsFromExistingRemotes": "已从现有遥控器导入 {count} 个按钮。",
-  "@importedButtonsFromExistingRemotes": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "editButtonSettingsSubtitle": "更改标签、信号和高级设置",
   "createButtonCopySubtitle": "创建此按钮的副本",
   "duplicateAndEditButtonSubtitle": "创建副本并立即编辑",
@@ -457,7 +449,6 @@
   "layoutStyle": "布局样式",
   "layoutWideDescription": "宽布局 2 列按钮并显示更多详情 推荐。",
   "layoutCompactDescription": "紧凑布局 经典 4× 网格 仅图标 文本。",
-  "importFromRemotes": "从遥控器导入",
   "addButton": "添加按钮",
   "noButtonsYet": "还没有按钮",
   "createRemoteEmptyStateDescription": "添加第一个按钮后，长按它可进行编辑或移除。",
@@ -612,37 +603,8 @@
   "macrosExportedToDownloads": "宏已导出到下载目录。",
   "failedToExportMacros": "导出宏失败。",
   "failedToReadFile": "读取文件失败。",
-  "importFromExistingRemotesTitle": "从现有遥控器导入",
-  "selectedCount": "已选择 {count}",
-  "@selectedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "noOtherRemotesWithButtons": "未找到其他带按钮的遥控器。",
-  "sourceRemote": "来源遥控器",
-  "searchButtons": "搜索按钮",
-  "searchButtonsHint": "电源、音量、静音…",
-  "selectVisible": "选择可见项",
-  "clearVisible": "清除可见项",
-  "protocolNamed": "协议 {name}",
-  "@protocolNamed": {
-    "placeholders": {
-      "name": {}
-    }
-  },
   "rawSignal": "原始",
   "legacyCode": "旧代码",
-  "importCount": "导入 {count}",
-  "@importCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "storagePermissionDeniedLegacy": "存储权限被拒 某些旧版 Android 设备需要此权限。",
   "backupExportedToDownloads": "备份已导出到下载目录。",
   "failedToExport": "导出失败 {error}",

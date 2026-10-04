@@ -436,14 +436,6 @@
       }
     }
   },
-  "importedButtonsFromExistingRemotes": "Importati {count} pulsanti dai telecomandi esistenti.",
-  "@importedButtonsFromExistingRemotes": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "editButtonSettingsSubtitle": "Cambia etichetta, segnale e impostazioni avanzate",
   "createButtonCopySubtitle": "Crea una copia di questo pulsante",
   "duplicateAndEditButtonSubtitle": "Crea una copia e modificala subito",
@@ -457,7 +449,6 @@
   "layoutStyle": "Stile layout",
   "layoutWideDescription": "Ampio. Pulsanti a 2 colonne con dettagli extra consigliato.",
   "layoutCompactDescription": "Compatto. Griglia classica 4× solo icone e testo.",
-  "importFromRemotes": "Importa dai telecomandi",
   "addButton": "Aggiungi pulsante",
   "noButtonsYet": "Nessun pulsante ancora",
   "createRemoteEmptyStateDescription": "Aggiungi il primo pulsante, poi tienilo premuto per opzioni modifica o rimozione.",
@@ -612,37 +603,8 @@
   "macrosExportedToDownloads": "Macro esportate in Download.",
   "failedToExportMacros": "Esportazione macro fallita.",
   "failedToReadFile": "Lettura file fallita.",
-  "importFromExistingRemotesTitle": "Importa da telecomandi esistenti",
-  "selectedCount": "{count} selezionati",
-  "@selectedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "noOtherRemotesWithButtons": "Nessun altro telecomando con pulsanti trovato.",
-  "sourceRemote": "Telecomando sorgente",
-  "searchButtons": "Cerca pulsanti",
-  "searchButtonsHint": "Accensione, Volume, Muto...",
-  "selectVisible": "Seleziona visibili",
-  "clearVisible": "Pulisci visibili",
-  "protocolNamed": "Protocollo: {name}",
-  "@protocolNamed": {
-    "placeholders": {
-      "name": {}
-    }
-  },
   "rawSignal": "Raw",
   "legacyCode": "Codice legacy",
-  "importCount": "Importa {count}",
-  "@importCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "storagePermissionDeniedLegacy": "Permesso archiviazione negato, necessario su alcuni vecchi dispositivi Android.",
   "backupExportedToDownloads": "Backup esportato in Download.",
   "failedToExport": "Esportazione fallita: {error}",

@@ -262,14 +262,14 @@ Notes:
 
 ### Creating Custom Remotes
 1. Open the Remotes tab.
-2. Create a remote and add buttons using protocol encoders, raw patterns, an imported ready-made remote, or buttons imported from existing remotes.
+2. Create a remote and add buttons using protocol encoders, raw patterns, or an imported ready-made remote.
 3. Save and test your buttons from the Remote view.
 
 ### Importing a ready-made remote
 1. Open the Remotes tab and create or edit a remote, then tap Import a remote (also in the Add button sheet).
 2. The screen opens on the app's collection of ready-made remotes. Search by the device you want to control, the remote's model or the maker (`BDP-S185`, `dx3 pro`, `sony`); spaces and punctuation are ignored. Or choose Browse by folder to browse by manufacturer and model. Nothing is fetched until you search or browse.
 3. Tap a remote to import it as a new remote. It imports each key's most trusted code, repeated as many times as its protocol needs; there is no file preview step.
-4. Choose Open remote to use it now, or Keep browsing. To move some of its buttons into another remote, use the remote editor's import from existing remotes.
+4. Choose Open remote to use it now, or Keep browsing.
 
 ### Using the Signal Tester (IR Finder)
 1. Open the "Signal Tester" tab.

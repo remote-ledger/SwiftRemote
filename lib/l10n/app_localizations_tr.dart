@@ -1459,11 +1459,6 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String importedButtonsFromExistingRemotes(int count) {
-    return 'Mevcut kumandalardan $count düğme içe aktarıldı.';
-  }
-
-  @override
   String get editButtonSettingsSubtitle =>
       'Etiketi, sinyali ve gelişmiş ayarları değiştirin';
 
@@ -1506,9 +1501,6 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get layoutCompactDescription =>
       'Compact: classic 4× grid (icons/text yalnızca).';
-
-  @override
-  String get importFromRemotes => 'Kumandalardan içe aktar';
 
   @override
   String get addButton => 'Ekle düğme';
@@ -1791,46 +1783,10 @@ class AppLocalizationsTr extends AppLocalizations {
   String get failedToReadFile => 'Dosya okunamadı.';
 
   @override
-  String get importFromExistingRemotesTitle => 'Mevcut Kumandalardan İçe Aktar';
-
-  @override
-  String selectedCount(int count) {
-    return '$count seçili';
-  }
-
-  @override
-  String get noOtherRemotesWithButtons => 'Düğmeli başka kumanda bulunamadı.';
-
-  @override
-  String get sourceRemote => 'Source kumanda';
-
-  @override
-  String get searchButtons => 'Düğmelerde ara';
-
-  @override
-  String get searchButtonsHint => 'Güç, Ses, Sessiz...';
-
-  @override
-  String get selectVisible => 'Seç visible';
-
-  @override
-  String get clearVisible => 'Temizle visible';
-
-  @override
-  String protocolNamed(Object name) {
-    return 'Protokol: $name';
-  }
-
-  @override
   String get rawSignal => 'Raw';
 
   @override
   String get legacyCode => 'Eski kod';
-
-  @override
-  String importCount(int count) {
-    return 'İçe aktar $count';
-  }
 
   @override
   String get storagePermissionDeniedLegacy =>

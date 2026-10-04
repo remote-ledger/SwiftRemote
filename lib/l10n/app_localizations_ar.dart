@@ -1442,11 +1442,6 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String importedButtonsFromExistingRemotes(int count) {
-    return 'تم استيراد $count زر من أجهزة التحكم الموجودة.';
-  }
-
-  @override
   String get editButtonSettingsSubtitle =>
       'غيّر التسمية والإشارة والإعدادات المتقدمة';
 
@@ -1487,9 +1482,6 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get layoutCompactDescription =>
       'Compact: classic 4× grid (icons/text only).';
-
-  @override
-  String get importFromRemotes => 'استيراد من remotes';
 
   @override
   String get addButton => 'إضافة زر';
@@ -1770,48 +1762,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get failedToReadFile => 'فشل إلى read file.';
 
   @override
-  String get importFromExistingRemotesTitle =>
-      'استيراد من Existing أجهزة التحكم';
-
-  @override
-  String selectedCount(int count) {
-    return '$count المحدد';
-  }
-
-  @override
-  String get noOtherRemotesWithButtons =>
-      'لم يتم العثور على أجهزة تحكم أخرى تحتوي على أزرار.';
-
-  @override
-  String get sourceRemote => 'جهاز التحكم المصدر';
-
-  @override
-  String get searchButtons => 'ابحث أزرار';
-
-  @override
-  String get searchButtonsHint => 'تشغيل, الصوت, كتم...';
-
-  @override
-  String get selectVisible => 'اختر visible';
-
-  @override
-  String get clearVisible => 'Clear visible';
-
-  @override
-  String protocolNamed(Object name) {
-    return 'البروتوكول: $name';
-  }
-
-  @override
   String get rawSignal => 'خام';
 
   @override
   String get legacyCode => 'Legacy code';
-
-  @override
-  String importCount(int count) {
-    return 'استيراد $count';
-  }
 
   @override
   String get storagePermissionDeniedLegacy =>
@@ -6098,11 +6052,6 @@ class AppLocalizationsArEg extends AppLocalizationsAr {
   }
 
   @override
-  String importedButtonsFromExistingRemotes(int count) {
-    return 'تم استيراد $count زر من أجهزة التحكم الموجودة.';
-  }
-
-  @override
   String get editButtonSettingsSubtitle =>
       'غيّر التسمية والإشارة والإعدادات المتقدمة';
 
@@ -6143,9 +6092,6 @@ class AppLocalizationsArEg extends AppLocalizationsAr {
   @override
   String get layoutCompactDescription =>
       'Compact: classic 4× grid (icons/text only).';
-
-  @override
-  String get importFromRemotes => 'استيراد من remotes';
 
   @override
   String get addButton => 'إضافة زر';
@@ -6426,48 +6372,10 @@ class AppLocalizationsArEg extends AppLocalizationsAr {
   String get failedToReadFile => 'فشل إلى read file.';
 
   @override
-  String get importFromExistingRemotesTitle =>
-      'استيراد من Existing أجهزة التحكم';
-
-  @override
-  String selectedCount(int count) {
-    return '$count المحدد';
-  }
-
-  @override
-  String get noOtherRemotesWithButtons =>
-      'لم يتم العثور على أجهزة تحكم أخرى تحتوي على أزرار.';
-
-  @override
-  String get sourceRemote => 'جهاز التحكم المصدر';
-
-  @override
-  String get searchButtons => 'ابحث أزرار';
-
-  @override
-  String get searchButtonsHint => 'تشغيل, الصوت, كتم...';
-
-  @override
-  String get selectVisible => 'اختر visible';
-
-  @override
-  String get clearVisible => 'Clear visible';
-
-  @override
-  String protocolNamed(Object name) {
-    return 'البروتوكول: $name';
-  }
-
-  @override
   String get rawSignal => 'خام';
 
   @override
   String get legacyCode => 'Legacy code';
-
-  @override
-  String importCount(int count) {
-    return 'استيراد $count';
-  }
 
   @override
   String get storagePermissionDeniedLegacy =>

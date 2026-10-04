@@ -1450,11 +1450,6 @@ class AppLocalizationsVi extends AppLocalizations {
   }
 
   @override
-  String importedButtonsFromExistingRemotes(int count) {
-    return 'Imported $count nút from existing remotes.';
-  }
-
-  @override
   String get editButtonSettingsSubtitle =>
       'Đổi nhãn, tín hiệu và cài đặt nâng cao';
 
@@ -1497,9 +1492,6 @@ class AppLocalizationsVi extends AppLocalizations {
   @override
   String get layoutCompactDescription =>
       'Gọn: classic 4× grid (icons/text only).';
-
-  @override
-  String get importFromRemotes => 'Nhập từ điều khiển';
 
   @override
   String get addButton => 'Thêm nút';
@@ -1781,47 +1773,10 @@ class AppLocalizationsVi extends AppLocalizations {
   String get failedToReadFile => 'Đọc tệp thất bại.';
 
   @override
-  String get importFromExistingRemotesTitle => 'Nhập từ điều khiển hiện có';
-
-  @override
-  String selectedCount(int count) {
-    return 'Đã chọn $count';
-  }
-
-  @override
-  String get noOtherRemotesWithButtons =>
-      'Không tìm thấy điều khiển nào khác có nút.';
-
-  @override
-  String get sourceRemote => 'Điều khiển nguồn';
-
-  @override
-  String get searchButtons => 'Tìm nút';
-
-  @override
-  String get searchButtonsHint => 'Nguồn, Âm lượng, Tắt tiếng...';
-
-  @override
-  String get selectVisible => 'Chọn hiển thị';
-
-  @override
-  String get clearVisible => 'Xóa hiển thị';
-
-  @override
-  String protocolNamed(Object name) {
-    return 'Giao thức: $name';
-  }
-
-  @override
   String get rawSignal => 'Raw';
 
   @override
   String get legacyCode => 'Mã cũ';
-
-  @override
-  String importCount(int count) {
-    return 'Nhập $count';
-  }
 
   @override
   String get storagePermissionDeniedLegacy =>

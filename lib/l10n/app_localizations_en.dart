@@ -1478,17 +1478,6 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String importedButtonsFromExistingRemotes(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'Imported $count buttons from existing remotes.',
-      one: 'Imported $count button from existing remotes.',
-    );
-    return '$_temp0';
-  }
-
-  @override
   String get editButtonSettingsSubtitle =>
       'Change label, signal, and advanced settings';
 
@@ -1531,9 +1520,6 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get layoutCompactDescription =>
       'Compact: classic 4× grid (icons/text only).';
-
-  @override
-  String get importFromRemotes => 'Import from remotes';
 
   @override
   String get addButton => 'Add button';
@@ -1815,47 +1801,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get failedToReadFile => 'Failed to read file.';
 
   @override
-  String get importFromExistingRemotesTitle => 'Import from Existing Remotes';
-
-  @override
-  String selectedCount(int count) {
-    return '$count selected';
-  }
-
-  @override
-  String get noOtherRemotesWithButtons =>
-      'No other remotes with buttons found.';
-
-  @override
-  String get sourceRemote => 'Source remote';
-
-  @override
-  String get searchButtons => 'Search buttons';
-
-  @override
-  String get searchButtonsHint => 'Power, Volume, Mute...';
-
-  @override
-  String get selectVisible => 'Select visible';
-
-  @override
-  String get clearVisible => 'Clear visible';
-
-  @override
-  String protocolNamed(Object name) {
-    return 'Protocol: $name';
-  }
-
-  @override
   String get rawSignal => 'Raw';
 
   @override
   String get legacyCode => 'Legacy code';
-
-  @override
-  String importCount(int count) {
-    return 'Import $count';
-  }
 
   @override
   String get storagePermissionDeniedLegacy =>

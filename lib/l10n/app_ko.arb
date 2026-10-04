@@ -436,14 +436,6 @@
       }
     }
   },
-  "importedButtonsFromExistingRemotes": "기존 리모컨에서 버튼 {count}개를 가져왔습니다.",
-  "@importedButtonsFromExistingRemotes": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "editButtonSettingsSubtitle": "레이블, 신호 및 고급 설정 변경",
   "createButtonCopySubtitle": "이 버튼의 복사본 만들기",
   "duplicateAndEditButtonSubtitle": "복사본을 만들고 바로 편집",
@@ -457,7 +449,6 @@
   "layoutStyle": "레이아웃 스타일",
   "layoutWideDescription": "와이드: 추가 정보가 있는 2열 버튼(권장).",
   "layoutCompactDescription": "컴팩트: 아이콘/텍스트만 있는 클래식 4× 격자.",
-  "importFromRemotes": "가져오기 에서 리모컨",
   "addButton": "추가 버튼",
   "noButtonsYet": "없음 버튼 아직",
   "createRemoteEmptyStateDescription": "첫 버튼을 추가한 뒤 길게 눌러 편집/제거 옵션을 여세요.",
@@ -612,37 +603,8 @@
   "macrosExportedToDownloads": "매크로를 Downloads로 내보냈습니다.",
   "failedToExportMacros": "내보내기 매크로하지 못했습니다.",
   "failedToReadFile": "파일을 읽지 못했습니다.",
-  "importFromExistingRemotesTitle": "기존 리모컨에서 가져오기",
-  "selectedCount": "{count}개 선택됨",
-  "@selectedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "noOtherRemotesWithButtons": "버튼이 있는 다른 리모컨을 찾지 못했습니다.",
-  "sourceRemote": "소스 리모컨",
-  "searchButtons": "검색 버튼",
-  "searchButtonsHint": "전원, 볼륨, 음소거...",
-  "selectVisible": "선택 보이는",
-  "clearVisible": "지우기 보이는",
-  "protocolNamed": "프로토콜: {name}",
-  "@protocolNamed": {
-    "placeholders": {
-      "name": {}
-    }
-  },
   "rawSignal": "원시 신호",
   "legacyCode": "레거시 코드",
-  "importCount": "{count}개 가져오기",
-  "@importCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "storagePermissionDeniedLegacy": "저장소 권한이 거부되었습니다(일부 구형 Android 기기에서 필요).",
   "backupExportedToDownloads": "백업을 Downloads로 내보냈습니다.",
   "failedToExport": "내보내지 못했습니다: {error}",

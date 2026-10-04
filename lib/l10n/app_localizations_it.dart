@@ -1481,11 +1481,6 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
-  String importedButtonsFromExistingRemotes(int count) {
-    return 'Importati $count pulsanti dai telecomandi esistenti.';
-  }
-
-  @override
   String get editButtonSettingsSubtitle =>
       'Cambia etichetta, segnale e impostazioni avanzate';
 
@@ -1529,9 +1524,6 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get layoutCompactDescription =>
       'Compatto. Griglia classica 4× solo icone e testo.';
-
-  @override
-  String get importFromRemotes => 'Importa dai telecomandi';
 
   @override
   String get addButton => 'Aggiungi pulsante';
@@ -1815,48 +1807,10 @@ class AppLocalizationsIt extends AppLocalizations {
   String get failedToReadFile => 'Lettura file fallita.';
 
   @override
-  String get importFromExistingRemotesTitle =>
-      'Importa da telecomandi esistenti';
-
-  @override
-  String selectedCount(int count) {
-    return '$count selezionati';
-  }
-
-  @override
-  String get noOtherRemotesWithButtons =>
-      'Nessun altro telecomando con pulsanti trovato.';
-
-  @override
-  String get sourceRemote => 'Telecomando sorgente';
-
-  @override
-  String get searchButtons => 'Cerca pulsanti';
-
-  @override
-  String get searchButtonsHint => 'Accensione, Volume, Muto...';
-
-  @override
-  String get selectVisible => 'Seleziona visibili';
-
-  @override
-  String get clearVisible => 'Pulisci visibili';
-
-  @override
-  String protocolNamed(Object name) {
-    return 'Protocollo: $name';
-  }
-
-  @override
   String get rawSignal => 'Raw';
 
   @override
   String get legacyCode => 'Codice legacy';
-
-  @override
-  String importCount(int count) {
-    return 'Importa $count';
-  }
 
   @override
   String get storagePermissionDeniedLegacy =>

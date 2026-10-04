@@ -436,14 +436,6 @@
       }
     }
   },
-  "importedButtonsFromExistingRemotes": "Imported {count} बटन(s) से मौजूदा रिमोट.",
-  "@importedButtonsFromExistingRemotes": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "editButtonSettingsSubtitle": "बदलें लेबल, सिग्नल, और advanced सेटिंग्स",
   "createButtonCopySubtitle": "इस बटन की कॉपी बनाएं",
   "duplicateAndEditButtonSubtitle": "कॉपी बनाएं और तुरंत संपादित करें",
@@ -457,7 +449,6 @@
   "layoutStyle": "लेआउट शैली",
   "layoutWideDescription": "चौड़ी: 2-स्तंभ बटन के साथ अतिरिक्त विवरण (अनुशंसित).",
   "layoutCompactDescription": "कॉम्पैक्ट: क्लासिक 4× ग्रिड (icons/पाठ केवल).",
-  "importFromRemotes": "आयात करें से रिमोट",
   "addButton": "जोड़ें बटन",
   "noButtonsYet": "नहीं बटन yet",
   "createRemoteEmptyStateDescription": "जोड़ें आपकी पहले बटन, फिर लंबा दबाएं it के लिए संपादित करें/हटाएं options.",
@@ -612,37 +603,8 @@
   "macrosExportedToDownloads": "मैक्रो Downloads में निर्यात किए गए।",
   "failedToExportMacros": "निर्यात मैक्रो. विफल",
   "failedToReadFile": "read फ़ाइल. विफल",
-  "importFromExistingRemotesTitle": "आयात करें से मौजूदा रिमोट",
-  "selectedCount": "{count} चयनित",
-  "@selectedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "noOtherRemotesWithButtons": "नहीं अन्य रिमोट के साथ बटन मिला.",
-  "sourceRemote": "स्रोत रिमोट",
-  "searchButtons": "खोजें बटन",
-  "searchButtonsHint": "पावर, आवाज़, म्यूट...",
-  "selectVisible": "दृश्यमान चुनें",
-  "clearVisible": "दृश्यमान साफ करें",
-  "protocolNamed": "प्रोटोकॉल: {name}",
-  "@protocolNamed": {
-    "placeholders": {
-      "name": {}
-    }
-  },
   "rawSignal": "रॉ",
   "legacyCode": "पुराना कोड",
-  "importCount": "आयात करें {count}",
-  "@importCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "storagePermissionDeniedLegacy": "Storage अनुमति अस्वीकृत (कुछ पुराने Android डिवाइस पर आवश्यक)।",
   "backupExportedToDownloads": "बैकअप Downloads में निर्यात किया गया।",
   "failedToExport": "निर्यात: {error} विफल",

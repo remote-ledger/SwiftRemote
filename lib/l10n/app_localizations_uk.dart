@@ -1506,19 +1506,6 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
-  String importedButtonsFromExistingRemotes(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'Імпортовано $count кнопки з наявних пультів.',
-      many: 'Імпортовано $count кнопок з наявних пультів.',
-      few: 'Імпортовано $count кнопки з наявних пультів.',
-      one: 'Імпортовано $count кнопку з наявних пультів.',
-    );
-    return '$_temp0';
-  }
-
-  @override
   String get editButtonSettingsSubtitle =>
       'Змініть мітку, сигнал і розширені налаштування';
 
@@ -1562,9 +1549,6 @@ class AppLocalizationsUk extends AppLocalizations {
   @override
   String get layoutCompactDescription =>
       'Компактний: класична сітка 4× (лише значки/текст).';
-
-  @override
-  String get importFromRemotes => 'Імпорт з пультів';
 
   @override
   String get addButton => 'Додати кнопку';
@@ -1848,47 +1832,10 @@ class AppLocalizationsUk extends AppLocalizations {
   String get failedToReadFile => 'Не вдалося прочитати файл.';
 
   @override
-  String get importFromExistingRemotesTitle => 'Імпортувати з наявних пультів';
-
-  @override
-  String selectedCount(int count) {
-    return 'Вибрано $count';
-  }
-
-  @override
-  String get noOtherRemotesWithButtons =>
-      'Інших пультів з кнопками не знайдено.';
-
-  @override
-  String get sourceRemote => 'Пульт-джерело';
-
-  @override
-  String get searchButtons => 'Кнопки пошуку';
-
-  @override
-  String get searchButtonsHint => 'Живлення, гучність, вимкнення звуку...';
-
-  @override
-  String get selectVisible => 'Виберіть видимий';
-
-  @override
-  String get clearVisible => 'Ясно видно';
-
-  @override
-  String protocolNamed(Object name) {
-    return 'Протокол: $name';
-  }
-
-  @override
   String get rawSignal => 'Сирий';
 
   @override
   String get legacyCode => 'Застарілий код';
-
-  @override
-  String importCount(int count) {
-    return 'Імпортувати $count';
-  }
 
   @override
   String get storagePermissionDeniedLegacy =>

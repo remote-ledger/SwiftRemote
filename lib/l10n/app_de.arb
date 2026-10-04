@@ -452,14 +452,6 @@
       }
     }
   },
-  "importedButtonsFromExistingRemotes": "{count} Taste(n) aus vorhandenen Fernbedienungen importiert.",
-  "@importedButtonsFromExistingRemotes": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "editButtonSettingsSubtitle": "Beschriftung, Signal und erweiterte Einstellungen ändern",
   "createButtonCopySubtitle": "Eine Kopie dieser Taste erstellen",
   "duplicateAndEditButtonSubtitle": "Eine Kopie erstellen und sofort bearbeiten",
@@ -473,7 +465,6 @@
   "layoutStyle": "Layoutstil",
   "layoutWideDescription": "Breit: 2-Spalten-Tasten mit mehr Details empfohlen.",
   "layoutCompactDescription": "Kompakt: klassisches 4× Raster nur Symbole oder Text.",
-  "importFromRemotes": "Aus Fernbedienungen importieren",
   "addButton": "Taste hinzufügen",
   "noButtonsYet": "Noch keine Tasten",
   "createRemoteEmptyStateDescription": "Füge deine erste Taste hinzu und halte sie dann für Bearbeiten oder Entfernen gedrückt.",
@@ -628,37 +619,8 @@
   "macrosExportedToDownloads": "Makros in Downloads exportiert.",
   "failedToExportMacros": "Makros konnten nicht exportiert werden.",
   "failedToReadFile": "Datei konnte nicht gelesen werden.",
-  "importFromExistingRemotesTitle": "Aus vorhandenen Fernbedienungen importieren",
-  "selectedCount": "{count} gewählt",
-  "@selectedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "noOtherRemotesWithButtons": "Keine anderen Fernbedienungen mit Tasten gefunden.",
-  "sourceRemote": "Quell-Fernbedienung",
-  "searchButtons": "Tasten suchen",
-  "searchButtonsHint": "Ein/Aus, Lautstärke, Stumm…",
-  "selectVisible": "Sichtbare wählen",
-  "clearVisible": "Sichtbare leeren",
-  "protocolNamed": "Protokoll: {name}",
-  "@protocolNamed": {
-    "placeholders": {
-      "name": {}
-    }
-  },
   "rawSignal": "Rohsignal",
   "legacyCode": "Alter Code",
-  "importCount": "{count} importieren",
-  "@importCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "storagePermissionDeniedLegacy": "Speicherberechtigung verweigert benötigt auf einigen älteren Android-Geräten.",
   "backupExportedToDownloads": "Sicherung in Downloads exportiert.",
   "failedToExport": "Export fehlgeschlagen: {error}",

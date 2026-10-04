@@ -436,14 +436,6 @@
       }
     }
   },
-  "importedButtonsFromExistingRemotes": "Mevcut kumandalardan {count} düğme içe aktarıldı.",
-  "@importedButtonsFromExistingRemotes": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "editButtonSettingsSubtitle": "Etiketi, sinyali ve gelişmiş ayarları değiştirin",
   "createButtonCopySubtitle": "Bu düğmenin bir kopyasını oluştur",
   "duplicateAndEditButtonSubtitle": "Bir kopya oluştur ve hemen düzenle",
@@ -457,7 +449,6 @@
   "layoutStyle": "Düzen stili",
   "layoutWideDescription": "Geniş: Ek ayrıntılarla 2 sütunlu düğmeler (önerilen).",
   "layoutCompactDescription": "Compact: classic 4× grid (icons/text yalnızca).",
-  "importFromRemotes": "Kumandalardan içe aktar",
   "addButton": "Ekle düğme",
   "noButtonsYet": "Henüz düğme yok",
   "createRemoteEmptyStateDescription": "İlk düğmenizi ekleyin, sonra düzenleme/kaldırma seçenekleri için ona uzun basın.",
@@ -612,37 +603,8 @@
   "macrosExportedToDownloads": "Makrolar İndirilenler'e aktarıldı.",
   "failedToExportMacros": "Başarısız to dışa aktar macros.",
   "failedToReadFile": "Dosya okunamadı.",
-  "importFromExistingRemotesTitle": "Mevcut Kumandalardan İçe Aktar",
-  "selectedCount": "{count} seçili",
-  "@selectedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "noOtherRemotesWithButtons": "Düğmeli başka kumanda bulunamadı.",
-  "sourceRemote": "Source kumanda",
-  "searchButtons": "Düğmelerde ara",
-  "searchButtonsHint": "Güç, Ses, Sessiz...",
-  "selectVisible": "Seç visible",
-  "clearVisible": "Temizle visible",
-  "protocolNamed": "Protokol: {name}",
-  "@protocolNamed": {
-    "placeholders": {
-      "name": {}
-    }
-  },
   "rawSignal": "Raw",
   "legacyCode": "Eski kod",
-  "importCount": "İçe aktar {count}",
-  "@importCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "storagePermissionDeniedLegacy": "Storage izin denied (needed on some older Android cihazlar).",
   "backupExportedToDownloads": "Yedek İndirilenler'e aktarıldı.",
   "failedToExport": "Başarısız to dışa aktar: {error}",

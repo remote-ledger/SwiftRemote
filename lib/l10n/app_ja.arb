@@ -436,14 +436,6 @@
       }
     }
   },
-  "importedButtonsFromExistingRemotes": "既存のリモコンから{count}個のボタンを取り込みました。",
-  "@importedButtonsFromExistingRemotes": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "editButtonSettingsSubtitle": "ラベル 信号 詳細設定を変更",
   "createButtonCopySubtitle": "このボタンの複製を作成",
   "duplicateAndEditButtonSubtitle": "複製を作成してすぐ編集",
@@ -457,7 +449,6 @@
   "layoutStyle": "レイアウト",
   "layoutWideDescription": "ワイド 2列ボタンで詳細も表示 推奨。",
   "layoutCompactDescription": "コンパクト 定番の4×グリッド アイコンまたは文字のみ。",
-  "importFromRemotes": "リモコンから取り込み",
   "addButton": "ボタンを追加",
   "noButtonsYet": "まだボタンがありません",
   "createRemoteEmptyStateDescription": "最初のボタンを追加し その後長押しで編集や削除の操作を使ってください。",
@@ -612,37 +603,8 @@
   "macrosExportedToDownloads": "マクロをDownloadsに書き出しました。",
   "failedToExportMacros": "マクロのエクスポートに失敗しました。",
   "failedToReadFile": "ファイルの読み込みに失敗しました。",
-  "importFromExistingRemotesTitle": "既存のリモコンから取り込み",
-  "selectedCount": "{count} selected",
-  "@selectedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "noOtherRemotesWithButtons": "ボタン付きの他のリモコンが見つかりません。",
-  "sourceRemote": "元のリモコン",
-  "searchButtons": "ボタンを検索",
-  "searchButtonsHint": "電源 音量 ミュート...",
-  "selectVisible": "表示中を選択",
-  "clearVisible": "表示中を解除",
-  "protocolNamed": "プロトコル: {name}",
-  "@protocolNamed": {
-    "placeholders": {
-      "name": {}
-    }
-  },
   "rawSignal": "生",
   "legacyCode": "旧形式コード",
-  "importCount": "{count}件を取り込み",
-  "@importCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "storagePermissionDeniedLegacy": "ストレージ権限が拒否されました 一部の古いAndroid端末では必要です。",
   "backupExportedToDownloads": "バックアップをDownloadsに書き出しました。",
   "failedToExport": "エクスポートに失敗しました: {error}",

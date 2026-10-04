@@ -65,22 +65,6 @@ class _CreateRemoteState extends State<CreateRemote> {
     });
   }
 
-  Future<void> _openImportFromExistingRemotes() async {
-    final imported = await RemoteEditorActions.importFromExistingRemotes(
-      context,
-      existingButtons: remote.buttons,
-      currentRemoteId: remote.id,
-    );
-    if (imported == null || imported.isEmpty || !mounted) return;
-
-    final int before = remote.buttons.length;
-    setState(() {
-      remote.buttons.addAll(imported);
-    });
-    final int added = remote.buttons.length - before;
-    _showSnack(context.l10n.importedButtonsFromExistingRemotes(added));
-  }
-
   Future<void> _openRemoteLedger() async {
     await RemoteEditorActions.browseRemoteLedger(context);
   }
@@ -319,12 +303,6 @@ class _CreateRemoteState extends State<CreateRemote> {
                       icon: const Icon(Icons.add),
                       label: Text(context.l10n.addButton),
                     ),
-                    const SizedBox(height: 8),
-                    FilledButton.tonalIcon(
-                      onPressed: _openImportFromExistingRemotes,
-                      icon: const Icon(Icons.merge_type_rounded),
-                      label: Text(context.l10n.importFromRemotes),
-                    ),
                   ],
                 ),
               )
@@ -440,12 +418,6 @@ class _CreateRemoteState extends State<CreateRemote> {
         Text(
           context.l10n.buttonsTitleCount(remote.buttons.length),
           style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w800),
-        ),
-        const SizedBox(height: 8),
-        FilledButton.tonalIcon(
-          onPressed: _openImportFromExistingRemotes,
-          icon: const Icon(Icons.merge_type_rounded),
-          label: Text(context.l10n.importFromRemotes),
         ),
         const SizedBox(height: 8),
         FilledButton.tonalIcon(

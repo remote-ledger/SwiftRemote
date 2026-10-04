@@ -436,14 +436,6 @@
       }
     }
   },
-  "importedButtonsFromExistingRemotes": "Импортировано кнопок из существующих пультов: {count}.",
-  "@importedButtonsFromExistingRemotes": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "editButtonSettingsSubtitle": "Изменить метку, сигнал и доп. настройки",
   "createButtonCopySubtitle": "Создать копию этой кнопки",
   "duplicateAndEditButtonSubtitle": "Создать копию и сразу изменить",
@@ -457,7 +449,6 @@
   "layoutStyle": "Стиль раскладки",
   "layoutWideDescription": "Широкий: кнопки в 2 колонки с доп. деталями, рекомендуется.",
   "layoutCompactDescription": "Компактный: классическая сетка 4×, только иконки или текст.",
-  "importFromRemotes": "Импорт из пультов",
   "addButton": "Добавить кнопку",
   "noButtonsYet": "Кнопок пока нет",
   "createRemoteEmptyStateDescription": "Добавьте первую кнопку, затем зажмите её для изменения или удаления.",
@@ -612,37 +603,8 @@
   "macrosExportedToDownloads": "Макросы экспортированы в Downloads.",
   "failedToExportMacros": "Не удалось экспортировать макросы.",
   "failedToReadFile": "Не удалось прочитать файл.",
-  "importFromExistingRemotesTitle": "Импорт из существующих пультов",
-  "selectedCount": "Выбрано: {count}",
-  "@selectedCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  "noOtherRemotesWithButtons": "Другие пульты с кнопками не найдены.",
-  "sourceRemote": "Исходный пульт",
-  "searchButtons": "Поиск кнопок",
-  "searchButtonsHint": "Питание, Громкость, Без звука...",
-  "selectVisible": "Выбрать видимое",
-  "clearVisible": "Очистить видимое",
-  "protocolNamed": "Протокол: {name}",
-  "@protocolNamed": {
-    "placeholders": {
-      "name": {}
-    }
-  },
   "rawSignal": "Сырой",
   "legacyCode": "Старый код",
-  "importCount": "Импорт {count}",
-  "@importCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "storagePermissionDeniedLegacy": "Доступ к хранилищу отклонён, нужен на некоторых старых Android-устройствах.",
   "backupExportedToDownloads": "Копия экспортирована в Downloads.",
   "failedToExport": "Не удалось экспортировать: {error}",

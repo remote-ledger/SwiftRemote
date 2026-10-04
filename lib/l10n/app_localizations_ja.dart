@@ -1398,11 +1398,6 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String importedButtonsFromExistingRemotes(int count) {
-    return '既存のリモコンから$count個のボタンを取り込みました。';
-  }
-
-  @override
   String get editButtonSettingsSubtitle => 'ラベル 信号 詳細設定を変更';
 
   @override
@@ -1440,9 +1435,6 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get layoutCompactDescription => 'コンパクト 定番の4×グリッド アイコンまたは文字のみ。';
-
-  @override
-  String get importFromRemotes => 'リモコンから取り込み';
 
   @override
   String get addButton => 'ボタンを追加';
@@ -1719,46 +1711,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get failedToReadFile => 'ファイルの読み込みに失敗しました。';
 
   @override
-  String get importFromExistingRemotesTitle => '既存のリモコンから取り込み';
-
-  @override
-  String selectedCount(int count) {
-    return '$count selected';
-  }
-
-  @override
-  String get noOtherRemotesWithButtons => 'ボタン付きの他のリモコンが見つかりません。';
-
-  @override
-  String get sourceRemote => '元のリモコン';
-
-  @override
-  String get searchButtons => 'ボタンを検索';
-
-  @override
-  String get searchButtonsHint => '電源 音量 ミュート...';
-
-  @override
-  String get selectVisible => '表示中を選択';
-
-  @override
-  String get clearVisible => '表示中を解除';
-
-  @override
-  String protocolNamed(Object name) {
-    return 'プロトコル: $name';
-  }
-
-  @override
   String get rawSignal => '生';
 
   @override
   String get legacyCode => '旧形式コード';
-
-  @override
-  String importCount(int count) {
-    return '$count件を取り込み';
-  }
 
   @override
   String get storagePermissionDeniedLegacy =>

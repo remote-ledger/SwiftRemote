@@ -1466,11 +1466,6 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String importedButtonsFromExistingRemotes(int count) {
-    return 'Импортировано кнопок из существующих пультов: $count.';
-  }
-
-  @override
   String get editButtonSettingsSubtitle =>
       'Изменить метку, сигнал и доп. настройки';
 
@@ -1512,9 +1507,6 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get layoutCompactDescription =>
       'Компактный: классическая сетка 4×, только иконки или текст.';
-
-  @override
-  String get importFromRemotes => 'Импорт из пультов';
 
   @override
   String get addButton => 'Добавить кнопку';
@@ -1796,47 +1788,10 @@ class AppLocalizationsRu extends AppLocalizations {
   String get failedToReadFile => 'Не удалось прочитать файл.';
 
   @override
-  String get importFromExistingRemotesTitle => 'Импорт из существующих пультов';
-
-  @override
-  String selectedCount(int count) {
-    return 'Выбрано: $count';
-  }
-
-  @override
-  String get noOtherRemotesWithButtons =>
-      'Другие пульты с кнопками не найдены.';
-
-  @override
-  String get sourceRemote => 'Исходный пульт';
-
-  @override
-  String get searchButtons => 'Поиск кнопок';
-
-  @override
-  String get searchButtonsHint => 'Питание, Громкость, Без звука...';
-
-  @override
-  String get selectVisible => 'Выбрать видимое';
-
-  @override
-  String get clearVisible => 'Очистить видимое';
-
-  @override
-  String protocolNamed(Object name) {
-    return 'Протокол: $name';
-  }
-
-  @override
   String get rawSignal => 'Сырой';
 
   @override
   String get legacyCode => 'Старый код';
-
-  @override
-  String importCount(int count) {
-    return 'Импорт $count';
-  }
 
   @override
   String get storagePermissionDeniedLegacy =>
