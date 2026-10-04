@@ -879,23 +879,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String get aboutSubtitle => 'Thông tin ứng dụng và chi tiết mã nguồn mở';
 
   @override
-  String aboutAppNameWithCreator(Object creator) {
-    return 'SwiftRemote - $creator';
-  }
-
-  @override
   String versionLabel(Object version) {
     return 'Phiên bản $version';
   }
-
-  @override
-  String get sourceCode => 'Mã nguồn';
-
-  @override
-  String get viewOnGitHub => 'Xem trên GitHub';
-
-  @override
-  String get repositoryUrlCopied => 'Đã sao chép URL repo';
 
   @override
   String get reportIssue => 'Báo lỗi';
@@ -907,24 +893,10 @@ class AppLocalizationsVi extends AppLocalizations {
   String get issuesUrlCopied => 'Đã sao chép URL lỗi';
 
   @override
-  String get license => 'Giấy phép';
-
-  @override
-  String get openSourceLicense => 'Giấy phép mã nguồn mở';
-
-  @override
-  String get licenseUrlCopied => 'Đã sao chép URL giấy phép';
-
-  @override
   String get licenses => 'Giấy phép';
 
   @override
   String get openSourceLicenses => 'Giấy phép mã nguồn mở';
-
-  @override
-  String byCreator(Object creator) {
-    return 'bởi $creator';
-  }
 
   @override
   String get deviceControlsTitle => 'Điều khiển thiết bị';

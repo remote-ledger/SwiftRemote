@@ -881,23 +881,9 @@ class AppLocalizationsMs extends AppLocalizations {
   String get aboutSubtitle => 'Info aplikasi dan detail sumber terbuka';
 
   @override
-  String aboutAppNameWithCreator(Object creator) {
-    return 'SwiftRemote - $creator';
-  }
-
-  @override
   String versionLabel(Object version) {
     return 'Versi $version';
   }
-
-  @override
-  String get sourceCode => 'Kod Sumber';
-
-  @override
-  String get viewOnGitHub => 'Lihat di GitHub';
-
-  @override
-  String get repositoryUrlCopied => 'URL repositori disalin';
 
   @override
   String get reportIssue => 'Laporkan Masalah';
@@ -909,24 +895,10 @@ class AppLocalizationsMs extends AppLocalizations {
   String get issuesUrlCopied => 'URL isu disalin';
 
   @override
-  String get license => 'Lisensi';
-
-  @override
-  String get openSourceLicense => 'Lisensi sumber terbuka';
-
-  @override
-  String get licenseUrlCopied => 'URL lesen disalin';
-
-  @override
   String get licenses => 'Lisensi';
 
   @override
   String get openSourceLicenses => 'Lisensi sumber terbuka';
-
-  @override
-  String byCreator(Object creator) {
-    return 'oleh $creator';
-  }
 
   @override
   String get deviceControlsTitle => 'Kawalan Peranti';

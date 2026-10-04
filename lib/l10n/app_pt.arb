@@ -212,35 +212,17 @@
   "backupTip": "Dica: exporte uma cópia antes de grandes alterações. A importação aceita cópias completas, cópias JSON antigas de comandos e ficheiros .ir do Flipper Zero.",
   "aboutTitle": "Acerca de",
   "aboutSubtitle": "Informação da app e detalhes de código aberto",
-  "aboutAppNameWithCreator": "SwiftRemote - {creator}",
-  "@aboutAppNameWithCreator": {
-    "placeholders": {
-      "creator": {}
-    }
-  },
   "versionLabel": "Versión {version}",
   "@versionLabel": {
     "placeholders": {
       "version": {}
     }
   },
-  "sourceCode": "Código fuente",
-  "viewOnGitHub": "Ver en GitHub",
-  "repositoryUrlCopied": "URL do repositorio copiada",
   "reportIssue": "Reportar problema",
   "reportIssueSubtitle": "Erros e pedidos de funcionalidades",
   "issuesUrlCopied": "URL de issues copiada",
-  "license": "Licencia",
-  "openSourceLicense": "Licencia de código aberto",
-  "licenseUrlCopied": "URL da licença copiado",
   "licenses": "Licencias",
   "openSourceLicenses": "Licencias de código aberto",
-  "byCreator": "por {creator}",
-  "@byCreator": {
-    "placeholders": {
-      "creator": {}
-    }
-  },
   "deviceControlsTitle": "Controlos do dispositivo",
   "deviceControlsSubtitle": "Mostrar botões favoritos na página de controlos do sistema",
   "manageFavorites": "Gerir favoritos",

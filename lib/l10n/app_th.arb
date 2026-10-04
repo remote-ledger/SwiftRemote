@@ -212,35 +212,17 @@
   "backupTip": "Tip: export a backup before large edits. นำเข้า supports full backups, legacy รีโมต-เท่านั้น JSON backups, and Flipper Zero.ir ไฟล์s.",
   "aboutTitle": "เกี่ยวกับ",
   "aboutSubtitle": "ข้อมูลแอปและรายละเอียดโอเพนซอร์ส",
-  "aboutAppNameWithCreator": "SwiftRemote - {creator}",
-  "@aboutAppNameWithCreator": {
-    "placeholders": {
-      "creator": {}
-    }
-  },
   "versionLabel": "เวอร์ชัน {version}",
   "@versionLabel": {
     "placeholders": {
       "version": {}
     }
   },
-  "sourceCode": "ซอร์สโค้ด",
-  "viewOnGitHub": "ดูบน GitHub",
-  "repositoryUrlCopied": "คัดลอก URL รีโปแล้ว",
   "reportIssue": "รายงานปัญหา",
   "reportIssueSubtitle": "รายงานบั๊กและคำขอฟีเจอร์",
   "issuesUrlCopied": "คัดลอก URL ของ Issues แล้ว",
-  "license": "สัญญาอนุญาต",
-  "openSourceLicense": "สัญญาอนุญาตโอเพนซอร์ส",
-  "licenseUrlCopied": "คัดลอก URL สัญญาอนุญาตแล้ว",
   "licenses": "สัญญาอนุญาต",
   "openSourceLicenses": "สัญญาอนุญาตโอเพนซอร์ส",
-  "byCreator": "โดย {creator}",
-  "@byCreator": {
-    "placeholders": {
-      "creator": {}
-    }
-  },
   "deviceControlsTitle": "การควบคุมอุปกรณ์",
   "deviceControlsSubtitle": "แสดงปุ่มโปรดในหน้าควบคุมของระบบ",
   "manageFavorites": "จัดการรายการโปรด",

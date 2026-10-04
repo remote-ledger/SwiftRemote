@@ -856,23 +856,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get aboutSubtitle => '앱 정보와 오픈 소스 세부정보';
 
   @override
-  String aboutAppNameWithCreator(Object creator) {
-    return 'SwiftRemote - $creator';
-  }
-
-  @override
   String versionLabel(Object version) {
     return '버전 $version';
   }
-
-  @override
-  String get sourceCode => '소스 코드';
-
-  @override
-  String get viewOnGitHub => 'GitHub에서 보기';
-
-  @override
-  String get repositoryUrlCopied => '저장소 URL을 복사했습니다';
 
   @override
   String get reportIssue => '문제 신고';
@@ -884,24 +870,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get issuesUrlCopied => 'Issues URL을 복사했습니다';
 
   @override
-  String get license => '라이선스';
-
-  @override
-  String get openSourceLicense => '오픈 소스 라이선스';
-
-  @override
-  String get licenseUrlCopied => '라이선스 URL을 복사했습니다';
-
-  @override
   String get licenses => '라이선스';
 
   @override
   String get openSourceLicenses => '오픈 소스 라이선스';
-
-  @override
-  String byCreator(Object creator) {
-    return '에 의해 $creator';
-  }
 
   @override
   String get deviceControlsTitle => '기기 제어';

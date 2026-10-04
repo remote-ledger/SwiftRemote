@@ -212,35 +212,17 @@
   "backupTip": "提示 大改前请先导出备份。导入支持完整备份、旧版仅遥控器 JSON 备份和 Flipper Zero .ir 文件。",
   "aboutTitle": "关于",
   "aboutSubtitle": "应用信息与开源详情",
-  "aboutAppNameWithCreator": "SwiftRemote - {creator}",
-  "@aboutAppNameWithCreator": {
-    "placeholders": {
-      "creator": {}
-    }
-  },
   "versionLabel": "版本 {version}",
   "@versionLabel": {
     "placeholders": {
       "version": {}
     }
   },
-  "sourceCode": "源代码",
-  "viewOnGitHub": "在 GitHub 查看",
-  "repositoryUrlCopied": "仓库 URL 已复制",
   "reportIssue": "报告问题",
   "reportIssueSubtitle": "错误报告与功能请求",
   "issuesUrlCopied": "问题页 URL 已复制",
-  "license": "许可证",
-  "openSourceLicense": "开源许可证",
-  "licenseUrlCopied": "许可证 URL 已复制",
   "licenses": "许可证",
   "openSourceLicenses": "开源许可证",
-  "byCreator": "作者 {creator}",
-  "@byCreator": {
-    "placeholders": {
-      "creator": {}
-    }
-  },
   "deviceControlsTitle": "设备控制",
   "deviceControlsSubtitle": "在系统控制页面显示收藏按钮",
   "manageFavorites": "管理收藏",

@@ -884,23 +884,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutSubtitle => 'App information and open-source details';
 
   @override
-  String aboutAppNameWithCreator(Object creator) {
-    return 'SwiftRemote - $creator';
-  }
-
-  @override
   String versionLabel(Object version) {
     return 'Version $version';
   }
-
-  @override
-  String get sourceCode => 'Source Code';
-
-  @override
-  String get viewOnGitHub => 'View on GitHub';
-
-  @override
-  String get repositoryUrlCopied => 'Repository URL copied';
 
   @override
   String get reportIssue => 'Report Issue';
@@ -912,24 +898,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get issuesUrlCopied => 'Issues URL copied';
 
   @override
-  String get license => 'License';
-
-  @override
-  String get openSourceLicense => 'Open-source license';
-
-  @override
-  String get licenseUrlCopied => 'License URL copied';
-
-  @override
   String get licenses => 'Licenses';
 
   @override
   String get openSourceLicenses => 'Open source licenses';
-
-  @override
-  String byCreator(Object creator) {
-    return 'by $creator';
-  }
 
   @override
   String get deviceControlsTitle => 'Device Controls';

@@ -212,35 +212,17 @@
   "backupTip": "Порада: експортуйте резервну копію перед значними змінами. Імпорт підтримує повні резервні копії, застарілі резервні копії JSON лише з пультами, а також файли Flipper Zero .ir.",
   "aboutTitle": "про",
   "aboutSubtitle": "Інформація про програму та деталі з відкритого коду",
-  "aboutAppNameWithCreator": "SwiftRemote - {creator}",
-  "@aboutAppNameWithCreator": {
-    "placeholders": {
-      "creator": {}
-    }
-  },
   "versionLabel": "Версія {version}",
   "@versionLabel": {
     "placeholders": {
       "version": {}
     }
   },
-  "sourceCode": "Вихідний код",
-  "viewOnGitHub": "Переглянути на GitHub",
-  "repositoryUrlCopied": "URL-адресу сховища скопійовано",
   "reportIssue": "Повідомити про проблему",
   "reportIssueSubtitle": "Звіти про помилки та запити щодо функцій",
   "issuesUrlCopied": "URL-адресу проблеми скопійовано",
-  "license": "Ліцензія",
-  "openSourceLicense": "Ліцензія з відкритим кодом",
-  "licenseUrlCopied": "URL-адресу ліцензії скопійовано",
   "licenses": "Ліцензії",
   "openSourceLicenses": "Ліцензії з відкритим кодом",
-  "byCreator": "від {creator}",
-  "@byCreator": {
-    "placeholders": {
-      "creator": {}
-    }
-  },
   "deviceControlsTitle": "Елементи керування пристроєм",
   "deviceControlsSubtitle": "Показати улюблені кнопки на сторінці елементів керування системою",
   "manageFavorites": "Керуйте вибраним",

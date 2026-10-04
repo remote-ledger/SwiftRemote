@@ -828,23 +828,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get aboutSubtitle => '应用信息与开源详情';
 
   @override
-  String aboutAppNameWithCreator(Object creator) {
-    return 'SwiftRemote - $creator';
-  }
-
-  @override
   String versionLabel(Object version) {
     return '版本 $version';
   }
-
-  @override
-  String get sourceCode => '源代码';
-
-  @override
-  String get viewOnGitHub => '在 GitHub 查看';
-
-  @override
-  String get repositoryUrlCopied => '仓库 URL 已复制';
 
   @override
   String get reportIssue => '报告问题';
@@ -856,24 +842,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get issuesUrlCopied => '问题页 URL 已复制';
 
   @override
-  String get license => '许可证';
-
-  @override
-  String get openSourceLicense => '开源许可证';
-
-  @override
-  String get licenseUrlCopied => '许可证 URL 已复制';
-
-  @override
   String get licenses => '许可证';
 
   @override
   String get openSourceLicenses => '开源许可证';
-
-  @override
-  String byCreator(Object creator) {
-    return '作者 $creator';
-  }
 
   @override
   String get deviceControlsTitle => '设备控制';

@@ -33,12 +33,7 @@ class SettingsScreen extends StatelessWidget {
   static const String _repoUrl = 'https://github.com/remote-ledger/SwiftRemote';
   static const String _issuesUrl =
       'https://github.com/remote-ledger/SwiftRemote/issues';
-  static const String _licenseUrl =
-      'https://github.com/remote-ledger/SwiftRemote/blob/master/LICENSE';
 
-  /// The fork's maintainer. Upstream authorship is credited on the About
-  /// screen, which is where it belongs; this names who ships SwiftRemote.
-  static const String _creatorName = 'shanjian';
   static const Map<String, String> _languageNativeNames = <String, String>{
     'en': 'English',
     'fr': 'Français',
@@ -1188,8 +1183,7 @@ class SettingsScreen extends StatelessWidget {
                     info == null ? '—' : '${info.version}+${info.buildNumber}';
                 return ListTile(
                   leading: const Icon(Icons.apps),
-                  title:
-                      Text(context.l10n.aboutAppNameWithCreator(_creatorName)),
+                  title: Text(context.l10n.appTitle),
                   subtitle: Text(context.l10n.versionLabel(version)),
                   trailing: const Icon(Icons.chevron_right),
                   onTap: () {
@@ -1221,16 +1215,6 @@ class SettingsScreen extends StatelessWidget {
             ),
             const Divider(height: 1),
             ListTile(
-              leading: const Icon(Icons.code),
-              title: Text(context.l10n.sourceCode),
-              subtitle: Text(context.l10n.viewOnGitHub),
-              trailing: const Icon(Icons.open_in_new),
-              onTap: () => _launchUrl(context, _repoUrl),
-              onLongPress: () => _copyToClipboard(context,
-                  text: _repoUrl, message: context.l10n.repositoryUrlCopied),
-            ),
-            const Divider(height: 1),
-            ListTile(
               leading: const Icon(Icons.bug_report),
               title: Text(context.l10n.reportIssue),
               subtitle: Text(context.l10n.reportIssueSubtitle),
@@ -1242,16 +1226,6 @@ class SettingsScreen extends StatelessWidget {
             const Divider(height: 1),
             ListTile(
               leading: const Icon(Icons.gavel),
-              title: Text(context.l10n.license),
-              subtitle: Text(context.l10n.openSourceLicense),
-              trailing: const Icon(Icons.open_in_new),
-              onTap: () => _launchUrl(context, _licenseUrl),
-              onLongPress: () => _copyToClipboard(context,
-                  text: _licenseUrl, message: context.l10n.licenseUrlCopied),
-            ),
-            const Divider(height: 1),
-            ListTile(
-              leading: const Icon(Icons.receipt_long),
               title: Text(context.l10n.licenses),
               subtitle: Text(context.l10n.openSourceLicenses),
               trailing: const Icon(Icons.chevron_right),
@@ -1259,7 +1233,6 @@ class SettingsScreen extends StatelessWidget {
                 showLicensePage(
                   context: context,
                   applicationName: context.l10n.appTitle,
-                  applicationVersion: context.l10n.byCreator(_creatorName),
                   applicationIcon: Padding(
                     padding: const EdgeInsets.all(16),
                     child: Icon(Icons.settings_remote_rounded,

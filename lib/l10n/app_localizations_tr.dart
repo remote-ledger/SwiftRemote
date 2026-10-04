@@ -884,23 +884,9 @@ class AppLocalizationsTr extends AppLocalizations {
   String get aboutSubtitle => 'Uygulama bilgileri ve açık kaynak ayrıntıları';
 
   @override
-  String aboutAppNameWithCreator(Object creator) {
-    return 'SwiftRemote - $creator';
-  }
-
-  @override
   String versionLabel(Object version) {
     return 'Version $version';
   }
-
-  @override
-  String get sourceCode => 'Source Kod';
-
-  @override
-  String get viewOnGitHub => 'Görünüm on GitHub';
-
-  @override
-  String get repositoryUrlCopied => 'Repository URL kopyalandı';
 
   @override
   String get reportIssue => 'Report Issue';
@@ -912,24 +898,10 @@ class AppLocalizationsTr extends AppLocalizations {
   String get issuesUrlCopied => 'Issues URL kopyalandı';
 
   @override
-  String get license => 'License';
-
-  @override
-  String get openSourceLicense => 'Aç-source license';
-
-  @override
-  String get licenseUrlCopied => 'License URL kopyalandı';
-
-  @override
   String get licenses => 'Licenses';
 
   @override
   String get openSourceLicenses => 'Aç source licenses';
-
-  @override
-  String byCreator(Object creator) {
-    return 'by $creator';
-  }
 
   @override
   String get deviceControlsTitle => 'Cihaz Kontrolleri';

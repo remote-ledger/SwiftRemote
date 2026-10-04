@@ -873,23 +873,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get aboutSubtitle => 'معلومات التطبيق وتفاصيل المصدر المفتوح';
 
   @override
-  String aboutAppNameWithCreator(Object creator) {
-    return 'SwiftRemote - $creator';
-  }
-
-  @override
   String versionLabel(Object version) {
     return 'Version $version';
   }
-
-  @override
-  String get sourceCode => 'المصدر Code';
-
-  @override
-  String get viewOnGitHub => 'عرض on GitHub';
-
-  @override
-  String get repositoryUrlCopied => 'Repository URL copied';
 
   @override
   String get reportIssue => 'Report Issue';
@@ -901,24 +887,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get issuesUrlCopied => 'Issues URL copied';
 
   @override
-  String get license => 'License';
-
-  @override
-  String get openSourceLicense => 'فتح-source license';
-
-  @override
-  String get licenseUrlCopied => 'License URL copied';
-
-  @override
   String get licenses => 'Licenses';
 
   @override
   String get openSourceLicenses => 'فتح source licenses';
-
-  @override
-  String byCreator(Object creator) {
-    return 'by $creator';
-  }
 
   @override
   String get deviceControlsTitle => 'الجهاز Controls';
@@ -5570,23 +5542,9 @@ class AppLocalizationsArEg extends AppLocalizationsAr {
   String get aboutSubtitle => 'معلومات التطبيق وتفاصيل المصدر المفتوح';
 
   @override
-  String aboutAppNameWithCreator(Object creator) {
-    return 'SwiftRemote - $creator';
-  }
-
-  @override
   String versionLabel(Object version) {
     return 'Version $version';
   }
-
-  @override
-  String get sourceCode => 'المصدر Code';
-
-  @override
-  String get viewOnGitHub => 'عرض on GitHub';
-
-  @override
-  String get repositoryUrlCopied => 'Repository URL copied';
 
   @override
   String get reportIssue => 'Report Issue';
@@ -5598,24 +5556,10 @@ class AppLocalizationsArEg extends AppLocalizationsAr {
   String get issuesUrlCopied => 'Issues URL copied';
 
   @override
-  String get license => 'License';
-
-  @override
-  String get openSourceLicense => 'فتح-source license';
-
-  @override
-  String get licenseUrlCopied => 'License URL copied';
-
-  @override
   String get licenses => 'Licenses';
 
   @override
   String get openSourceLicenses => 'فتح source licenses';
-
-  @override
-  String byCreator(Object creator) {
-    return 'by $creator';
-  }
 
   @override
   String get deviceControlsTitle => 'الجهاز Controls';

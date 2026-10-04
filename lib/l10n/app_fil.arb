@@ -212,35 +212,17 @@
   "backupTip": "Tip. Mag-export ng backup bago ang malalaking edit. Sinusuportahan ng import ang full backup, legacy mga remote lamang JSON backup, at Flipper Zero .ir files.",
   "aboutTitle": "Tungkol",
   "aboutSubtitle": "App information at open-source details",
-  "aboutAppNameWithCreator": "SwiftRemote - {creator}",
-  "@aboutAppNameWithCreator": {
-    "placeholders": {
-      "creator": {}
-    }
-  },
   "versionLabel": "Bersyon {version}",
   "@versionLabel": {
     "placeholders": {
       "version": {}
     }
   },
-  "sourceCode": "Source Code",
-  "viewOnGitHub": "View on GitHub",
-  "repositoryUrlCopied": "Repository URL copied",
   "reportIssue": "Report Issue",
   "reportIssueSubtitle": "Bug reports & feature requests",
   "issuesUrlCopied": "Issues URL copied",
-  "license": "License",
-  "openSourceLicense": "Open-source license",
-  "licenseUrlCopied": "License URL copied",
   "licenses": "Licenses",
   "openSourceLicenses": "Open source licenses",
-  "byCreator": "ni {creator}",
-  "@byCreator": {
-    "placeholders": {
-      "creator": {}
-    }
-  },
   "deviceControlsTitle": "Mga Control ng Device",
   "deviceControlsSubtitle": "Ipakita ang mga paboritong button sa page ng system controls",
   "manageFavorites": "Pamahalaan ang mga paborito",

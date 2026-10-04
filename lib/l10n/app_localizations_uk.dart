@@ -890,23 +890,9 @@ class AppLocalizationsUk extends AppLocalizations {
       'Інформація про програму та деталі з відкритого коду';
 
   @override
-  String aboutAppNameWithCreator(Object creator) {
-    return 'SwiftRemote - $creator';
-  }
-
-  @override
   String versionLabel(Object version) {
     return 'Версія $version';
   }
-
-  @override
-  String get sourceCode => 'Вихідний код';
-
-  @override
-  String get viewOnGitHub => 'Переглянути на GitHub';
-
-  @override
-  String get repositoryUrlCopied => 'URL-адресу сховища скопійовано';
 
   @override
   String get reportIssue => 'Повідомити про проблему';
@@ -918,24 +904,10 @@ class AppLocalizationsUk extends AppLocalizations {
   String get issuesUrlCopied => 'URL-адресу проблеми скопійовано';
 
   @override
-  String get license => 'Ліцензія';
-
-  @override
-  String get openSourceLicense => 'Ліцензія з відкритим кодом';
-
-  @override
-  String get licenseUrlCopied => 'URL-адресу ліцензії скопійовано';
-
-  @override
   String get licenses => 'Ліцензії';
 
   @override
   String get openSourceLicenses => 'Ліцензії з відкритим кодом';
-
-  @override
-  String byCreator(Object creator) {
-    return 'від $creator';
-  }
 
   @override
   String get deviceControlsTitle => 'Елементи керування пристроєм';

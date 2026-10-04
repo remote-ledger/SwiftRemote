@@ -212,35 +212,17 @@
   "backupTip": "ヒント 大きな編集の前にバックアップをエクスポートしてください。取り込みでは完全バックアップ 旧形式のリモコンのみJSONバックアップ Flipper Zeroの.irファイルに対応します。",
   "aboutTitle": "情報",
   "aboutSubtitle": "アプリ情報とオープンソース情報",
-  "aboutAppNameWithCreator": "SwiftRemote - {creator}",
-  "@aboutAppNameWithCreator": {
-    "placeholders": {
-      "creator": {}
-    }
-  },
   "versionLabel": "バージョン {version}",
   "@versionLabel": {
     "placeholders": {
       "version": {}
     }
   },
-  "sourceCode": "ソースコード",
-  "viewOnGitHub": "GitHubで見る",
-  "repositoryUrlCopied": "リポジトリURLをコピーしました",
   "reportIssue": "問題を報告",
   "reportIssueSubtitle": "不具合報告と機能要望",
   "issuesUrlCopied": "Issues URLをコピーしました",
-  "license": "ライセンス",
-  "openSourceLicense": "オープンソースライセンス",
-  "licenseUrlCopied": "ライセンスURLをコピーしました",
   "licenses": "ライセンス",
   "openSourceLicenses": "オープンソースライセンス",
-  "byCreator": "{creator} 作成",
-  "@byCreator": {
-    "placeholders": {
-      "creator": {}
-    }
-  },
   "deviceControlsTitle": "デバイスコントロール",
   "deviceControlsSubtitle": "お気に入りボタンをシステムのデバイスコントロールに表示",
   "manageFavorites": "お気に入りを管理",

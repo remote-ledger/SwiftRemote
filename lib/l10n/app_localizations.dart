@@ -1674,35 +1674,11 @@ abstract class AppLocalizations {
   /// **'App information and open-source details'**
   String get aboutSubtitle;
 
-  /// No description provided for @aboutAppNameWithCreator.
-  ///
-  /// In en, this message translates to:
-  /// **'SwiftRemote - {creator}'**
-  String aboutAppNameWithCreator(Object creator);
-
   /// No description provided for @versionLabel.
   ///
   /// In en, this message translates to:
   /// **'Version {version}'**
   String versionLabel(Object version);
-
-  /// No description provided for @sourceCode.
-  ///
-  /// In en, this message translates to:
-  /// **'Source Code'**
-  String get sourceCode;
-
-  /// No description provided for @viewOnGitHub.
-  ///
-  /// In en, this message translates to:
-  /// **'View on GitHub'**
-  String get viewOnGitHub;
-
-  /// No description provided for @repositoryUrlCopied.
-  ///
-  /// In en, this message translates to:
-  /// **'Repository URL copied'**
-  String get repositoryUrlCopied;
 
   /// No description provided for @reportIssue.
   ///
@@ -1722,24 +1698,6 @@ abstract class AppLocalizations {
   /// **'Issues URL copied'**
   String get issuesUrlCopied;
 
-  /// No description provided for @license.
-  ///
-  /// In en, this message translates to:
-  /// **'License'**
-  String get license;
-
-  /// No description provided for @openSourceLicense.
-  ///
-  /// In en, this message translates to:
-  /// **'Open-source license'**
-  String get openSourceLicense;
-
-  /// No description provided for @licenseUrlCopied.
-  ///
-  /// In en, this message translates to:
-  /// **'License URL copied'**
-  String get licenseUrlCopied;
-
   /// No description provided for @licenses.
   ///
   /// In en, this message translates to:
@@ -1751,12 +1709,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Open source licenses'**
   String get openSourceLicenses;
-
-  /// No description provided for @byCreator.
-  ///
-  /// In en, this message translates to:
-  /// **'by {creator}'**
-  String byCreator(Object creator);
 
   /// No description provided for @deviceControlsTitle.
   ///

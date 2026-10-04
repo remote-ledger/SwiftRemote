@@ -217,35 +217,17 @@
   "backupTip": "Astuce : exportez une sauvegarde avant de gros changements. L'import prend en charge les sauvegardes complètes, les anciennes sauvegardes JSON de télécommandes seules et les fichiers .ir Flipper Zero.",
   "aboutTitle": "À propos",
   "aboutSubtitle": "Infos de l'appli et détails open source",
-  "aboutAppNameWithCreator": "SwiftRemote - {creator}",
-  "@aboutAppNameWithCreator": {
-    "placeholders": {
-      "creator": {}
-    }
-  },
   "versionLabel": "Version {version}",
   "@versionLabel": {
     "placeholders": {
       "version": {}
     }
   },
-  "sourceCode": "Code source",
-  "viewOnGitHub": "Voir sur GitHub",
-  "repositoryUrlCopied": "URL du dépôt copiée",
   "reportIssue": "Signaler un bug",
   "reportIssueSubtitle": "Rapports de bug et demandes de fonctions",
   "issuesUrlCopied": "URL des tickets copiée",
-  "license": "Licence",
-  "openSourceLicense": "Licence open source",
-  "licenseUrlCopied": "URL de la licence copiée",
   "licenses": "Licences",
   "openSourceLicenses": "Licences open source",
-  "byCreator": "par {creator}",
-  "@byCreator": {
-    "placeholders": {
-      "creator": {}
-    }
-  },
   "deviceControlsTitle": "Contrôles appareil",
   "deviceControlsSubtitle": "Afficher les boutons favoris dans les contrôles système",
   "manageFavorites": "Gérer les favoris",

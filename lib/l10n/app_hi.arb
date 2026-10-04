@@ -212,35 +212,17 @@
   "backupTip": "सुझाव: निर्यात a बैकअप पहले बड़े संपादन. आयात करें समर्थन करता है पूर्ण बैकअप, legacy remotes-only JSON बैकअप, और Flipper Zero.IR फ़ाइलें.",
   "aboutTitle": "परिचय",
   "aboutSubtitle": "ऐप जानकारी और ओपन-सोर्स विवरण",
-  "aboutAppNameWithCreator": "SwiftRemote - {creator}",
-  "@aboutAppNameWithCreator": {
-    "placeholders": {
-      "creator": {}
-    }
-  },
   "versionLabel": "संस्करण {version}",
   "@versionLabel": {
     "placeholders": {
       "version": {}
     }
   },
-  "sourceCode": "स्रोत कोड",
-  "viewOnGitHub": "GitHub पर देखें",
-  "repositoryUrlCopied": "रिपॉजिटरी URL कॉपी किया गया",
   "reportIssue": "समस्या रिपोर्ट करें",
   "reportIssueSubtitle": "बग रिपोर्ट और फीचर अनुरोध",
   "issuesUrlCopied": "Issues URL कॉपी किया गया",
-  "license": "लाइसेंस",
-  "openSourceLicense": "ओपन-सोर्स लाइसेंस",
-  "licenseUrlCopied": "लाइसेंस URL कॉपी किया गया",
   "licenses": "Licenses",
   "openSourceLicenses": "ओपन-सोर्स लाइसेंस",
-  "byCreator": "द्वारा {creator}",
-  "@byCreator": {
-    "placeholders": {
-      "creator": {}
-    }
-  },
   "deviceControlsTitle": "डिवाइस नियंत्रण",
   "deviceControlsSubtitle": "सिस्टम नियंत्रण पेज में पसंदीदा बटन दिखाएं",
   "manageFavorites": "प्रबंधित करें पसंदीदा",
