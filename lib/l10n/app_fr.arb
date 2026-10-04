@@ -2070,7 +2070,7 @@
   "learningModeSaveFailed": "Le bouton appris n'a pas pu être enregistré.",
   "remoteSetupIntro": "Choisissez d'abord un nom et une disposition. Vous pourrez ajouter des boutons ensuite.",
   "startWithDefault": "Commencer avec les valeurs par défaut",
-  "browseGithubStore": "Parcourir le store GitHub",
+  "browseRemoteLedger": "Parcourir Remote Ledger",
   "addFirstButton": "Ajouter le premier bouton",
   "moreWaysToStart": "Plus de façons de commencer",
   "unsavedRemoteSetupChangesMessage": "Abandonner cette nouvelle configuration de télécommande et quitter cet écran ?",

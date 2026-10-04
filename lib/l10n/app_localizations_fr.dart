@@ -4418,7 +4418,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get startWithDefault => 'Commencer avec les valeurs par défaut';
 
   @override
-  String get browseGithubStore => 'Parcourir le store GitHub';
+  String get browseRemoteLedger => 'Parcourir Remote Ledger';
 
   @override
   String get addFirstButton => 'Ajouter le premier bouton';

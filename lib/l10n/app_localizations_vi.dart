@@ -4365,7 +4365,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get startWithDefault => 'Bắt đầu với mặc định';
 
   @override
-  String get browseGithubStore => 'Mở GitHub Store';
+  String get browseRemoteLedger => 'Mở Remote Ledger';
 
   @override
   String get addFirstButton => 'Thêm nút đầu tiên';

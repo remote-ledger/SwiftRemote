@@ -2070,7 +2070,7 @@
   "learningModeSaveFailed": "Öğrenilen düğme kaydedilemedi.",
   "remoteSetupIntro": "Önce bir ad ve düzen seçin. Düğmeleri daha sonra ekleyebilirsiniz.",
   "startWithDefault": "Varsayılanla başla",
-  "browseGithubStore": "GitHub Store'u aç",
+  "browseRemoteLedger": "Remote Ledger'ı aç",
   "addFirstButton": "İlk düğmeyi ekle",
   "moreWaysToStart": "Başlamanın diğer yolları",
   "unsavedRemoteSetupChangesMessage": "Bu yeni kumanda kurulumunu silip bu ekrandan çıkmak istiyor musunuz?",

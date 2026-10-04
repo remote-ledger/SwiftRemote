@@ -4394,7 +4394,7 @@ class AppLocalizationsFil extends AppLocalizations {
   String get startWithDefault => 'Magsimula sa default';
 
   @override
-  String get browseGithubStore => 'Buksan ang GitHub Store';
+  String get browseRemoteLedger => 'Buksan ang Remote Ledger';
 
   @override
   String get addFirstButton => 'Idagdag ang unang button';

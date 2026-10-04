@@ -2070,7 +2070,7 @@
   "learningModeSaveFailed": "无法保存学习到的按钮。",
   "remoteSetupIntro": "先选择名称和布局，之后可以再添加按钮。",
   "startWithDefault": "使用默认设置开始",
-  "browseGithubStore": "浏览 GitHub 商店",
+  "browseRemoteLedger": "浏览 Remote Ledger",
   "addFirstButton": "添加第一个按钮",
   "moreWaysToStart": "更多开始方式",
   "unsavedRemoteSetupChangesMessage": "要放弃这个新遥控器设置并离开此页面吗？",

@@ -4350,7 +4350,7 @@ class AppLocalizationsTh extends AppLocalizations {
   String get startWithDefault => 'เริ่มด้วยค่าเริ่มต้น';
 
   @override
-  String get browseGithubStore => 'เปิด GitHub Store';
+  String get browseRemoteLedger => 'เปิด Remote Ledger';
 
   @override
   String get addFirstButton => 'เพิ่มปุ่มแรก';

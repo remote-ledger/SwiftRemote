@@ -2082,7 +2082,7 @@
   "learningModeSaveFailed": "The learned button could not be saved.",
   "remoteSetupIntro": "Choose a name and layout first. You can add buttons after this.",
   "startWithDefault": "Start with default",
-  "browseGithubStore": "Browse GitHub Store",
+  "browseRemoteLedger": "Browse Remote Ledger",
   "addFirstButton": "Add first button",
   "moreWaysToStart": "More ways to start",
   "unsavedRemoteSetupChangesMessage": "Discard this new remote setup and leave this screen?",

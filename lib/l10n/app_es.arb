@@ -2070,7 +2070,7 @@
   "learningModeSaveFailed": "El botón aprendido no se pudo guardar.",
   "remoteSetupIntro": "Elige primero un nombre y un diseño. Podrás añadir botones después.",
   "startWithDefault": "Empezar con los valores predeterminados",
-  "browseGithubStore": "Explorar GitHub Store",
+  "browseRemoteLedger": "Explorar Remote Ledger",
   "addFirstButton": "Añadir primer botón",
   "moreWaysToStart": "Más formas de empezar",
   "unsavedRemoteSetupChangesMessage": "¿Descartar esta nueva configuración del mando y salir de esta pantalla?",

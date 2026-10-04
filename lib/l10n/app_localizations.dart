@@ -8012,11 +8012,11 @@ abstract class AppLocalizations {
   /// **'Start with default'**
   String get startWithDefault;
 
-  /// No description provided for @browseGithubStore.
+  /// No description provided for @browseRemoteLedger.
   ///
   /// In en, this message translates to:
-  /// **'Browse GitHub Store'**
-  String get browseGithubStore;
+  /// **'Browse Remote Ledger'**
+  String get browseRemoteLedger;
 
   /// No description provided for @addFirstButton.
   ///

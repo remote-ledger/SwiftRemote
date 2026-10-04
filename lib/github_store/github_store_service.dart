@@ -6,6 +6,20 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'models.dart';
 
+/// The one repository the app takes remotes from: Remote Ledger's, on its
+/// default branch. It is written here and nowhere else, so no setting, link or
+/// saved preference can point the app at another source.
+const String kRemoteLedgerOwner = 'remote-ledger';
+const String kRemoteLedgerRepo = 'remote-ledger.github.io';
+const String kRemoteLedgerBranch = 'master';
+
+/// The folder the ledger browser opens on. It holds the compiled remotes: one
+/// JSON file per remote, each key's most trusted code already rendered to
+/// Pronto Hex. The source files under `remotes/` hold the same codes before
+/// compiling, which the importer cannot play, so the browser stays on the
+/// folder that it can.
+const String kRemoteLedgerBrowseRoot = 'build/pronto';
+
 class GitHubRateLimitException implements Exception {
   final String message;
   final DateTime? resetAt;
@@ -14,27 +28,6 @@ class GitHubRateLimitException implements Exception {
 
   @override
   String toString() => message;
-}
-
-class GitHubAuthException implements Exception {
-  final String message;
-
-  const GitHubAuthException(this.message);
-
-  @override
-  String toString() => message;
-}
-
-class GitHubRateLimitStatus {
-  final int? limit;
-  final int? remaining;
-  final DateTime? resetAt;
-
-  const GitHubRateLimitStatus({
-    required this.limit,
-    required this.remaining,
-    required this.resetAt,
-  });
 }
 
 class _MemoryCacheEntry<T> {
@@ -49,7 +42,11 @@ class _MemoryCacheEntry<T> {
   bool isFresh(Duration ttl) => DateTime.now().difference(savedAt) <= ttl;
 }
 
+/// Reads folders and files of the Remote Ledger repository through GitHub's
+/// contents API, without credentials. [client] is for tests.
 class GitHubStoreService {
+  GitHubStoreService({http.Client? client}) : _client = client ?? http.Client();
+
   static const String userAgent = 'IRBlaster/1.0';
   static const int maxPreviewBytes = 512 * 1024;
   static const int _directoryCacheVersion = 2;
@@ -63,31 +60,19 @@ class GitHubStoreService {
   static const int _maxDirectoryCacheEntries = 48;
   static const int _maxFileCacheEntries = 24;
 
+  final http.Client _client;
+
   final Map<String, _MemoryCacheEntry<List<RepoItem>>> _directoryMemoryCache =
       <String, _MemoryCacheEntry<List<RepoItem>>>{};
   final Map<String, _MemoryCacheEntry<GitHubFilePayload>> _fileMemoryCache =
       <String, _MemoryCacheEntry<GitHubFilePayload>>{};
 
-  String? _authToken;
-
-  bool get hasAuthToken => _authToken != null;
-
-  void setAuthToken(String? token) {
-    final trimmed = token?.trim() ?? '';
-    _authToken = trimmed.isEmpty ? null : trimmed;
-  }
-
+  /// The folder at [path], from the repository root.
   Future<List<RepoItem>> listDirectory(
-    RepoRef ref, {
-    String? subPath,
+    String path, {
     bool forceRefresh = false,
   }) async {
-    final path = [ref.path, if (subPath != null && subPath.isNotEmpty) subPath]
-        .where((part) => part.isNotEmpty)
-        .join('/')
-        .replaceAll('//', '/');
-    final cacheKey =
-        'dir:v$_directoryCacheVersion|${ref.owner}|${ref.repo}|${ref.branch}|$path|${_authToken != null ? 'auth' : 'public'}';
+    final cacheKey = 'dir:v$_directoryCacheVersion|$path';
 
     final memory = _directoryMemoryCache[cacheKey];
     if (!forceRefresh && memory != null && memory.isFresh(_directoryCacheTtl)) {
@@ -101,19 +86,8 @@ class GitHubStoreService {
       return local.value;
     }
 
-    final query = <String, String>{};
-    if (ref.branch.isNotEmpty) {
-      query['ref'] = ref.branch;
-    }
-
-    final uri = Uri.https(
-      'api.github.com',
-      '/repos/${ref.owner}/${ref.repo}/contents/$path',
-      query,
-    );
-
     try {
-      final res = await _get(uri);
+      final res = await _get(_contentsUri(path));
       final body = jsonDecode(res.body);
       if (body is! List) {
         throw Exception('Expected a directory listing.');
@@ -161,13 +135,12 @@ class GitHubStoreService {
     }
   }
 
+  /// The file at [fullPath], from the repository root.
   Future<GitHubFilePayload> fetchFileText(
-    RepoRef ref,
     String fullPath, {
     bool forceRefresh = false,
   }) async {
-    final cacheKey =
-        'file|${ref.owner}|${ref.repo}|${ref.branch}|$fullPath|${_authToken != null ? 'auth' : 'public'}';
+    final cacheKey = 'file|$fullPath';
 
     final memory = _fileMemoryCache[cacheKey];
     if (!forceRefresh && memory != null && memory.isFresh(_fileCacheTtl)) {
@@ -181,19 +154,8 @@ class GitHubStoreService {
       return local.value;
     }
 
-    final query = <String, String>{};
-    if (ref.branch.isNotEmpty) {
-      query['ref'] = ref.branch;
-    }
-
-    final uri = Uri.https(
-      'api.github.com',
-      '/repos/${ref.owner}/${ref.repo}/contents/$fullPath',
-      query,
-    );
-
     try {
-      final res = await _get(uri);
+      final res = await _get(_contentsUri(fullPath));
       final body = jsonDecode(res.body) as Map<String, dynamic>;
       final size = body['size'] is int ? body['size'] as int : 0;
       if (size > maxPreviewBytes) {
@@ -234,40 +196,11 @@ class GitHubStoreService {
     }
   }
 
-  Future<GitHubRateLimitStatus> getRateLimitStatus() async {
-    final uri = Uri.https('api.github.com', '/rate_limit');
-    final res = await _get(uri);
-    final body = jsonDecode(res.body);
-    if (body is! Map<String, dynamic>) {
-      throw Exception('GitHub returned an invalid rate limit response.');
-    }
-
-    final rate = body['rate'];
-    final core = body['resources'] is Map<String, dynamic>
-        ? (body['resources'] as Map<String, dynamic>)['core']
-        : null;
-    final source = core is Map<String, dynamic>
-        ? core
-        : rate is Map<String, dynamic>
-            ? rate
-            : <String, dynamic>{};
-
-    final resetEpoch = source['reset'] is int
-        ? source['reset'] as int
-        : int.tryParse('${source['reset'] ?? ''}');
-    return GitHubRateLimitStatus(
-      limit: source['limit'] is int
-          ? source['limit'] as int
-          : int.tryParse('${source['limit'] ?? ''}'),
-      remaining: source['remaining'] is int
-          ? source['remaining'] as int
-          : int.tryParse('${source['remaining'] ?? ''}'),
-      resetAt: resetEpoch == null
-          ? null
-          : DateTime.fromMillisecondsSinceEpoch(
-              resetEpoch * 1000,
-              isUtc: true,
-            ),
+  Uri _contentsUri(String path) {
+    return Uri.https(
+      'api.github.com',
+      '/repos/$kRemoteLedgerOwner/$kRemoteLedgerRepo/contents/$path',
+      <String, String>{'ref': kRemoteLedgerBranch},
     );
   }
 
@@ -277,7 +210,7 @@ class GitHubStoreService {
   }) async {
     late final http.Response res;
     try {
-      res = await http.get(
+      res = await _client.get(
         uri,
         headers: _headers(acceptJson: acceptJson),
       );
@@ -289,11 +222,6 @@ class GitHubStoreService {
       throw Exception(error.toString());
     }
 
-    if (res.statusCode == 401) {
-      throw const GitHubAuthException(
-        'GitHub authentication failed. Check your personal access token.',
-      );
-    }
     if (res.statusCode == 404) {
       throw Exception('Repository, branch, folder, or file not found.');
     }
@@ -325,7 +253,6 @@ class GitHubStoreService {
     return <String, String>{
       if (acceptJson) 'Accept': 'application/vnd.github+json',
       'User-Agent': userAgent,
-      if (_authToken != null) 'Authorization': 'Bearer $_authToken',
     };
   }
 
@@ -333,7 +260,6 @@ class GitHubStoreService {
     String rawKey, {
     bool allowStale = false,
   }) async {
-    if (_authToken != null) return null;
     final prefs = await SharedPreferences.getInstance();
     final raw = prefs.getString(_cacheStorageKey(_directoryKeyPrefix, rawKey));
     if (raw == null || raw.trim().isEmpty) return null;
@@ -386,7 +312,6 @@ class GitHubStoreService {
       savedAt: DateTime.now(),
     );
     _directoryMemoryCache[rawKey] = entry;
-    if (_authToken != null) return;
 
     final prefs = await SharedPreferences.getInstance();
     final storageKey = _cacheStorageKey(_directoryKeyPrefix, rawKey);
@@ -420,7 +345,6 @@ class GitHubStoreService {
     String rawKey, {
     bool allowStale = false,
   }) async {
-    if (_authToken != null) return null;
     final prefs = await SharedPreferences.getInstance();
     final raw = prefs.getString(_cacheStorageKey(_fileKeyPrefix, rawKey));
     if (raw == null || raw.trim().isEmpty) return null;
@@ -459,8 +383,7 @@ class GitHubStoreService {
       savedAt: DateTime.now(),
     );
     _fileMemoryCache[rawKey] = entry;
-    if (_authToken != null ||
-        payload.text.length > _maxPersistedFileCacheBytes) {
+    if (payload.text.length > _maxPersistedFileCacheBytes) {
       return;
     }
 

@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
 
 /// Remote Ledger publishes one index of every remote it holds, beside its
-/// site. The GitHub Store searches it rather than the repository: the contents
+/// site. The Remote Ledger screen searches it rather than the repository: the contents
 /// API can only list one folder at a time, and a remote's folder names the
 /// remote's model, not the devices it controls, which is what people search
 /// for.

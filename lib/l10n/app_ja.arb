@@ -2070,7 +2070,7 @@
   "learningModeSaveFailed": "学習したボタンを保存できませんでした。",
   "remoteSetupIntro": "まず名前とレイアウトを選択します。ボタンはあとから追加できます。",
   "startWithDefault": "デフォルトで開始",
-  "browseGithubStore": "GitHubストアを見る",
+  "browseRemoteLedger": "Remote Ledgerを見る",
   "addFirstButton": "最初のボタンを追加",
   "moreWaysToStart": "他の始め方を見る",
   "unsavedRemoteSetupChangesMessage": "この新しいリモコン設定を破棄してこの画面を閉じますか？",

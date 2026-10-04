@@ -2070,7 +2070,7 @@
   "learningModeSaveFailed": "O botão aprendido não pôde ser salvo.",
   "remoteSetupIntro": "Escolha primeiro um nome e um layout. Depois você poderá adicionar botões.",
   "startWithDefault": "Começar com o padrão",
-  "browseGithubStore": "Explorar GitHub Store",
+  "browseRemoteLedger": "Explorar Remote Ledger",
   "addFirstButton": "Adicionar primeiro botão",
   "moreWaysToStart": "Mais formas de começar",
   "unsavedRemoteSetupChangesMessage": "Descartar esta nova configuração do controle e sair desta tela?",

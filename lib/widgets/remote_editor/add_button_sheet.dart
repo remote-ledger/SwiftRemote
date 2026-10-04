@@ -4,7 +4,7 @@ import 'package:swiftremote/l10n/l10n.dart';
 enum AddButtonSheetAction {
   addButton,
   importFromRemotes,
-  browseGithubStore,
+  browseRemoteLedger,
 }
 
 class AddButtonSheet extends StatelessWidget {
@@ -61,14 +61,14 @@ class AddButtonSheet extends StatelessWidget {
               color: cs.onSurfaceVariant,
             ),
             title: Text(
-              l10n.browseGithubStore,
+              l10n.browseRemoteLedger,
               style: theme.textTheme.bodyMedium?.copyWith(
                 color: cs.onSurfaceVariant,
                 fontWeight: FontWeight.w700,
               ),
             ),
             onTap: () =>
-                Navigator.of(context).pop(AddButtonSheetAction.browseGithubStore),
+                Navigator.of(context).pop(AddButtonSheetAction.browseRemoteLedger),
           ),
         ],
       ),

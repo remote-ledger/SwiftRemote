@@ -5,9 +5,10 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/testing.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:swiftremote/github_store/github_store_service.dart';
 import 'package:swiftremote/github_store/remote_ledger_index.dart';
 import 'package:swiftremote/l10n/app_localizations.dart';
-import 'package:swiftremote/widgets/github_store_screen.dart';
+import 'package:swiftremote/widgets/remote_ledger_screen.dart';
 
 const String searchHint = 'Search a device, model or maker, e.g. BDP-S185';
 
@@ -32,12 +33,36 @@ final String indexBody = jsonEncode(<String, Object>{
   ],
 });
 
+/// What the contents API answers for each folder the tests open.
+const String _contents =
+    '/repos/remote-ledger/remote-ledger.github.io/contents';
+final Map<String, List<Object>> folders = <String, List<Object>>{
+  '$_contents/build/pronto': <Object>[
+    <String, Object>{
+      'type': 'dir',
+      'name': 'sony',
+      'path': 'build/pronto/sony',
+    },
+  ],
+  '$_contents/build/pronto/sony': <Object>[
+    <String, Object>{
+      'type': 'file',
+      'name': 'RMT-B118P.json',
+      'path': 'build/pronto/sony/RMT-B118P.json',
+    },
+  ],
+};
+
 void main() {
   late int requests;
+
+  /// Every request the folder browser sends to GitHub, as path and query.
+  late List<String> githubRequests;
 
   Future<void> openStore(WidgetTester tester) async {
     SharedPreferences.setMockInitialValues(<String, Object>{});
     requests = 0;
+    githubRequests = <String>[];
     final service = RemoteLedgerIndexService(
       client: MockClient((request) async {
         requests++;
@@ -50,7 +75,18 @@ void main() {
       MaterialApp(
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
-        home: GitHubStoreScreen(ledgerService: service),
+        home: RemoteLedgerScreen(
+          ledgerService: service,
+          storeService: GitHubStoreService(
+            client: MockClient((request) async {
+              githubRequests.add(request.url.toString());
+              return http.Response(
+                jsonEncode(folders[request.url.path] ?? <Object>[]),
+                200,
+              );
+            }),
+          ),
+        ),
       ),
     );
     await tester.pump();
@@ -109,5 +145,65 @@ void main() {
 
     expect(find.text('Sony RMT-B118P'), findsNothing);
     expect(find.text('Load Remote Ledger'), findsOneWidget);
+  });
+
+  testWidgets('there is nowhere to choose another source', (tester) async {
+    await openStore(tester);
+
+    // The search box is the only field: no URL to type, no token to paste.
+    expect(find.byType(TextField), findsOneWidget);
+    expect(find.text('GitHub URL'), findsNothing);
+    expect(find.text('Save source'), findsNothing);
+    for (final tooltip in <String>[
+      'Saved sources',
+      'Pick saved source',
+      'Manage sources',
+      'GitHub connection',
+    ]) {
+      expect(find.byTooltip(tooltip), findsNothing, reason: tooltip);
+    }
+    expect(find.text('remote-ledger/remote-ledger.github.io'), findsOneWidget);
+  });
+
+  testWidgets(
+      'browsing opens a folder and Up comes back, in Remote Ledger only',
+      (tester) async {
+    await openStore(tester);
+    expect(find.byTooltip('Refresh'), findsOneWidget);
+
+    await tester.tap(find.text('Load Remote Ledger'));
+    await tester.pump();
+    await tester.pump();
+    expect(find.text('sony'), findsOneWidget);
+    expect(find.text('/build/pronto'), findsOneWidget);
+
+    await tester.tap(find.text('sony'));
+    await tester.pump();
+    await tester.pump();
+    expect(find.text('RMT-B118P.json'), findsOneWidget);
+    expect(find.text('/build/pronto/sony'), findsOneWidget);
+
+    await tester.tap(find.text('Up'));
+    await tester.pump();
+    await tester.pump();
+    expect(find.text('sony'), findsOneWidget);
+    expect(find.text('/build/pronto'), findsOneWidget);
+
+    // Up from the folder it opens on goes nowhere.
+    expect(
+      tester.widget<TextButton>(find.bySubtype<TextButton>()).onPressed,
+      isNull,
+    );
+
+    for (final url in githubRequests) {
+      final uri = Uri.parse(url);
+      expect(uri.host, 'api.github.com', reason: url);
+      expect(
+        uri.path,
+        startsWith('$_contents/build/pronto'),
+        reason: url,
+      );
+      expect(uri.queryParameters, <String, String>{'ref': 'master'});
+    }
   });
 }

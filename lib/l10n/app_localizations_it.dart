@@ -4409,7 +4409,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get startWithDefault => 'Inizia con i valori predefiniti';
 
   @override
-  String get browseGithubStore => 'Sfoglia GitHub Store';
+  String get browseRemoteLedger => 'Sfoglia Remote Ledger';
 
   @override
   String get addFirstButton => 'Aggiungi il primo pulsante';

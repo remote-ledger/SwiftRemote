@@ -4380,7 +4380,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get startWithDefault => 'Mulai dengan default';
 
   @override
-  String get browseGithubStore => 'Telusuri GitHub Store';
+  String get browseRemoteLedger => 'Telusuri Remote Ledger';
 
   @override
   String get addFirstButton => 'Tambah tombol pertama';

@@ -2070,7 +2070,7 @@
   "learningModeSaveFailed": "Der gelernte Button konnte nicht gespeichert werden.",
   "remoteSetupIntro": "Wählen Sie zuerst einen Namen und ein Layout. Danach können Sie Tasten hinzufügen.",
   "startWithDefault": "Mit Standardwerten starten",
-  "browseGithubStore": "GitHub-Store durchsuchen",
+  "browseRemoteLedger": "Remote Ledger durchsuchen",
   "addFirstButton": "Erste Taste hinzufügen",
   "moreWaysToStart": "Weitere Startmöglichkeiten",
   "unsavedRemoteSetupChangesMessage": "Neue Fernbedienungs-Einrichtung verwerfen und diesen Bildschirm verlassen?",

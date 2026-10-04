@@ -4485,7 +4485,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get startWithDefault => 'Почніть із замовчуванням';
 
   @override
-  String get browseGithubStore => 'Перегляньте GitHub Store';
+  String get browseRemoteLedger => 'Перегляньте Remote Ledger';
 
   @override
   String get addFirstButton => 'Додати першу кнопку';

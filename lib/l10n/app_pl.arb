@@ -2070,7 +2070,7 @@
   "learningModeSaveFailed": "Nie można zapisać wyuczonego przycisku.",
   "remoteSetupIntro": "Najpierw wybierz nazwę i układ. Przyciski możesz dodać później.",
   "startWithDefault": "Zacznij od domyślnych ustawień",
-  "browseGithubStore": "Przeglądaj GitHub Store",
+  "browseRemoteLedger": "Przeglądaj Remote Ledger",
   "addFirstButton": "Dodaj pierwszy przycisk",
   "moreWaysToStart": "Więcej sposobów rozpoczęcia",
   "unsavedRemoteSetupChangesMessage": "Odrzucić konfigurację nowego pilota i opuścić ten ekran?",

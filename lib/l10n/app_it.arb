@@ -2070,7 +2070,7 @@
   "learningModeSaveFailed": "Impossibile salvare il pulsante appreso.",
   "remoteSetupIntro": "Scegli prima un nome e un layout. Potrai aggiungere pulsanti dopo.",
   "startWithDefault": "Inizia con i valori predefiniti",
-  "browseGithubStore": "Sfoglia GitHub Store",
+  "browseRemoteLedger": "Sfoglia Remote Ledger",
   "addFirstButton": "Aggiungi il primo pulsante",
   "moreWaysToStart": "Altri modi per iniziare",
   "unsavedRemoteSetupChangesMessage": "Vuoi scartare questa nuova configurazione del telecomando e lasciare questa schermata?",

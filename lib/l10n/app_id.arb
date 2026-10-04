@@ -2070,7 +2070,7 @@
   "learningModeSaveFailed": "Tombol yang dipelajari tidak dapat disimpan.",
   "remoteSetupIntro": "Pilih nama dan tata letak terlebih dahulu. Setelah itu Anda dapat menambahkan tombol.",
   "startWithDefault": "Mulai dengan default",
-  "browseGithubStore": "Telusuri GitHub Store",
+  "browseRemoteLedger": "Telusuri Remote Ledger",
   "addFirstButton": "Tambah tombol pertama",
   "moreWaysToStart": "Cara lain untuk memulai",
   "unsavedRemoteSetupChangesMessage": "Buang pengaturan remote baru ini dan tinggalkan layar ini?",

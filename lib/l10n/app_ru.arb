@@ -2070,7 +2070,7 @@
   "learningModeSaveFailed": "Обученную кнопку не удалось сохранить.",
   "remoteSetupIntro": "Сначала выберите имя и макет. Кнопки можно добавить позже.",
   "startWithDefault": "Начать с настроек по умолчанию",
-  "browseGithubStore": "Открыть GitHub Store",
+  "browseRemoteLedger": "Открыть Remote Ledger",
   "addFirstButton": "Добавить первую кнопку",
   "moreWaysToStart": "Другие способы начать",
   "unsavedRemoteSetupChangesMessage": "Отменить настройку нового пульта и выйти с этого экрана?",

@@ -2070,7 +2070,7 @@
   "learningModeSaveFailed": "Butang yang dipelajari tidak dapat disimpan.",
   "remoteSetupIntro": "Pilih nama dan susun atur dahulu. Anda boleh menambah butang selepas itu.",
   "startWithDefault": "Mulakan dengan lalai",
-  "browseGithubStore": "Semak GitHub Store",
+  "browseRemoteLedger": "Semak Remote Ledger",
   "addFirstButton": "Tambah butang pertama",
   "moreWaysToStart": "Lagi cara untuk bermula",
   "unsavedRemoteSetupChangesMessage": "Buang persediaan alat kawalan jauh baharu ini dan tinggalkan skrin ini?",

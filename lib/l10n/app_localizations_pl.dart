@@ -4471,7 +4471,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get startWithDefault => 'Zacznij od domyślnych ustawień';
 
   @override
-  String get browseGithubStore => 'Przeglądaj GitHub Store';
+  String get browseRemoteLedger => 'Przeglądaj Remote Ledger';
 
   @override
   String get addFirstButton => 'Dodaj pierwszy przycisk';

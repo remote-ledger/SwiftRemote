@@ -12,7 +12,7 @@
 
 The app enables users to build fully custom remotes, discover unknown IR codes through guided brute-force tools, and seamlessly manage IR configurations. It also supports importing IR signals from Flipper Zero `.ir` files, **IRPLUS `.irplus` / XML files**, and **LIRC `.conf` / `.cfg` / `.lirc` files**, making it easy to reuse and adapt existing IR libraries across devices.
 
-It also includes a GitHub Store for browsing compatible IR files directly from GitHub repositories and importing them into the app without manually downloading and moving files first. For supported USB learning dongles, Learning Mode can capture a signal from a physical remote, preview it, and save it into a new or existing remote.
+It also includes a built-in browser for [Remote Ledger](https://remote-ledger.github.io/), the app's only source of ready-made remotes, so you can search it and import a remote without manually downloading and moving files first. For supported USB learning dongles, Learning Mode can capture a signal from a physical remote, preview it, and save it into a new or existing remote.
 
 SwiftRemote is designed to be flexible, hardware-agnostic, and user-friendly, while remaining powerful enough for advanced users who need precise control over IR protocols and signal timing.
 
@@ -55,20 +55,20 @@ Tip: At least one transmit path must be available (Internal, USB, or Audio). A b
   - Optional Auto Switch uses USB when a supported dongle is attached, otherwise Internal (disabled if Audio is selected).
 - Import/Export & Maintenance (Settings > Remotes):
   - Import JSON backups, Flipper Zero `.ir`, IRPLUS `.irplus` / XML (beta), LIRC `.conf` / `.cfg` / `.lirc` (beta), and Remote Ledger `.json` files
-  - Browse compatible files from GitHub repositories in GitHub Store and import them directly into the app
+  - Search and browse Remote Ledger and import its remotes directly into the app
   - Export remotes to Downloads
   - Restore the built‑in demo remote
   - Delete all remotes
 - Learning Mode (Settings > Learning Mode):
   - Use a supported USB learning dongle to capture a button from a physical remote
   - Preview the learned signal, replay it, and save it into a new or existing remote
-- GitHub Store for browsing GitHub repositories and importing compatible IR files directly.
+- Remote Ledger browser for searching the ledger and importing its remotes directly.
 
 
 ### User‑facing
 - Transmitter selection card with live capability updates and USB permission request flow.
 - Learning Mode for supported USB learning dongles, with guided capture and save flow.
-- GitHub Store for browsing GitHub repositories and importing compatible IR files directly.
+- Remote Ledger browser for searching the ledger and importing its remotes directly.
 - Signal Tester promoted as an IR bruteforcer (IR Finder) to help discover unknown codes.
 - Expanded import/export options and maintenance actions for remotes.
 
@@ -156,7 +156,7 @@ Updating from a build that bundled the database deletes the unused copy of it, a
 ## Remotes Management
 
 - Import remotes: JSON backups and Flipper Zero `.ir` files (Settings > Remotes > Import remotes).
-- GitHub Store: Browse GitHub repositories, preview supported files, and import them directly into your remote library.
+- Remote Ledger: Search and browse the ledger, preview a remote, and import it directly into your remote library.
 - Export remotes: Save a JSON backup to Downloads.
 - Restore Demo Remote: Reset to a built‑in demo configuration.
 - Delete all remotes: Clear the entire list from this device.
@@ -262,13 +262,13 @@ Notes:
 
 ### Creating Custom Remotes
 1. Open the Remotes tab.
-2. Create a remote and add buttons using protocol encoders, raw patterns, GitHub Store imports (Remote Ledger is the store's default source), or buttons imported from existing remotes.
+2. Create a remote and add buttons using protocol encoders, raw patterns, Remote Ledger imports, or buttons imported from existing remotes.
 3. Save and test your buttons from the Remote view.
 
-### Using the GitHub Store
-1. Open Settings > GitHub Store.
-2. The store opens on [Remote Ledger](https://remote-ledger.github.io/)'s compiled remotes. Search by the device you want to control, the remote's model or the maker (`BDP-S185`, `dx3 pro`, `sony`); spaces and punctuation are ignored, as on the ledger's site. Or load the repository to browse it by manufacturer and model. To browse somewhere else, enter a GitHub repository or folder URL instead. Nothing is fetched until you search or load.
-3. Open a supported file to preview how it will be parsed. A Remote Ledger remote imports each key's most trusted code, repeated as many times as its protocol needs.
+### Using Remote Ledger
+1. Open Settings > Remote Ledger.
+2. The screen opens on [Remote Ledger](https://remote-ledger.github.io/)'s compiled remotes, the only source the app reads remotes from. Search by the device you want to control, the remote's model or the maker (`BDP-S185`, `dx3 pro`, `sony`); spaces and punctuation are ignored, as on the ledger's site. Or load the repository to browse it by manufacturer and model. Nothing is fetched until you search or load.
+3. Open a remote to preview how it will be parsed. A Remote Ledger remote imports each key's most trusted code, repeated as many times as its protocol needs.
 4. Import it into a new remote or add compatible buttons to an existing remote.
 
 ### Using the Signal Tester (IR Finder)

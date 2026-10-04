@@ -4422,7 +4422,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get startWithDefault => 'Start with default';
 
   @override
-  String get browseGithubStore => 'Browse GitHub Store';
+  String get browseRemoteLedger => 'Browse Remote Ledger';
 
   @override
   String get addFirstButton => 'Add first button';

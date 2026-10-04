@@ -2070,7 +2070,7 @@
   "learningModeSaveFailed": "De geleerde knop kon niet worden opgeslagen.",
   "remoteSetupIntro": "Kies eerst een naam en lay-out. Daarna kun je knoppen toevoegen.",
   "startWithDefault": "Start met standaardinstellingen",
-  "browseGithubStore": "GitHub Store bekijken",
+  "browseRemoteLedger": "Remote Ledger bekijken",
   "addFirstButton": "Eerste knop toevoegen",
   "moreWaysToStart": "Meer manieren om te beginnen",
   "unsavedRemoteSetupChangesMessage": "Deze nieuwe afstandsbedieningsinstelling verwijderen en dit scherm verlaten?",
