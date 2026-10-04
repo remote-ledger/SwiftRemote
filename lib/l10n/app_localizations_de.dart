@@ -976,19 +976,6 @@ class AppLocalizationsDe extends AppLocalizations {
   String get configureTilesSubtitle => 'Kacheln Fernbedienungstasten zuordnen';
 
   @override
-  String get tvKillTitle => 'TVKill';
-
-  @override
-  String get tvKillSubtitle => 'Universelles Power-Zyklus für eigene Geräte';
-
-  @override
-  String get openTvKill => 'TVKill öffnen';
-
-  @override
-  String get openTvKillSubtitle =>
-      'Power-Codes durchlaufen nur für Geräte, die dir gehören';
-
-  @override
   String get failedToLoadTransmitterSettings =>
       'Sendereinstellungen konnten nicht geladen werden.';
 
@@ -2759,102 +2746,6 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get iconPickerCategoryFavorite => 'Favorit';
-
-  @override
-  String get universalPowerTitle => 'Universal Power';
-
-  @override
-  String get universalPowerRunTab => 'Lauf';
-
-  @override
-  String get universalPowerUseResponsibly => 'Verantwortungsvoll verwenden';
-
-  @override
-  String get universalPowerConsentBody =>
-      'Universal Power durchläuft IR-Power-Codes. Verwende es nur bei Geräten, die du besitzt oder kontrollierst. Stoppe sofort, sobald das Gerät reagiert.';
-
-  @override
-  String get universalPowerConsentCheckbox =>
-      'Ich besitze oder kontrolliere das Gerät';
-
-  @override
-  String get universalPowerSetupBody =>
-      'Durchläuft Power-Codes für deine gewählte Marke. Stoppe sofort, sobald das Gerät reagiert.';
-
-  @override
-  String universalPowerLastSent(Object value) {
-    return 'Zuletzt gesendet: $value';
-  }
-
-  @override
-  String get universalPowerNoCodesFound =>
-      'Keine Power-Codes gefunden. Erweitere die Suche.';
-
-  @override
-  String get universalPowerUnableToStart => 'Start nicht möglich.';
-
-  @override
-  String get universalPowerAllBrands => 'Alle Marken kein Filter';
-
-  @override
-  String get universalPowerClearBrandFilter => 'Markenfilter löschen';
-
-  @override
-  String get universalPowerBroadenSearch => 'Suche bei Bedarf erweitern';
-
-  @override
-  String get universalPowerBroadenSearchHint =>
-      'Wenn keine Power-Bezeichnungen gefunden werden, auch andere Tasten einbeziehen.';
-
-  @override
-  String get universalPowerAdditionalPatternsDepth =>
-      'Tiefe zusätzlicher Muster';
-
-  @override
-  String get universalPowerDepth1 => 'Nur Priorität POWER oder OFF';
-
-  @override
-  String get universalPowerDepth2 => 'POWER-Aliase einbeziehen';
-
-  @override
-  String get universalPowerDepth3 =>
-      'Sekundäre Power-Bezeichnungen einbeziehen';
-
-  @override
-  String get universalPowerDepth4 =>
-      'Alle Bezeichnungen einbeziehen niedrigste Priorität';
-
-  @override
-  String get universalPowerLoopUntilStopped => 'Bis zum Stopp wiederholen';
-
-  @override
-  String get universalPowerLoopUntilStoppedHint =>
-      'Durchläuft die Warteschlange weiter, bis du stoppst.';
-
-  @override
-  String get universalPowerDelayBetweenCodes => 'Verzögerung zwischen Codes';
-
-  @override
-  String get universalPowerStart => 'Universal Power starten';
-
-  @override
-  String get universalPowerRunStatus => 'Laufstatus';
-
-  @override
-  String universalPowerProgress(Object value) {
-    return 'Fortschritt: $value';
-  }
-
-  @override
-  String get universalPowerPausedInBackground =>
-      'Pausiert, weil die App im Hintergrund war.';
-
-  @override
-  String get universalPowerSendOneCode => 'Einen Code senden';
-
-  @override
-  String get universalPowerStopWhenDeviceResponds =>
-      'Stoppen, sobald das Gerät reagiert.';
 
   @override
   String get iconNamePlay => 'Wiedergabe';

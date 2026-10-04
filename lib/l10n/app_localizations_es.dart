@@ -971,20 +971,6 @@ class AppLocalizationsEs extends AppLocalizations {
   String get configureTilesSubtitle => 'Asignar mosaicos a botones del mando';
 
   @override
-  String get tvKillTitle => 'TVKill';
-
-  @override
-  String get tvKillSubtitle =>
-      'Ciclo universal de encendido para dispositivos propios';
-
-  @override
-  String get openTvKill => 'Abrir TVKill';
-
-  @override
-  String get openTvKillSubtitle =>
-      'Ciclar códigos de encendido (úsalo solo en dispositivos propios)';
-
-  @override
   String get failedToLoadTransmitterSettings =>
       'No se pudieron cargar los ajustes del emisor.';
 
@@ -2748,101 +2734,6 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get iconPickerCategoryFavorite => 'Favorito';
-
-  @override
-  String get universalPowerTitle => 'Encendido universal';
-
-  @override
-  String get universalPowerRunTab => 'Ejecutar';
-
-  @override
-  String get universalPowerUseResponsibly => 'Úsalo con responsabilidad';
-
-  @override
-  String get universalPowerConsentBody =>
-      'Encendido universal cicla códigos IR de encendido. Úsalo solo en dispositivos que posees o controlas. Deténlo en cuanto el dispositivo responda.';
-
-  @override
-  String get universalPowerConsentCheckbox => 'Poseo o controlo el dispositivo';
-
-  @override
-  String get universalPowerSetupBody =>
-      'Cicla códigos de encendido para la marca elegida. Deténlo en cuanto el dispositivo responda.';
-
-  @override
-  String universalPowerLastSent(Object value) {
-    return 'Último enviado: $value';
-  }
-
-  @override
-  String get universalPowerNoCodesFound =>
-      'No se encontraron códigos de encendido. Intenta ampliar la búsqueda.';
-
-  @override
-  String get universalPowerUnableToStart => 'No se pudo iniciar.';
-
-  @override
-  String get universalPowerAllBrands => 'Todas las marcas (sin filtro)';
-
-  @override
-  String get universalPowerClearBrandFilter => 'Limpiar filtro de marca';
-
-  @override
-  String get universalPowerBroadenSearch => 'Amplía la búsqueda si hace falta';
-
-  @override
-  String get universalPowerBroadenSearchHint =>
-      'Si no se encuentran etiquetas de encendido, incluye otras teclas.';
-
-  @override
-  String get universalPowerAdditionalPatternsDepth =>
-      'Profundidad de patrones extra';
-
-  @override
-  String get universalPowerDepth1 => 'Solo prioridad: POWER/OFF';
-
-  @override
-  String get universalPowerDepth2 => 'Incluir alias de POWER';
-
-  @override
-  String get universalPowerDepth3 =>
-      'Incluir etiquetas secundarias de encendido';
-
-  @override
-  String get universalPowerDepth4 =>
-      'Incluir todas las etiquetas (menor prioridad)';
-
-  @override
-  String get universalPowerLoopUntilStopped => 'Repetir hasta detener';
-
-  @override
-  String get universalPowerLoopUntilStoppedHint =>
-      'Sigue ciclando la cola hasta que la detengas.';
-
-  @override
-  String get universalPowerDelayBetweenCodes => 'Pausa entre códigos';
-
-  @override
-  String get universalPowerStart => 'Iniciar Encendido universal';
-
-  @override
-  String get universalPowerRunStatus => 'Estado de ejecución';
-
-  @override
-  String universalPowerProgress(Object value) {
-    return 'Progreso: $value';
-  }
-
-  @override
-  String get universalPowerPausedInBackground =>
-      'En pausa porque la app pasó a segundo plano.';
-
-  @override
-  String get universalPowerSendOneCode => 'Enviar un código';
-
-  @override
-  String get universalPowerStopWhenDeviceResponds =>
-      'Deténlo en cuanto el dispositivo responda.';
 
   @override
   String get iconNamePlay => 'Reproducir';

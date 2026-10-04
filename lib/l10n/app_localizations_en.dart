@@ -959,19 +959,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get configureTilesSubtitle => 'Map tiles to remote buttons';
 
   @override
-  String get tvKillTitle => 'TVKill';
-
-  @override
-  String get tvKillSubtitle => 'Universal power cycling for owned devices';
-
-  @override
-  String get openTvKill => 'Open TVKill';
-
-  @override
-  String get openTvKillSubtitle =>
-      'Cycle power codes (use only on devices you own)';
-
-  @override
   String get failedToLoadTransmitterSettings =>
       'Failed to load transmitter settings.';
 
@@ -2770,99 +2757,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get iconPickerCategoryFavorite => 'Favorite';
-
-  @override
-  String get universalPowerTitle => 'Universal Power';
-
-  @override
-  String get universalPowerRunTab => 'Run';
-
-  @override
-  String get universalPowerUseResponsibly => 'Use responsibly';
-
-  @override
-  String get universalPowerConsentBody =>
-      'Universal Power cycles IR power codes. Use it only on devices you own or control. Stop as soon as the device responds.';
-
-  @override
-  String get universalPowerConsentCheckbox => 'I own or control the device';
-
-  @override
-  String get universalPowerSetupBody =>
-      'Cycles power codes for your selected brand. Stop as soon as the device responds.';
-
-  @override
-  String universalPowerLastSent(Object value) {
-    return 'Last sent: $value';
-  }
-
-  @override
-  String get universalPowerNoCodesFound =>
-      'No power codes found. Try broadening the search.';
-
-  @override
-  String get universalPowerUnableToStart => 'Unable to start.';
-
-  @override
-  String get universalPowerAllBrands => 'All brands (no filter)';
-
-  @override
-  String get universalPowerClearBrandFilter => 'Clear brand filter';
-
-  @override
-  String get universalPowerBroadenSearch => 'Broaden search if needed';
-
-  @override
-  String get universalPowerBroadenSearchHint =>
-      'If no power labels are found, include other keys.';
-
-  @override
-  String get universalPowerAdditionalPatternsDepth =>
-      'Additional patterns depth';
-
-  @override
-  String get universalPowerDepth1 => 'Priority only: POWER/OFF';
-
-  @override
-  String get universalPowerDepth2 => 'Include POWER aliases';
-
-  @override
-  String get universalPowerDepth3 => 'Include secondary power labels';
-
-  @override
-  String get universalPowerDepth4 => 'Include all labels (lowest priority)';
-
-  @override
-  String get universalPowerLoopUntilStopped => 'Loop until stopped';
-
-  @override
-  String get universalPowerLoopUntilStoppedHint =>
-      'Keeps cycling the queue until you stop it.';
-
-  @override
-  String get universalPowerDelayBetweenCodes => 'Delay between codes';
-
-  @override
-  String get universalPowerStart => 'Start Universal Power';
-
-  @override
-  String get universalPowerRunStatus => 'Run status';
-
-  @override
-  String universalPowerProgress(Object value) {
-    return 'Progress: $value';
-  }
-
-  @override
-  String get universalPowerPausedInBackground =>
-      'Paused because the app was backgrounded.';
-
-  @override
-  String get universalPowerSendOneCode => 'Send one code';
-
-  @override
-  String get universalPowerStopWhenDeviceResponds =>
-      'Stop as soon as the device responds.';
 
   @override
   String get iconNamePlay => 'Play';

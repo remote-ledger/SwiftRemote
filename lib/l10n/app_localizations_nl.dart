@@ -982,19 +982,6 @@ class AppLocalizationsNl extends AppLocalizations {
       'Koppel tegels aan knoppen van afstandsbediening';
 
   @override
-  String get tvKillTitle => 'TVKill';
-
-  @override
-  String get tvKillSubtitle => 'Universeel aan/uit-cyclen voor eigen apparaten';
-
-  @override
-  String get openTvKill => 'TVKill openen';
-
-  @override
-  String get openTvKillSubtitle =>
-      'Wissel door aan/uit-codes, alleen voor apparaten die je bezit';
-
-  @override
   String get failedToLoadTransmitterSettings =>
       'Instellingen van de zender laden mislukt.';
 
@@ -2758,100 +2745,6 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get iconPickerCategoryFavorite => 'Favoriet';
-
-  @override
-  String get universalPowerTitle => 'Universele Power';
-
-  @override
-  String get universalPowerRunTab => 'Uitvoeren';
-
-  @override
-  String get universalPowerUseResponsibly => 'Verantwoord gebruiken';
-
-  @override
-  String get universalPowerConsentBody =>
-      'Universal Power cycles IR power codes. Use it only on apparaten you own or control. Stop zodra het apparaat reageert.';
-
-  @override
-  String get universalPowerConsentCheckbox => 'Ik bezit of beheer het apparaat';
-
-  @override
-  String get universalPowerSetupBody =>
-      'Cycles power codes for your geselecteerd brand. Stop zodra het apparaat reageert.';
-
-  @override
-  String universalPowerLastSent(Object value) {
-    return 'Laatst verzonden: $value';
-  }
-
-  @override
-  String get universalPowerNoCodesFound =>
-      'Geen powercodes gevonden. Probeer de zoekopdracht te verbreden.';
-
-  @override
-  String get universalPowerUnableToStart => 'Kan niet starten.';
-
-  @override
-  String get universalPowerAllBrands => 'Alle merken geen filter';
-
-  @override
-  String get universalPowerClearBrandFilter => 'Merkfilter wissen';
-
-  @override
-  String get universalPowerBroadenSearch =>
-      'Breid de zoekopdracht indien nodig uit';
-
-  @override
-  String get universalPowerBroadenSearchHint =>
-      'Als geen powerlabels worden gevonden, neem dan andere toetsen op.';
-
-  @override
-  String get universalPowerAdditionalPatternsDepth =>
-      'Diepte van extra patronen';
-
-  @override
-  String get universalPowerDepth1 => 'Alleen prioriteit POWER/OFF';
-
-  @override
-  String get universalPowerDepth2 => 'POWER-aliassen opnemen';
-
-  @override
-  String get universalPowerDepth3 => 'Secundaire powerlabels opnemen';
-
-  @override
-  String get universalPowerDepth4 => 'Alle labels opnemen laagste prioriteit';
-
-  @override
-  String get universalPowerLoopUntilStopped => 'Herhalen tot gestopt';
-
-  @override
-  String get universalPowerLoopUntilStoppedHint =>
-      'Blijft de wachtrij doorlopen tot je stopt.';
-
-  @override
-  String get universalPowerDelayBetweenCodes => 'Vertraging tussen codes';
-
-  @override
-  String get universalPowerStart => 'Start Universele Power';
-
-  @override
-  String get universalPowerRunStatus => 'Uitvoerstatus';
-
-  @override
-  String universalPowerProgress(Object value) {
-    return 'Voortgang: $value';
-  }
-
-  @override
-  String get universalPowerPausedInBackground =>
-      'Gepauzeerd omdat de app naar de achtergrond ging.';
-
-  @override
-  String get universalPowerSendOneCode => 'Verzend één code';
-
-  @override
-  String get universalPowerStopWhenDeviceResponds =>
-      'Stop zodra het apparaat reageert.';
 
   @override
   String get iconNamePlay => 'Afspelen';

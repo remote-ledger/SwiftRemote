@@ -966,20 +966,6 @@ class AppLocalizationsPl extends AppLocalizations {
   String get configureTilesSubtitle => 'Przypisz kafelki do przycisków pilota';
 
   @override
-  String get tvKillTitle => 'TVKill';
-
-  @override
-  String get tvKillSubtitle =>
-      'Uniwersalne przełączanie zasilania dla własnych urządzeń';
-
-  @override
-  String get openTvKill => 'Otwórz TVKill';
-
-  @override
-  String get openTvKillSubtitle =>
-      'Przełączaj kody zasilania (używaj tylko na własnych urządzeniach)';
-
-  @override
   String get failedToLoadTransmitterSettings =>
       'Nie udało się wczytać ustawień nadajnika.';
 
@@ -2813,100 +2799,6 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get iconPickerCategoryFavorite => 'ulubiony';
-
-  @override
-  String get universalPowerTitle => 'Universal zasilanie';
-
-  @override
-  String get universalPowerRunTab => 'Uruchom';
-
-  @override
-  String get universalPowerUseResponsibly => 'Use responsibly';
-
-  @override
-  String get universalPowerConsentBody =>
-      'Universal zasilanie cycles IR zasilanie kody. Use go only na urządzenia you own lub control. stop as soon as urządzenie responds.';
-
-  @override
-  String get universalPowerConsentCheckbox => 'I own lub control urządzenie';
-
-  @override
-  String get universalPowerSetupBody =>
-      'Przełącza kody zasilania dla wybranej marki. Zatrzymaj, gdy tylko urządzenie zareaguje.';
-
-  @override
-  String universalPowerLastSent(Object value) {
-    return 'Ostatnio wysłano: $value';
-  }
-
-  @override
-  String get universalPowerNoCodesFound =>
-      'No zasilanie kody znaleziono. Spróbuj broadening szukaj.';
-
-  @override
-  String get universalPowerUnableToStart => 'Unable do start.';
-
-  @override
-  String get universalPowerAllBrands => 'All brands (no filter)';
-
-  @override
-  String get universalPowerClearBrandFilter => 'wyczyść marka filter';
-
-  @override
-  String get universalPowerBroadenSearch => 'Broaden szukaj if needed';
-
-  @override
-  String get universalPowerBroadenSearchHint =>
-      'If no zasilanie labels są znaleziono, include other klawisze.';
-
-  @override
-  String get universalPowerAdditionalPatternsDepth =>
-      'Additional patterns depth';
-
-  @override
-  String get universalPowerDepth1 => 'Priority only: zasilanie/OFF';
-
-  @override
-  String get universalPowerDepth2 => 'Include zasilanie aliases';
-
-  @override
-  String get universalPowerDepth3 => 'Include secondary zasilanie labels';
-
-  @override
-  String get universalPowerDepth4 =>
-      'Include wszystkie labels (lowest priority)';
-
-  @override
-  String get universalPowerLoopUntilStopped => 'pętla until zatrzymano';
-
-  @override
-  String get universalPowerLoopUntilStoppedHint =>
-      'Keeps cycling queue until you stop go.';
-
-  @override
-  String get universalPowerDelayBetweenCodes => 'opóźnienie between kody';
-
-  @override
-  String get universalPowerStart => 'start Universal zasilanie';
-
-  @override
-  String get universalPowerRunStatus => 'uruchom status';
-
-  @override
-  String universalPowerProgress(Object value) {
-    return 'Postęp: $value';
-  }
-
-  @override
-  String get universalPowerPausedInBackground =>
-      'wstrzymano because app was backgrounded.';
-
-  @override
-  String get universalPowerSendOneCode => 'wyślij one kod';
-
-  @override
-  String get universalPowerStopWhenDeviceResponds =>
-      'stop as soon as urządzenie responds.';
 
   @override
   String get iconNamePlay => 'Play';

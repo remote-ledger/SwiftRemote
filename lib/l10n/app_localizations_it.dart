@@ -977,20 +977,6 @@ class AppLocalizationsIt extends AppLocalizations {
       'Mappa i riquadri ai pulsanti del telecomando';
 
   @override
-  String get tvKillTitle => 'TVKill';
-
-  @override
-  String get tvKillSubtitle =>
-      'Ciclo universale di accensione per dispositivi posseduti';
-
-  @override
-  String get openTvKill => 'Apri TVKill';
-
-  @override
-  String get openTvKillSubtitle =>
-      'Scorri i codici di accensione solo sui dispositivi che possiedi';
-
-  @override
   String get failedToLoadTransmitterSettings =>
       'Caricamento impostazioni trasmettitore fallito.';
 
@@ -2752,101 +2738,6 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get iconPickerCategoryFavorite => 'Preferiti';
-
-  @override
-  String get universalPowerTitle => 'Accensione universale';
-
-  @override
-  String get universalPowerRunTab => 'Esegui';
-
-  @override
-  String get universalPowerUseResponsibly => 'Usa con responsabilità';
-
-  @override
-  String get universalPowerConsentBody =>
-      'Accensione universale scorre i codici IR di accensione. Usala solo su dispositivi che possiedi o controlli. Fermati appena il dispositivo risponde.';
-
-  @override
-  String get universalPowerConsentCheckbox =>
-      'Possiedo o controllo il dispositivo';
-
-  @override
-  String get universalPowerSetupBody =>
-      'Scorre i codici di accensione per la marca selezionata. Fermati appena il dispositivo risponde.';
-
-  @override
-  String universalPowerLastSent(Object value) {
-    return 'Ultimo inviato: $value';
-  }
-
-  @override
-  String get universalPowerNoCodesFound =>
-      'Nessun codice di accensione trovato. Prova ad ampliare la ricerca.';
-
-  @override
-  String get universalPowerUnableToStart => 'Impossibile avviare.';
-
-  @override
-  String get universalPowerAllBrands => 'Tutte le marche nessun filtro';
-
-  @override
-  String get universalPowerClearBrandFilter => 'Azzera filtro marca';
-
-  @override
-  String get universalPowerBroadenSearch => 'Allarga ricerca se serve';
-
-  @override
-  String get universalPowerBroadenSearchHint =>
-      'Se non vengono trovate etichette di accensione, includi altri tasti.';
-
-  @override
-  String get universalPowerAdditionalPatternsDepth =>
-      'Profondità pattern aggiuntivi';
-
-  @override
-  String get universalPowerDepth1 => 'Solo priorità. POWER OFF';
-
-  @override
-  String get universalPowerDepth2 => 'Includi alias POWER';
-
-  @override
-  String get universalPowerDepth3 => 'Includi etichette accensione secondarie';
-
-  @override
-  String get universalPowerDepth4 =>
-      'Includi tutte le etichette priorità minima';
-
-  @override
-  String get universalPowerLoopUntilStopped => 'Ripeti fino a stop';
-
-  @override
-  String get universalPowerLoopUntilStoppedHint =>
-      'Continua a ciclare la coda finché non lo fermi.';
-
-  @override
-  String get universalPowerDelayBetweenCodes => 'Ritardo tra codici';
-
-  @override
-  String get universalPowerStart => 'Avvia Accensione universale';
-
-  @override
-  String get universalPowerRunStatus => 'Stato esecuzione';
-
-  @override
-  String universalPowerProgress(Object value) {
-    return 'Avanzamento: $value';
-  }
-
-  @override
-  String get universalPowerPausedInBackground =>
-      'In pausa perché l\'app è andata in background.';
-
-  @override
-  String get universalPowerSendOneCode => 'Invia un codice';
-
-  @override
-  String get universalPowerStopWhenDeviceResponds =>
-      'Fermati appena il dispositivo risponde.';
 
   @override
   String get iconNamePlay => 'Riproduci';

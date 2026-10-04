@@ -953,19 +953,6 @@ class AppLocalizationsVi extends AppLocalizations {
   String get configureTilesSubtitle => 'Gán ô cho nút điều khiển';
 
   @override
-  String get tvKillTitle => 'TVKill';
-
-  @override
-  String get tvKillSubtitle => 'Chu kỳ nguồn chung cho thiết bị của bạn';
-
-  @override
-  String get openTvKill => 'Mở TVKill';
-
-  @override
-  String get openTvKillSubtitle =>
-      'Lặp mã nguồn (chỉ dùng với thiết bị của bạn)';
-
-  @override
   String get failedToLoadTransmitterSettings =>
       'Không tải được cài đặt bộ phát.';
 
@@ -2709,99 +2696,6 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get iconPickerCategoryFavorite => 'Yêu thích';
-
-  @override
-  String get universalPowerTitle => 'Nguồn chung';
-
-  @override
-  String get universalPowerRunTab => 'Chạy';
-
-  @override
-  String get universalPowerUseResponsibly => 'Dùng có trách nhiệm';
-
-  @override
-  String get universalPowerConsentBody =>
-      'Nguồn chung sẽ lặp các mã nguồn IR. Chỉ dùng với thiết bị bạn sở hữu hoặc kiểm soát. Hãy dừng ngay khi thiết bị phản hồi.';
-
-  @override
-  String get universalPowerConsentCheckbox =>
-      'Tôi sở hữu hoặc kiểm soát thiết bị';
-
-  @override
-  String get universalPowerSetupBody =>
-      'Lặp mã nguồn cho hãng bạn chọn. Dừng ngay khi thiết bị phản hồi.';
-
-  @override
-  String universalPowerLastSent(Object value) {
-    return 'Đã gửi gần nhất: $value';
-  }
-
-  @override
-  String get universalPowerNoCodesFound =>
-      'Không tìm thấy mã nguồn. Hãy thử mở rộng tìm kiếm.';
-
-  @override
-  String get universalPowerUnableToStart => 'Không thể bắt đầu.';
-
-  @override
-  String get universalPowerAllBrands => 'Tất cả hãng (không lọc)';
-
-  @override
-  String get universalPowerClearBrandFilter => 'Xóa bộ lọc hãng';
-
-  @override
-  String get universalPowerBroadenSearch => 'Mở rộng tìm kiếm nếu cần';
-
-  @override
-  String get universalPowerBroadenSearchHint =>
-      'Nếu không tìm thấy nhãn nguồn, hãy bao gồm các khóa khác.';
-
-  @override
-  String get universalPowerAdditionalPatternsDepth => 'Độ sâu mẫu bổ sung';
-
-  @override
-  String get universalPowerDepth1 => 'Chỉ ưu tiên: POWER/OFF';
-
-  @override
-  String get universalPowerDepth2 => 'Bao gồm bí danh POWER';
-
-  @override
-  String get universalPowerDepth3 => 'Bao gồm nhãn nguồn phụ';
-
-  @override
-  String get universalPowerDepth4 => 'Bao gồm mọi nhãn (ưu tiên thấp nhất)';
-
-  @override
-  String get universalPowerLoopUntilStopped => 'Lặp đến khi dừng';
-
-  @override
-  String get universalPowerLoopUntilStoppedHint =>
-      'Tiếp tục lặp hàng đợi cho đến khi bạn dừng.';
-
-  @override
-  String get universalPowerDelayBetweenCodes => 'Độ trễ giữa các mã';
-
-  @override
-  String get universalPowerStart => 'Bắt đầu Nguồn chung';
-
-  @override
-  String get universalPowerRunStatus => 'Trạng thái chạy';
-
-  @override
-  String universalPowerProgress(Object value) {
-    return 'Tiến độ: $value';
-  }
-
-  @override
-  String get universalPowerPausedInBackground =>
-      'Đã tạm dừng because the app was backgrounded.';
-
-  @override
-  String get universalPowerSendOneCode => 'Gửi một mã';
-
-  @override
-  String get universalPowerStopWhenDeviceResponds =>
-      'Dừng ngay khi thiết bị phản hồi.';
 
   @override
   String get iconNamePlay => 'Phát';

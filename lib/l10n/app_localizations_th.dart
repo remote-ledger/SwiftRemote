@@ -948,19 +948,6 @@ class AppLocalizationsTh extends AppLocalizations {
   String get configureTilesSubtitle => 'แมปไทล์กับปุ่มบนรีโมต';
 
   @override
-  String get tvKillTitle => 'TVKill';
-
-  @override
-  String get tvKillSubtitle => 'วนโค้ดพลังงานสำหรับอุปกรณ์ที่คุณเป็นเจ้าของ';
-
-  @override
-  String get openTvKill => 'เปิด TVKill';
-
-  @override
-  String get openTvKillSubtitle =>
-      'วนโค้ดพลังงาน ใช้กับอุปกรณ์ที่คุณเป็นเจ้าของเท่านั้น';
-
-  @override
   String get failedToLoadTransmitterSettings =>
       'ไม่สำเร็จในการload ตัวส่ง settings.';
 
@@ -2701,98 +2688,6 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get iconPickerCategoryFavorite => 'รายการโปรด';
-
-  @override
-  String get universalPowerTitle => 'Universal Power';
-
-  @override
-  String get universalPowerRunTab => 'เริ่ม';
-
-  @override
-  String get universalPowerUseResponsibly => 'ใช้อย่างรับผิดชอบ';
-
-  @override
-  String get universalPowerConsentBody =>
-      'Universal Power cycles IR power codes. Use it เท่านั้น on อุปกรณ์s you own or control. หยุด as soon as the อุปกรณ์ responds.';
-
-  @override
-  String get universalPowerConsentCheckbox =>
-      'ฉันเป็นเจ้าของหรือควบคุมอุปกรณ์นี้';
-
-  @override
-  String get universalPowerSetupBody =>
-      'วนโค้ดพลังงานสำหรับยี่ห้อที่เลือก หยุดทันทีเมื่ออุปกรณ์ตอบสนอง';
-
-  @override
-  String universalPowerLastSent(Object value) {
-    return 'ส่งล่าสุด: $value';
-  }
-
-  @override
-  String get universalPowerNoCodesFound => 'ไม่พบโค้ดพลังงาน ลองขยายการค้นหา';
-
-  @override
-  String get universalPowerUnableToStart => 'เริ่มไม่ได้';
-
-  @override
-  String get universalPowerAllBrands => 'ทุกยี่ห้อ ไม่มีตัวกรอง';
-
-  @override
-  String get universalPowerClearBrandFilter => 'ล้างตัวกรองยี่ห้อ';
-
-  @override
-  String get universalPowerBroadenSearch => 'ขยายการค้นหาเมื่อจำเป็น';
-
-  @override
-  String get universalPowerBroadenSearchHint =>
-      'หากไม่พบป้ายกำกับพลังงาน ให้รวมคีย์อื่นด้วย';
-
-  @override
-  String get universalPowerAdditionalPatternsDepth => 'ระดับรูปแบบเพิ่มเติม';
-
-  @override
-  String get universalPowerDepth1 => 'เฉพาะลำดับความสำคัญ POWER/OFF';
-
-  @override
-  String get universalPowerDepth2 => 'รวมชื่อแทนของ POWER';
-
-  @override
-  String get universalPowerDepth3 => 'รวมป้ายชื่อพลังงานรอง';
-
-  @override
-  String get universalPowerDepth4 => 'รวมทุกป้ายชื่อ ลำดับต่ำสุด';
-
-  @override
-  String get universalPowerLoopUntilStopped => 'วนจนกว่าจะหยุด';
-
-  @override
-  String get universalPowerLoopUntilStoppedHint =>
-      'จะวนคิวต่อไปจนกว่าคุณจะหยุด';
-
-  @override
-  String get universalPowerDelayBetweenCodes => 'หน่วงเวลาระหว่างโค้ด';
-
-  @override
-  String get universalPowerStart => 'เริ่ม Universal Power';
-
-  @override
-  String get universalPowerRunStatus => 'สถานะการทำงาน';
-
-  @override
-  String universalPowerProgress(Object value) {
-    return 'ความคืบหน้า: $value';
-  }
-
-  @override
-  String get universalPowerPausedInBackground =>
-      'หยุดชั่วคราวเพราะแอปอยู่เบื้องหลัง';
-
-  @override
-  String get universalPowerSendOneCode => 'ส่งหนึ่งโค้ด';
-
-  @override
-  String get universalPowerStopWhenDeviceResponds =>
-      'หยุดทันทีเมื่ออุปกรณ์ตอบสนอง';
 
   @override
   String get iconNamePlay => 'เล่น';

@@ -29,7 +29,6 @@ class _RemoteListState extends State<RemoteList> {
     remote: null,
     macro: null,
     irFinderHit: null,
-    universalPower: null,
   );
   List<Remote> _pinnedRemotes = const <Remote>[];
 

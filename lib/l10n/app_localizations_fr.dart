@@ -970,20 +970,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get configureTilesSubtitle => 'Associer les tuiles aux boutons';
 
   @override
-  String get tvKillTitle => 'TVKill';
-
-  @override
-  String get tvKillSubtitle =>
-      'Cycle d\'alimentation universel pour appareils possédés';
-
-  @override
-  String get openTvKill => 'Ouvrir TVKill';
-
-  @override
-  String get openTvKillSubtitle =>
-      'Faire défiler les codes power (uniquement sur vos appareils)';
-
-  @override
   String get failedToLoadTransmitterSettings =>
       'Échec du chargement des réglages d\'émetteur.';
 
@@ -2757,103 +2743,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get iconPickerCategoryFavorite => 'Favori';
-
-  @override
-  String get universalPowerTitle => 'Alimentation universelle';
-
-  @override
-  String get universalPowerRunTab => 'Exécution';
-
-  @override
-  String get universalPowerUseResponsibly => 'Utilisez avec précaution';
-
-  @override
-  String get universalPowerConsentBody =>
-      'L’alimentation universelle fait défiler des codes IR d’alimentation. Utilisez-la uniquement sur des appareils que vous possédez ou contrôlez. Arrêtez dès que l’appareil répond.';
-
-  @override
-  String get universalPowerConsentCheckbox =>
-      'Je possède ou contrôle l’appareil';
-
-  @override
-  String get universalPowerSetupBody =>
-      'Fait défiler les codes d’alimentation pour la marque sélectionnée. Arrêtez dès que l’appareil répond.';
-
-  @override
-  String universalPowerLastSent(Object value) {
-    return 'Dernier envoi : $value';
-  }
-
-  @override
-  String get universalPowerNoCodesFound =>
-      'Aucun code d’alimentation trouvé. Essayez d’élargir la recherche.';
-
-  @override
-  String get universalPowerUnableToStart => 'Impossible de démarrer.';
-
-  @override
-  String get universalPowerAllBrands => 'Toutes les marques (aucun filtre)';
-
-  @override
-  String get universalPowerClearBrandFilter => 'Effacer le filtre de marque';
-
-  @override
-  String get universalPowerBroadenSearch =>
-      'Élargir la recherche si nécessaire';
-
-  @override
-  String get universalPowerBroadenSearchHint =>
-      'Si aucun libellé d’alimentation n’est trouvé, inclure d’autres touches.';
-
-  @override
-  String get universalPowerAdditionalPatternsDepth =>
-      'Profondeur des motifs supplémentaires';
-
-  @override
-  String get universalPowerDepth1 => 'Priorité uniquement : POWER/OFF';
-
-  @override
-  String get universalPowerDepth2 => 'Inclure les alias POWER';
-
-  @override
-  String get universalPowerDepth3 =>
-      'Inclure les libellés d’alimentation secondaires';
-
-  @override
-  String get universalPowerDepth4 =>
-      'Inclure tous les libellés (priorité la plus basse)';
-
-  @override
-  String get universalPowerLoopUntilStopped => 'Boucler jusqu’à l’arrêt';
-
-  @override
-  String get universalPowerLoopUntilStoppedHint =>
-      'Continue à parcourir la file jusqu’à ce que vous arrêtiez.';
-
-  @override
-  String get universalPowerDelayBetweenCodes => 'Délai entre les codes';
-
-  @override
-  String get universalPowerStart => 'Démarrer l’alimentation universelle';
-
-  @override
-  String get universalPowerRunStatus => 'État d’exécution';
-
-  @override
-  String universalPowerProgress(Object value) {
-    return 'Progression : $value';
-  }
-
-  @override
-  String get universalPowerPausedInBackground =>
-      'Mis en pause parce que l’application a été mise en arrière-plan.';
-
-  @override
-  String get universalPowerSendOneCode => 'Envoyer un code';
-
-  @override
-  String get universalPowerStopWhenDeviceResponds =>
-      'Arrêtez dès que l’appareil répond.';
 
   @override
   String get iconNamePlay => 'Play';

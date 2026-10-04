@@ -966,20 +966,6 @@ class AppLocalizationsUk extends AppLocalizations {
       'Призначте кнопки пульта плиткам швидких налаштувань';
 
   @override
-  String get tvKillTitle => 'TVKill';
-
-  @override
-  String get tvKillSubtitle =>
-      'Універсальне відключення живлення для власних пристроїв';
-
-  @override
-  String get openTvKill => 'Відкрийте TVKill';
-
-  @override
-  String get openTvKillSubtitle =>
-      'Перемикайте коди живлення (використовуйте лише на своїх пристроях)';
-
-  @override
   String get failedToLoadTransmitterSettings =>
       'Не вдалося завантажити налаштування передавача.';
 
@@ -2829,99 +2815,6 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get iconPickerCategoryFavorite => 'улюблений';
-
-  @override
-  String get universalPowerTitle => 'Універсальна сила';
-
-  @override
-  String get universalPowerRunTab => 'бігти';
-
-  @override
-  String get universalPowerUseResponsibly => 'Використовуйте відповідально';
-
-  @override
-  String get universalPowerConsentBody =>
-      'Універсальні цикли живлення ІЧ-коди живлення. Використовуйте його лише на пристроях, якими володієте чи керуєте. Зупиніть, як тільки пристрій відреагує.';
-
-  @override
-  String get universalPowerConsentCheckbox => 'Я володію або керую пристроєм';
-
-  @override
-  String get universalPowerSetupBody =>
-      'Циклує коди живлення для вибраного бренду. Зупиніть, як тільки пристрій відреагує.';
-
-  @override
-  String universalPowerLastSent(Object value) {
-    return 'Востаннє надіслано: $value';
-  }
-
-  @override
-  String get universalPowerNoCodesFound =>
-      'Не знайдено кодів живлення. Спробуйте розширити пошук.';
-
-  @override
-  String get universalPowerUnableToStart => 'Неможливо запустити.';
-
-  @override
-  String get universalPowerAllBrands => 'Усі марки (без фільтра)';
-
-  @override
-  String get universalPowerClearBrandFilter => 'Очистити фільтр бренду';
-
-  @override
-  String get universalPowerBroadenSearch => 'За потреби розширте пошук';
-
-  @override
-  String get universalPowerBroadenSearchHint =>
-      'Якщо ярлики живлення не знайдені, додайте інші ключі.';
-
-  @override
-  String get universalPowerAdditionalPatternsDepth =>
-      'Додаткова глибина візерунків';
-
-  @override
-  String get universalPowerDepth1 => 'Лише пріоритет: ЖИВЛЕННЯ/ВИМК';
-
-  @override
-  String get universalPowerDepth2 => 'Додайте псевдоніми POWER';
-
-  @override
-  String get universalPowerDepth3 => 'Додайте вторинні мітки живлення';
-
-  @override
-  String get universalPowerDepth4 => 'Включити всі мітки (найнижчий пріоритет)';
-
-  @override
-  String get universalPowerLoopUntilStopped => 'Цикл до зупинки';
-
-  @override
-  String get universalPowerLoopUntilStoppedHint =>
-      'Продовжує чергувати чергу, доки ви її не зупините.';
-
-  @override
-  String get universalPowerDelayBetweenCodes => 'Затримка між кодами';
-
-  @override
-  String get universalPowerStart => 'Запустіть Universal Power';
-
-  @override
-  String get universalPowerRunStatus => 'Статус запуску';
-
-  @override
-  String universalPowerProgress(Object value) {
-    return 'Прогрес: $value';
-  }
-
-  @override
-  String get universalPowerPausedInBackground =>
-      'Призупинено, оскільки програма працювала у фоновому режимі.';
-
-  @override
-  String get universalPowerSendOneCode => 'Надішліть один код';
-
-  @override
-  String get universalPowerStopWhenDeviceResponds =>
-      'Зупиніть, як тільки пристрій відреагує.';
 
   @override
   String get iconNamePlay => 'грати';
