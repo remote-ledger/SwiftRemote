@@ -451,7 +451,7 @@ class _CreateRemoteState extends State<CreateRemote> {
         FilledButton.tonalIcon(
           onPressed: _openRemoteLedger,
           icon: const Icon(Icons.storefront_rounded),
-          label: Text(context.l10n.browseRemoteLedger),
+          label: Text(context.l10n.importARemote),
         ),
       ],
     );

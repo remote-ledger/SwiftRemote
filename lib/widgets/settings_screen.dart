@@ -21,7 +21,6 @@ import 'package:swiftremote/app_update/app_update_screen.dart';
 import 'package:swiftremote/widgets/about_screen.dart';
 import 'package:swiftremote/widgets/settings/widgets/section_card.dart';
 import 'package:swiftremote/widgets/device_controls_screen.dart';
-import 'package:swiftremote/widgets/remote_ledger_screen.dart';
 import 'package:swiftremote/widgets/learning_mode_screen.dart';
 import 'package:swiftremote/widgets/quick_settings_screen.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -451,8 +450,6 @@ class SettingsScreen extends StatelessWidget {
           const SizedBox(height: 10),
           _buildLearningSection(context, cs),
           const SizedBox(height: 10),
-          _buildRemoteLedgerSection(context, cs),
-          const SizedBox(height: 10),
           _buildRemotesSection(context),
           const SizedBox(height: 10),
           _buildDeviceControlsSection(context),
@@ -660,37 +657,6 @@ class SettingsScreen extends StatelessWidget {
                 Navigator.of(context).push(
                   MaterialPageRoute<void>(
                     builder: (_) => const LearningModeScreen(),
-                  ),
-                );
-              },
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildRemoteLedgerSection(BuildContext context, ColorScheme cs) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: SectionCard(
-        title: 'Remote Ledger',
-        subtitle:
-            'Search and browse the Remote Ledger and import its remotes directly.',
-        leading: Icon(Icons.storefront_outlined, color: cs.primary),
-        child: Column(
-          children: [
-            ListTile(
-              leading: const Icon(Icons.storefront_outlined),
-              title: const Text('Open Remote Ledger'),
-              subtitle: const Text(
-                'Search or browse Remote Ledger and import a remote as a new remote with one tap.',
-              ),
-              trailing: const Icon(Icons.chevron_right_rounded),
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute<void>(
-                    builder: (_) => const RemoteLedgerScreen(),
                   ),
                 );
               },

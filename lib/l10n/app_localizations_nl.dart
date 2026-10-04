@@ -1945,11 +1945,11 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get importedOneRemoteFromRemoteLedger =>
-      '1 afstandsbediening geïmporteerd uit Remote Ledger. Macro\'s zijn niet gewijzigd.';
+      '1 afstandsbediening geïmporteerd. Macro\'s zijn niet gewijzigd.';
 
   @override
   String get importFailedInvalidRemoteLedger =>
-      'Importeren mislukt: dit Remote Ledger-bestand bevat geen codes die SwiftRemote kan verzenden.';
+      'Importeren mislukt: dit afstandsbedieningsbestand bevat geen codes die SwiftRemote kan verzenden.';
 
   @override
   String get unsupportedFileTypeSelected =>
@@ -4280,7 +4280,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get startWithDefault => 'Start met standaardinstellingen';
 
   @override
-  String get browseRemoteLedger => 'Remote Ledger bekijken';
+  String get importARemote => 'Afstandsbediening importeren';
 
   @override
   String get addFirstButton => 'Eerste knop toevoegen';

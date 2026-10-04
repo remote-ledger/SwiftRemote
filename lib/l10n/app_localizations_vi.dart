@@ -1901,11 +1901,11 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get importedOneRemoteFromRemoteLedger =>
-      'Đã nhập 1 điều khiển từ Remote Ledger. Macro không đổi.';
+      'Đã nhập 1 điều khiển. Macro không đổi.';
 
   @override
   String get importFailedInvalidRemoteLedger =>
-      'Nhập thất bại: tệp Remote Ledger này không có mã nào SwiftRemote có thể gửi.';
+      'Nhập thất bại: tệp điều khiển này không có mã nào SwiftRemote có thể gửi.';
 
   @override
   String get unsupportedFileTypeSelected =>
@@ -4231,7 +4231,7 @@ class AppLocalizationsVi extends AppLocalizations {
   String get startWithDefault => 'Bắt đầu với mặc định';
 
   @override
-  String get browseRemoteLedger => 'Mở Remote Ledger';
+  String get importARemote => 'Nhập điều khiển';
 
   @override
   String get addFirstButton => 'Thêm nút đầu tiên';

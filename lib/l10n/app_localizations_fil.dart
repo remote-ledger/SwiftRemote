@@ -1931,11 +1931,11 @@ class AppLocalizationsFil extends AppLocalizations {
 
   @override
   String get importedOneRemoteFromRemoteLedger =>
-      'Na-import ang 1 remote mula sa Remote Ledger. Hindi binago ang mga macro.';
+      'Na-import ang 1 remote. Hindi binago ang mga macro.';
 
   @override
   String get importFailedInvalidRemoteLedger =>
-      'Nabigo ang pag-import: walang code sa file na ito ng Remote Ledger na kayang ipadala ng SwiftRemote.';
+      'Nabigo ang pag-import: walang code sa file ng remote na ito na kayang ipadala ng SwiftRemote.';
 
   @override
   String get unsupportedFileTypeSelected => 'Unsupported file type selected.';
@@ -4259,7 +4259,7 @@ class AppLocalizationsFil extends AppLocalizations {
   String get startWithDefault => 'Magsimula sa default';
 
   @override
-  String get browseRemoteLedger => 'Buksan ang Remote Ledger';
+  String get importARemote => 'Mag-import ng remote';
 
   @override
   String get addFirstButton => 'Idagdag ang unang button';

@@ -1892,11 +1892,11 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get importedOneRemoteFromRemoteLedger =>
-      'تم استيراد جهاز تحكم واحد من Remote Ledger. لم يتم تغيير الماكرو.';
+      'تم استيراد جهاز تحكم واحد. لم يتم تغيير الماكرو.';
 
   @override
   String get importFailedInvalidRemoteLedger =>
-      'فشل الاستيراد: لا يحتوي ملف Remote Ledger هذا على رموز يمكن لـ SwiftRemote إرسالها.';
+      'فشل الاستيراد: لا يحتوي ملف جهاز التحكم هذا على رموز يمكن لـ SwiftRemote إرسالها.';
 
   @override
   String get unsupportedFileTypeSelected => 'Unsupported file type المحدد.';
@@ -4218,7 +4218,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get startWithDefault => 'ابدأ بالإعدادات الافتراضية';
 
   @override
-  String get browseRemoteLedger => 'تصفح Remote Ledger';
+  String get importARemote => 'استيراد جهاز تحكم';
 
   @override
   String get addFirstButton => 'أضف الزر الأول';
@@ -6561,11 +6561,11 @@ class AppLocalizationsArEg extends AppLocalizationsAr {
 
   @override
   String get importedOneRemoteFromRemoteLedger =>
-      'تم استيراد جهاز تحكم واحد من Remote Ledger. لم يتم تغيير الماكرو.';
+      'تم استيراد جهاز تحكم واحد. لم يتم تغيير الماكرو.';
 
   @override
   String get importFailedInvalidRemoteLedger =>
-      'فشل الاستيراد: لا يحتوي ملف Remote Ledger هذا على رموز يمكن لـ SwiftRemote إرسالها.';
+      'فشل الاستيراد: لا يحتوي ملف جهاز التحكم هذا على رموز يمكن لـ SwiftRemote إرسالها.';
 
   @override
   String get unsupportedFileTypeSelected => 'Unsupported file type المحدد.';
@@ -8887,7 +8887,7 @@ class AppLocalizationsArEg extends AppLocalizationsAr {
   String get startWithDefault => 'ابدأ بالإعدادات الافتراضية';
 
   @override
-  String get browseRemoteLedger => 'تصفح Remote Ledger';
+  String get importARemote => 'استيراد جهاز تحكم';
 
   @override
   String get addFirstButton => 'أضف الزر الأول';

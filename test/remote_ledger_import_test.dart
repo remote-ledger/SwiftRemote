@@ -76,7 +76,7 @@ void main() {
     );
 
     expect(result.isSupported, isTrue);
-    expect(result.formatLabel, 'Remote Ledger');
+    expect(result.formatLabel, 'Remote JSON');
     final remote = result.remotes.single;
     expect(remote.name, 'Sony RMT-B118P');
     final button = remote.buttons.single;
@@ -152,7 +152,7 @@ void main() {
     );
 
     expect(result.isSupported, isFalse);
-    expect(result.formatLabel, 'Remote Ledger');
+    expect(result.formatLabel, 'Remote JSON');
     expect(result.supportReason, contains('schema version 2'));
   });
 

@@ -563,7 +563,7 @@ class _RemoteStudioScreenState extends State<RemoteStudioScreen> {
               child: OutlinedButton.icon(
                 onPressed: _openRemoteLedger,
                 icon: const Icon(Icons.storefront_rounded, size: 18),
-                label: Text(context.l10n.browseRemoteLedger),
+                label: Text(context.l10n.importARemote),
               ),
             ),
           ],

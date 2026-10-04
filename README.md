@@ -12,7 +12,7 @@
 
 The app enables users to build fully custom remotes, discover unknown IR codes through guided brute-force tools, and seamlessly manage IR configurations. It also supports importing IR signals from Flipper Zero `.ir` files, **IRPLUS `.irplus` / XML files**, and **LIRC `.conf` / `.cfg` / `.lirc` files**, making it easy to reuse and adapt existing IR libraries across devices.
 
-It also includes a built-in browser for [Remote Ledger](https://remote-ledger.github.io/), the app's only source of ready-made remotes, so you can search it and import a remote without manually downloading and moving files first. For supported USB learning dongles, Learning Mode can capture a signal from a physical remote, preview it, and save it into a new or existing remote.
+It also lets you search ready-made remotes and import one without manually downloading and moving files first. For supported USB learning dongles, Learning Mode can capture a signal from a physical remote, preview it, and save it into a new or existing remote.
 
 SwiftRemote is designed to be flexible, hardware-agnostic, and user-friendly, while remaining powerful enough for advanced users who need precise control over IR protocols and signal timing.
 
@@ -41,7 +41,7 @@ themselves from there.
   - USB IR dongle (with discovery, permission, and bulk transfers)
   - Audio IR (mono 1‑LED or stereo anti‑phase 2‑LED adapters)
 - Rich protocol support and a raw‑signal mode for precise mark/space patterns
-- Import/export of remotes, including Flipper Zero `.ir`, IRPLUS `.irplus` / XML, LIRC `.conf` / `.cfg` / `.lirc` files, [Remote Ledger](https://remote-ledger.github.io/) `.json` remotes, JSON backups, and direct GitHub browsing/import
+- Import/export of remotes, including Flipper Zero `.ir`, IRPLUS `.irplus` / XML, LIRC `.conf` / `.cfg` / `.lirc` files, `.json` remotes, JSON backups, and a built-in browser for ready-made remotes
 - Learning Mode for supported USB learning dongles, with capture, preview, replay, and save flows
 
 Tip: At least one transmit path must be available (Internal, USB, or Audio). A built‑in IR blaster is not required if you use a USB dongle or audio adapter.
@@ -54,21 +54,21 @@ Tip: At least one transmit path must be available (Internal, USB, or Audio). A b
   - Choose Internal, USB, Audio (1 LED), or Audio (2 LEDs) under Settings > IR Transmitter.
   - Optional Auto Switch uses USB when a supported dongle is attached, otherwise Internal (disabled if Audio is selected).
 - Import/Export & Maintenance (Settings > Remotes):
-  - Import JSON backups, Flipper Zero `.ir`, IRPLUS `.irplus` / XML (beta), LIRC `.conf` / `.cfg` / `.lirc` (beta), and Remote Ledger `.json` files
-  - Search and browse Remote Ledger and import its remotes directly into the app
+  - Import JSON backups, Flipper Zero `.ir`, IRPLUS `.irplus` / XML (beta), LIRC `.conf` / `.cfg` / `.lirc` (beta), and `.json` remote files
+  - Search and browse ready-made remotes and import one directly into the app
   - Export remotes to Downloads
   - Restore the built‑in demo remote
   - Delete all remotes
 - Learning Mode (Settings > Learning Mode):
   - Use a supported USB learning dongle to capture a button from a physical remote
   - Preview the learned signal, replay it, and save it into a new or existing remote
-- Remote Ledger browser for searching the ledger and importing its remotes directly.
+- Import a remote: search or browse ready-made remotes and import one directly.
 
 
 ### User‑facing
 - Transmitter selection card with live capability updates and USB permission request flow.
 - Learning Mode for supported USB learning dongles, with guided capture and save flow.
-- Remote Ledger browser for searching the ledger and importing its remotes directly.
+- Import a remote: search or browse ready-made remotes and import one directly.
 - Signal Tester promoted as an IR bruteforcer (IR Finder) to help discover unknown codes.
 - Expanded import/export options and maintenance actions for remotes.
 
@@ -156,7 +156,7 @@ Updating from a build that bundled the database deletes the unused copy of it, a
 ## Remotes Management
 
 - Import remotes: JSON backups and Flipper Zero `.ir` files (Settings > Remotes > Import remotes).
-- Remote Ledger: Search and browse the ledger and import a remote into your remote library with one tap.
+- Import a remote: Search or browse ready-made remotes and import one into your remote library with one tap.
 - Export remotes: Save a JSON backup to Downloads.
 - Restore Demo Remote: Reset to a built‑in demo configuration.
 - Delete all remotes: Clear the entire list from this device.
@@ -262,13 +262,13 @@ Notes:
 
 ### Creating Custom Remotes
 1. Open the Remotes tab.
-2. Create a remote and add buttons using protocol encoders, raw patterns, Remote Ledger imports, or buttons imported from existing remotes.
+2. Create a remote and add buttons using protocol encoders, raw patterns, an imported ready-made remote, or buttons imported from existing remotes.
 3. Save and test your buttons from the Remote view.
 
-### Using Remote Ledger
-1. Open Settings > Remote Ledger.
-2. The screen opens on [Remote Ledger](https://remote-ledger.github.io/)'s compiled remotes, the only source the app reads remotes from. Search by the device you want to control, the remote's model or the maker (`BDP-S185`, `dx3 pro`, `sony`); spaces and punctuation are ignored, as on the ledger's site. Or load the repository to browse it by manufacturer and model. Nothing is fetched until you search or load.
-3. Tap a remote to import it as a new remote. A Remote Ledger remote imports each key's most trusted code, repeated as many times as its protocol needs; there is no file preview step.
+### Importing a ready-made remote
+1. Open the Remotes tab and create or edit a remote, then tap Import a remote (also in the Add button sheet).
+2. The screen opens on the app's collection of ready-made remotes. Search by the device you want to control, the remote's model or the maker (`BDP-S185`, `dx3 pro`, `sony`); spaces and punctuation are ignored. Or choose Browse by folder to browse by manufacturer and model. Nothing is fetched until you search or browse.
+3. Tap a remote to import it as a new remote. It imports each key's most trusted code, repeated as many times as its protocol needs; there is no file preview step.
 4. Choose Open remote to use it now, or Keep browsing. To move some of its buttons into another remote, use the remote editor's import from existing remotes.
 
 ### Using the Signal Tester (IR Finder)

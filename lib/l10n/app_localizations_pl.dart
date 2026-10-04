@@ -1999,11 +1999,11 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get importedOneRemoteFromRemoteLedger =>
-      'Zaimportowano 1 pilota z Remote Ledger. Makra nie zostały zmienione.';
+      'Zaimportowano 1 pilota. Makra nie zostały zmienione.';
 
   @override
   String get importFailedInvalidRemoteLedger =>
-      'Import nieudany: ten plik Remote Ledger nie zawiera kodów, które SwiftRemote może wysłać.';
+      'Import nieudany: ten plik pilota nie zawiera kodów, które SwiftRemote może wysłać.';
 
   @override
   String get unsupportedFileTypeSelected => 'Unsupported plik type wybrano.';
@@ -4335,7 +4335,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get startWithDefault => 'Zacznij od domyślnych ustawień';
 
   @override
-  String get browseRemoteLedger => 'Przeglądaj Remote Ledger';
+  String get importARemote => 'Importuj pilota';
 
   @override
   String get addFirstButton => 'Dodaj pierwszy przycisk';

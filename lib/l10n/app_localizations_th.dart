@@ -1893,11 +1893,11 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get importedOneRemoteFromRemoteLedger =>
-      'นำเข้ารีโมต 1 รายการจาก Remote Ledger แมโครไม่เปลี่ยน';
+      'นำเข้ารีโมต 1 รายการ แมโครไม่เปลี่ยน';
 
   @override
   String get importFailedInvalidRemoteLedger =>
-      'นำเข้าไม่สำเร็จ: ไฟล์ Remote Ledger นี้ไม่มีโค้ดที่ SwiftRemote ส่งได้';
+      'นำเข้าไม่สำเร็จ: ไฟล์รีโมตนี้ไม่มีโค้ดที่ SwiftRemote ส่งได้';
 
   @override
   String get unsupportedFileTypeSelected => 'Unที่รองรับ ไฟล์ type selected.';
@@ -4217,7 +4217,7 @@ class AppLocalizationsTh extends AppLocalizations {
   String get startWithDefault => 'เริ่มด้วยค่าเริ่มต้น';
 
   @override
-  String get browseRemoteLedger => 'เปิด Remote Ledger';
+  String get importARemote => 'นำเข้ารีโมต';
 
   @override
   String get addFirstButton => 'เพิ่มปุ่มแรก';

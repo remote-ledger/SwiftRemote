@@ -1932,11 +1932,11 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get importedOneRemoteFromRemoteLedger =>
-      'Se importó 1 mando desde Remote Ledger. Las macros no cambiaron.';
+      'Se importó 1 mando. Las macros no cambiaron.';
 
   @override
   String get importFailedInvalidRemoteLedger =>
-      'Importación fallida: este archivo de Remote Ledger no tiene códigos que SwiftRemote pueda enviar.';
+      'Importación fallida: este archivo de mando no tiene códigos que SwiftRemote pueda enviar.';
 
   @override
   String get unsupportedFileTypeSelected =>
@@ -4267,7 +4267,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get startWithDefault => 'Empezar con los valores predeterminados';
 
   @override
-  String get browseRemoteLedger => 'Explorar Remote Ledger';
+  String get importARemote => 'Importar un mando';
 
   @override
   String get addFirstButton => 'Añadir primer botón';

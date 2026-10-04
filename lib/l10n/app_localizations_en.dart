@@ -1962,11 +1962,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get importedOneRemoteFromRemoteLedger =>
-      'Imported 1 remote from Remote Ledger. Macros were not changed.';
+      'Imported 1 remote. Macros were not changed.';
 
   @override
   String get importFailedInvalidRemoteLedger =>
-      'Import failed: this Remote Ledger file has no codes SwiftRemote can play.';
+      'Import failed: this remote file has no codes SwiftRemote can play.';
 
   @override
   String get unsupportedFileTypeSelected => 'Unsupported file type selected.';
@@ -4288,7 +4288,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get startWithDefault => 'Start with default';
 
   @override
-  String get browseRemoteLedger => 'Browse Remote Ledger';
+  String get importARemote => 'Import a remote';
 
   @override
   String get addFirstButton => 'Add first button';

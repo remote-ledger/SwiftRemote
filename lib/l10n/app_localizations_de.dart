@@ -1947,11 +1947,11 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get importedOneRemoteFromRemoteLedger =>
-      '1 Fernbedienung aus Remote Ledger importiert. Makros wurden nicht geändert.';
+      '1 Fernbedienung importiert. Makros wurden nicht geändert.';
 
   @override
   String get importFailedInvalidRemoteLedger =>
-      'Import fehlgeschlagen: Diese Remote-Ledger-Datei enthält keine Codes, die SwiftRemote senden kann.';
+      'Import fehlgeschlagen: Diese Fernbedienungsdatei enthält keine Codes, die SwiftRemote senden kann.';
 
   @override
   String get unsupportedFileTypeSelected =>
@@ -4283,7 +4283,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get startWithDefault => 'Mit Standardwerten starten';
 
   @override
-  String get browseRemoteLedger => 'Remote Ledger durchsuchen';
+  String get importARemote => 'Fernbedienung importieren';
 
   @override
   String get addFirstButton => 'Erste Taste hinzufügen';

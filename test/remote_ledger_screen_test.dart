@@ -129,7 +129,7 @@ void main() {
       find.text('Controls BDP-S185 · 38 keys · Sony20 · authored'),
       findsOneWidget,
     );
-    expect(find.text('1 remote in Remote Ledger'), findsOneWidget);
+    expect(find.text('1 remote'), findsOneWidget);
     expect(requests, 1);
   });
 
@@ -162,7 +162,7 @@ void main() {
     await search(tester, '');
 
     expect(find.text('Sony RMT-B118P'), findsNothing);
-    expect(find.text('Load Remote Ledger'), findsOneWidget);
+    expect(find.text('Browse by folder'), findsOneWidget);
   });
 
   testWidgets(
@@ -188,7 +188,7 @@ void main() {
   testWidgets('a file in the folder browser imports without a preview too',
       (tester) async {
     await openStore(tester, artifactStatus: 404);
-    await tester.tap(find.text('Load Remote Ledger'));
+    await tester.tap(find.text('Browse by folder'));
     await tester.pump();
     await tester.pump();
     await tester.tap(find.text('sony'));
@@ -200,7 +200,8 @@ void main() {
     await tester.pump();
 
     expect(
-      find.text('Import failed: Repository, branch, folder, or file not found.'),
+      find.text(
+          'Import failed: Repository, branch, folder, or file not found.'),
       findsOneWidget,
     );
     expect(find.text('File preview'), findsNothing);
@@ -223,7 +224,27 @@ void main() {
     ]) {
       expect(find.byTooltip(tooltip), findsNothing, reason: tooltip);
     }
-    expect(find.text('remote-ledger/remote-ledger.github.io'), findsOneWidget);
+    expect(find.text('remote-ledger/remote-ledger.github.io'), findsNothing);
+  });
+
+  testWidgets('the screen never names where the remotes come from',
+      (tester) async {
+    final Finder named =
+        find.textContaining(RegExp('ledger', caseSensitive: false));
+    await openStore(tester);
+    expect(find.text('Import a remote'), findsOneWidget);
+    expect(named, findsNothing);
+
+    await search(tester, 'bdp s185');
+    expect(named, findsNothing);
+    await search(tester, 'nothing matches this');
+    expect(named, findsNothing);
+    await search(tester, '');
+
+    await tester.tap(find.text('Browse by folder'));
+    await tester.pump();
+    await tester.pump();
+    expect(named, findsNothing);
   });
 
   testWidgets(
@@ -232,7 +253,7 @@ void main() {
     await openStore(tester);
     expect(find.byTooltip('Refresh'), findsOneWidget);
 
-    await tester.tap(find.text('Load Remote Ledger'));
+    await tester.tap(find.text('Browse by folder'));
     await tester.pump();
     await tester.pump();
     expect(find.text('sony'), findsOneWidget);

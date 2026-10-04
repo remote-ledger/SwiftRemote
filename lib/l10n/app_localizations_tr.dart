@@ -1911,11 +1911,11 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get importedOneRemoteFromRemoteLedger =>
-      'Remote Ledger\'dan 1 kumanda içe aktarıldı. Makrolar değiştirilmedi.';
+      '1 kumanda içe aktarıldı. Makrolar değiştirilmedi.';
 
   @override
   String get importFailedInvalidRemoteLedger =>
-      'İçe aktarma başarısız: Bu Remote Ledger dosyasında SwiftRemote\'un gönderebileceği kod yok.';
+      'İçe aktarma başarısız: Bu kumanda dosyasında SwiftRemote\'un gönderebileceği kod yok.';
 
   @override
   String get unsupportedFileTypeSelected =>
@@ -4239,7 +4239,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get startWithDefault => 'Varsayılanla başla';
 
   @override
-  String get browseRemoteLedger => 'Remote Ledger\'ı aç';
+  String get importARemote => 'Kumanda içe aktar';
 
   @override
   String get addFirstButton => 'İlk düğmeyi ekle';
