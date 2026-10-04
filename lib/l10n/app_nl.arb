@@ -212,35 +212,17 @@
   "backupTip": "Tip: exporteer een back-up vóór grote bewerkingen. Import ondersteunt volledige back-ups, oudere JSON-back-ups alleen voor afstandsbedieningen en Flipper Zero .ir-bestanden.",
   "aboutTitle": "Over",
   "aboutSubtitle": "App-info en open-sourcegegevens",
-  "aboutAppNameWithCreator": "SwiftRemote - {creator}",
-  "@aboutAppNameWithCreator": {
-    "placeholders": {
-      "creator": {}
-    }
-  },
   "versionLabel": "Versie {version}",
   "@versionLabel": {
     "placeholders": {
       "version": {}
     }
   },
-  "sourceCode": "Broncode",
-  "viewOnGitHub": "Bekijk op GitHub",
-  "repositoryUrlCopied": "Repository-URL gekopieerd",
   "reportIssue": "Probleem melden",
   "reportIssueSubtitle": "Bugmeldingen en functieverzoeken",
   "issuesUrlCopied": "Issues-URL gekopieerd",
-  "license": "Licentie",
-  "openSourceLicense": "Open-sourcelicentie",
-  "licenseUrlCopied": "Licentie-URL gekopieerd",
   "licenses": "Licenties",
   "openSourceLicenses": "Open-sourcelicenties",
-  "byCreator": "door {creator}",
-  "@byCreator": {
-    "placeholders": {
-      "creator": {}
-    }
-  },
   "deviceControlsTitle": "Apparaatbediening",
   "deviceControlsSubtitle": "Toon favoriete knoppen op de systeempagina voor apparaatbediening",
   "manageFavorites": "Favorieten beheren",

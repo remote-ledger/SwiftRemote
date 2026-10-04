@@ -212,35 +212,17 @@
   "backupTip": "Tip: export a backup before large edits. Nhập hỗ trợ bản sao lưu đầy đủ, bản sao lưu JSON điều khiển cũ và tệp .ir của Flipper Zero.",
   "aboutTitle": "Giới thiệu",
   "aboutSubtitle": "Thông tin ứng dụng và chi tiết mã nguồn mở",
-  "aboutAppNameWithCreator": "SwiftRemote - {creator}",
-  "@aboutAppNameWithCreator": {
-    "placeholders": {
-      "creator": {}
-    }
-  },
   "versionLabel": "Phiên bản {version}",
   "@versionLabel": {
     "placeholders": {
       "version": {}
     }
   },
-  "sourceCode": "Mã nguồn",
-  "viewOnGitHub": "Xem trên GitHub",
-  "repositoryUrlCopied": "Đã sao chép URL repo",
   "reportIssue": "Báo lỗi",
   "reportIssueSubtitle": "Báo lỗi và yêu cầu tính năng",
   "issuesUrlCopied": "Đã sao chép URL lỗi",
-  "license": "Giấy phép",
-  "openSourceLicense": "Giấy phép mã nguồn mở",
-  "licenseUrlCopied": "Đã sao chép URL giấy phép",
   "licenses": "Giấy phép",
   "openSourceLicenses": "Giấy phép mã nguồn mở",
-  "byCreator": "bởi {creator}",
-  "@byCreator": {
-    "placeholders": {
-      "creator": {}
-    }
-  },
   "deviceControlsTitle": "Điều khiển thiết bị",
   "deviceControlsSubtitle": "Hiện nút yêu thích trong trang điều khiển hệ thống",
   "manageFavorites": "Quản lý mục yêu thích",

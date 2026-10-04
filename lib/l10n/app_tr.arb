@@ -212,35 +212,17 @@
   "backupTip": "İpucu: Büyük düzenlemelerden önce bir yedek dışa aktarın. İçe aktarma; tam yedekleri, eski yalnızca-kumanda JSON yedeklerini ve Flipper Zero .ir dosyalarını destekler.",
   "aboutTitle": "About",
   "aboutSubtitle": "Uygulama bilgileri ve açık kaynak ayrıntıları",
-  "aboutAppNameWithCreator": "SwiftRemote - {creator}",
-  "@aboutAppNameWithCreator": {
-    "placeholders": {
-      "creator": {}
-    }
-  },
   "versionLabel": "Version {version}",
   "@versionLabel": {
     "placeholders": {
       "version": {}
     }
   },
-  "sourceCode": "Source Kod",
-  "viewOnGitHub": "Görünüm on GitHub",
-  "repositoryUrlCopied": "Repository URL kopyalandı",
   "reportIssue": "Report Issue",
   "reportIssueSubtitle": "Bug reports & feature requests",
   "issuesUrlCopied": "Issues URL kopyalandı",
-  "license": "License",
-  "openSourceLicense": "Aç-source license",
-  "licenseUrlCopied": "License URL kopyalandı",
   "licenses": "Licenses",
   "openSourceLicenses": "Aç source licenses",
-  "byCreator": "by {creator}",
-  "@byCreator": {
-    "placeholders": {
-      "creator": {}
-    }
-  },
   "deviceControlsTitle": "Cihaz Kontrolleri",
   "deviceControlsSubtitle": "Favori düğmeleri sistem kontrolleri sayfasında göster",
   "manageFavorites": "Favorileri yönet",

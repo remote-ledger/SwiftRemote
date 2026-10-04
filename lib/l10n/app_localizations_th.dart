@@ -874,23 +874,9 @@ class AppLocalizationsTh extends AppLocalizations {
   String get aboutSubtitle => 'ข้อมูลแอปและรายละเอียดโอเพนซอร์ส';
 
   @override
-  String aboutAppNameWithCreator(Object creator) {
-    return 'SwiftRemote - $creator';
-  }
-
-  @override
   String versionLabel(Object version) {
     return 'เวอร์ชัน $version';
   }
-
-  @override
-  String get sourceCode => 'ซอร์สโค้ด';
-
-  @override
-  String get viewOnGitHub => 'ดูบน GitHub';
-
-  @override
-  String get repositoryUrlCopied => 'คัดลอก URL รีโปแล้ว';
 
   @override
   String get reportIssue => 'รายงานปัญหา';
@@ -902,24 +888,10 @@ class AppLocalizationsTh extends AppLocalizations {
   String get issuesUrlCopied => 'คัดลอก URL ของ Issues แล้ว';
 
   @override
-  String get license => 'สัญญาอนุญาต';
-
-  @override
-  String get openSourceLicense => 'สัญญาอนุญาตโอเพนซอร์ส';
-
-  @override
-  String get licenseUrlCopied => 'คัดลอก URL สัญญาอนุญาตแล้ว';
-
-  @override
   String get licenses => 'สัญญาอนุญาต';
 
   @override
   String get openSourceLicenses => 'สัญญาอนุญาตโอเพนซอร์ส';
-
-  @override
-  String byCreator(Object creator) {
-    return 'โดย $creator';
-  }
 
   @override
   String get deviceControlsTitle => 'การควบคุมอุปกรณ์';

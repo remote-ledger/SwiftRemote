@@ -212,35 +212,17 @@
   "backupTip": "Petua: eksport sandaran sebelum perubahan besar. Import menyokong sandaran penuh, sandaran JSON remote versi lama, dan fail Flipper Zero .ir.",
   "aboutTitle": "Tentang",
   "aboutSubtitle": "Info aplikasi dan detail sumber terbuka",
-  "aboutAppNameWithCreator": "SwiftRemote - {creator}",
-  "@aboutAppNameWithCreator": {
-    "placeholders": {
-      "creator": {}
-    }
-  },
   "versionLabel": "Versi {version}",
   "@versionLabel": {
     "placeholders": {
       "version": {}
     }
   },
-  "sourceCode": "Kod Sumber",
-  "viewOnGitHub": "Lihat di GitHub",
-  "repositoryUrlCopied": "URL repositori disalin",
   "reportIssue": "Laporkan Masalah",
   "reportIssueSubtitle": "Laporan bug dan permintaan fitur",
   "issuesUrlCopied": "URL isu disalin",
-  "license": "Lisensi",
-  "openSourceLicense": "Lisensi sumber terbuka",
-  "licenseUrlCopied": "URL lesen disalin",
   "licenses": "Lisensi",
   "openSourceLicenses": "Lisensi sumber terbuka",
-  "byCreator": "oleh {creator}",
-  "@byCreator": {
-    "placeholders": {
-      "creator": {}
-    }
-  },
   "deviceControlsTitle": "Kawalan Peranti",
   "deviceControlsSubtitle": "Tampilkan butang kegemaran di halaman kawalan sistem",
   "manageFavorites": "Urus kegemaran",

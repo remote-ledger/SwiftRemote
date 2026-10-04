@@ -32,6 +32,14 @@ import 'package:media_store_plus/media_store_plus.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // Lists SwiftRemote's own GPL-3.0 text on the licenses page next to the
+  // packages' licenses.
+  LicenseRegistry.addLicense(() async* {
+    yield LicenseEntryWithLineBreaks(
+      <String>['SwiftRemote'],
+      await rootBundle.loadString('LICENSE'),
+    );
+  });
   _initControlChannel();
   await AppShortcutController.instance.initialize(_navKey);
   FlutterError.onError = (details) {

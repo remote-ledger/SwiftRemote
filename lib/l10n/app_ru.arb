@@ -212,35 +212,17 @@
   "backupTip": "Подсказка: экспортируйте копию перед большими изменениями. Импорт поддерживает полные копии, старые JSON-копии только с пультами и файлы Flipper Zero .ir.",
   "aboutTitle": "О приложении",
   "aboutSubtitle": "Информация о приложении и деталях open source",
-  "aboutAppNameWithCreator": "SwiftRemote - {creator}",
-  "@aboutAppNameWithCreator": {
-    "placeholders": {
-      "creator": {}
-    }
-  },
   "versionLabel": "Версия {version}",
   "@versionLabel": {
     "placeholders": {
       "version": {}
     }
   },
-  "sourceCode": "Исходный код",
-  "viewOnGitHub": "Открыть на GitHub",
-  "repositoryUrlCopied": "URL репозитория скопирован",
   "reportIssue": "Сообщить о проблеме",
   "reportIssueSubtitle": "Баг-репорты и запросы функций",
   "issuesUrlCopied": "URL задач скопирован",
-  "license": "Лицензия",
-  "openSourceLicense": "Лицензия open source",
-  "licenseUrlCopied": "URL лицензии скопирован",
   "licenses": "Лицензии",
   "openSourceLicenses": "Лицензии open source",
-  "byCreator": "от {creator}",
-  "@byCreator": {
-    "placeholders": {
-      "creator": {}
-    }
-  },
   "deviceControlsTitle": "Упр. устройством",
   "deviceControlsSubtitle": "Показывать избранные кнопки на странице системного управления устройством",
   "manageFavorites": "Избранное",

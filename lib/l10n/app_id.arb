@@ -212,35 +212,17 @@
   "backupTip": "Tip: ekspor cadangan sebelum pengubahan besar. Impor mendukung cadangan penuh, cadangan JSON remote saja versi lama, dan file Flipper Zero .ir.",
   "aboutTitle": "Tentang",
   "aboutSubtitle": "Info aplikasi dan detail sumber terbuka",
-  "aboutAppNameWithCreator": "SwiftRemote - {creator}",
-  "@aboutAppNameWithCreator": {
-    "placeholders": {
-      "creator": {}
-    }
-  },
   "versionLabel": "Versi {version}",
   "@versionLabel": {
     "placeholders": {
       "version": {}
     }
   },
-  "sourceCode": "Kode Sumber",
-  "viewOnGitHub": "Lihat di GitHub",
-  "repositoryUrlCopied": "URL repo disalin",
   "reportIssue": "Laporkan Masalah",
   "reportIssueSubtitle": "Laporan bug dan permintaan fitur",
   "issuesUrlCopied": "URL masalah disalin",
-  "license": "Lisensi",
-  "openSourceLicense": "Lisensi sumber terbuka",
-  "licenseUrlCopied": "URL lisensi disalin",
   "licenses": "Lisensi",
   "openSourceLicenses": "Lisensi sumber terbuka",
-  "byCreator": "oleh {creator}",
-  "@byCreator": {
-    "placeholders": {
-      "creator": {}
-    }
-  },
   "deviceControlsTitle": "Kontrol Perangkat",
   "deviceControlsSubtitle": "Tampilkan tombol favorit di halaman kontrol sistem",
   "manageFavorites": "Kelola favorit",

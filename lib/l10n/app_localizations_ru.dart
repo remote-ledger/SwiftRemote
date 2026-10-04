@@ -887,23 +887,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get aboutSubtitle => 'Информация о приложении и деталях open source';
 
   @override
-  String aboutAppNameWithCreator(Object creator) {
-    return 'SwiftRemote - $creator';
-  }
-
-  @override
   String versionLabel(Object version) {
     return 'Версия $version';
   }
-
-  @override
-  String get sourceCode => 'Исходный код';
-
-  @override
-  String get viewOnGitHub => 'Открыть на GitHub';
-
-  @override
-  String get repositoryUrlCopied => 'URL репозитория скопирован';
 
   @override
   String get reportIssue => 'Сообщить о проблеме';
@@ -915,24 +901,10 @@ class AppLocalizationsRu extends AppLocalizations {
   String get issuesUrlCopied => 'URL задач скопирован';
 
   @override
-  String get license => 'Лицензия';
-
-  @override
-  String get openSourceLicense => 'Лицензия open source';
-
-  @override
-  String get licenseUrlCopied => 'URL лицензии скопирован';
-
-  @override
   String get licenses => 'Лицензии';
 
   @override
   String get openSourceLicenses => 'Лицензии open source';
-
-  @override
-  String byCreator(Object creator) {
-    return 'от $creator';
-  }
 
   @override
   String get deviceControlsTitle => 'Упр. устройством';

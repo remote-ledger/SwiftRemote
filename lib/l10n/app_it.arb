@@ -212,35 +212,17 @@
   "backupTip": "Suggerimento. Esporta un backup prima di grandi modifiche. L'import supporta backup completi, vecchi backup JSON solo telecomandi e file .ir di Flipper Zero.",
   "aboutTitle": "Informazioni",
   "aboutSubtitle": "Info app e dettagli open source",
-  "aboutAppNameWithCreator": "SwiftRemote - {creator}",
-  "@aboutAppNameWithCreator": {
-    "placeholders": {
-      "creator": {}
-    }
-  },
   "versionLabel": "Versione {version}",
   "@versionLabel": {
     "placeholders": {
       "version": {}
     }
   },
-  "sourceCode": "Codice sorgente",
-  "viewOnGitHub": "Vedi su GitHub",
-  "repositoryUrlCopied": "URL repository copiato",
   "reportIssue": "Segnala problema",
   "reportIssueSubtitle": "Segnalazioni bug e richieste funzioni",
   "issuesUrlCopied": "URL issue copiato",
-  "license": "Licenza",
-  "openSourceLicense": "Licenza open source",
-  "licenseUrlCopied": "URL licenza copiato",
   "licenses": "Licenze",
   "openSourceLicenses": "Licenze open source",
-  "byCreator": "di {creator}",
-  "@byCreator": {
-    "placeholders": {
-      "creator": {}
-    }
-  },
   "deviceControlsTitle": "Controlli dispositivo",
   "deviceControlsSubtitle": "Mostra i pulsanti preferiti nella pagina dei controlli dispositivo di sistema",
   "manageFavorites": "Gestisci preferiti",

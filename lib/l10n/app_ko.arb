@@ -212,35 +212,17 @@
   "backupTip": "팁: 큰 편집 전에 백업을 내보내세요. 가져오기는 전체 백업, 리모컨만 있는 레거시 JSON 백업, Flipper Zero .ir 파일을 지원합니다.",
   "aboutTitle": "정보",
   "aboutSubtitle": "앱 정보와 오픈 소스 세부정보",
-  "aboutAppNameWithCreator": "SwiftRemote - {creator}",
-  "@aboutAppNameWithCreator": {
-    "placeholders": {
-      "creator": {}
-    }
-  },
   "versionLabel": "버전 {version}",
   "@versionLabel": {
     "placeholders": {
       "version": {}
     }
   },
-  "sourceCode": "소스 코드",
-  "viewOnGitHub": "GitHub에서 보기",
-  "repositoryUrlCopied": "저장소 URL을 복사했습니다",
   "reportIssue": "문제 신고",
   "reportIssueSubtitle": "버그 신고와 기능 요청",
   "issuesUrlCopied": "Issues URL을 복사했습니다",
-  "license": "라이선스",
-  "openSourceLicense": "오픈 소스 라이선스",
-  "licenseUrlCopied": "라이선스 URL을 복사했습니다",
   "licenses": "라이선스",
   "openSourceLicenses": "오픈 소스 라이선스",
-  "byCreator": "에 의해 {creator}",
-  "@byCreator": {
-    "placeholders": {
-      "creator": {}
-    }
-  },
   "deviceControlsTitle": "기기 제어",
   "deviceControlsSubtitle": "시스템 제어 페이지에 즐겨찾기 버튼 표시",
   "manageFavorites": "즐겨찾기 관리",
