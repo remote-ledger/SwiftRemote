@@ -1781,12 +1781,11 @@ class AppLocalizationsZh extends AppLocalizations {
   String get importedOneRemoteFromLirc => '已从 LIRC 配置导入 1 个遥控器。宏未更改。';
 
   @override
-  String get importedOneRemoteFromRemoteLedger =>
-      '已从 Remote Ledger 导入 1 个遥控器。宏未更改。';
+  String get importedOneRemoteFromRemoteLedger => '已导入 1 个遥控器。宏未更改。';
 
   @override
   String get importFailedInvalidRemoteLedger =>
-      '导入失败：此 Remote Ledger 文件中没有 SwiftRemote 可以发送的代码。';
+      '导入失败：此遥控器文件中没有 SwiftRemote 可以发送的代码。';
 
   @override
   String get unsupportedFileTypeSelected => '所选文件类型不受支持。';
@@ -4079,7 +4078,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get startWithDefault => '使用默认设置开始';
 
   @override
-  String get browseRemoteLedger => '浏览 Remote Ledger';
+  String get importARemote => '导入遥控器';
 
   @override
   String get addFirstButton => '添加第一个按钮';

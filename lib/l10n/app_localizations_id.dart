@@ -1900,11 +1900,11 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get importedOneRemoteFromRemoteLedger =>
-      'Mengimpor 1 remote dari Remote Ledger. Makro tidak diubah.';
+      'Mengimpor 1 remote. Makro tidak diubah.';
 
   @override
   String get importFailedInvalidRemoteLedger =>
-      'Impor gagal: file Remote Ledger ini tidak berisi kode yang dapat dikirim SwiftRemote.';
+      'Impor gagal: file remote ini tidak berisi kode yang dapat dikirim SwiftRemote.';
 
   @override
   String get unsupportedFileTypeSelected => 'Unsupported file type terpilih.';
@@ -4232,7 +4232,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get startWithDefault => 'Mulai dengan default';
 
   @override
-  String get browseRemoteLedger => 'Telusuri Remote Ledger';
+  String get importARemote => 'Impor remote';
 
   @override
   String get addFirstButton => 'Tambah tombol pertama';

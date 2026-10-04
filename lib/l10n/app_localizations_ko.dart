@@ -1834,11 +1834,11 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get importedOneRemoteFromRemoteLedger =>
-      'Remote Ledger에서 리모컨 1개를 가져왔습니다. 매크로는 변경되지 않았습니다.';
+      '리모컨 1개를 가져왔습니다. 매크로는 변경되지 않았습니다.';
 
   @override
   String get importFailedInvalidRemoteLedger =>
-      '가져오기 실패: 이 Remote Ledger 파일에는 SwiftRemote가 보낼 수 있는 코드가 없습니다.';
+      '가져오기 실패: 이 리모컨 파일에는 SwiftRemote가 보낼 수 있는 코드가 없습니다.';
 
   @override
   String get unsupportedFileTypeSelected => '지원되지 않는 파일 형식을 선택했습니다.';
@@ -4143,7 +4143,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get startWithDefault => '기본값으로 시작';
 
   @override
-  String get browseRemoteLedger => 'Remote Ledger 보기';
+  String get importARemote => '리모컨 가져오기';
 
   @override
   String get addFirstButton => '첫 버튼 추가';

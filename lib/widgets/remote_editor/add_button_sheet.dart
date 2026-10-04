@@ -61,7 +61,7 @@ class AddButtonSheet extends StatelessWidget {
               color: cs.onSurfaceVariant,
             ),
             title: Text(
-              l10n.browseRemoteLedger,
+              l10n.importARemote,
               style: theme.textTheme.bodyMedium?.copyWith(
                 color: cs.onSurfaceVariant,
                 fontWeight: FontWeight.w700,

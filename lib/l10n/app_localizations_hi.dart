@@ -1897,11 +1897,11 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get importedOneRemoteFromRemoteLedger =>
-      'Remote Ledger से 1 रिमोट आयात किया गया। मैक्रो नहीं बदले गए।';
+      '1 रिमोट आयात किया गया। मैक्रो नहीं बदले गए।';
 
   @override
   String get importFailedInvalidRemoteLedger =>
-      'आयात विफल: इस Remote Ledger फ़ाइल में ऐसा कोई कोड नहीं है जिसे SwiftRemote भेज सके।';
+      'आयात विफल: इस रिमोट फ़ाइल में ऐसा कोई कोड नहीं है जिसे SwiftRemote भेज सके।';
 
   @override
   String get unsupportedFileTypeSelected => 'असमर्थित फ़ाइल प्रकार चुना गया।';
@@ -4225,7 +4225,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get startWithDefault => 'डिफ़ॉल्ट से शुरू करें';
 
   @override
-  String get browseRemoteLedger => 'Remote Ledger देखें';
+  String get importARemote => 'रिमोट आयात करें';
 
   @override
   String get addFirstButton => 'पहला बटन जोड़ें';

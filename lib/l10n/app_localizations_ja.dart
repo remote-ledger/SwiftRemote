@@ -1825,11 +1825,11 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get importedOneRemoteFromRemoteLedger =>
-      'Remote Ledger から1つのリモコンを取り込みました。マクロは変更されませんでした。';
+      '1つのリモコンを取り込みました。マクロは変更されませんでした。';
 
   @override
   String get importFailedInvalidRemoteLedger =>
-      '取り込み失敗: この Remote Ledger ファイルには SwiftRemote で送信できるコードがありません。';
+      '取り込み失敗: このリモコンファイルには SwiftRemote で送信できるコードがありません。';
 
   @override
   String get unsupportedFileTypeSelected => '未対応のファイル形式です';
@@ -4133,7 +4133,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get startWithDefault => 'デフォルトで開始';
 
   @override
-  String get browseRemoteLedger => 'Remote Ledgerを見る';
+  String get importARemote => 'リモコンを取り込む';
 
   @override
   String get addFirstButton => '最初のボタンを追加';

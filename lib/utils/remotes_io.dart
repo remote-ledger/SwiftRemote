@@ -153,8 +153,8 @@ ImportPreviewResult analyzeImportedText(
     if (ledgerVersion != null) {
       if (ledgerVersion != _remoteLedgerSchemaVersionSupported) {
         return unsupported(
-          'Remote Ledger',
-          'This remote uses Remote Ledger schema version $ledgerVersion, which this version of SwiftRemote cannot read.',
+          'Remote JSON',
+          'This remote uses schema version $ledgerVersion, which this version of SwiftRemote cannot read.',
           issues: const <String>[
             'An update to SwiftRemote may be able to import it.',
           ],
@@ -162,15 +162,15 @@ ImportPreviewResult analyzeImportedText(
       }
       if (!validRemotes(remotes)) {
         return unsupported(
-          'Remote Ledger',
-          'This Remote Ledger remote has no key with a playable Pronto code.',
+          'Remote JSON',
+          'This remote has no key with a playable Pronto code.',
         );
       }
       return ImportPreviewResult(
-        formatLabel: 'Remote Ledger',
+        formatLabel: 'Remote JSON',
         isSupported: true,
         supportReason:
-            'Compatible Remote Ledger remote. Each key uses its most trusted code.',
+            'Compatible remote. Each key uses its most trusted code.',
         issues: const <String>[],
         remotes: remotes,
       );

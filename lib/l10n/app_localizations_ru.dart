@@ -1903,11 +1903,11 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get importedOneRemoteFromRemoteLedger =>
-      'Импортирован 1 пульт из Remote Ledger. Макросы не менялись.';
+      'Импортирован 1 пульт. Макросы не менялись.';
 
   @override
   String get importFailedInvalidRemoteLedger =>
-      'Импорт не удался: в этом файле Remote Ledger нет кодов, которые SwiftRemote может отправить.';
+      'Импорт не удался: в этом файле пульта нет кодов, которые SwiftRemote может отправить.';
 
   @override
   String get unsupportedFileTypeSelected =>
@@ -4234,7 +4234,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get startWithDefault => 'Начать с настроек по умолчанию';
 
   @override
-  String get browseRemoteLedger => 'Открыть Remote Ledger';
+  String get importARemote => 'Импортировать пульт';
 
   @override
   String get addFirstButton => 'Добавить первую кнопку';

@@ -1922,11 +1922,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get importedOneRemoteFromRemoteLedger =>
-      '1 télécommande importée depuis Remote Ledger. Les macros n\'ont pas été modifiées.';
+      '1 télécommande importée. Les macros n\'ont pas été modifiées.';
 
   @override
   String get importFailedInvalidRemoteLedger =>
-      'Import échoué : ce fichier Remote Ledger ne contient aucun code que SwiftRemote peut envoyer.';
+      'Import échoué : ce fichier de télécommande ne contient aucun code que SwiftRemote peut envoyer.';
 
   @override
   String get unsupportedFileTypeSelected =>
@@ -4266,7 +4266,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get startWithDefault => 'Commencer avec les valeurs par défaut';
 
   @override
-  String get browseRemoteLedger => 'Parcourir Remote Ledger';
+  String get importARemote => 'Importer une télécommande';
 
   @override
   String get addFirstButton => 'Ajouter le premier bouton';

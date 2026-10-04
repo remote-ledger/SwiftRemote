@@ -1919,11 +1919,11 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get importedOneRemoteFromRemoteLedger =>
-      'Foi importado 1 comando do Remote Ledger. As macros não foram alteradas.';
+      'Foi importado 1 comando. As macros não foram alteradas.';
 
   @override
   String get importFailedInvalidRemoteLedger =>
-      'Importação falhada: este ficheiro do Remote Ledger não tem códigos que o SwiftRemote consiga enviar.';
+      'Importação falhada: este ficheiro de comando não tem códigos que o SwiftRemote consiga enviar.';
 
   @override
   String get unsupportedFileTypeSelected =>
@@ -4255,7 +4255,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get startWithDefault => 'Começar com o padrão';
 
   @override
-  String get browseRemoteLedger => 'Explorar Remote Ledger';
+  String get importARemote => 'Importar um comando';
 
   @override
   String get addFirstButton => 'Adicionar primeiro botão';
@@ -6633,11 +6633,11 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get importedOneRemoteFromRemoteLedger =>
-      'Foi importado 1 controle do Remote Ledger. As macros não foram alteradas.';
+      'Foi importado 1 controle. As macros não foram alteradas.';
 
   @override
   String get importFailedInvalidRemoteLedger =>
-      'Falha na importação: este arquivo do Remote Ledger não tem códigos que o SwiftRemote consiga enviar.';
+      'Falha na importação: este arquivo de controle não tem códigos que o SwiftRemote consiga enviar.';
 
   @override
   String get unsupportedFileTypeSelected =>
@@ -8971,7 +8971,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get startWithDefault => 'Começar com o padrão';
 
   @override
-  String get browseRemoteLedger => 'Explorar Remote Ledger';
+  String get importARemote => 'Importar um controle';
 
   @override
   String get addFirstButton => 'Adicionar primeiro botão';

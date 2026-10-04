@@ -185,8 +185,8 @@ class _RemoteLedgerScreenState extends State<RemoteLedgerScreen> {
       await _showImportSuccessSheet(
         title: importedCount == 1 ? 'Remote imported' : 'Remotes imported',
         message: importedCount == 1
-            ? 'The remote is ready. You can keep browsing Remote Ledger or open it now.'
-            : 'Imported $importedCount remotes. You can keep browsing Remote Ledger.',
+            ? 'The remote is ready. You can keep browsing or open it now.'
+            : 'Imported $importedCount remotes. You can keep browsing.',
         remoteToOpen: importedCount == 1 ? savedRemotes.first : null,
       );
     } catch (e) {
@@ -306,7 +306,7 @@ class _RemoteLedgerScreenState extends State<RemoteLedgerScreen> {
     } catch (e) {
       if (!mounted) return;
       setState(() {
-        _ledgerError = 'Could not load the Remote Ledger index. Check the '
+        _ledgerError = 'Could not load the list of remotes. Check the '
             'connection and try again.';
       });
     } finally {
@@ -370,7 +370,7 @@ class _RemoteLedgerScreenState extends State<RemoteLedgerScreen> {
             // The ledger's third state: not "no remote exists" but "nobody
             // has looked", which is worth saying so it is not mistaken for
             // the other.
-            'Nothing in Remote Ledger matches "$query", and nobody has '
+            'Nothing matches "$query", and nobody has '
             'recorded looking for it either.',
             style: muted,
           ),
@@ -389,8 +389,7 @@ class _RemoteLedgerScreenState extends State<RemoteLedgerScreen> {
                 ? 'Showing ${shown.length} of ${result.remotes.length} '
                     'remotes. Refine the search to see the rest.'
                 : '${result.remotes.length} '
-                    '${result.remotes.length == 1 ? 'remote' : 'remotes'} '
-                    'in Remote Ledger',
+                    '${result.remotes.length == 1 ? 'remote' : 'remotes'}',
             style: muted,
           ),
         ),
@@ -467,7 +466,7 @@ class _RemoteLedgerScreenState extends State<RemoteLedgerScreen> {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Remote Ledger'),
+          title: const Text('Import a remote'),
           bottom: _importing
               ? const PreferredSize(
                   preferredSize: Size.fromHeight(4),
@@ -504,9 +503,9 @@ class _RemoteLedgerScreenState extends State<RemoteLedgerScreen> {
                         children: [
                           Expanded(
                             child: Text(
-                              '$kRemoteLedgerOwner/$kRemoteLedgerRepo',
-                              style: theme.textTheme.titleSmall?.copyWith(
-                                fontWeight: FontWeight.w800,
+                              '/$_currentPath',
+                              style: theme.textTheme.bodyMedium?.copyWith(
+                                color: theme.colorScheme.onSurfaceVariant,
                               ),
                             ),
                           ),
@@ -516,13 +515,6 @@ class _RemoteLedgerScreenState extends State<RemoteLedgerScreen> {
                             label: const Text('Up'),
                           ),
                         ],
-                      ),
-                      const SizedBox(height: 6),
-                      Text(
-                        '/$_currentPath',
-                        style: theme.textTheme.bodyMedium?.copyWith(
-                          color: theme.colorScheme.onSurfaceVariant,
-                        ),
                       ),
                       const SizedBox(height: 12),
                       TextField(
@@ -555,14 +547,14 @@ class _RemoteLedgerScreenState extends State<RemoteLedgerScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Remote Ledger',
+                          'Find a remote',
                           style: theme.textTheme.titleMedium?.copyWith(
                             fontWeight: FontWeight.w800,
                           ),
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          'IR codes by manufacturer and remote model. Each key carries its most trusted code and cites where it came from. Search above by device, model or maker, or load the repository to browse it by folder.',
+                          'IR codes by manufacturer and remote model. Each key carries its most trusted code and cites where it came from. Search above by device, model or maker, or browse by folder.',
                           style: theme.textTheme.bodyMedium?.copyWith(
                             color: theme.colorScheme.onSurfaceVariant,
                           ),
@@ -571,7 +563,7 @@ class _RemoteLedgerScreenState extends State<RemoteLedgerScreen> {
                         FilledButton.icon(
                           onPressed: _loading ? null : _loadDirectory,
                           icon: const Icon(Icons.cloud_download_rounded),
-                          label: const Text('Load Remote Ledger'),
+                          label: const Text('Browse by folder'),
                         ),
                       ],
                     ),
