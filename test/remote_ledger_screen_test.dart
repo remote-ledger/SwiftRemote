@@ -33,6 +33,26 @@ final String indexBody = jsonEncode(<String, Object>{
   ],
 });
 
+/// An index of [count] remotes that a search for "acme" matches, in order
+/// Acme R001, Acme R002 and so on, and one device nobody found a remote for.
+String acmeIndex(int count) => jsonEncode(<String, Object>{
+      'schemaVersion': 1,
+      'remotes': <Object>[
+        for (var i = 1; i <= count; i++)
+          <String, Object>{
+            'artifact':
+                'build/pronto/acme/R${i.toString().padLeft(3, '0')}.json',
+            'controls': <String>['Acme TV'],
+            'keyCount': 12,
+            'manufacturer': 'Acme',
+            'model': 'R${i.toString().padLeft(3, '0')}',
+          },
+      ],
+      'unresolved': <Object>[
+        <String, Object>{'checked': '2026-09-24', 'device': 'Acme Z9'},
+      ],
+    });
+
 /// What the contents API answers for each folder the tests open.
 const String _contents =
     '/repos/remote-ledger/remote-ledger.github.io/contents';
@@ -61,9 +81,11 @@ void main() {
   late List<String> githubRequests;
 
   /// Serves [artifactText] as the contents API's answer for the one remote
-  /// the fixture lists, with [artifactStatus] as the status code.
+  /// the fixture lists, with [artifactStatus] as the status code. [index] is
+  /// the index the search reads, [indexBody] unless given.
   Future<void> openStore(
     WidgetTester tester, {
+    String? index,
     String artifactText = '{"not": "a remote"}',
     int artifactStatus = 200,
     bool offerCreate = false,
@@ -74,7 +96,7 @@ void main() {
     final service = RemoteLedgerIndexService(
       client: MockClient((request) async {
         requests++;
-        return http.Response.bytes(utf8.encode(indexBody), 200);
+        return http.Response.bytes(utf8.encode(index ?? indexBody), 200);
       }),
       // No cache directory, so the test never waits on real file IO.
       cacheDirectory: () async => throw UnsupportedError('no cache here'),
@@ -133,6 +155,89 @@ void main() {
     );
     expect(find.text('1 remote'), findsOneWidget);
     expect(requests, 1);
+  });
+
+  /// Drags the page up by [distance], as scrolling down does, and lets what
+  /// that asks for be built.
+  Future<void> scrollDown(WidgetTester tester, double distance) async {
+    await tester.drag(find.byType(ListView), Offset(0, -distance));
+    await tester.pump();
+    await tester.pump();
+  }
+
+  testWidgets('a search lists a page of its matches and more as it is scrolled',
+      (tester) async {
+    await openStore(tester, index: acmeIndex(75));
+    await search(tester, 'acme');
+
+    // Every match is counted up front, and none is hidden behind a request
+    // to search for something narrower.
+    expect(find.text('75 remotes'), findsOneWidget);
+    expect(find.textContaining('Refine'), findsNothing);
+    expect(find.textContaining('Showing'), findsNothing);
+    expect(find.text('Acme R001'), findsOneWidget);
+    expect(find.text('Acme R030'), findsOneWidget);
+    expect(find.text('Acme R031'), findsNothing);
+
+    await scrollDown(tester, 6000);
+    expect(find.text('Acme R060'), findsOneWidget);
+    expect(find.text('Acme R061'), findsNothing);
+
+    await scrollDown(tester, 6000);
+    expect(find.text('Acme R075'), findsOneWidget);
+    await scrollDown(tester, 6000);
+    expect(find.text('Acme R075'), findsOneWidget);
+  });
+
+  testWidgets('a short list is listed whole, and needs no scrolling',
+      (tester) async {
+    await openStore(tester, index: acmeIndex(30));
+    await search(tester, 'acme');
+
+    expect(find.text('30 remotes'), findsOneWidget);
+    expect(find.text('Acme R030'), findsOneWidget);
+    expect(find.text('Acme Z9'), findsOneWidget);
+  });
+
+  testWidgets('devices nobody found a remote for wait for the last remote',
+      (tester) async {
+    await openStore(tester, index: acmeIndex(75));
+    await search(tester, 'acme');
+    expect(find.text('Acme Z9'), findsNothing);
+
+    await scrollDown(tester, 6000);
+    expect(find.text('Acme Z9'), findsNothing);
+
+    await scrollDown(tester, 6000);
+    expect(find.text('Acme R075'), findsOneWidget);
+    expect(find.text('Acme Z9'), findsOneWidget);
+  });
+
+  testWidgets('a page that does not fill the screen asks for the next one',
+      (tester) async {
+    tester.view.physicalSize = const Size(800, 2800);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.reset);
+    await openStore(tester, index: acmeIndex(75));
+    await search(tester, 'acme');
+    await tester.pump();
+
+    expect(find.text('Acme R031'), findsOneWidget);
+    expect(find.text('Acme R075'), findsNothing,
+        reason: 'only as many pages as it takes to get past the screen');
+  });
+
+  testWidgets('a new search starts again from its first page', (tester) async {
+    await openStore(tester, index: acmeIndex(75));
+    await search(tester, 'acme');
+    await scrollDown(tester, 6000);
+    expect(find.text('Acme R060'), findsOneWidget);
+
+    await scrollDown(tester, -12000);
+    await search(tester, 'ACME');
+
+    expect(find.text('Acme R030'), findsOneWidget);
+    expect(find.text('Acme R031'), findsNothing);
   });
 
   testWidgets('a device checked and not found says so', (tester) async {
