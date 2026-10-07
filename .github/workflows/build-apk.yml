@@ -19,37 +19,19 @@ on:
       version:
         description: Version from pubspec.yaml, without the build number.
         value: ${{ jobs.apk.outputs.version }}
-  push:
-    branches:
-      - master
-  # Without this the gate below only ever saw code that was already merged,
-  # which is the wrong end of the process to find out at. Note that analyze
-  # and test would not have caught the change that prompted this: deleting
-  # res/values/colors.xml breaks nothing a Dart analyzer can see, and only
-  # the Gradle build fails if a resource still points at it. So a pull
-  # request builds the APK too, rather than stopping at the cheap checks.
-  #
-  # A branch in this repository can read the signing secrets, so that build
-  # is signed like any other. One from a fork cannot, and stops at the guard
-  # in "Restore the signing key" with a message saying exactly that.
-  pull_request:
-    branches:
-      - master
 
-# A pull request that gets three pushes in a minute does not need three
-# seven-minute builds; only the last one describes the code being proposed,
-# and the earlier ones just hold up the runner.
+# Nothing triggers this workflow by itself any more: a push to master or a
+# pull request used to build the APK, and failed runs piled up. It runs when
+# started by hand (`gh workflow run build-apk`) and when release.yml calls it.
 #
-# Cancelling is limited to pull requests on purpose. release.yml reaches this
-# workflow through workflow_call, where the github context belongs to the
-# caller -- a tag push, so event_name is "push" and nothing here will cancel
-# it. That matters more than the saved minutes: a release killed halfway
-# leaves a published tag with no APK attached to it, and the in-app updater
-# reads exactly that. Pushes to master are left alone for the same reason,
-# since their artifact is what a release is cut from.
+# release.yml reaches this workflow through workflow_call, where the github
+# context belongs to the caller -- a tag push, so event_name is "push" and
+# nothing here will cancel it. That matters more than the saved minutes: a
+# release killed halfway leaves a published tag with no APK attached to it,
+# and the in-app updater reads exactly that.
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+  cancel-in-progress: false
 
 jobs:
   apk:
